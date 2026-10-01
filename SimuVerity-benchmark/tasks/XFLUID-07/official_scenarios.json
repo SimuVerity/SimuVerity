@@ -1,0 +1,312 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XFLUID-07",
+  "scenarios": [
+    {
+      "id": "nominal_ramp",
+      "distance_breakpoints_m": [
+        0.0,
+        0.1389,
+        0.4167,
+        0.8333,
+        1.3889,
+        2.0833,
+        2.9167,
+        3.889,
+        5.0,
+        6.25,
+        7.6389,
+        200.0
+      ],
+      "target_velocity_kph": [
+        0.0,
+        0.4,
+        0.8,
+        1.2,
+        1.6,
+        2.0,
+        2.4,
+        2.8,
+        3.2,
+        3.6,
+        4.0,
+        4.0
+      ],
+      "engine_speed_rpm": 2000.0,
+      "implement_depth_cm": 8.0,
+      "soil_cohesion_kpa": 2.2,
+      "tire_inflation_kpa": 220.0
+    },
+    {
+      "id": "reduced_speed_ramp",
+      "distance_breakpoints_m": [
+        0.0,
+        0.1389,
+        0.4167,
+        0.8333,
+        1.3889,
+        2.0833,
+        2.9167,
+        3.889,
+        5.0,
+        6.25,
+        7.6389,
+        200.0
+      ],
+      "target_velocity_kph": [
+        0.0,
+        0.32,
+        0.64,
+        0.96,
+        1.28,
+        1.6,
+        1.92,
+        2.24,
+        2.56,
+        2.88,
+        3.2,
+        3.2
+      ],
+      "engine_speed_rpm": 2000.0,
+      "implement_depth_cm": 8.0,
+      "soil_cohesion_kpa": 2.2,
+      "tire_inflation_kpa": 220.0
+    },
+    {
+      "id": "staged_acceleration",
+      "distance_breakpoints_m": [
+        0.0,
+        0.1389,
+        0.4167,
+        0.8333,
+        1.3889,
+        2.0833,
+        2.9167,
+        3.889,
+        5.0,
+        6.25,
+        7.6389,
+        200.0
+      ],
+      "target_velocity_kph": [
+        0.0,
+        0.0,
+        0.4,
+        0.8,
+        0.8,
+        1.6,
+        1.6,
+        2.4,
+        2.4,
+        3.2,
+        4.0,
+        4.0
+      ],
+      "engine_speed_rpm": 2000.0,
+      "implement_depth_cm": 8.0,
+      "soil_cohesion_kpa": 2.2,
+      "tire_inflation_kpa": 220.0
+    },
+    {
+      "id": "late_acceleration",
+      "distance_breakpoints_m": [
+        0.0,
+        0.1389,
+        0.4167,
+        0.8333,
+        1.3889,
+        2.0833,
+        2.9167,
+        3.889,
+        5.0,
+        6.25,
+        7.6389,
+        200.0
+      ],
+      "target_velocity_kph": [
+        0.0,
+        0.2,
+        0.4,
+        0.6,
+        0.8,
+        1.0,
+        1.2,
+        1.6,
+        2.2,
+        3.0,
+        4.0,
+        4.0
+      ],
+      "engine_speed_rpm": 2000.0,
+      "implement_depth_cm": 8.0,
+      "soil_cohesion_kpa": 2.2,
+      "tire_inflation_kpa": 220.0
+    },
+    {
+      "id": "reduced_engine_speed",
+      "distance_breakpoints_m": [
+        0.0,
+        0.1389,
+        0.4167,
+        0.8333,
+        1.3889,
+        2.0833,
+        2.9167,
+        3.889,
+        5.0,
+        6.25,
+        7.6389,
+        200.0
+      ],
+      "target_velocity_kph": [
+        0.0,
+        0.4,
+        0.8,
+        1.2,
+        1.6,
+        2.0,
+        2.4,
+        2.8,
+        3.2,
+        3.6,
+        4.0,
+        4.0
+      ],
+      "engine_speed_rpm": 1800.0,
+      "implement_depth_cm": 8.0,
+      "soil_cohesion_kpa": 2.2,
+      "tire_inflation_kpa": 220.0
+    },
+    {
+      "id": "reduced_engine_reduced_ramp",
+      "distance_breakpoints_m": [
+        0.0,
+        0.1389,
+        0.4167,
+        0.8333,
+        1.3889,
+        2.0833,
+        2.9167,
+        3.889,
+        5.0,
+        6.25,
+        7.6389,
+        200.0
+      ],
+      "target_velocity_kph": [
+        0.0,
+        0.32,
+        0.64,
+        0.96,
+        1.28,
+        1.6,
+        1.92,
+        2.24,
+        2.56,
+        2.88,
+        3.2,
+        3.2
+      ],
+      "engine_speed_rpm": 1800.0,
+      "implement_depth_cm": 8.0,
+      "soil_cohesion_kpa": 2.2,
+      "tire_inflation_kpa": 220.0
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "stop_time_s": 125.0,
+      "cold_start": true,
+      "native_input_script": "Scripts/TractorEnergyComputationInput.m",
+      "evaluation_adapter": "In-memory exposure of native inputs plus non-invasive signal logging; the source model and referenced model are never saved."
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "preferred_reference_target_raw": 90.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.2,
+          "meaning": "nominal speed tracking and bounded operation"
+        },
+        "Q": {
+          "weight": 0.15,
+          "meaning": "hydraulic, axle, and energy quality"
+        },
+        "M": {
+          "weight": 0.3,
+          "meaning": "closed-loop hydro-mechanical causality"
+        },
+        "R": {
+          "weight": 0.2,
+          "meaning": "worst-case retention across private operating conditions"
+        },
+        "D": {
+          "weight": 0.15,
+          "meaning": "cold-start and command-transition response"
+        }
+      },
+      "within_group": "weighted_arithmetic_mean",
+      "across_groups": "weighted_geometric_mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum",
+      "policy_id": "simuverity-101-v1:xfluid-07:scoring"
+    },
+    "shortcut_sanity_contract": [
+      "qualification_or_required_output_missing",
+      "target_signal_copied_to_measured_speed",
+      "fixed_or_disconnected_pump_displacement",
+      "hydraulic_power_path_missing",
+      "front_or_rear_drive_path_missing",
+      "private_command_profiles_ignored",
+      "zero_or_nonphysical_transmission_loss"
+    ]
+  },
+  "simulation": {
+    "stop_time_s": 125.0,
+    "cold_start": true,
+    "native_input_script": "Scripts/TractorEnergyComputationInput.m",
+    "evaluation_adapter": "In-memory exposure of native inputs plus non-invasive signal logging; the source model and referenced model are never saved."
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "preferred_reference_target_raw": 90.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.2,
+        "meaning": "nominal speed tracking and bounded operation"
+      },
+      "Q": {
+        "weight": 0.15,
+        "meaning": "hydraulic, axle, and energy quality"
+      },
+      "M": {
+        "weight": 0.3,
+        "meaning": "closed-loop hydro-mechanical causality"
+      },
+      "R": {
+        "weight": 0.2,
+        "meaning": "worst-case retention across private operating conditions"
+      },
+      "D": {
+        "weight": 0.15,
+        "meaning": "cold-start and command-transition response"
+      }
+    },
+    "within_group": "weighted_arithmetic_mean",
+    "across_groups": "weighted_geometric_mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum",
+    "policy_id": "simuverity-101-v1:xfluid-07:scoring"
+  },
+  "shortcut_sanity_contract": [
+    "qualification_or_required_output_missing",
+    "target_signal_copied_to_measured_speed",
+    "fixed_or_disconnected_pump_displacement",
+    "hydraulic_power_path_missing",
+    "front_or_rear_drive_path_missing",
+    "private_command_profiles_ignored",
+    "zero_or_nonphysical_transmission_loss"
+  ]
+}

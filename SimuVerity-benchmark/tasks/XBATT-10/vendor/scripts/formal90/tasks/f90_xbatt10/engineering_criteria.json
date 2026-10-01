@@ -1,0 +1,67 @@
+{
+  "aggregation": {
+    "operation_order": "unchanged source pure-function order",
+    "post_total_cap_floor_or_override": "none",
+    "weights": {
+      "A": 0.25,
+      "C": 0.2,
+      "D": 0.1,
+      "M": 0.25,
+      "Q": 0.1,
+      "R": 0.1
+    }
+  },
+  "candidate_independent": true,
+  "criteria_id": "simuverity-101-v1:f90-xbatt-10:engineering-criteria",
+  "effect_targets": {
+    "initial_soc": [
+      "baseline",
+      "low_soc"
+    ],
+    "powertrain_rating": [
+      "low_power_heavy",
+      "high_power_heavy"
+    ],
+    "regenerative_braking": [
+      "baseline",
+      "regen_off"
+    ],
+    "vehicle_mass": [
+      "baseline",
+      "heavy_mass"
+    ]
+  },
+  "missing_evidence_handling": "unchanged source qualification and metric-local handling",
+  "normalizers": {
+    "effect_magnitude": "symmetric target/candidate ratio utility",
+    "trajectory_scale": "max(RMS(target), 0.10*max_abs(target), 1e-9)",
+    "trajectory_utility": "100*exp(-sharpness*RMSE/reference_scale)"
+  },
+  "reference_self_target": {
+    "G": 1,
+    "raw_or_total_score": 100.0
+  },
+  "runtime_inputs": [
+    "candidate_evidence",
+    "engineering_criteria_bundle"
+  ],
+  "scenario_targets": {
+    "lossless": true,
+    "resampled_or_downsampled": false,
+    "scenario_ids": [
+      "baseline",
+      "heavy_mass",
+      "low_soc",
+      "low_power_heavy",
+      "high_power_heavy",
+      "regen_off"
+    ],
+    "storage": "payload.scenario_targets"
+  },
+  "schema": "simuverity.engineering-criteria-manifest.v1",
+  "task_id": "F90-XBATT-10",
+  "payload": {
+    "file": "engineering_criteria_targets.json.gz",
+    "format": "gzip-json"
+  }
+}

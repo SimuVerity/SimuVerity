@@ -1,0 +1,26 @@
+# Python Cache
+*__pycache__*
+# Obsidian cache
+paper/.obsidian/
+# Jupiter Cache
+.ipynb_checkpoints
+# backup files
+*.back
+# docs folder
+docs/build/
+# vscode
+.vscode/
+# python env
+.venv/
+# coverage file
+*.coverage
+# matlab asv files
+*.asv
+# virtual documents
+.virtual_documents/
+# simulink slprj folder
+**/slprj/
+# simulink .slxc files
+*.slxc
+# simulink autosave files
+*.slx.autosave

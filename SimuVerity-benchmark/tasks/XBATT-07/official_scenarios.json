@@ -1,0 +1,186 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XBATT-07",
+  "scenarios": [
+    {
+      "id": "nominal_standby",
+      "state_request": 0,
+      "cell_min_V": 3.68,
+      "cell_max_V": 3.72,
+      "cell_min_C": 24,
+      "cell_max_C": 27,
+      "pack_voltage_V": 355.2,
+      "pack_current_A": 0,
+      "charger_dc_voltage_V": 0,
+      "inverter_dc_voltage_V": 0
+    },
+    {
+      "id": "drive_precharge_ready",
+      "state_request": 2,
+      "cell_min_V": 3.55,
+      "cell_max_V": 3.75,
+      "cell_min_C": 18,
+      "cell_max_C": 34,
+      "pack_voltage_V": 350,
+      "pack_current_A": 70,
+      "charger_dc_voltage_V": 0,
+      "inverter_dc_voltage_V": 345
+    },
+    {
+      "id": "drive_precharge_incomplete",
+      "state_request": 2,
+      "cell_min_V": 3.45,
+      "cell_max_V": 3.74,
+      "cell_min_C": 15,
+      "cell_max_C": 36,
+      "pack_voltage_V": 350,
+      "pack_current_A": 40,
+      "charger_dc_voltage_V": 0,
+      "inverter_dc_voltage_V": 120
+    },
+    {
+      "id": "charge_precharge_ready",
+      "state_request": 1,
+      "cell_min_V": 3.62,
+      "cell_max_V": 4.05,
+      "cell_min_C": 12,
+      "cell_max_C": 40,
+      "pack_voltage_V": 372,
+      "pack_current_A": -35,
+      "charger_dc_voltage_V": 368,
+      "inverter_dc_voltage_V": 0
+    },
+    {
+      "id": "voltage_temperature_derating",
+      "state_request": 1,
+      "cell_min_V": 3.7,
+      "cell_max_V": 4.2,
+      "cell_min_C": 8,
+      "cell_max_C": 52,
+      "pack_voltage_V": 398,
+      "pack_current_A": -20,
+      "charger_dc_voltage_V": 394,
+      "inverter_dc_voltage_V": 0
+    },
+    {
+      "id": "overvoltage_overtemperature_fault",
+      "state_request": 2,
+      "cell_min_V": 3.5,
+      "cell_max_V": 4.35,
+      "cell_min_C": 20,
+      "cell_max_C": 60,
+      "pack_voltage_V": 410,
+      "pack_current_A": 90,
+      "charger_dc_voltage_V": 0,
+      "inverter_dc_voltage_V": 405
+    }
+  ],
+  "contract": {
+    "difficulty": {
+      "score": 10,
+      "maximum": 12,
+      "basis": [
+        "four interacting source-owned control components",
+        "96-cell vector sensing",
+        "dual precharge paths",
+        "persistent fault state",
+        "multi-scenario dynamic outputs"
+      ]
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85,
+      "preferred_reference_score": 90,
+      "normalize_threshold_to_100": false,
+      "groups": {
+        "A": {
+          "weight": 0.25,
+          "meaning": "state, command, and current-limit accuracy"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "finite, complete, physically signed outputs"
+        },
+        "M": {
+          "weight": 0.25,
+          "meaning": "source-sensor to extrema, limits, faults, and contactor mechanism"
+        },
+        "C": {
+          "weight": 0.2,
+          "meaning": "fault and voltage-feedback causal control"
+        },
+        "R": {
+          "weight": 0.1,
+          "meaning": "worst private operating condition"
+        },
+        "D": {
+          "weight": 0.1,
+          "meaning": "precharge and fault transition dynamics"
+        }
+      },
+      "within_group": "weighted_arithmetic_mean",
+      "across_groups": "weighted_geometric_mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum"
+    },
+    "minimum_shortcut_sanity_contract": [
+      "missing_fault_state",
+      "fixed_nominal_limits",
+      "copied_nominal_outputs",
+      "precharge_without_voltage_feedback",
+      "commands_disconnected_from_state",
+      "reported_extrema_not_from_cell_vectors"
+    ]
+  },
+  "difficulty": {
+    "score": 10,
+    "maximum": 12,
+    "basis": [
+      "four interacting source-owned control components",
+      "96-cell vector sensing",
+      "dual precharge paths",
+      "persistent fault state",
+      "multi-scenario dynamic outputs"
+    ]
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85,
+    "preferred_reference_score": 90,
+    "normalize_threshold_to_100": false,
+    "groups": {
+      "A": {
+        "weight": 0.25,
+        "meaning": "state, command, and current-limit accuracy"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "finite, complete, physically signed outputs"
+      },
+      "M": {
+        "weight": 0.25,
+        "meaning": "source-sensor to extrema, limits, faults, and contactor mechanism"
+      },
+      "C": {
+        "weight": 0.2,
+        "meaning": "fault and voltage-feedback causal control"
+      },
+      "R": {
+        "weight": 0.1,
+        "meaning": "worst private operating condition"
+      },
+      "D": {
+        "weight": 0.1,
+        "meaning": "precharge and fault transition dynamics"
+      }
+    },
+    "within_group": "weighted_arithmetic_mean",
+    "across_groups": "weighted_geometric_mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum"
+  },
+  "minimum_shortcut_sanity_contract": [
+    "missing_fault_state",
+    "fixed_nominal_limits",
+    "copied_nominal_outputs",
+    "precharge_without_voltage_feedback",
+    "commands_disconnected_from_state",
+    "reported_extrema_not_from_cell_vectors"
+  ]
+}

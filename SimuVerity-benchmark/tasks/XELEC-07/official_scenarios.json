@@ -1,0 +1,2044 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XELEC-07",
+  "scenarios": [
+    {
+      "id": "id_less",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "Id_ref_cmd": -0.8
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^Id_ref$",
+          "parameter": "Value",
+          "value": -0.8
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "id_less_reduces_current",
+          "nominal_band": "i_rms_witness",
+          "scenario_band": "i_rms_id_less",
+          "relation": "decrease_frac_min",
+          "threshold": 0.05
+        }
+      ],
+      "public_envelope": "Id_ref_cmd -1.2..-0.8; Iq_ref_cmd -0.5..0.5; Vgrid_scale 0.9..1.1 pu"
+    },
+    {
+      "id": "id_more",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "Id_ref_cmd": -1.2
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^Id_ref$",
+          "parameter": "Value",
+          "value": -1.2
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "id_more_increases_current",
+          "nominal_band": "i_rms_witness",
+          "scenario_band": "i_rms_id_more",
+          "relation": "increase_frac_min",
+          "threshold": 0.05
+        }
+      ],
+      "public_envelope": "Id_ref_cmd -1.2..-0.8; Iq_ref_cmd -0.5..0.5; Vgrid_scale 0.9..1.1 pu"
+    },
+    {
+      "id": "iq_positive",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "Iq_ref_cmd": 0.5
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^Iq_ref$",
+          "parameter": "Value",
+          "value": 0.5
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "positive_q_changes_signed_phase",
+          "nominal_band": "phase_witness",
+          "scenario_band": "phase_iq_positive",
+          "relation": "absolute_delta_min",
+          "threshold": 3
+        }
+      ],
+      "public_envelope": "Id_ref_cmd -1.2..-0.8; Iq_ref_cmd -0.5..0.5; Vgrid_scale 0.9..1.1 pu"
+    },
+    {
+      "id": "iq_negative",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "Iq_ref_cmd": -0.5
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^Iq_ref$",
+          "parameter": "Value",
+          "value": -0.5
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "negative_q_changes_signed_phase",
+          "nominal_band": "phase_witness",
+          "scenario_band": "phase_iq_negative",
+          "relation": "absolute_delta_min",
+          "threshold": 3
+        }
+      ],
+      "public_envelope": "Id_ref_cmd -1.2..-0.8; Iq_ref_cmd -0.5..0.5; Vgrid_scale 0.9..1.1 pu"
+    },
+    {
+      "id": "id_iq_joint",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "Id_ref_cmd": -1.2,
+        "Iq_ref_cmd": 0.5
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^Id_ref$",
+          "parameter": "Value",
+          "value": -1.2
+        },
+        {
+          "path_regex": "^Iq_ref$",
+          "parameter": "Value",
+          "value": 0.5
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "joint_command_increases_current",
+          "nominal_band": "i_rms_witness",
+          "scenario_band": "i_rms_id_iq_joint",
+          "relation": "increase_frac_min",
+          "threshold": 0.05
+        },
+        {
+          "id": "joint_command_changes_signed_phase",
+          "nominal_band": "phase_witness",
+          "scenario_band": "phase_id_iq_joint",
+          "relation": "absolute_delta_min",
+          "threshold": 3
+        }
+      ],
+      "public_envelope": "Id_ref_cmd -1.2..-0.8; Iq_ref_cmd -0.5..0.5; Vgrid_scale 0.9..1.1 pu"
+    },
+    {
+      "id": "id_iq_interior_pos",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "Id_ref_cmd": -0.91,
+        "Iq_ref_cmd": 0.27
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^Id_ref$",
+          "parameter": "Value",
+          "value": -0.91
+        },
+        {
+          "path_regex": "^Iq_ref$",
+          "parameter": "Value",
+          "value": 0.27
+        }
+      ],
+      "witnesses": [],
+      "public_envelope": "Id_ref_cmd -1.2..-0.8; Iq_ref_cmd -0.5..0.5; Vgrid_scale 0.9..1.1 pu"
+    },
+    {
+      "id": "id_iq_interior_neg",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "Id_ref_cmd": -1.11,
+        "Iq_ref_cmd": -0.31
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^Id_ref$",
+          "parameter": "Value",
+          "value": -1.11
+        },
+        {
+          "path_regex": "^Iq_ref$",
+          "parameter": "Value",
+          "value": -0.31
+        }
+      ],
+      "witnesses": [],
+      "public_envelope": "Id_ref_cmd -1.2..-0.8; Iq_ref_cmd -0.5..0.5; Vgrid_scale 0.9..1.1 pu"
+    },
+    {
+      "id": "grid_low",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "Vgrid_scale": 0.9
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^Three-Phase Source$",
+          "parameter": "Voltage",
+          "value": "400/sqrt(3)*0.9"
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "grid_low_changes_physical_voltage",
+          "nominal_band": "v_rms_grid_witness",
+          "scenario_band": "v_rms_grid_low",
+          "relation": "decrease_frac_min",
+          "threshold": 0.05
+        }
+      ],
+      "public_envelope": "Id_ref_cmd -1.2..-0.8; Iq_ref_cmd -0.5..0.5; Vgrid_scale 0.9..1.1 pu"
+    },
+    {
+      "id": "grid_high",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "Vgrid_scale": 1.1
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^Three-Phase Source$",
+          "parameter": "Voltage",
+          "value": "400/sqrt(3)*1.1"
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "grid_high_changes_physical_voltage",
+          "nominal_band": "v_rms_grid_witness",
+          "scenario_band": "v_rms_grid_high",
+          "relation": "increase_frac_min",
+          "threshold": 0.05
+        }
+      ],
+      "public_envelope": "Id_ref_cmd -1.2..-0.8; Iq_ref_cmd -0.5..0.5; Vgrid_scale 0.9..1.1 pu"
+    },
+    {
+      "id": "joint_grid_low_pos",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "Id_ref_cmd": -0.91,
+        "Iq_ref_cmd": 0.27,
+        "Vgrid_scale": 0.93
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^Id_ref$",
+          "parameter": "Value",
+          "value": -0.91
+        },
+        {
+          "path_regex": "^Iq_ref$",
+          "parameter": "Value",
+          "value": 0.27
+        },
+        {
+          "path_regex": "^Three-Phase Source$",
+          "parameter": "Voltage",
+          "value": "400/sqrt(3)*0.93"
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "joint_grid_low_changes_physical_voltage",
+          "nominal_band": "v_rms_grid_witness",
+          "scenario_band": "v_rms_joint_grid_low_pos",
+          "relation": "decrease_frac_min",
+          "threshold": 0.035
+        }
+      ],
+      "public_envelope": "Id_ref_cmd -1.2..-0.8; Iq_ref_cmd -0.5..0.5; Vgrid_scale 0.9..1.1 pu"
+    },
+    {
+      "id": "joint_grid_high_neg",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "Id_ref_cmd": -1.11,
+        "Iq_ref_cmd": -0.31,
+        "Vgrid_scale": 1.07
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^Id_ref$",
+          "parameter": "Value",
+          "value": -1.11
+        },
+        {
+          "path_regex": "^Iq_ref$",
+          "parameter": "Value",
+          "value": -0.31
+        },
+        {
+          "path_regex": "^Three-Phase Source$",
+          "parameter": "Voltage",
+          "value": "400/sqrt(3)*1.07"
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "joint_grid_high_changes_physical_voltage",
+          "nominal_band": "v_rms_grid_witness",
+          "scenario_band": "v_rms_joint_grid_high_neg",
+          "relation": "increase_frac_min",
+          "threshold": 0.035
+        }
+      ],
+      "public_envelope": "Id_ref_cmd -1.2..-0.8; Iq_ref_cmd -0.5..0.5; Vgrid_scale 0.9..1.1 pu"
+    },
+    {
+      "id": "joint_grid_low_endpoint_pos",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "Id_ref_cmd": -1.2,
+        "Iq_ref_cmd": 0.5,
+        "Vgrid_scale": 0.9
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^Id_ref$",
+          "parameter": "Value",
+          "value": -1.2
+        },
+        {
+          "path_regex": "^Iq_ref$",
+          "parameter": "Value",
+          "value": 0.5
+        },
+        {
+          "path_regex": "^Three-Phase Source$",
+          "parameter": "Voltage",
+          "value": "400/sqrt(3)*0.9"
+        }
+      ],
+      "witnesses": [],
+      "public_envelope": "Id_ref_cmd -1.2..-0.8; Iq_ref_cmd -0.5..0.5; Vgrid_scale 0.9..1.1 pu"
+    },
+    {
+      "id": "joint_grid_high_endpoint_neg",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "Id_ref_cmd": -0.8,
+        "Iq_ref_cmd": -0.5,
+        "Vgrid_scale": 1.1
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^Id_ref$",
+          "parameter": "Value",
+          "value": -0.8
+        },
+        {
+          "path_regex": "^Iq_ref$",
+          "parameter": "Value",
+          "value": -0.5
+        },
+        {
+          "path_regex": "^Three-Phase Source$",
+          "parameter": "Voltage",
+          "value": "400/sqrt(3)*1.1"
+        }
+      ],
+      "witnesses": [],
+      "public_envelope": "Id_ref_cmd -1.2..-0.8; Iq_ref_cmd -0.5..0.5; Vgrid_scale 0.9..1.1 pu"
+    }
+  ],
+  "contract": {
+    "evaluation_policy_id": "simuverity-101-v1:xelec-07:scoring",
+    "public_semantic_basis": {
+      "feedback": "Regulate converter-to-grid current in closed loop from physical current measurements.",
+      "logged_output": "Igrid must contain all three measured grid phases in the same phase order.",
+      "interpretation": "One trusted physical Three-Phase V-I Measurement block covers all three phases when Igrid has exactly three channels and three distinct channel origins."
+    },
+    "compatibility_fix_scope": {
+      "allowed": "Recognize the trusted SPS Three-Phase V-I Measurement current output as one physical three-phase sensor endpoint.",
+      "required_proof": [
+        "Igrid output contract and provenance pass",
+        "Igrid has exactly three channels",
+        "Igrid has exactly three distinct channel origins",
+        "the trace identifies a trusted three-phase V-I measurement with current-measurement semantics"
+      ],
+      "unchanged_gates": [
+        "real controllable bridge",
+        "DC-source-to-grid physical path",
+        "bridge-to-grid path through the coupling reactor",
+        "Id_ref_cmd and Iq_ref_cmd reach the active gate",
+        "physical current feedback reaches the same active gate",
+        "all active stages are owned by the shared command-and-feedback gate"
+      ]
+    },
+    "scoring_invariants": {
+      "numeric_formula": "G*100*A^0.20*Q^0.10*C^0.20*R^0.20*D^0.30",
+      "numeric_anchors_weights_and_scenarios": "CURRENT_PUBLIC_NUMERIC_POLICY",
+      "scenario_contract": [
+        "id_less",
+        "id_more",
+        "iq_positive",
+        "iq_negative",
+        "id_iq_joint",
+        "id_iq_interior_pos",
+        "id_iq_interior_neg",
+        "grid_low",
+        "grid_high",
+        "joint_grid_low_pos",
+        "joint_grid_high_neg",
+        "joint_grid_low_endpoint_pos",
+        "joint_grid_high_endpoint_neg"
+      ]
+    },
+    "schema_version": "1.0",
+    "scoring": "layered-continuous",
+    "domain": "inverter",
+    "title": "D007: Three-phase two-level grid-tie inverter -> controlled sinusoidal current",
+    "routing": "behavior+structure+scenarios",
+    "prompt": "Build a physical two-level three-phase grid-connected voltage-source inverter. A 700 V DC source must feed a six-switch bridge, and each AC phase must connect through a 7 mH, 1.5 ohm coupling reactor to a balanced 230 V line-to-line RMS, 50 Hz grid. Use 7 A RMS per phase as the current base. Read normalized scalar Id_ref_cmd, Iq_ref_cmd, and Vgrid_scale from base-workspace variables. Their nominal values are -1, 0, and 1 pu; Id_ref_cmd operates from -1.2 to -0.8 pu, Iq_ref_cmd from -0.5 to 0.5 pu, and Vgrid_scale from 0.9 to 1.1 pu. Regulate converter-to-grid current in closed loop from physical current measurements so its active and quadrature components follow the commands throughout the stated range, including when grid-voltage magnitude changes. Negative Id_ref_cmd denotes exported active current; positive Iq_ref_cmd denotes lagging current and negative Iq_ref_cmd leading current. Current regulation must establish promptly after startup, and grid current must remain balanced and reasonably sinusoidal. Log physical Timeseries Vout and Igrid. Each must contain all three measured grid phases in the same phase order, and Igrid is positive from converter to grid.",
+    "sim": {
+      "solver": [],
+      "stop": 0.2,
+      "max_step": []
+    },
+    "physical_contract": {
+      "dc_voltage_v": 700,
+      "grid_line_line_rms_v": 230,
+      "grid_frequency_hz": 50,
+      "current_base_rms_a": 7,
+      "coupling_inductance_h": 0.007,
+      "coupling_resistance_ohm": 1.5
+    },
+    "steady_state_policy": {
+      "require_steady": true,
+      "steady_stat": "rms",
+      "steady_fraction": 0.2,
+      "steady_cycle_hz": 50,
+      "steady_cycles": 2,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1,
+      "steady_all_channels": true
+    },
+    "input_contract": {
+      "Id_ref_cmd": {
+        "default": -1,
+        "required": true,
+        "required_block_any": [
+          ".*"
+        ],
+        "required_parameter_any": [
+          ".*"
+        ],
+        "min_bindings": 1
+      },
+      "Iq_ref_cmd": {
+        "default": 0,
+        "required": true,
+        "required_block_any": [
+          ".*"
+        ],
+        "required_parameter_any": [
+          ".*"
+        ],
+        "min_bindings": 1
+      },
+      "Vgrid_scale": {
+        "default": 1,
+        "required": true,
+        "require_conserving_connection": true,
+        "binding_alternatives": [
+          {
+            "required_reference_any": [
+              "^spsthreephasesourcelib/three-phase source$",
+              "^ee_lib/sources/voltage source \\(three-phase\\)$",
+              "^ee_lib/sources/programmable voltage source \\(three-phase\\)$"
+            ],
+            "required_parameter_any": [
+              "^(voltage|vline_rms)$"
+            ],
+            "min_bindings": 1,
+            "min_distinct_blocks": 1
+          },
+          {
+            "required_reference_any": [
+              "^spsacvoltagesourcelib/ac voltage source$",
+              "^ee_lib/sources/voltage source$",
+              "^ee_lib/sources/programmable voltage source$"
+            ],
+            "required_parameter_any": [
+              "^(amplitude|ac_voltage|vline_rms)$"
+            ],
+            "min_bindings": 3,
+            "min_distinct_blocks": 3
+          }
+        ]
+      }
+    },
+    "outputs": [
+      {
+        "name": "Vout",
+        "role": "core",
+        "datatype": "timeseries",
+        "min_channels": 3,
+        "max_channels": 3,
+        "time_coverage": 0.95,
+        "min_samples": 16,
+        "provenance": {
+          "required_any_upstream": [
+            "voltage measurement",
+            "three-phase vi measurement"
+          ],
+          "forbidden_upstream": [
+            "sine wave",
+            "signal builder",
+            "constant"
+          ],
+          "max_trace_depth": 32,
+          "require_independent_channels": true,
+          "require_distinct_channel_origins": true,
+          "max_abs_channel_corr": 0.95
+        }
+      },
+      {
+        "name": "Igrid",
+        "role": "core",
+        "datatype": "timeseries",
+        "min_channels": 3,
+        "max_channels": 3,
+        "time_coverage": 0.95,
+        "min_samples": 16,
+        "provenance": {
+          "required_any_upstream": [
+            "current measurement",
+            "three-phase vi measurement"
+          ],
+          "forbidden_upstream": [
+            "sine wave",
+            "signal builder",
+            "constant"
+          ],
+          "max_trace_depth": 32,
+          "require_independent_channels": true,
+          "require_distinct_channel_origins": true,
+          "max_abs_channel_corr": 0.95
+        }
+      }
+    ],
+    "behavioral": [
+      {
+        "id": "v_pp",
+        "signal": "Vout",
+        "metric": "pp",
+        "scenario": "nominal",
+        "group": "quality",
+        "criticality": "quality",
+        "basis": "reference",
+        "sided": "two",
+        "target": 388.13,
+        "tol_pass": 46,
+        "tol_zero": 150,
+        "curve_p": 1,
+        "weight": 0.6
+      },
+      {
+        "id": "v_freq",
+        "signal": "Vout",
+        "metric": "fund_freq",
+        "scenario": "nominal",
+        "group": "nominal",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "two",
+        "target": 50,
+        "tol_pass": 1,
+        "tol_zero": 5,
+        "curve_p": 1,
+        "weight": 0.8,
+        "fundamental_hz": 50
+      },
+      {
+        "id": "i_rms",
+        "signal": "Igrid",
+        "metric": "rms",
+        "scenario": "nominal",
+        "group": "quality",
+        "criticality": "diagnostic",
+        "basis": "reference",
+        "sided": "two",
+        "target": 7.44,
+        "tol_pass": 1.5,
+        "tol_zero": 6,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "signed_pf",
+        "metric": "power_factor_signed",
+        "scenario": "nominal",
+        "group": "nominal",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "upper",
+        "target": 0.95,
+        "tol_pass": 0.03,
+        "tol_zero": 0.3,
+        "curve_p": 1,
+        "weight": 1,
+        "signals": [
+          "Vout",
+          "Igrid"
+        ]
+      },
+      {
+        "id": "signed_phase",
+        "metric": "phase_angle_deg",
+        "scenario": "nominal",
+        "group": "nominal",
+        "criticality": "must",
+        "basis": "expert",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 5,
+        "tol_zero": 25,
+        "curve_p": 1,
+        "weight": 1,
+        "fundamental_hz": 50,
+        "signals": [
+          "Vout",
+          "Igrid"
+        ]
+      },
+      {
+        "id": "i_thd",
+        "signal": "Igrid",
+        "metric": "thd",
+        "scenario": "nominal",
+        "group": "quality",
+        "criticality": "quality",
+        "basis": "expert",
+        "sided": "lower",
+        "target": 0.06,
+        "tol_pass": 0.06,
+        "tol_zero": 0.25,
+        "curve_p": 1,
+        "weight": 1,
+        "fundamental_hz": 50
+      },
+      {
+        "id": "v_thd",
+        "signal": "Vout",
+        "metric": "thd",
+        "scenario": "nominal",
+        "group": "quality",
+        "criticality": "quality",
+        "basis": "expert",
+        "sided": "lower",
+        "target": 0.025,
+        "tol_pass": 0.06,
+        "tol_zero": 0.25,
+        "curve_p": 1,
+        "weight": 0.8,
+        "fundamental_hz": 50
+      },
+      {
+        "id": "i_rms_witness",
+        "signal": "Igrid",
+        "metric": "rms",
+        "scenario": "nominal",
+        "group": "quality",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "phase_witness",
+        "metric": "phase_angle_deg",
+        "scenario": "nominal",
+        "group": "quality",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0,
+        "fundamental_hz": 50,
+        "signals": [
+          "Vout",
+          "Igrid"
+        ]
+      },
+      {
+        "id": "v_freq_id_less",
+        "signal": "Vout",
+        "metric": "fund_freq",
+        "scenario": "id_less",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "two",
+        "target": 50,
+        "tol_pass": 1.5,
+        "tol_zero": 6,
+        "curve_p": 1,
+        "weight": 0.6,
+        "fundamental_hz": 50
+      },
+      {
+        "id": "i_rms_id_less",
+        "signal": "Igrid",
+        "metric": "rms",
+        "scenario": "id_less",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "phase_id_less",
+        "metric": "phase_angle_deg",
+        "scenario": "id_less",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0,
+        "fundamental_hz": 50,
+        "signals": [
+          "Vout",
+          "Igrid"
+        ]
+      },
+      {
+        "id": "v_freq_id_more",
+        "signal": "Vout",
+        "metric": "fund_freq",
+        "scenario": "id_more",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "two",
+        "target": 50,
+        "tol_pass": 1.5,
+        "tol_zero": 6,
+        "curve_p": 1,
+        "weight": 0.6,
+        "fundamental_hz": 50
+      },
+      {
+        "id": "i_rms_id_more",
+        "signal": "Igrid",
+        "metric": "rms",
+        "scenario": "id_more",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "phase_id_more",
+        "metric": "phase_angle_deg",
+        "scenario": "id_more",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0,
+        "fundamental_hz": 50,
+        "signals": [
+          "Vout",
+          "Igrid"
+        ]
+      },
+      {
+        "id": "v_freq_iq_positive",
+        "signal": "Vout",
+        "metric": "fund_freq",
+        "scenario": "iq_positive",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "two",
+        "target": 50,
+        "tol_pass": 1.5,
+        "tol_zero": 6,
+        "curve_p": 1,
+        "weight": 0.6,
+        "fundamental_hz": 50
+      },
+      {
+        "id": "i_rms_iq_positive",
+        "signal": "Igrid",
+        "metric": "rms",
+        "scenario": "iq_positive",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "phase_iq_positive",
+        "metric": "phase_angle_deg",
+        "scenario": "iq_positive",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0,
+        "fundamental_hz": 50,
+        "signals": [
+          "Vout",
+          "Igrid"
+        ]
+      },
+      {
+        "id": "v_freq_iq_negative",
+        "signal": "Vout",
+        "metric": "fund_freq",
+        "scenario": "iq_negative",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "two",
+        "target": 50,
+        "tol_pass": 1.5,
+        "tol_zero": 6,
+        "curve_p": 1,
+        "weight": 0.6,
+        "fundamental_hz": 50
+      },
+      {
+        "id": "i_rms_iq_negative",
+        "signal": "Igrid",
+        "metric": "rms",
+        "scenario": "iq_negative",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "phase_iq_negative",
+        "metric": "phase_angle_deg",
+        "scenario": "iq_negative",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0,
+        "fundamental_hz": 50,
+        "signals": [
+          "Vout",
+          "Igrid"
+        ]
+      },
+      {
+        "id": "phase_id_less_control",
+        "metric": "phase_angle_deg",
+        "scenario": "id_less",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "expert",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 6,
+        "tol_zero": 28,
+        "curve_p": 1,
+        "weight": 0.8,
+        "fundamental_hz": 50,
+        "signals": [
+          "Vout",
+          "Igrid"
+        ]
+      },
+      {
+        "id": "phase_id_more_control",
+        "metric": "phase_angle_deg",
+        "scenario": "id_more",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "expert",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 6,
+        "tol_zero": 28,
+        "curve_p": 1,
+        "weight": 0.8,
+        "fundamental_hz": 50,
+        "signals": [
+          "Vout",
+          "Igrid"
+        ]
+      },
+      {
+        "id": "phase_iq_positive_control",
+        "metric": "phase_angle_deg",
+        "scenario": "iq_positive",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "lower",
+        "target": -3,
+        "tol_pass": 5,
+        "tol_zero": 25,
+        "curve_p": 1,
+        "weight": 1,
+        "fundamental_hz": 50,
+        "signals": [
+          "Vout",
+          "Igrid"
+        ]
+      },
+      {
+        "id": "phase_iq_negative_control",
+        "metric": "phase_angle_deg",
+        "scenario": "iq_negative",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "upper",
+        "target": 3,
+        "tol_pass": 5,
+        "tol_zero": 25,
+        "curve_p": 1,
+        "weight": 1,
+        "fundamental_hz": 50,
+        "signals": [
+          "Vout",
+          "Igrid"
+        ]
+      },
+      {
+        "id": "vout_balance_nom",
+        "signal": "Vout",
+        "metric": "imbalance",
+        "scenario": "nominal",
+        "group": "quality",
+        "criticality": "quality",
+        "basis": "analytical",
+        "sided": "lower",
+        "target": 0.01,
+        "tol_pass": 0.03,
+        "tol_zero": 0.15,
+        "curve_p": 1,
+        "weight": 0.6
+      },
+      {
+        "id": "igrid_balance_nom",
+        "signal": "Igrid",
+        "metric": "imbalance",
+        "scenario": "nominal",
+        "group": "quality",
+        "criticality": "quality",
+        "basis": "analytical",
+        "sided": "lower",
+        "target": 0.01,
+        "tol_pass": 0.04,
+        "tol_zero": 0.2,
+        "curve_p": 1,
+        "weight": 0.8
+      },
+      {
+        "id": "i_rms_id_iq_joint",
+        "signal": "Igrid",
+        "metric": "rms",
+        "scenario": "id_iq_joint",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "phase_id_iq_joint",
+        "metric": "phase_angle_deg",
+        "scenario": "id_iq_joint",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0,
+        "fundamental_hz": 50,
+        "signals": [
+          "Vout",
+          "Igrid"
+        ]
+      },
+      {
+        "id": "v_rms_grid_witness",
+        "signal": "Vout",
+        "metric": "rms",
+        "scenario": "nominal",
+        "group": "quality",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "v_rms_grid_low",
+        "signal": "Vout",
+        "metric": "rms",
+        "scenario": "grid_low",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "v_rms_grid_high",
+        "signal": "Vout",
+        "metric": "rms",
+        "scenario": "grid_high",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "v_rms_joint_grid_low_pos",
+        "signal": "Vout",
+        "metric": "rms",
+        "scenario": "joint_grid_low_pos",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "v_rms_joint_grid_high_neg",
+        "signal": "Vout",
+        "metric": "rms",
+        "scenario": "joint_grid_high_neg",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      }
+    ],
+    "structural": {
+      "recognizers": [
+        {
+          "id": "controllable_stage",
+          "prim": "has_power_device",
+          "args": [
+            "igbt",
+            "mosfet",
+            "gto",
+            "ideal switch"
+          ],
+          "mandatory": true,
+          "weight": 1
+        },
+        {
+          "id": "three_phase_bridge",
+          "prim": "three_phase_bridge",
+          "args": [],
+          "mandatory": true,
+          "weight": 1
+        },
+        {
+          "id": "three_phase_grid",
+          "prim": "three_phase_source",
+          "args": [],
+          "mandatory": true,
+          "weight": 1
+        },
+        {
+          "id": "dc_converter_to_grid",
+          "prim": "physical_path",
+          "args": [],
+          "source": [
+            "^[^|]*\\|[^|]*\\|[^|]*\\|(dc voltage source|battery|pv array)[^|]*\\|",
+            "^[^|]*\\|[^|]*\\|[^|]*\\|[^|]*\\|[^|]*(dc voltage source|battery|pv array)"
+          ],
+          "via": [
+            "^[^|]*\\|[^|]*\\|[^|]*\\|(mosfet|igbt|gto|ideal switch|universal bridge|three-level bridge)[^|]*\\|",
+            "^[^|]*\\|[^|]*\\|[^|]*\\|[^|]*\\|[^|]*(mosfet|igbt|gto|ideal switch|universal bridge|three-level bridge)"
+          ],
+          "target": [
+            "^[^|]*\\|[^|]*\\|[^|]*\\|(three-phase source|voltage source \\(three-phase\\)|three-phase programmable voltage source|ac voltage source)[^|]*\\|",
+            "^[^|]*\\|[^|]*\\|[^|]*\\|[^|]*\\|[^|]*(three-phase source|voltage source \\(three-phase\\)|three-phase programmable voltage source|ac voltage source)"
+          ],
+          "mandatory": true,
+          "weight": 1,
+          "require_via_cut": true
+        },
+        {
+          "id": "bridge_to_grid_through_reactor",
+          "prim": "physical_path",
+          "args": [],
+          "source": [
+            "^[^|]*\\|[^|]*\\|[^|]*\\|(mosfet|igbt|gto|ideal switch|universal bridge|three-level bridge)[^|]*\\|",
+            "^[^|]*\\|[^|]*\\|[^|]*\\|[^|]*\\|[^|]*(mosfet|igbt|gto|ideal switch|universal bridge|three-level bridge)"
+          ],
+          "via": [
+            "^[^|]*\\|[^|]*\\|[^|]*\\|(inductor|series rlc branch|three-phase series rlc branch)[^|]*\\|",
+            "^[^|]*\\|[^|]*\\|[^|]*\\|[^|]*\\|[^|]*(inductor|series rlc branch)"
+          ],
+          "target": [
+            "^[^|]*\\|[^|]*\\|[^|]*\\|(three-phase source|voltage source \\(three-phase\\)|three-phase programmable voltage source|ac voltage source)[^|]*\\|",
+            "^[^|]*\\|[^|]*\\|[^|]*\\|[^|]*\\|[^|]*(three-phase source|voltage source \\(three-phase\\)|three-phase programmable voltage source|ac voltage source)"
+          ],
+          "mandatory": true,
+          "weight": 1,
+          "require_via_cut": true
+        }
+      ]
+    },
+    "golden_tap": {
+      "Vout": {
+        "by": "block_output",
+        "path": "DQsinepwm3pGrid/__v4_truth_Vout3",
+        "port": 1
+      },
+      "Igrid": {
+        "by": "block_output",
+        "path": "DQsinepwm3pGrid/__v4_truth_Igrid3",
+        "port": 1
+      }
+    },
+    "task_specific_checks": [
+      {
+        "id": "D007.active_current_feedback_ownership",
+        "semantic_kind": "structure",
+        "scenario": "nominal",
+        "layer": "qualification",
+        "mandatory": true,
+        "oracle": "three_phase_vi_feedback_ownership",
+        "compatibility_scope": "trusted_three_phase_vi_measurement_channel_coverage"
+      }
+    ]
+  },
+  "evaluation_policy_id": "simuverity-101-v1:xelec-07:scoring",
+  "public_semantic_basis": {
+    "feedback": "Regulate converter-to-grid current in closed loop from physical current measurements.",
+    "logged_output": "Igrid must contain all three measured grid phases in the same phase order.",
+    "interpretation": "One trusted physical Three-Phase V-I Measurement block covers all three phases when Igrid has exactly three channels and three distinct channel origins."
+  },
+  "compatibility_fix_scope": {
+    "allowed": "Recognize the trusted SPS Three-Phase V-I Measurement current output as one physical three-phase sensor endpoint.",
+    "required_proof": [
+      "Igrid output contract and provenance pass",
+      "Igrid has exactly three channels",
+      "Igrid has exactly three distinct channel origins",
+      "the trace identifies a trusted three-phase V-I measurement with current-measurement semantics"
+    ],
+    "unchanged_gates": [
+      "real controllable bridge",
+      "DC-source-to-grid physical path",
+      "bridge-to-grid path through the coupling reactor",
+      "Id_ref_cmd and Iq_ref_cmd reach the active gate",
+      "physical current feedback reaches the same active gate",
+      "all active stages are owned by the shared command-and-feedback gate"
+    ]
+  },
+  "scoring_invariants": {
+    "numeric_formula": "G*100*A^0.20*Q^0.10*C^0.20*R^0.20*D^0.30",
+    "numeric_anchors_weights_and_scenarios": "CURRENT_PUBLIC_NUMERIC_POLICY",
+    "scenario_contract": [
+      "id_less",
+      "id_more",
+      "iq_positive",
+      "iq_negative",
+      "id_iq_joint",
+      "id_iq_interior_pos",
+      "id_iq_interior_neg",
+      "grid_low",
+      "grid_high",
+      "joint_grid_low_pos",
+      "joint_grid_high_neg",
+      "joint_grid_low_endpoint_pos",
+      "joint_grid_high_endpoint_neg"
+    ]
+  },
+  "schema_version": "1.0",
+  "scoring": "layered-continuous",
+  "domain": "inverter",
+  "title": "D007: Three-phase two-level grid-tie inverter -> controlled sinusoidal current",
+  "routing": "behavior+structure+scenarios",
+  "prompt": "Build a physical two-level three-phase grid-connected voltage-source inverter. A 700 V DC source must feed a six-switch bridge, and each AC phase must connect through a 7 mH, 1.5 ohm coupling reactor to a balanced 230 V line-to-line RMS, 50 Hz grid. Use 7 A RMS per phase as the current base. Read normalized scalar Id_ref_cmd, Iq_ref_cmd, and Vgrid_scale from base-workspace variables. Their nominal values are -1, 0, and 1 pu; Id_ref_cmd operates from -1.2 to -0.8 pu, Iq_ref_cmd from -0.5 to 0.5 pu, and Vgrid_scale from 0.9 to 1.1 pu. Regulate converter-to-grid current in closed loop from physical current measurements so its active and quadrature components follow the commands throughout the stated range, including when grid-voltage magnitude changes. Negative Id_ref_cmd denotes exported active current; positive Iq_ref_cmd denotes lagging current and negative Iq_ref_cmd leading current. Current regulation must establish promptly after startup, and grid current must remain balanced and reasonably sinusoidal. Log physical Timeseries Vout and Igrid. Each must contain all three measured grid phases in the same phase order, and Igrid is positive from converter to grid.",
+  "sim": {
+    "solver": [],
+    "stop": 0.2,
+    "max_step": []
+  },
+  "physical_contract": {
+    "dc_voltage_v": 700,
+    "grid_line_line_rms_v": 230,
+    "grid_frequency_hz": 50,
+    "current_base_rms_a": 7,
+    "coupling_inductance_h": 0.007,
+    "coupling_resistance_ohm": 1.5
+  },
+  "steady_state_policy": {
+    "require_steady": true,
+    "steady_stat": "rms",
+    "steady_fraction": 0.2,
+    "steady_cycle_hz": 50,
+    "steady_cycles": 2,
+    "steady_rel_range_max": 0.1,
+    "steady_rel_drift_max": 0.1,
+    "steady_all_channels": true
+  },
+  "input_contract": {
+    "Id_ref_cmd": {
+      "default": -1,
+      "required": true,
+      "required_block_any": [
+        ".*"
+      ],
+      "required_parameter_any": [
+        ".*"
+      ],
+      "min_bindings": 1
+    },
+    "Iq_ref_cmd": {
+      "default": 0,
+      "required": true,
+      "required_block_any": [
+        ".*"
+      ],
+      "required_parameter_any": [
+        ".*"
+      ],
+      "min_bindings": 1
+    },
+    "Vgrid_scale": {
+      "default": 1,
+      "required": true,
+      "require_conserving_connection": true,
+      "binding_alternatives": [
+        {
+          "required_reference_any": [
+            "^spsthreephasesourcelib/three-phase source$",
+            "^ee_lib/sources/voltage source \\(three-phase\\)$",
+            "^ee_lib/sources/programmable voltage source \\(three-phase\\)$"
+          ],
+          "required_parameter_any": [
+            "^(voltage|vline_rms)$"
+          ],
+          "min_bindings": 1,
+          "min_distinct_blocks": 1
+        },
+        {
+          "required_reference_any": [
+            "^spsacvoltagesourcelib/ac voltage source$",
+            "^ee_lib/sources/voltage source$",
+            "^ee_lib/sources/programmable voltage source$"
+          ],
+          "required_parameter_any": [
+            "^(amplitude|ac_voltage|vline_rms)$"
+          ],
+          "min_bindings": 3,
+          "min_distinct_blocks": 3
+        }
+      ]
+    }
+  },
+  "outputs": [
+    {
+      "name": "Vout",
+      "role": "core",
+      "datatype": "timeseries",
+      "min_channels": 3,
+      "max_channels": 3,
+      "time_coverage": 0.95,
+      "min_samples": 16,
+      "provenance": {
+        "required_any_upstream": [
+          "voltage measurement",
+          "three-phase vi measurement"
+        ],
+        "forbidden_upstream": [
+          "sine wave",
+          "signal builder",
+          "constant"
+        ],
+        "max_trace_depth": 32,
+        "require_independent_channels": true,
+        "require_distinct_channel_origins": true,
+        "max_abs_channel_corr": 0.95
+      }
+    },
+    {
+      "name": "Igrid",
+      "role": "core",
+      "datatype": "timeseries",
+      "min_channels": 3,
+      "max_channels": 3,
+      "time_coverage": 0.95,
+      "min_samples": 16,
+      "provenance": {
+        "required_any_upstream": [
+          "current measurement",
+          "three-phase vi measurement"
+        ],
+        "forbidden_upstream": [
+          "sine wave",
+          "signal builder",
+          "constant"
+        ],
+        "max_trace_depth": 32,
+        "require_independent_channels": true,
+        "require_distinct_channel_origins": true,
+        "max_abs_channel_corr": 0.95
+      }
+    }
+  ],
+  "behavioral": [
+    {
+      "id": "v_pp",
+      "signal": "Vout",
+      "metric": "pp",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "quality",
+      "basis": "reference",
+      "sided": "two",
+      "target": 388.13,
+      "tol_pass": 46,
+      "tol_zero": 150,
+      "curve_p": 1,
+      "weight": 0.6
+    },
+    {
+      "id": "v_freq",
+      "signal": "Vout",
+      "metric": "fund_freq",
+      "scenario": "nominal",
+      "group": "nominal",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 50,
+      "tol_pass": 1,
+      "tol_zero": 5,
+      "curve_p": 1,
+      "weight": 0.8,
+      "fundamental_hz": 50
+    },
+    {
+      "id": "i_rms",
+      "signal": "Igrid",
+      "metric": "rms",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "diagnostic",
+      "basis": "reference",
+      "sided": "two",
+      "target": 7.44,
+      "tol_pass": 1.5,
+      "tol_zero": 6,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "signed_pf",
+      "metric": "power_factor_signed",
+      "scenario": "nominal",
+      "group": "nominal",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "upper",
+      "target": 0.95,
+      "tol_pass": 0.03,
+      "tol_zero": 0.3,
+      "curve_p": 1,
+      "weight": 1,
+      "signals": [
+        "Vout",
+        "Igrid"
+      ]
+    },
+    {
+      "id": "signed_phase",
+      "metric": "phase_angle_deg",
+      "scenario": "nominal",
+      "group": "nominal",
+      "criticality": "must",
+      "basis": "expert",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 5,
+      "tol_zero": 25,
+      "curve_p": 1,
+      "weight": 1,
+      "fundamental_hz": 50,
+      "signals": [
+        "Vout",
+        "Igrid"
+      ]
+    },
+    {
+      "id": "i_thd",
+      "signal": "Igrid",
+      "metric": "thd",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "quality",
+      "basis": "expert",
+      "sided": "lower",
+      "target": 0.06,
+      "tol_pass": 0.06,
+      "tol_zero": 0.25,
+      "curve_p": 1,
+      "weight": 1,
+      "fundamental_hz": 50
+    },
+    {
+      "id": "v_thd",
+      "signal": "Vout",
+      "metric": "thd",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "quality",
+      "basis": "expert",
+      "sided": "lower",
+      "target": 0.025,
+      "tol_pass": 0.06,
+      "tol_zero": 0.25,
+      "curve_p": 1,
+      "weight": 0.8,
+      "fundamental_hz": 50
+    },
+    {
+      "id": "i_rms_witness",
+      "signal": "Igrid",
+      "metric": "rms",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "phase_witness",
+      "metric": "phase_angle_deg",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0,
+      "fundamental_hz": 50,
+      "signals": [
+        "Vout",
+        "Igrid"
+      ]
+    },
+    {
+      "id": "v_freq_id_less",
+      "signal": "Vout",
+      "metric": "fund_freq",
+      "scenario": "id_less",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 50,
+      "tol_pass": 1.5,
+      "tol_zero": 6,
+      "curve_p": 1,
+      "weight": 0.6,
+      "fundamental_hz": 50
+    },
+    {
+      "id": "i_rms_id_less",
+      "signal": "Igrid",
+      "metric": "rms",
+      "scenario": "id_less",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "phase_id_less",
+      "metric": "phase_angle_deg",
+      "scenario": "id_less",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0,
+      "fundamental_hz": 50,
+      "signals": [
+        "Vout",
+        "Igrid"
+      ]
+    },
+    {
+      "id": "v_freq_id_more",
+      "signal": "Vout",
+      "metric": "fund_freq",
+      "scenario": "id_more",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 50,
+      "tol_pass": 1.5,
+      "tol_zero": 6,
+      "curve_p": 1,
+      "weight": 0.6,
+      "fundamental_hz": 50
+    },
+    {
+      "id": "i_rms_id_more",
+      "signal": "Igrid",
+      "metric": "rms",
+      "scenario": "id_more",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "phase_id_more",
+      "metric": "phase_angle_deg",
+      "scenario": "id_more",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0,
+      "fundamental_hz": 50,
+      "signals": [
+        "Vout",
+        "Igrid"
+      ]
+    },
+    {
+      "id": "v_freq_iq_positive",
+      "signal": "Vout",
+      "metric": "fund_freq",
+      "scenario": "iq_positive",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 50,
+      "tol_pass": 1.5,
+      "tol_zero": 6,
+      "curve_p": 1,
+      "weight": 0.6,
+      "fundamental_hz": 50
+    },
+    {
+      "id": "i_rms_iq_positive",
+      "signal": "Igrid",
+      "metric": "rms",
+      "scenario": "iq_positive",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "phase_iq_positive",
+      "metric": "phase_angle_deg",
+      "scenario": "iq_positive",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0,
+      "fundamental_hz": 50,
+      "signals": [
+        "Vout",
+        "Igrid"
+      ]
+    },
+    {
+      "id": "v_freq_iq_negative",
+      "signal": "Vout",
+      "metric": "fund_freq",
+      "scenario": "iq_negative",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 50,
+      "tol_pass": 1.5,
+      "tol_zero": 6,
+      "curve_p": 1,
+      "weight": 0.6,
+      "fundamental_hz": 50
+    },
+    {
+      "id": "i_rms_iq_negative",
+      "signal": "Igrid",
+      "metric": "rms",
+      "scenario": "iq_negative",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "phase_iq_negative",
+      "metric": "phase_angle_deg",
+      "scenario": "iq_negative",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0,
+      "fundamental_hz": 50,
+      "signals": [
+        "Vout",
+        "Igrid"
+      ]
+    },
+    {
+      "id": "phase_id_less_control",
+      "metric": "phase_angle_deg",
+      "scenario": "id_less",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "expert",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 6,
+      "tol_zero": 28,
+      "curve_p": 1,
+      "weight": 0.8,
+      "fundamental_hz": 50,
+      "signals": [
+        "Vout",
+        "Igrid"
+      ]
+    },
+    {
+      "id": "phase_id_more_control",
+      "metric": "phase_angle_deg",
+      "scenario": "id_more",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "expert",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 6,
+      "tol_zero": 28,
+      "curve_p": 1,
+      "weight": 0.8,
+      "fundamental_hz": 50,
+      "signals": [
+        "Vout",
+        "Igrid"
+      ]
+    },
+    {
+      "id": "phase_iq_positive_control",
+      "metric": "phase_angle_deg",
+      "scenario": "iq_positive",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "lower",
+      "target": -3,
+      "tol_pass": 5,
+      "tol_zero": 25,
+      "curve_p": 1,
+      "weight": 1,
+      "fundamental_hz": 50,
+      "signals": [
+        "Vout",
+        "Igrid"
+      ]
+    },
+    {
+      "id": "phase_iq_negative_control",
+      "metric": "phase_angle_deg",
+      "scenario": "iq_negative",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "upper",
+      "target": 3,
+      "tol_pass": 5,
+      "tol_zero": 25,
+      "curve_p": 1,
+      "weight": 1,
+      "fundamental_hz": 50,
+      "signals": [
+        "Vout",
+        "Igrid"
+      ]
+    },
+    {
+      "id": "vout_balance_nom",
+      "signal": "Vout",
+      "metric": "imbalance",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "quality",
+      "basis": "analytical",
+      "sided": "lower",
+      "target": 0.01,
+      "tol_pass": 0.03,
+      "tol_zero": 0.15,
+      "curve_p": 1,
+      "weight": 0.6
+    },
+    {
+      "id": "igrid_balance_nom",
+      "signal": "Igrid",
+      "metric": "imbalance",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "quality",
+      "basis": "analytical",
+      "sided": "lower",
+      "target": 0.01,
+      "tol_pass": 0.04,
+      "tol_zero": 0.2,
+      "curve_p": 1,
+      "weight": 0.8
+    },
+    {
+      "id": "i_rms_id_iq_joint",
+      "signal": "Igrid",
+      "metric": "rms",
+      "scenario": "id_iq_joint",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "phase_id_iq_joint",
+      "metric": "phase_angle_deg",
+      "scenario": "id_iq_joint",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0,
+      "fundamental_hz": 50,
+      "signals": [
+        "Vout",
+        "Igrid"
+      ]
+    },
+    {
+      "id": "v_rms_grid_witness",
+      "signal": "Vout",
+      "metric": "rms",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "v_rms_grid_low",
+      "signal": "Vout",
+      "metric": "rms",
+      "scenario": "grid_low",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "v_rms_grid_high",
+      "signal": "Vout",
+      "metric": "rms",
+      "scenario": "grid_high",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "v_rms_joint_grid_low_pos",
+      "signal": "Vout",
+      "metric": "rms",
+      "scenario": "joint_grid_low_pos",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "v_rms_joint_grid_high_neg",
+      "signal": "Vout",
+      "metric": "rms",
+      "scenario": "joint_grid_high_neg",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    }
+  ],
+  "structural": {
+    "recognizers": [
+      {
+        "id": "controllable_stage",
+        "prim": "has_power_device",
+        "args": [
+          "igbt",
+          "mosfet",
+          "gto",
+          "ideal switch"
+        ],
+        "mandatory": true,
+        "weight": 1
+      },
+      {
+        "id": "three_phase_bridge",
+        "prim": "three_phase_bridge",
+        "args": [],
+        "mandatory": true,
+        "weight": 1
+      },
+      {
+        "id": "three_phase_grid",
+        "prim": "three_phase_source",
+        "args": [],
+        "mandatory": true,
+        "weight": 1
+      },
+      {
+        "id": "dc_converter_to_grid",
+        "prim": "physical_path",
+        "args": [],
+        "source": [
+          "^[^|]*\\|[^|]*\\|[^|]*\\|(dc voltage source|battery|pv array)[^|]*\\|",
+          "^[^|]*\\|[^|]*\\|[^|]*\\|[^|]*\\|[^|]*(dc voltage source|battery|pv array)"
+        ],
+        "via": [
+          "^[^|]*\\|[^|]*\\|[^|]*\\|(mosfet|igbt|gto|ideal switch|universal bridge|three-level bridge)[^|]*\\|",
+          "^[^|]*\\|[^|]*\\|[^|]*\\|[^|]*\\|[^|]*(mosfet|igbt|gto|ideal switch|universal bridge|three-level bridge)"
+        ],
+        "target": [
+          "^[^|]*\\|[^|]*\\|[^|]*\\|(three-phase source|voltage source \\(three-phase\\)|three-phase programmable voltage source|ac voltage source)[^|]*\\|",
+          "^[^|]*\\|[^|]*\\|[^|]*\\|[^|]*\\|[^|]*(three-phase source|voltage source \\(three-phase\\)|three-phase programmable voltage source|ac voltage source)"
+        ],
+        "mandatory": true,
+        "weight": 1,
+        "require_via_cut": true
+      },
+      {
+        "id": "bridge_to_grid_through_reactor",
+        "prim": "physical_path",
+        "args": [],
+        "source": [
+          "^[^|]*\\|[^|]*\\|[^|]*\\|(mosfet|igbt|gto|ideal switch|universal bridge|three-level bridge)[^|]*\\|",
+          "^[^|]*\\|[^|]*\\|[^|]*\\|[^|]*\\|[^|]*(mosfet|igbt|gto|ideal switch|universal bridge|three-level bridge)"
+        ],
+        "via": [
+          "^[^|]*\\|[^|]*\\|[^|]*\\|(inductor|series rlc branch|three-phase series rlc branch)[^|]*\\|",
+          "^[^|]*\\|[^|]*\\|[^|]*\\|[^|]*\\|[^|]*(inductor|series rlc branch)"
+        ],
+        "target": [
+          "^[^|]*\\|[^|]*\\|[^|]*\\|(three-phase source|voltage source \\(three-phase\\)|three-phase programmable voltage source|ac voltage source)[^|]*\\|",
+          "^[^|]*\\|[^|]*\\|[^|]*\\|[^|]*\\|[^|]*(three-phase source|voltage source \\(three-phase\\)|three-phase programmable voltage source|ac voltage source)"
+        ],
+        "mandatory": true,
+        "weight": 1,
+        "require_via_cut": true
+      }
+    ]
+  },
+  "golden_tap": {
+    "Vout": {
+      "by": "block_output",
+      "path": "DQsinepwm3pGrid/__v4_truth_Vout3",
+      "port": 1
+    },
+    "Igrid": {
+      "by": "block_output",
+      "path": "DQsinepwm3pGrid/__v4_truth_Igrid3",
+      "port": 1
+    }
+  },
+  "task_specific_checks": [
+    {
+      "id": "D007.active_current_feedback_ownership",
+      "semantic_kind": "structure",
+      "scenario": "nominal",
+      "layer": "qualification",
+      "mandatory": true,
+      "oracle": "three_phase_vi_feedback_ownership",
+      "compatibility_scope": "trusted_three_phase_vi_measurement_channel_coverage"
+    }
+  ]
+}

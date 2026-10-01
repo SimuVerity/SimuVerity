@@ -1,0 +1,152 @@
+component StratifiedHotWaterStorageTankConstantVolume
+% Vertical Constant Volume (TL) :
+% This block models a  thermal liquid constant volume with an elevation
+% gain from port A to port B. Temperature and pressure evolve based on mass
+% flowing in and out, upward and downward convective heat transfer, dynamic
+% compressibility, and thermal capacity of the liquid volume.
+%
+% Ports A and B are thermal liquid conserving ports associated with the 
+% chamber inlets. Port H is a thermal conserving port associated with the 
+% thermal mass of the volume.
+
+% Copyright 2023 The MathWorks, Inc.
+
+nodes
+    A = foundation.thermal_liquid.thermal_liquid; % A
+    B = foundation.thermal_liquid.thermal_liquid; % B
+    H = foundation.thermal.thermal; % H
+end
+
+annotations
+    H : Side = left;
+    A : Side = bottom;
+    B : Side = top;
+end
+
+parameters
+    volume        = {1,    'm^3'};     % Chamber volume
+    elevation     = {1,    'm'};       % Elevation gain from port A to port B
+    g             = {9.81, 'm/s^2'};   % Gravitational acceleration
+    heat_tr_coeff_up = {10,   'W/m^2/K'}; % Upward convection coefficient
+    heat_tr_coeff_down = {10,   'W/m^2/K'}; % Downward convection coefficient
+    area_A        = {0.01, 'm^2'};     % Cross-sectional area at port A
+    area_B        = {0.01, 'm^2'};     % Cross-sectional area at port B
+end
+
+parameters(ExternalAccess =none)
+    T_tol = {1e-6, 'K'}
+end
+
+variables
+    p_I   = {value = {0.101325, 'MPa'}, priority = priority.high}; % Pressure of liquid volume
+    T_I   = {value = {293.15,   'K'  }, priority = priority.high}; % Temperature of liquid volume
+    u_I   = {83.906, 'kJ/kg' };                                    % Specific internal energy of liquid volume
+    rho_I = {998.21, 'kg/m^3'};                                    % Density of liquid volume
+end
+
+
+variables (Access = protected, ExternalAccess = observe)
+    mdot_A = {0, 'kg/s'}; % Mass flow rate into port A
+    Phi_A  = {0, 'kW'  }; % Energy flow rate into port A
+    mdot_B = {0, 'kg/s'}; % Mass flow rate into port B
+    Phi_B  = {0, 'kW'  }; % Energy flow rate into port B
+    Q_H    = {0, 'kW'  }; % Heat flow rate into port H
+end
+
+branches
+    mdot_A : A.mdot -> *;
+    Phi_A  : A.Phi  -> *;
+    mdot_B : B.mdot -> *;
+    Phi_B  : B.Phi  -> *;
+    Q_H    : H.Q    -> *;
+end
+
+intermediates (Access = private, ExternalAccess = none)
+    mdot_avg = (mdot_A - mdot_B)/2;
+
+    % Liquid properties table lookup
+    cp_I    = tablelookup(A.T_TLU, A.p_TLU, A.cp_TLU,    T_I, p_I, interpolation = linear, extrapolation = linear);
+    beta_I  = tablelookup(A.T_TLU, A.p_TLU, A.beta_TLU,  T_I, p_I, interpolation = linear, extrapolation = linear);
+    alpha_I = tablelookup(A.T_TLU, A.p_TLU, A.alpha_TLU, T_I, p_I, interpolation = linear, extrapolation = linear);
+
+    % Blend between upward and downward convection coefficients
+    heat_tr_coeff_used_A = heat_tr_coeff_up + 1/2*(1 + tanh(3*(T_I-A.T)/T_tol))*(heat_tr_coeff_down-heat_tr_coeff_up);
+    heat_tr_coeff_used_B = heat_tr_coeff_up + 1/2*(1 + tanh(3*(B.T-T_I)/T_tol))*(heat_tr_coeff_down-heat_tr_coeff_up);
+    % Calculate heat flow
+    Q_A = heat_tr_coeff_used_A*area_A*(convection_A.T - T_I);
+    Q_B = heat_tr_coeff_used_B*area_B*(convection_B.T - T_I);
+
+    % Partial derivatives of internal energy of liquid volume
+    % with respect to pressure and temperature
+    dUdp = (rho_I * h_I / beta_I - T_I * alpha_I) * volume;
+    dUdT = (cp_I - h_I * alpha_I) * rho_I * volume;
+
+    % Indicator variables for the valid region of the property tables
+    indicator_pT_I = ...
+        if A.pT_region_flag == foundation.enum.pT_region_TL.validity_matrix, ...
+            tablelookup(A.T_TLU, A.p_TLU, A.pT_validity_TLU, T_I, p_I, interpolation = linear, extrapolation = linear) ...
+        else ...
+            1 ...
+        end;    
+end
+
+% For logging
+intermediates (Access = private)
+    h_I = u_I + p_I/rho_I; % Specific enthalpy of liquid volume
+end
+
+annotations
+    h_I : LoggingUnit = 'kJ/kg';
+end
+
+equations
+    % Assume no flow resistance but hydrostatic pressure
+    A.p - p_I == rho_I*g*elevation/2;
+    B.p - p_I == -rho_I*g*elevation/2
+
+    % Assume no thermal resistance
+    H.T == T_I;
+
+    % Mass conservation
+    (der(p_I)/beta_I - der(T_I)*alpha_I) * rho_I * volume == mdot_A + mdot_B;
+
+    % Energy conservation
+    der(p_I)*dUdp + der(T_I)*dUdT == Phi_A + Phi_B + Q_H + Q_A + Q_B - mdot_avg*g*elevation;
+
+    % Liquid properties table lookup
+    rho_I == tablelookup(A.T_TLU, A.p_TLU, A.rho_TLU, T_I, p_I, interpolation = linear, extrapolation = linear);
+    u_I   == tablelookup(A.T_TLU, A.p_TLU, A.u_TLU,   T_I, p_I, interpolation = linear, extrapolation = linear);
+end
+
+% Run-time variable checks
+equations
+    % Pressure and temperature must be within the valid region
+    assert(indicator_pT_I > 0, message('physmod:simscape:library:thermal_liquid:PressureTemperatureVolumeValidRegion'), Action = A.properties_range_check)
+    assert(p_I >= A.p_min, Action = A.properties_range_check)
+    assert(p_I <= A.p_max, Action = A.properties_range_check)
+    assert(T_I >= A.T_min, Action = A.properties_range_check)
+    assert(T_I <= A.T_max, Action = A.properties_range_check)
+end
+
+
+
+% Internal component that calculates energy convection at ports
+components (ExternalAccess = none)
+    convection_A = foundation.thermal_liquid.port_convection(flow_area = area_A, length_scale = sqrt(4*area_A/pi));
+    convection_B = foundation.thermal_liquid.port_convection(flow_area = area_B, length_scale = sqrt(4*area_B/pi));
+end
+connections
+    connect(A, convection_A.port)
+    connect(B, convection_B.port)
+end
+% Equate variables for internal component that calculates energy convection at port A
+equations
+    convection_A.mdot == mdot_A;
+    convection_A.Phi  == Phi_A;
+    convection_A.u_I  == u_I;
+    convection_B.mdot == mdot_B;
+    convection_B.Phi  == Phi_B;
+    convection_B.u_I  == u_I;
+end
+
+end

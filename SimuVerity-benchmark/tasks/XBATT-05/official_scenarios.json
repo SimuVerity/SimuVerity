@@ -1,0 +1,188 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XBATT-05",
+  "scenarios": [
+    {
+      "id": "nominal",
+      "class": "nominal_full_sequence",
+      "initial_soc": 0.5,
+      "initial_temperature_C": 25,
+      "ambient_temperature_C": 25,
+      "heat_transfer_coefficient_W_per_m2K": 10
+    },
+    {
+      "id": "low_initial_soc",
+      "class": "initial_state_boundary",
+      "initial_soc": 0.35,
+      "initial_temperature_C": 25,
+      "ambient_temperature_C": 25,
+      "heat_transfer_coefficient_W_per_m2K": 10
+    },
+    {
+      "id": "high_initial_soc",
+      "class": "initial_state_boundary",
+      "initial_soc": 0.65,
+      "initial_temperature_C": 25,
+      "ambient_temperature_C": 25,
+      "heat_transfer_coefficient_W_per_m2K": 10
+    },
+    {
+      "id": "cold_cell_and_ambient",
+      "class": "thermal_boundary",
+      "initial_soc": 0.5,
+      "initial_temperature_C": 10,
+      "ambient_temperature_C": 10,
+      "heat_transfer_coefficient_W_per_m2K": 12
+    },
+    {
+      "id": "warm_cell_and_ambient",
+      "class": "thermal_boundary",
+      "initial_soc": 0.5,
+      "initial_temperature_C": 40,
+      "ambient_temperature_C": 40,
+      "heat_transfer_coefficient_W_per_m2K": 10
+    },
+    {
+      "id": "hot_weak_heat_rejection",
+      "class": "heat_rejection_boundary",
+      "initial_soc": 0.5,
+      "initial_temperature_C": 30,
+      "ambient_temperature_C": 40,
+      "heat_transfer_coefficient_W_per_m2K": 6
+    },
+    {
+      "id": "hot_strong_heat_rejection",
+      "class": "paired_heat_rejection",
+      "initial_soc": 0.5,
+      "initial_temperature_C": 30,
+      "ambient_temperature_C": 40,
+      "heat_transfer_coefficient_W_per_m2K": 18
+    }
+  ],
+  "contract": {
+    "fixed_charge_contract": {
+      "constant_power_discharge_W": 5.0,
+      "discharge_cutoff_V": 2.5,
+      "constant_current_charge_A": 5.0,
+      "constant_voltage_charge_V": 4.2,
+      "termination_current_A": 0.5
+    },
+    "simulation": {
+      "stop_time_s": 1000000,
+      "max_step_s": 5,
+      "retain_complete_native_sequence": true
+    },
+    "paired_scenarios": {
+      "initial_soc": [
+        "low_initial_soc",
+        "high_initial_soc"
+      ],
+      "heat_rejection": [
+        "hot_weak_heat_rejection",
+        "hot_strong_heat_rejection"
+      ]
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "preferred_reference_score": 90.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.2,
+          "meaning": "nominal full-sequence and CC-CV control accuracy"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "electrical, thermal and electrochemical quality"
+        },
+        "M": {
+          "weight": 0.3,
+          "meaning": "feedback, actuator, electrochemical and thermal causality"
+        },
+        "R": {
+          "weight": 0.2,
+          "meaning": "worst required private operating condition"
+        },
+        "D": {
+          "weight": 0.2,
+          "meaning": "ordered transitions, recovery, current taper and paired response"
+        }
+      },
+      "within_group": "weighted_arithmetic_mean",
+      "across_groups": "weighted_geometric_mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum"
+    },
+    "minimum_shortcut_sanity_contract": [
+      "missing_voltage_feedback",
+      "missing_current_feedback",
+      "fixed_current_without_cccv_taper",
+      "prescribed_voltage_soc_or_temperature_trace",
+      "electrical_cell_without_thermal_electrochemical_coupling",
+      "disconnected_charger_command",
+      "private_inputs_change_only_reported_logs"
+    ]
+  },
+  "fixed_charge_contract": {
+    "constant_power_discharge_W": 5.0,
+    "discharge_cutoff_V": 2.5,
+    "constant_current_charge_A": 5.0,
+    "constant_voltage_charge_V": 4.2,
+    "termination_current_A": 0.5
+  },
+  "simulation": {
+    "stop_time_s": 1000000,
+    "max_step_s": 5,
+    "retain_complete_native_sequence": true
+  },
+  "paired_scenarios": {
+    "initial_soc": [
+      "low_initial_soc",
+      "high_initial_soc"
+    ],
+    "heat_rejection": [
+      "hot_weak_heat_rejection",
+      "hot_strong_heat_rejection"
+    ]
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "preferred_reference_score": 90.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.2,
+        "meaning": "nominal full-sequence and CC-CV control accuracy"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "electrical, thermal and electrochemical quality"
+      },
+      "M": {
+        "weight": 0.3,
+        "meaning": "feedback, actuator, electrochemical and thermal causality"
+      },
+      "R": {
+        "weight": 0.2,
+        "meaning": "worst required private operating condition"
+      },
+      "D": {
+        "weight": 0.2,
+        "meaning": "ordered transitions, recovery, current taper and paired response"
+      }
+    },
+    "within_group": "weighted_arithmetic_mean",
+    "across_groups": "weighted_geometric_mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum"
+  },
+  "minimum_shortcut_sanity_contract": [
+    "missing_voltage_feedback",
+    "missing_current_feedback",
+    "fixed_current_without_cccv_taper",
+    "prescribed_voltage_soc_or_temperature_trace",
+    "electrical_cell_without_thermal_electrochemical_coupling",
+    "disconnected_charger_command",
+    "private_inputs_change_only_reported_logs"
+  ]
+}

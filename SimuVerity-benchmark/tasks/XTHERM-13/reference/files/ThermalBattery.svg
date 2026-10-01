@@ -1,0 +1,40 @@
+<?xml-stylesheet href="defaultstyles.css" type="text/css"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:d="http://www.mathworks.com/blockgraphics" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg_3" width="364" height="172" d:options="PreserveAspect:On;ScalingOnResizeMax:2.0;Rotate:Off;Resize:FitToBlock">
+	<g id="layer_5" title="layer_0">
+		<g id="RotationalSpring">
+			<path id="coil" class="path" style="stroke: #8f038f;" d=" M 109.72,70.5 C 109.72,64.3 118.07,55 130.58,55 C 155.62,55 161.88,86 144.49,86 C 127.11,86 133.37,55 158.4,55 C 183.43,55 189.7,86 172.31,86 C 154.91,86 161.18,55 186.21,55 C 211.25,55 217.51,86 200.13,86 C 182.74,86 189,55 214.03,55 C 226.31,55 234.89,61.2 234.89,70.5"/>
+			<path id="right_end" class="path" style="stroke: #8f038f;" d=" M 234.89,70.5 L 269.67,70.5"/>
+			<path id="left_end" class="path" style="stroke: #8f038f;" d=" M 109.72,70.5 L 74.95,70.5"/>
+		</g>
+		<g id="RotationalSpring_37">
+			<path id="coil_34" class="path" style="stroke:#0072bd;" transform="matrix(-1,0,0,-1,350.3099975586,220.5)" d=" M 237.74,110.25 C 237.74,103.65 229.39,93.75 216.88,93.75 C 191.84,93.75 185.6,126.75 202.97,126.75 C 220.36,126.75 214.1,93.75 189.06,93.75 C 164.03,93.75 157.78,126.75 175.15,126.75 C 192.53,126.75 186.29,93.75 161.25,93.75 C 136.22,93.75 129.95,126.75 147.34,126.75 C 164.72,126.75 158.47,93.75 133.43,93.75 C 121.16,93.75 112.57,100.35 112.57,110.25"/>
+			<path id="right_35" class="path" style="stroke:#0072bd;" transform="matrix(-1,0,0,-1,510.25,220.5)" d=" M 272.51,110.25 L 237.74,110.25"/>
+			<path id="left_36" class="path" style="stroke:#0072bd;" transform="matrix(-1,0,0,-1,190.3699951172,220.5)" d=" M 77.8,110.25 L 112.57,110.25"/>
+		</g>
+		<path id="path_7" class="path" style="fill:none;" d=" M 89.48,31.5 L 89.48,146 L 255.13,146 L 255.13,31.5 L 255.1300048828125,31.5"/>
+		<path id="path_9" class="path" style="fill:none;" d=" M 255.12999572753907,31.5 L 255.13,14.25"/>
+		<rect id="rect_112" class="rect" style="stroke: #edb120;" x="97.69" y="48.25" width="4.07" height="5.5" rx="0" ry="0"/>
+		<rect id="rect_113" class="rect" style="stroke: #edb120;" x="117.69" y="45.5" width="4.07" height="5.5" rx="0" ry="0"/>
+		<rect id="rect_114" class="rect" style="stroke: #edb120;" x="127.69" y="60.5" width="4.07" height="5.5" rx="0" ry="0"/>
+		<rect id="rect_115" class="rect" style="stroke: #edb120;" x="142.69" y="70.5" width="4.07" height="5.5" rx="0" ry="0"/>
+		<rect id="rect_116" class="rect" style="stroke: #edb120;" x="146.76" y="45.5" width="4.07" height="5.5" rx="0" ry="0"/>
+		<rect id="rect_127" class="rect" style="stroke: #edb120;" x="170.27" y="40.5" width="4.07" height="5.5" rx="0" ry="0"/>
+		<rect id="rect_128" class="rect" style="stroke: #edb120;" x="184" y="60.5" width="2.34" height="5.5" rx="0" ry="0"/>
+		<rect id="rect_147" class="rect" style="stroke: #edb120;" x="201" y="43.25" width="6" height="5" rx="0" ry="0"/>
+		<rect id="rect_167" class="rect" style="stroke: #edb120;" x="217" y="73.25" width="9" height="2.75" rx="0" ry="0"/>
+		<rect id="rect_186" class="rect" style="stroke: #edb120;" x="234.89" y="46" width="2.85" height="5" rx="0" ry="0"/>
+		<rect id="rect_187" class="rect" style="stroke: #edb120;" x="155.69" y="65" width="4.07" height="5.5" rx="0" ry="0"/>
+		<rect id="rect_356" class="rect" style="stroke: #edb120;" x="105.64" y="126.75" width="4.07" height="5.5" rx="0" ry="0"/>
+		<rect id="rect_357" class="rect" style="stroke: #edb120;" x="123.62" y="113.75" width="4.07" height="5.5" rx="0" ry="0"/>
+		<rect id="rect_358" class="rect" style="stroke: #edb120;" x="138.69" y="131.75" width="2" height="5.75" rx="0" ry="0"/>
+		<rect id="rect_359" class="rect" style="stroke: #edb120;" x="169.62" y="133.75" width="4.07" height="5.5" rx="0" ry="0"/>
+		<rect id="rect_360" class="rect" style="stroke: #edb120;" x="172.62" y="109.75" width="4.07" height="5.5" rx="0" ry="0"/>
+		<rect id="rect_361" class="rect" style="stroke: #edb120;" x="199.62" y="131.75" width="4.07" height="5.5" rx="0" ry="0"/>
+		<rect id="rect_362" class="rect" style="stroke: #edb120;" x="223.69" y="111.75" width="2" height="3.57" rx="0" ry="0"/>
+		<rect id="rect_363" class="rect" style="stroke: #edb120;" x="239.69" y="130.75" width="2" height="5.5" rx="0" ry="0"/>
+		<line id="line_53" class="line" x1="89.48" y1="31.5" x2="241.69" y2="31.5"/>
+		<line id="line_63" class="line" x1="241.69" y1="31.5" x2="241.69" y2="14.25"/>
+		<rect id="rect_23" class="rect" style="stroke: #edb120;" x="113.62" y="88.75" width="4.07" height="2.76" rx="0" ry="0"/>
+		<rect id="rect_24" class="rect" style="stroke: #edb120;" x="187.25" y="114.32" width="2" height="2" rx="0" ry="0"/>
+	</g>
+</svg>

@@ -1,0 +1,20 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XAERO-11",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/src_simulink/BFN_00_zfull_system.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 53,
+  "retained_bytes": 467330,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ],
+  "clean_replay_setup": {
+    "phase": "before_load",
+    "path": "tasks/XAERO-11/reference/clean_replay_setup/f90_xaero11_reference_clean_replay_setup.m",
+    "entrypoint": "f90_xaero11_reference_clean_replay_setup"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XELEC-27",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/three_phase_three_level_currrent_control_using_space_vector_fix2.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 3,
+  "retained_bytes": 485885,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ]
+}

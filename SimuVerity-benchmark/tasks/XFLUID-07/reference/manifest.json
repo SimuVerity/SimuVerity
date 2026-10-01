@@ -1,0 +1,1722 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XFLUID-07",
+  "file_count": 424,
+  "files": [
+    {
+      "path": "reference/files/Tractor-Simscape/.gitattributes",
+      "size_bytes": 468
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/.github/workflows/ci.yml",
+      "size_bytes": 1402
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/.gitignore",
+      "size_bytes": 406
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Component/Component.md",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Component/Library/ForceComputation.m",
+      "size_bytes": 496
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Component/Library/implement.ssc",
+      "size_bytes": 10604
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Component/Library/ImplementType.m",
+      "size_bytes": 689
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Component/Library/tire_soil.sscp",
+      "size_bytes": 2967
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Component/Library/tire_soil_interaction.sscp",
+      "size_bytes": 3812
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Component/Transmission/HydrostaticCVT.slx",
+      "size_bytes": 469274
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Images/.gitkeep",
+      "size_bytes": 0
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Images/Energy.png",
+      "size_bytes": 4832
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Images/Fixed Displacement Motor.png",
+      "size_bytes": 28975
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Images/Fixed Displacement Pump.png",
+      "size_bytes": 25543
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Images/FullTractor.png",
+      "size_bytes": 13586
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Images/Implement.svg",
+      "size_bytes": 957
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Images/Pipe.png",
+      "size_bytes": 5911
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Images/Relief Valve.png",
+      "size_bytes": 25818
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Images/Tire-Soil Interaction.svg",
+      "size_bytes": 6180
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Images/Tire-Soil.svg",
+      "size_bytes": 5464
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Images/Variable Displacement Pump.png",
+      "size_bytes": 36716
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/License.txt",
+      "size_bytes": 1557
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Model/TractorEnergyComputation.slx",
+      "size_bytes": 230529
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Overview/html/TractorEnergyComputationModel.png",
+      "size_bytes": 92960
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Overview/html/TractorEnergyComputationModelResult.png",
+      "size_bytes": 41611
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Overview/html/TractorModelOverview.html",
+      "size_bytes": 13605
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Overview/html/TransmissionEnergyChartDashboard.png",
+      "size_bytes": 114019
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Overview/html/TransmissionEnergySankeyDiagram.png",
+      "size_bytes": 34416
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Overview/html/TransmissionTradeOffHeatmap.png",
+      "size_bytes": 52277
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Overview/TractorModelOverview.m",
+      "size_bytes": 4370
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/README.md",
+      "size_bytes": 2298
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/0uU6vasqA1lVAjFE6ZjM81qLYVs/fStfHBIGZ8MOzg1qXQj0a19CvdYp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/aSpPiTL5_H3tcaNImywc_r_h1H8/cAYx59jhJqwrVVWC3W6X8q6ZwnQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/aSpPiTL5_H3tcaNImywc_r_h1H8/cAYx59jhJqwrVVWC3W6X8q6ZwnQp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/aSpPiTL5_H3tcaNImywc_r_h1H8/IjxMuOrIyN9Mlo1GX9KluFBcdKEd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/aSpPiTL5_H3tcaNImywc_r_h1H8/IjxMuOrIyN9Mlo1GX9KluFBcdKEp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/3O54-3cpkcpsod5m9G5A3iPif2cd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/3O54-3cpkcpsod5m9G5A3iPif2cp.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/7WTdUw4DtWTMauQkZLAHz_SbVyQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/7WTdUw4DtWTMauQkZLAHz_SbVyQp.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/BETcU-g84kqgmBKV5olcKz7WS7Id.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/BETcU-g84kqgmBKV5olcKz7WS7Ip.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/d1ChBM-38FalI56sEs78QorPbdod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/d1ChBM-38FalI56sEs78QorPbdop.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/HP9C2G2T4UUaMilGXB4Tro-vs8Id.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/HP9C2G2T4UUaMilGXB4Tro-vs8Ip.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/NolozG5naT-qSqHHuwLMu6DIxggd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/NolozG5naT-qSqHHuwLMu6DIxggp.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/nUdPSQbXQESr16ufmEo-ChjakL0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/nUdPSQbXQESr16ufmEo-ChjakL0p.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/OgQi80WumLkNSeSmCoJ9vEXVDpcd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/OgQi80WumLkNSeSmCoJ9vEXVDpcp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/rmjle7fIQ1ftJYuZXeyVBNQ1JaMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/rmjle7fIQ1ftJYuZXeyVBNQ1JaMp.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Ur1esh7xN9L6aqDUKBE31DKE1Qod.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Ur1esh7xN9L6aqDUKBE31DKE1Qop.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Wou_8iMPGxa296QI2yQoEgPNZHId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Wou_8iMPGxa296QI2yQoEgPNZHIp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/ZyBflymAbWUgdsvvvhe4Rjrpnpcd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/ZyBflymAbWUgdsvvvhe4Rjrpnpcp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/dQ7eOFZM92o4QVW2zmp9Uury4TQ/x5RW_tDxks9d1wejiF3ekaixiggd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/dQ7eOFZM92o4QVW2zmp9Uury4TQ/x5RW_tDxks9d1wejiF3ekaixiggp.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/dQ7eOFZM92o4QVW2zmp9Uury4TQ/ysoCE1z4yzxps6zxaMfheWOmwrcd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/dQ7eOFZM92o4QVW2zmp9Uury4TQ/ysoCE1z4yzxps6zxaMfheWOmwrcp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/0PdVdBlOi5vu7qY0p9GzqsACSQ0d.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/0PdVdBlOi5vu7qY0p9GzqsACSQ0p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/3pULcY2JMsIwZaGcgsGxkUSZLlMd.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/3pULcY2JMsIwZaGcgsGxkUSZLlMp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/5k6803ZJOkLfO7PAo4B_XiB5jO4d.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/5k6803ZJOkLfO7PAo4B_XiB5jO4p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/8UzfQSMC7lPiaqb6eBOqrUpZMxwd.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/8UzfQSMC7lPiaqb6eBOqrUpZMxwp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/8Ykl_3Dn7AjUnLHX67ds6X_qALYd.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/8Ykl_3Dn7AjUnLHX67ds6X_qALYp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/_FUA1F0Q6siqb-eP7Nn9ThIJGYod.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/_FUA1F0Q6siqb-eP7Nn9ThIJGYop.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/BcrEQ-sR2fCut4vro2ZPlq_jJh8d.xml",
+      "size_bytes": 70
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/BcrEQ-sR2fCut4vro2ZPlq_jJh8p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/DcS32tUmL5FtJqwFjL3sty6Un1cd.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/DcS32tUmL5FtJqwFjL3sty6Un1cp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/dTfvDadNHnmbj75htkl_vPuHhAod.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/dTfvDadNHnmbj75htkl_vPuHhAop.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/FhZlB3TUPANZqUtRFzks5YUc1iUd.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/FhZlB3TUPANZqUtRFzks5YUc1iUp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/m3dEg2NSJ-BnAWvPJ5c3hL6tNFsd.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/m3dEg2NSJ-BnAWvPJ5c3hL6tNFsp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/nmqeL94IAe34zRpfZ_qnI3kZrngd.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/nmqeL94IAe34zRpfZ_qnI3kZrngp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/p5CcaUcdIWDAEYlUl3BPwm-5Gw8d.xml",
+      "size_bytes": 74
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/p5CcaUcdIWDAEYlUl3BPwm-5Gw8p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/pUCOeK8-aZVblWQx2unc9IRPy_Yd.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/pUCOeK8-aZVblWQx2unc9IRPy_Yp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/ry2tMwlQ7U4NF-QFqfSUZxNrm0sd.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/ry2tMwlQ7U4NF-QFqfSUZxNrm0sp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/t4ha0PEJejDD1IXAgzHD_caKkpod.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/t4ha0PEJejDD1IXAgzHD_caKkpop.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/Ts0T82lbVfAyIRlN1g85qtcpG-Ud.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/Ts0T82lbVfAyIRlN1g85qtcpG-Up.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/v7XUd6pxmh-n8wnluc0BUq-K7xsd.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/v7XUd6pxmh-n8wnluc0BUq-K7xsp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/XQV6RzLv3YkmqU6v-4BhLL9VzSsd.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/XQV6RzLv3YkmqU6v-4BhLL9VzSsp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/zUWFZf-J0y9FzC1jmWnMhYu9EfYd.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/zUWFZf-J0y9FzC1jmWnMhYu9EfYp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/Fg5w7dtLfwo2lo3Yd3_90adC-QM/BSHhpzFLjxUgJlWcZo2PAp-xuXod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/Fg5w7dtLfwo2lo3Yd3_90adC-QM/BSHhpzFLjxUgJlWcZo2PAp-xuXop.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/Fg5w7dtLfwo2lo3Yd3_90adC-QM/FycApFEnWQn8UZN613EUik-eujsd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/Fg5w7dtLfwo2lo3Yd3_90adC-QM/FycApFEnWQn8UZN613EUik-eujsp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/Fg5w7dtLfwo2lo3Yd3_90adC-QM/rkbUEGl3zuCCIOMEXTQHAwDTCSId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/Fg5w7dtLfwo2lo3Yd3_90adC-QM/rkbUEGl3zuCCIOMEXTQHAwDTCSIp.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/Fg5w7dtLfwo2lo3Yd3_90adC-QM/suYtAXxqQWpSZLwMDsa_yv2BhCgd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/Fg5w7dtLfwo2lo3Yd3_90adC-QM/suYtAXxqQWpSZLwMDsa_yv2BhCgp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsd.xml",
+      "size_bytes": 115
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FQzXGG8tlVFszH6K18Vnvmb51cw/24MuHXu0hJpIcj6ZFYN2lgZzaW8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FQzXGG8tlVFszH6K18Vnvmb51cw/24MuHXu0hJpIcj6ZFYN2lgZzaW8p.xml",
+      "size_bytes": 105
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FQzXGG8tlVFszH6K18Vnvmb51cw/6izm76hgVQnw4glThEBoOyU6rPgd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FQzXGG8tlVFszH6K18Vnvmb51cw/6izm76hgVQnw4glThEBoOyU6rPgp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FQzXGG8tlVFszH6K18Vnvmb51cw/6Y0qMYWlAy1Kp84Uac29zvgpLLMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FQzXGG8tlVFszH6K18Vnvmb51cw/6Y0qMYWlAy1Kp84Uac29zvgpLLMp.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FQzXGG8tlVFszH6K18Vnvmb51cw/CRG0tLNVFAvvqhBfG0KIixubF5Id.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FQzXGG8tlVFszH6K18Vnvmb51cw/CRG0tLNVFAvvqhBfG0KIixubF5Ip.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FQzXGG8tlVFszH6K18Vnvmb51cw/fAQ25O_3iNr65nW4Yi66eW6TbXcd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FQzXGG8tlVFszH6K18Vnvmb51cw/fAQ25O_3iNr65nW4Yi66eW6TbXcp.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FQzXGG8tlVFszH6K18Vnvmb51cw/GZ3rNdbMezO0Ltfc0AVNO5Ubb8kd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FQzXGG8tlVFszH6K18Vnvmb51cw/GZ3rNdbMezO0Ltfc0AVNO5Ubb8kp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FQzXGG8tlVFszH6K18Vnvmb51cw/jXLN2NWKBYW5xw1OUKEK2NR5-Lwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FQzXGG8tlVFszH6K18Vnvmb51cw/jXLN2NWKBYW5xw1OUKEK2NR5-Lwp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FQzXGG8tlVFszH6K18Vnvmb51cw/lXBt9XDdCvYwN49Lotatjp8MAJMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FQzXGG8tlVFszH6K18Vnvmb51cw/lXBt9XDdCvYwN49Lotatjp8MAJMp.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FQzXGG8tlVFszH6K18Vnvmb51cw/NmLqiMcFuUgPm5qVyamLGFxXF-Qd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FQzXGG8tlVFszH6K18Vnvmb51cw/NmLqiMcFuUgPm5qVyamLGFxXF-Qp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FQzXGG8tlVFszH6K18Vnvmb51cw/xA6Hml-oPXjlO9ZInFZB2SsRNnAd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FQzXGG8tlVFszH6K18Vnvmb51cw/xA6Hml-oPXjlO9ZInFZB2SsRNnAp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FQzXGG8tlVFszH6K18Vnvmb51cw/ZPSeqXLM2MFB8mJFdevjgH63IJgd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FQzXGG8tlVFszH6K18Vnvmb51cw/ZPSeqXLM2MFB8mJFdevjgH63IJgp.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/fStfHBIGZ8MOzg1qXQj0a19CvdY/YXouXnZ79Ho7Rs-L7cEOMkpXqCYd.xml",
+      "size_bytes": 72
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/fStfHBIGZ8MOzg1qXQj0a19CvdY/YXouXnZ79Ho7Rs-L7cEOMkpXqCYp.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FycApFEnWQn8UZN613EUik-eujs/3E_1oEb-rzja-VT3rkK04w_pUm8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FycApFEnWQn8UZN613EUik-eujs/3E_1oEb-rzja-VT3rkK04w_pUm8p.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FycApFEnWQn8UZN613EUik-eujs/dAx0BZAE12g1LiWl110nAAgceCsd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FycApFEnWQn8UZN613EUik-eujs/dAx0BZAE12g1LiWl110nAAgceCsp.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FycApFEnWQn8UZN613EUik-eujs/gRk1Unko0f1PfU7Ocp2djVkMl6sd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FycApFEnWQn8UZN613EUik-eujs/gRk1Unko0f1PfU7Ocp2djVkMl6sp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FycApFEnWQn8UZN613EUik-eujs/JpStBqQMoUNKN1YOQTQJq-PeErod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FycApFEnWQn8UZN613EUik-eujs/JpStBqQMoUNKN1YOQTQJq-PeErop.xml",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FycApFEnWQn8UZN613EUik-eujs/RecEc0QanMI3VeZH7leKOyfOgJEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/FycApFEnWQn8UZN613EUik-eujs/RecEc0QanMI3VeZH7leKOyfOgJEp.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/I-dDyJ1p--Q0ihIJ8NFdLVLQLTU/p2B2kuKn-TR4inf0L2-zoGElvj0d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/I-dDyJ1p--Q0ihIJ8NFdLVLQLTU/p2B2kuKn-TR4inf0L2-zoGElvj0p.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/I-dDyJ1p--Q0ihIJ8NFdLVLQLTU/V76yfcu8kfyIeJKa13j7YbWR_NEd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/I-dDyJ1p--Q0ihIJ8NFdLVLQLTU/V76yfcu8kfyIeJKa13j7YbWR_NEp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/JA3w88_txCEDvKdTeJpHh1gVg_o/60OunB9wL6GYJ7oPrYXcQegHfz4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/JA3w88_txCEDvKdTeJpHh1gVg_o/60OunB9wL6GYJ7oPrYXcQegHfz4p.xml",
+      "size_bytes": 110
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/JA3w88_txCEDvKdTeJpHh1gVg_o/KiDN2J3duwnRNQXCxXgmR6T0Pz0d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/JA3w88_txCEDvKdTeJpHh1gVg_o/KiDN2J3duwnRNQXCxXgmR6T0Pz0p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/JA3w88_txCEDvKdTeJpHh1gVg_o/zuPp6nmOZl3JPQgH9OH--7YHMv8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/JA3w88_txCEDvKdTeJpHh1gVg_o/zuPp6nmOZl3JPQgH9OH--7YHMv8p.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/07psu_rElHpgbitN1QOC4Zetq_Md.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/07psu_rElHpgbitN1QOC4Zetq_Mp.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/4W3GdPaluQcwPZulBEabche4MU0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/4W3GdPaluQcwPZulBEabche4MU0p.xml",
+      "size_bytes": 115
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/94KXriRl7TOw-adl_B3x5MVCjIsd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/94KXriRl7TOw-adl_B3x5MVCjIsp.xml",
+      "size_bytes": 115
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/chDYpmfjDaBhosaz3yA4fBndH4Qd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/chDYpmfjDaBhosaz3yA4fBndH4Qp.xml",
+      "size_bytes": 115
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/dP7viXDpKwwl8Kj0Tq0pRAcbolkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/dP7viXDpKwwl8Kj0Tq0pRAcbolkp.xml",
+      "size_bytes": 115
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/eMGPJHDiH0DAAjYx0yjfHXVsdnQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/eMGPJHDiH0DAAjYx0yjfHXVsdnQp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/FuV8UJkZMEurbXFP71IwGpL6uYkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/FuV8UJkZMEurbXFP71IwGpL6uYkp.xml",
+      "size_bytes": 115
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/mNFhgpLGjDrvVC__zqklG93hhwId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/mNFhgpLGjDrvVC__zqklG93hhwIp.xml",
+      "size_bytes": 115
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/mono1h02a76apGcODr_NYQZnxCcd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/mono1h02a76apGcODr_NYQZnxCcp.xml",
+      "size_bytes": 115
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/NJNM3WXcanxpEMzq8AuME7F6jcsd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/NJNM3WXcanxpEMzq8AuME7F6jcsp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/O8TTX2pviIZrzIV9NxkIfXZESg8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/O8TTX2pviIZrzIV9NxkIfXZESg8p.xml",
+      "size_bytes": 115
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/oTK5DsFKTcrfyg4cYhvonOh87IId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/oTK5DsFKTcrfyg4cYhvonOh87IIp.xml",
+      "size_bytes": 115
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/utNqwnzJh59rp5HRm2QyQcNiRxAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/utNqwnzJh59rp5HRm2QyQcNiRxAp.xml",
+      "size_bytes": 115
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/VgqJ7OqD70xYKzsmaX8O_q_cCIsd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/VgqJ7OqD70xYKzsmaX8O_q_cCIsp.xml",
+      "size_bytes": 115
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/Z-wtHL8rgZCH3Me9VGplUgnLUWod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/jubY5XBzSdDcyw-NNcL2gejIMh8/Z-wtHL8rgZCH3Me9VGplUgnLUWop.xml",
+      "size_bytes": 115
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/91mZbZ7hNBfFc4r1OvgvS1OeH6Qd.xml",
+      "size_bytes": 197
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/91mZbZ7hNBfFc4r1OvgvS1OeH6Qp.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/CPoFo8X_AtiFW96eE5eZIntPb5Qd.xml",
+      "size_bytes": 205
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/CPoFo8X_AtiFW96eE5eZIntPb5Qp.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/DISIOWuZ168_V5fmOOZPJqb3jZsd.xml",
+      "size_bytes": 169
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/DISIOWuZ168_V5fmOOZPJqb3jZsp.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/F1VIGbrsJU6lu_5pKLdMGQPk3ckd.xml",
+      "size_bytes": 223
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/F1VIGbrsJU6lu_5pKLdMGQPk3ckp.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/FASF_P7qdRKu_GN5E3tljd4Ut54d.xml",
+      "size_bytes": 207
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/FASF_P7qdRKu_GN5E3tljd4Ut54p.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/gNSU8DnhUliOKE4T693x3p2vn90d.xml",
+      "size_bytes": 173
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/gNSU8DnhUliOKE4T693x3p2vn90p.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/Ipf5_9mGN8QgdGuQ31quzDk9Ruwd.xml",
+      "size_bytes": 185
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/Ipf5_9mGN8QgdGuQ31quzDk9Ruwp.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/ZlJHB_KMZzltzebawFMrWzx92Ycd.xml",
+      "size_bytes": 236
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/ZlJHB_KMZzltzebawFMrWzx92Ycp.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/ZVsdCerKon95s9x4h2GLZlo0F4kd.xml",
+      "size_bytes": 171
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/ZVsdCerKon95s9x4h2GLZlo0F4kp.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KFo_Dwac-c6l-izxoptPkC0Bs88/aSpPiTL5_H3tcaNImywc_r_h1H8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KFo_Dwac-c6l-izxoptPkC0Bs88/aSpPiTL5_H3tcaNImywc_r_h1H8p.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KFo_Dwac-c6l-izxoptPkC0Bs88/faLsK_O3tTkUDXx1d2FbfpCoMs4d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KFo_Dwac-c6l-izxoptPkC0Bs88/faLsK_O3tTkUDXx1d2FbfpCoMs4p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KFo_Dwac-c6l-izxoptPkC0Bs88/FQzXGG8tlVFszH6K18Vnvmb51cwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KFo_Dwac-c6l-izxoptPkC0Bs88/FQzXGG8tlVFszH6K18Vnvmb51cwp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KFo_Dwac-c6l-izxoptPkC0Bs88/JA3w88_txCEDvKdTeJpHh1gVg_od.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KFo_Dwac-c6l-izxoptPkC0Bs88/JA3w88_txCEDvKdTeJpHh1gVg_op.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KFo_Dwac-c6l-izxoptPkC0Bs88/n437jhxJwCEI6eCZ3dtD_MeXLrwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KFo_Dwac-c6l-izxoptPkC0Bs88/n437jhxJwCEI6eCZ3dtD_MeXLrwp.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KFo_Dwac-c6l-izxoptPkC0Bs88/p-DTR2hBZ0bsqIwZpmvLDDvUl50d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KFo_Dwac-c6l-izxoptPkC0Bs88/p-DTR2hBZ0bsqIwZpmvLDDvUl50p.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KFo_Dwac-c6l-izxoptPkC0Bs88/RSzoMt18cJbgnBcurzFm-mMtM9Ed.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/KFo_Dwac-c6l-izxoptPkC0Bs88/RSzoMt18cJbgnBcurzFm-mMtM9Ep.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/AVJ0aRIDhu6qPcAI-Czr65IBRNQd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/AVJ0aRIDhu6qPcAI-Czr65IBRNQp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/PcsjjhgQvH0JUhNfeccHgoFm2Pod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/PcsjjhgQvH0JUhNfeccHgoFm2Pop.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/WS7L7U3R0F3ft4esx_Z4zRwM4vQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/WS7L7U3R0F3ft4esx_Z4zRwM4vQp.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4d.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4p.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZod.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZop.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencd.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencp.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/JMnhxYtmgFPsmxksLVhHzNzqSPYd.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/JMnhxYtmgFPsmxksLVhHzNzqSPYp.xml",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8d.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8p.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4d.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4p.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Id.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Ip.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkd.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/XZmYWB8GIcAIeRbJP_fbaW_KogUd.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/XZmYWB8GIcAIeRbJP_fbaW_KogUp.xml",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/nM8cKeCmq_y7MN4pxZ3GK2XDUJQ/__N-wk7b3YHnKvmQ2fum1PRD2NYd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/nM8cKeCmq_y7MN4pxZ3GK2XDUJQ/__N-wk7b3YHnKvmQ2fum1PRD2NYp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/oK2c74iP1Vc4jQjR7ggokAxp-xE/3PFzn1mOpwW8ib_0PSF5BhfKOm4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/oK2c74iP1Vc4jQjR7ggokAxp-xE/3PFzn1mOpwW8ib_0PSF5BhfKOm4p.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/oK2c74iP1Vc4jQjR7ggokAxp-xE/e7Ae2hTNIX4o7EcC0GZrgj8Z51od.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/oK2c74iP1Vc4jQjR7ggokAxp-xE/e7Ae2hTNIX4o7EcC0GZrgj8Z51op.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/oK2c74iP1Vc4jQjR7ggokAxp-xE/K8m0M-DsdOir9RZh8xZuV2-ueTwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/oK2c74iP1Vc4jQjR7ggokAxp-xE/K8m0M-DsdOir9RZh8xZuV2-ueTwp.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/oK2c74iP1Vc4jQjR7ggokAxp-xE/OYjLR1MH22i_6gWJmvv_-8UiWwYd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/oK2c74iP1Vc4jQjR7ggokAxp-xE/OYjLR1MH22i_6gWJmvv_-8UiWwYp.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/oK2c74iP1Vc4jQjR7ggokAxp-xE/sfZHaQQpZGGvnSdSNnYRpSMZ478d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/oK2c74iP1Vc4jQjR7ggokAxp-xE/sfZHaQQpZGGvnSdSNnYRpSMZ478p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/oK2c74iP1Vc4jQjR7ggokAxp-xE/xI0N2EIH2M9kaQFb44sVMfDtnWcd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/oK2c74iP1Vc4jQjR7ggokAxp-xE/xI0N2EIH2M9kaQFb44sVMfDtnWcp.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/p2B2kuKn-TR4inf0L2-zoGElvj0/0kK47cOHwsW7a1GaaqpQDigXMNUd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/p2B2kuKn-TR4inf0L2-zoGElvj0/0kK47cOHwsW7a1GaaqpQDigXMNUp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/p2B2kuKn-TR4inf0L2-zoGElvj0/geuseqfzde5lmCB2PlA6wD238ucd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/p2B2kuKn-TR4inf0L2-zoGElvj0/geuseqfzde5lmCB2PlA6wD238ucp.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/Project.xml",
+      "size_bytes": 74
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/q5Z8c_3wQ7vJHdeZPhdRmHtGSMM/DvaW5ROkqS65sxYGpowBqkRDT6kd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/q5Z8c_3wQ7vJHdeZPhdRmHtGSMM/DvaW5ROkqS65sxYGpowBqkRDT6kp.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/q5Z8c_3wQ7vJHdeZPhdRmHtGSMM/Nh3iNm7kboJseO3qW251UZQlPuod.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/q5Z8c_3wQ7vJHdeZPhdRmHtGSMM/Nh3iNm7kboJseO3qW251UZQlPuop.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/q5Z8c_3wQ7vJHdeZPhdRmHtGSMM/nM8cKeCmq_y7MN4pxZ3GK2XDUJQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/q5Z8c_3wQ7vJHdeZPhdRmHtGSMM/nM8cKeCmq_y7MN4pxZ3GK2XDUJQp.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/q5Z8c_3wQ7vJHdeZPhdRmHtGSMM/oK2c74iP1Vc4jQjR7ggokAxp-xEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/q5Z8c_3wQ7vJHdeZPhdRmHtGSMM/oK2c74iP1Vc4jQjR7ggokAxp-xEp.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/q5Z8c_3wQ7vJHdeZPhdRmHtGSMM/xc_2aEZRmFMXhgdKbUzuxWv3PT8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/q5Z8c_3wQ7vJHdeZPhdRmHtGSMM/xc_2aEZRmFMXhgdKbUzuxWv3PT8p.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/BT5hWoz-UTefONdqForZyI91O8Yd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/BT5hWoz-UTefONdqForZyI91O8Yp.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/dQ7eOFZM92o4QVW2zmp9Uury4TQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/dQ7eOFZM92o4QVW2zmp9Uury4TQp.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Fg5w7dtLfwo2lo3Yd3_90adC-QMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Fg5w7dtLfwo2lo3Yd3_90adC-QMp.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/GVoAnd25kwkuIosFwAkFqFEOJPgd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/GVoAnd25kwkuIosFwAkFqFEOJPgp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/I-dDyJ1p--Q0ihIJ8NFdLVLQLTUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/I-dDyJ1p--Q0ihIJ8NFdLVLQLTUp.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/KFo_Dwac-c6l-izxoptPkC0Bs88d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/KFo_Dwac-c6l-izxoptPkC0Bs88p.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQp.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/q5Z8c_3wQ7vJHdeZPhdRmHtGSMMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/q5Z8c_3wQ7vJHdeZPhdRmHtGSMMp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/qD-kr16wmwlzR-nIg1IG_vvRrWkd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/qD-kr16wmwlzR-nIg1IG_vvRrWkp.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/QMJD9OLFzxcTTbPOoh-ahQ4zTRUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/QMJD9OLFzxcTTbPOoh-ahQ4zTRUp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/rh0jHbNfmojECiiHH7BQHmZTsWkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/rh0jHbNfmojECiiHH7BQHmZTsWkp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/TMK4UzWHdRLhy_w-CHt9y11Q8XAd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/TMK4UzWHdRLhy_w-CHt9y11Q8XAp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/ZdVxxv9BsNz7MGUxtEc6Pq3qh1Md.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/ZdVxxv9BsNz7MGUxtEc6Pq3qh1Mp.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/rkbUEGl3zuCCIOMEXTQHAwDTCSI/mGxiJsdlrxGEIBYmOQGcZL-siHAd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/rkbUEGl3zuCCIOMEXTQHAwDTCSI/mGxiJsdlrxGEIBYmOQGcZL-siHAp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/rkbUEGl3zuCCIOMEXTQHAwDTCSI/z0SsPG4DhVqgCt6uuCcYFd174Isd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/rkbUEGl3zuCCIOMEXTQHAwDTCSI/z0SsPG4DhVqgCt6uuCcYFd174Isp.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/root/EEtUlUb-dLAdf0KpMVivaUlztwAp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/root/fjRQtWiSIy7hIlj-Kmk87M7s21kp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQd.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/root/KAXfQgCar2Yb8zOxgvf9hdmLP1Ep.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/root/qaw0eS1zuuY1ar9TdPn1GMfrjbQp.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/root/Tpa2TdYQyLNeWJn7EF8wbNd7gFUp.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/root/W1eD2F85jUZK1DJhjzKdaV-n984p.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/root/WZRuNzqc-Db7NcQAZO8Y-R8U9ccp.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/rootp.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/RSzoMt18cJbgnBcurzFm-mMtM9E/GmXWT0D9P1ieAwX57CmfkDDPlzgd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/RSzoMt18cJbgnBcurzFm-mMtM9E/GmXWT0D9P1ieAwX57CmfkDDPlzgp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/RSzoMt18cJbgnBcurzFm-mMtM9E/PPVFdbwzv_7bccG_nLBrGTxde6Yd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/RSzoMt18cJbgnBcurzFm-mMtM9E/PPVFdbwzv_7bccG_nLBrGTxde6Yp.xml",
+      "size_bytes": 107
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/Tpa2TdYQyLNeWJn7EF8wbNd7gFU/0uU6vasqA1lVAjFE6ZjM81qLYVsd.xml",
+      "size_bytes": 62
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/Tpa2TdYQyLNeWJn7EF8wbNd7gFU/0uU6vasqA1lVAjFE6ZjM81qLYVsp.xml",
+      "size_bytes": 116
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/uuid-1dbcbb1c-676c-4d20-ab00-8acb7a3e2fc4.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/4pSDfUHFPIp00K5nAev0lLnNKcQd.xml",
+      "size_bytes": 59
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/4pSDfUHFPIp00K5nAev0lLnNKcQp.xml",
+      "size_bytes": 118
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/c-3emWNRvPcA0CwExLnsI1sEmXkd.xml",
+      "size_bytes": 63
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/c-3emWNRvPcA0CwExLnsI1sEmXkp.xml",
+      "size_bytes": 118
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/jNYy-WyywfB4sZLTv18SP-T1No0d.xml",
+      "size_bytes": 62
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/jNYy-WyywfB4sZLTv18SP-T1No0p.xml",
+      "size_bytes": 118
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/LBUaCjFZahRLG9gKZeGMQpHDssAd.xml",
+      "size_bytes": 60
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/LBUaCjFZahRLG9gKZeGMQpHDssAp.xml",
+      "size_bytes": 118
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/b6Is0QMQ2WlvlkpLzlIJtwSUQekd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/b6Is0QMQ2WlvlkpLzlIJtwSUQekp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/J1lJlnEw_61ybgiML-wk5Lqi7BMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/J1lJlnEw_61ybgiML-wk5Lqi7BMp.xml",
+      "size_bytes": 106
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/MYb2WWcpAXIvfYwJyF_hz7lVGq4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/MYb2WWcpAXIvfYwJyF_hz7lVGq4p.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/OAiKpusIHHlXanIGKHZCkfBayWMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/OAiKpusIHHlXanIGKHZCkfBayWMp.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/ON4cEVCFrHpBpnH0sUzxFMyP6akd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/ON4cEVCFrHpBpnH0sUzxFMyP6akp.xml",
+      "size_bytes": 110
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/q2X3mFp2uPA4kmNdKcMN_j4KQr4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/q2X3mFp2uPA4kmNdKcMN_j4KQr4p.xml",
+      "size_bytes": 107
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/zr7LHkwgcqYsrP7Y5HMpOjvkLR0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/zr7LHkwgcqYsrP7Y5HMpOjvkLR0p.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/66WgGCcF5RIH9MCEgPmgjZK9k3Ud.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/66WgGCcF5RIH9MCEgPmgjZK9k3Up.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/AtMjXDrOSm8YDv3_4UFXiyrWqNEd.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/AtMjXDrOSm8YDv3_4UFXiyrWqNEp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/xc_2aEZRmFMXhgdKbUzuxWv3PT8/yBZYiOFBzkA7Ik2fdMl6L6BvY6od.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/xc_2aEZRmFMXhgdKbUzuxWv3PT8/yBZYiOFBzkA7Ik2fdMl6L6BvY6op.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/xc_2aEZRmFMXhgdKbUzuxWv3PT8/yWOdBCfu5u5uHzEJQ4M9gme2tegd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/xc_2aEZRmFMXhgdKbUzuxWv3PT8/yWOdBCfu5u5uHzEJQ4M9gme2tegp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/BnSqPyOdftn9DdRpi8z1Ht_ly4Yd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/BnSqPyOdftn9DdRpi8z1Ht_ly4Yp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/dRXnUM0Pn5D3MVQRKDVK59D_PMAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/dRXnUM0Pn5D3MVQRKDVK59D_PMAp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/F-lN4_LZ2yErT7akb5n_kmVR9Ygd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/F-lN4_LZ2yErT7akb5n_kmVR9Ygp.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/gM5vVSJ-UvcNmVJZWV5faZV7kyQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/gM5vVSJ-UvcNmVJZWV5faZV7kyQp.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/I9qU0vS9ek7NyV7YhGiCGHr30uUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/I9qU0vS9ek7NyV7YhGiCGHr30uUp.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/j9n8CNhdlV6950h7lFx5UYv_q4kd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/j9n8CNhdlV6950h7lFx5UYv_q4kp.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/JEKthxnzu9VuiSIGdxd6UPMjWXAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/JEKthxnzu9VuiSIGdxd6UPMjWXAp.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/JQ2V2vzXnqMmlM-p3eqp1Ycmwi8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/JQ2V2vzXnqMmlM-p3eqp1Ycmwi8p.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/jubY5XBzSdDcyw-NNcL2gejIMh8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/jubY5XBzSdDcyw-NNcL2gejIMh8p.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/LEPsxFSGqKtWOpgyDVvE8XXpHl8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/LEPsxFSGqKtWOpgyDVvE8XXpHl8p.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/m_GHj4XPi17mNXeEH7pqJmtI1Nkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/m_GHj4XPi17mNXeEH7pqJmtI1Nkp.xml",
+      "size_bytes": 110
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/NxcKLRhl6vbFzr9KEbvbE0LEXx8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/NxcKLRhl6vbFzr9KEbvbE0LEXx8p.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/QOpe-1pctdftDIjwQLRdjOUZW44d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/QOpe-1pctdftDIjwQLRdjOUZW44p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/T1SNdsXdkF2K2fhT8Ei0W3hTHnEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/T1SNdsXdkF2K2fhT8Ei0W3hTHnEp.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Scripts/busElementLabelColor.m",
+      "size_bytes": 727
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Scripts/computeLosses.m",
+      "size_bytes": 7072
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Scripts/html/TractorEnergyComputationModelOverview.html",
+      "size_bytes": 28366
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Scripts/html/TractorEnergyComputationModelOverview.png",
+      "size_bytes": 2477
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Scripts/html/TractorEnergyComputationModelOverview_01.png",
+      "size_bytes": 108920
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Scripts/html/TractorEnergyComputationModelOverview_02.png",
+      "size_bytes": 79278
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Scripts/html/TractorEnergyComputationModelOverview_03.png",
+      "size_bytes": 39263
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Scripts/html/TractorEnergyComputationModelOverview_04.png",
+      "size_bytes": 70284
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Scripts/html/TractorEnergyComputationModelOverview_05.png",
+      "size_bytes": 33181
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Scripts/html/TractorEnergyComputationModelOverview_06.png",
+      "size_bytes": 85295
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Scripts/html/TractorEnergyComputationModelOverview_07.png",
+      "size_bytes": 71872
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Scripts/html/TractorEnergyComputationModelOverview_08.png",
+      "size_bytes": 21725
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Scripts/html/TractorEnergyComputationModelOverview_09.png",
+      "size_bytes": 167094
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Scripts/html/TractorEnergyComputationModelOverview_10.png",
+      "size_bytes": 47916
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Scripts/html/TractorEnergyComputationModelOverview_11.png",
+      "size_bytes": 53970
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Scripts/html/TractorEnergyComputationModelOverview_12.png",
+      "size_bytes": 193686
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Scripts/ImplementMask.m",
+      "size_bytes": 4337
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Scripts/implementPortConnectivity.m",
+      "size_bytes": 2996
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Scripts/OpenTractorModelSimscape.m",
+      "size_bytes": 192
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Scripts/plotEnergySankey.m",
+      "size_bytes": 9879
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Scripts/plotEnergySankey.rights",
+      "size_bytes": 1536
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Scripts/setParameterToBlock.m",
+      "size_bytes": 2663
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Scripts/TractorEnergyComputationInput.m",
+      "size_bytes": 6924
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Scripts/TractorEnergyComputationModelOverview.m",
+      "size_bytes": 10670
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/SECURITY.md",
+      "size_bytes": 255
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Test/Component/baselineTireSoilInteraction.mat",
+      "size_bytes": 14935
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Test/Component/HydrostaticCVTSystem.m",
+      "size_bytes": 6561
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Test/Component/HydrostaticCVTTestHarness.slx",
+      "size_bytes": 148843
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Test/Component/ImplementTest.m",
+      "size_bytes": 11780
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Test/Component/ImplementTestHarness.slx",
+      "size_bytes": 147591
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Test/Component/soilTextureSignal.mat",
+      "size_bytes": 1642
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Test/Component/TireModelTest.m",
+      "size_bytes": 4538
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Test/Component/TireModelTestHarness.slx",
+      "size_bytes": 160585
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Test/Component/TireSoilInteractionTest.m",
+      "size_bytes": 6488
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Test/Component/TireSoilInteractionTestHarness.slx",
+      "size_bytes": 161363
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Test/InitializeTestForWorkflows.m",
+      "size_bytes": 1873
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Test/Model/ModelSimulationUnitTest.m",
+      "size_bytes": 1098
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Test/Script/TractorEnergyComputationScriptTest.m",
+      "size_bytes": 4192
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Test/TestRunner.m",
+      "size_bytes": 2100
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Test/Workflow/TransmissionEnergyChartingWorkflowTest.m",
+      "size_bytes": 1260
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Test/Workflow/TransmissionTradeOffStudyWorkflowTest.m",
+      "size_bytes": 1177
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/TractorSimscape.prj",
+      "size_bytes": 177
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Workflow/TransmissionTradeOffStudy/motorData.mat",
+      "size_bytes": 4803
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Workflow/TransmissionTradeOffStudy/pumpData.mat",
+      "size_bytes": 7893
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Workflow/TransmissionTradeOffStudy/TractorTransmissionTradeOff.slx",
+      "size_bytes": 232415
+    },
+    {
+      "path": "reference/files/Tractor-Simscape/Workflow/Workflow.md",
+      "size_bytes": 82
+    }
+  ],
+  "entrypoint": "reference/files/Tractor-Simscape/Workflow/TransmissionTradeOffStudy/TractorTransmissionTradeOff.slx",
+  "expected_score": 98.59538093222507,
+  "expected_valid_scenarios": 6,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal_ramp",
+      "reduced_speed_ramp",
+      "staged_acceleration",
+      "late_acceleration",
+      "reduced_engine_speed",
+      "reduced_engine_reduced_ramp"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 3243484,
+  "excluded_files": []
+}

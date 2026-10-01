@@ -1,0 +1,154 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XBATT-06",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/src/BatteryEstim3RC_PTBS_EQ_RUL_v1.slx",
+  "clean_replay_setup": {
+    "phase": "after_load_before_update",
+    "path": "tasks/XBATT-06/reference/clean_replay_setup/f90_xbatt06_reference_clean_replay_setup.m",
+    "entrypoint": "f90_xbatt06_reference_clean_replay_setup"
+  },
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 138,
+  "retained_bytes": 60571655,
+  "excluded_files": [
+    {
+      "path": "reference/files/src/20230718_pdc_1.txt",
+      "size_bytes": 12507924,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/20230718_pdc_1_corrected.txt",
+      "size_bytes": 12507730,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/20230718_sim_1.txt",
+      "size_bytes": 12307103,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/20230718_sim_1_corrected.txt",
+      "size_bytes": 12306982,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/20230919_batteryTest.txt",
+      "size_bytes": 75773515,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/capturebatjulypulse.txt",
+      "size_bytes": 35780679,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/capture_20230815_1.txt",
+      "size_bytes": 31868983,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/data/2022-07-29 10-38-55.tlog.mat",
+      "size_bytes": 52758856,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/data/2022-08-04 10-58-30.tlog.mat",
+      "size_bytes": 45765584,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/data/2022-08-08 10-44-35.tlog.mat",
+      "size_bytes": 84529376,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/data/2022-08-10 09-40-57.tlog.mat",
+      "size_bytes": 80643184,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/data/2022-09-26 11-49-08.tlog.mat",
+      "size_bytes": 27516488,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/data/2022-10-21 13-31-20.tlog.mat",
+      "size_bytes": 54346872,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/iccma_matlab_script.m",
+      "size_bytes": 1713,
+      "category": "offline_log_preprocessing_helper",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/test2_DischargePulseEstimation.m",
+      "size_bytes": 11416,
+      "category": "offline_log_preprocessing_helper",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/preprocess_20220810_MP.m",
+      "size_bytes": 889,
+      "category": "offline_log_preprocessing_helper",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/data/simpleScript.m",
+      "size_bytes": 5068,
+      "category": "offline_log_preprocessing_helper",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/data/simpleScript2.m",
+      "size_bytes": 829,
+      "category": "offline_log_preprocessing_helper",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/data/simpleScript3.m",
+      "size_bytes": 7465,
+      "category": "offline_log_preprocessing_helper",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    }
+  ],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ]
+}

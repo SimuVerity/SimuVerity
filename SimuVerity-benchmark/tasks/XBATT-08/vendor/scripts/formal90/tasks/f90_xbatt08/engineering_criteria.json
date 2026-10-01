@@ -1,0 +1,63 @@
+{
+  "aggregation": {
+    "operation_order": "unchanged source pure-function order",
+    "post_total_cap_floor_or_override": "none",
+    "weights": {
+      "A": 0.25,
+      "C": 0.2,
+      "D": 0.1,
+      "M": 0.25,
+      "Q": 0.1,
+      "R": 0.1
+    }
+  },
+  "candidate_independent": true,
+  "criteria_id": "simuverity-101-v1:f90-xbatt-08:engineering-criteria",
+  "effect_targets": {
+    "battery_mass": [
+      "light_battery_selected",
+      "heavy_battery_selected"
+    ],
+    "strategy": [
+      "baseline_all",
+      "selected_default"
+    ],
+    "ultracapacitor_mass": [
+      "light_ultracap_all",
+      "heavy_ultracap_all"
+    ]
+  },
+  "missing_evidence_handling": "unchanged source qualification and metric-local handling",
+  "normalizers": {
+    "reference_scale": "max(RMS(target), 0.10*max_abs(target), 1e-9)",
+    "trajectory_grid": "201 points on each target/candidate scenario duration; unchanged linear interpolation",
+    "trajectory_utility": "100*exp(-sharpness*RMSE/reference_scale)"
+  },
+  "reference_self_target": {
+    "G": 1,
+    "raw_or_total_score": 100.0
+  },
+  "runtime_inputs": [
+    "candidate_evidence",
+    "engineering_criteria_bundle"
+  ],
+  "scenario_targets": {
+    "lossless": true,
+    "resampled_or_downsampled": false,
+    "scenario_ids": [
+      "baseline_all",
+      "selected_default",
+      "light_ultracap_all",
+      "heavy_ultracap_all",
+      "light_battery_selected",
+      "heavy_battery_selected"
+    ],
+    "storage": "payload.scenario_targets"
+  },
+  "schema": "simuverity.engineering-criteria-manifest.v1",
+  "task_id": "F90-XBATT-08",
+  "payload": {
+    "file": "engineering_criteria_targets.json.gz",
+    "format": "gzip-json"
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XTHERM-03",
+  "collection": "XTHERM",
+  "reference": {
+    "identity_path": "tasks/XTHERM-03/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/source/MSFcascade.mdl",
+    "model_path": "tasks/XTHERM-03/reference/files/source/MSFcascade.mdl"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XTHERM-03",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a closed-loop dynamic model of a 22-stage multi-stage flash desalination plant with a brine heater, 19 heat-recovery stages, 3 heat-rejection stages, inter-stage flashing, condenser heat recovery, recycle brine, blowdown, and distillate collection.",
+    "engineering_objects": [
+      "Build a closed-loop dynamic model of a 22-stage multi-stage flash desalination plant with a brine heater, 19 heat-recovery stages, 3 heat-rejection stages, inter-stage flashing, condenser heat recovery, recycle brine, blowdown, and distillate collection.",
+      "The plant must conserve the coupled mass and thermal paths across the stage cascade.",
+      "It must regulate top-brine temperature by acting on the real steam path and regulate distillate production through measured plant feedback;"
+    ],
+    "physical_paths": [
+      "It must regulate top-brine temperature by acting on the real steam path and regulate distillate production through measured plant feedback; an open-loop lookup, a single lumped tank, prescribed output traces, or unrelated controllers are not sufficient.",
+      "Logs must be produced by the connected causal simulation, not by copied workspace inputs or precomputed trajectories.",
+      "Build a closed-loop dynamic model of a 22-stage multi-stage flash desalination plant with a brine heater, 19 heat-recovery stages, 3 heat-rejection stages, inter-stage flashing, condenser heat recovery, recycle brine, blowdown, and distillate collection.",
+      "The plant must conserve the coupled mass and thermal paths across the stage cascade."
+    ],
+    "functional_paths": [
+      "Build a closed-loop dynamic model of a 22-stage multi-stage flash desalination plant with a brine heater, 19 heat-recovery stages, 3 heat-rejection stages, inter-stage flashing, condenser heat recovery, recycle brine, blowdown, and distillate collection.",
+      "It must regulate top-brine temperature by acting on the real steam path and regulate distillate production through measured plant feedback;",
+      "an open-loop lookup, a single lumped tank, prescribed output traces, or unrelated controllers are not sufficient."
+    ],
+    "information_paths": [
+      "feed_temperature_C, recycle_brine_flow_ton_per_min, steam_feed_kg_per_min, top_brine_temperature_setpoint_C, distillate_flow_setpoint_ton_per_min, disturbance_start_s, feed_temperature_step_C, recycle_flow_step_ton_per_min -> F90-XTHERM-03 plant/control path -> plant_state, flow_state, control_state"
+    ],
+    "modes_and_events": [
+      "Build a closed-loop dynamic model of a 22-stage multi-stage flash desalination plant with a brine heater, 19 heat-recovery stages, 3 heat-rejection stages, inter-stage flashing, condenser heat recovery, recycle brine, blowdown, and distillate collection.",
+      "Read feed_temperature_C, recycle_brine_flow_ton_per_min, steam_feed_kg_per_min, top_brine_temperature_setpoint_C, distillate_flow_setpoint_ton_per_min, disturbance_start_s, feed_temperature_step_C, and recycle_flow_step_ton_per_min from the MATLAB base workspace.",
+      "Apply the two requested steps at disturbance_start_s to the same feed and recycle paths that drive the staged plant."
+    ],
+    "interfaces": [
+      {
+        "name": "feed_temperature_C",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Read feed_temperature_C, recycle_brine_flow_ton_per_min, steam_feed_kg_per_min, top_brine_temperature_setpoint_C, distillate_flow_setpoint_ton_per_min, disturbance_start_s, feed_temperature_step_C, and recycle_flow_step_ton_per_min from the MATLAB base workspace. The scalar inputs are feed_temperature_C [25, 42] degC, recycle_brine_flow_ton_per_min [195, 235] ton/min, steam_feed_kg_per_min [2200, 2700] kg/min, top_brine_temperature_setpoint_C [88, 98] degC, distillate_flow_setpoint_ton_per_min [16.5, 21.0] ton/min, disturbance_start_s [30, 120] s, feed_temperature_step_C [-5, 5] degC, and recycle_flow_step_ton_per_min [-15, 15] ton/min.",
+        "source": "tasks/XTHERM-03/public_spec.json"
+      },
+      {
+        "name": "recycle_brine_flow_ton_per_min",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "ton/min"
+        ],
+        "range_or_shape": "Read feed_temperature_C, recycle_brine_flow_ton_per_min, steam_feed_kg_per_min, top_brine_temperature_setpoint_C, distillate_flow_setpoint_ton_per_min, disturbance_start_s, feed_temperature_step_C, and recycle_flow_step_ton_per_min from the MATLAB base workspace. The scalar inputs are feed_temperature_C [25, 42] degC, recycle_brine_flow_ton_per_min [195, 235] ton/min, steam_feed_kg_per_min [2200, 2700] kg/min, top_brine_temperature_setpoint_C [88, 98] degC, distillate_flow_setpoint_ton_per_min [16.5, 21.0] ton/min, disturbance_start_s [30, 120] s, feed_temperature_step_C [-5, 5] degC, and recycle_flow_step_ton_per_min [-15, 15] ton/min.",
+        "source": "tasks/XTHERM-03/public_spec.json"
+      },
+      {
+        "name": "steam_feed_kg_per_min",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kg/min"
+        ],
+        "range_or_shape": "Read feed_temperature_C, recycle_brine_flow_ton_per_min, steam_feed_kg_per_min, top_brine_temperature_setpoint_C, distillate_flow_setpoint_ton_per_min, disturbance_start_s, feed_temperature_step_C, and recycle_flow_step_ton_per_min from the MATLAB base workspace. The scalar inputs are feed_temperature_C [25, 42] degC, recycle_brine_flow_ton_per_min [195, 235] ton/min, steam_feed_kg_per_min [2200, 2700] kg/min, top_brine_temperature_setpoint_C [88, 98] degC, distillate_flow_setpoint_ton_per_min [16.5, 21.0] ton/min, disturbance_start_s [30, 120] s, feed_temperature_step_C [-5, 5] degC, and recycle_flow_step_ton_per_min [-15, 15] ton/min.",
+        "source": "tasks/XTHERM-03/public_spec.json"
+      },
+      {
+        "name": "top_brine_temperature_setpoint_C",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Read feed_temperature_C, recycle_brine_flow_ton_per_min, steam_feed_kg_per_min, top_brine_temperature_setpoint_C, distillate_flow_setpoint_ton_per_min, disturbance_start_s, feed_temperature_step_C, and recycle_flow_step_ton_per_min from the MATLAB base workspace. The scalar inputs are feed_temperature_C [25, 42] degC, recycle_brine_flow_ton_per_min [195, 235] ton/min, steam_feed_kg_per_min [2200, 2700] kg/min, top_brine_temperature_setpoint_C [88, 98] degC, distillate_flow_setpoint_ton_per_min [16.5, 21.0] ton/min, disturbance_start_s [30, 120] s, feed_temperature_step_C [-5, 5] degC, and recycle_flow_step_ton_per_min [-15, 15] ton/min.",
+        "source": "tasks/XTHERM-03/public_spec.json"
+      },
+      {
+        "name": "distillate_flow_setpoint_ton_per_min",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "ton/min"
+        ],
+        "range_or_shape": "Read feed_temperature_C, recycle_brine_flow_ton_per_min, steam_feed_kg_per_min, top_brine_temperature_setpoint_C, distillate_flow_setpoint_ton_per_min, disturbance_start_s, feed_temperature_step_C, and recycle_flow_step_ton_per_min from the MATLAB base workspace. The scalar inputs are feed_temperature_C [25, 42] degC, recycle_brine_flow_ton_per_min [195, 235] ton/min, steam_feed_kg_per_min [2200, 2700] kg/min, top_brine_temperature_setpoint_C [88, 98] degC, distillate_flow_setpoint_ton_per_min [16.5, 21.0] ton/min, disturbance_start_s [30, 120] s, feed_temperature_step_C [-5, 5] degC, and recycle_flow_step_ton_per_min [-15, 15] ton/min.",
+        "source": "tasks/XTHERM-03/public_spec.json"
+      },
+      {
+        "name": "disturbance_start_s",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read feed_temperature_C, recycle_brine_flow_ton_per_min, steam_feed_kg_per_min, top_brine_temperature_setpoint_C, distillate_flow_setpoint_ton_per_min, disturbance_start_s, feed_temperature_step_C, and recycle_flow_step_ton_per_min from the MATLAB base workspace. Apply the two requested steps at disturbance_start_s to the same feed and recycle paths that drive the staged plant. The scalar inputs are feed_temperature_C [25, 42] degC, recycle_brine_flow_ton_per_min [195, 235] ton/min, steam_feed_kg_per_min [2200, 2700] kg/min, top_brine_temperature_setpoint_C [88, 98] degC, distillate_flow_setpoint_ton_per_min [16.5, 21.0] ton/min, disturbance_start_s [30, 120] s, feed_temperature_step_C [-5, 5] degC, and recycle_flow_step_ton_per_min [-15, 15] ton/min.",
+        "source": "tasks/XTHERM-03/public_spec.json"
+      },
+      {
+        "name": "feed_temperature_step_C",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Read feed_temperature_C, recycle_brine_flow_ton_per_min, steam_feed_kg_per_min, top_brine_temperature_setpoint_C, distillate_flow_setpoint_ton_per_min, disturbance_start_s, feed_temperature_step_C, and recycle_flow_step_ton_per_min from the MATLAB base workspace. The scalar inputs are feed_temperature_C [25, 42] degC, recycle_brine_flow_ton_per_min [195, 235] ton/min, steam_feed_kg_per_min [2200, 2700] kg/min, top_brine_temperature_setpoint_C [88, 98] degC, distillate_flow_setpoint_ton_per_min [16.5, 21.0] ton/min, disturbance_start_s [30, 120] s, feed_temperature_step_C [-5, 5] degC, and recycle_flow_step_ton_per_min [-15, 15] ton/min.",
+        "source": "tasks/XTHERM-03/public_spec.json"
+      },
+      {
+        "name": "recycle_flow_step_ton_per_min",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "ton/min"
+        ],
+        "range_or_shape": "Read feed_temperature_C, recycle_brine_flow_ton_per_min, steam_feed_kg_per_min, top_brine_temperature_setpoint_C, distillate_flow_setpoint_ton_per_min, disturbance_start_s, feed_temperature_step_C, and recycle_flow_step_ton_per_min from the MATLAB base workspace. The scalar inputs are feed_temperature_C [25, 42] degC, recycle_brine_flow_ton_per_min [195, 235] ton/min, steam_feed_kg_per_min [2200, 2700] kg/min, top_brine_temperature_setpoint_C [88, 98] degC, distillate_flow_setpoint_ton_per_min [16.5, 21.0] ton/min, disturbance_start_s [30, 120] s, feed_temperature_step_C [-5, 5] degC, and recycle_flow_step_ton_per_min [-15, 15] ton/min.",
+        "source": "tasks/XTHERM-03/public_spec.json"
+      },
+      {
+        "name": "plant_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "degC",
+          "m"
+        ],
+        "range_or_shape": "Log complete-run Timeseries named plant_state, flow_state, and control_state. plant_state has four channels [last-stage brine level in m, last-stage brine temperature in degC, top-brine temperature in degC, last-stage distillate level in m].",
+        "source": "tasks/XTHERM-03/public_spec.json"
+      },
+      {
+        "name": "flow_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N/m",
+          "kg"
+        ],
+        "range_or_shape": "Log complete-run Timeseries named plant_state, flow_state, and control_state. flow_state has four channels [blowdown flow in ton/min, distillate-product flow in ton/min, recycle-brine flow in ton/min, steam flow in kg/min].",
+        "source": "tasks/XTHERM-03/public_spec.json"
+      },
+      {
+        "name": "control_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N/m",
+          "degC"
+        ],
+        "range_or_shape": "Log complete-run Timeseries named plant_state, flow_state, and control_state. control_state has four channels [top-brine-temperature setpoint in degC, distillate-flow setpoint in ton/min, top-brine-temperature error in degC, distillate-flow error in ton/min].",
+        "source": "tasks/XTHERM-03/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "an open-loop lookup, a single lumped tank, prescribed output traces, or unrelated controllers are not sufficient.",
+      "Use one shared, strictly increasing time axis covering the complete simulation."
+    ],
+    "feedback_and_control_causality": [
+      "Build a closed-loop dynamic model of a 22-stage multi-stage flash desalination plant with a brine heater, 19 heat-recovery stages, 3 heat-rejection stages, inter-stage flashing, condenser heat recovery, recycle brine, blowdown, and distillate collection.",
+      "The plant must conserve the coupled mass and thermal paths across the stage cascade.",
+      "It must regulate top-brine temperature by acting on the real steam path and regulate distillate production through measured plant feedback;"
+    ],
+    "signal_sources": [
+      "feed_temperature_C is read from the public MATLAB base-workspace input contract.",
+      "recycle_brine_flow_ton_per_min is read from the public MATLAB base-workspace input contract.",
+      "steam_feed_kg_per_min is read from the public MATLAB base-workspace input contract.",
+      "top_brine_temperature_setpoint_C is read from the public MATLAB base-workspace input contract.",
+      "distillate_flow_setpoint_ton_per_min is read from the public MATLAB base-workspace input contract.",
+      "disturbance_start_s is read from the public MATLAB base-workspace input contract.",
+      "feed_temperature_step_C is read from the public MATLAB base-workspace input contract.",
+      "recycle_flow_step_ton_per_min is read from the public MATLAB base-workspace input contract.",
+      "plant_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "flow_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "control_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "feed_temperature_C: Read feed_temperature_C, recycle_brine_flow_ton_per_min, steam_feed_kg_per_min, top_brine_temperature_setpoint_C, distillate_flow_setpoint_ton_per_min, disturbance_start_s, feed_temperature_step_C, and recycle_flow_step_ton_per_min from the MATLAB base workspace. The scalar inputs are feed_temperature_C [25, 42] degC, recycle_brine_flow_ton_per_min [195, 235] ton/min, steam_feed_kg_per_min [2200, 2700] kg/min, top_brine_temperature_setpoint_C [88, 98] degC, distillate_flow_setpoint_ton_per_min [16.5, 21.0] ton/min, disturbance_start_s [30, 120] s, feed_temperature_step_C [-5, 5] degC, and recycle_flow_step_ton_per_min [-15, 15] ton/min.",
+      "recycle_brine_flow_ton_per_min: Read feed_temperature_C, recycle_brine_flow_ton_per_min, steam_feed_kg_per_min, top_brine_temperature_setpoint_C, distillate_flow_setpoint_ton_per_min, disturbance_start_s, feed_temperature_step_C, and recycle_flow_step_ton_per_min from the MATLAB base workspace. The scalar inputs are feed_temperature_C [25, 42] degC, recycle_brine_flow_ton_per_min [195, 235] ton/min, steam_feed_kg_per_min [2200, 2700] kg/min, top_brine_temperature_setpoint_C [88, 98] degC, distillate_flow_setpoint_ton_per_min [16.5, 21.0] ton/min, disturbance_start_s [30, 120] s, feed_temperature_step_C [-5, 5] degC, and recycle_flow_step_ton_per_min [-15, 15] ton/min.",
+      "steam_feed_kg_per_min: Read feed_temperature_C, recycle_brine_flow_ton_per_min, steam_feed_kg_per_min, top_brine_temperature_setpoint_C, distillate_flow_setpoint_ton_per_min, disturbance_start_s, feed_temperature_step_C, and recycle_flow_step_ton_per_min from the MATLAB base workspace. The scalar inputs are feed_temperature_C [25, 42] degC, recycle_brine_flow_ton_per_min [195, 235] ton/min, steam_feed_kg_per_min [2200, 2700] kg/min, top_brine_temperature_setpoint_C [88, 98] degC, distillate_flow_setpoint_ton_per_min [16.5, 21.0] ton/min, disturbance_start_s [30, 120] s, feed_temperature_step_C [-5, 5] degC, and recycle_flow_step_ton_per_min [-15, 15] ton/min.",
+      "top_brine_temperature_setpoint_C: Read feed_temperature_C, recycle_brine_flow_ton_per_min, steam_feed_kg_per_min, top_brine_temperature_setpoint_C, distillate_flow_setpoint_ton_per_min, disturbance_start_s, feed_temperature_step_C, and recycle_flow_step_ton_per_min from the MATLAB base workspace. The scalar inputs are feed_temperature_C [25, 42] degC, recycle_brine_flow_ton_per_min [195, 235] ton/min, steam_feed_kg_per_min [2200, 2700] kg/min, top_brine_temperature_setpoint_C [88, 98] degC, distillate_flow_setpoint_ton_per_min [16.5, 21.0] ton/min, disturbance_start_s [30, 120] s, feed_temperature_step_C [-5, 5] degC, and recycle_flow_step_ton_per_min [-15, 15] ton/min.",
+      "distillate_flow_setpoint_ton_per_min: Read feed_temperature_C, recycle_brine_flow_ton_per_min, steam_feed_kg_per_min, top_brine_temperature_setpoint_C, distillate_flow_setpoint_ton_per_min, disturbance_start_s, feed_temperature_step_C, and recycle_flow_step_ton_per_min from the MATLAB base workspace. The scalar inputs are feed_temperature_C [25, 42] degC, recycle_brine_flow_ton_per_min [195, 235] ton/min, steam_feed_kg_per_min [2200, 2700] kg/min, top_brine_temperature_setpoint_C [88, 98] degC, distillate_flow_setpoint_ton_per_min [16.5, 21.0] ton/min, disturbance_start_s [30, 120] s, feed_temperature_step_C [-5, 5] degC, and recycle_flow_step_ton_per_min [-15, 15] ton/min.",
+      "disturbance_start_s: Read feed_temperature_C, recycle_brine_flow_ton_per_min, steam_feed_kg_per_min, top_brine_temperature_setpoint_C, distillate_flow_setpoint_ton_per_min, disturbance_start_s, feed_temperature_step_C, and recycle_flow_step_ton_per_min from the MATLAB base workspace. Apply the two requested steps at disturbance_start_s to the same feed and recycle paths that drive the staged plant. The scalar inputs are feed_temperature_C [25, 42] degC, recycle_brine_flow_ton_per_min [195, 235] ton/min, steam_feed_kg_per_min [2200, 2700] kg/min, top_brine_temperature_setpoint_C [88, 98] degC, distillate_flow_setpoint_ton_per_min [16.5, 21.0] ton/min, disturbance_start_s [30, 120] s, feed_temperature_step_C [-5, 5] degC, and recycle_flow_step_ton_per_min [-15, 15] ton/min.",
+      "feed_temperature_step_C: Read feed_temperature_C, recycle_brine_flow_ton_per_min, steam_feed_kg_per_min, top_brine_temperature_setpoint_C, distillate_flow_setpoint_ton_per_min, disturbance_start_s, feed_temperature_step_C, and recycle_flow_step_ton_per_min from the MATLAB base workspace. The scalar inputs are feed_temperature_C [25, 42] degC, recycle_brine_flow_ton_per_min [195, 235] ton/min, steam_feed_kg_per_min [2200, 2700] kg/min, top_brine_temperature_setpoint_C [88, 98] degC, distillate_flow_setpoint_ton_per_min [16.5, 21.0] ton/min, disturbance_start_s [30, 120] s, feed_temperature_step_C [-5, 5] degC, and recycle_flow_step_ton_per_min [-15, 15] ton/min.",
+      "recycle_flow_step_ton_per_min: Read feed_temperature_C, recycle_brine_flow_ton_per_min, steam_feed_kg_per_min, top_brine_temperature_setpoint_C, distillate_flow_setpoint_ton_per_min, disturbance_start_s, feed_temperature_step_C, and recycle_flow_step_ton_per_min from the MATLAB base workspace. The scalar inputs are feed_temperature_C [25, 42] degC, recycle_brine_flow_ton_per_min [195, 235] ton/min, steam_feed_kg_per_min [2200, 2700] kg/min, top_brine_temperature_setpoint_C [88, 98] degC, distillate_flow_setpoint_ton_per_min [16.5, 21.0] ton/min, disturbance_start_s [30, 120] s, feed_temperature_step_C [-5, 5] degC, and recycle_flow_step_ton_per_min [-15, 15] ton/min."
+    ],
+    "disturbances": [
+      "Read feed_temperature_C, recycle_brine_flow_ton_per_min, steam_feed_kg_per_min, top_brine_temperature_setpoint_C, distillate_flow_setpoint_ton_per_min, disturbance_start_s, feed_temperature_step_C, and recycle_flow_step_ton_per_min from the MATLAB base workspace.",
+      "Apply the two requested steps at disturbance_start_s to the same feed and recycle paths that drive the staged plant.",
+      "Remain finite and physically coherent during nominal operation, individual feed/recycle disturbances, and combined off-nominal operation."
+    ],
+    "dynamic_processes": [
+      "Build a closed-loop dynamic model of a 22-stage multi-stage flash desalination plant with a brine heater, 19 heat-recovery stages, 3 heat-rejection stages, inter-stage flashing, condenser heat recovery, recycle brine, blowdown, and distillate collection.",
+      "Read feed_temperature_C, recycle_brine_flow_ton_per_min, steam_feed_kg_per_min, top_brine_temperature_setpoint_C, distillate_flow_setpoint_ton_per_min, disturbance_start_s, feed_temperature_step_C, and recycle_flow_step_ton_per_min from the MATLAB base workspace.",
+      "Apply the two requested steps at disturbance_start_s to the same feed and recycle paths that drive the staged plant."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XTHERM-03: prescribing plant_state directly would bypass the system path described by: It must regulate top-brine temperature by acting on the real steam path and regulate distillate production through measured plant feedback; an open-loop lookup, a single lumped tank, prescribed output traces, or unrelated controllers are not sufficient.",
+      "F90-XTHERM-03: replaying a fixed plant_state trace would ignore causal variation in feed_temperature_C."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XTHERM-03/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XTHERM-03/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XTHERM-03/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

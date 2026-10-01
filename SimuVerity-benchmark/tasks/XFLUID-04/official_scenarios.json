@@ -1,0 +1,280 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XFLUID-04",
+  "scenarios": [
+    {
+      "id": "nominal",
+      "values": {
+        "lift_target_mm": 120,
+        "motion_start_s": 1.5,
+        "ramp_duration_s": 4.0,
+        "target_hold_s": 5.0,
+        "supply_pressure_bar": 200,
+        "supply_pressure_step_fraction": -0.08,
+        "pressure_step_offset_s": 2.0
+      }
+    },
+    {
+      "id": "low_supply_drop",
+      "values": {
+        "lift_target_mm": 135,
+        "motion_start_s": 1.2,
+        "ramp_duration_s": 4.8,
+        "target_hold_s": 5.5,
+        "supply_pressure_bar": 160,
+        "supply_pressure_step_fraction": -0.12,
+        "pressure_step_offset_s": 2
+      }
+    },
+    {
+      "id": "high_supply_rise",
+      "values": {
+        "lift_target_mm": 95,
+        "motion_start_s": 1.8,
+        "ramp_duration_s": 3.5,
+        "target_hold_s": 4.5,
+        "supply_pressure_bar": 230,
+        "supply_pressure_step_fraction": 0.08,
+        "pressure_step_offset_s": 1.5
+      }
+    },
+    {
+      "id": "high_target_boundary",
+      "values": {
+        "lift_target_mm": 143,
+        "motion_start_s": 1,
+        "ramp_duration_s": 5,
+        "target_hold_s": 5,
+        "supply_pressure_bar": 175,
+        "supply_pressure_step_fraction": -0.1,
+        "pressure_step_offset_s": 2.5
+      }
+    },
+    {
+      "id": "pressure_drop_pair",
+      "values": {
+        "lift_target_mm": 118,
+        "motion_start_s": 1.5,
+        "ramp_duration_s": 4,
+        "target_hold_s": 5,
+        "supply_pressure_bar": 190,
+        "supply_pressure_step_fraction": -0.15,
+        "pressure_step_offset_s": 2
+      }
+    },
+    {
+      "id": "pressure_control_pair",
+      "values": {
+        "lift_target_mm": 118,
+        "motion_start_s": 1.5,
+        "ramp_duration_s": 4,
+        "target_hold_s": 5,
+        "supply_pressure_bar": 190,
+        "supply_pressure_step_fraction": 0,
+        "pressure_step_offset_s": 2
+      }
+    }
+  ],
+  "contract": {
+    "sim": {
+      "start": 0,
+      "stop": 20,
+      "max_step": 0.02,
+      "initial_extension_mm": 50
+    },
+    "public_inputs": [
+      {
+        "name": "lift_target_mm",
+        "nominal": 120,
+        "min": 90,
+        "max": 145,
+        "unit": "mm",
+        "meaning": "upper extension target of the hydraulic actuator"
+      },
+      {
+        "name": "motion_start_s",
+        "nominal": 1.5,
+        "min": 1,
+        "max": 2,
+        "unit": "s",
+        "meaning": "time at which the smooth raise trajectory begins"
+      },
+      {
+        "name": "ramp_duration_s",
+        "nominal": 4,
+        "min": 3,
+        "max": 5,
+        "unit": "s",
+        "meaning": "duration of each linear raise or return segment"
+      },
+      {
+        "name": "target_hold_s",
+        "nominal": 5,
+        "min": 4,
+        "max": 6,
+        "unit": "s",
+        "meaning": "time for which the upper extension target is held"
+      },
+      {
+        "name": "supply_pressure_bar",
+        "nominal": 200,
+        "min": 160,
+        "max": 230,
+        "unit": "bar",
+        "meaning": "hydraulic supply pressure before the in-run change"
+      },
+      {
+        "name": "supply_pressure_step_fraction",
+        "nominal": -0.08,
+        "min": -0.18,
+        "max": 0.12,
+        "unit": "1",
+        "meaning": "fractional in-run change of hydraulic supply pressure"
+      },
+      {
+        "name": "pressure_step_offset_s",
+        "nominal": 2,
+        "min": 1,
+        "max": 3,
+        "unit": "s",
+        "meaning": "time from reaching the upper target to the pressure change"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "actuator_extension",
+        "channels": 1,
+        "unit": "mm",
+        "physical_source": "extension measured by a physical translational-motion sensor across the cylinder"
+      },
+      {
+        "name": "actuator_velocity",
+        "channels": 1,
+        "unit": "mm/s",
+        "physical_source": "velocity measured by the same physical cylinder-motion sensor"
+      },
+      {
+        "name": "valve_spool_position",
+        "channels": 1,
+        "unit": "mm",
+        "physical_source": "physical displacement measured at the metering-valve spool"
+      }
+    ],
+    "prompt": "Build a closed-loop electrohydraulic scissor lift that raises, holds, and returns a payload platform using one double-acting hydraulic actuator.\n\nA finite pressure supply and return reservoir must feed a physically metered four-way valve. A finite electromechanical actuator must move the valve element, the valve must route real fluid into and out of both cylinder chambers, and the cylinder must drive a scissor linkage carrying the platform. Measured cylinder extension must close the positioning loop through unrestricted control logic to the real valve actuator on this same hydraulic power path.\n\nThe actuator starts near 50 mm extension. Read lift_target_mm, motion_start_s, ramp_duration_s, target_hold_s, supply_pressure_bar, supply_pressure_step_fraction, and pressure_step_offset_s from MATLAB base-workspace variables. Their nominal values are 120 mm, 1.5 s, 4.0 s, 5.0 s, 200 bar, -0.08, and 2.0 s. Their valid ranges are 90--145 mm, 1.0--2.0 s, 3.0--5.0 s, 4.0--6.0 s, 160--230 bar, -0.18--0.12, and 1.0--3.0 s.\n\nBeginning at motion_start_s, command a linear raise from 50 mm to lift_target_mm over ramp_duration_s, hold that target for target_hold_s, then command a linear return to 50 mm over ramp_duration_s. During the hold, at pressure_step_offset_s after first reaching the target, change the supply pressure from supply_pressure_bar to supply_pressure_bar*(1+supply_pressure_step_fraction).\n\nAcross the declared target, timing, and supply-pressure ranges, the controller must follow the full positioning cycle without sustained oscillation, keep cylinder and valve motion bounded, and preserve tracking through the pressure change. The supply-pressure input must act in the real hydraulic path. Prescribed motion, copied command outputs, signal-only hydraulic surrogates, and a cylinder disconnected from the scissor load are not valid implementations.\n\nLog Timeseries actuator_extension with one channel in millimetres, actuator_velocity with one channel in millimetres per second, and valve_spool_position with one channel in millimetres. All three must originate from physical motion in the cylinder or valve mechanism.\n\nWork directly in the required model file and keep the latest usable state saved at that path throughout the task.",
+    "groups": {
+      "G": "runnable model, physical Timeseries contract, closed loop and pressure-causal core path",
+      "A": "nominal full-cycle extension tracking accuracy",
+      "Q": "nominal positioning and actuator/valve motion quality",
+      "M": "hydraulic, electromechanical, cylinder, scissor, feedback and pressure causality",
+      "R": "worst required target/timing/pressure operating point",
+      "D": "paired in-run supply-pressure-change response and recovery",
+      "weights": {
+        "A": 0.22,
+        "Q": 0.16,
+        "M": 0.24,
+        "R": 0.23,
+        "D": 0.15
+      }
+    }
+  },
+  "sim": {
+    "start": 0,
+    "stop": 20,
+    "max_step": 0.02,
+    "initial_extension_mm": 50
+  },
+  "public_inputs": [
+    {
+      "name": "lift_target_mm",
+      "nominal": 120,
+      "min": 90,
+      "max": 145,
+      "unit": "mm",
+      "meaning": "upper extension target of the hydraulic actuator"
+    },
+    {
+      "name": "motion_start_s",
+      "nominal": 1.5,
+      "min": 1,
+      "max": 2,
+      "unit": "s",
+      "meaning": "time at which the smooth raise trajectory begins"
+    },
+    {
+      "name": "ramp_duration_s",
+      "nominal": 4,
+      "min": 3,
+      "max": 5,
+      "unit": "s",
+      "meaning": "duration of each linear raise or return segment"
+    },
+    {
+      "name": "target_hold_s",
+      "nominal": 5,
+      "min": 4,
+      "max": 6,
+      "unit": "s",
+      "meaning": "time for which the upper extension target is held"
+    },
+    {
+      "name": "supply_pressure_bar",
+      "nominal": 200,
+      "min": 160,
+      "max": 230,
+      "unit": "bar",
+      "meaning": "hydraulic supply pressure before the in-run change"
+    },
+    {
+      "name": "supply_pressure_step_fraction",
+      "nominal": -0.08,
+      "min": -0.18,
+      "max": 0.12,
+      "unit": "1",
+      "meaning": "fractional in-run change of hydraulic supply pressure"
+    },
+    {
+      "name": "pressure_step_offset_s",
+      "nominal": 2,
+      "min": 1,
+      "max": 3,
+      "unit": "s",
+      "meaning": "time from reaching the upper target to the pressure change"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "actuator_extension",
+      "channels": 1,
+      "unit": "mm",
+      "physical_source": "extension measured by a physical translational-motion sensor across the cylinder"
+    },
+    {
+      "name": "actuator_velocity",
+      "channels": 1,
+      "unit": "mm/s",
+      "physical_source": "velocity measured by the same physical cylinder-motion sensor"
+    },
+    {
+      "name": "valve_spool_position",
+      "channels": 1,
+      "unit": "mm",
+      "physical_source": "physical displacement measured at the metering-valve spool"
+    }
+  ],
+  "prompt": "Build a closed-loop electrohydraulic scissor lift that raises, holds, and returns a payload platform using one double-acting hydraulic actuator.\n\nA finite pressure supply and return reservoir must feed a physically metered four-way valve. A finite electromechanical actuator must move the valve element, the valve must route real fluid into and out of both cylinder chambers, and the cylinder must drive a scissor linkage carrying the platform. Measured cylinder extension must close the positioning loop through unrestricted control logic to the real valve actuator on this same hydraulic power path.\n\nThe actuator starts near 50 mm extension. Read lift_target_mm, motion_start_s, ramp_duration_s, target_hold_s, supply_pressure_bar, supply_pressure_step_fraction, and pressure_step_offset_s from MATLAB base-workspace variables. Their nominal values are 120 mm, 1.5 s, 4.0 s, 5.0 s, 200 bar, -0.08, and 2.0 s. Their valid ranges are 90--145 mm, 1.0--2.0 s, 3.0--5.0 s, 4.0--6.0 s, 160--230 bar, -0.18--0.12, and 1.0--3.0 s.\n\nBeginning at motion_start_s, command a linear raise from 50 mm to lift_target_mm over ramp_duration_s, hold that target for target_hold_s, then command a linear return to 50 mm over ramp_duration_s. During the hold, at pressure_step_offset_s after first reaching the target, change the supply pressure from supply_pressure_bar to supply_pressure_bar*(1+supply_pressure_step_fraction).\n\nAcross the declared target, timing, and supply-pressure ranges, the controller must follow the full positioning cycle without sustained oscillation, keep cylinder and valve motion bounded, and preserve tracking through the pressure change. The supply-pressure input must act in the real hydraulic path. Prescribed motion, copied command outputs, signal-only hydraulic surrogates, and a cylinder disconnected from the scissor load are not valid implementations.\n\nLog Timeseries actuator_extension with one channel in millimetres, actuator_velocity with one channel in millimetres per second, and valve_spool_position with one channel in millimetres. All three must originate from physical motion in the cylinder or valve mechanism.\n\nWork directly in the required model file and keep the latest usable state saved at that path throughout the task.",
+  "groups": {
+    "G": "runnable model, physical Timeseries contract, closed loop and pressure-causal core path",
+    "A": "nominal full-cycle extension tracking accuracy",
+    "Q": "nominal positioning and actuator/valve motion quality",
+    "M": "hydraulic, electromechanical, cylinder, scissor, feedback and pressure causality",
+    "R": "worst required target/timing/pressure operating point",
+    "D": "paired in-run supply-pressure-change response and recovery",
+    "weights": {
+      "A": 0.22,
+      "Q": 0.16,
+      "M": 0.24,
+      "R": 0.23,
+      "D": 0.15
+    }
+  }
+}

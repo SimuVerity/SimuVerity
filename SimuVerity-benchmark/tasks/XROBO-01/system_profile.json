@@ -1,0 +1,197 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XROBO-01",
+  "collection": "XROBO",
+  "reference": {
+    "identity_path": "tasks/XROBO-01/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/XROBO01_reference.slx",
+    "model_path": "tasks/XROBO-01/reference/files/XROBO01_reference.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XROBO-01",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a planar four-legged running robot in Simscape with a finite-mass torso, four articulated two-link legs, compliant knees, physical foot-ground contact, and finite electromechanical hip actuation.",
+    "engineering_objects": [
+      "F90-XROBO-01 plant and controller described by the current public task contract",
+      "Measured output interfaces: body_state, contact_state, gait_state, electrical_state"
+    ],
+    "physical_paths": [
+      "A battery-backed electrical supply with an energy-buffering capacitor must feed the actual hip actuators, which transmit torque through mechanical joints to the legs."
+    ],
+    "functional_paths": [
+      "Across the declared range, measured hip angle and angular speed must causally regulate the corresponding physical actuator during aerial motion, foot contact must govern the stance/aerial action, diagonal leg pairs must alternate support, and the torso must continue stable forward locomotion without bypassing the compliant legs or contact forces."
+    ],
+    "information_paths": [
+      "initial_forward_speed_mps, supported_mass_kg, ground_stiffness_npm, ground_damping_nspm, propulsive_torque_nm, knee_stiffness_nmprad -> F90-XROBO-01 plant/control path -> body_state, contact_state, gait_state, electrical_state"
+    ],
+    "modes_and_events": [
+      "F90-XROBO-01 startup and continuous operation follow the current public task contract."
+    ],
+    "interfaces": [
+      {
+        "name": "initial_forward_speed_mps",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Read initial_forward_speed_mps, supported_mass_kg, ground_stiffness_npm, ground_damping_nspm, propulsive_torque_nm, and knee_stiffness_nmprad from MATLAB base-workspace variables.",
+        "source": "tasks/XROBO-01/public_spec.json"
+      },
+      {
+        "name": "supported_mass_kg",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kg"
+        ],
+        "range_or_shape": "Read initial_forward_speed_mps, supported_mass_kg, ground_stiffness_npm, ground_damping_nspm, propulsive_torque_nm, and knee_stiffness_nmprad from MATLAB base-workspace variables.",
+        "source": "tasks/XROBO-01/public_spec.json"
+      },
+      {
+        "name": "ground_stiffness_npm",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "N/m"
+        ],
+        "range_or_shape": "Read initial_forward_speed_mps, supported_mass_kg, ground_stiffness_npm, ground_damping_nspm, propulsive_torque_nm, and knee_stiffness_nmprad from MATLAB base-workspace variables.",
+        "source": "tasks/XROBO-01/public_spec.json"
+      },
+      {
+        "name": "ground_damping_nspm",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "N*s/m"
+        ],
+        "range_or_shape": "Read initial_forward_speed_mps, supported_mass_kg, ground_stiffness_npm, ground_damping_nspm, propulsive_torque_nm, and knee_stiffness_nmprad from MATLAB base-workspace variables.",
+        "source": "tasks/XROBO-01/public_spec.json"
+      },
+      {
+        "name": "propulsive_torque_nm",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "N*m"
+        ],
+        "range_or_shape": "Read initial_forward_speed_mps, supported_mass_kg, ground_stiffness_npm, ground_damping_nspm, propulsive_torque_nm, and knee_stiffness_nmprad from MATLAB base-workspace variables.",
+        "source": "tasks/XROBO-01/public_spec.json"
+      },
+      {
+        "name": "knee_stiffness_nmprad",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "N*m/rad"
+        ],
+        "range_or_shape": "Read initial_forward_speed_mps, supported_mass_kg, ground_stiffness_npm, ground_damping_nspm, propulsive_torque_nm, and knee_stiffness_nmprad from MATLAB base-workspace variables.",
+        "source": "tasks/XROBO-01/public_spec.json"
+      },
+      {
+        "name": "body_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m and m/s"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named body_state, contact_state, gait_state, and electrical_state. body_state has 6 channels [x,y,z,vx,vy,vz] in the fixed right-handed world frame, using m for position and m/s for velocity.",
+        "source": "tasks/XROBO-01/public_spec.json"
+      },
+      {
+        "name": "contact_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "boolean"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named body_state, contact_state, gait_state, and electrical_state. contact_state has 4 boolean channels [left-front,left-rear,right-front,right-rear].",
+        "source": "tasks/XROBO-01/public_spec.json"
+      },
+      {
+        "name": "gait_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "boolean, boolean, integer"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named body_state, contact_state, gait_state, and electrical_state. gait_state has 3 channels [rear-left/front-right aerial, rear-right/front-left aerial, phase] with boolean, boolean, and integer values.",
+        "source": "tasks/XROBO-01/public_spec.json"
+      },
+      {
+        "name": "electrical_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "W, A, A"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named body_state, contact_state, gait_state, and electrical_state. electrical_state has 3 channels [shared-bus power (W), total actuator load current (A), battery current (A)] measured on the physical supply.",
+        "source": "tasks/XROBO-01/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "body_state has 6 channels [x,y,z,vx,vy,vz] in the fixed right-handed world frame, using m for position and m/s for velocity.",
+      "gait_state has 3 channels [rear-left/front-right aerial, rear-right/front-left aerial, phase] with boolean, boolean, and integer values."
+    ],
+    "feedback_and_control_causality": [
+      "A battery-backed electrical supply with an energy-buffering capacitor must feed the actual hip actuators, which transmit torque through mechanical joints to the legs.",
+      "Across the declared range, measured hip angle and angular speed must causally regulate the corresponding physical actuator during aerial motion, foot contact must govern the stance/aerial action, diagonal leg pairs must alternate support, and the torso must continue stable forward locomotion without bypassing the compliant legs or contact forces.",
+      "electrical_state has 3 channels [shared-bus power (W), total actuator load current (A), battery current (A)] measured on the physical supply."
+    ],
+    "signal_sources": [
+      "initial_forward_speed_mps is read from the public MATLAB base-workspace input contract.",
+      "supported_mass_kg is read from the public MATLAB base-workspace input contract.",
+      "ground_stiffness_npm is read from the public MATLAB base-workspace input contract.",
+      "ground_damping_nspm is read from the public MATLAB base-workspace input contract.",
+      "propulsive_torque_nm is read from the public MATLAB base-workspace input contract.",
+      "knee_stiffness_nmprad is read from the public MATLAB base-workspace input contract.",
+      "body_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "contact_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "gait_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "electrical_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "initial_forward_speed_mps: Read initial_forward_speed_mps, supported_mass_kg, ground_stiffness_npm, ground_damping_nspm, propulsive_torque_nm, and knee_stiffness_nmprad from MATLAB base-workspace variables.",
+      "supported_mass_kg: Read initial_forward_speed_mps, supported_mass_kg, ground_stiffness_npm, ground_damping_nspm, propulsive_torque_nm, and knee_stiffness_nmprad from MATLAB base-workspace variables.",
+      "ground_stiffness_npm: Read initial_forward_speed_mps, supported_mass_kg, ground_stiffness_npm, ground_damping_nspm, propulsive_torque_nm, and knee_stiffness_nmprad from MATLAB base-workspace variables.",
+      "ground_damping_nspm: Read initial_forward_speed_mps, supported_mass_kg, ground_stiffness_npm, ground_damping_nspm, propulsive_torque_nm, and knee_stiffness_nmprad from MATLAB base-workspace variables.",
+      "propulsive_torque_nm: Read initial_forward_speed_mps, supported_mass_kg, ground_stiffness_npm, ground_damping_nspm, propulsive_torque_nm, and knee_stiffness_nmprad from MATLAB base-workspace variables.",
+      "knee_stiffness_nmprad: Read initial_forward_speed_mps, supported_mass_kg, ground_stiffness_npm, ground_damping_nspm, propulsive_torque_nm, and knee_stiffness_nmprad from MATLAB base-workspace variables."
+    ],
+    "disturbances": [
+      "electrical_state has 3 channels [shared-bus power (W), total actuator load current (A), battery current (A)] measured on the physical supply."
+    ],
+    "dynamic_processes": [
+      "Log complete-run MATLAB Timeseries named body_state, contact_state, gait_state, and electrical_state."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XROBO-01: prescribing body_state directly would bypass the system path described by: A battery-backed electrical supply with an energy-buffering capacitor must feed the actual hip actuators, which transmit torque through mechanical joints to the legs.",
+      "F90-XROBO-01: replaying a fixed body_state trace would ignore causal variation in initial_forward_speed_mps."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XROBO-01/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XROBO-01/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XROBO-01/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

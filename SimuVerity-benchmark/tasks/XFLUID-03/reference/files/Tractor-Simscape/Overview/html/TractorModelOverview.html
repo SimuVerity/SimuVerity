@@ -1,0 +1,261 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+<title>Tractor Model with Simscape</title>
+<meta name="generator" content="MATLAB 25.1">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2025-12-11">
+<meta name="DC.source" content="TractorModelOverview.m">
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="content">
+<h1>Tractor Model with Simscape</h1>
+<!--introduction-->
+<p>This project contains custom libraries, models, and code to help you model tractors. You can learn to evaluate transmission losses and visualize energy charts for a tractor.</p>
+<!--/introduction-->
+<h2>Contents</h2>
+<div>
+<ul>
+<li>
+<a href="#1">Tractor For Tillage Operation</a>
+</li>
+<li>
+<a href="#5">Workflows</a>
+</li>
+<li>
+<a href="#6">Model</a>
+</li>
+</ul>
+</div>
+<h2 id="1">Tractor For Tillage Operation</h2>
+<p>Tractor design is an important step to boost efficiency in the agriculture. Developing a tractor model that interacts with the environment requires an accurate model of tire-soil dynamics that includes interaction of tractive elements such as tire and implement with soil, which is a complicated problem to solve. You can accelerate the development process by starting with a system-level analysis to evaluate the options. This project shows how to create a system-level tractor model using Simscape&trade;, Simscape Driveline&trade; and Simscape Fluids&trade;.</p>
+<div>
+<ul>
+<li>To open the tractor energy computation model for tillage operation, click <a href="matlab:open_system('TractorEnergyComputation.slx')">Tractor Energy Computation Model</a>.</li>
+<li>You can define your own custom scenario and driver controls to analyze the tractor performance.</li>
+</ul>
+</div>
+<p>
+<img vspace="5" hspace="5" src="TractorEnergyComputationModel.png" alt=""> </p>
+<div>
+<ul>
+<li>You can visualize tractor velocity, engine, and motor speeds, and compare measured input and output energies for various transmission components using the Result block on the model canvas.</li>
+</ul>
+</div>
+<p>
+<img vspace="5" hspace="5" src="TractorEnergyComputationModelResult.png" alt=""> </p>
+<div>
+<ul>
+<li>You can visualize the flow of energy from tractor engine to various components of transmission, and to the axles by looking inside the Transmission Energy Chart Dashboard subsystem on the model canvas.</li>
+</ul>
+</div>
+<p>
+<img vspace="5" hspace="5" src="TransmissionEnergyChartDashboard.png" alt=""> </p>
+<p>This project shows how to parameterize components, assemble them to build a model for energy computation of a tractor, and use the model to compute transmission losses for a tillage operation.</p>
+<p>1. <b>Parameterize Components:</b> The project contains custom library blocks such as the <a href="matlab:open('ReportTireSoilModelInfo.mlx')">Tire-Soil Interaction</a> and <a href="matlab:open('ImplementBlockHelp.mlx')">Implement</a> blocks. The custom Tire block represents the tire-soil interaction based on Bekker equation implementation. This includes tire tractive effort with slip, compaction, and flexing effects. The custom library blocks serve as early-stage design components for the development of a fast running system-level tractor model. The custom library blocks use the Simscape language framework. You can model a hydrostatic CVT transmission using the HydrostaticCVT component. You can parameterize the custom components to suit your application.</p>
+<p>2. <b>Build Tractor Energy Computation Model from Components:</b> Build an energy computation model for a tractor by using the parameterized custom components and library blocks from Simscape Foundation &amp; Simscape Driveline. To learn more about the model, see <a href="matlab:web('TractorEnergyComputationModelOverview.html','-new')">Tractor Energy Computation Model Overview</a>.</p>
+<p>3. <b>Create Transmission Energy Charting for a Tractor:</b> After you create the tractor energy computation model, you can compute the transmission losses and visualize the energy flow from the engine to the wheels. To create the transmission energy charting for a tractor, see <a href="matlab:open('TransmissionEnergyChartingWorkflow.mlx')">Create Transmission Energy Charting for a Tractor</a>. This figure shows the energy flow of the tractor and was generated using the Create Transmission Energy Charting for a Tractor workflow.</p>
+<p>
+<img vspace="5" hspace="5" src="TransmissionEnergySankeyDiagram.png" alt=""> </p>
+<p>4. <b>Perform Transmission Trade-Off Study for a Tractor:</b> You can select transmission hydraulic components from available options that minimize energy consumption for a specific agricultural drive cycle.</p>
+<p>
+<img vspace="5" hspace="5" src="TransmissionTradeOffHeatmap.png" alt=""> </p>
+<h2 id="5">Workflows</h2>
+<div>
+<ul>
+<li>
+<a href="matlab:open('TransmissionEnergyChartingWorkflow.mlx')">Create Transmission Energy Charting for a Tractor</a>
+</li>
+<li>
+<a href="matlab:open('TransmissionTradeOffStudyWorkflow.mlx')">Perform Transmission Trade-Off Study for a Tractor</a>
+</li>
+</ul>
+</div>
+<h2 id="6">Model</h2>
+<div>
+<ul>
+<li>
+<a href="matlab:open_system('TractorEnergyComputation.slx')">Tractor Energy Computation Model</a>
+</li>
+</ul>
+</div>
+<p class="footer">Copyright 2024 - 2025 The MathWorks, Inc.<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2025a</a>
+<br>
+</p>
+</div>
+<!--
+##### SOURCE BEGIN #####
+%% Tractor Model with Simscape
+% 
+% This project contains custom libraries, models, and code to help 
+% you model tractors. You can learn to evaluate transmission losses and 
+% visualize energy charts for a tractor.
+%
+
+% Copyright 2024 - 2025 The MathWorks, Inc.
+
+%% Tractor For Tillage Operation
+%
+% Tractor design is an important step to boost efficiency in the 
+% agriculture. Developing a tractor model that interacts with the 
+% environment requires an accurate model of tire-soil dynamics that includes 
+% interaction of tractive elements such as tire and implement with soil, 
+% which is a complicated problem to solve. You can accelerate the development 
+% process by starting with a system-level analysis to evaluate the options. 
+% This project shows how to create a system-level tractor model using 
+% Simscape(TM), Simscape Driveline(TM) and Simscape Fluids(TM).
+%
+% * To open the tractor energy computation model for tillage operation, click
+% <matlab:open_system('TractorEnergyComputation.slx') Tractor Energy 
+% Computation Model>. 
+% * You can define your own custom scenario and driver controls to analyze 
+% the tractor performance.
+% 
+% <<TractorEnergyComputationModel.png>>
+%
+% * You can visualize tractor velocity, engine, and motor speeds, and compare 
+% measured input and output energies for various transmission components 
+% using the Result block on the model canvas.
+%
+% <<TractorEnergyComputationModelResult.png>>
+% 
+% * You can visualize the flow of energy from tractor engine to various 
+% components of transmission, and to the axles by looking inside the 
+% Transmission Energy Chart Dashboard subsystem on the model canvas.
+% 
+% <<TransmissionEnergyChartDashboard.png>>
+%
+% This project shows how to parameterize components, assemble them to build 
+% a model for energy computation of a tractor, and use the model to compute 
+% transmission losses for a tillage operation.
+%
+% 1. *Parameterize Components:* The project contains custom library blocks such 
+% as the <matlab:open('ReportTireSoilModelInfo.mlx') Tire-Soil Interaction> 
+% and <matlab:open('ImplementBlockHelp.mlx') Implement> blocks. The custom 
+% Tire block represents the tire-soil interaction based on Bekker equation 
+% implementation. This includes tire tractive effort with slip, compaction, 
+% and flexing effects. The custom library blocks serve as early-stage design 
+% components for the development of a fast running system-level tractor model. 
+% The custom library blocks use the Simscape language framework. You can 
+% model a hydrostatic CVT transmission using the HydrostaticCVT component. 
+% You can parameterize the custom components to suit your application.
+%
+% 2. *Build Tractor Energy Computation Model from Components:* Build an 
+% energy computation model for a tractor by using the parameterized custom 
+% components and library blocks from Simscape Foundation & Simscape 
+% Driveline. To learn more about the model, see 
+% <matlab:web('TractorEnergyComputationModelOverview.html','-new') Tractor 
+% Energy Computation Model Overview>.
+%
+% 3. *Create Transmission Energy Charting for a Tractor:* After you 
+% create the tractor energy computation model, you can compute the 
+% transmission losses and visualize the energy flow from the engine to the 
+% wheels. To create the transmission energy charting for a tractor, see
+% <matlab:open('TransmissionEnergyChartingWorkflow.mlx') Create Transmission 
+% Energy Charting for a Tractor>. This figure shows the energy flow of the
+% tractor and was generated using the Create Transmission 
+% Energy Charting for a Tractor workflow.
+% 
+
+%% 
+%
+% <<TransmissionEnergySankeyDiagram.png>>
+%
+
+%%
+%
+% 4. *Perform Transmission Trade-Off Study for a Tractor:* You can
+% select transmission hydraulic components from available options that 
+% minimize energy consumption for a specific agricultural drive cycle.
+%
+
+%%
+%
+% <<TransmissionTradeOffHeatmap.png>>
+%
+
+%% Workflows  
+%
+% * <matlab:open('TransmissionEnergyChartingWorkflow.mlx') Create Transmission 
+% Energy Charting for a Tractor>
+% * <matlab:open('TransmissionTradeOffStudyWorkflow.mlx') Perform 
+% Transmission Trade-Off Study for a Tractor>
+%
+%% Model
+%
+% * <matlab:open_system('TractorEnergyComputation.slx') Tractor Energy 
+% Computation Model>
+%
+
+##### SOURCE END #####
+-->
+</body>
+</html>

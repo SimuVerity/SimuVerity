@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simuverity.org/schemas/evidence-bundle.schema.json",
+  "title": "SimuVerity evidence bundle manifest",
+  "type": "object",
+  "required": [
+    "schema",
+    "evidence_complete",
+    "task_id",
+    "generation_run_id",
+    "scoring_run_id",
+    "candidate_file",
+    "evidence_file",
+    "evidence_size_bytes",
+    "official_scenarios_file",
+    "evaluation_policy_id_at_extraction",
+    "evaluation_subject"
+  ],
+  "properties": {
+    "schema": {"const": "simuverity.evidence-bundle.v1"},
+    "evidence_complete": {
+      "const": true
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "generation_run_id": {
+      "type": "string"
+    },
+    "scoring_run_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_file": {
+      "const": "evidence.json"
+    },
+    "candidate_file": {
+      "type": "string",
+      "pattern": "^[^/\\\\:]+\\.(?:slx|mdl)$"
+    },
+    "evidence_size_bytes": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "official_scenarios_file": {
+      "const": "official_scenarios.json"
+    },
+    "evaluation_policy_id_at_extraction": {
+      "type": "string"
+    },
+    "evaluation_subject": {
+      "enum": ["candidate", "reference"]
+    },
+    "sidecars": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "role",
+          "file",
+          "media_type",
+          "size_bytes"
+        ],
+        "properties": {
+          "role": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]{0,63}$"
+          },
+          "file": {
+            "type": "string",
+            "pattern": "^sidecars/[a-z][a-z0-9_]{0,63}\\.json$"
+          },
+          "media_type": {
+            "const": "application/json"
+          },
+          "size_bytes": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "evidence_closure_manifest_file": {
+      "const": "evidence_closure_manifest.json"
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["file", "size_bytes"],
+        "properties": {
+          "file": {"type": "string", "minLength": 1},
+          "size_bytes": {"type": "integer", "minimum": 0}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "dependentRequired": {
+    "artifacts": ["evidence_closure_manifest_file"],
+    "evidence_closure_manifest_file": ["artifacts"]
+  },
+  "additionalProperties": false
+}

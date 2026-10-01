@@ -1,0 +1,24 @@
+{
+  "schema": "simuverity.scorer-manifest.v1",
+  "task_id": "XELEC-19",
+  "public_interface": "scorer.py:score",
+  "implementation": "scorer.py",
+  "source_modules": [
+    {
+      "module": "d16_offline_common",
+      "path": "vendor/scripts/unified/d16/shared/d16_offline_common.py"
+    },
+    {
+      "module": "d019_offline_scorer",
+      "path": "vendor/scripts/unified/d16/tasks/d019/d019_offline_scorer.py"
+    }
+  ],
+  "final_module": {
+    "module": "d019_offline_scorer",
+    "path": "vendor/scripts/unified/d16/tasks/d019/d019_offline_scorer.py"
+  },
+  "payload_files": [],
+  "public_bridge": {
+    "mode": "function"
+  }
+}

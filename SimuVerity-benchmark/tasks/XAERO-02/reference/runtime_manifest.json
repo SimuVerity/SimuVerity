@@ -1,0 +1,20 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XAERO-02",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/Plane/models/AirplaneSimModel_LindiPlane.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 907,
+  "retained_bytes": 11703342,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ],
+  "clean_replay_setup": {
+    "phase": "before_load",
+    "path": "tasks/XAERO-02/reference/clean_replay_setup/f90_xaero02_reference_clean_replay_setup.m",
+    "entrypoint": "f90_xaero02_reference_clean_replay_setup"
+  }
+}

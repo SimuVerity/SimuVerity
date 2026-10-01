@@ -1,0 +1,42 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XELEC-06",
+  "file_count": 4,
+  "files": [
+    {
+      "path": "reference/files/DQstatcom3p.mdl",
+      "size_bytes": 230460
+    },
+    {
+      "path": "reference/files/DQstatcom3p.mdl.r2018a",
+      "size_bytes": 187583
+    },
+    {
+      "path": "reference/files/DQstatcom3p.png",
+      "size_bytes": 54259
+    },
+    {
+      "path": "reference/files/license.txt",
+      "size_bytes": 1468
+    }
+  ],
+  "entrypoint": "reference/files/DQstatcom3p.mdl",
+  "expected_score": 94.986931,
+  "expected_valid_scenarios": 6,
+  "score_tolerance": 5e-07,
+  "scenario_contract": {
+    "expected_ids": [
+      "source_up",
+      "source_down",
+      "load_up",
+      "load_down",
+      "joint_low_source_high_load",
+      "joint_high_source_low_load"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 473770,
+  "excluded_files": []
+}

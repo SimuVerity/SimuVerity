@@ -1,0 +1,76 @@
+{
+  "schema": "simuverity.matlab-local-importer-recipe.v1",
+  "task_id": "XFLUID-09",
+  "release": "simuverity-101-v1",
+  "matlab_release": "R2025a",
+  "publisher": "The MathWorks, Inc.",
+  "redistributes_mathworks_files": false,
+  "destination": "%LOCALAPPDATA%/SimuVerity/assets/simuverity-101-v1/XFLUID-09",
+  "discovery": {
+    "method": "matlab_example_or_installed_product_search",
+    "example_id": "simscapefluids/HydrogenRefuelingStationExample",
+    "expected_source_filenames": [
+      "HydrogenRefuelingStation.slx",
+      "HydrogenRefuelingStationPlot1Vehicle.m",
+      "HydrogenRefuelingStationPlot2Buffer.m",
+      "HydrogenRefuelingStationPlot3Valve.m",
+      "hydrogen_properties.mat",
+      "silicone_fluid_properties.mat"
+    ],
+    "expected_files": [
+      {
+        "name": "HydrogenRefuelingStation.slx",
+        "size_bytes": 178394
+      },
+      {
+        "name": "HydrogenRefuelingStationPlot1Vehicle.m",
+        "size_bytes": 2222
+      },
+      {
+        "name": "HydrogenRefuelingStationPlot2Buffer.m",
+        "size_bytes": 3126
+      },
+      {
+        "name": "HydrogenRefuelingStationPlot3Valve.m",
+        "size_bytes": 2464
+      },
+      {
+        "name": "hydrogen_properties.mat",
+        "size_bytes": 49507
+      },
+      {
+        "name": "silicone_fluid_properties.mat",
+        "size_bytes": 1141
+      }
+    ]
+  },
+  "transform": "transform.m",
+  "validation": {
+    "required": true,
+    "checks": [
+      "load",
+      "update",
+      "compile",
+      "simulate",
+      "all_official_scenarios",
+      "reference_score"
+    ],
+    "on_mismatch": "fail_closed"
+  },
+  "entrypoint": "HydrogenRefuelingStation.slx",
+  "expected_valid_scenarios": 5,
+  "score_tolerance": 1e-12,
+  "expected_score": 90.62360631038996,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal",
+      "low_initial_vehicle_pressure",
+      "warm_ambient",
+      "warmer_precoolant",
+      "reduced_supply_pressure"
+    ],
+    "nominal_scenario_id": "nominal",
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision"
+}

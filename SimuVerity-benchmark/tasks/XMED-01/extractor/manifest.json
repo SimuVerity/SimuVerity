@@ -1,0 +1,64 @@
+{
+  "schema": "simuverity.extractor-closure.v1",
+  "task_id": "XMED-01",
+  "entrypoint": "vendor/scripts/formal90/tasks/f90_xmed01/f90_xmed01_score_model.m",
+  "public_wrapper": "extractor/run.m",
+  "files": [
+    {
+      "source_name": "formal90_extract_xp9_evidence.m",
+      "public_path": "vendor/scripts/formal90/formal90_extract_xp9_evidence.m"
+    },
+    {
+      "source_name": "f90_xmed01_build_evidence.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xmed01/f90_xmed01_build_evidence.m"
+    },
+    {
+      "source_name": "f90_xmed01_measurement_compat.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xmed01/f90_xmed01_measurement_compat.m"
+    },
+    {
+      "source_name": "f90_xmed01_score_model.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xmed01/f90_xmed01_score_model.m"
+    },
+    {
+      "source_name": "unified_load_candidate_dependencies.m",
+      "public_path": "vendor/scripts/unified/candidate_closure/unified_load_candidate_dependencies.m"
+    },
+    {
+      "source_name": "unified_reload_candidate_dependencies.m",
+      "public_path": "vendor/scripts/unified/candidate_closure/unified_reload_candidate_dependencies.m"
+    },
+    {
+      "source_name": "simuverity_public_output_compatibility.m",
+      "public_path": "vendor/scripts/unified/public_output/simuverity_public_output_compatibility.m"
+    },
+    {
+      "source_name": "xp9_score_xmed01.m",
+      "public_path": "vendor/scripts/xp9/scorers/xp9_score_xmed01.m"
+    },
+    {
+      "source_name": "xp9_file_presence_file.m",
+      "public_path": "vendor/scripts/xp9/xp9_file_presence_file.m"
+    },
+    {
+      "source_name": "xp9_group.m",
+      "public_path": "vendor/scripts/xp9/xp9_group.m"
+    },
+    {
+      "source_name": "xp9_series.m",
+      "public_path": "vendor/scripts/xp9/xp9_series.m"
+    },
+    {
+      "source_name": "xp9_tail.m",
+      "public_path": "vendor/scripts/xp9/xp9_tail.m"
+    },
+    {
+      "source_name": "xp9_total.m",
+      "public_path": "vendor/scripts/xp9/xp9_total.m"
+    },
+    {
+      "source_name": "xp9_utility.m",
+      "public_path": "vendor/scripts/xp9/xp9_utility.m"
+    }
+  ]
+}

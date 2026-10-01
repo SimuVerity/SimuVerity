@@ -1,0 +1,20 @@
+{
+  "schema": "simuverity.scorer-manifest.v1",
+  "task_id": "XTHERM-13",
+  "public_interface": "scorer.py:score",
+  "implementation": "scorer.py",
+  "source_modules": [
+    {
+      "module": "score_tes",
+      "path": "vendor/packages/simuverity_public/tasks/EXT-XTHERM-PVTES-01/policy/score_tes.py"
+    }
+  ],
+  "final_module": {
+    "module": "score_tes",
+    "path": "vendor/packages/simuverity_public/tasks/EXT-XTHERM-PVTES-01/policy/score_tes.py"
+  },
+  "payload_files": [],
+  "public_bridge": {
+    "mode": "function"
+  }
+}

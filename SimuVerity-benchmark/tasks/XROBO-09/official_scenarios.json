@@ -1,0 +1,219 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XROBO-09",
+  "scenarios": [
+    {
+      "id": "crossing_starboard",
+      "class": "single_vessel_crossing",
+      "scenario_mat": "Scenario/ExportedScenario/Scenario_Cuboid_COLREGs_1_Crossing_Starboard_exported.mat",
+      "Waypoints_m": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          150.0,
+          0.0
+        ],
+        [
+          200.0,
+          0.0
+        ]
+      ],
+      "DesiredSpeed_mps": 1.5,
+      "CurrentSpeed_mps": 0.2,
+      "CurrentDirection_deg": 20.0,
+      "stop_time_s": 130.0
+    },
+    {
+      "id": "crossing_starboard_multiship",
+      "class": "multi_vessel_crossing",
+      "scenario_mat": "Scenario/ExportedScenario/Scenario_Cuboid_COLREGs_2_Crossing_Starboard_Multiship_exported.mat",
+      "Waypoints_m": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          60.0,
+          0.0
+        ],
+        [
+          150.0,
+          -200.0
+        ]
+      ],
+      "DesiredSpeed_mps": 1.5,
+      "CurrentSpeed_mps": 0.2,
+      "CurrentDirection_deg": 20.0,
+      "stop_time_s": 130.0
+    },
+    {
+      "id": "crossing_multiship",
+      "class": "multi_vessel_crossing_opposite_geometry",
+      "scenario_mat": "Scenario/ExportedScenario/Scenario_Cuboid_COLREGs_3_Crossing_Multiship_exported.mat",
+      "Waypoints_m": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          150.0,
+          0.0
+        ],
+        [
+          200.0,
+          0.0
+        ]
+      ],
+      "DesiredSpeed_mps": 1.5,
+      "CurrentSpeed_mps": 0.2,
+      "CurrentDirection_deg": 20.0,
+      "stop_time_s": 130.0
+    },
+    {
+      "id": "crossing_current_boundary",
+      "class": "current_boundary",
+      "scenario_mat": "Scenario/ExportedScenario/Scenario_Cuboid_COLREGs_1_Crossing_Starboard_exported.mat",
+      "Waypoints_m": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          150.0,
+          0.0
+        ],
+        [
+          200.0,
+          0.0
+        ]
+      ],
+      "DesiredSpeed_mps": 1.5,
+      "CurrentSpeed_mps": 0.35,
+      "CurrentDirection_deg": 110.0,
+      "stop_time_s": 130.0
+    },
+    {
+      "id": "multiship_reduced_speed",
+      "class": "speed_boundary",
+      "scenario_mat": "Scenario/ExportedScenario/Scenario_Cuboid_COLREGs_3_Crossing_Multiship_exported.mat",
+      "Waypoints_m": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          150.0,
+          0.0
+        ],
+        [
+          200.0,
+          0.0
+        ]
+      ],
+      "DesiredSpeed_mps": 1.2,
+      "CurrentSpeed_mps": 0.2,
+      "CurrentDirection_deg": 20.0,
+      "stop_time_s": 130.0
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "one_isolated_persistent_matlab_session": true,
+      "evidence_then_offline_scoring": true,
+      "reference_adapter": "Load the official parameter scripts and exported traffic scenario, expose existing HMI and current constants in memory, add non-invasive measurement taps, and close without saving."
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "preferred_reference_target_raw": 90.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.2,
+          "meaning": "nominal route, speed and safe-encounter outcome"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "bounded six-DOF motion, commands and actuation quality"
+        },
+        "M": {
+          "weight": 0.3,
+          "meaning": "traffic-planner-command-propeller-vessel-feedback causality"
+        },
+        "R": {
+          "weight": 0.2,
+          "meaning": "worst private traffic, current and speed condition"
+        },
+        "D": {
+          "weight": 0.2,
+          "meaning": "avoidance activation, safe separation and route recovery"
+        }
+      },
+      "within_group": "dedicated weighted arithmetic mean",
+      "across_groups": "weighted geometric mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum",
+      "policy_id": "simuverity-101-v1:xrobo-09:scoring"
+    },
+    "shortcut_sanity_contract": [
+      "qualification_or_required_output_missing",
+      "kinematic_or_prerecorded_ego_trajectory_without_six_dof_plant",
+      "missing_hydrodynamic_hydrostatic_or_twin_propeller_core",
+      "fixed_or_replayed_propeller_commands",
+      "traffic_motion_ignored_or_collision_avoidance_disabled",
+      "planner_or_command_disconnected_from_vessel_feedback",
+      "direct_position_assignment_or_endpoint_teleport",
+      "declared_safe_encounter_without_physical_separation",
+      "private_waypoint_speed_or_current_inputs_ignored"
+    ]
+  },
+  "simulation": {
+    "one_isolated_persistent_matlab_session": true,
+    "evidence_then_offline_scoring": true,
+    "reference_adapter": "Load the official parameter scripts and exported traffic scenario, expose existing HMI and current constants in memory, add non-invasive measurement taps, and close without saving."
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "preferred_reference_target_raw": 90.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.2,
+        "meaning": "nominal route, speed and safe-encounter outcome"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "bounded six-DOF motion, commands and actuation quality"
+      },
+      "M": {
+        "weight": 0.3,
+        "meaning": "traffic-planner-command-propeller-vessel-feedback causality"
+      },
+      "R": {
+        "weight": 0.2,
+        "meaning": "worst private traffic, current and speed condition"
+      },
+      "D": {
+        "weight": 0.2,
+        "meaning": "avoidance activation, safe separation and route recovery"
+      }
+    },
+    "within_group": "dedicated weighted arithmetic mean",
+    "across_groups": "weighted geometric mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum",
+    "policy_id": "simuverity-101-v1:xrobo-09:scoring"
+  },
+  "shortcut_sanity_contract": [
+    "qualification_or_required_output_missing",
+    "kinematic_or_prerecorded_ego_trajectory_without_six_dof_plant",
+    "missing_hydrodynamic_hydrostatic_or_twin_propeller_core",
+    "fixed_or_replayed_propeller_commands",
+    "traffic_motion_ignored_or_collision_avoidance_disabled",
+    "planner_or_command_disconnected_from_vessel_feedback",
+    "direct_position_assignment_or_endpoint_teleport",
+    "declared_safe_encounter_without_physical_separation",
+    "private_waypoint_speed_or_current_inputs_ignored"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XMECH-10",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/src/youBot_Arm.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 664,
+  "retained_bytes": 22524259,
+  "excluded_files": [
+    {
+      "path": "reference/files/src/Libraries/CFL_Core/Libraries/Images/Contact_Images.pptx",
+      "size_bytes": 713107,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/Libraries/CFL_Core/Scripts_Data/Doc/Contact_Forces_Sphere_Cone.pptx",
+      "size_bytes": 374561,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    }
+  ],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ],
+  "clean_replay_setup": {
+    "phase": "before_load",
+    "path": "tasks/XMECH-10/reference/clean_replay_setup/f90_xmech10_reference_clean_replay_setup.m",
+    "entrypoint": "f90_xmech10_reference_clean_replay_setup"
+  }
+}

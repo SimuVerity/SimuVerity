@@ -1,0 +1,68 @@
+{
+  "schema": "simuverity.extractor-closure.v1",
+  "task_id": "XMED-02",
+  "entrypoint": "vendor/scripts/formal90/tasks/f90_xmed02/f90_xmed02_extract_candidate_evidence.m",
+  "public_wrapper": "extractor/run.m",
+  "files": [
+    {
+      "source_name": "simuverity_physical_line_networks.m",
+      "public_path": "vendor/engine/simuverity_physical_line_networks.m"
+    },
+    {
+      "source_name": "formal90_write_evidence.m",
+      "public_path": "vendor/scripts/formal90/formal90_write_evidence.m"
+    },
+    {
+      "source_name": "f90_xmed02_definition.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xmed02/f90_xmed02_definition.m"
+    },
+    {
+      "source_name": "f90_xmed02_extract_evidence_core.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xmed02/f90_xmed02_extract_evidence_core.m"
+    },
+    {
+      "source_name": "f90_xmed02_extract_evidence.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xmed02/f90_xmed02_extract_evidence.m"
+    },
+    {
+      "source_name": "f90_xmed02_extract_reference_evidence.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xmed02/f90_xmed02_extract_reference_evidence.m"
+    },
+    {
+      "source_name": "f90_xmed02_measurement_compatibility.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xmed02/f90_xmed02_measurement_compatibility.m"
+    },
+    {
+      "source_name": "f90_xmed02_measurement.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xmed02/f90_xmed02_measurement.m"
+    },
+    {
+      "source_name": "f90_xmed02_reference_static_audit.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xmed02/f90_xmed02_reference_static_audit.m"
+    },
+    {
+      "source_name": "f90_xmed02_score.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xmed02/f90_xmed02_score.m"
+    },
+    {
+      "source_name": "f90_xmed02_extract_candidate_evidence.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xmed02/f90_xmed02_extract_candidate_evidence.m"
+    },
+    {
+      "source_name": "f90_xmed02_static_audit_core.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xmed02/f90_xmed02_static_audit_core.m"
+    },
+    {
+      "source_name": "f90_xmed02_static_audit.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xmed02/f90_xmed02_static_audit.m"
+    },
+    {
+      "source_name": "simuverity_public_output_compatibility.m",
+      "public_path": "vendor/scripts/unified/public_output/simuverity_public_output_compatibility.m"
+    },
+    {
+      "source_name": "xp9_file_presence_file.m",
+      "public_path": "vendor/scripts/xp9/xp9_file_presence_file.m"
+    }
+  ]
+}

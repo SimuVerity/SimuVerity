@@ -1,0 +1,400 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+<title>Optimizing Power-Split CVT Design Parameters</title>
+<meta name="generator" content="MATLAB 25.1">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2025-10-31">
+<meta name="DC.source" content="optim_cvt_power_split_design.m">
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="content">
+<h1>Optimizing Power-Split CVT Design Parameters</h1>
+<!--introduction-->
+<p>
+<img vspace="5" hspace="5" src="optim_cvt_power_split_design_Overview.png" alt=""> </p>
+<p>This example shows how to use optimization capabilities in MATLAB to identify design parameters that will create a power-split CVT that has the desired speed ranges.</p>
+<div>
+<ol>
+<li>To see the structure of the power-split CVT, see <a href="matlab:web('sm_cvt_power_split_pg_4range.html');">Power Split CVT with Four Speed Ranges</a>
+</li>
+<li>To explore this workflow in an App, try <a href="matlab:run('CVT_Calculate_Swash_Control_app_run.m')">Power Split CVT Design App</a>
+</li>
+<li>To see the code that calculates the control table, see <a href="matlab:edit('cvtCalcSwashControl.m')">cvtCalcSwashControl.m</a>.</li>
+</ol>
+</div>
+<p>Return to main example <a href="matlab:web('Wheel_Loader_Design_Overview.html');">Wheel Loader Design with Simscape&trade;</a>
+</p>
+<p>Copyright 2021-2025 The MathWorks, Inc</p>
+<!--/introduction-->
+<h2>Contents</h2>
+<div>
+<ul>
+<li>
+<a href="#1">Define CVT Parameters and Design Criteria</a>
+</li>
+<li>
+<a href="#2">Determine CVT Control with Initial Values</a>
+</li>
+<li>
+<a href="#3">Use Optimization Algorithms to Tune the Design Parameters</a>
+</li>
+<li>
+<a href="#4">Plot Optimized Result</a>
+</li>
+</ul>
+</div>
+<h2 id="1">Define CVT Parameters and Design Criteria</h2>
+<p>Below are parameters that are:</p>
+<div>
+<ol>
+<li>Fixed for the design.</li>
+<li>Adjustable for the design (initial values for tuning)</li>
+<li>Represent the design criteria</li>
+</ol>
+</div>
+<pre class="codeinput">
+<span class="comment">% Fixed for the design</span>
+wEng           = 2200;   <span class="comment">% Nominal RPM</span>
+wPumpNom       = 3350;   <span class="comment">% Pump nominal speed</span>
+nHSPumpMotor   = 1.2941; <span class="comment">% Ratio (Hydrostatic Pump Displacement/</span>
+                         <span class="comment">%   Hydrostatic Motor Displacement)</span>
+pumpVolEff     = 0.97;   <span class="comment">% Hydrostatic pump volumetric efficiency</span>
+nGearCVTOut    = 1.7647; <span class="comment">% CVT output transfer gear ratio</span>
+nTRing         = 99;     <span class="comment">% Number of teeth on planetary ring gears (all)</span>
+nDiff          = 2.8000; <span class="comment">% Ratio of differential</span>
+nFinalDrive    = 4.625;  <span class="comment">% Ratio of wheel hub planetary gear</span>
+rWhl           = 0.3937; <span class="comment">% Wheel radius</span>
+
+<span class="comment">% Adjustable for the design</span>
+nGearHSOut     = 1.425;  <span class="comment">% Gear ratio at output of hydrostatic transmission</span>
+nTSuns         = [39,49,50,50];   <span class="comment">% Vector 1x4 number of teeth on sun gear for each planetary</span>
+
+<span class="comment">% Design Criteria</span>
+tgtMaxSwash    = 0.7317; <span class="comment">% Target max displacement ratio of pump swash plate (0-1)</span>
+tgtVSpdRanges  = [0 3 6.4 14.2 30]; <span class="comment">% Speed ranges in km/h</span>
+
+<span class="comment">% Derived parameter</span>
+vWhl2CVTOut = 1/(3.6*rWhl*pi/30)*nGearCVTOut*nDiff*nFinalDrive;
+</pre>
+<h2 id="2">Determine CVT Control with Initial Values</h2>
+<p>The parameters above dictate at which speed and at which pump displacement ratio the gear shift changes must take place. We use function <a href="matlab:edit('cvtCalcSwashControl.m')">cvtCalcSwashControl.m</a> to calculate the shift speeds and pump displacement ratio at those speeds.</p>
+<p>In the plot below the desired design is shown in red. The desired shift speeds are along the vertical axis, the pump displacement ratio is along the x axis. The center of each target speed range is where the pump displacement ratio is 0, which is the maximum efficiency point of the CVT.</p>
+<p>The result of this design is shown in blue. The shift points (ends of the speed range) must occur when the output speed of the planetary gear combinations are identical. Those points are where the gray lines cross. The settings for the gear ratios place those transition points at speeds that are not near the targets. Our design meets the targets when the blue line overlays the red line.</p>
+<pre class="codeinput">
+<span class="comment">% Plot with initial CVT values</span>
+[~, ~, ax_sw] = cvtCalcSwashControl(<span class="keyword">...</span>
+    tgtVSpdRanges,rWhl,nGearCVTOut,nDiff,nFinalDrive,wEng,wPumpNom,<span class="keyword">...</span>
+    nHSPumpMotor,tgtMaxSwash,nTRing,nTSuns,nGearHSOut,pumpVolEff,<span class="string">'plot'</span>);
+</pre>
+<img vspace="5" hspace="5" src="optim_cvt_power_split_design_01.png" alt=""> <h2 id="3">Use Optimization Algorithms to Tune the Design Parameters</h2>
+<p>We will use optimization algorithms to tune the gear ratios to obtain the speed ranges we want. The CVT output ratio and the number of teeth on the four planetary sun gears are the design parameters to be adjusted. Note that the number of teeth on the sun gears must be an integer and must be divisible by 3 so that they can mate properly with 3 evenly spaced planetary gears.</p>
+<p>The code below:</p>
+<div>
+<ol>
+<li>Assembles the parameters to be tuned into a vector</li>
+<li>Defines limits for the parameter values</li>
+<li>Defines which parameters are integers</li>
+<li>Assembles the call to the objective function</li>
+<li>Calls <a href="matlab:web(fullfile(docroot,'gads/ga.html'))">ga()</a> to optimize the design using a genetic algorithm.</li>
+<li>Scales the result for the sun gear teeth number by 3 (they were divided by 3 in the objective function).</li>
+</ol>
+</div>
+<pre class="codeinput">
+<span class="comment">% Initial values</span>
+xInit = [nGearHSOut nTSuns];
+
+<span class="comment">% Define limits for parameter values</span>
+lb = [0.1,4,4,4,4];   <span class="comment">% Lower bound</span>
+ub = [5,28,28,28,28]; <span class="comment">% Upper bound</span>
+
+<span class="comment">% Define which parameters are integers (number of sun gear teeth)</span>
+intcon = [2,3,4,5];
+
+<span class="comment">% Assemble objective function handle</span>
+objFcnHdl = @(x)cvtObjFunGearRatios4SpdsSwash(x, tgtVSpdRanges, <span class="keyword">...</span>
+    nHSPumpMotor,wEng,wPumpNom, vWhl2CVTOut, nTRing,tgtMaxSwash);
+
+<span class="comment">% Alternate option: surrogateopt</span>
+<span class="comment">%options = optimoptions('surrogateopt','PlotFcn','surrogateoptplot',...</span>
+<span class="comment">%    'MaxFunctionEvaluations',500);</span>
+<span class="comment">%[xOpt,fval,exitflag,output] = surrogateopt(objFcnHdl,lb,ub,intcon,options);</span>
+
+<span class="comment">% Use a predefined seed for the random number generator.</span>
+<span class="comment">% Only used to ensure documentation stays consistent.</span>
+load(<span class="string">'gaOptStreamState.mat'</span>,<span class="string">'streamState'</span>);
+stream = RandStream.getGlobalStream;
+stream.State = streamState;
+
+<span class="comment">% Call Genetic Algorithm</span>
+[xOpt,fval,exitflag,output] = ga(objFcnHdl,size(lb,2),[],[],[],[],lb,ub,[],intcon);
+clear <span class="string">streamState</span>
+
+<span class="comment">% Alternate options</span>
+<span class="comment">%xOpt = fmincon(objFcnHdl,xInit,[],[],[],[],lb,ub);</span>
+<span class="comment">%xOpt = patternsearch(objFcnHdl,xInit,[],[],[],[],lb,ub);</span>
+
+<span class="comment">% Take optimized value and ensure integer number of teeth</span>
+<span class="comment">% that mate with 3 planetary gears</span>
+xFinal = [xOpt(1) 3*xOpt(2:5)];
+</pre>
+<pre class="codeoutput">ga stopped because the average change in the penalty function value is less than options.FunctionTolerance and 
+the constraint violation is less than options.ConstraintTolerance.
+</pre>
+<h2 id="4">Plot Optimized Result</h2>
+<p>The result of the optimization process identifies gear ratios that deliver the desired design. The speed range limits are at their targets and the center of the speed range is at the point where the CVT has maximum efficiency.</p>
+<pre class="codeinput">
+<span class="comment">% Plot with current results and calculate swash control table</span>
+[swashCtrlIdeal, swashCtrlTable, aw_sw] = cvtCalcSwashControl(<span class="keyword">...</span>
+    tgtVSpdRanges,rWhl,nGearCVTOut,nDiff,nFinalDrive,wEng,wPumpNom,<span class="keyword">...</span>
+    nHSPumpMotor,tgtMaxSwash,nTRing,xFinal(2:5),xFinal(1),pumpVolEff,<span class="string">'plot'</span>);
+
+T = table(xInit',xFinal',<span class="string">'VariableNames'</span>,{<span class="string">'Initial'</span>,<span class="string">'Final'</span>},<span class="keyword">...</span>
+    <span class="string">'RowNames'</span>,{<span class="string">'CVT Output Ratio'</span>,<span class="string">'nTeeth Sun 1'</span>,<span class="string">'nTeeth Sun 2'</span>,<span class="string">'nTeeth Sun 3'</span>,<span class="string">'nTeeth Sun 4'</span>});
+disp(T)
+</pre>
+<pre class="codeoutput">                        Initial    Final 
+                        _______    ______
+
+    CVT Output Ratio     1.425     1.4614
+    nTeeth Sun 1            39         39
+    nTeeth Sun 2            49         51
+    nTeeth Sun 3            50         27
+    nTeeth Sun 4            50         27
+
+</pre>
+<img vspace="5" hspace="5" src="optim_cvt_power_split_design_02.png" alt=""> <pre class="codeinput">close <span class="string">all</span>
+</pre>
+<p class="footer">
+<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2025a</a>
+<br>
+</p>
+</div>
+<!--
+##### SOURCE BEGIN #####
+%% Optimizing Power-Split CVT Design Parameters
+% 
+% <<optim_cvt_power_split_design_Overview.png>>
+% 
+% This example shows how to use optimization capabilities in MATLAB to
+% identify design parameters that will create a power-split CVT that has
+% the desired speed ranges. 
+% 
+% # To see the structure of the power-split CVT, see
+% <matlab:web('sm_cvt_power_split_pg_4range.html'); Power Split CVT with
+% Four Speed Ranges>
+% # To explore this workflow in an App, try <matlab:run('CVT_Calculate_Swash_Control_app_run.m') 
+% Power Split CVT Design App>
+% # To see the code that calculates the control table, see 
+% <matlab:edit('cvtCalcSwashControl.m') cvtCalcSwashControl.m>.
+%
+% Return to main example <matlab:web('Wheel_Loader_Design_Overview.html');
+% Wheel Loader Design with Simscape™>
+%
+% Copyright 2021-2025 The MathWorks, Inc
+
+
+%% Define CVT Parameters and Design Criteria
+%
+% Below are parameters that are: 
+% 
+% # Fixed for the design.
+% # Adjustable for the design (initial values for tuning)
+% # Represent the design criteria
+
+% Fixed for the design
+wEng           = 2200;   % Nominal RPM
+wPumpNom       = 3350;   % Pump nominal speed
+nHSPumpMotor   = 1.2941; % Ratio (Hydrostatic Pump Displacement/
+                         %   Hydrostatic Motor Displacement)
+pumpVolEff     = 0.97;   % Hydrostatic pump volumetric efficiency
+nGearCVTOut    = 1.7647; % CVT output transfer gear ratio
+nTRing         = 99;     % Number of teeth on planetary ring gears (all)
+nDiff          = 2.8000; % Ratio of differential
+nFinalDrive    = 4.625;  % Ratio of wheel hub planetary gear
+rWhl           = 0.3937; % Wheel radius
+
+% Adjustable for the design
+nGearHSOut     = 1.425;  % Gear ratio at output of hydrostatic transmission
+nTSuns         = [39,49,50,50];   % Vector 1x4 number of teeth on sun gear for each planetary 
+
+% Design Criteria
+tgtMaxSwash    = 0.7317; % Target max displacement ratio of pump swash plate (0-1)
+tgtVSpdRanges  = [0 3 6.4 14.2 30]; % Speed ranges in km/h
+
+% Derived parameter
+vWhl2CVTOut = 1/(3.6*rWhl*pi/30)*nGearCVTOut*nDiff*nFinalDrive;
+
+%% Determine CVT Control with Initial Values
+%
+% The parameters above dictate at which speed and at which pump
+% displacement ratio the gear shift changes must take place.  We use
+% function <matlab:edit('cvtCalcSwashControl.m') cvtCalcSwashControl.m> to
+% calculate the shift speeds and pump displacement ratio at those speeds.
+%
+% In the plot below the desired design is shown in red. The desired shift
+% speeds are along the vertical axis, the pump displacement ratio is along the x
+% axis.  The center of each target speed range is where the pump displacement
+% ratio is 0, which is the maximum efficiency point of the CVT.  
+%
+% The result of this design is shown in blue.  The shift points (ends of
+% the speed range) must occur when the output speed of the planetary gear
+% combinations are identical. Those points are where the gray lines cross.
+% The settings for the gear ratios place those transition points at speeds
+% that are not near the targets.  Our design meets the targets when the
+% blue line overlays the red line.
+
+% Plot with initial CVT values
+[~, ~, ax_sw] = cvtCalcSwashControl(...
+    tgtVSpdRanges,rWhl,nGearCVTOut,nDiff,nFinalDrive,wEng,wPumpNom,...
+    nHSPumpMotor,tgtMaxSwash,nTRing,nTSuns,nGearHSOut,pumpVolEff,'plot');
+
+%% Use Optimization Algorithms to Tune the Design Parameters
+%
+% We will use optimization algorithms to tune the gear ratios to obtain the
+% speed ranges we want.  The CVT output ratio and the number of teeth on
+% the four planetary sun gears are the design parameters to be adjusted.
+% Note that the number of teeth on the sun gears must be an integer and
+% must be divisible by 3 so that they can mate properly with 3 evenly spaced
+% planetary gears.
+%
+% The code below: 
+%
+% # Assembles the parameters to be tuned into a vector
+% # Defines limits for the parameter values
+% # Defines which parameters are integers
+% # Assembles the call to the objective function
+% # Calls <matlab:web(fullfile(docroot,'gads/ga.html')) ga()> to optimize
+% the design using a genetic algorithm.
+% # Scales the result for the sun gear teeth number by 3 (they were divided
+% by 3 in the objective function).
+
+% Initial values
+xInit = [nGearHSOut nTSuns];
+
+% Define limits for parameter values
+lb = [0.1,4,4,4,4];   % Lower bound
+ub = [5,28,28,28,28]; % Upper bound 
+
+% Define which parameters are integers (number of sun gear teeth)
+intcon = [2,3,4,5];
+
+% Assemble objective function handle
+objFcnHdl = @(x)cvtObjFunGearRatios4SpdsSwash(x, tgtVSpdRanges, ...
+    nHSPumpMotor,wEng,wPumpNom, vWhl2CVTOut, nTRing,tgtMaxSwash);
+
+% Alternate option: surrogateopt
+%options = optimoptions('surrogateopt','PlotFcn','surrogateoptplot',...
+%    'MaxFunctionEvaluations',500);
+%[xOpt,fval,exitflag,output] = surrogateopt(objFcnHdl,lb,ub,intcon,options);
+
+% Use a predefined seed for the random number generator.
+% Only used to ensure documentation stays consistent.
+load('gaOptStreamState.mat','streamState');
+stream = RandStream.getGlobalStream;
+stream.State = streamState;
+
+% Call Genetic Algorithm
+[xOpt,fval,exitflag,output] = ga(objFcnHdl,size(lb,2),[],[],[],[],lb,ub,[],intcon);
+clear streamState
+
+% Alternate options
+%xOpt = fmincon(objFcnHdl,xInit,[],[],[],[],lb,ub);
+%xOpt = patternsearch(objFcnHdl,xInit,[],[],[],[],lb,ub);
+
+% Take optimized value and ensure integer number of teeth 
+% that mate with 3 planetary gears
+xFinal = [xOpt(1) 3*xOpt(2:5)];
+
+%% Plot Optimized Result
+%
+% The result of the optimization process identifies gear ratios that
+% deliver the desired design.  The speed range limits are at their targets
+% and the center of the speed range is at the point where the CVT has
+% maximum efficiency.
+
+% Plot with current results and calculate swash control table
+[swashCtrlIdeal, swashCtrlTable, aw_sw] = cvtCalcSwashControl(...
+    tgtVSpdRanges,rWhl,nGearCVTOut,nDiff,nFinalDrive,wEng,wPumpNom,...
+    nHSPumpMotor,tgtMaxSwash,nTRing,xFinal(2:5),xFinal(1),pumpVolEff,'plot');
+
+T = table(xInit',xFinal','VariableNames',{'Initial','Final'},...
+    'RowNames',{'CVT Output Ratio','nTeeth Sun 1','nTeeth Sun 2','nTeeth Sun 3','nTeeth Sun 4'});
+disp(T)
+
+
+%%
+close all
+
+##### SOURCE END #####
+-->
+</body>
+</html>

@@ -1,0 +1,187 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XROBO-06",
+  "collection": "XROBO",
+  "reference": {
+    "identity_path": "tasks/XROBO-06/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "sm_humanoid_walker_rl.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XROBO-06",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a dynamically simulated humanoid that walks forward on a flat ground plane.",
+    "engineering_objects": [
+      "The physical mechanism must include an articulated body, two feet with actual ground contact, and six finite-torque lower-body actuators at the bilateral hip, knee, and ankle joints.",
+      "The recorded signals must be measured from the connected physical and control paths."
+    ],
+    "physical_paths": [
+      "These inputs must affect the connected contact, actuator-limit, and initial-condition mechanisms respectively.",
+      "The recorded signals must be measured from the connected physical and control paths.",
+      "The physical mechanism must include an articulated body, two feet with actual ground contact, and six finite-torque lower-body actuators at the bilateral hip, knee, and ankle joints."
+    ],
+    "functional_paths": [
+      "ControlAction has 6 channels [right hip,knee,ankle action,left hip,knee,ankle action].",
+      "The recorded signals must be measured from the connected physical and control paths."
+    ],
+    "information_paths": [
+      "FootFrictionScale, TorqueLimitScale, InitialHeight_m -> F90-XROBO-06 plant/control path -> TorsoState, JointState, FootContact, ControlAction, JointTorque, TaskState"
+    ],
+    "modes_and_events": [
+      "F90-XROBO-06 startup and continuous operation follow the current public task contract."
+    ],
+    "interfaces": [
+      {
+        "name": "FootFrictionScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read FootFrictionScale, TorqueLimitScale, and InitialHeight_m from MATLAB base-workspace variables. Support FootFrictionScale from 0.75 to 1.00, TorqueLimitScale from 0.85 to 1.00, and InitialHeight_m from 1.50 m to 1.54 m.",
+        "source": "tasks/XROBO-06/public_spec.json"
+      },
+      {
+        "name": "TorqueLimitScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read FootFrictionScale, TorqueLimitScale, and InitialHeight_m from MATLAB base-workspace variables. Support FootFrictionScale from 0.75 to 1.00, TorqueLimitScale from 0.85 to 1.00, and InitialHeight_m from 1.50 m to 1.54 m.",
+        "source": "tasks/XROBO-06/public_spec.json"
+      },
+      {
+        "name": "InitialHeight_m",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read FootFrictionScale, TorqueLimitScale, and InitialHeight_m from MATLAB base-workspace variables. Support FootFrictionScale from 0.75 to 1.00, TorqueLimitScale from 0.85 to 1.00, and InitialHeight_m from 1.50 m to 1.54 m.",
+        "source": "tasks/XROBO-06/public_spec.json"
+      },
+      {
+        "name": "TorsoState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s",
+          "rad/s",
+          "rad",
+          "m"
+        ],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named TorsoState, JointState, FootContact, ControlAction, JointTorque, and TaskState. TorsoState has 11 channels in this order: roll, pitch, yaw deflection (rad); roll, pitch, yaw rate (rad/s); lateral and vertical displacement (m); and lateral, forward, and vertical velocity (m/s).",
+        "source": "tasks/XROBO-06/public_spec.json"
+      },
+      {
+        "name": "JointState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad/s",
+          "rad"
+        ],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named TorsoState, JointState, FootContact, ControlAction, JointTorque, and TaskState. JointState has 12 channels: right hip, knee, and ankle angle and rate, followed by left hip, knee, and ankle angle and rate, using rad then rad/s for each joint.",
+        "source": "tasks/XROBO-06/public_spec.json"
+      },
+      {
+        "name": "FootContact",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named TorsoState, JointState, FootContact, ControlAction, JointTorque, and TaskState. FootContact has 2 channels [right contact,left contact].",
+        "source": "tasks/XROBO-06/public_spec.json"
+      },
+      {
+        "name": "ControlAction",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named TorsoState, JointState, FootContact, ControlAction, JointTorque, and TaskState. ControlAction has 6 channels [right hip,knee,ankle action,left hip,knee,ankle action].",
+        "source": "tasks/XROBO-06/public_spec.json"
+      },
+      {
+        "name": "JointTorque",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N*m"
+        ],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named TorsoState, JointState, FootContact, ControlAction, JointTorque, and TaskState. JointTorque has 6 channels in the same joint order, all in N*m.",
+        "source": "tasks/XROBO-06/public_spec.json"
+      },
+      {
+        "name": "TaskState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named TorsoState, JointState, FootContact, ControlAction, JointTorque, and TaskState. TaskState has 3 channels [forward position (m), instantaneous reward, termination flag].",
+        "source": "tasks/XROBO-06/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "TorsoState has 11 channels in this order: roll, pitch, yaw deflection (rad);",
+      "roll, pitch, yaw rate (rad/s);",
+      "JointTorque has 6 channels in the same joint order, all in N*m."
+    ],
+    "feedback_and_control_causality": [
+      "The physical mechanism must include an articulated body, two feet with actual ground contact, and six finite-torque lower-body actuators at the bilateral hip, knee, and ankle joints.",
+      "Use closed-loop feedback from measured body motion, joint state, and foot contact to keep the humanoid upright, limit lateral and vertical deviation, and sustain forward walking without prescribing the body trajectory.",
+      "These inputs must affect the connected contact, actuator-limit, and initial-condition mechanisms respectively."
+    ],
+    "signal_sources": [
+      "FootFrictionScale is read from the public MATLAB base-workspace input contract.",
+      "TorqueLimitScale is read from the public MATLAB base-workspace input contract.",
+      "InitialHeight_m is read from the public MATLAB base-workspace input contract.",
+      "TorsoState is produced by the implemented plant or controller and logged under the public output contract.",
+      "JointState is produced by the implemented plant or controller and logged under the public output contract.",
+      "FootContact is produced by the implemented plant or controller and logged under the public output contract.",
+      "ControlAction is produced by the implemented plant or controller and logged under the public output contract.",
+      "JointTorque is produced by the implemented plant or controller and logged under the public output contract.",
+      "TaskState is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "FootFrictionScale: Read FootFrictionScale, TorqueLimitScale, and InitialHeight_m from MATLAB base-workspace variables. Support FootFrictionScale from 0.75 to 1.00, TorqueLimitScale from 0.85 to 1.00, and InitialHeight_m from 1.50 m to 1.54 m.",
+      "TorqueLimitScale: Read FootFrictionScale, TorqueLimitScale, and InitialHeight_m from MATLAB base-workspace variables. Support FootFrictionScale from 0.75 to 1.00, TorqueLimitScale from 0.85 to 1.00, and InitialHeight_m from 1.50 m to 1.54 m.",
+      "InitialHeight_m: Read FootFrictionScale, TorqueLimitScale, and InitialHeight_m from MATLAB base-workspace variables. Support FootFrictionScale from 0.75 to 1.00, TorqueLimitScale from 0.85 to 1.00, and InitialHeight_m from 1.50 m to 1.54 m."
+    ],
+    "disturbances": [
+      "F90-XROBO-06 operating variation is supplied through FootFrictionScale, TorqueLimitScale, InitialHeight_m."
+    ],
+    "dynamic_processes": [
+      "Build a dynamically simulated humanoid that walks forward on a flat ground plane."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XROBO-06: prescribing TorsoState directly would bypass the system path described by: These inputs must affect the connected contact, actuator-limit, and initial-condition mechanisms respectively.",
+      "F90-XROBO-06: replaying a fixed TorsoState trace would ignore causal variation in FootFrictionScale."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XROBO-06/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XROBO-06/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XROBO-06/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

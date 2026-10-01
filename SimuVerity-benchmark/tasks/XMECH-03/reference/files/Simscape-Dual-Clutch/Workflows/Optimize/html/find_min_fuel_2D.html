@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+<title>Dual Clutch Transmission - Optimization, 2 Parameters, fminsearch</title>
+<meta name="generator" content="MATLAB 25.1">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2025-12-22">
+<meta name="DC.source" content="find_min_fuel_2D.m">
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="content">
+<h1>Dual Clutch Transmission - Optimization, 2 Parameters, fminsearch</h1>
+<!--introduction-->
+<p>This example shows a vehicle with a five-speed automatic dual-clutch transmission. The transmission controller converts the pedal deflection into a demanded torque. This demanded torque is then passed to the engine management. The pedal deflection and the vehicle speed are also used by the transmission controller to determine when the gear shifts should occur. Gear shifts are implemented via the two clutches, one clutch pressure being ramped up as the other clutch pressure is ramped down. Gear pre-selection via dog clutches ensures that the correct gear is fully selected before the on-going clutch is enabled.</p>
+<p>The script below uses optimization algorithms to find shift map that maximizes fuel economy. The shift map is parameterized with 2 parameters to limit the design space. The optimization algorithm used is fminsearch.</p>
+<!--/introduction-->
+<h2>Contents</h2>
+<div>
+<ul>
+<li>
+<a href="#1">Setup Optimization</a>
+</li>
+<li>
+<a href="#2">Run optimization</a>
+</li>
+</ul>
+</div>
+<h2 id="1">Setup Optimization</h2>
+<p>Setup model</p>
+<pre class="codeoutput">### Searching for referenced models in model 'Dual_Clutch_Trans'.
+### Total of 1 models to build.
+</pre>
+<img vspace="5" hspace="5" src="find_min_fuel_2D_01.png" alt=""> <img vspace="5" hspace="5" src="find_min_fuel_2D_02.png" alt=""> <h2 id="2">Run optimization</h2>
+<pre class="codeoutput"> 
+ Iteration   Func-count         f(x)         Procedure
+     0            1         0.166869         
+     1            3         0.166869         initial simplex
+     2            5         0.164907         expand
+     3            7         0.163784         reflect
+     4            8         0.163784         reflect
+     5           10         0.161509         expand
+     6           14         0.161509         shrink
+     7           16         0.160303         expand
+     8           18         0.159683         reflect
+     9           20         0.159647         contract outside
+    10           22         0.159647         contract inside
+    11           24         0.159473         contract inside
+    12           25         0.159473         reflect
+    13           27         0.159423         contract outside
+    14           29         0.159406         contract inside
+    15           31         0.159403         expand
+    16           33         0.159398         reflect
+    17           35         0.159076         expand
+    18           37         0.158984         reflect
+    19           39         0.158721         contract outside
+    20           41         0.158721         contract inside
+    21           43         0.158691         expand
+    22           45         0.158691         contract inside
+    23           47         0.158691         contract inside
+    24           48         0.158691         reflect
+    25           49         0.158691         reflect
+    26           51         0.158691         contract inside
+    27           55          0.15869         shrink
+    28           59         0.158688         shrink
+    29           61         0.158677         expand
+    30           62         0.158677         reflect
+    31           66         0.158677         shrink
+    32           67         0.158677         reflect
+    33           71         0.158677         shrink
+    34           72         0.158677         reflect
+    35           74         0.158677         contract inside
+    36           75         0.158677         reflect
+    37           79         0.158677         shrink
+    38           80         0.158677         reflect
+    39           84         0.158677         shrink
+    40           86         0.158677         contract inside
+    41           88         0.158677         contract inside
+    42           90         0.158677         contract inside
+    43           94         0.158677         shrink
+    44           98         0.158677         shrink
+ 
+Optimization terminated:
+ the current x satisfies the termination criteria using OPTIONS.TolX of 1.000000e-03 
+ and F(X) satisfies the convergence criteria using OPTIONS.TolFun of 1.000000e-04 
+
+Elapsed Sim Time = 495.768
+</pre>
+<img vspace="5" hspace="5" src="find_min_fuel_2D_03.png" alt=""> <img vspace="5" hspace="5" src="find_min_fuel_2D_04.png" alt=""> <p class="footer">Copyright 2014-2025 The MathWorks, Inc.<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2025a</a>
+<br>
+</p>
+</div>
+<!--
+##### SOURCE BEGIN #####
+%% Dual Clutch Transmission - Optimization, 2 Parameters, fminsearch
+%
+% This example shows a vehicle with a five-speed automatic dual-clutch
+% transmission. The transmission controller converts the pedal deflection
+% into a demanded torque. This demanded torque is then passed to the engine
+% management. The pedal deflection and the vehicle speed are also used by
+% the transmission controller to determine when the gear shifts should
+% occur. Gear shifts are implemented via the two clutches, one clutch
+% pressure being ramped up as the other clutch pressure is ramped down.
+% Gear pre-selection via dog clutches ensures that the correct gear is
+% fully selected before the on-going clutch is enabled.
+% 
+% The script below uses optimization algorithms to find shift map that
+% maximizes fuel economy. The shift map is parameterized with 2 parameters
+% to limit the design space. The optimization algorithm used is fminsearch.
+%
+% Copyright 2014-2025 The MathWorks, Inc.
+
+%% Setup Optimization
+% Setup model 
+mdl = 'Dual_Clutch_Trans';
+setup_model_optim
+
+% Set initial value of shift map parameters
+rampconst0 = 36;
+mingeardiff0 = 19;
+
+% Pre-generate rapid accelerator target
+load_system(mdl);
+rtp = Simulink.BlockDiagram.buildRapidAcceleratorTarget(mdl,'AddTunableParamInfo','on');
+close_system(mdl);
+
+% Create plots of parameter sweep, initial shift map
+setup_optim2D_plots
+
+%% Run optimization 
+close all
+setup_optim2D_plots
+
+% Run optimization without parallel computing
+tic;
+[x,fval,exitflag,output] = ...
+    fminsearch(@obj_find_min_fuel_2D,[mingeardiff0 rampconst0], ...
+    optimset('Tolx',1e-3,'Display','iter'),mdl,rtp,fuelUse_h,map_h);
+
+Elapsed_Sim_Time = toc;
+disp(['Elapsed Sim Time = ' num2str(Elapsed_Sim_Time)]);
+
+% Save key results of optimization
+%{
+mingeardiff_final = x(1);
+rampconst_final = x(2);
+
+OptFm2D.rampconst0 = rampconst0;
+OptFm2D.rampconst_final = rampconst_final;
+OptFm2D.mingeardiff0 = mingeardiff0;
+OptFm2D.mingeardiff_final = mingeardiff_final;
+OptFm2D.Elapsed_Sim_Time = Elapsed_Sim_Time;
+OptFm2D.FuncCount = output.funcCount;
+OptFm2D.FuelUsedMin = fval;
+
+save OptFm2D OptFm2D
+
+figure(1)
+saveas(gcf,'OptFm2D_Mesh','fig');
+%}
+
+% RESET MODEL InitFcn REPLACE_WITH_DASH_DASH ONLY NECESSARY FOR OPTIMIZATION
+reset_model_optim
+
+
+
+
+
+
+##### SOURCE END #####
+-->
+</body>
+</html>

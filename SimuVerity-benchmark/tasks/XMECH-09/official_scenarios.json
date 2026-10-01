@@ -1,0 +1,170 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XMECH-09",
+  "scenarios": [
+    {
+      "id": "nominal",
+      "class": "nominal",
+      "trajectory_scale": 1.0,
+      "bias_deg": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "low_excursion",
+      "class": "trajectory_boundary",
+      "trajectory_scale": 0.98,
+      "bias_deg": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "high_excursion",
+      "class": "trajectory_boundary",
+      "trajectory_scale": 1.02,
+      "bias_deg": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "bucket_upper_bias",
+      "class": "joint_bias",
+      "trajectory_scale": 1.0,
+      "bias_deg": [
+        0.1,
+        -0.1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "base_support_bias",
+      "class": "joint_bias",
+      "trajectory_scale": 1.0,
+      "bias_deg": [
+        0,
+        0,
+        0,
+        0.1,
+        -0.1
+      ]
+    },
+    {
+      "id": "coordinated_mixed",
+      "class": "coordinated_dynamic",
+      "trajectory_scale": 1.01,
+      "bias_deg": [
+        0.05,
+        -0.05,
+        0.05,
+        -0.05,
+        0
+      ]
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "stop_time_s": 60.0,
+      "evaluation_adapter": "In-memory measurement taps on existing top-level reference, feedback, and controller lines; no golden model save."
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "preferred_reference_target_raw": 90.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.3,
+          "meaning": "nominal five-axis tracking and coordination"
+        },
+        "Q": {
+          "weight": 0.15,
+          "meaning": "finite, smooth, physically plausible signal quality"
+        },
+        "M": {
+          "weight": 0.25,
+          "meaning": "actual reference-feedback-controller-hydraulic-mechanism causal path"
+        },
+        "R": {
+          "weight": 0.15,
+          "meaning": "worst-case private trajectory retention"
+        },
+        "D": {
+          "weight": 0.15,
+          "meaning": "reversal and recovery behavior under dynamic coordinated motion"
+        }
+      },
+      "within_group": "dedicated weighted arithmetic mean",
+      "across_groups": "weighted geometric mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum",
+      "policy_id": "simuverity-101-v1:xmech-09:scoring",
+      "fixed_reference_raw_score": 93.7596653684186
+    },
+    "shortcut_sanity_contract": [
+      "qualification_or_required_output_missing",
+      "prescribed_joint_motion_without_hydraulic_mechanism",
+      "disconnected_feedback_path",
+      "copied_reference_as_measured_joint_state",
+      "constant_or_missing_hydraulic_command",
+      "one_fixed_trajectory_replayed_for_all_private_inputs"
+    ]
+  },
+  "simulation": {
+    "stop_time_s": 60.0,
+    "evaluation_adapter": "In-memory measurement taps on existing top-level reference, feedback, and controller lines; no golden model save."
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "preferred_reference_target_raw": 90.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.3,
+        "meaning": "nominal five-axis tracking and coordination"
+      },
+      "Q": {
+        "weight": 0.15,
+        "meaning": "finite, smooth, physically plausible signal quality"
+      },
+      "M": {
+        "weight": 0.25,
+        "meaning": "actual reference-feedback-controller-hydraulic-mechanism causal path"
+      },
+      "R": {
+        "weight": 0.15,
+        "meaning": "worst-case private trajectory retention"
+      },
+      "D": {
+        "weight": 0.15,
+        "meaning": "reversal and recovery behavior under dynamic coordinated motion"
+      }
+    },
+    "within_group": "dedicated weighted arithmetic mean",
+    "across_groups": "weighted geometric mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum",
+    "policy_id": "simuverity-101-v1:xmech-09:scoring",
+    "fixed_reference_raw_score": 93.7596653684186
+  },
+  "shortcut_sanity_contract": [
+    "qualification_or_required_output_missing",
+    "prescribed_joint_motion_without_hydraulic_mechanism",
+    "disconnected_feedback_path",
+    "copied_reference_as_measured_joint_state",
+    "constant_or_missing_hydraulic_command",
+    "one_fixed_trajectory_replayed_for_all_private_inputs"
+  ]
+}

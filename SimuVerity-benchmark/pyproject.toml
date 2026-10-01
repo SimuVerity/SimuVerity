@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "simuverity"
+version = "1.0.0"
+description = "Reproducible agent evaluation for MATLAB and Simulink"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+authors = [{name = "SimuVerity Contributors"}]
+classifiers = [
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: Microsoft :: Windows",
+  "Programming Language :: Python :: 3",
+]
+dependencies = [
+  "numpy>=1.26",
+  "h5py>=3.10",
+]
+
+[project.optional-dependencies]
+reference = ["scipy>=1.11", "casadi>=3.6", "pandas>=2.2", "matplotlib>=3.8"]
+test = ["pytest>=8", "scipy>=1.11", "casadi>=3.6", "pandas>=2.2", "matplotlib>=3.8"]
+
+[project.scripts]
+simuverity = "simuverity.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+simuverity = ["runtime/matlab/*.m", "runtime/matlab/evaluator_support/*.m", "runtime/matlab/evaluator_support/*.json", "runtime/matlab/nominal_inputs/*.m", "runtime/matlab/nominal_inputs/*.mat", "runtime/matlab/nominal_inputs/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+pythonpath = ["src"]

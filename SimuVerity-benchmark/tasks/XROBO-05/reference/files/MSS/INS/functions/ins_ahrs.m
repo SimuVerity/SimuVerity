@@ -1,0 +1,135 @@
+function [x_ins, P_prd] = ins_ahrs( ...
+    x_ins, P_prd, mu, h, Qd, Rd, T_acc, f_imu, y_ahrs, y_pos, y_vel)
+% ins_ahrs is compatible with MATLAB and GNU Octave (www.octave.org).
+% The function implements an error-state (indirect) feedback Kalman filter 
+% (ESKF) specifically for Inertial Navigation Systems (INS) that are 
+% augmented by an attitude heading reference systems (AHRS) and aided by 
+% positional data. Attitude is parameterized using the 3-parameter Euler 
+% angle representation, which is singular for theta = +- 90 deg.
+%
+% Usage scenarios are detailed in SIMaidedINSeuler, demonstrating the 
+% implementation of the Kalman filter loop using the corrector-predictor 
+% representation:
+%
+%   - With new slow position measurements:
+%       [x_ins,P_prd] = ins_ahrs(...
+%           x_ins, P_prd, mu, h, Qd, Rd, f_imu, y_ahrs, y_pos)
+%       [x_ins,P_prd] = ins_ahrs(...
+%           x_ins, P_prd, mu, h, Qd, Rd, f_imu, y_ahrs, y_pos, y_vel)
+%
+%   - Without new position measurements (no aiding):
+%       [x_ins,P_prd] = ins_ahrs(x_ins,P_prd,mu,h,Qd,Rd,f_imu,y_ahrs)
+%
+% This function models the INS errors in a 9-dimensional state space, 
+% including position, velocity, biases, and attitude errors:
+%
+%   delta_x[k+1] = f(delta_x[k], u[k], w[k])
+%     delta_y[k] = h(delta_x[k], u[k]) + varepsilon[k]
+%
+% Inputs:
+%   x_ins[k] : INS state vector at step k, includes position, velocity, and
+%              accelerometer biases.
+%   P_prd[k] : 9x9 covariance matrix of the prediction step.
+%   mu       : Latitude in radians, used to calculate Earth's gravity vector.
+%   h        : Sampling time in seconds.
+%   Qd, Rd   : Process and measurement noise covariance matrices for the ESKF.
+%   T_acc    : Acceleration bias time constant in seconds.
+%   f_imu[k] : Specific force measurements from the IMU.
+%   w_imu[k] : Angular rate measurements from the IMU.
+%   y_ahrs[k]: Attitude measurements (roll, pitch, yaw) from the AHRS.
+%   y_pos[k] : Slow position measurements aids the filter.
+%   y_vel[k] : (Optionally) Slow velocity measurements aids the filter.
+%
+% Outputs:
+%   x_ins[k+1] : Updated INS state vector after propagation.
+%   P_prd[k+1] : Updated prediction covariance matrix after propagation.
+%
+% References:
+%   T. I. Fossen (2027). "Handbook of Marine Craft Hydrodynamics and Motion 
+%   Control," 3rd edition, John Wiley & Sons, Ltd., Chichester, UK.
+%
+% Author: Thor I. Fossen
+% Date: 2020-03-21
+% Revisions: 
+%   2026-06-14: Formulate the observer as 9-state estimator.
+
+%% INS states and matrices
+p_ins = x_ins(1:3);          % INS states
+v_ins = x_ins(4:6);
+b_acc_ins = x_ins(7:9);
+
+% WGS-84 gravity vector expressed in NED
+g_n = [0 0 gravity(mu)]'; 
+
+% Constant matrices
+O3 = zeros(3,3);
+I3 = eye(3);
+
+% Euler angle rotation matrix
+R = Rzyx(y_ahrs(1), y_ahrs(2), y_ahrs(3));
+
+% Bias compensated specific force
+f_ins = f_imu - b_acc_ins;
+
+% Discrete-time ESKF matrices
+A = [ O3 I3  O3       
+      O3 O3 -R 
+      O3 O3 -(1/T_acc) * I3 ];
+   
+Ad = expm(A * h); 
+
+if (nargin == 10)
+    Cd = [ I3 O3 O3 ];       % NED positions (x, y, z)
+else
+    Cd = [ I3 O3 O3          % NED positions (x, y, z)
+           O3 I3 O3 ];       % NED velocities (vN, vE, vD)       
+end
+       
+Ed = h * [  O3 O3
+           -R  O3
+            O3 I3 ];
+
+%% Kalman filter algorithm       
+if (nargin == 9)             % No aiding
+    
+    P_hat = P_prd;
+    
+else                         % INS aiding 
+    
+    % ESKF gain: K[k]
+    K = P_prd * Cd' / (Cd * P_prd * Cd' + Rd);
+    IKC = eye(9) - K * Cd;
+    
+    % Estimation error: eps[k]
+    eps_pos = y_pos - p_ins;
+    
+    if (nargin == 10)
+        eps = eps_pos;
+    else
+        eps_vel = y_vel - v_ins;
+        eps = [eps_pos; eps_vel];        
+    end
+    
+    % Corrector: delta_x_hat[k] and P_hat[k]
+    delta_x_hat = K * eps;
+    P_hat = IKC * P_prd * IKC' + K * Rd * K';
+    
+    % INS reset: x_ins[k]
+	p_ins = p_ins + delta_x_hat(1:3);           % Reset INS position
+	v_ins = v_ins + delta_x_hat(4:6);           % Reset INS velocity
+	b_acc_ins = b_acc_ins + delta_x_hat(7:9);   % Reset INS ACC bias  
+    
+end
+
+% Predictor: P_prd[k+1]
+P_prd = Ad * P_hat * Ad' + Ed * Qd * Ed';
+
+% INS propagation: x_ins[k+1]
+a_ins = R * f_ins + g_n;                        % Linear acceleration
+p_ins = p_ins + h * v_ins + h^2/2 * a_ins;      % Position
+v_ins = v_ins + h * a_ins;                      % Linear velocity
+
+x_ins = [p_ins; v_ins; b_acc_ins];
+
+ 
+end

@@ -1,0 +1,1257 @@
+{
+  "schema": "simuverity.public-nominal-input-contracts.v1",
+  "release": "simuverity-101-v1",
+  "task_count": 101,
+  "tasks": [
+    {
+      "task_id": "XELEC-06",
+      "public_input_names": [
+        "Vsrc_LL",
+        "P_load"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs_additional23"
+      }
+    },
+    {
+      "task_id": "XELEC-07",
+      "public_input_names": [
+        "Id_ref_cmd",
+        "Iq_ref_cmd",
+        "Vgrid_scale"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs_additional23"
+      }
+    },
+    {
+      "task_id": "XELEC-08",
+      "public_input_names": [
+        "Vsrc_LL",
+        "P_load",
+        "Q_load"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs_additional23"
+      }
+    },
+    {
+      "task_id": "XELEC-11",
+      "public_input_names": [
+        "F_cmd"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs_additional23"
+      }
+    },
+    {
+      "task_id": "XELEC-14",
+      "public_input_names": [
+        "Vsrc_amp",
+        "P_load"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs_additional23"
+      }
+    },
+    {
+      "task_id": "XELEC-19",
+      "public_input_names": [
+        "P_load"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs_additional23"
+      }
+    },
+    {
+      "task_id": "XELEC-22",
+      "public_input_names": [
+        "R_user"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs_additional23"
+      }
+    },
+    {
+      "task_id": "XELEC-23",
+      "public_input_names": [
+        "R_nl"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs_additional23"
+      }
+    },
+    {
+      "task_id": "XELEC-27",
+      "public_input_names": [
+        "Iref_amp"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs_additional23"
+      }
+    },
+    {
+      "task_id": "XAERO-02",
+      "public_input_names": [
+        "xaero02_input"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XAERO-03",
+      "public_input_names": [
+        "altitude_reference",
+        "airspeed_reference",
+        "heading_change",
+        "initial_altitude_offset",
+        "initial_airspeed_offset",
+        "command_time",
+        "gust_speed",
+        "gust_heading",
+        "gust_time"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XAERO-04",
+      "public_input_names": [
+        "MissionKind",
+        "InitialFlightMode",
+        "MissionProfile",
+        "PayloadScale",
+        "EnableWind",
+        "SimulationDuration_s"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XAERO-06",
+      "public_input_names": [
+        "InitialAirspeedScale",
+        "InitialBankOffset_deg",
+        "VehicleMassScale",
+        "WindSeverityScale"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XAERO-07",
+      "public_input_names": [
+        "aircraft_design_input"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XAERO-08",
+      "public_input_names": [
+        "mass_flow_kg_per_s",
+        "payload_mass_kg",
+        "gravity_turn_angle_rad"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XAERO-09",
+      "public_input_names": [
+        "lunar_dap_case_input"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XAERO-10",
+      "public_input_names": [
+        "attitude_command_rad",
+        "measurement_noise_covariance"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XAERO-11",
+      "public_input_names": [
+        "adcs_case_input"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XAUTO-02",
+      "public_input_names": [
+        "speed_reference",
+        "initial_speed",
+        "vehicle_mass",
+        "road_amplitude",
+        "road_wavelength",
+        "left_right_phase",
+        "drive_loss_fraction",
+        "drive_loss_time"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XAUTO-03",
+      "public_input_names": [
+        "engine_speed_rpm",
+        "accessory_load_profile"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XAUTO-04",
+      "public_input_names": [
+        "TargetSpeed_mps",
+        "BrakeStartDistance_m",
+        "RequestedDeceleration_g",
+        "RoadFrictionScaleHigh",
+        "RoadFrictionScaleLow",
+        "UseLowFrictionPatch",
+        "LowFrictionPatch_m"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XAUTO-06",
+      "public_input_names": [
+        "v_ref_kph",
+        "road_grade_pct",
+        "initial_soc_pct"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XAUTO-07",
+      "public_input_names": [
+        "ev_drive_input"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XAUTO-09",
+      "public_input_names": [
+        "lane_following_input"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XAUTO-10",
+      "public_input_names": [
+        "steering_angle_deg",
+        "rear_left_torque_nm",
+        "rear_right_torque_nm"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XAUTO-11",
+      "public_input_names": [
+        "xauto11_input"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XBATT-02",
+      "public_input_names": [
+        "ambient_temperature",
+        "coolant_inlet_temperature",
+        "initial_soc",
+        "current_demand",
+        "module_resistance_spread",
+        "coolant_maldistribution",
+        "load_step_time",
+        "regen_start_time"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XBATT-03",
+      "public_input_names": [
+        "speed_command",
+        "ambient_temperature_C",
+        "initial_temperature_C",
+        "relative_humidity",
+        "solar_load_W",
+        "cabin_temperature_setpoint_C",
+        "initial_soc",
+        "vehicle_mass_kg",
+        "cooling_enable"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XBATT-04",
+      "public_input_names": [
+        "Vmax",
+        "Vmin",
+        "Ic",
+        "Id",
+        "ambient_temperature_K",
+        "initial_temperature_K",
+        "number_of_cycles"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XBATT-05",
+      "public_input_names": [
+        "initial_soc",
+        "initial_temperature_C",
+        "ambient_temperature_C",
+        "heat_transfer_coefficient_W_per_m2K"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XBATT-06",
+      "public_input_names": [
+        "battery_input",
+        "initial_soc",
+        "available_capacity_Ah",
+        "forecast_discharge_current_A",
+        "reserve_capacity_Ah",
+        "required_landing_time_s"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XBATT-07",
+      "public_input_names": [
+        "bms_input"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XBATT-08",
+      "public_input_names": [
+        "kers_input"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XBATT-09",
+      "public_input_names": [
+        "xbatt09_input"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XBATT-10",
+      "public_input_names": [
+        "ev_truck_input"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XCOMM-02",
+      "public_input_names": [
+        "ArrayData",
+        "InputValid",
+        "SteeringVector",
+        "DiagonalLoading"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XCOMM-03",
+      "public_input_names": [
+        "TargetPosition_m",
+        "TargetVelocity_mps",
+        "TargetRCS_m2",
+        "JammerPosition_m",
+        "ClutterPowerScale"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XCOMM-04",
+      "public_input_names": [
+        "InputScale",
+        "PaNonlinearityScale"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XCOMM-05",
+      "public_input_names": [
+        "ChannelSNR_dB",
+        "ChannelCoherenceSymbols",
+        "PhaseGridPointsPerAxis",
+        "BeamformingAlgorithm"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XCOMM-06",
+      "public_input_names": [
+        "EbNo_dB",
+        "CarrierOffset_Hz",
+        "CarrierPhase_deg",
+        "TimingProfile",
+        "TimingStep_samples_per_frame",
+        "TimingSpan_samples",
+        "PayloadShift_bits"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XCOMM-07",
+      "public_input_names": [
+        "wlan_link_input"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XCOMM-08",
+      "public_input_names": [
+        "ChannelSNR_dB",
+        "SourceSeed",
+        "NoiseSeed"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XCOMM-09",
+      "public_input_names": [
+        "mcs_index",
+        "snr_db",
+        "spatial_mapping",
+        "payload_seed",
+        "channel_seed",
+        "noise_seed"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XFLUID-02",
+      "public_input_names": [
+        "pump_speed_rpm",
+        "output_pressure_bar",
+        "speed_step_fraction",
+        "speed_step_time",
+        "seal_leak_fraction",
+        "inlet_area_factor",
+        "fault_cylinder"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XFLUID-03",
+      "public_input_names": [
+        "engine_speed_rpm",
+        "pump_displacement_cm3_rev",
+        "implement_depth_cm",
+        "soil_cohesion_kpa"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XFLUID-04",
+      "public_input_names": [
+        "lift_target_mm",
+        "motion_start_s",
+        "ramp_duration_s",
+        "target_hold_s",
+        "supply_pressure_bar",
+        "supply_pressure_step_fraction",
+        "pressure_step_offset_s"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XFLUID-05",
+      "public_input_names": [
+        "PumpSpeed_rpm",
+        "FlowDemandScale",
+        "LoadOpeningScale"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XFLUID-07",
+      "public_input_names": [
+        "distance_breakpoints_m",
+        "target_velocity_kph",
+        "engine_speed_rpm"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XFLUID-08",
+      "public_input_names": [
+        "flight_fuel_command",
+        "initial_fuel_volume_m3"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XFLUID-09",
+      "public_input_names": [
+        "p_storage",
+        "p_vehicle_init",
+        "T_env",
+        "T_fluid"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XFLUID-10",
+      "public_input_names": [
+        "EngineSpeed_rad_s",
+        "FuelControl_m"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XMECH-02",
+      "public_input_names": [
+        "wind_time_s",
+        "wind_speed_mps",
+        "wind_direction_deg"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XMECH-03",
+      "public_input_names": [
+        "speed_command",
+        "vehicle_mass_kg",
+        "clutch_capacity_scale"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XMECH-04",
+      "public_input_names": [
+        "target_xyz_cm",
+        "wrist_target_deg",
+        "move_time",
+        "payload_mass",
+        "torque_limit_scale",
+        "disturbance_torque_nm",
+        "disturbance_start"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XMECH-05",
+      "public_input_names": [
+        "PayloadMass_kg",
+        "WheelFrictionScale",
+        "BumpRadius_m"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XMECH-06",
+      "public_input_names": [
+        "EventMode",
+        "SpeedScale",
+        "RoadFrictionScale",
+        "PayloadMass_kg"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XMECH-07",
+      "public_input_names": [
+        "InputBeltSpeedScale",
+        "OutputBeltSpeedScale",
+        "BeltKineticFrictionScale",
+        "BeltStaticFrictionScale",
+        "PayloadDensityScale"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XMECH-08",
+      "public_input_names": [
+        "CrankLength_m",
+        "CouplerLength_m"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XMECH-09",
+      "public_input_names": [
+        "trajectory_scale",
+        "joint_reference_bias_deg"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XMECH-10",
+      "public_input_names": [
+        "SupplyVoltage_V",
+        "PayloadMass_kg",
+        "JointFrictionScale",
+        "SequenceDelayScale"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XMED-02",
+      "public_input_names": [
+        "target_map_initial_mmHg",
+        "target_map_final_mmHg",
+        "target_step_time_s",
+        "systemic_resistance_scale",
+        "heart_rate_bpm",
+        "pump_speed_limit_rpm"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XMED-03",
+      "public_input_names": [
+        "target_tv1_initial_mL",
+        "target_tv1_final_mL",
+        "target_tv2_initial_mL",
+        "target_tv2_final_mL",
+        "target_step_time_s",
+        "patient1_resistance_cmH2O_per_Lps",
+        "patient2_resistance_cmH2O_per_Lps",
+        "patient1_compliance_L_per_cmH2O",
+        "patient2_compliance_L_per_cmH2O",
+        "respiratory_rate_bpm",
+        "peep_cmH2O",
+        "max_inspiratory_pressure_cmH2O"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XMED-04",
+      "public_input_names": [
+        "MealTimes_min",
+        "MealCarbs_g",
+        "PatientWeight_kg",
+        "SensorSampleTime_s"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XMED-05",
+      "public_input_names": [
+        "RhythmCondition",
+        "SimulationDuration_ms"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XMED-07",
+      "public_input_names": [
+        "delivery_mode",
+        "bolus_magnitude_units",
+        "bolus_stroke_time_s",
+        "pause_time_s",
+        "cycle_count",
+        "quick_bolus_magnitude_units",
+        "quick_bolus_stroke_time_s",
+        "basal_rate_units_per_hour",
+        "patient_backpressure_Pa",
+        "occlusion_onset_s",
+        "occlusion_fraction",
+        "low_remaining_limit_units"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XMED-08",
+      "public_input_names": [
+        "ecg_input"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XMED-09",
+      "public_input_names": [
+        "CardiacConditionMode",
+        "LVADConnected",
+        "AssistControllerMode",
+        "BaroreflexEnabled",
+        "ResistanceVariationEnabled",
+        "ElastanceVariationEnabled"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XMED-10",
+      "public_input_names": [
+        "patient_age_years",
+        "patient_height_cm",
+        "patient_weight_kg",
+        "patient_sex_binary",
+        "bis_target",
+        "simulation_time_s"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XROBO-01",
+      "public_input_names": [
+        "initial_forward_speed_mps",
+        "supported_mass_kg",
+        "ground_stiffness_npm",
+        "ground_damping_nspm",
+        "propulsive_torque_nm",
+        "knee_stiffness_nmprad"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XROBO-02",
+      "public_input_names": [
+        "left_target_rad",
+        "right_target_rad",
+        "move_duration",
+        "shared_payload_mass",
+        "torque_limit_scale",
+        "disturbance_torque_nm",
+        "disturbance_start"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XROBO-03",
+      "public_input_names": [
+        "initial_body_height_m",
+        "initial_forward_velocity_mps",
+        "initial_vertical_velocity_mps",
+        "torso_mass_kg",
+        "ground_friction_scale",
+        "ground_stiffness_npm",
+        "ground_damping_nspm",
+        "joint_torque_limit_nm"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XROBO-04",
+      "public_input_names": [
+        "RoverPath_XYZ",
+        "TerrainGrid_X_m",
+        "TerrainGrid_Y_m",
+        "TerrainGrid_Z_m",
+        "SamplePosition_m",
+        "TargetSpeed_mps",
+        "TerrainMuStatic",
+        "TerrainMuDynamic"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XROBO-05",
+      "public_input_names": [
+        "HeadingInitial_deg",
+        "HeadingCommand_deg",
+        "HeadingStepTime_s",
+        "DepthInitial_m",
+        "DepthCommand_m",
+        "DepthStepTime_s",
+        "CurrentSpeed_mps",
+        "CurrentDirection_deg",
+        "PropellerSpeed_rpm"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XROBO-06",
+      "public_input_names": [
+        "FootFrictionScale",
+        "TorqueLimitScale",
+        "InitialHeight_m"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XROBO-07",
+      "public_input_names": [
+        "MapMatrix",
+        "StartPose",
+        "GoalPose",
+        "ObstacleSafetyMargin",
+        "MinimumTurningRadius",
+        "MaxLinearVelocity",
+        "MaxAngularVelocity"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XROBO-08",
+      "public_input_names": [
+        "BallInitialX_m",
+        "BallInitialY_m",
+        "BallInitialVX_mps",
+        "BallInitialVY_mps",
+        "BallMassScale",
+        "ContactFrictionScale",
+        "TorqueAuthorityScale"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XROBO-09",
+      "public_input_names": [
+        "Waypoints_m",
+        "TrafficMotion",
+        "DesiredSpeed_mps",
+        "CurrentSpeed_mps",
+        "CurrentDirection_deg"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XROBO-10",
+      "public_input_names": [
+        "BallOffsetXY"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XTHERM-01",
+      "public_input_names": [
+        "ambient_temperature",
+        "solar_irradiance",
+        "cabin_internal_gain",
+        "component_heat_load",
+        "cabin_temperature_setpoint",
+        "component_temperature_limit",
+        "refrigerant_capacity",
+        "component_heat_step_fraction",
+        "heat_step_time",
+        "compressor_capacity_loss",
+        "capacity_event_time"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XTHERM-03",
+      "public_input_names": [
+        "feed_temperature_C",
+        "recycle_brine_flow_ton_per_min",
+        "steam_feed_kg_per_min",
+        "top_brine_temperature_setpoint_C",
+        "distillate_flow_setpoint_ton_per_min",
+        "disturbance_start_s",
+        "feed_temperature_step_C",
+        "recycle_flow_step_ton_per_min"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XTHERM-04",
+      "public_input_names": [
+        "T_house_init",
+        "T_set",
+        "T_ambient_cold",
+        "T_ambient_hot",
+        "internal_heat_gain_scale"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XTHERM-05",
+      "public_input_names": [
+        "coolant_flow_lpm",
+        "coolant_inlet_temperature_K",
+        "charge_current_A",
+        "charge_step_fraction",
+        "charge_step_time_s",
+        "initial_battery_temperature_K",
+        "max_cell_voltage_V"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XTHERM-06",
+      "public_input_names": [
+        "Cooling_Enable",
+        "AmbientTemp_C",
+        "CoolantMassFlow_kgps"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XTHERM-07",
+      "public_input_names": [
+        "CPUHeatScale",
+        "AmbientTemperature_K",
+        "AirflowRestrictionScale",
+        "FanCapacityScale",
+        "InitialTemperature_C"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XTHERM-08",
+      "public_input_names": [
+        "ServerLoadScale",
+        "AmbientTemperatureOffset_C",
+        "RelativeHumidityScale",
+        "ChilledWaterPumpCapacityScale",
+        "ChillerCapacityScale"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XTHERM-09",
+      "public_input_names": [
+        "PassengerCount",
+        "EquipmentHeat_W",
+        "BleedPressure_kPa",
+        "BleedTemperature_degC",
+        "OzoneRemovalFraction"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XTHERM-11",
+      "public_input_names": [
+        "reactor_temperature_setpoint_K",
+        "liquid_level_setpoint_m",
+        "feed_flow_kg_s",
+        "feed_concentration_kmol_m3",
+        "feed_temperature_K",
+        "coolant_inlet_temperature_K",
+        "disturbance_start_s",
+        "feed_flow_ramp_kg_s2",
+        "feed_concentration_ramp_kmol_m3_s",
+        "feed_temperature_ramp_K_s",
+        "coolant_inlet_temperature_ramp_K_s",
+        "catalyst_decay_rate_s_inverse",
+        "heat_transfer_decay_rate_s_inverse"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XAERO-01",
+      "public_input_names": [
+        "target_x",
+        "target_y",
+        "target_z",
+        "payload_mass",
+        "wind_speed",
+        "wind_heading",
+        "gust_factor",
+        "gust_time",
+        "payload_release_time"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs_additional23"
+      }
+    },
+    {
+      "task_id": "XAUTO-01",
+      "public_input_names": [
+        "initial_speed",
+        "brake_demand",
+        "left_friction",
+        "right_friction",
+        "vehicle_mass",
+        "brake_onset",
+        "friction_drop",
+        "friction_event_time"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs_additional23"
+      }
+    },
+    {
+      "task_id": "XBATT-01",
+      "public_input_names": [
+        "ambient_temperature",
+        "initial_soc",
+        "discharge_current",
+        "module_parameter_spread",
+        "cooling_fault_fraction",
+        "cooling_fault_time"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs_additional23"
+      }
+    },
+    {
+      "task_id": "XCOMM-01",
+      "public_input_names": [
+        "target1_range",
+        "target1_velocity",
+        "target1_rcs",
+        "target2_range",
+        "target2_velocity",
+        "target2_rcs",
+        "snr_db",
+        "clutter_ratio",
+        "interference_ratio",
+        "interference_time",
+        "interference_duration"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs_additional23"
+      }
+    },
+    {
+      "task_id": "XFLUID-01",
+      "public_input_names": [
+        "lift_reference",
+        "reach_reference",
+        "bucket_reference",
+        "supply_pressure",
+        "pump_flow_capacity",
+        "payload_mass",
+        "fluid_bulk_modulus",
+        "valve_deadband",
+        "leakage_multiplier",
+        "leak_event_time"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs_additional23"
+      }
+    },
+    {
+      "task_id": "XMECH-01",
+      "public_input_names": [
+        "left_track_command",
+        "right_track_command",
+        "payload_mass",
+        "terrain_friction",
+        "grade_angle",
+        "left_traction_loss",
+        "traction_event_time"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs_additional23"
+      }
+    },
+    {
+      "task_id": "XMED-01",
+      "public_input_names": [
+        "patient_compliance",
+        "airway_resistance",
+        "leak_fraction",
+        "target_insp_pressure",
+        "obstruction_factor",
+        "obstruction_time"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs_additional23"
+      }
+    },
+    {
+      "task_id": "XAUTO-12",
+      "public_input_names": [
+        "multiagent_mission"
+      ],
+      "provider": {
+        "name": "ext6_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XAUTO-13",
+      "public_input_names": [
+        "pmsm_measurement_experiment"
+      ],
+      "provider": {
+        "name": "ext6_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XFLUID-11",
+      "public_input_names": [
+        "desal_command"
+      ],
+      "provider": {
+        "name": "ext6_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XFLUID-12",
+      "public_input_names": [
+        "rm3_command"
+      ],
+      "provider": {
+        "name": "ext6_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XMECH-11",
+      "public_input_names": [
+        "wheel_loader_command",
+        "wheel_loader_environment"
+      ],
+      "provider": {
+        "name": "ext_high3_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XTHERM-12",
+      "public_input_names": [
+        "bev_drive_command",
+        "bev_thermal_command"
+      ],
+      "provider": {
+        "name": "ext_high3_public_nominal_inputs"
+      }
+    },
+    {
+      "task_id": "XTHERM-13",
+      "public_input_names": [
+        "TES_PUBLIC_INPUT"
+      ],
+      "provider": {
+        "name": "simuverity_public_nominal_inputs"
+      }
+    }
+  ]
+}

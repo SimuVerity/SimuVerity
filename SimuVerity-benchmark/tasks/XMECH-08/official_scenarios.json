@@ -1,0 +1,148 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XMECH-08",
+  "scenarios": [
+    {
+      "id": "nominal",
+      "class": "nominal",
+      "CrankLength_m": 0.12,
+      "CouplerLength_m": 0.27
+    },
+    {
+      "id": "short_crank",
+      "class": "crank_boundary",
+      "CrankLength_m": 0.1,
+      "CouplerLength_m": 0.27
+    },
+    {
+      "id": "long_crank",
+      "class": "crank_boundary",
+      "CrankLength_m": 0.15,
+      "CouplerLength_m": 0.27
+    },
+    {
+      "id": "short_coupler",
+      "class": "coupler_boundary",
+      "CrankLength_m": 0.12,
+      "CouplerLength_m": 0.25
+    },
+    {
+      "id": "long_coupler",
+      "class": "coupler_boundary",
+      "CrankLength_m": 0.12,
+      "CouplerLength_m": 0.3
+    },
+    {
+      "id": "near_grashof_boundary",
+      "class": "joint_boundary",
+      "CrankLength_m": 0.14,
+      "CouplerLength_m": 0.3
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "stop_time_s": 10.0,
+      "cold_start": true,
+      "input_crank_speed_deg_s": 36.0,
+      "evaluation_adapter": "Map public length variables to the source model's existing a and b parameters and extract its native measured tip trajectory without saving the model."
+    },
+    "fixed_geometry": {
+      "rocker_length_m": 0.2,
+      "ground_pivot_separation_m": 0.25,
+      "tracer_arm_length_m": 0.2
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "preferred_reference_target_raw": 90.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.3,
+          "meaning": "nominal trajectory and drive accuracy"
+        },
+        "Q": {
+          "weight": 0.15,
+          "meaning": "finite smooth closed-path quality"
+        },
+        "M": {
+          "weight": 0.25,
+          "meaning": "real connected four-bar mechanism and geometry causality"
+        },
+        "R": {
+          "weight": 0.2,
+          "meaning": "worst-case trajectory retention over all private geometries"
+        },
+        "D": {
+          "weight": 0.1,
+          "meaning": "cold-start traversal, speed uniformity and cycle closure"
+        }
+      },
+      "within_group": "dedicated weighted arithmetic mean",
+      "across_groups": "weighted geometric mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum",
+      "policy_id": "simuverity-101-v1:xmech-08:scoring",
+      "fixed_reference_raw_score": 100.0
+    },
+    "shortcut_sanity_contract": [
+      "qualification_or_required_output_missing",
+      "tip_coordinates_prescribed_without_a_physical_loop",
+      "constant_or_copied_tip_output",
+      "fixed_geometry_replayed_for_all_private_inputs",
+      "crank_does_not_complete_one_physical_revolution",
+      "open_or_disconnected_revolute-chain mechanism"
+    ]
+  },
+  "simulation": {
+    "stop_time_s": 10.0,
+    "cold_start": true,
+    "input_crank_speed_deg_s": 36.0,
+    "evaluation_adapter": "Map public length variables to the source model's existing a and b parameters and extract its native measured tip trajectory without saving the model."
+  },
+  "fixed_geometry": {
+    "rocker_length_m": 0.2,
+    "ground_pivot_separation_m": 0.25,
+    "tracer_arm_length_m": 0.2
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "preferred_reference_target_raw": 90.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.3,
+        "meaning": "nominal trajectory and drive accuracy"
+      },
+      "Q": {
+        "weight": 0.15,
+        "meaning": "finite smooth closed-path quality"
+      },
+      "M": {
+        "weight": 0.25,
+        "meaning": "real connected four-bar mechanism and geometry causality"
+      },
+      "R": {
+        "weight": 0.2,
+        "meaning": "worst-case trajectory retention over all private geometries"
+      },
+      "D": {
+        "weight": 0.1,
+        "meaning": "cold-start traversal, speed uniformity and cycle closure"
+      }
+    },
+    "within_group": "dedicated weighted arithmetic mean",
+    "across_groups": "weighted geometric mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum",
+    "policy_id": "simuverity-101-v1:xmech-08:scoring",
+    "fixed_reference_raw_score": 100.0
+  },
+  "shortcut_sanity_contract": [
+    "qualification_or_required_output_missing",
+    "tip_coordinates_prescribed_without_a_physical_loop",
+    "constant_or_copied_tip_output",
+    "fixed_geometry_replayed_for_all_private_inputs",
+    "crank_does_not_complete_one_physical_revolution",
+    "open_or_disconnected_revolute-chain mechanism"
+  ]
+}

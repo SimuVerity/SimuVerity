@@ -1,0 +1,271 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XMED-03",
+  "collection": "XMED",
+  "reference": {
+    "identity_path": "tasks/XMED-03/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/F90_XMED_03.slx",
+    "model_path": "tasks/XMED-03/reference/files/F90_XMED_03.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XMED-03",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a single-ventilator, dual-patient breathing system using Simulink and Simscape physical networks.",
+    "engineering_objects": [
+      "Build a single-ventilator, dual-patient breathing system using Simulink and Simscape physical networks.",
+      "A shared periodic pressure source and common inspiratory/expiratory path must split into two physically distinct patient branches.",
+      "Each patient branch must include airway resistance, lung compliance, physical pressure and flow measurement, appropriate one-way breathing-flow behavior, and an independently commanded physical branch-flow control element."
+    ],
+    "physical_paths": [
+      "Build a single-ventilator, dual-patient breathing system using Simulink and Simscape physical networks.",
+      "A shared periodic pressure source and common inspiratory/expiratory path must split into two physically distinct patient branches.",
+      "Each patient branch must include airway resistance, lung compliance, physical pressure and flow measurement, appropriate one-way breathing-flow behavior, and an independently commanded physical branch-flow control element."
+    ],
+    "functional_paths": [
+      "Each patient branch must include airway resistance, lung compliance, physical pressure and flow measurement, appropriate one-way breathing-flow behavior, and an independently commanded physical branch-flow control element.",
+      "Use feedback from the physically measured patient breathing states to regulate each patient's breath-delivered tidal volume to its requested initial value and requested step to the final value, while respecting PEEP and the maximum inspiratory-pressure limit across the declared patient-mechanics range."
+    ],
+    "information_paths": [
+      "target_tv1_initial_mL, target_tv1_final_mL, target_tv2_initial_mL, target_tv2_final_mL, target_step_time_s, patient1_resistance_cmH2O_per_Lps, patient2_resistance_cmH2O_per_Lps, patient1_compliance_L_per_cmH2O, patient2_compliance_L_per_cmH2O, respiratory_rate_bpm, peep_cmH2O, max_inspiratory_pressure_cmH2O -> F90-XMED-03 plant/control path -> patient_pressure, patient_flow, patient_volume, branch_command"
+    ],
+    "modes_and_events": [
+      "Read the scalar base-workspace variables target_tv1_initial_mL, target_tv1_final_mL, target_tv2_initial_mL, target_tv2_final_mL, target_step_time_s, patient1_resistance_cmH2O_per_Lps, patient2_resistance_cmH2O_per_Lps, patient1_compliance_L_per_cmH2O, patient2_compliance_L_per_cmH2O, respiratory_rate_bpm, peep_cmH2O, and max_inspiratory_pressure_cmH2O.",
+      "all other parameters and initialization dependencies must be self-contained in the saved model.",
+      "Use feedback from the physically measured patient breathing states to regulate each patient's breath-delivered tidal volume to its requested initial value and requested step to the final value, while respecting PEEP and the maximum inspiratory-pressure limit across the declared patient-mechanics range."
+    ],
+    "interfaces": [
+      {
+        "name": "target_tv1_initial_mL",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "mL"
+        ],
+        "range_or_shape": "Read the scalar base-workspace variables target_tv1_initial_mL, target_tv1_final_mL, target_tv2_initial_mL, target_tv2_final_mL, target_step_time_s, patient1_resistance_cmH2O_per_Lps, patient2_resistance_cmH2O_per_Lps, patient1_compliance_L_per_cmH2O, patient2_compliance_L_per_cmH2O, respiratory_rate_bpm, peep_cmH2O, and max_inspiratory_pressure_cmH2O.",
+        "source": "tasks/XMED-03/public_spec.json"
+      },
+      {
+        "name": "target_tv1_final_mL",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "mL"
+        ],
+        "range_or_shape": "Read the scalar base-workspace variables target_tv1_initial_mL, target_tv1_final_mL, target_tv2_initial_mL, target_tv2_final_mL, target_step_time_s, patient1_resistance_cmH2O_per_Lps, patient2_resistance_cmH2O_per_Lps, patient1_compliance_L_per_cmH2O, patient2_compliance_L_per_cmH2O, respiratory_rate_bpm, peep_cmH2O, and max_inspiratory_pressure_cmH2O.",
+        "source": "tasks/XMED-03/public_spec.json"
+      },
+      {
+        "name": "target_tv2_initial_mL",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "mL"
+        ],
+        "range_or_shape": "Read the scalar base-workspace variables target_tv1_initial_mL, target_tv1_final_mL, target_tv2_initial_mL, target_tv2_final_mL, target_step_time_s, patient1_resistance_cmH2O_per_Lps, patient2_resistance_cmH2O_per_Lps, patient1_compliance_L_per_cmH2O, patient2_compliance_L_per_cmH2O, respiratory_rate_bpm, peep_cmH2O, and max_inspiratory_pressure_cmH2O.",
+        "source": "tasks/XMED-03/public_spec.json"
+      },
+      {
+        "name": "target_tv2_final_mL",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "mL"
+        ],
+        "range_or_shape": "Read the scalar base-workspace variables target_tv1_initial_mL, target_tv1_final_mL, target_tv2_initial_mL, target_tv2_final_mL, target_step_time_s, patient1_resistance_cmH2O_per_Lps, patient2_resistance_cmH2O_per_Lps, patient1_compliance_L_per_cmH2O, patient2_compliance_L_per_cmH2O, respiratory_rate_bpm, peep_cmH2O, and max_inspiratory_pressure_cmH2O.",
+        "source": "tasks/XMED-03/public_spec.json"
+      },
+      {
+        "name": "target_step_time_s",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read the scalar base-workspace variables target_tv1_initial_mL, target_tv1_final_mL, target_tv2_initial_mL, target_tv2_final_mL, target_step_time_s, patient1_resistance_cmH2O_per_Lps, patient2_resistance_cmH2O_per_Lps, patient1_compliance_L_per_cmH2O, patient2_compliance_L_per_cmH2O, respiratory_rate_bpm, peep_cmH2O, and max_inspiratory_pressure_cmH2O.",
+        "source": "tasks/XMED-03/public_spec.json"
+      },
+      {
+        "name": "patient1_resistance_cmH2O_per_Lps",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "cmH2O/(L/s)"
+        ],
+        "range_or_shape": "Read the scalar base-workspace variables target_tv1_initial_mL, target_tv1_final_mL, target_tv2_initial_mL, target_tv2_final_mL, target_step_time_s, patient1_resistance_cmH2O_per_Lps, patient2_resistance_cmH2O_per_Lps, patient1_compliance_L_per_cmH2O, patient2_compliance_L_per_cmH2O, respiratory_rate_bpm, peep_cmH2O, and max_inspiratory_pressure_cmH2O.",
+        "source": "tasks/XMED-03/public_spec.json"
+      },
+      {
+        "name": "patient2_resistance_cmH2O_per_Lps",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "cmH2O/(L/s)"
+        ],
+        "range_or_shape": "Read the scalar base-workspace variables target_tv1_initial_mL, target_tv1_final_mL, target_tv2_initial_mL, target_tv2_final_mL, target_step_time_s, patient1_resistance_cmH2O_per_Lps, patient2_resistance_cmH2O_per_Lps, patient1_compliance_L_per_cmH2O, patient2_compliance_L_per_cmH2O, respiratory_rate_bpm, peep_cmH2O, and max_inspiratory_pressure_cmH2O.",
+        "source": "tasks/XMED-03/public_spec.json"
+      },
+      {
+        "name": "patient1_compliance_L_per_cmH2O",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "L/cmH2O"
+        ],
+        "range_or_shape": "Read the scalar base-workspace variables target_tv1_initial_mL, target_tv1_final_mL, target_tv2_initial_mL, target_tv2_final_mL, target_step_time_s, patient1_resistance_cmH2O_per_Lps, patient2_resistance_cmH2O_per_Lps, patient1_compliance_L_per_cmH2O, patient2_compliance_L_per_cmH2O, respiratory_rate_bpm, peep_cmH2O, and max_inspiratory_pressure_cmH2O.",
+        "source": "tasks/XMED-03/public_spec.json"
+      },
+      {
+        "name": "patient2_compliance_L_per_cmH2O",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "L/cmH2O"
+        ],
+        "range_or_shape": "Read the scalar base-workspace variables target_tv1_initial_mL, target_tv1_final_mL, target_tv2_initial_mL, target_tv2_final_mL, target_step_time_s, patient1_resistance_cmH2O_per_Lps, patient2_resistance_cmH2O_per_Lps, patient1_compliance_L_per_cmH2O, patient2_compliance_L_per_cmH2O, respiratory_rate_bpm, peep_cmH2O, and max_inspiratory_pressure_cmH2O.",
+        "source": "tasks/XMED-03/public_spec.json"
+      },
+      {
+        "name": "respiratory_rate_bpm",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "breaths/min"
+        ],
+        "range_or_shape": "Read the scalar base-workspace variables target_tv1_initial_mL, target_tv1_final_mL, target_tv2_initial_mL, target_tv2_final_mL, target_step_time_s, patient1_resistance_cmH2O_per_Lps, patient2_resistance_cmH2O_per_Lps, patient1_compliance_L_per_cmH2O, patient2_compliance_L_per_cmH2O, respiratory_rate_bpm, peep_cmH2O, and max_inspiratory_pressure_cmH2O.",
+        "source": "tasks/XMED-03/public_spec.json"
+      },
+      {
+        "name": "peep_cmH2O",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "cmH2O"
+        ],
+        "range_or_shape": "Read the scalar base-workspace variables target_tv1_initial_mL, target_tv1_final_mL, target_tv2_initial_mL, target_tv2_final_mL, target_step_time_s, patient1_resistance_cmH2O_per_Lps, patient2_resistance_cmH2O_per_Lps, patient1_compliance_L_per_cmH2O, patient2_compliance_L_per_cmH2O, respiratory_rate_bpm, peep_cmH2O, and max_inspiratory_pressure_cmH2O.",
+        "source": "tasks/XMED-03/public_spec.json"
+      },
+      {
+        "name": "max_inspiratory_pressure_cmH2O",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "cmH2O"
+        ],
+        "range_or_shape": "Read the scalar base-workspace variables target_tv1_initial_mL, target_tv1_final_mL, target_tv2_initial_mL, target_tv2_final_mL, target_step_time_s, patient1_resistance_cmH2O_per_Lps, patient2_resistance_cmH2O_per_Lps, patient1_compliance_L_per_cmH2O, patient2_compliance_L_per_cmH2O, respiratory_rate_bpm, peep_cmH2O, and max_inspiratory_pressure_cmH2O.",
+        "source": "tasks/XMED-03/public_spec.json"
+      },
+      {
+        "name": "patient_pressure",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "cmH2O"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries patient_pressure with two channels ordered as patient 1 and patient 2 airway pressure in cmH2O; patient_flow with the corresponding physical airway flows in L/s, positive into each patient; patient_volume with the corresponding physical lung volumes in mL; and branch_command with the two normalized physical branch-opening commands ordered as patient 1 and patient 2, where 0 is most closed and 1 is most open.",
+        "source": "tasks/XMED-03/public_spec.json"
+      },
+      {
+        "name": "patient_flow",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "L/s"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries patient_pressure with two channels ordered as patient 1 and patient 2 airway pressure in cmH2O; patient_flow with the corresponding physical airway flows in L/s, positive into each patient; patient_volume with the corresponding physical lung volumes in mL; and branch_command with the two normalized physical branch-opening commands ordered as patient 1 and patient 2, where 0 is most closed and 1 is most open.",
+        "source": "tasks/XMED-03/public_spec.json"
+      },
+      {
+        "name": "patient_volume",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "mL"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries patient_pressure with two channels ordered as patient 1 and patient 2 airway pressure in cmH2O; patient_flow with the corresponding physical airway flows in L/s, positive into each patient; patient_volume with the corresponding physical lung volumes in mL; and branch_command with the two normalized physical branch-opening commands ordered as patient 1 and patient 2, where 0 is most closed and 1 is most open.",
+        "source": "tasks/XMED-03/public_spec.json"
+      },
+      {
+        "name": "branch_command",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "normalized 0 to 1"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries patient_pressure with two channels ordered as patient 1 and patient 2 airway pressure in cmH2O; patient_flow with the corresponding physical airway flows in L/s, positive into each patient; patient_volume with the corresponding physical lung volumes in mL; and branch_command with the two normalized physical branch-opening commands ordered as patient 1 and patient 2, where 0 is most closed and 1 is most open.",
+        "source": "tasks/XMED-03/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "patient_flow with the corresponding physical airway flows in L/s, positive into each patient;",
+      "and branch_command with the two normalized physical branch-opening commands ordered as patient 1 and patient 2, where 0 is most closed and 1 is most open."
+    ],
+    "feedback_and_control_causality": [
+      "Use feedback from the physically measured patient breathing states to regulate each patient's breath-delivered tidal volume to its requested initial value and requested step to the final value, while respecting PEEP and the maximum inspiratory-pressure limit across the declared patient-mechanics range."
+    ],
+    "signal_sources": [
+      "target_tv1_initial_mL is read from the public MATLAB base-workspace input contract.",
+      "target_tv1_final_mL is read from the public MATLAB base-workspace input contract.",
+      "target_tv2_initial_mL is read from the public MATLAB base-workspace input contract.",
+      "target_tv2_final_mL is read from the public MATLAB base-workspace input contract.",
+      "target_step_time_s is read from the public MATLAB base-workspace input contract.",
+      "patient1_resistance_cmH2O_per_Lps is read from the public MATLAB base-workspace input contract.",
+      "patient2_resistance_cmH2O_per_Lps is read from the public MATLAB base-workspace input contract.",
+      "patient1_compliance_L_per_cmH2O is read from the public MATLAB base-workspace input contract.",
+      "patient2_compliance_L_per_cmH2O is read from the public MATLAB base-workspace input contract.",
+      "respiratory_rate_bpm is read from the public MATLAB base-workspace input contract.",
+      "peep_cmH2O is read from the public MATLAB base-workspace input contract.",
+      "max_inspiratory_pressure_cmH2O is read from the public MATLAB base-workspace input contract.",
+      "patient_pressure is produced by the implemented plant or controller and logged under the public output contract.",
+      "patient_flow is produced by the implemented plant or controller and logged under the public output contract.",
+      "patient_volume is produced by the implemented plant or controller and logged under the public output contract.",
+      "branch_command is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "target_tv1_initial_mL: Read the scalar base-workspace variables target_tv1_initial_mL, target_tv1_final_mL, target_tv2_initial_mL, target_tv2_final_mL, target_step_time_s, patient1_resistance_cmH2O_per_Lps, patient2_resistance_cmH2O_per_Lps, patient1_compliance_L_per_cmH2O, patient2_compliance_L_per_cmH2O, respiratory_rate_bpm, peep_cmH2O, and max_inspiratory_pressure_cmH2O.",
+      "target_tv1_final_mL: Read the scalar base-workspace variables target_tv1_initial_mL, target_tv1_final_mL, target_tv2_initial_mL, target_tv2_final_mL, target_step_time_s, patient1_resistance_cmH2O_per_Lps, patient2_resistance_cmH2O_per_Lps, patient1_compliance_L_per_cmH2O, patient2_compliance_L_per_cmH2O, respiratory_rate_bpm, peep_cmH2O, and max_inspiratory_pressure_cmH2O.",
+      "target_tv2_initial_mL: Read the scalar base-workspace variables target_tv1_initial_mL, target_tv1_final_mL, target_tv2_initial_mL, target_tv2_final_mL, target_step_time_s, patient1_resistance_cmH2O_per_Lps, patient2_resistance_cmH2O_per_Lps, patient1_compliance_L_per_cmH2O, patient2_compliance_L_per_cmH2O, respiratory_rate_bpm, peep_cmH2O, and max_inspiratory_pressure_cmH2O.",
+      "target_tv2_final_mL: Read the scalar base-workspace variables target_tv1_initial_mL, target_tv1_final_mL, target_tv2_initial_mL, target_tv2_final_mL, target_step_time_s, patient1_resistance_cmH2O_per_Lps, patient2_resistance_cmH2O_per_Lps, patient1_compliance_L_per_cmH2O, patient2_compliance_L_per_cmH2O, respiratory_rate_bpm, peep_cmH2O, and max_inspiratory_pressure_cmH2O.",
+      "target_step_time_s: Read the scalar base-workspace variables target_tv1_initial_mL, target_tv1_final_mL, target_tv2_initial_mL, target_tv2_final_mL, target_step_time_s, patient1_resistance_cmH2O_per_Lps, patient2_resistance_cmH2O_per_Lps, patient1_compliance_L_per_cmH2O, patient2_compliance_L_per_cmH2O, respiratory_rate_bpm, peep_cmH2O, and max_inspiratory_pressure_cmH2O.",
+      "patient1_resistance_cmH2O_per_Lps: Read the scalar base-workspace variables target_tv1_initial_mL, target_tv1_final_mL, target_tv2_initial_mL, target_tv2_final_mL, target_step_time_s, patient1_resistance_cmH2O_per_Lps, patient2_resistance_cmH2O_per_Lps, patient1_compliance_L_per_cmH2O, patient2_compliance_L_per_cmH2O, respiratory_rate_bpm, peep_cmH2O, and max_inspiratory_pressure_cmH2O.",
+      "patient2_resistance_cmH2O_per_Lps: Read the scalar base-workspace variables target_tv1_initial_mL, target_tv1_final_mL, target_tv2_initial_mL, target_tv2_final_mL, target_step_time_s, patient1_resistance_cmH2O_per_Lps, patient2_resistance_cmH2O_per_Lps, patient1_compliance_L_per_cmH2O, patient2_compliance_L_per_cmH2O, respiratory_rate_bpm, peep_cmH2O, and max_inspiratory_pressure_cmH2O.",
+      "patient1_compliance_L_per_cmH2O: Read the scalar base-workspace variables target_tv1_initial_mL, target_tv1_final_mL, target_tv2_initial_mL, target_tv2_final_mL, target_step_time_s, patient1_resistance_cmH2O_per_Lps, patient2_resistance_cmH2O_per_Lps, patient1_compliance_L_per_cmH2O, patient2_compliance_L_per_cmH2O, respiratory_rate_bpm, peep_cmH2O, and max_inspiratory_pressure_cmH2O."
+    ],
+    "disturbances": [
+      "Read the scalar base-workspace variables target_tv1_initial_mL, target_tv1_final_mL, target_tv2_initial_mL, target_tv2_final_mL, target_step_time_s, patient1_resistance_cmH2O_per_Lps, patient2_resistance_cmH2O_per_Lps, patient1_compliance_L_per_cmH2O, patient2_compliance_L_per_cmH2O, respiratory_rate_bpm, peep_cmH2O, and max_inspiratory_pressure_cmH2O.",
+      "Use feedback from the physically measured patient breathing states to regulate each patient's breath-delivered tidal volume to its requested initial value and requested step to the final value, while respecting PEEP and the maximum inspiratory-pressure limit across the declared patient-mechanics range."
+    ],
+    "dynamic_processes": [
+      "Read the scalar base-workspace variables target_tv1_initial_mL, target_tv1_final_mL, target_tv2_initial_mL, target_tv2_final_mL, target_step_time_s, patient1_resistance_cmH2O_per_Lps, patient2_resistance_cmH2O_per_Lps, patient1_compliance_L_per_cmH2O, patient2_compliance_L_per_cmH2O, respiratory_rate_bpm, peep_cmH2O, and max_inspiratory_pressure_cmH2O.",
+      "Use feedback from the physically measured patient breathing states to regulate each patient's breath-delivered tidal volume to its requested initial value and requested step to the final value, while respecting PEEP and the maximum inspiratory-pressure limit across the declared patient-mechanics range."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XMED-03: prescribing patient_pressure directly would bypass the system path described by: Build a single-ventilator, dual-patient breathing system using Simulink and Simscape physical networks.",
+      "F90-XMED-03: replaying a fixed patient_pressure trace would ignore causal variation in target_tv1_initial_mL."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XMED-03/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XMED-03/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XMED-03/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XMECH-09",
+  "collection": "XMECH",
+  "reference": {
+    "identity_path": "tasks/XMECH-09/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "Backhoe.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XMECH-09",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a physical hydraulically actuated backhoe mounted on a fixed base.",
+    "engineering_objects": [
+      "Build a physical hydraulically actuated backhoe mounted on a fixed base.",
+      "Each controlled motion must be produced through a real mechanical linkage and hydraulic-cylinder actuation path;",
+      "Use these inputs to change the commanded coordinated joint trajectory while retaining a closed-loop physical motion system."
+    ],
+    "physical_paths": [
+      "Each controlled motion must be produced through a real mechanical linkage and hydraulic-cylinder actuation path; do not prescribe the measured joint angles or bucket motion directly.",
+      "Build a physical hydraulically actuated backhoe mounted on a fixed base.",
+      "Each controlled motion must be produced through a real mechanical linkage and hydraulic-cylinder actuation path;",
+      "Use these inputs to change the commanded coordinated joint trajectory while retaining a closed-loop physical motion system."
+    ],
+    "functional_paths": [
+      "The mechanism must coordinate five controlled axes: a base swivel motion and the articulated arm, linkage, and bucket motions needed to execute a digging trajectory.",
+      "Each controlled motion must be produced through a real mechanical linkage and hydraulic-cylinder actuation path;",
+      "The controller must use actual joint-motion feedback to track the commanded trajectory, including coordinated reversals."
+    ],
+    "information_paths": [
+      "trajectory_scale, joint_reference_bias_deg -> F90-XMECH-09 plant/control path -> joint_reference, joint_state, hydraulic_command"
+    ],
+    "modes_and_events": [
+      "F90-XMECH-09 startup and continuous operation follow the current public task contract."
+    ],
+    "interfaces": [
+      {
+        "name": "trajectory_scale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read trajectory_scale and joint_reference_bias_deg from the MATLAB base workspace. Support trajectory_scale from 0.98 to 1.02.",
+        "source": "tasks/XMECH-09/public_spec.json"
+      },
+      {
+        "name": "joint_reference_bias_deg",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "deg"
+        ],
+        "range_or_shape": "Read trajectory_scale and joint_reference_bias_deg from the MATLAB base workspace. joint_reference_bias_deg may be either a scalar or a five-element vector bounded by -0.1 to 0.1 degrees per joint.",
+        "source": "tasks/XMECH-09/public_spec.json"
+      },
+      {
+        "name": "joint_reference",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "deg"
+        ],
+        "range_or_shape": "Read trajectory_scale and joint_reference_bias_deg from the MATLAB base workspace. joint_reference_bias_deg may be either a scalar or a five-element vector bounded by -0.1 to 0.1 degrees per joint. Log complete-run MATLAB Timeseries named joint_reference, joint_state, and hydraulic_command. joint_reference contains the five reference angles in deg; joint_state contains the five measured joint angles in deg; and hydraulic_command contains the five actuator pressure-command channels in the same axis order.",
+        "source": "tasks/XMECH-09/public_spec.json"
+      },
+      {
+        "name": "joint_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "deg"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named joint_reference, joint_state, and hydraulic_command. joint_reference contains the five reference angles in deg; joint_state contains the five measured joint angles in deg; and hydraulic_command contains the five actuator pressure-command channels in the same axis order.",
+        "source": "tasks/XMECH-09/public_spec.json"
+      },
+      {
+        "name": "hydraulic_command",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named joint_reference, joint_state, and hydraulic_command. joint_reference contains the five reference angles in deg; joint_state contains the five measured joint angles in deg; and hydraulic_command contains the five actuator pressure-command channels in the same axis order.",
+        "source": "tasks/XMECH-09/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "The mechanism must coordinate five controlled axes: a base swivel motion and the articulated arm, linkage, and bucket motions needed to execute a digging trajectory.",
+      "Each controlled motion must be produced through a real mechanical linkage and hydraulic-cylinder actuation path;",
+      "Use these inputs to change the commanded coordinated joint trajectory while retaining a closed-loop physical motion system."
+    ],
+    "feedback_and_control_causality": [
+      "Use these inputs to change the commanded coordinated joint trajectory while retaining a closed-loop physical motion system.",
+      "The controller must use actual joint-motion feedback to track the commanded trajectory, including coordinated reversals.",
+      "The hydraulic command must drive the physical actuators, which in turn move the multibody mechanism."
+    ],
+    "signal_sources": [
+      "trajectory_scale is read from the public MATLAB base-workspace input contract.",
+      "joint_reference_bias_deg is read from the public MATLAB base-workspace input contract.",
+      "joint_reference is produced by the implemented plant or controller and logged under the public output contract.",
+      "joint_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "hydraulic_command is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "trajectory_scale: Read trajectory_scale and joint_reference_bias_deg from the MATLAB base workspace. Support trajectory_scale from 0.98 to 1.02.",
+      "joint_reference_bias_deg: Read trajectory_scale and joint_reference_bias_deg from the MATLAB base workspace. joint_reference_bias_deg may be either a scalar or a five-element vector bounded by -0.1 to 0.1 degrees per joint."
+    ],
+    "disturbances": [
+      "F90-XMECH-09 operating variation is supplied through trajectory_scale, joint_reference_bias_deg."
+    ],
+    "dynamic_processes": [
+      "The controller must use actual joint-motion feedback to track the commanded trajectory, including coordinated reversals.",
+      "The system must remain finite and recover to the commanded trajectory after bounded reference changes."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XMECH-09: prescribing joint_reference directly would bypass the system path described by: Each controlled motion must be produced through a real mechanical linkage and hydraulic-cylinder actuation path; do not prescribe the measured joint angles or bucket motion directly.",
+      "F90-XMECH-09: replaying a fixed joint_reference trace would ignore causal variation in trajectory_scale."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XMECH-09/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XMECH-09/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XMECH-09/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

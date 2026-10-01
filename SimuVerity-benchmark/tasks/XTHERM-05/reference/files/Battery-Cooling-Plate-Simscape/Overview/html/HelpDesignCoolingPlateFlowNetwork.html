@@ -1,0 +1,410 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+<title>Design a Battery Cooling Plate Flow Network</title>
+<meta name="generator" content="MATLAB 25.1">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2026-01-21">
+<meta name="DC.source" content="HelpDesignCoolingPlateFlowNetwork.m">
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="content">
+<h1>Design a Battery Cooling Plate Flow Network</h1>
+<!--introduction-->
+<p>This tool helps you interactively create and configure a flow network design for a battery cooling plate.</p>
+<!--/introduction-->
+<h2>Contents</h2>
+<div>
+<ul>
+<li>
+<a href="#3">Select cooling plate design</a>
+</li>
+<li>
+<a href="#4">Select cooling channel configuration</a>
+</li>
+<li>
+<a href="#5">Set cooling channels geometry</a>
+</li>
+<li>
+<a href="#6">Verify design schematic</a>
+</li>
+<li>
+<a href="#7">Generate Connectivity Data</a>
+</li>
+</ul>
+</div>
+<p>This tool creates a connectivity data structure for a cooling plate flow network. Using this tool streamlines the design process and enables rapid evaluation of design alternatives, compared to manually creating the connectivity data structure. You can use this connectivity data structure to generate a Simscape&trade; model. To launch the tool, ensure that the project is loaded, then enter the following at the MATLAB command prompt.</p>
+<pre class="codeinput">ConnectivityData = designCoolingPlateFlowNetwork;
+</pre>
+<p>
+<img vspace="5" hspace="5" src="DesignCoolingFlowNetwork.png" alt=""> </p>
+<h2 id="3">Select cooling plate design</h2>
+<p>To select the cooling plate design type, use the dropdown menu in the <b>Select cooling plate design</b> panel of the figure window.The available options are:</p>
+<div>
+<ul>
+<li>Parallel &mdash; Fluid flows through multiple channels arranged side by side.</li>
+<li>Serpentine &mdash; Fluid flows through a single, winding channel in a snake-like pattern.</li>
+</ul>
+</div>
+<p>To specify the cooling plate design for your application, select the desired option .</p>
+<h2 id="4">Select cooling channel configuration</h2>
+<p>To select a cooling channel configuration, use the buttons in the <b>Select cooling channel configuration</b> panel of the figure window.</p>
+<p>For each design type (Parallel or Serpentine), the tool provides a set of available cooling channel configurations. To specify the cooling channel configuration for your application, click the corresponding button.</p>
+<p>For a parallel channel design, the following configurations are available:</p>
+<div>
+<ul>
+<li>
+<b>Configuration 1</b> - The channels are oriented along the X-axis. The cooling flow enters at the bottom-left corner of the cooling plate and exits at the top-right corner.</li>
+</ul>
+</div>
+<p>
+<img vspace="5" hspace="5" src="ParallelChannelDesign1.png" alt=""> </p>
+<div>
+<ul>
+<li>
+<b>Configuration 2</b> - The channels are oriented along the X-axis. The cooling flow enters at the bottom-left corner of the cooling plate and exits at the bottom-right corner.</li>
+</ul>
+</div>
+<p>
+<img vspace="5" hspace="5" src="ParallelChannelDesign2.png" alt=""> </p>
+<div>
+<ul>
+<li>
+<b>Configuration 3</b> - The channels are oriented along the X-axis. The cooling flow enters at the center of the left edge of the cooling plate and exits at the center of the right edge.</li>
+</ul>
+</div>
+<p>
+<img vspace="5" hspace="5" src="ParallelChannelDesign3.png" alt=""> </p>
+<div>
+<ul>
+<li>
+<b>Configuration 4</b> - The channels are oriented along the Y-axis. The cooling flow enters at the bottom-left corner of the cooling plate and exits at the top-right corner.</li>
+</ul>
+</div>
+<p>
+<img vspace="5" hspace="5" src="ParallelChannelDesign4.png" alt=""> </p>
+<div>
+<ul>
+<li>
+<b>Configuration 5</b> - The channels are oriented along the Y-axis. The cooling flow enters at the bottom-left corner of the cooling plate and exits at the top-left corner.</li>
+</ul>
+</div>
+<p>
+<img vspace="5" hspace="5" src="ParallelChannelDesign5.png" alt=""> </p>
+<p>For a serpentine channel design, the following configurations are available:</p>
+<div>
+<ul>
+<li>
+<b>Configuration 1</b> - The straight segments of the serpentine channel are oriented along the X-axis. The channel contains an even number of turns. The cooling flow enters at the bottom-left corner of the cooling plate and exits at the top-right corner.</li>
+</ul>
+</div>
+<p>
+<img vspace="5" hspace="5" src="SerpentineChannelDesign1.png" alt=""> </p>
+<div>
+<ul>
+<li>
+<b>Configuration 2</b> - The straight segments of the serpentine channel are oriented along the X-axis. The channel contains an odd number of turns. The cooling flow enters at the bottom-left corner of the cooling plate and exits at the top-left corner.</li>
+</ul>
+</div>
+<p>
+<img vspace="5" hspace="5" src="SerpentineChannelDesign2.png" alt=""> </p>
+<div>
+<ul>
+<li>
+<b>Configuration 3</b> - The straight segments of the serpentine channel are oriented along the Y-axis. The channel contains an even number of turns. The cooling flow enters at the bottom-left corner of the cooling plate and exits at the top-right corner.</li>
+</ul>
+</div>
+<p>
+<img vspace="5" hspace="5" src="SerpentineChannelDesign3.png" alt=""> </p>
+<div>
+<ul>
+<li>
+<b>Configuration 4</b> - The straight segments of the serpentine channel are oriented along the Y-axis. The channel contains an odd number of turns. The cooling flow enters at the bottom-left corner of the cooling plate and exits at the bottom-right corner.</li>
+</ul>
+</div>
+<p>
+<img vspace="5" hspace="5" src="SerpentineChannelDesign4.png" alt=""> </p>
+<h2 id="5">Set cooling channels geometry</h2>
+<p>To set the geometry parameters of the cooling channels, use the edit fields and the dropdown menu in the <b>Set cooling channels geometry</b> panel of the figure window.</p>
+<p>For each design type (Parallel or Serpentine), you can specify a set of cooling channel geometry parameters. To define these parameters for your application, enter the desired values in the corresponding edit fields or select an option from the dropdown menu.</p>
+<p>For a parallel channel design, set the following parameters:</p>
+<div>
+<ul>
+<li>
+<b>Number of channels</b> - The number of channels which are arranged side by side.</li>
+<li>
+<b>Channel diameter (m)</b> - The diameter of channels which are arranged side by side specified in meters.</li>
+<li>
+<b>Channel length (m)</b> - The length of channels which are arranged side by side specified in meters.</li>
+<li>
+<b>Distributor pipe diameter (m)</b> - The diameter of the distributor pipes that connect adjacent parallel channels specified in meters.</li>
+<li>
+<b>Channel spacing (m)</b> - The center-to-center distance between adjacent parallel channels specified in meters.</li>
+</ul>
+</div>
+<p>For a serpentine channel design, set the following parameters:</p>
+<div>
+<ul>
+<li>
+<b>Number of turns</b> - The number of turns in the single winding channel. For cooling channel configurations <b>Configuration 1</b> and <b>Configuration 3</b>, select an even number from the dropdown list. For cooling channel configurations <b>Configuration 2</b> and <b>Configuration 4</b>, select an odd number from the dropdown list.</li>
+<li>
+<b>Channel diameter (m)</b> - The diameter of the single winding channel specified in meters.</li>
+<li>
+<b>Total channel length (m)</b> - The total length of the single winding channel specified in meters.</li>
+<li>
+<b>Channel spacing (m)</b> - The center-to-center distance between adjacent parallel straight segments of the single winding channel specified in meters.</li>
+</ul>
+</div>
+<h2 id="6">Verify design schematic</h2>
+<p>To validate the cooling plate flow network design, view the flow network plot in the <b>Verify design schematic</b> panel of the figure window. The X-axis and Y-axis of the plot correspond to the X and Y positions of the cooling plate components, respectively.</p>
+<p>The blue arrow in the plot indicates the entry location and direction of the cooling fluid, while the red arrow indicates the exit location and direction.</p>
+<h2 id="7">Generate Connectivity Data</h2>
+<p>To generate the connectivity data structure for the cooling plate flow network, in the figure window, click the button <b>Generate Connectivity Data</b>. To learn more about connectivity data, see <a href="matlab:web('HelpConnectivityData.html','-new')">Connectivity Data Structure for Cooling Plate Flow Networks</a>.</p>
+<p>To generate a Simscape model of a battery cooling plate using this connectivity data and perform thermal analysis for same, see <a href="matlab:open('ThermalAnalysisBatteryThermalManagementSystem.mlx')">Thermal Analysis of Battery Thermal Management System</a>.</p>
+<p class="footer">Copyright 2025 - 2026 The MathWorks, Inc.<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2025a</a>
+<br>
+</p>
+</div>
+<!--
+##### SOURCE BEGIN #####
+%% Design a Battery Cooling Plate Flow Network
+% 
+% This tool helps you interactively create and configure a flow network 
+% design for a battery cooling plate.
+
+% Copyright 2025 - 2026 The MathWorks, Inc.
+
+%%
+% This tool creates a connectivity data
+% structure for a cooling plate flow network. Using this tool streamlines 
+% the design process and enables rapid evaluation of design alternatives, 
+% compared to manually creating the connectivity data structure. You can 
+% use this connectivity data structure to generate a Simscape(TM) model. To 
+% launch the tool, ensure that the project is loaded, then enter the 
+% following at the MATLAB command prompt.
+%
+ConnectivityData = designCoolingPlateFlowNetwork;
+
+%%
+%
+% <<DesignCoolingFlowNetwork.png>>
+%
+%% Select cooling plate design
+%
+% To select the cooling plate design type, use the dropdown menu in the 
+% *Select cooling plate design* panel of the figure window.The available options 
+% are:
+%
+% * Parallel — Fluid flows through multiple channels arranged side by side.
+% * Serpentine — Fluid flows through a single, winding channel in a 
+% snake-like pattern.
+%
+% To specify the cooling plate design for your application, select the 
+% desired option .
+%
+%% Select cooling channel configuration
+% 
+% To select a cooling channel configuration, use the buttons in the 
+% *Select cooling channel configuration* panel of the figure window.
+%
+% For each design type (Parallel or Serpentine), the tool provides a set of 
+% available cooling channel configurations. To specify the cooling channel 
+% configuration for your application, click the corresponding button.
+% 
+% For a parallel channel design, the following configurations are available:
+%
+% * *Configuration 1* - The channels are oriented along the X-axis. The 
+% cooling flow enters at the bottom-left corner of the cooling plate and 
+% exits at the top-right corner.
+%
+% <<ParallelChannelDesign1.png>>
+%
+% * *Configuration 2* - The channels are oriented along the X-axis. The 
+% cooling flow enters at the bottom-left corner of the cooling plate and 
+% exits at the bottom-right corner.
+%
+% <<ParallelChannelDesign2.png>>
+%
+% * *Configuration 3* - The channels are oriented along the X-axis. The 
+% cooling flow enters at the center of the left edge of the cooling plate 
+% and exits at the center of the right edge.
+%
+% <<ParallelChannelDesign3.png>>
+%
+% * *Configuration 4* - The channels are oriented along the Y-axis. The 
+% cooling flow enters at the bottom-left corner of the cooling plate and 
+% exits at the top-right corner.
+%
+% <<ParallelChannelDesign4.png>>
+%
+% * *Configuration 5* - The channels are oriented along the Y-axis. The 
+% cooling flow enters at the bottom-left corner of the cooling plate and 
+% exits at the top-left corner.
+%
+% <<ParallelChannelDesign5.png>>
+%
+% For a serpentine channel design, the following configurations are 
+% available:
+%
+% * *Configuration 1* - The straight segments of the serpentine channel are 
+% oriented along the X-axis. The channel contains an even number of turns. 
+% The cooling flow enters at the bottom-left corner of the cooling plate and 
+% exits at the top-right corner.
+%
+% <<SerpentineChannelDesign1.png>>
+%
+% * *Configuration 2* - The straight segments of the serpentine channel are 
+% oriented along the X-axis. The channel contains an odd number of turns. 
+% The cooling flow enters at the bottom-left corner of the cooling plate and 
+% exits at the top-left corner.
+%
+% <<SerpentineChannelDesign2.png>>
+%
+% * *Configuration 3* - The straight segments of the serpentine channel are 
+% oriented along the Y-axis. The channel contains an even number of turns. 
+% The cooling flow enters at the bottom-left corner of the cooling plate and 
+% exits at the top-right corner.
+%
+% <<SerpentineChannelDesign3.png>>
+%
+% * *Configuration 4* - The straight segments of the serpentine channel are 
+% oriented along the Y-axis. The channel contains an odd number of turns. 
+% The cooling flow enters at the bottom-left corner of the cooling plate and 
+% exits at the bottom-right corner.
+%
+% <<SerpentineChannelDesign4.png>>
+% 
+%% Set cooling channels geometry
+% 
+% To set the geometry parameters of the cooling channels, use the edit fields 
+% and the dropdown menu in the *Set cooling channels geometry* panel of the 
+% figure window.
+%
+% For each design type (Parallel or Serpentine), you can specify 
+% a set of cooling channel geometry parameters. To define these parameters 
+% for your application, enter the desired values in the corresponding edit 
+% fields or select an option from the dropdown menu.
+% 
+% For a parallel channel design, set the following parameters:
+%
+% * *Number of channels* - The number of channels which are arranged side 
+% by side.
+% * *Channel diameter (m)* - The diameter of channels which are arranged side 
+% by side specified in meters.
+% * *Channel length (m)* - The length of channels which are arranged side 
+% by side specified in meters.
+% * *Distributor pipe diameter (m)* - The diameter of the distributor pipes 
+% that connect adjacent parallel channels specified in meters.
+% * *Channel spacing (m)* - The center-to-center distance between adjacent 
+% parallel channels specified in meters.
+%
+% For a serpentine channel design, set the following parameters:
+%
+% * *Number of turns* - The number of turns in the single winding channel. 
+% For cooling channel configurations *Configuration 1* and *Configuration 3*, 
+% select an even number from the dropdown list. For cooling channel 
+% configurations *Configuration 2* and *Configuration 4*, select 
+% an odd number from the dropdown list.
+% * *Channel diameter (m)* - The diameter of the single winding channel 
+% specified in meters.
+% * *Total channel length (m)* - The total length of the single winding
+% channel specified in meters.
+% * *Channel spacing (m)* - The center-to-center distance between adjacent 
+% parallel straight segments of the single winding channel specified in meters.
+%
+%% Verify design schematic
+%
+% To validate the cooling plate flow network design, view the flow network 
+% plot in the *Verify design schematic* panel of the figure window. The 
+% X-axis and Y-axis of the plot correspond to the X and Y positions of the 
+% cooling plate components, respectively. 
+% 
+% The blue arrow in the plot indicates the entry location and direction of 
+% the cooling fluid, while the red arrow indicates the exit location and 
+% direction.
+%
+%% Generate Connectivity Data
+%
+% To generate the connectivity data structure for the cooling plate flow 
+% network, in the figure window, click the button *Generate Connectivity 
+% Data*. To learn more about connectivity data, see 
+% <matlab:web('HelpConnectivityData.html','-new') Connectivity Data
+% Structure for Cooling Plate Flow Networks>.
+%
+% To generate a Simscape model of a battery cooling plate using this 
+% connectivity data and perform thermal analysis for same, see 
+% <matlab:open('ThermalAnalysisBatteryThermalManagementSystem.mlx') 
+% Thermal Analysis of Battery Thermal Management System>.
+%
+##### SOURCE END #####
+-->
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XMECH-08",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/Four-Bar-Optim/sm_four_bar_optim.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 211,
+  "retained_bytes": 537996,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ]
+}

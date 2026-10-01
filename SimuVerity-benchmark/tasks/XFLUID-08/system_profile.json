@@ -1,0 +1,173 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XFLUID-08",
+  "collection": "XFLUID",
+  "reference": {
+    "identity_path": "tasks/XFLUID-08/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "AircraftFuelSupplySystemWithThreeTanks.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XFLUID-08",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a physically causal aircraft fuel-supply system with left and right wing tanks, a center tank, two independently commanded transfer pumps on each wing, one-way protection between parallel pump branches, controlled tank isolation, and a center-tank feed path with an engine-side pump and demand.",
+    "engineering_objects": [
+      "Build a physically causal aircraft fuel-supply system with left and right wing tanks, a center tank, two independently commanded transfer pumps on each wing, one-way protection between parallel pump branches, controlled tank isolation, and a center-tank feed path with an engine-side pump and demand.",
+      "Fuel must move through the physical hydraulic network;",
+      "The system must continue supplying the engine through single-pump and asymmetric pump-command disturbances, prevent sustained reverse transfer through an unavailable branch, protect tanks against dry-out and overflow, and remain physically bounded during fuel-line elevation changes."
+    ],
+    "physical_paths": [
+      "Fuel must move through the physical hydraulic network; the model must not prescribe tank volumes or engine delivery directly.",
+      "The system must continue supplying the engine through single-pump and asymmetric pump-command disturbances, prevent sustained reverse transfer through an unavailable branch, protect tanks against dry-out and overflow, and remain physically bounded during fuel-line elevation changes.",
+      "Changes in pump commands and line elevation must propagate through pump speed, pressure rise, transfer flow, tank inventory, and engine delivery.",
+      "Build a physically causal aircraft fuel-supply system with left and right wing tanks, a center tank, two independently commanded transfer pumps on each wing, one-way protection between parallel pump branches, controlled tank isolation, and a center-tank feed path with an engine-side pump and demand."
+    ],
+    "functional_paths": [
+      "Build a physically causal aircraft fuel-supply system with left and right wing tanks, a center tank, two independently commanded transfer pumps on each wing, one-way protection between parallel pump branches, controlled tank isolation, and a center-tank feed path with an engine-side pump and demand.",
+      "Regulate each transfer pump's measured shaft speed in closed loop."
+    ],
+    "information_paths": [
+      "flight_fuel_command, initial_fuel_volume_m3 -> F90-XFLUID-08 plant/control path -> pump_speed_state, tank_fuel_state, transfer_hydraulics, engine_feed_state, pump_power_state"
+    ],
+    "modes_and_events": [
+      "Build a physically causal aircraft fuel-supply system with left and right wing tanks, a center tank, two independently commanded transfer pumps on each wing, one-way protection between parallel pump branches, controlled tank isolation, and a center-tank feed path with an engine-side pump and demand.",
+      "the model must not prescribe tank volumes or engine delivery directly.",
+      "The system must continue supplying the engine through single-pump and asymmetric pump-command disturbances, prevent sustained reverse transfer through an unavailable branch, protect tanks against dry-out and overflow, and remain physically bounded during fuel-line elevation changes."
+    ],
+    "interfaces": [
+      {
+        "name": "flight_fuel_command",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read flight_fuel_command and initial_fuel_volume_m3 from the MATLAB base workspace. flight_fuel_command is a six-channel Timeseries containing [left fuel-line elevation, right fuel-line elevation, left upper pump speed, left lower pump speed, right upper pump speed, right lower pump speed] in [m, m, rev/s, rev/s, rev/s, rev/s].",
+        "source": "tasks/XFLUID-08/public_spec.json"
+      },
+      {
+        "name": "initial_fuel_volume_m3",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m^3"
+        ],
+        "range_or_shape": "Read flight_fuel_command and initial_fuel_volume_m3 from the MATLAB base workspace. initial_fuel_volume_m3 contains [fuel in each wing tank, fuel in the center tank] and must support 8 to 11.5 m^3 in each wing tank and 4 to 8 m^3 in the center tank.",
+        "source": "tasks/XFLUID-08/public_spec.json"
+      },
+      {
+        "name": "pump_speed_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rpm"
+        ],
+        "range_or_shape": "Log five MATLAB Timeseries named pump_speed_state, tank_fuel_state, transfer_hydraulics, engine_feed_state, and pump_power_state for the complete simulation interval. pump_speed_state has 8 channels in this order: command and measured speed for left-upper, left-lower, right-upper, and right-lower pumps, all in rpm.",
+        "source": "tasks/XFLUID-08/public_spec.json"
+      },
+      {
+        "name": "tank_fuel_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m^3",
+          "%"
+        ],
+        "range_or_shape": "Log five MATLAB Timeseries named pump_speed_state, tank_fuel_state, transfer_hydraulics, engine_feed_state, and pump_power_state for the complete simulation interval. tank_fuel_state has 4 channels: left-, right-, and center-tank volume (m^3), then lateral fuel-CG offset (percent).",
+        "source": "tasks/XFLUID-08/public_spec.json"
+      },
+      {
+        "name": "transfer_hydraulics",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "g/s",
+          "kg/s",
+          "MPa",
+          "kg"
+        ],
+        "range_or_shape": "Log five MATLAB Timeseries named pump_speed_state, tank_fuel_state, transfer_hydraulics, engine_feed_state, and pump_power_state for the complete simulation interval. transfer_hydraulics has 8 channels: the four pump mass flows (kg/s) followed by their four pressure rises (MPa), in the same pump order.",
+        "source": "tasks/XFLUID-08/public_spec.json"
+      },
+      {
+        "name": "engine_feed_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "g/s",
+          "kg/s",
+          "MPa",
+          "kg"
+        ],
+        "range_or_shape": "Log five MATLAB Timeseries named pump_speed_state, tank_fuel_state, transfer_hydraulics, engine_feed_state, and pump_power_state for the complete simulation interval. engine_feed_state has 2 channels: engine-feed mass flow (kg/s) and engine-pump pressure rise (MPa).",
+        "source": "tasks/XFLUID-08/public_spec.json"
+      },
+      {
+        "name": "pump_power_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "W"
+        ],
+        "range_or_shape": "Log five MATLAB Timeseries named pump_speed_state, tank_fuel_state, transfer_hydraulics, engine_feed_state, and pump_power_state for the complete simulation interval. pump_power_state has 8 channels: the four shaft powers followed by the four hydraulic powers, all in W and in the same pump order.",
+        "source": "tasks/XFLUID-08/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a physically causal aircraft fuel-supply system with left and right wing tanks, a center tank, two independently commanded transfer pumps on each wing, one-way protection between parallel pump branches, controlled tank isolation, and a center-tank feed path with an engine-side pump and demand.",
+      "pump_speed_state has 8 channels in this order: command and measured speed for left-upper, left-lower, right-upper, and right-lower pumps, all in rpm.",
+      "transfer_hydraulics has 8 channels: the four pump mass flows (kg/s) followed by their four pressure rises (MPa), in the same pump order."
+    ],
+    "feedback_and_control_causality": [
+      "Build a physically causal aircraft fuel-supply system with left and right wing tanks, a center tank, two independently commanded transfer pumps on each wing, one-way protection between parallel pump branches, controlled tank isolation, and a center-tank feed path with an engine-side pump and demand.",
+      "Regulate each transfer pump's measured shaft speed in closed loop.",
+      "All logged quantities must be measured from the same causal physical simulation."
+    ],
+    "signal_sources": [
+      "flight_fuel_command is read from the public MATLAB base-workspace input contract.",
+      "initial_fuel_volume_m3 is read from the public MATLAB base-workspace input contract.",
+      "pump_speed_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "tank_fuel_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "transfer_hydraulics is produced by the implemented plant or controller and logged under the public output contract.",
+      "engine_feed_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "pump_power_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "flight_fuel_command: Read flight_fuel_command and initial_fuel_volume_m3 from the MATLAB base workspace. flight_fuel_command is a six-channel Timeseries containing [left fuel-line elevation, right fuel-line elevation, left upper pump speed, left lower pump speed, right upper pump speed, right lower pump speed] in [m, m, rev/s, rev/s, rev/s, rev/s].",
+      "initial_fuel_volume_m3: Read flight_fuel_command and initial_fuel_volume_m3 from the MATLAB base workspace. initial_fuel_volume_m3 contains [fuel in each wing tank, fuel in the center tank] and must support 8 to 11.5 m^3 in each wing tank and 4 to 8 m^3 in the center tank."
+    ],
+    "disturbances": [
+      "The system must continue supplying the engine through single-pump and asymmetric pump-command disturbances, prevent sustained reverse transfer through an unavailable branch, protect tanks against dry-out and overflow, and remain physically bounded during fuel-line elevation changes."
+    ],
+    "dynamic_processes": [
+      "F90-XFLUID-08 produces time-varying pump_speed_state, tank_fuel_state, transfer_hydraulics, engine_feed_state, pump_power_state over the declared run."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XFLUID-08: prescribing pump_speed_state directly would bypass the system path described by: Fuel must move through the physical hydraulic network; the model must not prescribe tank volumes or engine delivery directly.",
+      "F90-XFLUID-08: replaying a fixed pump_speed_state trace would ignore causal variation in flight_fuel_command."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XFLUID-08/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XFLUID-08/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XFLUID-08/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

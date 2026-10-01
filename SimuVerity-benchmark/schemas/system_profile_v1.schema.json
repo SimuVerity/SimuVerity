@@ -1,0 +1,274 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simuverity.org/schemas/system_profile_v1.schema.json",
+  "title": "SimuVerity lightweight executable system profile v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "task_id",
+    "collection",
+    "reference",
+    "runtime",
+    "system",
+    "sources",
+    "scope"
+  ],
+  "properties": {
+    "schema": {
+      "const": "simuverity.system-profile.v1"
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "collection": {
+      "enum": [
+        "XELEC",
+        "XAERO",
+        "XAUTO",
+        "XBATT",
+        "XCOMM",
+        "XFLUID",
+        "XMECH",
+        "XMED",
+        "XROBO",
+        "XTHERM"
+      ]
+    },
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identity_path",
+        "entry_kind",
+        "entrypoint",
+        "model_path"
+      ],
+      "properties": {
+        "identity_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "entry_kind": {
+          "enum": [
+            "matlab_model",
+            "matlab_entrypoint",
+            "evidence_copy"
+          ]
+        },
+        "entrypoint": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "runtime": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "matlab_release",
+        "execution_mode",
+        "command",
+        "runner_path",
+        "collection_success"
+      ],
+      "properties": {
+        "matlab_release": {
+          "type": "string",
+          "minLength": 1
+        },
+        "execution_mode": {
+          "enum": [
+            "BOUND_EXISTING_REFERENCE",
+            "COLLECTED_MODEL_INVENTORY"
+          ]
+        },
+        "command": {
+          "type": "string",
+          "minLength": 1
+        },
+        "runner_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "collection_success": {
+          "const": true
+        }
+      }
+    },
+    "system": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "boundary",
+        "engineering_objects",
+        "physical_paths",
+        "functional_paths",
+        "information_paths",
+        "modes_and_events",
+        "interfaces",
+        "signs_and_coordinates",
+        "feedback_and_control_causality",
+        "signal_sources",
+        "operating_range",
+        "disturbances",
+        "dynamic_processes",
+        "task_specific_shortcuts"
+      ],
+      "properties": {
+        "boundary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "engineering_objects": {
+          "$ref": "#/$defs/nonemptyStrings"
+        },
+        "physical_paths": {
+          "$ref": "#/$defs/nonemptyStrings"
+        },
+        "functional_paths": {
+          "$ref": "#/$defs/nonemptyStrings"
+        },
+        "information_paths": {
+          "$ref": "#/$defs/nonemptyStrings"
+        },
+        "modes_and_events": {
+          "$ref": "#/$defs/nonemptyStrings"
+        },
+        "interfaces": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "direction",
+              "description",
+              "units",
+              "range_or_shape",
+              "source"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "direction": {
+                "enum": [
+                  "input",
+                  "output",
+                  "internal"
+                ]
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1
+              },
+              "units": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "range_or_shape": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "signs_and_coordinates": {
+          "$ref": "#/$defs/nonemptyStrings"
+        },
+        "feedback_and_control_causality": {
+          "$ref": "#/$defs/nonemptyStrings"
+        },
+        "signal_sources": {
+          "$ref": "#/$defs/nonemptyStrings"
+        },
+        "operating_range": {
+          "$ref": "#/$defs/nonemptyStrings"
+        },
+        "disturbances": {
+          "$ref": "#/$defs/nonemptyStrings"
+        },
+        "dynamic_processes": {
+          "$ref": "#/$defs/nonemptyStrings"
+        },
+        "task_specific_shortcuts": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "role",
+          "path"
+        ],
+        "properties": {
+          "role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "system_only",
+        "sent_to_agent",
+        "used_for_scoring"
+      ],
+      "properties": {
+        "system_only": {
+          "const": true
+        },
+        "sent_to_agent": {
+          "const": false
+        },
+        "used_for_scoring": {
+          "const": false
+        }
+      }
+    }
+  },
+  "$defs": {
+    "nonemptyStrings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,130 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.footer .icon-link {
+  font-size: 25px;
+  color: #000;
+}
+
+.link-block a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-title {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors a {
+  color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+  text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.eql-cntrb {
+  font-size: smaller;
+}
+
+.section-title {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.paper-figure {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.figure-caption {
+  margin-top: 0.9rem;
+  color: #4a4a4a;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.leaderboard-note {
+  margin-bottom: 1.2rem;
+  color: #6b6b6b;
+  font-size: 0.92rem;
+  text-align: center;
+}
+
+.leaderboard {
+  font-family: 'Google Sans', 'Noto Sans', sans-serif;
+}
+
+.leaderboard thead th {
+  background: #2f3542;
+  color: #ffffff !important;
+  border: none !important;
+  text-align: center !important;
+  vertical-align: middle;
+}
+
+.leaderboard thead th:nth-child(2) {
+  text-align: left !important;
+}
+
+.leaderboard td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.leaderboard td:nth-child(2) {
+  text-align: left;
+}
+
+.leaderboard td:nth-child(3) {
+  background: #eef4ff;
+  font-weight: 600;
+}
+
+.leaderboard tr.top td {
+  font-size: 1.1em;
+  font-weight: 700;
+}
+
+.leaderboard tr.reference td {
+  background: #f5f5f5;
+  color: #4a4a4a;
+}
+
+.leaderboard tr.reference td:nth-child(2) {
+  font-weight: 700;
+}
+
+#BibTeX pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+@media screen and (max-width: 768px) {
+  .publication-title {
+    font-size: 2rem !important;
+    overflow-wrap: break-word;
+  }
+
+  .publication-authors {
+    font-size: 1.05rem !important;
+  }
+}

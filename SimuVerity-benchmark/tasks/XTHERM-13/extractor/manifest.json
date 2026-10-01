@@ -1,0 +1,12 @@
+{
+  "schema": "simuverity.extractor-closure.v1",
+  "task_id": "XTHERM-13",
+  "entrypoint": "vendor/packages/simuverity_public/tasks/EXT-XTHERM-PVTES-01/policy/ext_xtherm_pvtes_extract_evidence.m",
+  "public_wrapper": "extractor/run.m",
+  "files": [
+    {
+      "source_name": "ext_xtherm_pvtes_extract_evidence.m",
+      "public_path": "vendor/packages/simuverity_public/tasks/EXT-XTHERM-PVTES-01/policy/ext_xtherm_pvtes_extract_evidence.m"
+    }
+  ]
+}

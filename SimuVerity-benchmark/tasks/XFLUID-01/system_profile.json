@@ -1,0 +1,246 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XFLUID-01",
+  "collection": "XFLUID",
+  "reference": {
+    "identity_path": "tasks/XFLUID-01/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/XFLUID01_reference.slx",
+    "model_path": "tasks/XFLUID-01/reference/files/XFLUID01_reference.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id P9-XFLUID01",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a three-axis articulated hydraulic arm supplied by one finite-flow pressure source.",
+    "engineering_objects": [
+      "P9-XFLUID01 plant and controller described by the current public task contract",
+      "Measured output interfaces: joint_state, hydraulic_pressure, hydraulic_flow, actuation"
+    ],
+    "physical_paths": [
+      "The lift, reach, and bucket joints must be driven through independently metered valves and compressible hydraulic actuator states, while all three branches draw from the same pump; directly prescribing joint motion is not a valid implementation.",
+      "All signals must come from the causal hydraulic and mechanical paths rather than command copies or precomputed trajectories."
+    ],
+    "functional_paths": [
+      "Across the declared range, closed-loop regulate all three actual joint angles, preserve pressure-flow-motion causality and the shared-pump flow limit, remain within the supplied pressure boundary, and recover after the temporary internal-leakage increase."
+    ],
+    "information_paths": [
+      "lift_reference, reach_reference, bucket_reference, supply_pressure, pump_flow_capacity, payload_mass, fluid_bulk_modulus, valve_deadband, leakage_multiplier, leak_event_time -> P9-XFLUID01 plant/control path -> joint_state, hydraulic_pressure, hydraulic_flow, actuation"
+    ],
+    "modes_and_events": [
+      "Read lift_reference, reach_reference, bucket_reference, supply_pressure, pump_flow_capacity, payload_mass, fluid_bulk_modulus, valve_deadband, leakage_multiplier, and leak_event_time from base-workspace variables.",
+      "Reach-cylinder internal leakage is multiplied by leakage_multiplier for 1.2 s beginning at leak_event_time."
+    ],
+    "interfaces": [
+      {
+        "name": "lift_reference",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "deg"
+        ],
+        "range_or_shape": "Read lift_reference, reach_reference, bucket_reference, supply_pressure, pump_flow_capacity, payload_mass, fluid_bulk_modulus, valve_deadband, leakage_multiplier, and leak_event_time from base-workspace variables.",
+        "source": "tasks/XFLUID-01/public_spec.json"
+      },
+      {
+        "name": "reach_reference",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "deg"
+        ],
+        "range_or_shape": "Read lift_reference, reach_reference, bucket_reference, supply_pressure, pump_flow_capacity, payload_mass, fluid_bulk_modulus, valve_deadband, leakage_multiplier, and leak_event_time from base-workspace variables.",
+        "source": "tasks/XFLUID-01/public_spec.json"
+      },
+      {
+        "name": "bucket_reference",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "deg"
+        ],
+        "range_or_shape": "Read lift_reference, reach_reference, bucket_reference, supply_pressure, pump_flow_capacity, payload_mass, fluid_bulk_modulus, valve_deadband, leakage_multiplier, and leak_event_time from base-workspace variables.",
+        "source": "tasks/XFLUID-01/public_spec.json"
+      },
+      {
+        "name": "supply_pressure",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "Pa"
+        ],
+        "range_or_shape": "Read lift_reference, reach_reference, bucket_reference, supply_pressure, pump_flow_capacity, payload_mass, fluid_bulk_modulus, valve_deadband, leakage_multiplier, and leak_event_time from base-workspace variables.",
+        "source": "tasks/XFLUID-01/public_spec.json"
+      },
+      {
+        "name": "pump_flow_capacity",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m^3/s"
+        ],
+        "range_or_shape": "Read lift_reference, reach_reference, bucket_reference, supply_pressure, pump_flow_capacity, payload_mass, fluid_bulk_modulus, valve_deadband, leakage_multiplier, and leak_event_time from base-workspace variables.",
+        "source": "tasks/XFLUID-01/public_spec.json"
+      },
+      {
+        "name": "payload_mass",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kg"
+        ],
+        "range_or_shape": "Read lift_reference, reach_reference, bucket_reference, supply_pressure, pump_flow_capacity, payload_mass, fluid_bulk_modulus, valve_deadband, leakage_multiplier, and leak_event_time from base-workspace variables.",
+        "source": "tasks/XFLUID-01/public_spec.json"
+      },
+      {
+        "name": "fluid_bulk_modulus",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "Pa"
+        ],
+        "range_or_shape": "Read lift_reference, reach_reference, bucket_reference, supply_pressure, pump_flow_capacity, payload_mass, fluid_bulk_modulus, valve_deadband, leakage_multiplier, and leak_event_time from base-workspace variables.",
+        "source": "tasks/XFLUID-01/public_spec.json"
+      },
+      {
+        "name": "valve_deadband",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read lift_reference, reach_reference, bucket_reference, supply_pressure, pump_flow_capacity, payload_mass, fluid_bulk_modulus, valve_deadband, leakage_multiplier, and leak_event_time from base-workspace variables.",
+        "source": "tasks/XFLUID-01/public_spec.json"
+      },
+      {
+        "name": "leakage_multiplier",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read lift_reference, reach_reference, bucket_reference, supply_pressure, pump_flow_capacity, payload_mass, fluid_bulk_modulus, valve_deadband, leakage_multiplier, and leak_event_time from base-workspace variables. Reach-cylinder internal leakage is multiplied by leakage_multiplier for 1.2 s beginning at leak_event_time.",
+        "source": "tasks/XFLUID-01/public_spec.json"
+      },
+      {
+        "name": "leak_event_time",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read lift_reference, reach_reference, bucket_reference, supply_pressure, pump_flow_capacity, payload_mass, fluid_bulk_modulus, valve_deadband, leakage_multiplier, and leak_event_time from base-workspace variables. Reach-cylinder internal leakage is multiplied by leakage_multiplier for 1.2 s beginning at leak_event_time.",
+        "source": "tasks/XFLUID-01/public_spec.json"
+      },
+      {
+        "name": "joint_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[deg,deg,deg,deg/s,deg/s,deg/s]"
+        ],
+        "range_or_shape": "Log Timeseries joint_state, hydraulic_pressure, hydraulic_flow, and actuation. joint_state must contain [lift, reach, bucket angles in deg, followed by their angular rates in deg/s].",
+        "source": "tasks/XFLUID-01/public_spec.json"
+      },
+      {
+        "name": "hydraulic_pressure",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "Pa"
+        ],
+        "range_or_shape": "Log Timeseries joint_state, hydraulic_pressure, hydraulic_flow, and actuation. hydraulic_pressure must contain [pump, lift differential, reach differential, bucket differential pressures] in Pa.",
+        "source": "tasks/XFLUID-01/public_spec.json"
+      },
+      {
+        "name": "hydraulic_flow",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m^3/s"
+        ],
+        "range_or_shape": "Log Timeseries joint_state, hydraulic_pressure, hydraulic_flow, and actuation. hydraulic_flow must contain [the nonnegative pump-side metered supply flow delivered to each of the lift, reach, and bucket branches, the three signed piston-displacement flows, the three signed internal-leakage flows, and shared-pump flow] in m^3/s; shared-pump flow is the sum of the three nonnegative branch deliveries.",
+        "source": "tasks/XFLUID-01/public_spec.json"
+      },
+      {
+        "name": "actuation",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[1,1,1,N*m,N*m,N*m]"
+        ],
+        "range_or_shape": "Log Timeseries joint_state, hydraulic_pressure, hydraulic_flow, and actuation. actuation must contain [three bounded signed normalized valve signals and three actual hydraulic joint torques in N*m].",
+        "source": "tasks/XFLUID-01/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a three-axis articulated hydraulic arm supplied by one finite-flow pressure source.",
+      "hydraulic_flow must contain [the nonnegative pump-side metered supply flow delivered to each of the lift, reach, and bucket branches, the three signed piston-displacement flows, the three signed internal-leakage flows, and shared-pump flow] in m^3/s;",
+      "shared-pump flow is the sum of the three nonnegative branch deliveries."
+    ],
+    "feedback_and_control_causality": [
+      "The lift, reach, and bucket joints must be driven through independently metered valves and compressible hydraulic actuator states, while all three branches draw from the same pump;",
+      "Across the declared range, closed-loop regulate all three actual joint angles, preserve pressure-flow-motion causality and the shared-pump flow limit, remain within the supplied pressure boundary, and recover after the temporary internal-leakage increase.",
+      "All signals must come from the causal hydraulic and mechanical paths rather than command copies or precomputed trajectories."
+    ],
+    "signal_sources": [
+      "lift_reference is read from the public MATLAB base-workspace input contract.",
+      "reach_reference is read from the public MATLAB base-workspace input contract.",
+      "bucket_reference is read from the public MATLAB base-workspace input contract.",
+      "supply_pressure is read from the public MATLAB base-workspace input contract.",
+      "pump_flow_capacity is read from the public MATLAB base-workspace input contract.",
+      "payload_mass is read from the public MATLAB base-workspace input contract.",
+      "fluid_bulk_modulus is read from the public MATLAB base-workspace input contract.",
+      "valve_deadband is read from the public MATLAB base-workspace input contract.",
+      "leakage_multiplier is read from the public MATLAB base-workspace input contract.",
+      "leak_event_time is read from the public MATLAB base-workspace input contract.",
+      "joint_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "hydraulic_pressure is produced by the implemented plant or controller and logged under the public output contract.",
+      "hydraulic_flow is produced by the implemented plant or controller and logged under the public output contract.",
+      "actuation is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "lift_reference: Read lift_reference, reach_reference, bucket_reference, supply_pressure, pump_flow_capacity, payload_mass, fluid_bulk_modulus, valve_deadband, leakage_multiplier, and leak_event_time from base-workspace variables.",
+      "reach_reference: Read lift_reference, reach_reference, bucket_reference, supply_pressure, pump_flow_capacity, payload_mass, fluid_bulk_modulus, valve_deadband, leakage_multiplier, and leak_event_time from base-workspace variables.",
+      "bucket_reference: Read lift_reference, reach_reference, bucket_reference, supply_pressure, pump_flow_capacity, payload_mass, fluid_bulk_modulus, valve_deadband, leakage_multiplier, and leak_event_time from base-workspace variables.",
+      "supply_pressure: Read lift_reference, reach_reference, bucket_reference, supply_pressure, pump_flow_capacity, payload_mass, fluid_bulk_modulus, valve_deadband, leakage_multiplier, and leak_event_time from base-workspace variables.",
+      "pump_flow_capacity: Read lift_reference, reach_reference, bucket_reference, supply_pressure, pump_flow_capacity, payload_mass, fluid_bulk_modulus, valve_deadband, leakage_multiplier, and leak_event_time from base-workspace variables.",
+      "payload_mass: Read lift_reference, reach_reference, bucket_reference, supply_pressure, pump_flow_capacity, payload_mass, fluid_bulk_modulus, valve_deadband, leakage_multiplier, and leak_event_time from base-workspace variables.",
+      "fluid_bulk_modulus: Read lift_reference, reach_reference, bucket_reference, supply_pressure, pump_flow_capacity, payload_mass, fluid_bulk_modulus, valve_deadband, leakage_multiplier, and leak_event_time from base-workspace variables.",
+      "valve_deadband: Read lift_reference, reach_reference, bucket_reference, supply_pressure, pump_flow_capacity, payload_mass, fluid_bulk_modulus, valve_deadband, leakage_multiplier, and leak_event_time from base-workspace variables."
+    ],
+    "disturbances": [
+      "Read lift_reference, reach_reference, bucket_reference, supply_pressure, pump_flow_capacity, payload_mass, fluid_bulk_modulus, valve_deadband, leakage_multiplier, and leak_event_time from base-workspace variables."
+    ],
+    "dynamic_processes": [
+      "Across the declared range, closed-loop regulate all three actual joint angles, preserve pressure-flow-motion causality and the shared-pump flow limit, remain within the supplied pressure boundary, and recover after the temporary internal-leakage increase."
+    ],
+    "task_specific_shortcuts": [
+      "P9-XFLUID01: prescribing joint_state directly would bypass the system path described by: The lift, reach, and bucket joints must be driven through independently metered valves and compressible hydraulic actuator states, while all three branches draw from the same pump; directly prescribing joint motion is not a valid implementation.",
+      "P9-XFLUID01: replaying a fixed joint_state trace would ignore causal variation in lift_reference."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XFLUID-01/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XFLUID-01/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XFLUID-01/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+<title>Wheel Loader Design with Simscape&trade;</title>
+<meta name="generator" content="MATLAB 24.1">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2024-04-22">
+<meta name="DC.source" content="Wheel_Loader_Design_Overview.m">
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="content">
+<h1>Wheel Loader Design with Simscape&trade;</h1>
+<!--introduction-->
+<p>
+<img vspace="5" hspace="5" src="Wheel_Loader_Design_Overview.png" alt=""> </p>
+<p>This repository contains models and code to help engineers design wheel loaders.</p>
+<div>
+<ul>
+<li>
+<b>Early-stage physical design</b> is supported by calculating ratios for geartrains and hydrostatic transmissions to achieve desired speed ranges.</li>
+<li>
+<b>Integrated testing of physical system and controller</b> is supported by a hydromechanical model of the CVT, powertrain, and linkage.</li>
+</ul>
+</div>
+<!--/introduction-->
+<p>
+<b>Complete Wheel Loader Model</b>
+</p>
+<div>
+<ol>
+<li>Wheel Loader with Power Split CVT: <a href="matlab:open_system('sm_wheel_loader')">Model</a>, <a href="matlab:web('sm_wheel_loader.html')">Documentation</a>
+</li>
+</ol>
+</div>
+<p>
+<b>CVT Test Models</b>
+</p>
+<div>
+<ol>
+<li>Hydromechanical Power Split CVT: <a href="matlab:open_system('ssc_hydromech_power_split_cvt')">Model</a>, <a href="matlab:web('ssc_hydromech_power_split_cvt.html')">Documentation</a>
+</li>
+<li>Hydromechanical Power Split CVT with Engine: <a href="matlab:open_system('ssc_hydromech_power_split_cvt_engine')">Model</a>, <a href="matlab:web('ssc_hydromech_power_split_cvt_engine.html')">Documentation</a>
+</li>
+<li>Power Split CVT with Four Speed Ranges (Multibody): <a href="matlab:open_system('sm_cvt_power_split_pg_4range')">Model</a>, <a href="matlab:web('sm_cvt_power_split_pg_4range.html')">Documentation</a>
+</li>
+<li>Power Split Planetary Gear (Multibody): <a href="matlab:open_system('sm_cvt_power_split_pg')">Model</a>, <a href="matlab:web('sm_cvt_power_split_pg.html')">Documentation</a>
+</li>
+</ol>
+</div>
+<p>
+<b>Vehicle, Linkage, and Steering Models</b>
+</p>
+<div>
+<ol>
+<li>Wheel Loader Chassis, Drivetrain, and Linkage: <a href="matlab:open_system('sm_wheel_loader_vehicle')">Model</a>, <a href="matlab:web('sm_wheel_loader_vehicle.html')">Documentation</a>
+</li>
+<li>Wheel Loader Linkage: <a href="matlab:open_system('sm_wheel_loader_linkage')">Model</a>, <a href="matlab:web('sm_wheel_loader_linkage.html')">Documentation</a>
+</li>
+<li>Wheel Loader Steering: <a href="matlab:open_system('sm_wheel_loader_steer')">Model</a>, <a href="matlab:web('sm_wheel_loader_steer.html')">Documentation</a>
+</li>
+</ol>
+</div>
+<p>
+<b>Driveline Test Models</b>
+</p>
+<div>
+<ol>
+<li>Differential Front: <a href="matlab:open_system('sm_wheel_loader_diff_f')">Model</a>, <a href="matlab:web('sm_wheel_loader_diff_f.html')">Documentation</a>
+</li>
+<li>Differential Rear: <a href="matlab:open_system('sm_wheel_loader_diff_r')">Model</a>, <a href="matlab:web('sm_wheel_loader_diff_r.html')">Documentation</a>
+</li>
+<li>Axle Front: <a href="matlab:open_system('sm_wheel_loader_drive_f')">Model</a>, <a href="matlab:web('sm_wheel_loader_drive_f.html')">Documentation</a>
+</li>
+<li>Axle Rear: <a href="matlab:open_system('sm_wheel_loader_drive_r')">Model</a>, <a href="matlab:web('sm_wheel_loader_drive_r.html')">Documentation</a>
+</li>
+<li>Driveline Joint: <a href="matlab:open_system('sm_wheel_loader_driveline')">Model</a>, <a href="matlab:web('sm_wheel_loader_driveline.html')">Documentation</a>
+</li>
+<li>Planetary Gear Wheel Hub: <a href="matlab:open_system('sm_wheel_loader_planetary_gear')">Model</a>, <a href="matlab:web('sm_wheel_loader_planetary_gear.html')">Documentation</a>
+</li>
+</ol>
+</div>
+<p>
+<b>Workflows</b>
+</p>
+<div>
+<ol>
+<li>Power Split CVT Design: <a href="matlab:web('optim_cvt_power_split_design.html')">Documentation</a>, <a href="matlab:run('CVT_Calculate_Swash_Control_app_run.m');">MATLAB App</a>
+</li>
+<li>Terrain Definition from STL: <a href="matlab:web('wheel_loader_surface_terrain.html')">Documentation</a>
+</li>
+<li>Tire Point Cloud from STL: <a href="matlab:web('wheel_loader_point_cloud_tire.html')">Documentation</a>
+</li>
+</ol>
+</div>
+<p class="footer">Copyright 2023-2025 The MathWorks, Inc.<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2024a</a>
+<br>
+</p>
+</div>
+<!--
+##### SOURCE BEGIN #####
+%% Wheel Loader Design with Simscape(TM)
+%
+% <<Wheel_Loader_Design_Overview.png>>
+% 
+% This repository contains models and code to help engineers design
+% wheel loaders. 
+%
+% * *Early-stage physical design* is supported by calculating
+% ratios for geartrains and hydrostatic transmissions to achieve desired speed ranges.
+% * *Integrated testing of physical system and controller* is supported by
+% a hydromechanical model of the CVT, powertrain, and linkage.
+%
+%
+% Copyright 2023-2025 The MathWorks, Inc.
+
+%%
+% *Complete Wheel Loader Model*
+% 
+% # Wheel Loader with Power Split CVT: <matlab:open_system('sm_wheel_loader') Model>, <matlab:web('sm_wheel_loader.html') Documentation>
+%
+% *CVT Test Models*
+%
+% # Hydromechanical Power Split CVT: <matlab:open_system('ssc_hydromech_power_split_cvt') Model>, <matlab:web('ssc_hydromech_power_split_cvt.html') Documentation>
+% # Hydromechanical Power Split CVT with Engine: <matlab:open_system('ssc_hydromech_power_split_cvt_engine') Model>, <matlab:web('ssc_hydromech_power_split_cvt_engine.html') Documentation>
+% # Power Split CVT with Four Speed Ranges (Multibody): <matlab:open_system('sm_cvt_power_split_pg_4range') Model>, <matlab:web('sm_cvt_power_split_pg_4range.html') Documentation>
+% # Power Split Planetary Gear (Multibody): <matlab:open_system('sm_cvt_power_split_pg') Model>, <matlab:web('sm_cvt_power_split_pg.html') Documentation>
+%
+% *Vehicle, Linkage, and Steering Models*
+% 
+% # Wheel Loader Chassis, Drivetrain, and Linkage: <matlab:open_system('sm_wheel_loader_vehicle') Model>, <matlab:web('sm_wheel_loader_vehicle.html') Documentation>
+% # Wheel Loader Linkage: <matlab:open_system('sm_wheel_loader_linkage') Model>, <matlab:web('sm_wheel_loader_linkage.html') Documentation>
+% # Wheel Loader Steering: <matlab:open_system('sm_wheel_loader_steer') Model>, <matlab:web('sm_wheel_loader_steer.html') Documentation>
+%
+% *Driveline Test Models*
+%
+% # Differential Front: <matlab:open_system('sm_wheel_loader_diff_f') Model>, <matlab:web('sm_wheel_loader_diff_f.html') Documentation>
+% # Differential Rear: <matlab:open_system('sm_wheel_loader_diff_r') Model>, <matlab:web('sm_wheel_loader_diff_r.html') Documentation>
+% # Axle Front: <matlab:open_system('sm_wheel_loader_drive_f') Model>, <matlab:web('sm_wheel_loader_drive_f.html') Documentation>
+% # Axle Rear: <matlab:open_system('sm_wheel_loader_drive_r') Model>, <matlab:web('sm_wheel_loader_drive_r.html') Documentation>
+% # Driveline Joint: <matlab:open_system('sm_wheel_loader_driveline') Model>, <matlab:web('sm_wheel_loader_driveline.html') Documentation>
+% # Planetary Gear Wheel Hub: <matlab:open_system('sm_wheel_loader_planetary_gear') Model>, <matlab:web('sm_wheel_loader_planetary_gear.html') Documentation>
+%
+% *Workflows*
+%
+% # Power Split CVT Design:
+% <matlab:web('optim_cvt_power_split_design.html') Documentation>,
+% <matlab:run('CVT_Calculate_Swash_Control_app_run.m'); MATLAB App>
+% # Terrain Definition from STL: <matlab:web('wheel_loader_surface_terrain.html') Documentation>
+% # Tire Point Cloud from STL: <matlab:web('wheel_loader_point_cloud_tire.html') Documentation>
+
+
+##### SOURCE END #####
+-->
+</body>
+</html>

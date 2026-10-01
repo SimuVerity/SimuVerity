@@ -1,0 +1,203 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XBATT-01",
+  "collection": "XBATT",
+  "reference": {
+    "identity_path": "tasks/XBATT-01/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/XBATT01_reference.slx",
+    "model_path": "tasks/XBATT-01/reference/files/XBATT01_reference.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id P9-XBATT01",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build an eight-module series battery pack with coupled electrical storage, distributed module thermal states, and an actively regulated liquid-cooling path.",
+    "engineering_objects": [
+      "P9-XBATT01 plant and controller described by the current public task contract",
+      "Measured output interfaces: battery_state, thermal_state, cooling_state, thermal_flux"
+    ],
+    "physical_paths": [
+      "Pack current must flow through the module electrical states, module losses must heat the corresponding thermal states, and the cooling actuator must remove heat through the coolant path rather than by directly overwriting temperatures."
+    ],
+    "functional_paths": [
+      "Build an eight-module series battery pack with coupled electrical storage, distributed module thermal states, and an actively regulated liquid-cooling path.",
+      "Across the declared range and a repeatable multi-level discharge profile around discharge_current, regulate cooling to keep every module below 318 K, limit module temperature spread to 3 K, maintain module voltage above 36 V and SOC above 0.15, and respond to the temporary flow degradation without violating charge or thermal causality.",
+      "The cooling-control and warning strategies are not prescribed."
+    ],
+    "information_paths": [
+      "ambient_temperature, initial_soc, discharge_current, module_parameter_spread, cooling_fault_fraction, cooling_fault_time -> P9-XBATT01 plant/control path -> battery_state, thermal_state, cooling_state, thermal_flux"
+    ],
+    "modes_and_events": [
+      "Read ambient_temperature, initial_soc, discharge_current, module_parameter_spread, cooling_fault_fraction, and cooling_fault_time from base-workspace variables.",
+      "cooling_fault_fraction is the severity of a 30 s cooling-flow degradation beginning at cooling_fault_time;",
+      "The detailed pump/fault characteristic may be nonlinear."
+    ],
+    "interfaces": [
+      {
+        "name": "ambient_temperature",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "K"
+        ],
+        "range_or_shape": "Read ambient_temperature, initial_soc, discharge_current, module_parameter_spread, cooling_fault_fraction, and cooling_fault_time from base-workspace variables.",
+        "source": "tasks/XBATT-01/public_spec.json"
+      },
+      {
+        "name": "initial_soc",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read ambient_temperature, initial_soc, discharge_current, module_parameter_spread, cooling_fault_fraction, and cooling_fault_time from base-workspace variables.",
+        "source": "tasks/XBATT-01/public_spec.json"
+      },
+      {
+        "name": "discharge_current",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "Read ambient_temperature, initial_soc, discharge_current, module_parameter_spread, cooling_fault_fraction, and cooling_fault_time from base-workspace variables. Across the declared range and a repeatable multi-level discharge profile around discharge_current, regulate cooling to keep every module below 318 K, limit module temperature spread to 3 K, maintain module voltage above 36 V and SOC above 0.15, and respond to the temporary flow degradation without violating charge or thermal causality.",
+        "source": "tasks/XBATT-01/public_spec.json"
+      },
+      {
+        "name": "module_parameter_spread",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read ambient_temperature, initial_soc, discharge_current, module_parameter_spread, cooling_fault_fraction, and cooling_fault_time from base-workspace variables.",
+        "source": "tasks/XBATT-01/public_spec.json"
+      },
+      {
+        "name": "cooling_fault_fraction",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read ambient_temperature, initial_soc, discharge_current, module_parameter_spread, cooling_fault_fraction, and cooling_fault_time from base-workspace variables. cooling_fault_fraction is the severity of a 30 s cooling-flow degradation beginning at cooling_fault_time; zero means no degradation.",
+        "source": "tasks/XBATT-01/public_spec.json"
+      },
+      {
+        "name": "cooling_fault_time",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read ambient_temperature, initial_soc, discharge_current, module_parameter_spread, cooling_fault_fraction, and cooling_fault_time from base-workspace variables. cooling_fault_fraction is the severity of a 30 s cooling-flow degradation beginning at cooling_fault_time; zero means no degradation.",
+        "source": "tasks/XBATT-01/public_spec.json"
+      },
+      {
+        "name": "battery_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[A,V,V x8,1 x8]"
+        ],
+        "range_or_shape": "Log Timeseries battery_state, thermal_state, cooling_state, and thermal_flux. battery_state must contain [positive discharge current in A, pack terminal voltage in V, eight module terminal voltages in V, eight module SOC values].",
+        "source": "tasks/XBATT-01/public_spec.json"
+      },
+      {
+        "name": "thermal_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[K x10]"
+        ],
+        "range_or_shape": "Log Timeseries battery_state, thermal_state, cooling_state, and thermal_flux. thermal_state must contain eight module temperatures followed by left and right coolant outlet temperatures, all in K.",
+        "source": "tasks/XBATT-01/public_spec.json"
+      },
+      {
+        "name": "cooling_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[1,kg/s,kPa,W,W,boolean]"
+        ],
+        "range_or_shape": "Log Timeseries battery_state, thermal_state, cooling_state, and thermal_flux. cooling_state must contain [bounded pump command, delivered flow in kg/s, coolant-loop pressure drop in kPa, electrical auxiliary power in W, total coolant heat removal in W, alarm state].",
+        "source": "tasks/XBATT-01/public_spec.json"
+      },
+      {
+        "name": "thermal_flux",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[W x16]"
+        ],
+        "range_or_shape": "Log Timeseries battery_state, thermal_state, cooling_state, and thermal_flux. thermal_flux must contain the eight actual module heat-generation rates followed by their eight coolant heat-removal rates in W.",
+        "source": "tasks/XBATT-01/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "battery_state must contain [positive discharge current in A, pack terminal voltage in V, eight module terminal voltages in V, eight module SOC values].",
+      "Logged quantities must come from the same causal electrical and thermal network rather than from commands or precomputed answer waveforms."
+    ],
+    "feedback_and_control_causality": [
+      "Build an eight-module series battery pack with coupled electrical storage, distributed module thermal states, and an actively regulated liquid-cooling path.",
+      "Pack current must flow through the module electrical states, module losses must heat the corresponding thermal states, and the cooling actuator must remove heat through the coolant path rather than by directly overwriting temperatures.",
+      "The cooling actuator has a normalized command, a rated delivered mass flow of 0.30 kg/s, a rated loop pressure drop of 100 kPa, and rated electrical auxiliary power of 120 W at full command;"
+    ],
+    "signal_sources": [
+      "ambient_temperature is read from the public MATLAB base-workspace input contract.",
+      "initial_soc is read from the public MATLAB base-workspace input contract.",
+      "discharge_current is read from the public MATLAB base-workspace input contract.",
+      "module_parameter_spread is read from the public MATLAB base-workspace input contract.",
+      "cooling_fault_fraction is read from the public MATLAB base-workspace input contract.",
+      "cooling_fault_time is read from the public MATLAB base-workspace input contract.",
+      "battery_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "thermal_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "cooling_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "thermal_flux is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "ambient_temperature: Read ambient_temperature, initial_soc, discharge_current, module_parameter_spread, cooling_fault_fraction, and cooling_fault_time from base-workspace variables.",
+      "initial_soc: Read ambient_temperature, initial_soc, discharge_current, module_parameter_spread, cooling_fault_fraction, and cooling_fault_time from base-workspace variables.",
+      "discharge_current: Read ambient_temperature, initial_soc, discharge_current, module_parameter_spread, cooling_fault_fraction, and cooling_fault_time from base-workspace variables. Across the declared range and a repeatable multi-level discharge profile around discharge_current, regulate cooling to keep every module below 318 K, limit module temperature spread to 3 K, maintain module voltage above 36 V and SOC above 0.15, and respond to the temporary flow degradation without violating charge or thermal causality.",
+      "module_parameter_spread: Read ambient_temperature, initial_soc, discharge_current, module_parameter_spread, cooling_fault_fraction, and cooling_fault_time from base-workspace variables.",
+      "cooling_fault_fraction: Read ambient_temperature, initial_soc, discharge_current, module_parameter_spread, cooling_fault_fraction, and cooling_fault_time from base-workspace variables. cooling_fault_fraction is the severity of a 30 s cooling-flow degradation beginning at cooling_fault_time; zero means no degradation.",
+      "cooling_fault_time: Read ambient_temperature, initial_soc, discharge_current, module_parameter_spread, cooling_fault_fraction, and cooling_fault_time from base-workspace variables. cooling_fault_fraction is the severity of a 30 s cooling-flow degradation beginning at cooling_fault_time; zero means no degradation."
+    ],
+    "disturbances": [
+      "Read ambient_temperature, initial_soc, discharge_current, module_parameter_spread, cooling_fault_fraction, and cooling_fault_time from base-workspace variables.",
+      "cooling_fault_fraction is the severity of a 30 s cooling-flow degradation beginning at cooling_fault_time;",
+      "The detailed pump/fault characteristic may be nonlinear."
+    ],
+    "dynamic_processes": [
+      "P9-XBATT01 produces time-varying battery_state, thermal_state, cooling_state, thermal_flux over the declared run."
+    ],
+    "task_specific_shortcuts": [
+      "P9-XBATT01: prescribing battery_state directly would bypass the system path described by: Pack current must flow through the module electrical states, module losses must heat the corresponding thermal states, and the cooling actuator must remove heat through the coolant path rather than by directly overwriting temperatures.",
+      "P9-XBATT01: replaying a fixed battery_state trace would ignore causal variation in ambient_temperature."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XBATT-01/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XBATT-01/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XBATT-01/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

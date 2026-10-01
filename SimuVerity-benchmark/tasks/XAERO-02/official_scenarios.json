@@ -1,0 +1,182 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XAERO-02",
+  "scenarios": [
+    {
+      "id": "baseline",
+      "waypoint_scale": 1.0,
+      "crosswind_step_mps": 0.0,
+      "initial_airspeed_mps": 15.0
+    },
+    {
+      "id": "wide_waypoints",
+      "waypoint_scale": 1.35,
+      "crosswind_step_mps": 0.0,
+      "initial_airspeed_mps": 15.0
+    },
+    {
+      "id": "compact_waypoints",
+      "waypoint_scale": 0.8,
+      "crosswind_step_mps": 0.0,
+      "initial_airspeed_mps": 15.0
+    },
+    {
+      "id": "crosswind_positive",
+      "waypoint_scale": 1.0,
+      "crosswind_step_mps": 6.0,
+      "initial_airspeed_mps": 15.0
+    },
+    {
+      "id": "crosswind_negative_low_speed",
+      "waypoint_scale": 1.0,
+      "crosswind_step_mps": -5.0,
+      "initial_airspeed_mps": 12.0
+    }
+  ],
+  "contract": {
+    "difficulty": {
+      "score": 12,
+      "maximum": 12,
+      "basis": [
+        "closed-loop nonlinear six-degree-of-freedom conventional-airplane plant with aerodynamic, propulsion, gravity, navigation, feedback-control, and dynamic-actuator paths",
+        "more than six coupled physical and information subsystems and a 4725-block, 494-subsystem fixed source model",
+        "nonlinear rigid-body and aerodynamic dynamics, dynamic actuators, waypoint supervisory logic, and crosswind disturbance rejection",
+        "three independent input axes and three public dynamic output families with strong measured sensitivity",
+        "five private conditions combining waypoint geometry, both crosswind signs, and an initial-airspeed boundary"
+      ]
+    },
+    "candidate_base_waypoints_m": [
+      [
+        0.0,
+        -15.909902576697318,
+        31.819805153394647,
+        47.72970773009197
+      ],
+      [
+        -80.0,
+        -127.72970773009197,
+        -111.81980515339464,
+        -64.09009742330268
+      ],
+      [
+        0.0,
+        -38.97114317029974,
+        -77.94228634059948,
+        -38.97114317029974
+      ]
+    ],
+    "score_policy": {
+      "admission_threshold_raw": 85,
+      "preferred_reference_score": 90,
+      "normalize_or_rescale": false,
+      "groups": {
+        "A": {
+          "weight": 0.24,
+          "meaning": "flight-state and waypoint-tracking trajectory accuracy across all private conditions"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "finite complete public logs plus task-specific state and actuator smoothness"
+        },
+        "M": {
+          "weight": 0.22,
+          "meaning": "causal response to waypoint, crosswind, and initial-airspeed interventions across flight, tracking, and actuator paths"
+        },
+        "C": {
+          "weight": 0.18,
+          "meaning": "connected feedback tracking and actuator-to-flight causal behavior"
+        },
+        "R": {
+          "weight": 0.14,
+          "meaning": "worst private-condition flight, tracking, and actuator performance"
+        },
+        "D": {
+          "weight": 0.12,
+          "meaning": "velocity, body-rate, actuator-transient, and waypoint-sequence dynamics"
+        }
+      },
+      "within_group": "task-specific weighted arithmetic aggregation with explicit worst-condition retention",
+      "across_groups": "weighted geometric mean; absent critical mechanism groups may be zero"
+    },
+    "minimum_shortcut_sanity_contract": [
+      "missing required output",
+      "baseline output replayed for every private condition",
+      "zero or disconnected actuator outputs",
+      "command copied directly as measured position with fabricated zero tracking error",
+      "constant state and actuator histories",
+      "truncated run"
+    ]
+  },
+  "difficulty": {
+    "score": 12,
+    "maximum": 12,
+    "basis": [
+      "closed-loop nonlinear six-degree-of-freedom conventional-airplane plant with aerodynamic, propulsion, gravity, navigation, feedback-control, and dynamic-actuator paths",
+      "more than six coupled physical and information subsystems and a 4725-block, 494-subsystem fixed source model",
+      "nonlinear rigid-body and aerodynamic dynamics, dynamic actuators, waypoint supervisory logic, and crosswind disturbance rejection",
+      "three independent input axes and three public dynamic output families with strong measured sensitivity",
+      "five private conditions combining waypoint geometry, both crosswind signs, and an initial-airspeed boundary"
+    ]
+  },
+  "candidate_base_waypoints_m": [
+    [
+      0.0,
+      -15.909902576697318,
+      31.819805153394647,
+      47.72970773009197
+    ],
+    [
+      -80.0,
+      -127.72970773009197,
+      -111.81980515339464,
+      -64.09009742330268
+    ],
+    [
+      0.0,
+      -38.97114317029974,
+      -77.94228634059948,
+      -38.97114317029974
+    ]
+  ],
+  "score_policy": {
+    "admission_threshold_raw": 85,
+    "preferred_reference_score": 90,
+    "normalize_or_rescale": false,
+    "groups": {
+      "A": {
+        "weight": 0.24,
+        "meaning": "flight-state and waypoint-tracking trajectory accuracy across all private conditions"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "finite complete public logs plus task-specific state and actuator smoothness"
+      },
+      "M": {
+        "weight": 0.22,
+        "meaning": "causal response to waypoint, crosswind, and initial-airspeed interventions across flight, tracking, and actuator paths"
+      },
+      "C": {
+        "weight": 0.18,
+        "meaning": "connected feedback tracking and actuator-to-flight causal behavior"
+      },
+      "R": {
+        "weight": 0.14,
+        "meaning": "worst private-condition flight, tracking, and actuator performance"
+      },
+      "D": {
+        "weight": 0.12,
+        "meaning": "velocity, body-rate, actuator-transient, and waypoint-sequence dynamics"
+      }
+    },
+    "within_group": "task-specific weighted arithmetic aggregation with explicit worst-condition retention",
+    "across_groups": "weighted geometric mean; absent critical mechanism groups may be zero"
+  },
+  "minimum_shortcut_sanity_contract": [
+    "missing required output",
+    "baseline output replayed for every private condition",
+    "zero or disconnected actuator outputs",
+    "command copied directly as measured position with fabricated zero tracking error",
+    "constant state and actuator histories",
+    "truncated run"
+  ]
+}

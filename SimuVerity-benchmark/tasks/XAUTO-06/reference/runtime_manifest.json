@@ -1,0 +1,15 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XAUTO-06",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/source/HEV/PowerSplitHEV_system_model.mdl",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 1375,
+  "retained_bytes": 6613431,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ]
+}

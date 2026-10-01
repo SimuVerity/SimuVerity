@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "run_id": "glm-5-3-flash-claude-code-101-run3",
+  "benchmark_release": "simuverity-101-v1",
+  "taskset_id": "simuverity-101-v1",
+  "model": "GLM-5.3-Flash",
+  "harness": "Claude Code",
+  "condition": null,
+  "task_count": 101,
+  "scored_count": 46,
+  "protocol_zero_count": 90,
+  "score_sum": "543.473356",
+  "score_mean": "5.380924",
+  "delivered_count": 95,
+  "native_executable_count": 46,
+  "g_pass_count": 11,
+  "parent_run_id": "glm-5-3-flash-claude-code-101",
+  "repeat_id": "run3"
+}

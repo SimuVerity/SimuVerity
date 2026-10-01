@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+<title>Residential Building Heating with TES and PV</title>
+<meta name="generator" content="MATLAB 23.2">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2025-12-11">
+<meta name="DC.source" content="ResidentialBuildingTESandPVcell.m">
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="content">
+<h1>Residential Building Heating with TES and PV</h1>
+<!--introduction-->
+<!--/introduction-->
+<h2>Contents</h2>
+<div>
+<ul>
+<li>
+<a href="#1">Model Overview</a>
+</li>
+<li>
+<a href="#4">Model Subsystems</a>
+</li>
+<li>
+<a href="#8">Set Model Parameters</a>
+</li>
+</ul>
+</div>
+<h2 id="1">Model Overview</h2>
+<p>The residential heating model comprises a rooftop photovoltaic (PV) panel for charging the thermal battery, a thermal energy storage for storing renewable energy, a hot water tank for storing hot water, a heat exchanger (HEX) for heating the water, a pump for supplying hot water to the house, and an air blower for taking out the stored heat from the thermal battery.</p>
+<p>To increase the efficiency of the system PV panels, the model recovers the heat by circulating the water through the channels below the PV panels. The Control subsystem controls the water pump and air blower pressure to achieve the set temperature of the hot water tank. The subsystem also operates the flow control valve. The flow control valve allows the water to flow towards the PV panels that are hotter than the tank temperature.</p>
+<p>
+<img vspace="5" hspace="5" src="thermalEnergyStorageDesignOverview_01.png" alt=""> </p>
+<h2 id="4">Model Subsystems</h2>
+<p>
+<b>Photovoltaic Panel Subsystem</b>
+</p>
+<p>The Photovoltaic panel subsystem models the solar battery that converts the sunlight into electricity. The subsystem uses a Solar Cell block that allows you to choose a pre-parameterized PV component.</p>
+<p>
+<b>MPPT Converter Subsystem</b>
+</p>
+<p>The PV panel produces a power as a function of the load resistance that connects to the panel. To maximize the power that the PV panels produce when they connect to the heating coil network of a given resistance, you require an MPPT converter. This picture shows equivalent circuit of MPPT.</p>
+<p>
+<img vspace="5" hspace="5" src="MPPTcircuit.png" alt=""> </p>
+<p>The MPPT Converter subsystem receives two inputs:</p>
+<div>
+<ul>
+<li>The net heating coil resistance that connects to the PV panel <img src="ResidentialBuildingTESandPVcell_eq08783089781685090913.png" alt="$R_L$" style="width:17px;height:13px;"></li>
+<li>The Voltage <img src="ResidentialBuildingTESandPVcell_eq10400070808277276123.png" alt="$V_m$" style="width:17px;height:13px;"> at which the PV panel produces the maximum power.</li>
+</ul>
+</div>
+<p>PV panel suppliers provide the value of <img src="ResidentialBuildingTESandPVcell_eq10400070808277276123.png" alt="$V_m$" style="width:17px;height:13px;"> in the product datasheet. To maximize the PV power, the MPPT sets the voltage across the panel to <img src="ResidentialBuildingTESandPVcell_eq10400070808277276123.png" alt="$V_m$" style="width:17px;height:13px;">. If the current from the PV panel is <img src="ResidentialBuildingTESandPVcell_eq04234782492993571773.png" alt="$I_m$" style="width:15px;height:13px;">, then the power that the PV panel produces is equal to <img src="ResidentialBuildingTESandPVcell_eq14958545416380561496.png" alt="$V_m*I_m$" style="width:47px;height:13px;">.</p>
+<p>The heater coil dissipates a power equal to <img src="ResidentialBuildingTESandPVcell_eq14440076464137941470.png" alt="$V_L^2/R_L$" style="width:43px;height:17px;">.</p>
+<p>To calculate the MPPT terminal voltage, the MPPT Converter subsystem equates the two powers and solve for <img src="ResidentialBuildingTESandPVcell_eq13778725294678372914.png" alt="$V_L$" style="width:12px;height:11px;">:</p>
+<p>
+<img src="ResidentialBuildingTESandPVcell_eq05957124644736009177.png" alt="$V_L \ =\ \sqrt{V_m \times I_m \times R_L }$" style="width:147px;height:15px;">.</p>
+<p>
+<b>Residential Unit Subsystem</b>
+</p>
+<p>The Residential Unit subsystem comprises an electrical resistor to model the household power consumption and a thermal network to model the temperature variation of the rooms. Hot water radiators heat the rooms when the outside atmosphere temperature drops below the room set point temperature. The roof of the rooms thermally connects to the PV panel. The floor of the rooms thermally connects to the TES by using a Conductive Heat Transfer block.</p>
+<p>
+<b>Thermal Energy Storage Subsystem</b>
+</p>
+<p>To model the sand battery, the Thermal energy storage subsystem uses a Sand TES custom block. To learn more about the custom block, see <a href="matlab:web('blockDescriptionTES.html')">Sand Battery</a>
+</p>
+<h2 id="8">Set Model Parameters</h2>
+<div>
+<ul>
+<li>
+<a href="matlab:open('ThermalBatterySetParam.m')">Set Thermal Battery Parameters</a>
+</li>
+<li>
+<a href="matlab:open('residentialUnitSetParam.m')">Set Residential Unit Parameters</a>
+</li>
+</ul>
+</div>
+<p class="footer">Copyright 2023 - 2025 The MathWorks, Inc.<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2023b</a>
+<br>
+</p>
+</div>
+<!--
+##### SOURCE BEGIN #####
+%% Residential Building Heating with TES and PV 
+%
+% Copyright 2023 - 2025 The MathWorks, Inc.
+
+%% Model Overview
+% The residential heating model comprises a rooftop photovoltaic (PV) panel 
+% for charging the thermal battery, a thermal energy storage for 
+% storing renewable energy, a hot water tank for storing hot water, a heat 
+% exchanger (HEX) for heating the water, a pump for supplying hot 
+% water to the house, and an air blower for taking out the stored heat from the thermal battery.
+%% 
+% To increase the efficiency of the system PV panels, the model recovers the heat by circulating the water through 
+% the channels below the PV panels. The Control subsystem controls the water pump and air blower pressure to 
+% achieve the set temperature of the hot water tank. The subsystem also operates the flow control valve. 
+% The flow control valve allows the water to flow towards the PV panels that are hotter than the tank temperature.
+%%
+% 
+% <<thermalEnergyStorageDesignOverview_01.png>>
+% 
+%% Model Subsystems
+%% 
+% *Photovoltaic Panel Subsystem*
+%
+% The Photovoltaic panel subsystem models the solar battery that converts the
+% sunlight into electricity. The subsystem uses a Solar Cell block that allows you to choose a pre-parameterized PV component.
+%
+% *MPPT Converter Subsystem*
+% 
+% The PV panel produces a power as a function of the load resistance that connects to the panel. 
+% To maximize the power that the PV panels produce when they connect to the heating coil network of a given resistance, you require an MPPT converter.
+% This picture shows equivalent circuit of MPPT.
+%
+% 
+% <<MPPTcircuit.png>>
+%
+%
+% The MPPT Converter subsystem receives two inputs:
+%% 
+% * The net heating coil resistance that connects to the PV panel $R_L$
+% * The Voltage $V_m$ at which the PV panel produces the maximum power.
+%% 
+% PV panel suppliers provide the value of $V_m$ in the product datasheet.
+% To maximize the PV power, the MPPT sets the voltage across the panel to
+% $V_m$.
+% If the current from the PV panel is $I_m$, then the power that the PV
+% panel produces is equal to $V_m*I_m$.
+%
+% The heater coil dissipates a power equal to $V_L^2/R_L$.
+%
+% To calculate the MPPT terminal voltage, the MPPT Converter subsystem equates the
+% two powers and solve for $V_L$:
+%
+% $V_L \ =\ \sqrt{V_m \times I_m \times R_L }$.
+% 
+% 
+% *Residential Unit Subsystem*
+%
+% The Residential Unit subsystem comprises an electrical resistor to model the household power consumption and a thermal network to model the
+% temperature variation of the rooms. Hot water radiators heat the rooms when the outside atmosphere temperature drops below the room set point temperature. The roof of the rooms 
+% thermally connects to the PV panel. The floor of the rooms
+% thermally connects to the TES by using a Conductive Heat Transfer block.   
+%
+% *Thermal Energy Storage Subsystem*
+%
+% To model the sand battery, the Thermal energy storage subsystem uses a
+% Sand TES custom block.
+% To learn more about the custom block, see <matlab:web('blockDescriptionTES.html') Sand 
+% Battery>
+%
+%% Set Model Parameters
+% * <matlab:open('ThermalBatterySetParam.m') Set Thermal Battery Parameters>
+% * <matlab:open('residentialUnitSetParam.m') Set Residential Unit Parameters>
+%
+##### SOURCE END #####
+-->
+</body>
+</html>

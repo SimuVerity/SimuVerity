@@ -1,0 +1,48 @@
+{
+  "schema": "simuverity.extractor-closure.v1",
+  "task_id": "XMED-07",
+  "entrypoint": "vendor/scripts/formal90/tasks/f90_xmed07/f90_xmed07_extract_candidate_evidence.m",
+  "public_wrapper": "extractor/run.m",
+  "files": [
+    {
+      "source_name": "simuverity_official_scenarios_path.m",
+      "public_path": "extractor/support/simuverity_official_scenarios_path.m"
+    },
+    {
+      "source_name": "simuverity_run_candidate_evidence.m",
+      "public_path": "vendor/scripts/formal90/tasks/_shared/simuverity_run_candidate_evidence.m"
+    },
+    {
+      "source_name": "f90_xmed07_extract_candidate_evidence_core.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xmed07/f90_xmed07_extract_candidate_evidence_core.m"
+    },
+    {
+      "source_name": "f90_xmed07_extract_candidate_evidence_compatibility.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xmed07/f90_xmed07_extract_candidate_evidence_compatibility.m"
+    },
+    {
+      "source_name": "f90_xmed07_extract_reference_evidence.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xmed07/f90_xmed07_extract_reference_evidence.m"
+    },
+    {
+      "source_name": "f90_xmed07_scoring_core.py",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xmed07/f90_xmed07_scoring_core.py"
+    },
+    {
+      "source_name": "f90_xmed07_extract_candidate_evidence.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xmed07/f90_xmed07_extract_candidate_evidence.m"
+    },
+    {
+      "source_name": "f90_xmed07_structure_policy.json",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xmed07/f90_xmed07_structure_policy.json"
+    },
+    {
+      "source_name": "f90_xmed07_structure_policy.py",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xmed07/f90_xmed07_structure_policy.py"
+    },
+    {
+      "source_name": "simuverity_public_output_compatibility.m",
+      "public_path": "vendor/scripts/unified/public_output/simuverity_public_output_compatibility.m"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XTHERM-07",
+  "scenarios": [
+    {
+      "id": "nominal",
+      "CPUHeatScale": 1.0,
+      "AmbientTemperature_K": 293.15,
+      "AirflowRestrictionScale": 1.0,
+      "FanCapacityScale": 1.0,
+      "InitialTemperature_C": 30.0
+    },
+    {
+      "id": "high_heat",
+      "CPUHeatScale": 1.25,
+      "AmbientTemperature_K": 293.15,
+      "AirflowRestrictionScale": 1.0,
+      "FanCapacityScale": 1.0,
+      "InitialTemperature_C": 30.0
+    },
+    {
+      "id": "warm_ambient",
+      "CPUHeatScale": 1.0,
+      "AmbientTemperature_K": 308.15,
+      "AirflowRestrictionScale": 1.0,
+      "FanCapacityScale": 1.0,
+      "InitialTemperature_C": 30.0
+    },
+    {
+      "id": "restricted_flow",
+      "CPUHeatScale": 1.0,
+      "AmbientTemperature_K": 293.15,
+      "AirflowRestrictionScale": 1.6,
+      "FanCapacityScale": 1.0,
+      "InitialTemperature_C": 30.0
+    },
+    {
+      "id": "degraded_fan",
+      "CPUHeatScale": 1.0,
+      "AmbientTemperature_K": 293.15,
+      "AirflowRestrictionScale": 1.0,
+      "FanCapacityScale": 0.8,
+      "InitialTemperature_C": 30.0
+    },
+    {
+      "id": "joint_service",
+      "CPUHeatScale": 1.15,
+      "AmbientTemperature_K": 303.15,
+      "AirflowRestrictionScale": 1.3,
+      "FanCapacityScale": 0.9,
+      "InitialTemperature_C": 40.0
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "start_s": 0,
+      "stop_s": 12000
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.2,
+          "meaning": "nominal temperature regulation"
+        },
+        "Q": {
+          "weight": 0.15,
+          "meaning": "thermal-gradient and flow quality"
+        },
+        "M": {
+          "weight": 0.3,
+          "meaning": "physical thermal-gas mechanism and causal witnesses"
+        },
+        "R": {
+          "weight": 0.2,
+          "meaning": "worst-case private-scenario robustness"
+        },
+        "D": {
+          "weight": 0.15,
+          "meaning": "heat-step recovery"
+        }
+      },
+      "within_group": "weighted_arithmetic_mean",
+      "across_groups": "weighted_geometric_mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum"
+    },
+    "shortcut_sanity_contract": [
+      "target_copy_or_prescribed_temperature",
+      "single_lumped_thermal_mass",
+      "disconnected_fan_or_gas_path",
+      "fixed_fan_command",
+      "private_inputs_change_only_reported_logs"
+    ]
+  },
+  "simulation": {
+    "start_s": 0,
+    "stop_s": 12000
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.2,
+        "meaning": "nominal temperature regulation"
+      },
+      "Q": {
+        "weight": 0.15,
+        "meaning": "thermal-gradient and flow quality"
+      },
+      "M": {
+        "weight": 0.3,
+        "meaning": "physical thermal-gas mechanism and causal witnesses"
+      },
+      "R": {
+        "weight": 0.2,
+        "meaning": "worst-case private-scenario robustness"
+      },
+      "D": {
+        "weight": 0.15,
+        "meaning": "heat-step recovery"
+      }
+    },
+    "within_group": "weighted_arithmetic_mean",
+    "across_groups": "weighted_geometric_mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum"
+  },
+  "shortcut_sanity_contract": [
+    "target_copy_or_prescribed_temperature",
+    "single_lumped_thermal_mass",
+    "disconnected_fan_or_gas_path",
+    "fixed_fan_command",
+    "private_inputs_change_only_reported_logs"
+  ]
+}

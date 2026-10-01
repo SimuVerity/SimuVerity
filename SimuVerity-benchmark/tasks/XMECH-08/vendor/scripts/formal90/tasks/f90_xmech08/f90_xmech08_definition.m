@@ -1,0 +1,16 @@
+function definition = f90_xmech08_definition
+%F90_XMECH08_DEFINITION Current task runner contract.
+here = fileparts(mfilename("fullpath"));
+root = fileparts(fileparts(fileparts(fileparts(here))));
+taskRoot = string(getenv("SIMUVERITY_TASK_ROOT"));
+definition = struct;
+definition.task_id = "F90-XMECH-08";
+definition.model_name = "sm_four_bar_optim";
+definition.target_model_file = fullfile("Four-Bar-Optim", ...
+    "sm_four_bar_optim.slx");
+definition.runner = struct( ...
+    "reference_model", fullfile(taskRoot, "reference", ...
+        definition.target_model_file), ...
+    "public_spec", fullfile(taskRoot, "public_spec.json"), ...
+    "official_scenarios", simuverity_official_scenarios_path());
+end

@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "run_id": "qwen3-8-max-claude-code-101",
+  "benchmark_release": "simuverity-101-v1",
+  "taskset_id": "simuverity-101-v1",
+  "model": "Qwen3.8-Max",
+  "harness": "Claude Code",
+  "condition": null,
+  "task_count": 101,
+  "scored_count": 245,
+  "protocol_zero_count": 140,
+  "score_sum": "2526.490388",
+  "score_mean": "25.014756",
+  "delivered_count": 272,
+  "native_executable_count": 245,
+  "g_pass_count": 163,
+  "repeat_count": 3,
+  "result_count": 303
+}

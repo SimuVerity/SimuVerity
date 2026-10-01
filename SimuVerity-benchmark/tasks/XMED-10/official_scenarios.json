@@ -1,0 +1,186 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XMED-10",
+  "scenarios": [
+    {
+      "id": "nominal_adult_target50",
+      "patient_age_years": 40,
+      "patient_height_cm": 170,
+      "patient_weight_kg": 75,
+      "patient_sex_binary": 1,
+      "bis_target": 50
+    },
+    {
+      "id": "young_adult_target50",
+      "patient_age_years": 22,
+      "patient_height_cm": 170,
+      "patient_weight_kg": 75,
+      "patient_sex_binary": 1,
+      "bis_target": 50
+    },
+    {
+      "id": "older_adult_target50",
+      "patient_age_years": 72,
+      "patient_height_cm": 170,
+      "patient_weight_kg": 75,
+      "patient_sex_binary": 1,
+      "bis_target": 50
+    },
+    {
+      "id": "low_body_mass_target50",
+      "patient_age_years": 40,
+      "patient_height_cm": 170,
+      "patient_weight_kg": 52,
+      "patient_sex_binary": 1,
+      "bis_target": 50
+    },
+    {
+      "id": "high_body_mass_target50",
+      "patient_age_years": 40,
+      "patient_height_cm": 170,
+      "patient_weight_kg": 105,
+      "patient_sex_binary": 1,
+      "bis_target": 50
+    },
+    {
+      "id": "nominal_adult_target44",
+      "patient_age_years": 40,
+      "patient_height_cm": 170,
+      "patient_weight_kg": 75,
+      "patient_sex_binary": 1,
+      "bis_target": 44
+    }
+  ],
+  "contract": {
+    "difficulty": {
+      "score_out_of_12": 11,
+      "basis": [
+        "closed feedback loop from nonlinear patient BIS state to two bounded drug actuators",
+        "coupled propofol and remifentanil PK/PD dynamics with patient-dependent parameters",
+        "simultaneous hypnosis, loss-of-consciousness, cardiac-output, arterial-pressure and laryngoscopy-tolerance responses",
+        "independent age, body-mass and BIS-target axes expose control-versus-physiology tradeoffs",
+        "six dynamic and terminal private scenarios with seven complete time-series outputs"
+      ]
+    },
+    "simulation": {
+      "duration_seconds": 900,
+      "tail_window_seconds": 120,
+      "induction_evaluation_start_seconds": 5,
+      "settling_band_bis": 2.0,
+      "required_time_coverage_seconds": [
+        0,
+        900
+      ],
+      "normal_mode_required": true,
+      "retain_complete_run": true
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85,
+      "preferred_reference_score": 90,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.25,
+          "meaning": "BIS target regulation accuracy"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "complete coherent evidence and valid physiological ranges"
+        },
+        "M": {
+          "weight": 0.2,
+          "meaning": "patient-dependent nonlinear PK/PD and multi-output physiology"
+        },
+        "C": {
+          "weight": 0.2,
+          "meaning": "closed-loop target response and bounded dual-drug actuation"
+        },
+        "R": {
+          "weight": 0.15,
+          "meaning": "worst private patient or target condition"
+        },
+        "D": {
+          "weight": 0.1,
+          "meaning": "induction transient, settling and terminal stability"
+        }
+      },
+      "within_group": "weighted_arithmetic_mean",
+      "across_groups": "weighted_geometric_mean",
+      "critical_multiscenario_aggregation": "worst_case"
+    },
+    "minimum_shortcut_sanity_contract": [
+      "missing_or_truncated_required_output",
+      "constant_or_replayed_bis_response_across_targets",
+      "constant_or_replayed_infusion_schedule_across_targets",
+      "physiology_independent_of_patient_parameters",
+      "negative_or_unbounded_drug_command",
+      "nonfinite_or_nonmonotonic_evidence"
+    ]
+  },
+  "difficulty": {
+    "score_out_of_12": 11,
+    "basis": [
+      "closed feedback loop from nonlinear patient BIS state to two bounded drug actuators",
+      "coupled propofol and remifentanil PK/PD dynamics with patient-dependent parameters",
+      "simultaneous hypnosis, loss-of-consciousness, cardiac-output, arterial-pressure and laryngoscopy-tolerance responses",
+      "independent age, body-mass and BIS-target axes expose control-versus-physiology tradeoffs",
+      "six dynamic and terminal private scenarios with seven complete time-series outputs"
+    ]
+  },
+  "simulation": {
+    "duration_seconds": 900,
+    "tail_window_seconds": 120,
+    "induction_evaluation_start_seconds": 5,
+    "settling_band_bis": 2.0,
+    "required_time_coverage_seconds": [
+      0,
+      900
+    ],
+    "normal_mode_required": true,
+    "retain_complete_run": true
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85,
+    "preferred_reference_score": 90,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.25,
+        "meaning": "BIS target regulation accuracy"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "complete coherent evidence and valid physiological ranges"
+      },
+      "M": {
+        "weight": 0.2,
+        "meaning": "patient-dependent nonlinear PK/PD and multi-output physiology"
+      },
+      "C": {
+        "weight": 0.2,
+        "meaning": "closed-loop target response and bounded dual-drug actuation"
+      },
+      "R": {
+        "weight": 0.15,
+        "meaning": "worst private patient or target condition"
+      },
+      "D": {
+        "weight": 0.1,
+        "meaning": "induction transient, settling and terminal stability"
+      }
+    },
+    "within_group": "weighted_arithmetic_mean",
+    "across_groups": "weighted_geometric_mean",
+    "critical_multiscenario_aggregation": "worst_case"
+  },
+  "minimum_shortcut_sanity_contract": [
+    "missing_or_truncated_required_output",
+    "constant_or_replayed_bis_response_across_targets",
+    "constant_or_replayed_infusion_schedule_across_targets",
+    "physiology_independent_of_patient_parameters",
+    "negative_or_unbounded_drug_command",
+    "nonfinite_or_nonmonotonic_evidence"
+  ]
+}

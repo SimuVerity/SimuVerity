@@ -1,0 +1,147 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XELEC-06",
+  "collection": "XELEC",
+  "reference": {
+    "identity_path": "tasks/XELEC-06/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/DQstatcom3p.mdl",
+    "model_path": "tasks/XELEC-06/reference/files/DQstatcom3p.mdl"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id D006",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a three-phase shunt STATCOM for a 400 V line-to-line, 50 Hz system.",
+    "engineering_objects": [
+      "D006 plant and controller described by the current public task contract",
+      "Measured output interfaces: Vdc, Vac, Igrid, Icomp"
+    ],
+    "physical_paths": [
+      "A three-phase grid and load must share a common PCC, and a controllable three-phase voltage-source converter with DC-link energy storage must connect in shunt at that PCC through one coupling reactor per phase."
+    ],
+    "functional_paths": [
+      "A three-phase grid and load must share a common PCC, and a controllable three-phase voltage-source converter with DC-link energy storage must connect in shunt at that PCC through one coupling reactor per phase.",
+      "The DC-link regulation and reactive compensation must establish promptly after startup."
+    ],
+    "information_paths": [
+      "Vsrc_LL, P_load -> D006 plant/control path -> Vdc, Vac, Igrid, Icomp"
+    ],
+    "modes_and_events": [
+      "The DC-link regulation and reactive compensation must establish promptly after startup."
+    ],
+    "interfaces": [
+      {
+        "name": "Vsrc_LL",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read Vsrc_LL and P_load from base-workspace variables; their nominal values are 400 V and 10000 W, and each operates over a +/-10% envelope.",
+        "source": "tasks/XELEC-06/public_spec.json"
+      },
+      {
+        "name": "P_load",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read Vsrc_LL and P_load from base-workspace variables; their nominal values are 400 V and 10000 W, and each operates over a +/-10% envelope.",
+        "source": "tasks/XELEC-06/public_spec.json"
+      },
+      {
+        "name": "Vdc",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "V"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries Vdc, Vac, Igrid and Icomp. Vdc must be the physical DC-link voltage; Vac must be one physical PCC phase voltage; Igrid and Icomp must be the corresponding physical grid and converter-branch currents.",
+        "source": "tasks/XELEC-06/public_spec.json"
+      },
+      {
+        "name": "Vac",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "V"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries Vdc, Vac, Igrid and Icomp. Vdc must be the physical DC-link voltage; Vac must be one physical PCC phase voltage; Igrid and Icomp must be the corresponding physical grid and converter-branch currents.",
+        "source": "tasks/XELEC-06/public_spec.json"
+      },
+      {
+        "name": "Igrid",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries Vdc, Vac, Igrid and Icomp. Vdc must be the physical DC-link voltage; Vac must be one physical PCC phase voltage; Igrid and Icomp must be the corresponding physical grid and converter-branch currents.",
+        "source": "tasks/XELEC-06/public_spec.json"
+      },
+      {
+        "name": "Icomp",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries Vdc, Vac, Igrid and Icomp. Vdc must be the physical DC-link voltage; Vac must be one physical PCC phase voltage; Igrid and Icomp must be the corresponding physical grid and converter-branch currents.",
+        "source": "tasks/XELEC-06/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a three-phase shunt STATCOM for a 400 V line-to-line, 50 Hz system.",
+      "A three-phase grid and load must share a common PCC, and a controllable three-phase voltage-source converter with DC-link energy storage must connect in shunt at that PCC through one coupling reactor per phase.",
+      "Vac must be one physical PCC phase voltage;"
+    ],
+    "feedback_and_control_causality": [
+      "The DC-link regulation and reactive compensation must establish promptly after startup."
+    ],
+    "signal_sources": [
+      "Vsrc_LL is read from the public MATLAB base-workspace input contract.",
+      "P_load is read from the public MATLAB base-workspace input contract.",
+      "Vdc is produced by the implemented plant or controller and logged under the public output contract.",
+      "Vac is produced by the implemented plant or controller and logged under the public output contract.",
+      "Igrid is produced by the implemented plant or controller and logged under the public output contract.",
+      "Icomp is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "Vsrc_LL: Read Vsrc_LL and P_load from base-workspace variables; their nominal values are 400 V and 10000 W, and each operates over a +/-10% envelope.",
+      "P_load: Read Vsrc_LL and P_load from base-workspace variables; their nominal values are 400 V and 10000 W, and each operates over a +/-10% envelope."
+    ],
+    "disturbances": [
+      "A three-phase grid and load must share a common PCC, and a controllable three-phase voltage-source converter with DC-link energy storage must connect in shunt at that PCC through one coupling reactor per phase.",
+      "Read Vsrc_LL and P_load from base-workspace variables;",
+      "The converter must keep its measured DC-link voltage near 700 V as the grid voltage and load vary, while exchanging predominantly reactive compensation current with the PCC."
+    ],
+    "dynamic_processes": [
+      "The DC-link regulation and reactive compensation must establish promptly after startup."
+    ],
+    "task_specific_shortcuts": [
+      "D006: prescribing Vdc directly would bypass the system path described by: A three-phase grid and load must share a common PCC, and a controllable three-phase voltage-source converter with DC-link energy storage must connect in shunt at that PCC through one coupling reactor per phase.",
+      "D006: replaying a fixed Vdc trace would ignore causal variation in Vsrc_LL."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XELEC-06/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XELEC-06/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XELEC-06/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

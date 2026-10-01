@@ -1,0 +1,160 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XAERO-08",
+  "collection": "XAERO",
+  "reference": {
+    "identity_path": "tasks/XAERO-08/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/source/simulink_stuff/Rocket.slx",
+    "model_path": "tasks/XAERO-08/reference/files/source/simulink_stuff/Rocket.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XAERO-08",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a Simulink model of a planar rocket flight system from powered ascent through post-burn trajectory and terminal descent or the 350-second horizon.",
+    "engineering_objects": [
+      "Build a Simulink model of a planar rocket flight system from powered ascent through post-burn trajectory and terminal descent or the 350-second horizon.",
+      "The model shall couple a time-dependent thrust program, propellant consumption and changing vehicle mass, altitude-dependent aerodynamic drag, gravity and Earth-curvature flight-path dynamics, and commanded-versus-actual pitch dynamics.",
+      "Simulate from 0 seconds until a physically implemented terminal event stops the model or 350 seconds is reached."
+    ],
+    "physical_paths": [
+      "Build a Simulink model of a planar rocket flight system from powered ascent through post-burn trajectory and terminal descent or the 350-second horizon.",
+      "The model shall couple a time-dependent thrust program, propellant consumption and changing vehicle mass, altitude-dependent aerodynamic drag, gravity and Earth-curvature flight-path dynamics, and commanded-versus-actual pitch dynamics.",
+      "Simulate from 0 seconds until a physically implemented terminal event stops the model or 350 seconds is reached."
+    ],
+    "functional_paths": [
+      "Build a Simulink model of a planar rocket flight system from powered ascent through post-burn trajectory and terminal descent or the 350-second horizon."
+    ],
+    "information_paths": [
+      "mass_flow_kg_per_s, payload_mass_kg, gravity_turn_angle_rad -> F90-XAERO-08 plant/control path -> flight_state, propulsion_state, guidance_attitude_state"
+    ],
+    "modes_and_events": [
+      "Build a Simulink model of a planar rocket flight system from powered ascent through post-burn trajectory and terminal descent or the 350-second horizon.",
+      "The model shall couple a time-dependent thrust program, propellant consumption and changing vehicle mass, altitude-dependent aerodynamic drag, gravity and Earth-curvature flight-path dynamics, and commanded-versus-actual pitch dynamics.",
+      "Simulate from 0 seconds until a physically implemented terminal event stops the model or 350 seconds is reached."
+    ],
+    "interfaces": [
+      {
+        "name": "mass_flow_kg_per_s",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kg/s"
+        ],
+        "range_or_shape": "Read the scalar workspace inputs mass_flow_kg_per_s, payload_mass_kg, and gravity_turn_angle_rad.",
+        "source": "tasks/XAERO-08/public_spec.json"
+      },
+      {
+        "name": "payload_mass_kg",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kg"
+        ],
+        "range_or_shape": "Read the scalar workspace inputs mass_flow_kg_per_s, payload_mass_kg, and gravity_turn_angle_rad.",
+        "source": "tasks/XAERO-08/public_spec.json"
+      },
+      {
+        "name": "gravity_turn_angle_rad",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "rad"
+        ],
+        "range_or_shape": "Read the scalar workspace inputs mass_flow_kg_per_s, payload_mass_kg, and gravity_turn_angle_rad.",
+        "source": "tasks/XAERO-08/public_spec.json"
+      },
+      {
+        "name": "flight_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s",
+          "rad",
+          "m"
+        ],
+        "range_or_shape": "flight_state shall have five columns in this order: altitude (m), downrange distance (m), signed speed along the flight path (m/s), flight-path angle (rad), and vehicle pitch angle (rad).",
+        "source": "tasks/XAERO-08/public_spec.json"
+      },
+      {
+        "name": "propulsion_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "kg",
+          "N"
+        ],
+        "range_or_shape": "propulsion_state shall have four columns: thrust (N), initial usable propellant mass (kg), ascent propellant consumed (kg), and terminal-burn propellant consumed (kg).",
+        "source": "tasks/XAERO-08/public_spec.json"
+      },
+      {
+        "name": "guidance_attitude_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad/s",
+          "rad"
+        ],
+        "range_or_shape": "guidance_attitude_state shall have four columns: gravity-turn command (rad), commanded pitch angle (rad), actual pitch angle (rad), and pitch-rate (rad/s).",
+        "source": "tasks/XAERO-08/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "The model shall couple a time-dependent thrust program, propellant consumption and changing vehicle mass, altitude-dependent aerodynamic drag, gravity and Earth-curvature flight-path dynamics, and commanded-versus-actual pitch dynamics.",
+      "flight_state shall have five columns in this order: altitude (m), downrange distance (m), signed speed along the flight path (m/s), flight-path angle (rad), and vehicle pitch angle (rad).",
+      "guidance_attitude_state shall have four columns: gravity-turn command (rad), commanded pitch angle (rad), actual pitch angle (rad), and pitch-rate (rad/s)."
+    ],
+    "feedback_and_control_causality": [
+      "The trajectory must respond causally to mass-flow command, payload mass, and gravity-turn command;"
+    ],
+    "signal_sources": [
+      "mass_flow_kg_per_s is read from the public MATLAB base-workspace input contract.",
+      "payload_mass_kg is read from the public MATLAB base-workspace input contract.",
+      "gravity_turn_angle_rad is read from the public MATLAB base-workspace input contract.",
+      "flight_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "propulsion_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "guidance_attitude_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "mass_flow_kg_per_s: Read the scalar workspace inputs mass_flow_kg_per_s, payload_mass_kg, and gravity_turn_angle_rad.",
+      "payload_mass_kg: Read the scalar workspace inputs mass_flow_kg_per_s, payload_mass_kg, and gravity_turn_angle_rad.",
+      "gravity_turn_angle_rad: Read the scalar workspace inputs mass_flow_kg_per_s, payload_mass_kg, and gravity_turn_angle_rad."
+    ],
+    "disturbances": [
+      "The trajectory must respond causally to mass-flow command, payload mass, and gravity-turn command;",
+      "Read the scalar workspace inputs mass_flow_kg_per_s, payload_mass_kg, and gravity_turn_angle_rad.",
+      "Support mass flow from 120 to 145 kg/s, payload mass from 4500 to 6500 kg, and gravity-turn command from 0.08 to 0.15 rad."
+    ],
+    "dynamic_processes": [
+      "The model shall couple a time-dependent thrust program, propellant consumption and changing vehicle mass, altitude-dependent aerodynamic drag, gravity and Earth-curvature flight-path dynamics, and commanded-versus-actual pitch dynamics."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XAERO-08: prescribing flight_state directly would bypass the system path described by: Build a Simulink model of a planar rocket flight system from powered ascent through post-burn trajectory and terminal descent or the 350-second horizon.",
+      "F90-XAERO-08: replaying a fixed flight_state trace would ignore causal variation in mass_flow_kg_per_s."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XAERO-08/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XAERO-08/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XAERO-08/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

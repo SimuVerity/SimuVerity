@@ -1,0 +1,185 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XTHERM-07",
+  "collection": "XTHERM",
+  "reference": {
+    "identity_path": "tasks/XTHERM-07/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "SimpleCPUCoolingSystem.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XTHERM-07",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a physically causal closed-loop forced-air cooling system for a CPU board.",
+    "engineering_objects": [
+      "Build a physically causal closed-loop forced-air cooling system for a CPU board.",
+      "The thermal plant must contain distinct finite thermal masses for the CPU, heat-sink base, and fins, joined by physical conductive heat-transfer paths.",
+      "A physical fan, inlet and outlet gas path, heat-sink flow channel, and case-flow restriction must remove heat from the fins by forced convection."
+    ],
+    "physical_paths": [
+      "The thermal plant must contain distinct finite thermal masses for the CPU, heat-sink base, and fins, joined by physical conductive heat-transfer paths.",
+      "Measured CPU temperature must control the real fan power path; the controller form is not prescribed.",
+      "Prescribing temperature traces, copying the target, or reporting airflow that is disconnected from the thermal plant is not valid.",
+      "Build a physically causal closed-loop forced-air cooling system for a CPU board."
+    ],
+    "functional_paths": [
+      "Measured CPU temperature must control the real fan power path;",
+      "the controller form is not prescribed.",
+      "The controller must increase cooling effort when required, limit CPU temperature, and recover after changes in heat generation."
+    ],
+    "information_paths": [
+      "CPUHeatScale, AmbientTemperature_K, AirflowRestrictionScale, FanCapacityScale, InitialTemperature_C -> F90-XTHERM-07 plant/control path -> thermal_state, fan_state, heat_flow"
+    ],
+    "modes_and_events": [
+      "F90-XTHERM-07 startup and continuous operation follow the current public task contract."
+    ],
+    "interfaces": [
+      {
+        "name": "CPUHeatScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read CPUHeatScale, AmbientTemperature_K, AirflowRestrictionScale, FanCapacityScale, and InitialTemperature_C from MATLAB base-workspace variables. CPUHeatScale multiplies this heat-input schedule: 50 W initially, 35 W from 620 s, 10 W from 4000 s, 45 W from 7000 s, and 20 W from 8300 s.",
+        "source": "tasks/XTHERM-07/public_spec.json"
+      },
+      {
+        "name": "AmbientTemperature_K",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "K"
+        ],
+        "range_or_shape": "Read CPUHeatScale, AmbientTemperature_K, AirflowRestrictionScale, FanCapacityScale, and InitialTemperature_C from MATLAB base-workspace variables.",
+        "source": "tasks/XTHERM-07/public_spec.json"
+      },
+      {
+        "name": "AirflowRestrictionScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read CPUHeatScale, AmbientTemperature_K, AirflowRestrictionScale, FanCapacityScale, and InitialTemperature_C from MATLAB base-workspace variables. AirflowRestrictionScale must act on the physical gas-flow resistance, and FanCapacityScale must act on the physical fan capability.",
+        "source": "tasks/XTHERM-07/public_spec.json"
+      },
+      {
+        "name": "FanCapacityScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read CPUHeatScale, AmbientTemperature_K, AirflowRestrictionScale, FanCapacityScale, and InitialTemperature_C from MATLAB base-workspace variables. AirflowRestrictionScale must act on the physical gas-flow resistance, and FanCapacityScale must act on the physical fan capability.",
+        "source": "tasks/XTHERM-07/public_spec.json"
+      },
+      {
+        "name": "InitialTemperature_C",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Read CPUHeatScale, AmbientTemperature_K, AirflowRestrictionScale, FanCapacityScale, and InitialTemperature_C from MATLAB base-workspace variables.",
+        "source": "tasks/XTHERM-07/public_spec.json"
+      },
+      {
+        "name": "thermal_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named thermal_state, fan_state, and heat_flow. thermal_state has 4 channels in this order: CPU, heat-sink-base, and fin temperature followed by the 50 degC target, all in degC.",
+        "source": "tasks/XTHERM-07/public_spec.json"
+      },
+      {
+        "name": "fan_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "g/s",
+          "kg/s",
+          "rpm",
+          "Pa",
+          "kg"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named thermal_state, fan_state, and heat_flow. fan_state has 3 channels in this order: physical fan speed (rpm), air mass flow (kg/s), and fan pressure rise (Pa).",
+        "source": "tasks/XTHERM-07/public_spec.json"
+      },
+      {
+        "name": "heat_flow",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "W"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named thermal_state, fan_state, and heat_flow. heat_flow has 4 channels in this order: physical CPU heat input, CPU-to-base conduction, base-to-fin conduction, and fin-to-air heat transfer, all in W.",
+        "source": "tasks/XTHERM-07/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "the controller form is not prescribed.",
+      "The controller must increase cooling effort when required, limit CPU temperature, and recover after changes in heat generation.",
+      "thermal_state has 4 channels in this order: CPU, heat-sink-base, and fin temperature followed by the 50 degC target, all in degC."
+    ],
+    "feedback_and_control_causality": [
+      "Build a physically causal closed-loop forced-air cooling system for a CPU board.",
+      "The thermal plant must contain distinct finite thermal masses for the CPU, heat-sink base, and fins, joined by physical conductive heat-transfer paths.",
+      "the controller form is not prescribed."
+    ],
+    "signal_sources": [
+      "CPUHeatScale is read from the public MATLAB base-workspace input contract.",
+      "AmbientTemperature_K is read from the public MATLAB base-workspace input contract.",
+      "AirflowRestrictionScale is read from the public MATLAB base-workspace input contract.",
+      "FanCapacityScale is read from the public MATLAB base-workspace input contract.",
+      "InitialTemperature_C is read from the public MATLAB base-workspace input contract.",
+      "thermal_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "fan_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "heat_flow is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "CPUHeatScale: Read CPUHeatScale, AmbientTemperature_K, AirflowRestrictionScale, FanCapacityScale, and InitialTemperature_C from MATLAB base-workspace variables. CPUHeatScale multiplies this heat-input schedule: 50 W initially, 35 W from 620 s, 10 W from 4000 s, 45 W from 7000 s, and 20 W from 8300 s.",
+      "AmbientTemperature_K: Read CPUHeatScale, AmbientTemperature_K, AirflowRestrictionScale, FanCapacityScale, and InitialTemperature_C from MATLAB base-workspace variables.",
+      "AirflowRestrictionScale: Read CPUHeatScale, AmbientTemperature_K, AirflowRestrictionScale, FanCapacityScale, and InitialTemperature_C from MATLAB base-workspace variables. AirflowRestrictionScale must act on the physical gas-flow resistance, and FanCapacityScale must act on the physical fan capability.",
+      "FanCapacityScale: Read CPUHeatScale, AmbientTemperature_K, AirflowRestrictionScale, FanCapacityScale, and InitialTemperature_C from MATLAB base-workspace variables. AirflowRestrictionScale must act on the physical gas-flow resistance, and FanCapacityScale must act on the physical fan capability.",
+      "InitialTemperature_C: Read CPUHeatScale, AmbientTemperature_K, AirflowRestrictionScale, FanCapacityScale, and InitialTemperature_C from MATLAB base-workspace variables."
+    ],
+    "disturbances": [
+      "F90-XTHERM-07 operating variation is supplied through CPUHeatScale, AmbientTemperature_K, AirflowRestrictionScale, FanCapacityScale, InitialTemperature_C."
+    ],
+    "dynamic_processes": [
+      "The controller must increase cooling effort when required, limit CPU temperature, and recover after changes in heat generation."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XTHERM-07: prescribing thermal_state directly would bypass the system path described by: The thermal plant must contain distinct finite thermal masses for the CPU, heat-sink base, and fins, joined by physical conductive heat-transfer paths.",
+      "F90-XTHERM-07: replaying a fixed thermal_state trace would ignore causal variation in CPUHeatScale."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XTHERM-07/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XTHERM-07/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XTHERM-07/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

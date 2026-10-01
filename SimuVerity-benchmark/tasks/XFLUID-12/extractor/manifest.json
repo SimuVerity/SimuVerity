@@ -1,0 +1,16 @@
+{
+  "schema": "simuverity.extractor-closure.v1",
+  "task_id": "XFLUID-12",
+  "entrypoint": "vendor/scripts/formal90/tasks/ext_xfluid_wecsim_rm3/ext_xfluid_wecsim_rm3_extract_evidence.m",
+  "public_wrapper": "extractor/run.m",
+  "files": [
+    {
+      "source_name": "simuverity_official_scenarios_path.m",
+      "public_path": "extractor/support/simuverity_official_scenarios_path.m"
+    },
+    {
+      "source_name": "ext_xfluid_wecsim_rm3_extract_evidence.m",
+      "public_path": "vendor/scripts/formal90/tasks/ext_xfluid_wecsim_rm3/ext_xfluid_wecsim_rm3_extract_evidence.m"
+    }
+  ]
+}

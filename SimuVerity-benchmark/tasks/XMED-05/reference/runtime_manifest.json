@@ -1,0 +1,20 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XMED-05",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/PACER_v0.2.0/models/CLSfixed.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 119,
+  "retained_bytes": 278377408,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ],
+  "clean_replay_setup": {
+    "phase": "after_load_before_update",
+    "path": "tasks/XMED-05/reference/clean_replay_setup/f90_xmed05_reference_clean_replay_setup.m",
+    "entrypoint": "f90_xmed05_reference_clean_replay_setup"
+  }
+}

@@ -1,0 +1,533 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XFLUID-11",
+  "file_count": 127,
+  "files": [
+    {
+      "path": "reference/files/applications/_Common_Input_Files/OSWEC/geometry/base.stl",
+      "size_bytes": 3459
+    },
+    {
+      "path": "reference/files/applications/_Common_Input_Files/OSWEC/geometry/flap.stl",
+      "size_bytes": 271215
+    },
+    {
+      "path": "reference/files/applications/_Common_Input_Files/OSWEC/hydroData/oswec.h5",
+      "size_bytes": 27201176
+    },
+    {
+      "path": "reference/files/applications/Desalination/OSWEC_RO.slx",
+      "size_bytes": 80791
+    },
+    {
+      "path": "reference/files/applications/Desalination/README.md",
+      "size_bytes": 1009
+    },
+    {
+      "path": "reference/files/applications/Desalination/wecSimInputFile.m",
+      "size_bytes": 3325
+    },
+    {
+      "path": "reference/files/applications/LICENSE",
+      "size_bytes": 10351
+    },
+    {
+      "path": "reference/files/applications/NOTICE",
+      "size_bytes": 1197
+    },
+    {
+      "path": "reference/files/applications/README.md",
+      "size_bytes": 3655
+    },
+    {
+      "path": "reference/files/wec_sim/addWecSimSource.m",
+      "size_bytes": 312
+    },
+    {
+      "path": "reference/files/wec_sim/COPYRIGHT",
+      "size_bytes": 913
+    },
+    {
+      "path": "reference/files/wec_sim/LICENSE",
+      "size_bytes": 10351
+    },
+    {
+      "path": "reference/files/wec_sim/source/blockFigures/CheckValve.png",
+      "size_bytes": 4686
+    },
+    {
+      "path": "reference/files/wec_sim/source/blockFigures/DirectDriveLinearGenerator.png",
+      "size_bytes": 18642
+    },
+    {
+      "path": "reference/files/wec_sim/source/blockFigures/DirectDriveRotaryGenerator.png",
+      "size_bytes": 12764
+    },
+    {
+      "path": "reference/files/wec_sim/source/blockFigures/DoubleActingPiston.png",
+      "size_bytes": 12605
+    },
+    {
+      "path": "reference/files/wec_sim/source/blockFigures/ElectricMotor.png",
+      "size_bytes": 18180
+    },
+    {
+      "path": "reference/files/wec_sim/source/blockFigures/FixedHydraulicMotor.png",
+      "size_bytes": 11849
+    },
+    {
+      "path": "reference/files/wec_sim/source/blockFigures/GasAccumulator.png",
+      "size_bytes": 5043
+    },
+    {
+      "path": "reference/files/wec_sim/source/blockFigures/RectifyingCheckValve.png",
+      "size_bytes": 20996
+    },
+    {
+      "path": "reference/files/wec_sim/source/blockFigures/RectifyingCheckValveV2.png",
+      "size_bytes": 20996
+    },
+    {
+      "path": "reference/files/wec_sim/source/blockFigures/simpleDDPTO.png",
+      "size_bytes": 28997
+    },
+    {
+      "path": "reference/files/wec_sim/source/blockFigures/VariableDisplacementHydraulicMotor.png",
+      "size_bytes": 9996
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/addDefaultPlotVars.m",
+      "size_bytes": 774
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/calcSpectralMoment.m",
+      "size_bytes": 1025
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/calcWaveNumber.m",
+      "size_bytes": 873
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/checkAndFormatPlotVars.m",
+      "size_bytes": 3374
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/cleanBEM.m",
+      "size_bytes": 10738
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/combineBEM.m",
+      "size_bytes": 4304
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/elevationToSpectrum.m",
+      "size_bytes": 2127
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/excitationIRF.m",
+      "size_bytes": 2183
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/formatPlot.m",
+      "size_bytes": 3529
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/getDofNames.m",
+      "size_bytes": 1343
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/normalizeBEM.m",
+      "size_bytes": 3431
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/plotAddedMass.m",
+      "size_bytes": 2444
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/plotBEMIO.m",
+      "size_bytes": 1627
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/plotExcitationIRF.m",
+      "size_bytes": 2720
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/plotExcitationMagnitude.m",
+      "size_bytes": 2200
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/plotExcitationPhase.m",
+      "size_bytes": 2101
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/plotRadiationDamping.m",
+      "size_bytes": 2297
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/plotRadiationIRF.m",
+      "size_bytes": 2742
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/QTFs/assignIDs.m",
+      "size_bytes": 1435
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/QTFs/plotQTFs.m",
+      "size_bytes": 3432
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/QTFs/triToFullMatrix.m",
+      "size_bytes": 3593
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/radiationIRF.m",
+      "size_bytes": 3194
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/radiationIRFSS.m",
+      "size_bytes": 3464
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/readAQWA.m",
+      "size_bytes": 12279
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/readBEMIOH5.m",
+      "size_bytes": 8981
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/readCAPYTAINE.m",
+      "size_bytes": 21072
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/readH5ToStruct.m",
+      "size_bytes": 7180
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/README.md",
+      "size_bytes": 469
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/readNEMOH.m",
+      "size_bytes": 17551
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/readWAMIT.m",
+      "size_bytes": 19492
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/rebuildHydroStruct.m",
+      "size_bytes": 6104
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/reverseDimensionOrder.m",
+      "size_bytes": 658
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/BEMIO/writeBEMIOH5.m",
+      "size_bytes": 14369
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/checkMaxVersion.m",
+      "size_bytes": 842
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/coordTransformation/axisAngle2RotMat.m",
+      "size_bytes": 1264
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/coordTransformation/eulXYZ2RotMat.m",
+      "size_bytes": 1029
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/coordTransformation/offsetXYZ.m",
+      "size_bytes": 196
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/coordTransformation/rotateXYZ.m",
+      "size_bytes": 576
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/coordTransformation/rotMat2AxisAngle.m",
+      "size_bytes": 1611
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/coordTransformation/rotMatXYZ2Eul.m",
+      "size_bytes": 782
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/initializeWecSim.m",
+      "size_bytes": 21624
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/moorDyn/README.md",
+      "size_bytes": 4981
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/MOST/readfile_BTS.m",
+      "size_bytes": 5461
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/MOST/readTurbSimOutput.m",
+      "size_bytes": 819
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/paraview/paraviewVisualization.m",
+      "size_bytes": 3494
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/paraview/pressureGlyphs.py",
+      "size_bytes": 5441
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/paraview/WEC-Sim.py",
+      "size_bytes": 2689
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/paraview/writeParaviewBody.m",
+      "size_bytes": 5158
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/paraview/writeParaviewMooring.m",
+      "size_bytes": 4839
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/paraview/writeParaviewResponse.m",
+      "size_bytes": 2581
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/paraview/writeParaviewWave.m",
+      "size_bytes": 3951
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/postProcessWecSim.m",
+      "size_bytes": 6666
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/simulink/model/calcCableTens.m",
+      "size_bytes": 1562
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/simulink/model/calcDispPhase.m",
+      "size_bytes": 918
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/simulink/model/convolutionIntegralInterp.m",
+      "size_bytes": 2563
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/simulink/model/convolutionIntegralSurface.m",
+      "size_bytes": 3602
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/simulink/model/extrapFrad.m",
+      "size_bytes": 1126
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/simulink/model/fYawTransforms.m",
+      "size_bytes": 1000
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/simulink/model/irregExcF.m",
+      "size_bytes": 713
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/simulink/model/irregExcFullDirF.m",
+      "size_bytes": 4101
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/simulink/model/irregnLYaw.m",
+      "size_bytes": 3817
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/simulink/model/irregWaveMorison.m",
+      "size_bytes": 8947
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/simulink/model/kinYawTransformB2B.m",
+      "size_bytes": 1411
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/simulink/model/kinYawTransformNoB2B.m",
+      "size_bytes": 1035
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/simulink/model/MoorDyn_matlab_FCN.m",
+      "size_bytes": 203
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/simulink/model/nonFKForce.m",
+      "size_bytes": 4005
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/simulink/model/nonLinearBuoyancy.m",
+      "size_bytes": 1593
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/simulink/model/nonLinearStaticMooring.m",
+      "size_bytes": 2035
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/simulink/model/noWaveMorison.m",
+      "size_bytes": 5538
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/simulink/model/quaternion2EulXYZ.m",
+      "size_bytes": 580
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/simulink/model/regnLYaw.m",
+      "size_bytes": 3003
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/simulink/model/regWaveMorison.m",
+      "size_bytes": 7370
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/simulink/model/secondOrderExt.m",
+      "size_bytes": 1267
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/simulink/model/struct2bus.m",
+      "size_bytes": 1332
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/simulink/model/waveElevation.m",
+      "size_bytes": 1856
+    },
+    {
+      "path": "reference/files/wec_sim/source/functions/stopWecSim.m",
+      "size_bytes": 2422
+    },
+    {
+      "path": "reference/files/wec_sim/source/lib/MOST/MOST_Lib.slx",
+      "size_bytes": 5972350
+    },
+    {
+      "path": "reference/files/wec_sim/source/lib/MOST/slblocks.m",
+      "size_bytes": 238
+    },
+    {
+      "path": "reference/files/wec_sim/source/lib/WEC-Sim/slblocks.m",
+      "size_bytes": 1181
+    },
+    {
+      "path": "reference/files/wec_sim/source/lib/WEC-Sim/WECSim_Lib.slx",
+      "size_bytes": 32794
+    },
+    {
+      "path": "reference/files/wec_sim/source/lib/WEC-Sim/WECSim_Lib_Body_Elements.slx",
+      "size_bytes": 341048
+    },
+    {
+      "path": "reference/files/wec_sim/source/lib/WEC-Sim/WECSim_Lib_Cables.slx",
+      "size_bytes": 64251
+    },
+    {
+      "path": "reference/files/wec_sim/source/lib/WEC-Sim/WECSim_Lib_Constraints.slx",
+      "size_bytes": 92694
+    },
+    {
+      "path": "reference/files/wec_sim/source/lib/WEC-Sim/WECSim_Lib_Frames.slx",
+      "size_bytes": 39951
+    },
+    {
+      "path": "reference/files/wec_sim/source/lib/WEC-Sim/WECSim_Lib_Moorings.slx",
+      "size_bytes": 95779
+    },
+    {
+      "path": "reference/files/wec_sim/source/lib/WEC-Sim/WECSim_Lib_PTOs.slx",
+      "size_bytes": 115139
+    },
+    {
+      "path": "reference/files/wec_sim/source/lib/WEC-Sim/WECSim_Lib_PTOSim.slx",
+      "size_bytes": 500822
+    },
+    {
+      "path": "reference/files/wec_sim/source/objects/+internal/waveType.m",
+      "size_bytes": 225
+    },
+    {
+      "path": "reference/files/wec_sim/source/objects/bodyClass.m",
+      "size_bytes": 92810
+    },
+    {
+      "path": "reference/files/wec_sim/source/objects/cableClass.m",
+      "size_bytes": 22212
+    },
+    {
+      "path": "reference/files/wec_sim/source/objects/constraintClass.m",
+      "size_bytes": 14129
+    },
+    {
+      "path": "reference/files/wec_sim/source/objects/mooringClass.m",
+      "size_bytes": 15380
+    },
+    {
+      "path": "reference/files/wec_sim/source/objects/ptoClass.m",
+      "size_bytes": 14992
+    },
+    {
+      "path": "reference/files/wec_sim/source/objects/ptoSimClass.m",
+      "size_bytes": 14874
+    },
+    {
+      "path": "reference/files/wec_sim/source/objects/responseClass.m",
+      "size_bytes": 53843
+    },
+    {
+      "path": "reference/files/wec_sim/source/objects/simulationClass.m",
+      "size_bytes": 18477
+    },
+    {
+      "path": "reference/files/wec_sim/source/objects/waveClass.m",
+      "size_bytes": 53340
+    },
+    {
+      "path": "reference/files/wec_sim/source/objects/windClass.m",
+      "size_bytes": 4425
+    },
+    {
+      "path": "reference/files/wec_sim/source/objects/windTurbineClass.m",
+      "size_bytes": 14626
+    },
+    {
+      "path": "reference/files/wec_sim/source/README.md",
+      "size_bytes": 126
+    },
+    {
+      "path": "reference/files/wec_sim/source/wecSim.m",
+      "size_bytes": 2300
+    },
+    {
+      "path": "reference/files/wec_sim/source/wecSimFcn.m",
+      "size_bytes": 1097
+    },
+    {
+      "path": "reference/files/wec_sim/source/wecSimMCR.m",
+      "size_bytes": 4215
+    },
+    {
+      "path": "reference/files/wec_sim/source/wecSimPCT.m",
+      "size_bytes": 4635
+    }
+  ],
+  "entrypoint": "reference/files/applications/Desalination/OSWEC_RO.slx",
+  "expected_score": 92.55042403117673,
+  "expected_score_basis": "reference_replay",
+  "expected_valid_scenarios": 4,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal_sea",
+      "low_sea",
+      "high_sea",
+      "height_intervention"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 35649569,
+  "excluded_files": []
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "run_id": "gpt-5-5-codex-101-run1",
+  "benchmark_release": "simuverity-101-v1",
+  "taskset_id": "simuverity-101-v1",
+  "model": "GPT-5.5",
+  "harness": "Codex",
+  "condition": null,
+  "task_count": 101,
+  "scored_count": 95,
+  "protocol_zero_count": 25,
+  "score_sum": "3979.741901",
+  "score_mean": "39.403385",
+  "delivered_count": 101,
+  "native_executable_count": 95,
+  "g_pass_count": 76,
+  "parent_run_id": "gpt-5-5-codex-101",
+  "repeat_id": "run1"
+}

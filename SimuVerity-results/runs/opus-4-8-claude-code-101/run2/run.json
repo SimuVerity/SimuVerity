@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "run_id": "opus-4-8-claude-code-101-run2",
+  "benchmark_release": "simuverity-101-v1",
+  "taskset_id": "simuverity-101-v1",
+  "model": "Claude Opus 4.8",
+  "harness": "Claude Code",
+  "condition": null,
+  "task_count": 101,
+  "scores_file": "scores.csv",
+  "summary_file": "summary.json",
+  "parent_run_id": "opus-4-8-claude-code-101",
+  "repeat_id": "run2"
+}

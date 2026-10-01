@@ -1,0 +1,88 @@
+{
+  "aggregation": {
+    "operation_order": "declared pure-function order",
+    "post_total_cap_floor_or_override": "none",
+    "weights": {
+      "A": 0.3,
+      "D": 0.1,
+      "M": 0.25,
+      "Q": 0.15,
+      "R": 0.2
+    }
+  },
+  "candidate_independent": true,
+  "payload": {
+    "compressed_bytes": 17529,
+    "compression": "gzip-json-level-9-mtime-0",
+    "file": "engineering_criteria_targets.json.gz",
+    "uncompressed_bytes": 47884
+  },
+  "criteria_id": "f90-xmech08-engineering-criteria-20260821",
+  "effect_targets": {
+    "baseline_scenario": "nominal",
+    "geometry_interventions": [
+      "short_crank",
+      "long_crank",
+      "short_coupler",
+      "long_coupler",
+      "near_grashof_boundary"
+    ]
+  },
+  "missing_evidence_handling": "qualification and metric-local handling",
+  "normalizers": {
+    "binding": "formulas derived from fixed scenario targets",
+    "operation_order": "preserved"
+  },
+  "reference_self_target": {
+    "G": 1.0,
+    "score": 100.0,
+    "static_shell_role": "public qualification shell used only when the fixed target is scored as its own candidate for equivalence and shortcut sanity"
+  },
+  "runtime_inputs": [
+    "candidate_evidence",
+    "engineering_criteria_bundle"
+  ],
+  "scenario_targets": {
+    "included_fields": [
+      "id",
+      "outputs_valid",
+      "metrics.path_length_m",
+      "metrics.enclosed_area_m2",
+      "metrics.x_span_m",
+      "metrics.y_span_m",
+      "metrics.radius_rms_m",
+      "metrics.finite_fraction",
+      "metrics.closure_error_fraction",
+      "metrics.maximum_step_m",
+      "metrics.median_step_m",
+      "metrics.duration_s",
+      "metrics.drive_angle_span_deg",
+      "metrics.drive_speed_mean_deg_s",
+      "metrics.drive_speed_cv",
+      "metrics.tip_speed_cv",
+      "trajectory.tip_xy_m",
+      "trajectory.drive_state"
+    ],
+    "lossless": true,
+    "numeric_conversion": "none",
+    "resampled_or_downsampled": false,
+    "sample_order": "preserved_exactly",
+    "scenario_ids": [
+      "nominal",
+      "short_crank",
+      "long_crank",
+      "short_coupler",
+      "long_coupler",
+      "near_grashof_boundary"
+    ],
+    "storage": "payload.scenario_targets"
+  },
+  "schema": "simuverity.engineering-criteria-manifest.v1",
+  "scoring_contract": {
+    "criteria_to_current_mapping": "{qualification_target, scenario_targets} -> in-memory fixed target evidence",
+    "scoring_function": "f90_xmech08_metric_ownership.py",
+    "runtime_reads_source_reference_evidence": false,
+    "entry_scorer": "f90_xmech08_scoring.py"
+  },
+  "task_id": "F90-XMECH-08"
+}

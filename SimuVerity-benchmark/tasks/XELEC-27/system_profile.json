@@ -1,0 +1,118 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XELEC-27",
+  "collection": "XELEC",
+  "reference": {
+    "identity_path": "tasks/XELEC-27/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/three_phase_three_level_currrent_control_using_space_vector_fix2.slx",
+    "model_path": "tasks/XELEC-27/reference/files/three_phase_three_level_currrent_control_using_space_vector_fix2.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id D027",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a three-phase three-level neutral-point-clamped inverter using Simscape Specialized Power Systems.",
+    "engineering_objects": [
+      "Build a three-phase three-level neutral-point-clamped inverter using Simscape Specialized Power Systems.",
+      "A split 600 V DC bus must feed a physically connected three-leg NPC power stage with clamping paths and a balanced three-phase load.",
+      "Closed-loop current regulation must use physically measured output current so the measured balanced 50 Hz currents track the command throughout this envelope."
+    ],
+    "physical_paths": [
+      "A split 600 V DC bus must feed a physically connected three-leg NPC power stage with clamping paths and a balanced three-phase load.",
+      "Closed-loop current regulation must use physically measured output current so the measured balanced 50 Hz currents track the command throughout this envelope.",
+      "Build a three-phase three-level neutral-point-clamped inverter using Simscape Specialized Power Systems."
+    ],
+    "functional_paths": [
+      "Closed-loop current regulation must use physically measured output current so the measured balanced 50 Hz currents track the command throughout this envelope.",
+      "The closed-loop current regulation must establish promptly after startup."
+    ],
+    "information_paths": [
+      "Iref_amp -> D027 plant/control path -> Vout, Iabc"
+    ],
+    "modes_and_events": [
+      "The closed-loop current regulation must establish promptly after startup."
+    ],
+    "interfaces": [
+      {
+        "name": "Iref_amp",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read Iref_amp from a base-workspace variable; it is the peak amplitude of the balanced three-phase current command, nominally 5 A with an operating envelope of 4 to 6 A.",
+        "source": "tasks/XELEC-27/public_spec.json"
+      },
+      {
+        "name": "Vout",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "V"
+        ],
+        "range_or_shape": "Log complete-run physical MATLAB Timeseries Vout and Iabc, each containing exactly the three measured phases in consistent phase order.",
+        "source": "tasks/XELEC-27/public_spec.json"
+      },
+      {
+        "name": "Iabc",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "Log complete-run physical MATLAB Timeseries Vout and Iabc, each containing exactly the three measured phases in consistent phase order.",
+        "source": "tasks/XELEC-27/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a three-phase three-level neutral-point-clamped inverter using Simscape Specialized Power Systems.",
+      "A split 600 V DC bus must feed a physically connected three-leg NPC power stage with clamping paths and a balanced three-phase load.",
+      "it is the peak amplitude of the balanced three-phase current command, nominally 5 A with an operating envelope of 4 to 6 A."
+    ],
+    "feedback_and_control_causality": [
+      "Closed-loop current regulation must use physically measured output current so the measured balanced 50 Hz currents track the command throughout this envelope.",
+      "The closed-loop current regulation must establish promptly after startup."
+    ],
+    "signal_sources": [
+      "Iref_amp is read from the public MATLAB base-workspace input contract.",
+      "Vout is produced by the implemented plant or controller and logged under the public output contract.",
+      "Iabc is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "Iref_amp: Read Iref_amp from a base-workspace variable; it is the peak amplitude of the balanced three-phase current command, nominally 5 A with an operating envelope of 4 to 6 A."
+    ],
+    "disturbances": [
+      "A split 600 V DC bus must feed a physically connected three-leg NPC power stage with clamping paths and a balanced three-phase load."
+    ],
+    "dynamic_processes": [
+      "Closed-loop current regulation must use physically measured output current so the measured balanced 50 Hz currents track the command throughout this envelope.",
+      "The closed-loop current regulation must establish promptly after startup."
+    ],
+    "task_specific_shortcuts": [
+      "D027: prescribing Vout directly would bypass the system path described by: A split 600 V DC bus must feed a physically connected three-leg NPC power stage with clamping paths and a balanced three-phase load.",
+      "D027: replaying a fixed Vout trace would ignore causal variation in Iref_amp."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XELEC-27/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XELEC-27/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XELEC-27/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

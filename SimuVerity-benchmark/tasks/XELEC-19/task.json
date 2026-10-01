@@ -1,0 +1,63 @@
+{
+  "schema": "simuverity.task.v1",
+  "release": "simuverity-101-v1",
+  "task_id": "XELEC-19",
+  "ordinal": 6,
+  "collection": "XELEC",
+  "runtime_alias": "XELEC-19",
+  "required_model_file": "cand_XELEC19.slx",
+  "evaluation_policy_id": "simuverity-101-v1:xelec-19:scoring",
+  "candidate_closure": {
+    "public_input_names": [
+      "P_load"
+    ],
+    "nominal_provider": "simuverity_public_nominal_inputs"
+  },
+  "public_spec": "public_spec.json",
+  "official_scenarios": "official_scenarios.json",
+  "extractor": {
+    "kind": "matlab_function",
+    "path": "extractor/run.m",
+    "entrypoint": "run",
+    "implementation": "vendor/scripts/unified/d16/tasks/d019/d019_extract_candidate_evidence.m",
+    "closure_manifest": "extractor/manifest.json"
+  },
+  "scorer": {
+    "kind": "python_function",
+    "path": "scorer.py",
+    "entrypoint": "score",
+    "closure_manifest": "scorer/manifest.json",
+    "offline_only": true
+  },
+  "reference": {
+    "materialization": "bundled",
+    "path": "reference/files",
+    "manifest": "reference/manifest.json",
+    "entrypoint": "reference/files/MLI17.slx",
+    "expected_valid_scenarios": 2,
+    "score_tolerance": 1e-12,
+    "expected_score": 93.83747636049078,
+    "expected_score_basis": "reference_replay",
+    "scenario_contract": {
+      "expected_ids": [
+        "load_up",
+        "load_down"
+      ],
+      "nominal_scenario_id": null,
+      "nominal_materialization": "authoritative_scenario_set"
+    },
+    "score_tolerance_basis": "source_authority_numeric_precision",
+    "runtime_manifest": "reference/runtime_manifest.json"
+  },
+  "applicable_groups": [
+    "G",
+    "A",
+    "Q",
+    "R"
+  ],
+  "release_license_status": "INCLUDED_THIRD_PARTY_LICENSE",
+  "system_profile": {
+    "path": "system_profile.json",
+    "schema": "simuverity.system-profile.v1"
+  }
+}

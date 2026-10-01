@@ -1,0 +1,73 @@
+{
+  "schema": "simuverity.task.v1",
+  "release": "simuverity-101-v1",
+  "task_id": "XAUTO-12",
+  "ordinal": 95,
+  "collection": "XAUTO",
+  "runtime_alias": "XAUTO-12",
+  "required_model_file": "cand_XAUTO12.slx",
+  "evaluation_policy_id": "simuverity-101-v1:xauto-12:scoring",
+  "candidate_closure": {
+    "public_input_names": [
+      "multiagent_mission"
+    ],
+    "nominal_provider": "simuverity_public_nominal_inputs"
+  },
+  "public_spec": "public_spec.json",
+  "official_scenarios": "official_scenarios.json",
+  "extractor": {
+    "kind": "matlab_function",
+    "path": "extractor/run.m",
+    "entrypoint": "run",
+    "implementation": "vendor/scripts/formal90/tasks/ext_xauto_multiagent_cbf_vo/ext_xauto_multiagent_cbf_vo_extract_evidence.m",
+    "closure_manifest": "extractor/manifest.json"
+  },
+  "scorer": {
+    "kind": "python_function",
+    "path": "scorer.py",
+    "entrypoint": "score",
+    "closure_manifest": "scorer/manifest.json",
+    "offline_only": true
+  },
+  "reference": {
+    "materialization": "bundled",
+    "path": "reference/files",
+    "manifest": "reference/manifest.json",
+    "entrypoint": "reference/files/ext_xauto_multiagent_cbf_vo_reference.slx",
+    "clean_replay_setup": {
+      "phase": "before_load",
+      "path": "tasks/XAUTO-12/reference/clean_replay_setup/ext_xauto_multiagent_cbf_vo_reference_clean_replay_setup.m",
+      "entrypoint": "ext_xauto_multiagent_cbf_vo_reference_clean_replay_setup"
+    },
+    "expected_valid_scenarios": 4,
+    "score_tolerance": 5e-07,
+    "expected_score": 91.441163,
+    "expected_score_basis": "reference_replay",
+    "scenario_contract": {
+      "expected_ids": [
+        "symmetric_circle_swap",
+        "narrow_two_sided_crossing",
+        "offset_asymmetric_exchange",
+        "moving_passive_obstacle"
+      ],
+      "nominal_scenario_id": null,
+      "nominal_materialization": "authoritative_scenario_set"
+    },
+    "score_tolerance_basis": "source_authority_numeric_precision",
+    "runtime_manifest": "reference/runtime_manifest.json"
+  },
+  "applicable_groups": [
+    "G",
+    "A",
+    "Q",
+    "M",
+    "C",
+    "R",
+    "D"
+  ],
+  "release_license_status": "INCLUDED_THIRD_PARTY_LICENSE",
+  "system_profile": {
+    "path": "system_profile.json",
+    "schema": "simuverity.system-profile.v1"
+  }
+}

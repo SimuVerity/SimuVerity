@@ -1,0 +1,180 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XTHERM-11",
+  "scenarios": [
+    {
+      "id": "nominal",
+      "reactor_temperature_setpoint_K": 398.322386058807,
+      "liquid_level_setpoint_m": 0.5,
+      "feed_flow_kg_s": 10.0,
+      "feed_concentration_kmol_m3": 1.0,
+      "feed_temperature_K": 350.0,
+      "coolant_inlet_temperature_K": 300.0,
+      "disturbance_start_s": 200.0,
+      "feed_flow_ramp_kg_s2": 0.0,
+      "feed_concentration_ramp_kmol_m3_s": 0.0,
+      "feed_temperature_ramp_K_s": 0.0,
+      "coolant_inlet_temperature_ramp_K_s": 0.0,
+      "catalyst_decay_rate_s_inverse": 0.0,
+      "heat_transfer_decay_rate_s_inverse": 0.0
+    },
+    {
+      "id": "elevated_targets_and_feed",
+      "reactor_temperature_setpoint_K": 401.5,
+      "liquid_level_setpoint_m": 0.54,
+      "feed_flow_kg_s": 10.0,
+      "feed_concentration_kmol_m3": 1.0,
+      "feed_temperature_K": 350.0,
+      "coolant_inlet_temperature_K": 300.0,
+      "disturbance_start_s": 200.0,
+      "feed_flow_ramp_kg_s2": 0.0025,
+      "feed_concentration_ramp_kmol_m3_s": 0.0,
+      "feed_temperature_ramp_K_s": 0.0,
+      "coolant_inlet_temperature_ramp_K_s": 0.0,
+      "catalyst_decay_rate_s_inverse": 0.0,
+      "heat_transfer_decay_rate_s_inverse": 0.0
+    },
+    {
+      "id": "feed_concentration_depletion",
+      "reactor_temperature_setpoint_K": 398.322386058807,
+      "liquid_level_setpoint_m": 0.5,
+      "feed_flow_kg_s": 10.0,
+      "feed_concentration_kmol_m3": 1.0,
+      "feed_temperature_K": 350.0,
+      "coolant_inlet_temperature_K": 300.0,
+      "disturbance_start_s": 200.0,
+      "feed_flow_ramp_kg_s2": 0.0,
+      "feed_concentration_ramp_kmol_m3_s": -0.00045,
+      "feed_temperature_ramp_K_s": 0.0,
+      "coolant_inlet_temperature_ramp_K_s": 0.0,
+      "catalyst_decay_rate_s_inverse": 0.0,
+      "heat_transfer_decay_rate_s_inverse": 0.0
+    },
+    {
+      "id": "hot_feed_ramp",
+      "reactor_temperature_setpoint_K": 398.322386058807,
+      "liquid_level_setpoint_m": 0.5,
+      "feed_flow_kg_s": 10.0,
+      "feed_concentration_kmol_m3": 1.0,
+      "feed_temperature_K": 350.0,
+      "coolant_inlet_temperature_K": 300.0,
+      "disturbance_start_s": 200.0,
+      "feed_flow_ramp_kg_s2": 0.0,
+      "feed_concentration_ramp_kmol_m3_s": 0.0,
+      "feed_temperature_ramp_K_s": 0.035,
+      "coolant_inlet_temperature_ramp_K_s": 0.0,
+      "catalyst_decay_rate_s_inverse": 0.0,
+      "heat_transfer_decay_rate_s_inverse": 0.0
+    },
+    {
+      "id": "warm_coolant_ramp",
+      "reactor_temperature_setpoint_K": 398.322386058807,
+      "liquid_level_setpoint_m": 0.5,
+      "feed_flow_kg_s": 10.0,
+      "feed_concentration_kmol_m3": 1.0,
+      "feed_temperature_K": 350.0,
+      "coolant_inlet_temperature_K": 300.0,
+      "disturbance_start_s": 200.0,
+      "feed_flow_ramp_kg_s2": 0.0,
+      "feed_concentration_ramp_kmol_m3_s": 0.0,
+      "feed_temperature_ramp_K_s": 0.0,
+      "coolant_inlet_temperature_ramp_K_s": 0.035,
+      "catalyst_decay_rate_s_inverse": 0.0,
+      "heat_transfer_decay_rate_s_inverse": 0.0
+    },
+    {
+      "id": "mild_catalyst_and_fouling",
+      "reactor_temperature_setpoint_K": 398.322386058807,
+      "liquid_level_setpoint_m": 0.5,
+      "feed_flow_kg_s": 10.0,
+      "feed_concentration_kmol_m3": 1.0,
+      "feed_temperature_K": 350.0,
+      "coolant_inlet_temperature_K": 300.0,
+      "disturbance_start_s": 200.0,
+      "feed_flow_ramp_kg_s2": 0.0,
+      "feed_concentration_ramp_kmol_m3_s": 0.0,
+      "feed_temperature_ramp_K_s": 0.0,
+      "coolant_inlet_temperature_ramp_K_s": 0.0,
+      "catalyst_decay_rate_s_inverse": 0.00025,
+      "heat_transfer_decay_rate_s_inverse": 0.0004
+    }
+  ],
+  "contract": {
+    "difficulty": {
+      "score_12": 10,
+      "basis": [
+        "four coupled nonlinear mass and energy states",
+        "two outer regulation loops with two inner flow-actuation loops",
+        "four independently effective inlet disturbances",
+        "reaction and jacket heat-transfer degradation modes",
+        "dynamic and terminal regulation plus safety-boundary objectives"
+      ]
+    },
+    "simulation": {
+      "duration_seconds": 1199.0,
+      "disturbance_start_seconds": 200.0,
+      "tail_start_seconds": 900.0
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "preferred_reference_score": 90.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "policy_id": "simuverity-101-v1:xtherm-11:scoring",
+      "groups": {
+        "A": 0.2,
+        "Q": 0.1,
+        "M": 0.2,
+        "C": 0.2,
+        "R": 0.15,
+        "D": 0.15
+      },
+      "within_group": "weighted_arithmetic_mean",
+      "across_groups": "weighted_geometric_mean",
+      "critical_multiscenario_aggregation": "minimum"
+    },
+    "minimum_shortcut_sanity_contract": [
+      "missing_feedback_or_real_flow_actuation",
+      "uncoupled_or_replayed_state_outputs",
+      "insensitivity_to_required_private_inputs"
+    ]
+  },
+  "difficulty": {
+    "score_12": 10,
+    "basis": [
+      "four coupled nonlinear mass and energy states",
+      "two outer regulation loops with two inner flow-actuation loops",
+      "four independently effective inlet disturbances",
+      "reaction and jacket heat-transfer degradation modes",
+      "dynamic and terminal regulation plus safety-boundary objectives"
+    ]
+  },
+  "simulation": {
+    "duration_seconds": 1199.0,
+    "disturbance_start_seconds": 200.0,
+    "tail_start_seconds": 900.0
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "preferred_reference_score": 90.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "policy_id": "simuverity-101-v1:xtherm-11:scoring",
+    "groups": {
+      "A": 0.2,
+      "Q": 0.1,
+      "M": 0.2,
+      "C": 0.2,
+      "R": 0.15,
+      "D": 0.15
+    },
+    "within_group": "weighted_arithmetic_mean",
+    "across_groups": "weighted_geometric_mean",
+    "critical_multiscenario_aggregation": "minimum"
+  },
+  "minimum_shortcut_sanity_contract": [
+    "missing_feedback_or_real_flow_actuation",
+    "uncoupled_or_replayed_state_outputs",
+    "insensitivity_to_required_private_inputs"
+  ]
+}

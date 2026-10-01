@@ -1,0 +1,15 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XMECH-04",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/XMECH04_reference.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 2,
+  "retained_bytes": 319051,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ]
+}

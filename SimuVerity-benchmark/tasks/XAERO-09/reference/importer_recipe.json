@@ -1,0 +1,130 @@
+{
+  "schema": "simuverity.matlab-local-importer-recipe.v1",
+  "task_id": "XAERO-09",
+  "release": "simuverity-101-v1",
+  "matlab_release": "R2025a",
+  "publisher": "The MathWorks, Inc.",
+  "redistributes_mathworks_files": false,
+  "destination": "%LOCALAPPDATA%/SimuVerity/assets/simuverity-101-v1/XAERO-09",
+  "discovery": {
+    "method": "matlab_example_or_installed_product_search",
+    "example_id": "simulink_aerospace/DevelopingTheApolloLunarModuleDigitalAutopilotExample",
+    "source_files": [
+      {
+        "name": "DevelopingTheApolloLunarModuleDigitalAutopilotExample_08.png"
+      },
+      {
+        "name": "Stars_Map.jpg"
+      },
+      {
+        "name": "Thumbs.db"
+      },
+      {
+        "name": "aero_dap3dof.slx"
+      },
+      {
+        "name": "aero_dap3dofdata.m"
+      },
+      {
+        "name": "aero_libdap.slx"
+      },
+      {
+        "name": "aero_librcs.slx"
+      },
+      {
+        "name": "aero_phaseplane.m"
+      },
+      {
+        "name": "clem_aero_8192x4096.png"
+      },
+      {
+        "name": "goldfoil.jpg"
+      },
+      {
+        "name": "lander.jpg"
+      },
+      {
+        "name": "lander2.wrl"
+      }
+    ],
+    "expected_files": [
+      {
+        "path": "DevelopingTheApolloLunarModuleDigitalAutopilotExample_08.png",
+        "size_bytes": 87444
+      },
+      {
+        "path": "aero_dap3dof.slx",
+        "size_bytes": 297768
+      },
+      {
+        "path": "aero_dap3dofdata.m",
+        "size_bytes": 2698
+      },
+      {
+        "path": "aero_libdap.slx",
+        "size_bytes": 85702
+      },
+      {
+        "path": "aero_librcs.slx",
+        "size_bytes": 45519
+      },
+      {
+        "path": "aero_phaseplane.m",
+        "size_bytes": 1527
+      },
+      {
+        "path": "lander2.wrl",
+        "size_bytes": 4952632
+      },
+      {
+        "path": "texture/Stars_Map.jpg",
+        "size_bytes": 578992
+      },
+      {
+        "path": "texture/Thumbs.db",
+        "size_bytes": 67072
+      },
+      {
+        "path": "texture/clem_aero_8192x4096.png",
+        "size_bytes": 13720508
+      },
+      {
+        "path": "texture/goldfoil.jpg",
+        "size_bytes": 165518
+      },
+      {
+        "path": "texture/lander.jpg",
+        "size_bytes": 615010
+      }
+    ]
+  },
+  "transform": "transform.m",
+  "validation": {
+    "required": true,
+    "checks": [
+      "load",
+      "update",
+      "compile",
+      "simulate",
+      "all_official_scenarios",
+      "reference_score"
+    ],
+    "on_mismatch": "fail_closed"
+  },
+  "entrypoint": "aero_dap3dof.slx",
+  "expected_valid_scenarios": 5,
+  "score_tolerance": 1e-12,
+  "expected_score": 100.0,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal_yaw_step",
+      "multiaxis_four_jet",
+      "low_authority_mode_one",
+      "high_authority_recovery",
+      "yaw_dominant_mixed_rate"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision"
+}

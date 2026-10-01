@@ -1,0 +1,34 @@
+{
+  "schema": "simuverity.public-nominal-provider-closure.v1",
+  "release": "simuverity-101-v1",
+  "files": [
+    {
+      "name": "simuverity_public_nominal_inputs.m",
+      "bytes": 1907
+    },
+    {
+      "name": "simuverity_public_nominal_inputs_first20.m",
+      "bytes": 10677
+    },
+    {
+      "name": "simuverity_public_nominal_inputs_remaining58_core.m",
+      "bytes": 37353
+    },
+    {
+      "name": "simuverity_public_nominal_inputs_remaining58.m",
+      "bytes": 3186
+    },
+    {
+      "name": "simuverity_public_nominal_inputs_remaining58_fixture.mat",
+      "bytes": 583603
+    },
+    {
+      "name": "simuverity_public_nominal_inputs_additional23.m",
+      "bytes": 11810
+    },
+    {
+      "name": "public_input_contracts.json",
+      "bytes": 29555
+    }
+  ]
+}

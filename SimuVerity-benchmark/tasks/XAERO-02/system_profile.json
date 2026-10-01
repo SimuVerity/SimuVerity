@@ -1,0 +1,140 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XAERO-02",
+  "collection": "XAERO",
+  "reference": {
+    "identity_path": "tasks/XAERO-02/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/Plane/models/AirplaneSimModel_LindiPlane.slx",
+    "model_path": "tasks/XAERO-02/reference/files/Plane/models/AirplaneSimModel_LindiPlane.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XAERO-02",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a 60 s closed-loop fixed-wing flight model in Simulink.",
+    "engineering_objects": [
+      "The plant must implement nonlinear six-degree-of-freedom rigid-body motion with aerodynamic forces and moments, propulsion, gravity, and dynamic control actuators.",
+      "Vehicle motion must arise from the connected controller, actuator, propulsion, aerodynamic, and rigid-body paths;",
+      "Waypoint, wind, and initial-condition changes must causally affect the connected flight and actuator dynamics."
+    ],
+    "physical_paths": [
+      "A waypoint manager and feedback controller must steer the aircraft through the four supplied three-dimensional waypoints while maintaining bounded airspeed, body rates, and tracking error.",
+      "Vehicle motion must arise from the connected controller, actuator, propulsion, aerodynamic, and rigid-body paths; prescribed motion or replayed state histories are not valid.",
+      "Waypoint, wind, and initial-condition changes must causally affect the connected flight and actuator dynamics.",
+      "The plant must implement nonlinear six-degree-of-freedom rigid-body motion with aerodynamic forces and moments, propulsion, gravity, and dynamic control actuators."
+    ],
+    "functional_paths": [
+      "The plant must implement nonlinear six-degree-of-freedom rigid-body motion with aerodynamic forces and moments, propulsion, gravity, and dynamic control actuators.",
+      "A waypoint manager and feedback controller must steer the aircraft through the four supplied three-dimensional waypoints while maintaining bounded airspeed, body rates, and tracking error.",
+      "Vehicle motion must arise from the connected controller, actuator, propulsion, aerodynamic, and rigid-body paths;"
+    ],
+    "information_paths": [
+      "xaero02_input -> F90-XAERO-02 plant/control path -> flight_state, tracking_state, actuator_state"
+    ],
+    "modes_and_events": [
+      "Build a 60 s closed-loop fixed-wing flight model in Simulink.",
+      "Use xaero02_input.waypoints_m as the active mission, apply xaero02_input.crosswind_step_mps as a lateral wind step at 3 s, and initialize the forward airspeed from xaero02_input.initial_airspeed_mps."
+    ],
+    "interfaces": [
+      {
+        "name": "xaero02_input",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read xaero02_input from the MATLAB base workspace. Use xaero02_input.waypoints_m as the active mission, apply xaero02_input.crosswind_step_mps as a lateral wind step at 3 s, and initialize the forward airspeed from xaero02_input.initial_airspeed_mps. The xaero02_input struct contains waypoints_m as a finite real 3-by-4 matrix whose columns are successive [x;y;z] waypoint positions in metres, crosswind_step_mps as a finite real scalar in [-6, 6] m/s, and initial_airspeed_mps as a finite real scalar in [12, 18] m/s.",
+        "source": "tasks/XAERO-02/public_spec.json"
+      },
+      {
+        "name": "flight_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m",
+          "m/s",
+          "rad/s"
+        ],
+        "range_or_shape": "Log complete-run Timeseries named flight_state, tracking_state, and actuator_state. flight_state has width 10 in this order: position x, y, and z (m); velocity x, y, and z (m/s); body rates p, q, and r (rad/s); and airspeed (m/s).",
+        "source": "tasks/XAERO-02/public_spec.json"
+      },
+      {
+        "name": "tracking_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m",
+          "1"
+        ],
+        "range_or_shape": "Log complete-run Timeseries named flight_state, tracking_state, and actuator_state. tracking_state has width 7 in this order: reference position x, y, and z (m); tracking error x, y, and z (m); and active waypoint index (unitless).",
+        "source": "tasks/XAERO-02/public_spec.json"
+      },
+      {
+        "name": "actuator_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad",
+          "rad/s"
+        ],
+        "range_or_shape": "Log complete-run Timeseries named flight_state, tracking_state, and actuator_state. actuator_state has width 8 in this order: left-aileron, right-aileron, left-elevator, right-elevator, rudder, and horizontal-tail-trim deflection (rad); followed by left- and right-motor angular speed (rad/s).",
+        "source": "tasks/XAERO-02/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "A waypoint manager and feedback controller must steer the aircraft through the four supplied three-dimensional waypoints while maintaining bounded airspeed, body rates, and tracking error.",
+      "Vehicle motion must arise from the connected controller, actuator, propulsion, aerodynamic, and rigid-body paths;",
+      "The controller must reject both signs of the stated crosswind range and remain effective across the stated initial-airspeed range."
+    ],
+    "feedback_and_control_causality": [
+      "Build a 60 s closed-loop fixed-wing flight model in Simulink.",
+      "The plant must implement nonlinear six-degree-of-freedom rigid-body motion with aerodynamic forces and moments, propulsion, gravity, and dynamic control actuators.",
+      "A waypoint manager and feedback controller must steer the aircraft through the four supplied three-dimensional waypoints while maintaining bounded airspeed, body rates, and tracking error."
+    ],
+    "signal_sources": [
+      "xaero02_input is read from the public MATLAB base-workspace input contract.",
+      "flight_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "tracking_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "actuator_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "xaero02_input: Read xaero02_input from the MATLAB base workspace. Use xaero02_input.waypoints_m as the active mission, apply xaero02_input.crosswind_step_mps as a lateral wind step at 3 s, and initialize the forward airspeed from xaero02_input.initial_airspeed_mps. The xaero02_input struct contains waypoints_m as a finite real 3-by-4 matrix whose columns are successive [x;y;z] waypoint positions in metres, crosswind_step_mps as a finite real scalar in [-6, 6] m/s, and initial_airspeed_mps as a finite real scalar in [12, 18] m/s."
+    ],
+    "disturbances": [
+      "Use xaero02_input.waypoints_m as the active mission, apply xaero02_input.crosswind_step_mps as a lateral wind step at 3 s, and initialize the forward airspeed from xaero02_input.initial_airspeed_mps.",
+      "The controller must reject both signs of the stated crosswind range and remain effective across the stated initial-airspeed range.",
+      "Waypoint, wind, and initial-condition changes must causally affect the connected flight and actuator dynamics."
+    ],
+    "dynamic_processes": [
+      "The plant must implement nonlinear six-degree-of-freedom rigid-body motion with aerodynamic forces and moments, propulsion, gravity, and dynamic control actuators.",
+      "A waypoint manager and feedback controller must steer the aircraft through the four supplied three-dimensional waypoints while maintaining bounded airspeed, body rates, and tracking error.",
+      "Vehicle motion must arise from the connected controller, actuator, propulsion, aerodynamic, and rigid-body paths;"
+    ],
+    "task_specific_shortcuts": [
+      "F90-XAERO-02: prescribing flight_state directly would bypass the system path described by: A waypoint manager and feedback controller must steer the aircraft through the four supplied three-dimensional waypoints while maintaining bounded airspeed, body rates, and tracking error.",
+      "F90-XAERO-02: replaying a fixed flight_state trace would ignore causal variation in xaero02_input."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XAERO-02/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XAERO-02/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XAERO-02/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

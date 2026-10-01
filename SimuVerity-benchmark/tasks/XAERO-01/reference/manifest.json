@@ -1,0 +1,29 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XAERO-01",
+  "file_count": 1,
+  "files": [
+    {
+      "path": "reference/files/XAERO01_reference.slx",
+      "size_bytes": 119624
+    }
+  ],
+  "entrypoint": "reference/files/XAERO01_reference.slx",
+  "expected_score": 97.29709957716165,
+  "expected_score_basis": "reference_replay",
+  "expected_valid_scenarios": 4,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "heavy_strong_crosswind",
+      "high_altitude_reverse_wind",
+      "fast_event_light_payload",
+      "joint_interior"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 119624,
+  "excluded_files": []
+}

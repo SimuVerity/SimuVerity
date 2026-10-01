@@ -1,0 +1,226 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XBATT-02",
+  "collection": "XBATT",
+  "reference": {
+    "identity_path": "tasks/XBATT-02/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/XBATT02_reference.slx",
+    "model_path": "tasks/XBATT-02/reference/files/XBATT02_reference.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XBATT-02",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build an eight-module series battery pack with coupled electrical, thermal, and liquid-cooling dynamics.",
+    "engineering_objects": [
+      "F90-XBATT-02 plant and controller described by the current public task contract",
+      "Measured output interfaces: pack_state, module_state, cooling_state, thermal_flux"
+    ],
+    "physical_paths": [
+      "The same physical pack current must pass through all eight module electrical paths, each module's electrical loss must heat its own thermal state, and coolant heat removal must act through the corresponding thermal balance.",
+      "Regulate the hottest measured module with a bounded pump actuator whose electrical power is at most 500 W, and draw that auxiliary power from the same battery pack rather than reporting it as a disconnected diagnostic."
+    ],
+    "functional_paths": [
+      "Regulate the hottest measured module with a bounded pump actuator whose electrical power is at most 500 W, and draw that auxiliary power from the same battery pack rather than reporting it as a disconnected diagnostic."
+    ],
+    "information_paths": [
+      "ambient_temperature, coolant_inlet_temperature, initial_soc, current_demand, module_resistance_spread, coolant_maldistribution, load_step_time, regen_start_time -> F90-XBATT-02 plant/control path -> pack_state, module_state, cooling_state, thermal_flux"
+    ],
+    "modes_and_events": [
+      "Read ambient_temperature, coolant_inlet_temperature, initial_soc, current_demand, module_resistance_spread, coolant_maldistribution, load_step_time, and regen_start_time from base-workspace variables.",
+      "Generate the requested traction-current cycle from current_demand: 0.55 times current_demand before load_step_time, 1.20 times current_demand until regen_start_time, -0.35 times current_demand for the next 30 s, and 0.80 times current_demand thereafter."
+    ],
+    "interfaces": [
+      {
+        "name": "ambient_temperature",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "K"
+        ],
+        "range_or_shape": "Read ambient_temperature, coolant_inlet_temperature, initial_soc, current_demand, module_resistance_spread, coolant_maldistribution, load_step_time, and regen_start_time from base-workspace variables.",
+        "source": "tasks/XBATT-02/public_spec.json"
+      },
+      {
+        "name": "coolant_inlet_temperature",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "K"
+        ],
+        "range_or_shape": "Read ambient_temperature, coolant_inlet_temperature, initial_soc, current_demand, module_resistance_spread, coolant_maldistribution, load_step_time, and regen_start_time from base-workspace variables.",
+        "source": "tasks/XBATT-02/public_spec.json"
+      },
+      {
+        "name": "initial_soc",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read ambient_temperature, coolant_inlet_temperature, initial_soc, current_demand, module_resistance_spread, coolant_maldistribution, load_step_time, and regen_start_time from base-workspace variables.",
+        "source": "tasks/XBATT-02/public_spec.json"
+      },
+      {
+        "name": "current_demand",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "Read ambient_temperature, coolant_inlet_temperature, initial_soc, current_demand, module_resistance_spread, coolant_maldistribution, load_step_time, and regen_start_time from base-workspace variables. Generate the requested traction-current cycle from current_demand: 0.55 times current_demand before load_step_time, 1.20 times current_demand until regen_start_time, -0.35 times current_demand for the next 30 s, and 0.80 times current_demand thereafter.",
+        "source": "tasks/XBATT-02/public_spec.json"
+      },
+      {
+        "name": "module_resistance_spread",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read ambient_temperature, coolant_inlet_temperature, initial_soc, current_demand, module_resistance_spread, coolant_maldistribution, load_step_time, and regen_start_time from base-workspace variables.",
+        "source": "tasks/XBATT-02/public_spec.json"
+      },
+      {
+        "name": "coolant_maldistribution",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read ambient_temperature, coolant_inlet_temperature, initial_soc, current_demand, module_resistance_spread, coolant_maldistribution, load_step_time, and regen_start_time from base-workspace variables. Provide eight liquid-cooling branches whose delivered flows become nonuniform as coolant_maldistribution increases.",
+        "source": "tasks/XBATT-02/public_spec.json"
+      },
+      {
+        "name": "load_step_time",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read ambient_temperature, coolant_inlet_temperature, initial_soc, current_demand, module_resistance_spread, coolant_maldistribution, load_step_time, and regen_start_time from base-workspace variables. Generate the requested traction-current cycle from current_demand: 0.55 times current_demand before load_step_time, 1.20 times current_demand until regen_start_time, -0.35 times current_demand for the next 30 s, and 0.80 times current_demand thereafter.",
+        "source": "tasks/XBATT-02/public_spec.json"
+      },
+      {
+        "name": "regen_start_time",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read ambient_temperature, coolant_inlet_temperature, initial_soc, current_demand, module_resistance_spread, coolant_maldistribution, load_step_time, and regen_start_time from base-workspace variables. Generate the requested traction-current cycle from current_demand: 0.55 times current_demand before load_step_time, 1.20 times current_demand until regen_start_time, -0.35 times current_demand for the next 30 s, and 0.80 times current_demand thereafter.",
+        "source": "tasks/XBATT-02/public_spec.json"
+      },
+      {
+        "name": "pack_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[A,A,A,A,V,1,K,boolean]"
+        ],
+        "range_or_shape": "Log four complete-run MATLAB Timeseries named pack_state, module_state, cooling_state, and thermal_flux. pack_state has 8 channels in this order: requested traction current (A), delivered traction current (A), pump auxiliary current (A), total pack current (A), pack terminal voltage (V), minimum module SOC (1), maximum module temperature (K), and limiting flag (boolean).",
+        "source": "tasks/XBATT-02/public_spec.json"
+      },
+      {
+        "name": "module_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[V x8,1 x8,K x8]"
+        ],
+        "range_or_shape": "Log four complete-run MATLAB Timeseries named pack_state, module_state, cooling_state, and thermal_flux. module_state has 24 channels: eight module terminal voltages (V), eight module SOC values (1), and eight module temperatures (K), in module 1--8 order within each group.",
+        "source": "tasks/XBATT-02/public_spec.json"
+      },
+      {
+        "name": "cooling_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[1,W,K,kg/s x8,K x8]"
+        ],
+        "range_or_shape": "Log four complete-run MATLAB Timeseries named pack_state, module_state, cooling_state, and thermal_flux. cooling_state has 19 channels in this order: normalized pump command (1), pump electrical power (W), coolant inlet temperature (K), eight branch mass flows (kg/s), and eight branch outlet temperatures (K).",
+        "source": "tasks/XBATT-02/public_spec.json"
+      },
+      {
+        "name": "thermal_flux",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[W x16]"
+        ],
+        "range_or_shape": "Log four complete-run MATLAB Timeseries named pack_state, module_state, cooling_state, and thermal_flux. thermal_flux has 16 channels: eight module heat-generation rates followed by eight module coolant heat-removal rates, all in W and in module 1--8 order.",
+        "source": "tasks/XBATT-02/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Positive current denotes discharge and negative current denotes regeneration.",
+      "pack_state has 8 channels in this order: requested traction current (A), delivered traction current (A), pump auxiliary current (A), total pack current (A), pack terminal voltage (V), minimum module SOC (1), maximum module temperature (K), and limiting flag (boolean).",
+      "module_state has 24 channels: eight module terminal voltages (V), eight module SOC values (1), and eight module temperatures (K), in module 1--8 order within each group."
+    ],
+    "feedback_and_control_causality": [
+      "Regulate the hottest measured module with a bounded pump actuator whose electrical power is at most 500 W, and draw that auxiliary power from the same battery pack rather than reporting it as a disconnected diagnostic.",
+      "Logs must come from one causal pack and cooling simulation, not from precomputed answer waveforms or copies of workspace inputs."
+    ],
+    "signal_sources": [
+      "ambient_temperature is read from the public MATLAB base-workspace input contract.",
+      "coolant_inlet_temperature is read from the public MATLAB base-workspace input contract.",
+      "initial_soc is read from the public MATLAB base-workspace input contract.",
+      "current_demand is read from the public MATLAB base-workspace input contract.",
+      "module_resistance_spread is read from the public MATLAB base-workspace input contract.",
+      "coolant_maldistribution is read from the public MATLAB base-workspace input contract.",
+      "load_step_time is read from the public MATLAB base-workspace input contract.",
+      "regen_start_time is read from the public MATLAB base-workspace input contract.",
+      "pack_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "module_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "cooling_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "thermal_flux is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "ambient_temperature: Read ambient_temperature, coolant_inlet_temperature, initial_soc, current_demand, module_resistance_spread, coolant_maldistribution, load_step_time, and regen_start_time from base-workspace variables.",
+      "coolant_inlet_temperature: Read ambient_temperature, coolant_inlet_temperature, initial_soc, current_demand, module_resistance_spread, coolant_maldistribution, load_step_time, and regen_start_time from base-workspace variables.",
+      "initial_soc: Read ambient_temperature, coolant_inlet_temperature, initial_soc, current_demand, module_resistance_spread, coolant_maldistribution, load_step_time, and regen_start_time from base-workspace variables.",
+      "current_demand: Read ambient_temperature, coolant_inlet_temperature, initial_soc, current_demand, module_resistance_spread, coolant_maldistribution, load_step_time, and regen_start_time from base-workspace variables. Generate the requested traction-current cycle from current_demand: 0.55 times current_demand before load_step_time, 1.20 times current_demand until regen_start_time, -0.35 times current_demand for the next 30 s, and 0.80 times current_demand thereafter.",
+      "module_resistance_spread: Read ambient_temperature, coolant_inlet_temperature, initial_soc, current_demand, module_resistance_spread, coolant_maldistribution, load_step_time, and regen_start_time from base-workspace variables.",
+      "coolant_maldistribution: Read ambient_temperature, coolant_inlet_temperature, initial_soc, current_demand, module_resistance_spread, coolant_maldistribution, load_step_time, and regen_start_time from base-workspace variables. Provide eight liquid-cooling branches whose delivered flows become nonuniform as coolant_maldistribution increases.",
+      "load_step_time: Read ambient_temperature, coolant_inlet_temperature, initial_soc, current_demand, module_resistance_spread, coolant_maldistribution, load_step_time, and regen_start_time from base-workspace variables. Generate the requested traction-current cycle from current_demand: 0.55 times current_demand before load_step_time, 1.20 times current_demand until regen_start_time, -0.35 times current_demand for the next 30 s, and 0.80 times current_demand thereafter.",
+      "regen_start_time: Read ambient_temperature, coolant_inlet_temperature, initial_soc, current_demand, module_resistance_spread, coolant_maldistribution, load_step_time, and regen_start_time from base-workspace variables. Generate the requested traction-current cycle from current_demand: 0.55 times current_demand before load_step_time, 1.20 times current_demand until regen_start_time, -0.35 times current_demand for the next 30 s, and 0.80 times current_demand thereafter."
+    ],
+    "disturbances": [
+      "Read ambient_temperature, coolant_inlet_temperature, initial_soc, current_demand, module_resistance_spread, coolant_maldistribution, load_step_time, and regen_start_time from base-workspace variables.",
+      "Generate the requested traction-current cycle from current_demand: 0.55 times current_demand before load_step_time, 1.20 times current_demand until regen_start_time, -0.35 times current_demand for the next 30 s, and 0.80 times current_demand thereafter."
+    ],
+    "dynamic_processes": [
+      "Build an eight-module series battery pack with coupled electrical, thermal, and liquid-cooling dynamics.",
+      "Read ambient_temperature, coolant_inlet_temperature, initial_soc, current_demand, module_resistance_spread, coolant_maldistribution, load_step_time, and regen_start_time from base-workspace variables.",
+      "Generate the requested traction-current cycle from current_demand: 0.55 times current_demand before load_step_time, 1.20 times current_demand until regen_start_time, -0.35 times current_demand for the next 30 s, and 0.80 times current_demand thereafter."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XBATT-02: prescribing pack_state directly would bypass the system path described by: The same physical pack current must pass through all eight module electrical paths, each module's electrical loss must heat its own thermal state, and coolant heat removal must act through the corresponding thermal balance.",
+      "F90-XBATT-02: replaying a fixed pack_state trace would ignore causal variation in ambient_temperature."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XBATT-02/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XBATT-02/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XBATT-02/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

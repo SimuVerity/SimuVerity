@@ -1,0 +1,8 @@
+{
+  "schema": "simuverity.public-spec.v1",
+  "task_id": "XELEC-07",
+  "collection": "XELEC",
+  "runtime_alias": "XELEC-07",
+  "candidate_filename": "cand_XELEC07.slx",
+  "prompt": "Build a physical two-level three-phase grid-connected voltage-source inverter. A 700 V DC source must feed a six-switch bridge, and each AC phase must connect through a 7 mH, 1.5 ohm coupling reactor to a balanced 230 V line-to-line RMS, 50 Hz grid. Use 7 A RMS per phase as the current base. Read normalized scalar Id_ref_cmd, Iq_ref_cmd, and Vgrid_scale from base-workspace variables. Their nominal values are -1, 0, and 1 pu; Id_ref_cmd operates from -1.2 to -0.8 pu, Iq_ref_cmd from -0.5 to 0.5 pu, and Vgrid_scale from 0.9 to 1.1 pu. Regulate converter-to-grid current in closed loop from physical current measurements so its active and quadrature components follow the commands throughout the stated range, including when grid-voltage magnitude changes. Negative Id_ref_cmd denotes exported active current; positive Iq_ref_cmd denotes lagging current and negative Iq_ref_cmd leading current. Current regulation must establish promptly after startup, and grid current must remain balanced and reasonably sinusoidal. Log complete-run physical MATLAB Timeseries Vout and Igrid. Each must contain all three measured grid phases in the same phase order, and Igrid is positive from converter to grid.\n\nSubmission filename contract: create, edit, and save the final self-contained Simulink model as cand_XELEC07.slx in the assigned submission directory; keep the latest usable state at that exact path throughout the run."
+}

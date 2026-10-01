@@ -1,0 +1,395 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+<title>Dual Clutch Transmission - Optimization, 20 Parameters, patternsearch, Parallel Computing</title>
+<meta name="generator" content="MATLAB 24.2">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2025-12-22">
+<meta name="DC.source" content="find_min_fuel_psMX_para.m">
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="content">
+<h1>Dual Clutch Transmission - Optimization, 20 Parameters, patternsearch, Parallel Computing</h1>
+<!--introduction-->
+<p>This example shows a vehicle with a five-speed automatic dual-clutch transmission. The transmission controller converts the pedal deflection into a demanded torque. This demanded torque is then passed to the engine management. The pedal deflection and the vehicle speed are also used by the transmission controller to determine when the gear shifts should occur. Gear shifts are implemented via the two clutches, one clutch pressure being ramped up as the other clutch pressure is ramped down. Gear pre-selection via dog clutches ensures that the correct gear is fully selected before the on-going clutch is enabled.</p>
+<p>The script below uses an optimization algorithm to find shift map that maximizes fuel economy. The shift map is parameterized with 20 parameters. The tests are run in parallel to accelerate the optimization.</p>
+<!--/introduction-->
+<h2>Contents</h2>
+<div>
+<ul>
+<li>
+<a href="#1">Setup Optimization</a>
+</li>
+<li>
+<a href="#2">Run optimization using parallel computing</a>
+</li>
+</ul>
+</div>
+<h2 id="1">Setup Optimization</h2>
+<p>Setup model</p>
+<img vspace="5" hspace="5" src="find_min_fuel_psMX_para_01.png" alt=""> <h2 id="2">Run optimization using parallel computing</h2>
+<pre class="codeoutput">Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 4 workers.
+
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1       0.341992          0.05      
+    1          47       0.341934           0.1     Successful Poll
+    2          93       0.341831           0.2     Successful Poll
+    3         139       0.341457           0.4     Successful Poll
+    4         185       0.340873           0.8     Successful Poll
+    5         231       0.339466           1.6     Successful Poll
+    6         277       0.336684           3.2     Successful Poll
+    7         305       0.333876           6.4     Successful Poll
+    8         320        0.33174          12.8     Successful Poll
+    9         333       0.330613          25.6     Successful Poll
+   10         344       0.330455          51.2     Successful Poll
+   11         351        0.33029         102.4     Successful Poll
+   12         351        0.33029          51.2     Refine Mesh
+   13         360        0.33029          25.6     Refine Mesh
+   14         379       0.329935          51.2     Successful Poll
+   15         385       0.329935          25.6     Refine Mesh
+   16         403       0.329935          12.8     Refine Mesh
+   17         430       0.329346          25.6     Successful Poll
+   18         448       0.329346          12.8     Refine Mesh
+   19         477       0.329296          25.6     Successful Poll
+   20         492       0.329296          12.8     Refine Mesh
+   21         520       0.329255          25.6     Successful Poll
+   22         536       0.329245          51.2     Successful Poll
+   23         538       0.329245          25.6     Refine Mesh
+   24         544       0.329245          12.8     Refine Mesh
+   25         557        0.32924          25.6     Successful Poll
+   26         563        0.32924          12.8     Refine Mesh
+   27         586       0.329078          25.6     Successful Poll
+   28         590       0.329078          12.8     Refine Mesh
+   29         604       0.329078           6.4     Refine Mesh
+   30         629       0.328693          12.8     Successful Poll
+
+Iter     Func-count        f(x)       MeshSize      Method
+   31         640       0.328693           6.4     Refine Mesh
+   32         662       0.328685          12.8     Successful Poll
+   33         673       0.328685           6.4     Refine Mesh
+   34         698       0.328669          12.8     Successful Poll
+   35         709       0.328669           6.4     Refine Mesh
+   36         731       0.328663          12.8     Successful Poll
+   37         742       0.328663           6.4     Refine Mesh
+   38         767       0.328663           3.2     Refine Mesh
+   39         800       0.328573           6.4     Successful Poll
+   40         834       0.327909          12.8     Successful Poll
+   41         852       0.327891          25.6     Successful Poll
+   42         854       0.327891          12.8     Refine Mesh
+   43         862       0.327891           6.4     Refine Mesh
+   44         886       0.327891           3.2     Refine Mesh
+   45         914        0.32788           6.4     Successful Poll
+   46         934        0.32761          12.8     Successful Poll
+   47         947        0.32761           6.4     Refine Mesh
+   48         976       0.327523          12.8     Successful Poll
+   49         984       0.327523           6.4     Refine Mesh
+   50        1010       0.327523           3.2     Refine Mesh
+   51        1044       0.327419           6.4     Successful Poll
+   52        1070        0.32732          12.8     Successful Poll
+   53        1081        0.32732           6.4     Refine Mesh
+   54        1103       0.327267          12.8     Successful Poll
+   55        1111       0.327267           6.4     Refine Mesh
+   56        1122       0.327267           3.2     Refine Mesh
+   57        1139       0.327235           6.4     Successful Poll
+   58        1150       0.327235           3.2     Refine Mesh
+   59        1166       0.327147           6.4     Successful Poll
+   60        1182       0.327147           3.2     Refine Mesh
+
+Iter     Func-count        f(x)       MeshSize      Method
+   61        1212       0.327147           1.6     Refine Mesh
+   62        1253       0.327095           3.2     Successful Poll
+   63        1283       0.327048           6.4     Successful Poll
+   64        1298       0.327048           3.2     Refine Mesh
+   65        1329       0.327048           1.6     Refine Mesh
+   66        1369       0.327039           3.2     Successful Poll
+   67        1400       0.327039           1.6     Refine Mesh
+   68        1440       0.327039           0.8     Refine Mesh
+   69        1484       0.327039           0.4     Refine Mesh
+   70        1529        0.32703           0.8     Successful Poll
+   71        1573        0.32703           0.4     Refine Mesh
+   72        1618       0.327026           0.8     Successful Poll
+   73        1665       0.327006           1.6     Successful Poll
+   74        1708       0.327006           0.8     Refine Mesh
+   75        1755       0.327006           0.4     Refine Mesh
+   76        1802       0.327005           0.8     Successful Poll
+   77        1849       0.327005           0.4     Refine Mesh
+   78        1896       0.327004           0.8     Successful Poll
+   79        1943       0.326984           1.6     Successful Poll
+   80        1986       0.326968           3.2     Successful Poll
+   81        2018       0.326968           1.6     Refine Mesh
+   82        2060       0.326968           0.8     Refine Mesh
+   83        2107       0.326968           0.4     Refine Mesh
+   84        2154       0.326966           0.8     Successful Poll
+   85        2201       0.326966           0.4     Refine Mesh
+   86        2248       0.326961           0.8     Successful Poll
+   87        2295       0.326961           0.4     Refine Mesh
+   88        2342       0.326961           0.2     Refine Mesh
+   89        2389       0.326961           0.4     Successful Poll
+   90        2436       0.326961           0.2     Refine Mesh
+
+Iter     Func-count        f(x)       MeshSize      Method
+   91        2483       0.326961           0.4     Successful Poll
+   92        2530       0.326961           0.2     Refine Mesh
+   93        2577       0.326961           0.1     Refine Mesh
+   94        2624        0.32696           0.2     Successful Poll
+   95        2671        0.32696           0.4     Successful Poll
+   96        2718        0.32696           0.2     Refine Mesh
+   97        2765        0.32696           0.4     Successful Poll
+   98        2812        0.32696           0.2     Refine Mesh
+   99        2859        0.32696           0.4     Successful Poll
+  100        2906        0.32696           0.2     Refine Mesh
+  101        2953       0.326959           0.4     Successful Poll
+  102        2999       0.326959           0.2     Refine Mesh
+  103        3046       0.326958           0.4     Successful Poll
+  104        3091       0.326958           0.2     Refine Mesh
+  105        3138       0.326958           0.4     Successful Poll
+  106        3173       0.326958           0.2     Refine Mesh
+  107        3215       0.326958           0.1     Refine Mesh
+  108        3259       0.326958           0.2     Successful Poll
+  109        3300       0.326958           0.1     Refine Mesh
+  110        3344       0.326958          0.05     Refine Mesh
+  111        3388       0.326958         0.025     Refine Mesh
+  112        3433       0.326952          0.05     Successful Poll
+  113        3477       0.326952         0.025     Refine Mesh
+  114        3522       0.326952          0.05     Successful Poll
+  115        3567       0.326952         0.025     Refine Mesh
+  116        3613       0.326952          0.05     Successful Poll
+  117        3657       0.326952         0.025     Refine Mesh
+  118        3701       0.326952        0.0125     Refine Mesh
+  119        3747       0.326952         0.025     Successful Poll
+  120        3791       0.326951          0.05     Successful Poll
+
+Iter     Func-count        f(x)       MeshSize      Method
+  121        3835       0.326951         0.025     Refine Mesh
+  122        3880       0.326951        0.0125     Refine Mesh
+  123        3926       0.326951         0.025     Successful Poll
+  124        3970       0.326951        0.0125     Refine Mesh
+  125        4014       0.326951       0.00625     Refine Mesh
+  126        4060       0.326951        0.0125     Successful Poll
+  127        4109       0.326951       0.00625     Refine Mesh
+  128        4158       0.326951      0.003125     Refine Mesh
+  129        4207       0.326951      0.001563     Refine Mesh
+patternsearch stopped because the mesh size was less than options.MeshTolerance.
+Elapsed Sim Time = 6913.7437
+Parallel pool using the 'Processes' profile is shutting down.
+</pre>
+<img vspace="5" hspace="5" src="find_min_fuel_psMX_para_02.png" alt=""> <p class="footer">Copyright 2014-2025 The MathWorks, Inc.<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2024b</a>
+<br>
+</p>
+</div>
+<!--
+##### SOURCE BEGIN #####
+%% Dual Clutch Transmission - Optimization, 20 Parameters, patternsearch, Parallel Computing
+%
+% This example shows a vehicle with a five-speed automatic dual-clutch
+% transmission. The transmission controller converts the pedal deflection
+% into a demanded torque. This demanded torque is then passed to the engine
+% management. The pedal deflection and the vehicle speed are also used by
+% the transmission controller to determine when the gear shifts should
+% occur. Gear shifts are implemented via the two clutches, one clutch
+% pressure being ramped up as the other clutch pressure is ramped down.
+% Gear pre-selection via dog clutches ensures that the correct gear is
+% fully selected before the on-going clutch is enabled.
+% 
+% The script below uses an optimization algorithm to find shift map that
+% maximizes fuel economy. The shift map is parameterized with 20
+% parameters. The tests are run in parallel to accelerate the optimization.
+%
+% Copyright 2014-2025 The MathWorks, Inc.
+
+%% Setup Optimization
+% Setup model 
+mdl = 'Dual_Clutch_Trans';
+setup_model_optim_full
+
+% Pre-generate rapid accelerator target
+load_system(mdl);
+rtp = Simulink.BlockDiagram.buildRapidAcceleratorTarget(mdl,'AddTunableParamInfo','on');
+close_system(mdl);
+
+% Offset parameters
+delta0 = [10 12 12 10 10;...
+    3  3  3  3  3;
+    3  3  3  3  3;
+    3  3  3  3  3];
+
+% Reshape offsets into a vector so that it can be passed to the objective function
+delta0_v = reshape(delta0,[],1);
+
+% Shift boundaries must be separated to allow time to shift
+% Shift boundaries must have a positive slope
+%   Set lower bound for deltas (minimum difference between points)
+LB = reshape([5 5 5 5 5;...
+    1  1  1  1  1;
+    1  1  1  1  1;
+    1  1  1  1  1],[],1);
+
+% Shift boundary lines must be separated by b
+%   Create constraint for delta values according to Ax <= b
+%   Delta(2,1) <= Delta(1,2) + Delta(2,2) + b
+SubA = [0 1 0 0;0 1 1 0;0 1 1 1];
+SubB = [-1 -1 0 0;-1 -1 -1 0;-1 -1 -1 -1];
+Sub0 = zeros(size(SubA));
+
+A =[SubA SubB Sub0 Sub0 Sub0;...
+    Sub0 SubA SubB Sub0 Sub0;...
+    Sub0 Sub0 SubA SubB Sub0;...
+    Sub0 Sub0 Sub0 SubA SubB;...
+    1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 1 1 1];
+
+mingdiff = -10; 
+b = [mingdiff*ones(size(A,1)-1,1); 120];
+
+% Plot initial shift map
+[Upshift_Speeds, Downshift_Speeds, Pedal_Positions] = Calc_Shift_Map_DL(delta0,Pedal_Positions);
+map_h=figure;
+Plot_Gear_Shift_Schedule(Pedal_Positions,Upshift_Speeds,Downshift_Speeds);
+set(gca,'XLim',[0 120])
+
+%% Run optimization using parallel computing
+
+parpool;
+options = psoptimset('Vectorized','off','Display','iter','UseParallel','always',...
+    'TolMesh',0.0025,'CompletePoll','on','InitialMeshSize',0.05,'ScaleMesh','on');
+
+% Run optimization without parallel computing
+
+%options = psoptimset('Vectorized','off','Display','iter','UseParallel','never',...
+%    'TolMesh',0.0025,'CompletePoll','on','InitialMeshSize',0.05,'ScaleMesh','on','MaxFunEvals',50);
+
+DCT_minFuelOptResMX = [];
+
+DCT_minFuelOptResMX.tableDeltas = delta0_v;
+DCT_minFuelOptResMX.fuelUsed = 10;
+
+% Call optimization function
+tic;
+[x,fval,exitflag,output] = ...
+    patternsearch(@(x)obj_find_min_fuel_psMX(mdl,x,rtp,map_h),...
+    delta0_v,A,b,[],[],LB,[],[],options);
+
+Elapsed_Sim_Time = toc;
+disp(['Elapsed Sim Time = ' num2str(Elapsed_Sim_Time)]);
+
+% Update workspace variables with final values (based on x)
+delta_final = reshape(x,4,[]);
+[Upshift_Speeds_final, Downshift_Speeds_final, Pedal_Positions_final] = Calc_Shift_Map_DL(delta_final,Pedal_Positions);
+
+% Save key results of optimization
+%{
+trans_var = get_param([mdl '/Dual Clutch Transmission'],'BlockChoice');
+veh_var = get_param([mdl '/Vehicle Dynamics'],'BlockChoice');
+solver_setting = get_param(mdl,'Solver');
+if (strcmp(solver_setting,'ode23t'))
+    solver_var = 'Desktop';
+else
+    solver_var = 'Real Time';
+end
+
+SaveVarName = ['OptPSMX_' trans_var(1:3) solver_var(1:3) '_DC' num2str(Drive_Cycle_Num)];
+
+eval([SaveVarName '.delta0 = delta0;']);
+eval([SaveVarName '.delta_final = delta_final;']);
+eval([SaveVarName '.Elapsed_Sim_Time = Elapsed_Sim_Time;']);
+eval([SaveVarName '.FuncCount = output.funccount;']);
+eval([SaveVarName '.FuelUsedMin = fval;']);
+eval([SaveVarName '.Variants.Transmission = ''' trans_var ''';']);
+eval([SaveVarName '.Variants.Vehicle = ''' veh_var ''';']);
+eval([SaveVarName '.Variants.SolverSettings = ''' solver_var ''';']);
+
+save(SaveVarName, SaveVarName);
+%}
+
+close(gcf)
+figure(2)
+Plot_Gear_Shift_Schedule(Pedal_Positions_final,Upshift_Speeds_final,Downshift_Speeds_final);
+set(gca,'XLim',[0 120])
+
+%saveas(gcf,SaveVarName,'fig');
+
+% Reset model REPLACE_WITH_DASH_DASH remove settings specific to optimization
+delete(gcp('nocreate'))
+reset_model_optim
+
+datestringfile = datestr(now,'yymmddHHMM');
+
+save(['DCT_minFuelOptResMX_' datestringfile '.mat'], 'DCT_minFuelOptResMX');
+
+%save DCT_minFuelOptResMX
+
+
+
+##### SOURCE END #####
+-->
+</body>
+</html>

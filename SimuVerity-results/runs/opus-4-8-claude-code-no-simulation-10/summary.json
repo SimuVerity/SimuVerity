@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "run_id": "opus-4-8-claude-code-no-simulation-10",
+  "benchmark_release": "simuverity-101-v1",
+  "taskset_id": "simuverity-mcp-ablation-10-v1",
+  "model": "Claude Opus 4.8",
+  "harness": "Claude Code",
+  "condition": "no_simulation",
+  "task_count": 10,
+  "scored_count": 10,
+  "protocol_zero_count": 26,
+  "score_sum": "78.837205",
+  "score_mean": "7.883721",
+  "delivered_count": 16,
+  "native_executable_count": 10,
+  "g_pass_count": 4,
+  "repeat_count": 3,
+  "result_count": 30
+}

@@ -1,0 +1,132 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XROBO-06",
+  "scenarios": [
+    {
+      "id": "native_nominal_walk",
+      "class": "nominal_closed_loop",
+      "FootFrictionScale": 1.0,
+      "TorqueLimitScale": 1.0,
+      "InitialHeight_m": 1.54,
+      "stop_time_s": 20.0
+    },
+    {
+      "id": "moderate_low_friction",
+      "class": "contact_boundary",
+      "FootFrictionScale": 0.75,
+      "TorqueLimitScale": 1.0,
+      "InitialHeight_m": 1.54,
+      "stop_time_s": 20.0
+    },
+    {
+      "id": "moderate_actuator_derating",
+      "class": "actuator_boundary",
+      "FootFrictionScale": 1.0,
+      "TorqueLimitScale": 0.85,
+      "InitialHeight_m": 1.54,
+      "stop_time_s": 20.0
+    },
+    {
+      "id": "cold_start_height_offset",
+      "class": "initial_condition_dynamic",
+      "FootFrictionScale": 1.0,
+      "TorqueLimitScale": 1.0,
+      "InitialHeight_m": 1.5,
+      "stop_time_s": 20.0
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "one_isolated_persistent_matlab_session": true,
+      "evidence_then_offline_scoring": true,
+      "reference_adapter": "Inject the pinned saved policy, add only in-memory measurement taps, change only existing params fields, and close the model without saving."
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "preferred_reference_target_raw": 90.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.2,
+          "meaning": "nominal upright forward walking"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "bilateral contact, bounded gait and actuator quality"
+        },
+        "M": {
+          "weight": 0.3,
+          "meaning": "physical contact-feedback-action-torque-motion causality"
+        },
+        "R": {
+          "weight": 0.2,
+          "meaning": "worst private operating condition"
+        },
+        "D": {
+          "weight": 0.2,
+          "meaning": "cold-start and finite-authority recovery"
+        }
+      },
+      "within_group": "dedicated weighted arithmetic mean",
+      "across_groups": "weighted geometric mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum",
+      "policy_id": "simuverity-101-v1:xrobo-06:scoring"
+    },
+    "shortcut_sanity_contract": [
+      "qualification_or_required_output_missing",
+      "kinematic_or_replayed_body_trajectory",
+      "missing_bilateral_physical_contact",
+      "unlimited_or_inactive_joint_actuation",
+      "disconnected_body_joint_or_contact_feedback",
+      "private_friction_torque_or_initial_height_inputs_ignored",
+      "reward_without_raw_physical_evidence"
+    ]
+  },
+  "simulation": {
+    "one_isolated_persistent_matlab_session": true,
+    "evidence_then_offline_scoring": true,
+    "reference_adapter": "Inject the pinned saved policy, add only in-memory measurement taps, change only existing params fields, and close the model without saving."
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "preferred_reference_target_raw": 90.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.2,
+        "meaning": "nominal upright forward walking"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "bilateral contact, bounded gait and actuator quality"
+      },
+      "M": {
+        "weight": 0.3,
+        "meaning": "physical contact-feedback-action-torque-motion causality"
+      },
+      "R": {
+        "weight": 0.2,
+        "meaning": "worst private operating condition"
+      },
+      "D": {
+        "weight": 0.2,
+        "meaning": "cold-start and finite-authority recovery"
+      }
+    },
+    "within_group": "dedicated weighted arithmetic mean",
+    "across_groups": "weighted geometric mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum",
+    "policy_id": "simuverity-101-v1:xrobo-06:scoring"
+  },
+  "shortcut_sanity_contract": [
+    "qualification_or_required_output_missing",
+    "kinematic_or_replayed_body_trajectory",
+    "missing_bilateral_physical_contact",
+    "unlimited_or_inactive_joint_actuation",
+    "disconnected_body_joint_or_contact_feedback",
+    "private_friction_torque_or_initial_height_inputs_ignored",
+    "reward_without_raw_physical_evidence"
+  ]
+}

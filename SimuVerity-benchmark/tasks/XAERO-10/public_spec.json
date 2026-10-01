@@ -1,0 +1,8 @@
+{
+  "schema": "simuverity.public-spec.v1",
+  "task_id": "XAERO-10",
+  "collection": "XAERO",
+  "runtime_alias": "XAERO-10",
+  "candidate_filename": "cand_XAERO10.slx",
+  "prompt": "Build a Simulink model of a nonlinear two-degree-of-freedom helicopter with coupled pitch and yaw dynamics, front/rear or equivalent cross-axis rotor actuation, bounded actuator commands, state estimation, and closed-loop attitude regulation. The model shall expose a measurement-noise-affected closed-loop branch and an otherwise equivalent noise-free comparison branch. Both branches must use the same attitude command and physical plant/controller design; do not prescribe state trajectories directly.\n\nRead the scalar workspace inputs attitude_command_rad and measurement_noise_covariance. Support attitude commands from 0 to 0.2 rad and nonnegative measurement-noise covariance from 1 to 5. Simulate for 10 seconds and save the final model as cand_XAERO10.slx.\n\nRecord complete finite Timeseries from 0 to 10 seconds in these containers. noisy_closed_loop_state shall have four columns in this order: pitch angle (rad), yaw angle (rad), pitch rate (rad/s), and yaw rate (rad/s). noise_free_closed_loop_state shall have the same four-column order for the noise-free comparison branch. command_noise_state shall have two columns: attitude command (rad) and measurement-noise covariance. All time vectors shall be strictly increasing and cover the full run.\n\nSubmission filename contract: create, edit, and save the final self-contained Simulink model as cand_XAERO10.slx in the assigned submission directory; keep the latest usable state at that exact path throughout the run."
+}

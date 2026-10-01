@@ -1,0 +1,72 @@
+{
+  "schema": "simuverity.matlab-local-importer-recipe.v1",
+  "task_id": "XAUTO-07",
+  "release": "simuverity-101-v1",
+  "matlab_release": "R2025a",
+  "publisher": "The MathWorks, Inc.",
+  "redistributes_mathworks_files": false,
+  "destination": "%LOCALAPPDATA%/SimuVerity/assets/simuverity-101-v1/XAUTO-07",
+  "discovery": {
+    "method": "matlab_example_or_installed_product_search",
+    "example_id": "simscapeelectrical/IPMSMAxleDriveEVExample",
+    "expected_source_filenames": [
+      "IPMSM35kWCurrentReferences.mat",
+      "IPMSMAxleDriveEV.slx",
+      "IPMSMAxleDriveEVData.m",
+      "IPMSMAxleDriveEVInputs.mat",
+      "IPMSMAxleDriveEVPlotMotorTorque.m"
+    ],
+    "expected_files": [
+      {
+        "name": "IPMSM35kWCurrentReferences.mat",
+        "size_bytes": 15110
+      },
+      {
+        "name": "IPMSMAxleDriveEV.slx",
+        "size_bytes": 138666
+      },
+      {
+        "name": "IPMSMAxleDriveEVData.m",
+        "size_bytes": 2934
+      },
+      {
+        "name": "IPMSMAxleDriveEVInputs.mat",
+        "size_bytes": 2641
+      },
+      {
+        "name": "IPMSMAxleDriveEVPlotMotorTorque.m",
+        "size_bytes": 2301
+      }
+    ]
+  },
+  "transform": "transform.m",
+  "validation": {
+    "required": true,
+    "checks": [
+      "load",
+      "update",
+      "compile",
+      "simulate",
+      "all_official_scenarios",
+      "reference_score"
+    ],
+    "on_mismatch": "fail_closed"
+  },
+  "entrypoint": "IPMSMAxleDriveEV_SimuVerityReference.slx",
+  "expected_valid_scenarios": 5,
+  "score_tolerance": 1e-12,
+  "expected_score": 96.076153839,
+  "expected_score_basis": "reference_replay",
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal_start_stop",
+      "reduced_acceleration",
+      "reduced_braking",
+      "moderate_cycle",
+      "strong_motoring_light_brake"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision"
+}

@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.ps1 text eol=crlf
+*.m text eol=lf
+*.json text eol=lf
+*.csv text eol=lf
+
+# Simulink and large binary reference assets are stored as regular Git blobs.
+*.mdl binary

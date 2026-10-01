@@ -1,0 +1,1858 @@
+{
+  "schema": "simuverity.matlab-local-importer-recipe.v1",
+  "task_id": "XAERO-04",
+  "release": "simuverity-101-v1",
+  "matlab_release": "R2025a",
+  "publisher": "The MathWorks, Inc.",
+  "redistributes_mathworks_files": false,
+  "destination": "%LOCALAPPDATA%/SimuVerity/assets/simuverity-101-v1/XAERO-04",
+  "discovery": {
+    "method": "mathworks_open_example_relative_root",
+    "example_id": "uav/VTOLUAVBatterySizingForMissionOverAnUrbanEnvironmentExample",
+    "source_root": {
+      "selection": "unique_relative_anchor_path",
+      "anchor_path": "VTOLApp/models/VTOLTiltrotor.slx"
+    },
+    "expected_files": [
+      {
+        "path": "VTOLApp/components/Battery/BatteryParameter.m",
+        "size_bytes": 2322
+      },
+      {
+        "path": "VTOLApp/components/Battery/BatteryPlantModel_Simple.slx",
+        "size_bytes": 28918
+      },
+      {
+        "path": "VTOLApp/components/Motor/ElectricMotorPID.mat",
+        "size_bytes": 251
+      },
+      {
+        "path": "VTOLApp/components/Motor/MotorPropellerSystem.slx",
+        "size_bytes": 57066
+      },
+      {
+        "path": "VTOLApp/data/Alternative_VTOLDynamicsData.sldd",
+        "size_bytes": 28845
+      },
+      {
+        "path": "VTOLApp/data/contact.mat",
+        "size_bytes": 320
+      },
+      {
+        "path": "VTOLApp/data/disc.stl",
+        "size_bytes": 2884
+      },
+      {
+        "path": "VTOLApp/data/fixedwingRangeResults.mat",
+        "size_bytes": 2619174
+      },
+      {
+        "path": "VTOLApp/data/hoverModeRangeResults.mat",
+        "size_bytes": 543
+      },
+      {
+        "path": "VTOLApp/data/license.txt",
+        "size_bytes": 1236
+      },
+      {
+        "path": "VTOLApp/data/MotorControllerGains.sldd",
+        "size_bytes": 3157
+      },
+      {
+        "path": "VTOLApp/data/SIUnitData.mat",
+        "size_bytes": 354
+      },
+      {
+        "path": "VTOLApp/data/TiltRotorFrame.stl",
+        "size_bytes": 20184
+      },
+      {
+        "path": "VTOLApp/data/TiltrotorVisualization.PNG",
+        "size_bytes": 51524
+      },
+      {
+        "path": "VTOLApp/data/tunedFixedWingGains_BW10.mat",
+        "size_bytes": 436
+      },
+      {
+        "path": "VTOLApp/data/tunedHITLFixedWingGains.mat",
+        "size_bytes": 438
+      },
+      {
+        "path": "VTOLApp/data/tunedHITLHoverGains.mat",
+        "size_bytes": 619
+      },
+      {
+        "path": "VTOLApp/data/tunedHoverGains_BW50.mat",
+        "size_bytes": 578
+      },
+      {
+        "path": "VTOLApp/data/tunedHoverGainsNoWind.mat",
+        "size_bytes": 624
+      },
+      {
+        "path": "VTOLApp/data/urbanMissionRangeResults.mat",
+        "size_bytes": 521
+      },
+      {
+        "path": "VTOLApp/data/VTOLDynamicsData.sldd",
+        "size_bytes": 28894
+      },
+      {
+        "path": "VTOLApp/images/EVTOLModel.png",
+        "size_bytes": 98583
+      },
+      {
+        "path": "VTOLApp/images/MotorPropellerAssembly.png",
+        "size_bytes": 47207
+      },
+      {
+        "path": "VTOLApp/images/PropulsionSystem.png",
+        "size_bytes": 51226
+      },
+      {
+        "path": "VTOLApp/images/PropulsionVariantSystem.png",
+        "size_bytes": 23763
+      },
+      {
+        "path": "VTOLApp/models/Alternative_VTOLAutopilotController.slx",
+        "size_bytes": 297961
+      },
+      {
+        "path": "VTOLApp/models/Alternative_VTOLDynamics.slx",
+        "size_bytes": 133832
+      },
+      {
+        "path": "VTOLApp/models/Alternative_VTOLTiltrotor.slx",
+        "size_bytes": 230541
+      },
+      {
+        "path": "VTOLApp/models/EVTOLTiltrotor.slx",
+        "size_bytes": 234193
+      },
+      {
+        "path": "VTOLApp/models/HITL_Controller_top.slx",
+        "size_bytes": 80568
+      },
+      {
+        "path": "VTOLApp/models/HITL_Plant_top.slx",
+        "size_bytes": 193604
+      },
+      {
+        "path": "VTOLApp/models/HITL_Unreal_Visualization.slx",
+        "size_bytes": 43006
+      },
+      {
+        "path": "VTOLApp/models/VTOLAutopilotController.slx",
+        "size_bytes": 298023
+      },
+      {
+        "path": "VTOLApp/models/VTOLDynamics.slx",
+        "size_bytes": 156891
+      },
+      {
+        "path": "VTOLApp/models/VTOLTiltrotor.slx",
+        "size_bytes": 231116
+      },
+      {
+        "path": "VTOLApp/resources/project/Abllu374wtDd3IliE-5ZoGpf8mM/_MCXUodwxypf6VADjNZvvspM_gEd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/Abllu374wtDd3IliE-5ZoGpf8mM/_MCXUodwxypf6VADjNZvvspM_gEp.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "VTOLApp/resources/project/Abllu374wtDd3IliE-5ZoGpf8mM/pLPSOd1DlPkVJdE4XPqCpL0KLZUd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/Abllu374wtDd3IliE-5ZoGpf8mM/pLPSOd1DlPkVJdE4XPqCpL0KLZUp.xml",
+        "size_bytes": 77
+      },
+      {
+        "path": "VTOLApp/resources/project/Abllu374wtDd3IliE-5ZoGpf8mM/PTGZlQ8GoAQET9r_uSn54HNXOckd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/Abllu374wtDd3IliE-5ZoGpf8mM/PTGZlQ8GoAQET9r_uSn54HNXOckp.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "VTOLApp/resources/project/Abllu374wtDd3IliE-5ZoGpf8mM/VE6duDa4s9W1eGH69w_4ikdnaSgd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/Abllu374wtDd3IliE-5ZoGpf8mM/VE6duDa4s9W1eGH69w_4ikdnaSgp.xml",
+        "size_bytes": 83
+      },
+      {
+        "path": "VTOLApp/resources/project/Abllu374wtDd3IliE-5ZoGpf8mM/WfcymbjuMC2WpNIauOEhNdNNfiAd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/Abllu374wtDd3IliE-5ZoGpf8mM/WfcymbjuMC2WpNIauOEhNdNNfiAp.xml",
+        "size_bytes": 83
+      },
+      {
+        "path": "VTOLApp/resources/project/aPSZTDXRjCsxkLD0Rd1_fiBDTLQ/1SK-Lcl-L0CIBIqntg1XY21ywuwd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/aPSZTDXRjCsxkLD0Rd1_fiBDTLQ/1SK-Lcl-L0CIBIqntg1XY21ywuwp.xml",
+        "size_bytes": 88
+      },
+      {
+        "path": "VTOLApp/resources/project/aPSZTDXRjCsxkLD0Rd1_fiBDTLQ/AVk4nnatwN5xELfrvb2Iuy2ohMId.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/aPSZTDXRjCsxkLD0Rd1_fiBDTLQ/AVk4nnatwN5xELfrvb2Iuy2ohMIp.xml",
+        "size_bytes": 88
+      },
+      {
+        "path": "VTOLApp/resources/project/aPSZTDXRjCsxkLD0Rd1_fiBDTLQ/cYZYvGApymmIYy0ntotPyiL8O2Yd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/aPSZTDXRjCsxkLD0Rd1_fiBDTLQ/cYZYvGApymmIYy0ntotPyiL8O2Yp.xml",
+        "size_bytes": 98
+      },
+      {
+        "path": "VTOLApp/resources/project/aPSZTDXRjCsxkLD0Rd1_fiBDTLQ/dCH3sRzeKdhf0RKOhtZCvQWzhW0d.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/aPSZTDXRjCsxkLD0Rd1_fiBDTLQ/dCH3sRzeKdhf0RKOhtZCvQWzhW0p.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "VTOLApp/resources/project/aPSZTDXRjCsxkLD0Rd1_fiBDTLQ/F7H0-vFXLZsZXP7rOx_P-s8CdGod.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/aPSZTDXRjCsxkLD0Rd1_fiBDTLQ/F7H0-vFXLZsZXP7rOx_P-s8CdGop.xml",
+        "size_bytes": 87
+      },
+      {
+        "path": "VTOLApp/resources/project/aPSZTDXRjCsxkLD0Rd1_fiBDTLQ/fv50o6K3IC0OctZ-4FljqTLbMsMd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/aPSZTDXRjCsxkLD0Rd1_fiBDTLQ/fv50o6K3IC0OctZ-4FljqTLbMsMp.xml",
+        "size_bytes": 93
+      },
+      {
+        "path": "VTOLApp/resources/project/aPSZTDXRjCsxkLD0Rd1_fiBDTLQ/IatXk_L-fwHA_6Cmrxah1f70OKAd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/aPSZTDXRjCsxkLD0Rd1_fiBDTLQ/IatXk_L-fwHA_6Cmrxah1f70OKAp.xml",
+        "size_bytes": 86
+      },
+      {
+        "path": "VTOLApp/resources/project/aPSZTDXRjCsxkLD0Rd1_fiBDTLQ/maZX6fFvx5C6UWaBiBndH1NJiOwd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/aPSZTDXRjCsxkLD0Rd1_fiBDTLQ/maZX6fFvx5C6UWaBiBndH1NJiOwp.xml",
+        "size_bytes": 97
+      },
+      {
+        "path": "VTOLApp/resources/project/aPSZTDXRjCsxkLD0Rd1_fiBDTLQ/Ol-sdgc73xYgAFGDxVEphdsOln4d.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/aPSZTDXRjCsxkLD0Rd1_fiBDTLQ/Ol-sdgc73xYgAFGDxVEphdsOln4p.xml",
+        "size_bytes": 109
+      },
+      {
+        "path": "VTOLApp/resources/project/aPSZTDXRjCsxkLD0Rd1_fiBDTLQ/VlifwT6nEzF0dPnol4AdZ2jP-FMd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/aPSZTDXRjCsxkLD0Rd1_fiBDTLQ/VlifwT6nEzF0dPnol4AdZ2jP-FMp.xml",
+        "size_bytes": 99
+      },
+      {
+        "path": "VTOLApp/resources/project/aPSZTDXRjCsxkLD0Rd1_fiBDTLQ/zvC2KKpJfW1o21Z-i9elj55iuB8d.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/aPSZTDXRjCsxkLD0Rd1_fiBDTLQ/zvC2KKpJfW1o21Z-i9elj55iuB8p.xml",
+        "size_bytes": 99
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/1BEJ7QJoPFi5Nq4u5rBkYJuzddQd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/1BEJ7QJoPFi5Nq4u5rBkYJuzddQp.xml",
+        "size_bytes": 92
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/1tgDz9LIbMlKFe6eYIQskV6GRHYd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/1tgDz9LIbMlKFe6eYIQskV6GRHYp.xml",
+        "size_bytes": 92
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/2rRKqvAiNOYvZ1dzdJCawlR7xa4d.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/2rRKqvAiNOYvZ1dzdJCawlR7xa4p.xml",
+        "size_bytes": 105
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/4YrulKLLKSqesNZ77lY-iIzejr8d.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/4YrulKLLKSqesNZ77lY-iIzejr8p.xml",
+        "size_bytes": 90
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/6NBo9GA6sQAmOlddtS-qKsxsUgEd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/6NBo9GA6sQAmOlddtS-qKsxsUgEp.xml",
+        "size_bytes": 88
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/8fHnxR9AlWo-WY2s-xaCYokNkoMd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/8fHnxR9AlWo-WY2s-xaCYokNkoMp.xml",
+        "size_bytes": 101
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/_jxOkig4ePNhZQR1rIQ_ST84-swd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/_jxOkig4ePNhZQR1rIQ_ST84-swp.xml",
+        "size_bytes": 91
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/D5VKh6e-bUNc10QWIm_ADXpTAQUd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/D5VKh6e-bUNc10QWIm_ADXpTAQUp.xml",
+        "size_bytes": 97
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/DAecabO7KAyFmdg0xgnrI-H9HrUd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/DAecabO7KAyFmdg0xgnrI-H9HrUp.xml",
+        "size_bytes": 87
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/eNS16kZkaWvn6Dljg7v3VNJK6jwd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/eNS16kZkaWvn6Dljg7v3VNJK6jwp.xml",
+        "size_bytes": 95
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/gtxQlldy5ORftN4x3s9PtEUUzS4d.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/gtxQlldy5ORftN4x3s9PtEUUzS4p.xml",
+        "size_bytes": 82
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/hvUUe9LtrKPUH2pSWOYqSnTVXCkd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/hvUUe9LtrKPUH2pSWOYqSnTVXCkp.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/iwx2yC76h2SraoYxdljVSHnRkZwd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/iwx2yC76h2SraoYxdljVSHnRkZwp.xml",
+        "size_bytes": 94
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/Kv5oKEDk0ESWXIpwu79kzfC3ciAd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/Kv5oKEDk0ESWXIpwu79kzfC3ciAp.xml",
+        "size_bytes": 101
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/LgRJNubBjpgUtvsN5ul75LaoA5cd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/LgRJNubBjpgUtvsN5ul75LaoA5cp.xml",
+        "size_bytes": 91
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/nXU8eANo_z1Up9BbZpZBz62yYNQd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/nXU8eANo_z1Up9BbZpZBz62yYNQp.xml",
+        "size_bytes": 99
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/o5KwBrpFjMruNxdGJ6ujkqFqBCkd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/o5KwBrpFjMruNxdGJ6ujkqFqBCkp.xml",
+        "size_bytes": 106
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/PD9ej14cgFUX33qIdnzUqPOF6aId.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/PD9ej14cgFUX33qIdnzUqPOF6aIp.xml",
+        "size_bytes": 102
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/RDrafpa1UUiXfhCQswqgk29ctGod.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/RDrafpa1UUiXfhCQswqgk29ctGop.xml",
+        "size_bytes": 88
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/rYmgcXtEC9-HV_hc7CMxs0lg8x8d.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/rYmgcXtEC9-HV_hc7CMxs0lg8x8p.xml",
+        "size_bytes": 113
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/vH879sYm4tIb_u_uKNOzaJI_y7Ed.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/vH879sYm4tIb_u_uKNOzaJI_y7Ep.xml",
+        "size_bytes": 94
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/WeaF0j6wnnzUY1XRLxzNXlxXHYMd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/WeaF0j6wnnzUY1XRLxzNXlxXHYMp.xml",
+        "size_bytes": 85
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/X9UrlFfp32H2SvaJigYcv4dXoKMd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/B2I0TxvBCsCpARvM4yCY7VDFx6E/X9UrlFfp32H2SvaJigYcv4dXoKMp.xml",
+        "size_bytes": 102
+      },
+      {
+        "path": "VTOLApp/resources/project/bI45o7MkfNtHtgUIaFhhf2MCGfY/N24TOIieYSRJi21eQoFZf9rx3Igd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/bI45o7MkfNtHtgUIaFhhf2MCGfY/N24TOIieYSRJi21eQoFZf9rx3Igp.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "VTOLApp/resources/project/bI45o7MkfNtHtgUIaFhhf2MCGfY/Q9N9mBq8NUbg_81Wn4idbUS230Ud.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/bI45o7MkfNtHtgUIaFhhf2MCGfY/Q9N9mBq8NUbg_81Wn4idbUS230Up.xml",
+        "size_bytes": 97
+      },
+      {
+        "path": "VTOLApp/resources/project/bI45o7MkfNtHtgUIaFhhf2MCGfY/rn68Wm8e0T2yAxduKHQCt4famZ0d.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/bI45o7MkfNtHtgUIaFhhf2MCGfY/rn68Wm8e0T2yAxduKHQCt4famZ0p.xml",
+        "size_bytes": 96
+      },
+      {
+        "path": "VTOLApp/resources/project/bI45o7MkfNtHtgUIaFhhf2MCGfY/uurOift2AfgQ95Lqvok4_D0nPDId.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/bI45o7MkfNtHtgUIaFhhf2MCGfY/uurOift2AfgQ95Lqvok4_D0nPDIp.xml",
+        "size_bytes": 90
+      },
+      {
+        "path": "VTOLApp/resources/project/bI45o7MkfNtHtgUIaFhhf2MCGfY/w9gjcORjsxdVICde8_1giUXy45od.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/bI45o7MkfNtHtgUIaFhhf2MCGfY/w9gjcORjsxdVICde8_1giUXy45op.xml",
+        "size_bytes": 84
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/-vIUvuCMcEz741LM9_pqeu1swCod.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/-vIUvuCMcEz741LM9_pqeu1swCop.xml",
+        "size_bytes": 93
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/-WwQo38TiKh1dvIiMn6IO1eTLPsd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/-WwQo38TiKh1dvIiMn6IO1eTLPsp.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/4WyXPGHnqw9vXNWS7AJPMPGBLaQd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/4WyXPGHnqw9vXNWS7AJPMPGBLaQp.xml",
+        "size_bytes": 95
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/_u0UNNagt_j7ggZ_Vp-ag9Ds0H8d.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/_u0UNNagt_j7ggZ_Vp-ag9Ds0H8p.xml",
+        "size_bytes": 97
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/apK0fVtNQTV2gSg9y9bZeVSeQtcd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/apK0fVtNQTV2gSg9y9bZeVSeQtcp.xml",
+        "size_bytes": 94
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/BzBc6Yx-ABzdLycbY4kQ5ao_Urgd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/BzBc6Yx-ABzdLycbY4kQ5ao_Urgp.xml",
+        "size_bytes": 78
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/dBVakJb_MPfV1Gam_1CcIggl42Id.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/dBVakJb_MPfV1Gam_1CcIggl42Ip.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/DVRiTZbMBBU94jXtT2PuuAPWRiUd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/DVRiTZbMBBU94jXtT2PuuAPWRiUp.xml",
+        "size_bytes": 88
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/ecc1Nxm5DgUBWxnh_rN-K4S56ugd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/ecc1Nxm5DgUBWxnh_rN-K4S56ugp.xml",
+        "size_bytes": 98
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/EdclQ-nuGe0_hrMh2C2SDrkwSQsd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/EdclQ-nuGe0_hrMh2C2SDrkwSQsp.xml",
+        "size_bytes": 96
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/jAG0sLiRWiS5tR7G4_C8IfE82Fsd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/jAG0sLiRWiS5tR7G4_C8IfE82Fsp.xml",
+        "size_bytes": 95
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/kA8CkH6zbIh7UBpWbBi2cmdhFJwd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/kA8CkH6zbIh7UBpWbBi2cmdhFJwp.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/kOV6-Vly8mjiFaKcFGzWuHTuXccd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/kOV6-Vly8mjiFaKcFGzWuHTuXccp.xml",
+        "size_bytes": 84
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/PKhu5HvpLXWlhGxYe2YmEiyU-PEd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/PKhu5HvpLXWlhGxYe2YmEiyU-PEp.xml",
+        "size_bytes": 91
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/pMTM5n0jZMiQ7JpdtKyi-tq_n3od.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/pMTM5n0jZMiQ7JpdtKyi-tq_n3op.xml",
+        "size_bytes": 98
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/Qx6R15M8om1ZWi_QKVk6PXLjt-Ad.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/Qx6R15M8om1ZWi_QKVk6PXLjt-Ap.xml",
+        "size_bytes": 95
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/srdXDu3qfvbhDjoHWx4qlb83mtcd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/srdXDu3qfvbhDjoHWx4qlb83mtcp.xml",
+        "size_bytes": 103
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/x6vrx3wIpb6-D2w7FIUkEcu2BPwd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/CCrEKqVzmDcRwroC2SpGZ1u0t00/x6vrx3wIpb6-D2w7FIUkEcu2BPwp.xml",
+        "size_bytes": 95
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/-n6btqJJ9eVb6QiWT7hGqrzuXr0d.xml",
+        "size_bytes": 85
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/-n6btqJJ9eVb6QiWT7hGqrzuXr0p.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/02P-ZWidDESbaRUFkx6D63LnmSMd.xml",
+        "size_bytes": 84
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/02P-ZWidDESbaRUFkx6D63LnmSMp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/clbXcBMUkSaUWwyaPnDjFgB-TNod.xml",
+        "size_bytes": 73
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/clbXcBMUkSaUWwyaPnDjFgB-TNop.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/f2h--OTyzhcfFGiOj0Je_OCHgWQd.xml",
+        "size_bytes": 90
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/f2h--OTyzhcfFGiOj0Je_OCHgWQp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/GNKP2t_2B-57JIg3D5JJh7NHdmUd.xml",
+        "size_bytes": 92
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/GNKP2t_2B-57JIg3D5JJh7NHdmUp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/hVo7iECzydXgQ6tCJq_bOBmZa34d.xml",
+        "size_bytes": 86
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/hVo7iECzydXgQ6tCJq_bOBmZa34p.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/NSsfZkEW61STvPty1dkveM61WsQd.xml",
+        "size_bytes": 92
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/NSsfZkEW61STvPty1dkveM61WsQp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/OtO0d9rvBMQbKAspxzPGFLO22x0d.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/OtO0d9rvBMQbKAspxzPGFLO22x0p.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/QiE0kXcxRQvX0kZXXOPjD25WrRwd.xml",
+        "size_bytes": 74
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/QiE0kXcxRQvX0kZXXOPjD25WrRwp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/QKKhRG0ODVJocNoZ3K4KYdawjEEd.xml",
+        "size_bytes": 78
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/QKKhRG0ODVJocNoZ3K4KYdawjEEp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/S4HLkBAODpUsGPI7pZyqHa34r3Ed.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/S4HLkBAODpUsGPI7pZyqHa34r3Ep.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/SBP9GfMD3fke3vp3I5fnESHYpPgd.xml",
+        "size_bytes": 87
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/SBP9GfMD3fke3vp3I5fnESHYpPgp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/VN1wmQhw6HIFtoKdeB1zGAOx48gd.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/VN1wmQhw6HIFtoKdeB1zGAOx48gp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/z7QWQtPDwv3Hok-Ss0FWt0Q7_Nwd.xml",
+        "size_bytes": 92
+      },
+      {
+        "path": "VTOLApp/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/z7QWQtPDwv3Hok-Ss0FWt0Q7_Nwp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "VTOLApp/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsd.xml",
+        "size_bytes": 114
+      },
+      {
+        "path": "VTOLApp/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsp.xml",
+        "size_bytes": 91
+      },
+      {
+        "path": "VTOLApp/resources/project/g_b0Uy85SbTSY4rlPGS9NCKd_Kw/1NNhFQLBxwj9BlMww87SKZl2sbcd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/g_b0Uy85SbTSY4rlPGS9NCKd_Kw/1NNhFQLBxwj9BlMww87SKZl2sbcp.xml",
+        "size_bytes": 94
+      },
+      {
+        "path": "VTOLApp/resources/project/g_b0Uy85SbTSY4rlPGS9NCKd_Kw/kTPAvhMvXCqVlQy7c2enieqjfHod.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/g_b0Uy85SbTSY4rlPGS9NCKd_Kw/kTPAvhMvXCqVlQy7c2enieqjfHop.xml",
+        "size_bytes": 90
+      },
+      {
+        "path": "VTOLApp/resources/project/g_b0Uy85SbTSY4rlPGS9NCKd_Kw/Nzbf858KYr2FrEwfHzuEYZSoKsAd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/g_b0Uy85SbTSY4rlPGS9NCKd_Kw/Nzbf858KYr2FrEwfHzuEYZSoKsAp.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "VTOLApp/resources/project/iY3we4Gl7VTsoRQr_GEhH0t8uD8/g_b0Uy85SbTSY4rlPGS9NCKd_Kwd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/iY3we4Gl7VTsoRQr_GEhH0t8uD8/g_b0Uy85SbTSY4rlPGS9NCKd_Kwp.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "VTOLApp/resources/project/iY3we4Gl7VTsoRQr_GEhH0t8uD8/lIJIO93kJJlsYZpiEqSROrdWZa4d.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/iY3we4Gl7VTsoRQr_GEhH0t8uD8/lIJIO93kJJlsYZpiEqSROrdWZa4p.xml",
+        "size_bytes": 77
+      },
+      {
+        "path": "VTOLApp/resources/project/iY3we4Gl7VTsoRQr_GEhH0t8uD8/YYl4VgUllzeH6CArnzxf7oGsV04d.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/iY3we4Gl7VTsoRQr_GEhH0t8uD8/YYl4VgUllzeH6CArnzxf7oGsV04p.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/1_QdwDeulBcHmo1d-eVyt0_NGpAd.xml",
+        "size_bytes": 183
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/1_QdwDeulBcHmo1d-eVyt0_NGpAp.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/281sUYtceHeNr8IDT7AoBspoxMEd.xml",
+        "size_bytes": 151
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/281sUYtceHeNr8IDT7AoBspoxMEp.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/7G0CFZP393E59AAXgDl3fgetRGAd.xml",
+        "size_bytes": 223
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/7G0CFZP393E59AAXgDl3fgetRGAp.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/_CBUvnSz0eDJGn1y_9_ksYoSK8Ad.xml",
+        "size_bytes": 189
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/_CBUvnSz0eDJGn1y_9_ksYoSK8Ap.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/CnILRt0lNtR0NkS2ewCIb5NVDpAd.xml",
+        "size_bytes": 201
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/CnILRt0lNtR0NkS2ewCIb5NVDpAp.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/H5CHaFoWmHh6oHaxCQNhu3zFjQsd.xml",
+        "size_bytes": 194
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/H5CHaFoWmHh6oHaxCQNhu3zFjQsp.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/HmCkxMxE7IVdz6kxQ70W_jfpJVwd.xml",
+        "size_bytes": 199
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/HmCkxMxE7IVdz6kxQ70W_jfpJVwp.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/JiENoAzlL7G90ZUQ6ynpm5OCHyId.xml",
+        "size_bytes": 228
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/JiENoAzlL7G90ZUQ6ynpm5OCHyIp.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/jPZHN2yGLiNZ4z4avCamCZ3sr2Yd.xml",
+        "size_bytes": 197
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/jPZHN2yGLiNZ4z4avCamCZ3sr2Yp.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/jQwEjbmEmfmFoeYgqynIgmAB6ood.xml",
+        "size_bytes": 217
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/jQwEjbmEmfmFoeYgqynIgmAB6oop.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/qALVWvcvOKXjhttnoB-aUg0Qn78d.xml",
+        "size_bytes": 184
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/qALVWvcvOKXjhttnoB-aUg0Qn78p.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/QHW1oWZGZei4aNsKZGMEQ55Ya7cd.xml",
+        "size_bytes": 179
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/QHW1oWZGZei4aNsKZGMEQ55Ya7cp.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/qqlPZjBOzFCQThc55-iZRnxoh6sd.xml",
+        "size_bytes": 118
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/qqlPZjBOzFCQThc55-iZRnxoh6sp.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/QUNdvojYHV-Ix7V3TZQnYKFmX14d.xml",
+        "size_bytes": 202
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/QUNdvojYHV-Ix7V3TZQnYKFmX14p.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/rG0RA9t5vmGZuhbK7LHreAuvK3Id.xml",
+        "size_bytes": 206
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/rG0RA9t5vmGZuhbK7LHreAuvK3Ip.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/RuVmznLcVDj4cP577Hsc05fKZbMd.xml",
+        "size_bytes": 215
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/RuVmznLcVDj4cP577Hsc05fKZbMp.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/snIQNDM61WGsu8sOy_7J1w0d3cod.xml",
+        "size_bytes": 210
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/snIQNDM61WGsu8sOy_7J1w0d3cop.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/TEgrlggOru4h9_GXYEyOgGbbUmsd.xml",
+        "size_bytes": 186
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/TEgrlggOru4h9_GXYEyOgGbbUmsp.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/W6yuo_Pkwh8HnzL_3B_x6-snXgkd.xml",
+        "size_bytes": 187
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/W6yuo_Pkwh8HnzL_3B_x6-snXgkp.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/wiTKpMR1tBNE2L7pZiv51-Z617kd.xml",
+        "size_bytes": 199
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/wiTKpMR1tBNE2L7pZiv51-Z617kp.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/Z6rdvqG5xymgbxAMDBmb7JpdhDAd.xml",
+        "size_bytes": 204
+      },
+      {
+        "path": "VTOLApp/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/Z6rdvqG5xymgbxAMDBmb7JpdhDAp.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "VTOLApp/resources/project/lIJIO93kJJlsYZpiEqSROrdWZa4/C1kJJo7fqou9XVAZysiZN7-Y2t4d.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/lIJIO93kJJlsYZpiEqSROrdWZa4/C1kJJo7fqou9XVAZysiZN7-Y2t4p.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "VTOLApp/resources/project/lIJIO93kJJlsYZpiEqSROrdWZa4/qy36JARuGhlYHgNj9JeUEAimxDsd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/lIJIO93kJJlsYZpiEqSROrdWZa4/qy36JARuGhlYHgNj9JeUEAimxDsp.xml",
+        "size_bytes": 98
+      },
+      {
+        "path": "VTOLApp/resources/project/lIJIO93kJJlsYZpiEqSROrdWZa4/r6JzeEplJhgTFeQrUy3sCjWyO_Yd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/lIJIO93kJJlsYZpiEqSROrdWZa4/r6JzeEplJhgTFeQrUy3sCjWyO_Yp.xml",
+        "size_bytes": 88
+      },
+      {
+        "path": "VTOLApp/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4d.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "VTOLApp/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4p.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "VTOLApp/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZod.xml",
+        "size_bytes": 82
+      },
+      {
+        "path": "VTOLApp/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZop.xml",
+        "size_bytes": 78
+      },
+      {
+        "path": "VTOLApp/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencd.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "VTOLApp/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencp.xml",
+        "size_bytes": 77
+      },
+      {
+        "path": "VTOLApp/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8d.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "VTOLApp/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8p.xml",
+        "size_bytes": 76
+      },
+      {
+        "path": "VTOLApp/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4d.xml",
+        "size_bytes": 86
+      },
+      {
+        "path": "VTOLApp/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4p.xml",
+        "size_bytes": 82
+      },
+      {
+        "path": "VTOLApp/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Id.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "VTOLApp/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Ip.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "VTOLApp/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkd.xml",
+        "size_bytes": 83
+      },
+      {
+        "path": "VTOLApp/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkp.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "VTOLApp/resources/project/pLPSOd1DlPkVJdE4XPqCpL0KLZU/7J2lO-62_F9hb3sddW_ALf0G4UAd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/pLPSOd1DlPkVJdE4XPqCpL0KLZU/7J2lO-62_F9hb3sddW_ALf0G4UAp.xml",
+        "size_bytes": 110
+      },
+      {
+        "path": "VTOLApp/resources/project/pLPSOd1DlPkVJdE4XPqCpL0KLZU/99R8femjzop0DLkC6IJlg3uCOCwd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/pLPSOd1DlPkVJdE4XPqCpL0KLZU/99R8femjzop0DLkC6IJlg3uCOCwp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "VTOLApp/resources/project/pLPSOd1DlPkVJdE4XPqCpL0KLZU/dDnCOD5yR1gWegQsdOeNDilzP90d.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/pLPSOd1DlPkVJdE4XPqCpL0KLZU/dDnCOD5yR1gWegQsdOeNDilzP90p.xml",
+        "size_bytes": 113
+      },
+      {
+        "path": "VTOLApp/resources/project/pLPSOd1DlPkVJdE4XPqCpL0KLZU/evok5sNmkvffsMBbLFDxt91YOO8d.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/pLPSOd1DlPkVJdE4XPqCpL0KLZU/evok5sNmkvffsMBbLFDxt91YOO8p.xml",
+        "size_bytes": 106
+      },
+      {
+        "path": "VTOLApp/resources/project/pLPSOd1DlPkVJdE4XPqCpL0KLZU/GWAh5nDvPWzJ0RK1O7SODOQ5af0d.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/pLPSOd1DlPkVJdE4XPqCpL0KLZU/GWAh5nDvPWzJ0RK1O7SODOQ5af0p.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "VTOLApp/resources/project/pLPSOd1DlPkVJdE4XPqCpL0KLZU/iAsswAlY_nHMgETyn0NXjm5e_Tcd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/pLPSOd1DlPkVJdE4XPqCpL0KLZU/iAsswAlY_nHMgETyn0NXjm5e_Tcp.xml",
+        "size_bytes": 117
+      },
+      {
+        "path": "VTOLApp/resources/project/pLPSOd1DlPkVJdE4XPqCpL0KLZU/xDIypXoWbMX58GF6ZW1HGHqOMuQd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/pLPSOd1DlPkVJdE4XPqCpL0KLZU/xDIypXoWbMX58GF6ZW1HGHqOMuQp.xml",
+        "size_bytes": 110
+      },
+      {
+        "path": "VTOLApp/resources/project/POHnXJCjlccoW9VNP4cPqF8uaYo/5xPWrEoyyXYfp-eTjSRl_ttcgnEd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/POHnXJCjlccoW9VNP4cPqF8uaYo/5xPWrEoyyXYfp-eTjSRl_ttcgnEp.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "VTOLApp/resources/project/Project.xml",
+        "size_bytes": 73
+      },
+      {
+        "path": "VTOLApp/resources/project/PTGZlQ8GoAQET9r_uSn54HNXOck/3lJKT6xZdKfuMruLq04ZGxpWnAsd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/PTGZlQ8GoAQET9r_uSn54HNXOck/3lJKT6xZdKfuMruLq04ZGxpWnAsp.xml",
+        "size_bytes": 108
+      },
+      {
+        "path": "VTOLApp/resources/project/PTGZlQ8GoAQET9r_uSn54HNXOck/6lIEEqERlqzU8TQgWt-UPvqV26Ed.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/PTGZlQ8GoAQET9r_uSn54HNXOck/6lIEEqERlqzU8TQgWt-UPvqV26Ep.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "VTOLApp/resources/project/PTGZlQ8GoAQET9r_uSn54HNXOck/6PC1uDQ1iF3ObWFOtg92NqLwofAd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/PTGZlQ8GoAQET9r_uSn54HNXOck/6PC1uDQ1iF3ObWFOtg92NqLwofAp.xml",
+        "size_bytes": 104
+      },
+      {
+        "path": "VTOLApp/resources/project/PTGZlQ8GoAQET9r_uSn54HNXOck/_GTFQjBg9AfHyjITxWYFPwIPBFMd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/PTGZlQ8GoAQET9r_uSn54HNXOck/_GTFQjBg9AfHyjITxWYFPwIPBFMp.xml",
+        "size_bytes": 108
+      },
+      {
+        "path": "VTOLApp/resources/project/PTGZlQ8GoAQET9r_uSn54HNXOck/BHoTt0T8X6j4uyP1Urf9x53shVgd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/PTGZlQ8GoAQET9r_uSn54HNXOck/BHoTt0T8X6j4uyP1Urf9x53shVgp.xml",
+        "size_bytes": 83
+      },
+      {
+        "path": "VTOLApp/resources/project/PTGZlQ8GoAQET9r_uSn54HNXOck/bMw6Fo1WaFkgbBQjrIkmT1nPHWQd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/PTGZlQ8GoAQET9r_uSn54HNXOck/bMw6Fo1WaFkgbBQjrIkmT1nPHWQp.xml",
+        "size_bytes": 104
+      },
+      {
+        "path": "VTOLApp/resources/project/PTGZlQ8GoAQET9r_uSn54HNXOck/fEvblBerCBC2LKQkEEpZR8n5TmMd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/PTGZlQ8GoAQET9r_uSn54HNXOck/fEvblBerCBC2LKQkEEpZR8n5TmMp.xml",
+        "size_bytes": 96
+      },
+      {
+        "path": "VTOLApp/resources/project/PTGZlQ8GoAQET9r_uSn54HNXOck/GzU4QG3QPTzSmHx0Emqh04LTxbQd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/PTGZlQ8GoAQET9r_uSn54HNXOck/GzU4QG3QPTzSmHx0Emqh04LTxbQp.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "VTOLApp/resources/project/PTGZlQ8GoAQET9r_uSn54HNXOck/QoxClzEsjvOMDFRcJKF32rS7al4d.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/PTGZlQ8GoAQET9r_uSn54HNXOck/QoxClzEsjvOMDFRcJKF32rS7al4p.xml",
+        "size_bytes": 100
+      },
+      {
+        "path": "VTOLApp/resources/project/PTGZlQ8GoAQET9r_uSn54HNXOck/roJYwrNjr0nOdFAxOxT5bLV-i_sd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/PTGZlQ8GoAQET9r_uSn54HNXOck/roJYwrNjr0nOdFAxOxT5bLV-i_sp.xml",
+        "size_bytes": 116
+      },
+      {
+        "path": "VTOLApp/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Abllu374wtDd3IliE-5ZoGpf8mMd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Abllu374wtDd3IliE-5ZoGpf8mMp.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "VTOLApp/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/aPSZTDXRjCsxkLD0Rd1_fiBDTLQd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/aPSZTDXRjCsxkLD0Rd1_fiBDTLQp.xml",
+        "size_bytes": 76
+      },
+      {
+        "path": "VTOLApp/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/B2I0TxvBCsCpARvM4yCY7VDFx6Ed.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/B2I0TxvBCsCpARvM4yCY7VDFx6Ep.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "VTOLApp/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/bI45o7MkfNtHtgUIaFhhf2MCGfYd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/bI45o7MkfNtHtgUIaFhhf2MCGfYp.xml",
+        "size_bytes": 76
+      },
+      {
+        "path": "VTOLApp/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/CCrEKqVzmDcRwroC2SpGZ1u0t00d.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/CCrEKqVzmDcRwroC2SpGZ1u0t00p.xml",
+        "size_bytes": 74
+      },
+      {
+        "path": "VTOLApp/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/IfUNYeZ2n3-uOmyvXMKjIqbPOOsd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/IfUNYeZ2n3-uOmyvXMKjIqbPOOsp.xml",
+        "size_bytes": 102
+      },
+      {
+        "path": "VTOLApp/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/iY3we4Gl7VTsoRQr_GEhH0t8uD8d.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/iY3we4Gl7VTsoRQr_GEhH0t8uD8p.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "VTOLApp/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/POHnXJCjlccoW9VNP4cPqF8uaYod.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/POHnXJCjlccoW9VNP4cPqF8uaYop.xml",
+        "size_bytes": 74
+      },
+      {
+        "path": "VTOLApp/resources/project/root/EEtUlUb-dLAdf0KpMVivaUlztwAp.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "VTOLApp/resources/project/root/fjRQtWiSIy7hIlj-Kmk87M7s21kd.xml",
+        "size_bytes": 826
+      },
+      {
+        "path": "VTOLApp/resources/project/root/fjRQtWiSIy7hIlj-Kmk87M7s21kp.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "VTOLApp/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQd.xml",
+        "size_bytes": 64
+      },
+      {
+        "path": "VTOLApp/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQp.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "VTOLApp/resources/project/root/KAXfQgCar2Yb8zOxgvf9hdmLP1Ep.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "VTOLApp/resources/project/root/qaw0eS1zuuY1ar9TdPn1GMfrjbQp.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "VTOLApp/resources/project/root/W1eD2F85jUZK1DJhjzKdaV-n984p.xml",
+        "size_bytes": 86
+      },
+      {
+        "path": "VTOLApp/resources/project/root/WZRuNzqc-Db7NcQAZO8Y-R8U9ccp.xml",
+        "size_bytes": 84
+      },
+      {
+        "path": "VTOLApp/resources/project/rootp.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/VE6duDa4s9W1eGH69w_4ikdnaSg/7YNrfkrgM6s2RNwdc-zS5JOl2M0d.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/VE6duDa4s9W1eGH69w_4ikdnaSg/7YNrfkrgM6s2RNwdc-zS5JOl2M0p.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "VTOLApp/resources/project/VE6duDa4s9W1eGH69w_4ikdnaSg/fgAQN5kMe8b44G3LoqcPY_DHRH0d.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/VE6duDa4s9W1eGH69w_4ikdnaSg/fgAQN5kMe8b44G3LoqcPY_DHRH0p.xml",
+        "size_bytes": 116
+      },
+      {
+        "path": "VTOLApp/resources/project/VE6duDa4s9W1eGH69w_4ikdnaSg/ksmNlBzmAh2O0uynm39wWeYDwR0d.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/VE6duDa4s9W1eGH69w_4ikdnaSg/ksmNlBzmAh2O0uynm39wWeYDwR0p.xml",
+        "size_bytes": 120
+      },
+      {
+        "path": "VTOLApp/resources/project/VE6duDa4s9W1eGH69w_4ikdnaSg/KUMSTs7Kw96SRuwb3cIr_2PFMe0d.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/VE6duDa4s9W1eGH69w_4ikdnaSg/KUMSTs7Kw96SRuwb3cIr_2PFMe0p.xml",
+        "size_bytes": 93
+      },
+      {
+        "path": "VTOLApp/resources/project/VE6duDa4s9W1eGH69w_4ikdnaSg/NhS6EhzyMkV7xKJCHqz1xWKQ2qMd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/VE6duDa4s9W1eGH69w_4ikdnaSg/NhS6EhzyMkV7xKJCHqz1xWKQ2qMp.xml",
+        "size_bytes": 106
+      },
+      {
+        "path": "VTOLApp/resources/project/VE6duDa4s9W1eGH69w_4ikdnaSg/rQSY8yQFv7LvhgGffQPs4Vg0Sqod.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/VE6duDa4s9W1eGH69w_4ikdnaSg/rQSY8yQFv7LvhgGffQPs4Vg0Sqop.xml",
+        "size_bytes": 119
+      },
+      {
+        "path": "VTOLApp/resources/project/VE6duDa4s9W1eGH69w_4ikdnaSg/WBaEqDT9JgMcWGjoFwShF_XsEtEd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/VE6duDa4s9W1eGH69w_4ikdnaSg/WBaEqDT9JgMcWGjoFwShF_XsEtEp.xml",
+        "size_bytes": 102
+      },
+      {
+        "path": "VTOLApp/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/-PLoRz4L17IALDG_R4FcxU8A_cwd.xml",
+        "size_bytes": 71
+      },
+      {
+        "path": "VTOLApp/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/-PLoRz4L17IALDG_R4FcxU8A_cwp.xml",
+        "size_bytes": 117
+      },
+      {
+        "path": "VTOLApp/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/2t11ntTW62Pv3gHGIKYsVrKmU0cd.xml",
+        "size_bytes": 82
+      },
+      {
+        "path": "VTOLApp/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/2t11ntTW62Pv3gHGIKYsVrKmU0cp.xml",
+        "size_bytes": 117
+      },
+      {
+        "path": "VTOLApp/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/3iKYCTUjd6b1TgftjaTyJd-Z6rAd.xml",
+        "size_bytes": 69
+      },
+      {
+        "path": "VTOLApp/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/3iKYCTUjd6b1TgftjaTyJd-Z6rAp.xml",
+        "size_bytes": 117
+      },
+      {
+        "path": "VTOLApp/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/ANxfhJm67zKMElNaCHTvVA5RTAwd.xml",
+        "size_bytes": 67
+      },
+      {
+        "path": "VTOLApp/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/ANxfhJm67zKMElNaCHTvVA5RTAwp.xml",
+        "size_bytes": 117
+      },
+      {
+        "path": "VTOLApp/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/DNHd1TKqdkNi4vC62WwvZHcT_O4d.xml",
+        "size_bytes": 76
+      },
+      {
+        "path": "VTOLApp/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/DNHd1TKqdkNi4vC62WwvZHcT_O4p.xml",
+        "size_bytes": 117
+      },
+      {
+        "path": "VTOLApp/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/dWphJgXLhT4lHWBmFsC5CceYuy8d.xml",
+        "size_bytes": 62
+      },
+      {
+        "path": "VTOLApp/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/dWphJgXLhT4lHWBmFsC5CceYuy8p.xml",
+        "size_bytes": 117
+      },
+      {
+        "path": "VTOLApp/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/gDe--nqLtXZCCBBquxrMi3nHA20d.xml",
+        "size_bytes": 95
+      },
+      {
+        "path": "VTOLApp/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/gDe--nqLtXZCCBBquxrMi3nHA20p.xml",
+        "size_bytes": 117
+      },
+      {
+        "path": "VTOLApp/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/kg-Rl3B7ZGPWbnm2c5vZ_Awrk3od.xml",
+        "size_bytes": 62
+      },
+      {
+        "path": "VTOLApp/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/kg-Rl3B7ZGPWbnm2c5vZ_Awrk3op.xml",
+        "size_bytes": 117
+      },
+      {
+        "path": "VTOLApp/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/lXNSmJOhITgumSYXe5DG8TlKUsMd.xml",
+        "size_bytes": 68
+      },
+      {
+        "path": "VTOLApp/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/lXNSmJOhITgumSYXe5DG8TlKUsMp.xml",
+        "size_bytes": 117
+      },
+      {
+        "path": "VTOLApp/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/nnwBZ4S9IbcQ8wMS4V6Aalw-VRsd.xml",
+        "size_bytes": 67
+      },
+      {
+        "path": "VTOLApp/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/nnwBZ4S9IbcQ8wMS4V6Aalw-VRsp.xml",
+        "size_bytes": 117
+      },
+      {
+        "path": "VTOLApp/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/YouHXEqLWAGo35Q72T8W3eYPjt4d.xml",
+        "size_bytes": 67
+      },
+      {
+        "path": "VTOLApp/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/YouHXEqLWAGo35Q72T8W3eYPjt4p.xml",
+        "size_bytes": 117
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/1E8mVLqejpq-aULYsbZ2_6Z5ORgd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/1E8mVLqejpq-aULYsbZ2_6Z5ORgp.xml",
+        "size_bytes": 113
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/aMGLMxQqfTH8z6Nf3IMmB1ez0q8d.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/aMGLMxQqfTH8z6Nf3IMmB1ez0q8p.xml",
+        "size_bytes": 109
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/AYlhRIZe6Bg5Vb3L7rXVt3eoU7Ed.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/AYlhRIZe6Bg5Vb3L7rXVt3eoU7Ep.xml",
+        "size_bytes": 114
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/c4jTvXWtGbaZhZKUuUXSYkfJXKUd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/c4jTvXWtGbaZhZKUuUXSYkfJXKUp.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/ckbEZJyHbUs__XsIJfQucm6Z6kId.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/ckbEZJyHbUs__XsIJfQucm6Z6kIp.xml",
+        "size_bytes": 121
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/EFTniQBpQodtbmt0kF7fNP5Mhr4d.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/EFTniQBpQodtbmt0kF7fNP5Mhr4p.xml",
+        "size_bytes": 113
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/l1QkcesEDHh9XFLGZQmkoD4qiPwd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/l1QkcesEDHh9XFLGZQmkoD4qiPwp.xml",
+        "size_bytes": 117
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/NRFRFYRSdNQKyHeRQ00Q2HSTu8wd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/NRFRFYRSdNQKyHeRQ00Q2HSTu8wp.xml",
+        "size_bytes": 98
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/P7Iw-W8m0e5VLa1w2lzJQ9WTe8Md.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/P7Iw-W8m0e5VLa1w2lzJQ9WTe8Mp.xml",
+        "size_bytes": 99
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/PH3fBjLg49gtteMuclzpWnmEaM0d.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/PH3fBjLg49gtteMuclzpWnmEaM0p.xml",
+        "size_bytes": 109
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/QgONNz5rtByGK8D4t4WppKxcDYcd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/QgONNz5rtByGK8D4t4WppKxcDYcp.xml",
+        "size_bytes": 114
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/ReC-0Cku7_ejbKBwqiKZSv7u2wcd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/ReC-0Cku7_ejbKBwqiKZSv7u2wcp.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/v61FpEiC_aWqOQUIYYg-WdOQhUMd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/v61FpEiC_aWqOQUIYYg-WdOQhUMp.xml",
+        "size_bytes": 129
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/VGirrPIuia2Kw-mR8SZFq3Bfvdcd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VTOLApp/resources/project/WfcymbjuMC2WpNIauOEhNdNNfiA/VGirrPIuia2Kw-mR8SZFq3Bfvdcp.xml",
+        "size_bytes": 116
+      },
+      {
+        "path": "VTOLApp/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/66WgGCcF5RIH9MCEgPmgjZK9k3Ud.xml",
+        "size_bytes": 73
+      },
+      {
+        "path": "VTOLApp/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/66WgGCcF5RIH9MCEgPmgjZK9k3Up.xml",
+        "size_bytes": 96
+      },
+      {
+        "path": "VTOLApp/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/AtMjXDrOSm8YDv3_4UFXiyrWqNEd.xml",
+        "size_bytes": 73
+      },
+      {
+        "path": "VTOLApp/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/AtMjXDrOSm8YDv3_4UFXiyrWqNEp.xml",
+        "size_bytes": 94
+      },
+      {
+        "path": "VTOLApp/setupTransitionGuidanceMission.m",
+        "size_bytes": 707
+      },
+      {
+        "path": "VTOLApp/steps/alternativeSetupTransitionGuidanceMission.m",
+        "size_bytes": 763
+      },
+      {
+        "path": "VTOLApp/steps/openHITLController.m",
+        "size_bytes": 35
+      },
+      {
+        "path": "VTOLApp/steps/openHITLPlant.m",
+        "size_bytes": 30
+      },
+      {
+        "path": "VTOLApp/steps/openSimulationModel.m",
+        "size_bytes": 56
+      },
+      {
+        "path": "VTOLApp/steps/setupCityMission.m",
+        "size_bytes": 1393
+      },
+      {
+        "path": "VTOLApp/steps/setupEVTOLHoverGuidanceMission.m",
+        "size_bytes": 965
+      },
+      {
+        "path": "VTOLApp/steps/setupEVTOLPlant.m",
+        "size_bytes": 2099
+      },
+      {
+        "path": "VTOLApp/steps/setupEVTOLUrbanMission.m",
+        "size_bytes": 1353
+      },
+      {
+        "path": "VTOLApp/steps/setupFixedWingConfiguration.m",
+        "size_bytes": 469
+      },
+      {
+        "path": "VTOLApp/steps/setupFixedWingGuidanceMission.m",
+        "size_bytes": 967
+      },
+      {
+        "path": "VTOLApp/steps/setupFixedWingManual.m",
+        "size_bytes": 415
+      },
+      {
+        "path": "VTOLApp/steps/setupHITLCityMission.m",
+        "size_bytes": 1051
+      },
+      {
+        "path": "VTOLApp/steps/setupHITLConfiguration.m",
+        "size_bytes": 552
+      },
+      {
+        "path": "VTOLApp/steps/setupHITLController.m",
+        "size_bytes": 884
+      },
+      {
+        "path": "VTOLApp/steps/setupHITLHoverGuidanceMission.m",
+        "size_bytes": 1220
+      },
+      {
+        "path": "VTOLApp/steps/setupHITLTransitionGuidanceMission.m",
+        "size_bytes": 903
+      },
+      {
+        "path": "VTOLApp/steps/setupHoverConfiguration.m",
+        "size_bytes": 441
+      },
+      {
+        "path": "VTOLApp/steps/setupHoverGuidanceMission.m",
+        "size_bytes": 1360
+      },
+      {
+        "path": "VTOLApp/steps/setupHoverManual.m",
+        "size_bytes": 411
+      },
+      {
+        "path": "VTOLApp/steps/setupPlant.m",
+        "size_bytes": 1981
+      },
+      {
+        "path": "VTOLApp/steps/setupTransitionGuidanceMission.m",
+        "size_bytes": 707
+      },
+      {
+        "path": "VTOLApp/steps/setupTransitionSensitivityMission.m",
+        "size_bytes": 1443
+      },
+      {
+        "path": "VTOLApp/utilities/ControlTuning/exampleHelperAutomatedFixedWingTuning.m",
+        "size_bytes": 1054
+      },
+      {
+        "path": "VTOLApp/utilities/ControlTuning/exampleHelperAutomatedHoverControlTuning.m",
+        "size_bytes": 8474
+      },
+      {
+        "path": "VTOLApp/utilities/ControlTuning/exampleHelperAutomatedHoverControlTuningWind.m",
+        "size_bytes": 8474
+      },
+      {
+        "path": "VTOLApp/utilities/ControlTuning/exampleHelperSetupFixedWingControlTuning_AltitudeAirspeed.m",
+        "size_bytes": 1420
+      },
+      {
+        "path": "VTOLApp/utilities/ControlTuning/exampleHelperSetupFixedWingControlTuning_Attitude.m",
+        "size_bytes": 1621
+      },
+      {
+        "path": "VTOLApp/utilities/ControlTuning/exampleHelperUpdateAltitudeControllerGains.m",
+        "size_bytes": 208
+      },
+      {
+        "path": "VTOLApp/utilities/ControlTuning/exampleHelperUpdateAttitudeControllerGains.m",
+        "size_bytes": 868
+      },
+      {
+        "path": "VTOLApp/utilities/ControlTuning/exampleHelperUpdateForwardControllerGains.m",
+        "size_bytes": 268
+      },
+      {
+        "path": "VTOLApp/utilities/ControlTuning/exampleHelperUpdateLateralControllerGains.m",
+        "size_bytes": 268
+      },
+      {
+        "path": "VTOLApp/utilities/ControlTuning/exampleHelperViewTuningGoal.m",
+        "size_bytes": 147
+      },
+      {
+        "path": "VTOLApp/utilities/ControlTuning/exampleHelperWinddownStudy.m",
+        "size_bytes": 1614
+      },
+      {
+        "path": "VTOLApp/utilities/ControlTuning/exampleHelperWriteBlockValue_AltitudeAirspeed.m",
+        "size_bytes": 768
+      },
+      {
+        "path": "VTOLApp/utilities/ControlTuning/exampleHelperWriteBlockValue_Attitude.m",
+        "size_bytes": 911
+      },
+      {
+        "path": "VTOLApp/utilities/Mission/alternativeConfigurationTransitionMissionData.m",
+        "size_bytes": 1280
+      },
+      {
+        "path": "VTOLApp/utilities/Mission/exampleHelperEVTOLTransitionMissionData.m",
+        "size_bytes": 1213
+      },
+      {
+        "path": "VTOLApp/utilities/Mission/exampleHelperFixedWingRangeComputation.m",
+        "size_bytes": 783
+      },
+      {
+        "path": "VTOLApp/utilities/Mission/exampleHelperHoverModeRangeComputation.m",
+        "size_bytes": 733
+      },
+      {
+        "path": "VTOLApp/utilities/Mission/exampleHelperTransitionMissionData.m",
+        "size_bytes": 1256
+      },
+      {
+        "path": "VTOLApp/utilities/Mission/exampleHelperUrbanMissionRangeComputation.m",
+        "size_bytes": 740
+      },
+      {
+        "path": "VTOLApp/utilities/Setup/cleanupVTOL.m",
+        "size_bytes": 826
+      },
+      {
+        "path": "VTOLApp/utilities/Setup/exampleHelperComputeTrim.m",
+        "size_bytes": 655
+      },
+      {
+        "path": "VTOLApp/utilities/Setup/exampleHelperDefineCtrlInterface.m",
+        "size_bytes": 4410
+      },
+      {
+        "path": "VTOLApp/utilities/Setup/exampleHelperDefineDigitalTwinInterface.m",
+        "size_bytes": 1072
+      },
+      {
+        "path": "VTOLApp/utilities/Setup/exampleHelperDefineEVTOLDigitalTwinInterface.m",
+        "size_bytes": 1295
+      },
+      {
+        "path": "VTOLApp/utilities/Setup/exampleHelperGetInitialConfiguration.m",
+        "size_bytes": 326
+      },
+      {
+        "path": "VTOLApp/utilities/Setup/exampleHelperInitializeVTOLGains.m",
+        "size_bytes": 2001
+      },
+      {
+        "path": "VTOLApp/utilities/Setup/exampleHelperInitializeVTOLGainsWind.m",
+        "size_bytes": 3105
+      },
+      {
+        "path": "VTOLApp/utilities/Setup/exampleHelperSetVTOLDynamics.m",
+        "size_bytes": 1850
+      },
+      {
+        "path": "VTOLApp/utilities/Visualization/exampleHelperPlotFixedWingControlTrackingResults.m",
+        "size_bytes": 1719
+      },
+      {
+        "path": "VTOLApp/utilities/Visualization/exampleHelperPlotHoverControlTrackingComparison.m",
+        "size_bytes": 2618
+      },
+      {
+        "path": "VTOLApp/utilities/Visualization/exampleHelperPlotHoverControlTrackingResults.m",
+        "size_bytes": 1937
+      },
+      {
+        "path": "VTOLApp/utilities/Visualization/exampleHelperPlotTransitionResults.m",
+        "size_bytes": 972
+      },
+      {
+        "path": "VTOLApp/utilities/Visualization/exampleHelperTiltRotorAnimator.m",
+        "size_bytes": 4828
+      },
+      {
+        "path": "VTOLApp/utilities/Visualization/simAttackAnglePlotter.m",
+        "size_bytes": 330
+      },
+      {
+        "path": "VTOLApp/VTOLRefApp.prj",
+        "size_bytes": 107
+      }
+    ]
+  },
+  "transform": "transform.m",
+  "validation": {
+    "required": true,
+    "checks": [
+      "load",
+      "update",
+      "compile",
+      "simulate",
+      "all_official_scenarios",
+      "reference_score"
+    ],
+    "on_mismatch": "fail_closed"
+  },
+  "entrypoint": "VTOLApp/models/VTOLTiltrotor.slx",
+  "expected_valid_scenarios": 6,
+  "score_tolerance": 1e-12,
+  "expected_score": 94.20163397219527,
+  "expected_score_basis": "reference_replay",
+  "scenario_contract": {
+    "expected_ids": [
+      "hover_nominal",
+      "hover_payload_boundary",
+      "transition_wind",
+      "forward_transition",
+      "transition_payload_wind",
+      "fixed_wing_turn"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision"
+}

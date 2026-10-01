@@ -1,0 +1,643 @@
+{
+  "id": "D023",
+  "schema_version": "1.0",
+  "scoring": "layered-continuous",
+  "domain": "facts",
+  "title": "D023: Three-phase shunt active power filter (APF) -> bipolar AC + DC-link",
+  "routing": "behavior+structure+scenarios",
+  "prompt": "Build a three-phase shunt active power filter for a 50 Hz source feeding a nonlinear load. The source and nonlinear load must connect at a common PCC, and a controllable three-phase converter with a split DC link must connect in shunt at that PCC. Read R_nl from a base-workspace variable; its nominal value is 4 ohm and its operating envelope is +/-10%. At nominal conditions and throughout this envelope, the physical source current must be substantially less distorted than the nonlinear-load current, the measured currents must satisfy current balance at the PCC, the total DC-link voltage must remain about 1.16 kV, and the two DC-link halves must remain balanced. The current compensation and split DC-link regulation must establish promptly after startup. Log Timeseries Vac, Vdc, Iload, Isource and Icomp. Vdc must contain exactly the two positive rail-to-neutral half-link voltages, while Vac and all current outputs must contain exactly the three physical phases. Define positive current from grid to PCC for Isource, from PCC to load for Iload, and from the filter converter to PCC for Icomp, so Isource + Icomp - Iload must remain approximately zero.",
+  "sim": {
+    "solver": [],
+    "stop": 0.5,
+    "max_step": []
+  },
+  "input_contract": {
+    "R_nl": {
+      "default": 4,
+      "required": true,
+      "required_block_any": [
+        "load|rlc|resist"
+      ],
+      "required_parameter_any": [
+        "resistance|value"
+      ],
+      "min_bindings": 1
+    }
+  },
+  "outputs": [
+    {
+      "name": "Vac",
+      "role": "core",
+      "datatype": "timeseries",
+      "min_channels": 3,
+      "max_channels": 3,
+      "time_coverage": 0.95,
+      "min_samples": 16,
+      "provenance": {
+        "required_any_upstream": [
+          "voltage measurement",
+          "three-phase vi measurement"
+        ],
+        "forbidden_upstream": [
+          "constant",
+          "sine wave",
+          "signal builder"
+        ],
+        "max_trace_depth": 24
+      }
+    },
+    {
+      "name": "Vdc",
+      "role": "core",
+      "datatype": "timeseries",
+      "min_channels": 2,
+      "max_channels": 2,
+      "time_coverage": 0.95,
+      "min_samples": 16,
+      "provenance": {
+        "required_any_upstream": [
+          "voltage measurement",
+          "three-phase vi measurement"
+        ],
+        "forbidden_upstream": [
+          "constant",
+          "sine wave",
+          "signal builder"
+        ],
+        "max_trace_depth": 24
+      }
+    },
+    {
+      "name": "Iload",
+      "role": "core",
+      "datatype": "timeseries",
+      "min_channels": 3,
+      "max_channels": 3,
+      "time_coverage": 0.95,
+      "min_samples": 16,
+      "provenance": {
+        "required_any_upstream": [
+          "current measurement",
+          "three-phase vi measurement"
+        ],
+        "forbidden_upstream": [
+          "constant",
+          "sine wave",
+          "signal builder"
+        ],
+        "max_trace_depth": 24
+      }
+    },
+    {
+      "name": "Isource",
+      "role": "core",
+      "datatype": "timeseries",
+      "min_channels": 3,
+      "max_channels": 3,
+      "time_coverage": 0.95,
+      "min_samples": 16,
+      "provenance": {
+        "required_any_upstream": [
+          "current measurement",
+          "three-phase vi measurement"
+        ],
+        "forbidden_upstream": [
+          "constant",
+          "sine wave",
+          "signal builder"
+        ],
+        "max_trace_depth": 24
+      }
+    },
+    {
+      "name": "Icomp",
+      "role": "core",
+      "datatype": "timeseries",
+      "min_channels": 3,
+      "max_channels": 3,
+      "time_coverage": 0.95,
+      "min_samples": 16,
+      "provenance": {
+        "required_any_upstream": [
+          "current measurement",
+          "three-phase vi measurement"
+        ],
+        "forbidden_upstream": [
+          "constant",
+          "sine wave",
+          "signal builder"
+        ],
+        "max_trace_depth": 24
+      }
+    }
+  ],
+  "behavioral": [
+    {
+      "id": "thd_improvement",
+      "metric": "thd_ratio",
+      "scenario": "nominal",
+      "group": "nominal",
+      "criticality": "must",
+      "basis": "analytical",
+      "sided": "lower",
+      "target": 0.15,
+      "tol_pass": 0.2,
+      "tol_zero": 0.7,
+      "curve_p": 1,
+      "weight": 1,
+      "fundamental_hz": 50,
+      "require_steady": true,
+      "steady_stat": "rms",
+      "steady_fraction": 0.2,
+      "steady_cycle_hz": 50,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1,
+      "steady_all_channels": true,
+      "signals": [
+        "Isource",
+        "Iload"
+      ]
+    },
+    {
+      "id": "pcc_kcl",
+      "metric": "sum_residual_frac",
+      "scenario": "nominal",
+      "group": "nominal",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "lower",
+      "target": 0.05,
+      "tol_pass": 0.1,
+      "tol_zero": 0.4,
+      "curve_p": 1,
+      "weight": 1,
+      "signs": [
+        1,
+        -1,
+        1
+      ],
+      "signals": [
+        "Isource",
+        "Iload",
+        "Icomp"
+      ]
+    },
+    {
+      "id": "vdc_sum",
+      "signal": "Vdc",
+      "metric": "channel_sum_ss",
+      "scenario": "nominal",
+      "group": "nominal",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 1160,
+      "tol_pass": 140,
+      "tol_zero": 500,
+      "curve_p": 1,
+      "weight": 0.8,
+      "require_steady": true,
+      "steady_stat": "mean",
+      "steady_fraction": 0.2,
+      "steady_cycle_hz": 50,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1,
+      "steady_all_channels": true
+    },
+    {
+      "id": "vdc_balance",
+      "signal": "Vdc",
+      "metric": "dc_channel_imbalance",
+      "scenario": "nominal",
+      "group": "nominal",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "lower",
+      "target": 0.02,
+      "tol_pass": 0.05,
+      "tol_zero": 0.2,
+      "curve_p": 1,
+      "weight": 0.8
+    },
+    {
+      "id": "source_thd",
+      "signal": "Isource",
+      "metric": "thd",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "quality",
+      "basis": "expert",
+      "sided": "lower",
+      "target": 0.03,
+      "tol_pass": 0.05,
+      "tol_zero": 0.3,
+      "curve_p": 1,
+      "weight": 1,
+      "fundamental_hz": 50
+    },
+    {
+      "id": "source_balance",
+      "signal": "Isource",
+      "metric": "imbalance",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "quality",
+      "basis": "analytical",
+      "sided": "lower",
+      "target": 0.02,
+      "tol_pass": 0.05,
+      "tol_zero": 0.25,
+      "curve_p": 1,
+      "weight": 0.8
+    },
+    {
+      "id": "vac_balance",
+      "signal": "Vac",
+      "metric": "imbalance",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "quality",
+      "basis": "analytical",
+      "sided": "lower",
+      "target": 0.01,
+      "tol_pass": 0.04,
+      "tol_zero": 0.2,
+      "curve_p": 1,
+      "weight": 0.5
+    },
+    {
+      "id": "iload_rms_witness",
+      "signal": "Iload",
+      "metric": "rms",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "thd_ratio_light_load",
+      "metric": "thd_ratio",
+      "scenario": "light_load",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "analytical",
+      "sided": "lower",
+      "target": 0.2,
+      "tol_pass": 0.25,
+      "tol_zero": 0.8,
+      "curve_p": 1,
+      "weight": 1,
+      "fundamental_hz": 50,
+      "require_steady": true,
+      "steady_stat": "rms",
+      "steady_fraction": 0.2,
+      "steady_cycle_hz": 50,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1,
+      "steady_all_channels": true,
+      "signals": [
+        "Isource",
+        "Iload"
+      ]
+    },
+    {
+      "id": "kcl_light_load",
+      "metric": "sum_residual_frac",
+      "scenario": "light_load",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "analytical",
+      "sided": "lower",
+      "target": 0.06,
+      "tol_pass": 0.12,
+      "tol_zero": 0.45,
+      "curve_p": 1,
+      "weight": 1,
+      "signs": [
+        1,
+        -1,
+        1
+      ],
+      "signals": [
+        "Isource",
+        "Iload",
+        "Icomp"
+      ]
+    },
+    {
+      "id": "vdc_sum_light_load",
+      "signal": "Vdc",
+      "metric": "channel_sum_ss",
+      "scenario": "light_load",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 1160,
+      "tol_pass": 180,
+      "tol_zero": 550,
+      "curve_p": 1,
+      "weight": 0.7,
+      "require_steady": true,
+      "steady_stat": "mean",
+      "steady_fraction": 0.2,
+      "steady_cycle_hz": 50,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1,
+      "steady_all_channels": true
+    },
+    {
+      "id": "vdc_balance_light_load",
+      "signal": "Vdc",
+      "metric": "dc_channel_imbalance",
+      "scenario": "light_load",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "lower",
+      "target": 0.03,
+      "tol_pass": 0.08,
+      "tol_zero": 0.25,
+      "curve_p": 1,
+      "weight": 0.7
+    },
+    {
+      "id": "iload_rms_witness_light_load",
+      "signal": "Iload",
+      "metric": "rms",
+      "scenario": "light_load",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "thd_ratio_heavy_load",
+      "metric": "thd_ratio",
+      "scenario": "heavy_load",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "analytical",
+      "sided": "lower",
+      "target": 0.2,
+      "tol_pass": 0.25,
+      "tol_zero": 0.8,
+      "curve_p": 1,
+      "weight": 1,
+      "fundamental_hz": 50,
+      "require_steady": true,
+      "steady_stat": "rms",
+      "steady_fraction": 0.2,
+      "steady_cycle_hz": 50,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1,
+      "steady_all_channels": true,
+      "signals": [
+        "Isource",
+        "Iload"
+      ]
+    },
+    {
+      "id": "kcl_heavy_load",
+      "metric": "sum_residual_frac",
+      "scenario": "heavy_load",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "analytical",
+      "sided": "lower",
+      "target": 0.06,
+      "tol_pass": 0.12,
+      "tol_zero": 0.45,
+      "curve_p": 1,
+      "weight": 1,
+      "signs": [
+        1,
+        -1,
+        1
+      ],
+      "signals": [
+        "Isource",
+        "Iload",
+        "Icomp"
+      ]
+    },
+    {
+      "id": "vdc_sum_heavy_load",
+      "signal": "Vdc",
+      "metric": "channel_sum_ss",
+      "scenario": "heavy_load",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 1160,
+      "tol_pass": 180,
+      "tol_zero": 550,
+      "curve_p": 1,
+      "weight": 0.7,
+      "require_steady": true,
+      "steady_stat": "mean",
+      "steady_fraction": 0.2,
+      "steady_cycle_hz": 50,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1,
+      "steady_all_channels": true
+    },
+    {
+      "id": "vdc_balance_heavy_load",
+      "signal": "Vdc",
+      "metric": "dc_channel_imbalance",
+      "scenario": "heavy_load",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "lower",
+      "target": 0.03,
+      "tol_pass": 0.08,
+      "tol_zero": 0.25,
+      "curve_p": 1,
+      "weight": 0.7
+    },
+    {
+      "id": "iload_rms_witness_heavy_load",
+      "signal": "Iload",
+      "metric": "rms",
+      "scenario": "heavy_load",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    }
+  ],
+  "structural": {
+    "recognizers": [
+      {
+        "id": "controllable_bridge",
+        "prim": "has_power_device",
+        "args": [
+          "igbt",
+          "mosfet",
+          "gto",
+          "ideal switch"
+        ],
+        "mandatory": true,
+        "weight": 1
+      },
+      {
+        "id": "three_phase_stage",
+        "prim": "three_phase_bridge",
+        "args": [],
+        "mandatory": true,
+        "weight": 1
+      },
+      {
+        "id": "source_vsc_dc_link_path",
+        "prim": "physical_path",
+        "args": [],
+        "source": [
+          "\\|3-ph source\\|subsystem\\|three-phase source",
+          "\\|three-phase source[^|]*\\|",
+          "\\|grid source[^|]*\\|"
+        ],
+        "via": [
+          "\\|universal bridge[^|]*\\|subsystem\\|universal bridge",
+          "\\|vsc[^|]*\\|",
+          "\\|converter[^|]*\\|",
+          "\\|inverter[^|]*\\|",
+          "\\|igbt[^|]*\\|",
+          "\\|mosfet[^|]*\\|",
+          "\\|gto[^|]*\\|",
+          "\\|ideal switch[^|]*\\|"
+        ],
+        "target": [
+          "\\|dc cap[^|]*\\|",
+          "\\|dc-link capacitor[^|]*\\|",
+          "\\|dc link capacitor[^|]*\\|",
+          "\\|capacitor[^|]*\\|pmcomponent"
+        ],
+        "mandatory": true,
+        "weight": 1,
+        "require_via_cut": true
+      }
+    ]
+  },
+  "golden_tap": {
+    "Vac": {
+      "by": "block_input",
+      "path": "APFv2_alpha/Scope2",
+      "port": 1
+    },
+    "Isource": {
+      "by": "block_input",
+      "path": "APFv2_alpha/Scope3",
+      "port": 3
+    },
+    "Icomp": {
+      "by": "block_input",
+      "path": "APFv2_alpha/Scope2",
+      "port": 2
+    },
+    "Vdc": {
+      "by": "block_input",
+      "path": "APFv2_alpha/Scope3",
+      "port": 1
+    },
+    "Iload": {
+      "by": "block_input",
+      "path": "APFv2_alpha/Scope3",
+      "port": 2
+    }
+  },
+  "scenarios": [
+    {
+      "id": "light_load",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "R_nl": 4.4
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^Non Linear Load/Load\\s*10 Ohms1$",
+          "parameter": "Resistance",
+          "value": 4.4
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "lighter_load_reduces_current",
+          "nominal_band": "iload_rms_witness",
+          "scenario_band": "iload_rms_witness_light_load",
+          "relation": "decrease_frac_min",
+          "threshold": 0.03
+        }
+      ],
+      "public_envelope": "R_nl +/-10%"
+    },
+    {
+      "id": "heavy_load",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "R_nl": 3.6
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^Non Linear Load/Load\\s*10 Ohms1$",
+          "parameter": "Resistance",
+          "value": 3.6
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "heavier_load_increases_current",
+          "nominal_band": "iload_rms_witness",
+          "scenario_band": "iload_rms_witness_heavy_load",
+          "relation": "increase_frac_min",
+          "threshold": 0.03
+        }
+      ],
+      "public_envelope": "R_nl +/-10%"
+    }
+  ],
+  "release": {
+    "status": "candidate-qualified",
+    "quarantined": false,
+    "release_ready": false,
+    "notes": "The hidden per-half 578 V target was replaced by a public two-half sum/balance contract; current directions, PCC KCL and a verified source-to-VSC-to-DC-link physical path are explicit.",
+    "blockers": [
+      "Task-specific adversarial regression and an independent legal implementation or expert review remain required."
+    ]
+  },
+  "task_specific_checks": [
+    {
+      "id": "D023.active_vsc_compensation_ownership",
+      "semantic_kind": "structure",
+      "scenario": "nominal",
+      "layer": "qualification",
+      "mandatory": true
+    }
+  ]
+}

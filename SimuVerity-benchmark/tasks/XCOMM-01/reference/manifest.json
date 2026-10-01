@@ -1,0 +1,39 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XCOMM-01",
+  "file_count": 1,
+  "files": [
+    {
+      "path": "reference/files/XCOMM01_reference.slx",
+      "size_bytes": 128643
+    }
+  ],
+  "entrypoint": "reference/files/XCOMM01_reference.slx",
+  "expected_score": 97.00117395306378,
+  "expected_score_basis": "reference_replay",
+  "expected_valid_scenarios": 14,
+  "score_tolerance": 5e-07,
+  "scenario_contract": {
+    "expected_ids": [
+      "low_snr_strong_clutter",
+      "close_strong_near_weak_far",
+      "joint_interior",
+      "high_doppler_long_range",
+      "snr_probe_low",
+      "snr_probe_high",
+      "clutter_probe_low",
+      "clutter_probe_high",
+      "interference_probe_low",
+      "interference_probe_high",
+      "rcs_target1_low",
+      "rcs_target1_high",
+      "rcs_target2_low",
+      "rcs_target2_high"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 128643,
+  "excluded_files": []
+}

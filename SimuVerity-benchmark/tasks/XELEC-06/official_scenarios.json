@@ -1,0 +1,1602 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XELEC-06",
+  "scenarios": [
+    {
+      "id": "source_up",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "Vsrc_LL": 440
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^Three-Phase Source$",
+          "parameter": "Voltage",
+          "scale": 1.1
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "source_voltage_increases",
+          "nominal_band": "vac_rms_witness",
+          "scenario_band": "vac_rms_source_up",
+          "relation": "increase_frac_min",
+          "threshold": 0.05
+        }
+      ],
+      "public_envelope": "Vsrc_LL +/-10%"
+    },
+    {
+      "id": "source_down",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "Vsrc_LL": 360
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^Three-Phase Source$",
+          "parameter": "Voltage",
+          "scale": 0.9
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "source_voltage_decreases",
+          "nominal_band": "vac_rms_witness",
+          "scenario_band": "vac_rms_source_down",
+          "relation": "decrease_frac_min",
+          "threshold": 0.05
+        }
+      ],
+      "public_envelope": "Vsrc_LL +/-10%"
+    },
+    {
+      "id": "load_up",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "P_load": 11000
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^Three-Phase\\s*Parallel RLC Load$",
+          "parameter": "ActivePower",
+          "scale": 1.1
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "load_current_changes",
+          "nominal_band": "igrid_rms_witness",
+          "scenario_band": "igrid_rms_load_up",
+          "relation": "relative_change_min",
+          "threshold": 0.02
+        }
+      ],
+      "public_envelope": "P_load +/-10%"
+    },
+    {
+      "id": "load_down",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "P_load": 9000
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^Three-Phase\\s*Parallel RLC Load$",
+          "parameter": "ActivePower",
+          "scale": 0.9
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "lighter_load_changes_current",
+          "nominal_band": "igrid_rms_witness",
+          "scenario_band": "igrid_rms_load_down",
+          "relation": "relative_change_min",
+          "threshold": 0.02
+        }
+      ],
+      "public_envelope": "P_load +/-10%"
+    },
+    {
+      "id": "joint_low_source_high_load",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "Vsrc_LL": 360,
+        "P_load": 11000
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^Three-Phase Source$",
+          "parameter": "Voltage",
+          "scale": 0.9
+        },
+        {
+          "path_regex": "^Three-Phase\\s*Parallel RLC Load$",
+          "parameter": "ActivePower",
+          "scale": 1.1
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "joint_low_source_reduces_pcc_voltage",
+          "nominal_band": "vac_rms_witness",
+          "scenario_band": "vac_rms_joint_low_source_high_load",
+          "relation": "decrease_frac_min",
+          "threshold": 0.05
+        }
+      ],
+      "public_envelope": "joint corner inside both prompt-declared operating envelopes"
+    },
+    {
+      "id": "joint_high_source_low_load",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "Vsrc_LL": 440,
+        "P_load": 9000
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^Three-Phase Source$",
+          "parameter": "Voltage",
+          "scale": 1.1
+        },
+        {
+          "path_regex": "^Three-Phase\\s*Parallel RLC Load$",
+          "parameter": "ActivePower",
+          "scale": 0.9
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "joint_high_source_raises_pcc_voltage",
+          "nominal_band": "vac_rms_witness",
+          "scenario_band": "vac_rms_joint_high_source_low_load",
+          "relation": "increase_frac_min",
+          "threshold": 0.05
+        }
+      ],
+      "public_envelope": "joint corner inside both prompt-declared operating envelopes"
+    }
+  ],
+  "contract": {
+    "schema_version": "1.0",
+    "scoring": "layered-continuous",
+    "domain": "facts",
+    "title": "D006: Three-phase STATCOM -> regulated DC-link + bipolar AC",
+    "routing": "behavior+structure+scenarios",
+    "prompt": "Build a three-phase shunt STATCOM for a 400 V line-to-line, 50 Hz system. A three-phase grid and load must share a common PCC, and a controllable three-phase voltage-source converter with DC-link energy storage must connect in shunt at that PCC through one coupling reactor per phase. Read Vsrc_LL and P_load from base-workspace variables; their nominal values are 400 V and 10000 W, and each operates over a +/-10% envelope. The converter must keep its measured DC-link voltage near 700 V as the grid voltage and load vary, while exchanging predominantly reactive compensation current with the PCC. The DC-link regulation and reactive compensation must establish promptly after startup. Log Timeseries Vdc, Vac, Igrid and Icomp. Vdc must be the physical DC-link voltage; Vac must be one physical PCC phase voltage; Igrid and Icomp must be the corresponding physical grid and converter-branch currents.",
+    "sim": {
+      "solver": [],
+      "stop": 0.2,
+      "max_step": []
+    },
+    "input_contract": {
+      "Vsrc_LL": {
+        "default": 400,
+        "required": true,
+        "required_block_any": [
+          "source|voltage"
+        ],
+        "required_parameter_any": [
+          "voltage|amplitude|vrms"
+        ],
+        "min_bindings": 1
+      },
+      "P_load": {
+        "default": 10000,
+        "required": true,
+        "required_block_any": [
+          "load|rlc|resist"
+        ],
+        "required_parameter_any": [
+          "activepower|resistance|value"
+        ],
+        "min_bindings": 1
+      }
+    },
+    "outputs": [
+      {
+        "name": "Vdc",
+        "role": "core",
+        "datatype": "timeseries",
+        "min_channels": 1,
+        "max_channels": 1,
+        "time_coverage": 0.95,
+        "min_samples": 16,
+        "provenance": {
+          "required_any_upstream": [
+            "voltage measurement",
+            "three-phase vi measurement"
+          ],
+          "forbidden_upstream": [
+            "constant",
+            "sine wave",
+            "signal builder"
+          ],
+          "max_trace_depth": 24
+        }
+      },
+      {
+        "name": "Vac",
+        "role": "core",
+        "datatype": "timeseries",
+        "min_channels": 1,
+        "max_channels": 1,
+        "time_coverage": 0.95,
+        "min_samples": 16,
+        "provenance": {
+          "required_any_upstream": [
+            "voltage measurement",
+            "three-phase vi measurement"
+          ],
+          "forbidden_upstream": [
+            "constant",
+            "sine wave",
+            "signal builder"
+          ],
+          "max_trace_depth": 24
+        }
+      },
+      {
+        "name": "Igrid",
+        "role": "core",
+        "datatype": "timeseries",
+        "min_channels": 1,
+        "max_channels": 1,
+        "time_coverage": 0.95,
+        "min_samples": 16,
+        "provenance": {
+          "required_any_upstream": [
+            "current measurement",
+            "three-phase vi measurement"
+          ],
+          "forbidden_upstream": [
+            "constant",
+            "sine wave",
+            "signal builder"
+          ],
+          "max_trace_depth": 24
+        }
+      },
+      {
+        "name": "Icomp",
+        "role": "core",
+        "datatype": "timeseries",
+        "min_channels": 1,
+        "max_channels": 1,
+        "time_coverage": 0.95,
+        "min_samples": 16,
+        "provenance": {
+          "required_any_upstream": [
+            "current measurement",
+            "three-phase vi measurement"
+          ],
+          "forbidden_upstream": [
+            "constant",
+            "sine wave",
+            "signal builder"
+          ],
+          "max_trace_depth": 24
+        }
+      }
+    ],
+    "behavioral": [
+      {
+        "id": "vdc_nom",
+        "signal": "Vdc",
+        "metric": "ss",
+        "scenario": "nominal",
+        "group": "nominal",
+        "criticality": "must",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 700,
+        "tol_pass": 35,
+        "tol_zero": 140,
+        "curve_p": 1,
+        "weight": 1,
+        "require_steady": true,
+        "steady_stat": "mean",
+        "steady_fraction": 0.2,
+        "steady_bins": 5,
+        "steady_rel_range_max": 0.1,
+        "steady_rel_drift_max": 0.1
+      },
+      {
+        "id": "vac_freq",
+        "signal": "Vac",
+        "metric": "fund_freq",
+        "scenario": "nominal",
+        "group": "nominal",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "two",
+        "target": 50,
+        "tol_pass": 1,
+        "tol_zero": 5,
+        "curve_p": 1,
+        "weight": 0.7,
+        "fundamental_hz": 50
+      },
+      {
+        "id": "icomp_freq",
+        "signal": "Icomp",
+        "metric": "fund_freq",
+        "scenario": "nominal",
+        "group": "nominal",
+        "criticality": "must",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 50,
+        "tol_pass": 1,
+        "tol_zero": 5,
+        "curve_p": 1,
+        "weight": 0.7,
+        "fundamental_hz": 50
+      },
+      {
+        "id": "icomp_phase",
+        "metric": "abs_phase_angle_deg",
+        "scenario": "nominal",
+        "group": "nominal",
+        "criticality": "must",
+        "basis": "expert",
+        "sided": "two",
+        "target": 90,
+        "tol_pass": 20,
+        "tol_zero": 70,
+        "curve_p": 1,
+        "weight": 1,
+        "fundamental_hz": 50,
+        "signals": [
+          "Vac",
+          "Icomp"
+        ],
+        "require_steady": true,
+        "steady_stat": "rms",
+        "steady_fraction": 0.5,
+        "steady_cycle_hz": 50,
+        "steady_cycles": 5,
+        "steady_rel_range_max": 0.1,
+        "steady_rel_drift_max": 0.1
+      },
+      {
+        "id": "vdc_ripple",
+        "signal": "Vdc",
+        "metric": "ripple_pp_frac",
+        "scenario": "nominal",
+        "group": "quality",
+        "criticality": "quality",
+        "basis": "reference",
+        "sided": "lower",
+        "target": 0.001,
+        "tol_pass": 0.01,
+        "tol_zero": 0.08,
+        "curve_p": 1,
+        "weight": 1
+      },
+      {
+        "id": "icomp_thd",
+        "signal": "Icomp",
+        "metric": "thd",
+        "scenario": "nominal",
+        "group": "quality",
+        "criticality": "quality",
+        "basis": "expert",
+        "sided": "lower",
+        "target": 0.03,
+        "tol_pass": 0.05,
+        "tol_zero": 0.25,
+        "curve_p": 1,
+        "weight": 1,
+        "fundamental_hz": 50
+      },
+      {
+        "id": "vac_rms_witness",
+        "signal": "Vac",
+        "metric": "rms",
+        "scenario": "nominal",
+        "group": "quality",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "igrid_rms_witness",
+        "signal": "Igrid",
+        "metric": "rms",
+        "scenario": "nominal",
+        "group": "quality",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "vdc_source_up",
+        "signal": "Vdc",
+        "metric": "ss",
+        "scenario": "source_up",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "two",
+        "target": 700,
+        "tol_pass": 52.5,
+        "tol_zero": 175,
+        "curve_p": 1,
+        "weight": 1,
+        "require_steady": true,
+        "steady_stat": "mean",
+        "steady_fraction": 0.2,
+        "steady_bins": 5,
+        "steady_rel_range_max": 0.1,
+        "steady_rel_drift_max": 0.1
+      },
+      {
+        "id": "phase_source_up",
+        "metric": "abs_phase_angle_deg",
+        "scenario": "source_up",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "expert",
+        "sided": "two",
+        "target": 90,
+        "tol_pass": 25,
+        "tol_zero": 80,
+        "curve_p": 1,
+        "weight": 0.8,
+        "fundamental_hz": 50,
+        "signals": [
+          "Vac",
+          "Icomp"
+        ],
+        "require_steady": true,
+        "steady_stat": "rms",
+        "steady_fraction": 0.5,
+        "steady_cycle_hz": 50,
+        "steady_cycles": 5,
+        "steady_rel_range_max": 0.1,
+        "steady_rel_drift_max": 0.1
+      },
+      {
+        "id": "vdc_source_down",
+        "signal": "Vdc",
+        "metric": "ss",
+        "scenario": "source_down",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "two",
+        "target": 700,
+        "tol_pass": 52.5,
+        "tol_zero": 175,
+        "curve_p": 1,
+        "weight": 1,
+        "require_steady": true,
+        "steady_stat": "mean",
+        "steady_fraction": 0.2,
+        "steady_bins": 5,
+        "steady_rel_range_max": 0.1,
+        "steady_rel_drift_max": 0.1
+      },
+      {
+        "id": "phase_source_down",
+        "metric": "abs_phase_angle_deg",
+        "scenario": "source_down",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "expert",
+        "sided": "two",
+        "target": 90,
+        "tol_pass": 25,
+        "tol_zero": 80,
+        "curve_p": 1,
+        "weight": 0.8,
+        "fundamental_hz": 50,
+        "signals": [
+          "Vac",
+          "Icomp"
+        ],
+        "require_steady": true,
+        "steady_stat": "rms",
+        "steady_fraction": 0.5,
+        "steady_cycle_hz": 50,
+        "steady_cycles": 5,
+        "steady_rel_range_max": 0.1,
+        "steady_rel_drift_max": 0.1
+      },
+      {
+        "id": "vdc_load_up",
+        "signal": "Vdc",
+        "metric": "ss",
+        "scenario": "load_up",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "two",
+        "target": 700,
+        "tol_pass": 52.5,
+        "tol_zero": 175,
+        "curve_p": 1,
+        "weight": 1,
+        "require_steady": true,
+        "steady_stat": "mean",
+        "steady_fraction": 0.2,
+        "steady_bins": 5,
+        "steady_rel_range_max": 0.1,
+        "steady_rel_drift_max": 0.1
+      },
+      {
+        "id": "phase_load_up",
+        "metric": "abs_phase_angle_deg",
+        "scenario": "load_up",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "expert",
+        "sided": "two",
+        "target": 90,
+        "tol_pass": 25,
+        "tol_zero": 80,
+        "curve_p": 1,
+        "weight": 0.8,
+        "fundamental_hz": 50,
+        "signals": [
+          "Vac",
+          "Icomp"
+        ],
+        "require_steady": true,
+        "steady_stat": "rms",
+        "steady_fraction": 0.5,
+        "steady_cycle_hz": 50,
+        "steady_cycles": 5,
+        "steady_rel_range_max": 0.1,
+        "steady_rel_drift_max": 0.1
+      },
+      {
+        "id": "vac_rms_source_up",
+        "signal": "Vac",
+        "metric": "rms",
+        "scenario": "source_up",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "vac_rms_source_down",
+        "signal": "Vac",
+        "metric": "rms",
+        "scenario": "source_down",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "igrid_rms_load_up",
+        "signal": "Igrid",
+        "metric": "rms",
+        "scenario": "load_up",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "vdc_load_down",
+        "signal": "Vdc",
+        "metric": "ss",
+        "scenario": "load_down",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "two",
+        "target": 700,
+        "tol_pass": 60,
+        "tol_zero": 220,
+        "curve_p": 1,
+        "weight": 1,
+        "require_steady": true,
+        "steady_stat": "mean",
+        "steady_fraction": 0.2,
+        "steady_bins": 5,
+        "steady_rel_range_max": 0.1,
+        "steady_rel_drift_max": 0.1
+      },
+      {
+        "id": "phase_load_down",
+        "metric": "abs_phase_angle_deg",
+        "scenario": "load_down",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "expert",
+        "sided": "two",
+        "target": 90,
+        "tol_pass": 25,
+        "tol_zero": 80,
+        "curve_p": 1,
+        "weight": 0.8,
+        "fundamental_hz": 50,
+        "signals": [
+          "Vac",
+          "Icomp"
+        ],
+        "require_steady": true,
+        "steady_stat": "rms",
+        "steady_fraction": 0.5,
+        "steady_cycle_hz": 50,
+        "steady_cycles": 5,
+        "steady_rel_range_max": 0.1,
+        "steady_rel_drift_max": 0.1
+      },
+      {
+        "id": "igrid_rms_load_down",
+        "signal": "Igrid",
+        "metric": "rms",
+        "scenario": "load_down",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "vdc_joint_low_source_high_load",
+        "signal": "Vdc",
+        "metric": "ss",
+        "scenario": "joint_low_source_high_load",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "two",
+        "target": 700,
+        "tol_pass": 60,
+        "tol_zero": 220,
+        "curve_p": 1,
+        "weight": 1,
+        "require_steady": true,
+        "steady_stat": "mean",
+        "steady_fraction": 0.2,
+        "steady_bins": 5,
+        "steady_rel_range_max": 0.1,
+        "steady_rel_drift_max": 0.1
+      },
+      {
+        "id": "phase_joint_low_source_high_load",
+        "metric": "abs_phase_angle_deg",
+        "scenario": "joint_low_source_high_load",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "expert",
+        "sided": "two",
+        "target": 90,
+        "tol_pass": 25,
+        "tol_zero": 80,
+        "curve_p": 1,
+        "weight": 0.8,
+        "fundamental_hz": 50,
+        "signals": [
+          "Vac",
+          "Icomp"
+        ],
+        "require_steady": true,
+        "steady_stat": "rms",
+        "steady_fraction": 0.5,
+        "steady_cycle_hz": 50,
+        "steady_cycles": 5,
+        "steady_rel_range_max": 0.1,
+        "steady_rel_drift_max": 0.1
+      },
+      {
+        "id": "vac_rms_joint_low_source_high_load",
+        "signal": "Vac",
+        "metric": "rms",
+        "scenario": "joint_low_source_high_load",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "vdc_joint_high_source_low_load",
+        "signal": "Vdc",
+        "metric": "ss",
+        "scenario": "joint_high_source_low_load",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "two",
+        "target": 700,
+        "tol_pass": 60,
+        "tol_zero": 220,
+        "curve_p": 1,
+        "weight": 1,
+        "require_steady": true,
+        "steady_stat": "mean",
+        "steady_fraction": 0.2,
+        "steady_bins": 5,
+        "steady_rel_range_max": 0.1,
+        "steady_rel_drift_max": 0.1
+      },
+      {
+        "id": "phase_joint_high_source_low_load",
+        "metric": "abs_phase_angle_deg",
+        "scenario": "joint_high_source_low_load",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "expert",
+        "sided": "two",
+        "target": 90,
+        "tol_pass": 25,
+        "tol_zero": 80,
+        "curve_p": 1,
+        "weight": 0.8,
+        "fundamental_hz": 50,
+        "signals": [
+          "Vac",
+          "Icomp"
+        ],
+        "require_steady": true,
+        "steady_stat": "rms",
+        "steady_fraction": 0.5,
+        "steady_cycle_hz": 50,
+        "steady_cycles": 5,
+        "steady_rel_range_max": 0.1,
+        "steady_rel_drift_max": 0.1
+      },
+      {
+        "id": "vac_rms_joint_high_source_low_load",
+        "signal": "Vac",
+        "metric": "rms",
+        "scenario": "joint_high_source_low_load",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      }
+    ],
+    "structural": {
+      "recognizers": [
+        {
+          "id": "switch_stage",
+          "prim": "has_power_device",
+          "args": [
+            "igbt",
+            "mosfet",
+            "gto",
+            "ideal switch"
+          ],
+          "mandatory": true,
+          "weight": 1
+        },
+        {
+          "id": "three_phase_vsc",
+          "prim": "three_phase_bridge",
+          "args": [],
+          "mandatory": true,
+          "weight": 1
+        },
+        {
+          "id": "three_phase_grid",
+          "prim": "three_phase_source",
+          "args": [],
+          "mandatory": true,
+          "weight": 1
+        },
+        {
+          "id": "vsc_coupling_to_pcc",
+          "prim": "physical_path",
+          "args": [],
+          "source": [
+            "^[^|]*\\|[^|]*\\|[^|]*\\|(universal bridge|three-level bridge|mosfet|igbt|gto|ideal switch)[^|]*\\|",
+            "^[^|]*\\|[^|]*\\|[^|]*\\|[^|]*\\|[^|]*(universal bridge|three-level bridge|mosfet|igbt|gto|ideal switch)"
+          ],
+          "via": [
+            "^[^|]*\\|[^|]*\\|[^|]*\\|(inductor|series rlc branch|three-phase series rlc branch)[^|]*\\|",
+            "^[^|]*\\|[^|]*\\|[^|]*\\|[^|]*\\|[^|]*(inductor|series rlc branch)"
+          ],
+          "target": [
+            "^[^|]*\\|[^|]*\\|[^|]*\\|(three-phase source|voltage source \\(three-phase\\)|three-phase programmable voltage source)[^|]*\\|",
+            "^[^|]*\\|[^|]*\\|[^|]*\\|[^|]*\\|[^|]*(three-phase source|voltage source \\(three-phase\\)|three-phase programmable voltage source)"
+          ],
+          "mandatory": true,
+          "weight": 1,
+          "require_via_cut": true
+        }
+      ]
+    },
+    "golden_tap": {
+      "Vdc": {
+        "by": "block_input",
+        "path": "DQstatcom3p/STATCOM DC Link voltage and current",
+        "port": 2
+      },
+      "Vac": {
+        "by": "block_input",
+        "path": "DQstatcom3p/STATCOM A phase voltage and current",
+        "port": 1
+      },
+      "Igrid": {
+        "by": "block_input",
+        "path": "DQstatcom3p/Grid A phase voltage and current",
+        "port": 2
+      },
+      "Icomp": {
+        "by": "block_input",
+        "path": "DQstatcom3p/STATCOM A phase voltage and current",
+        "port": 2
+      }
+    },
+    "task_specific_checks": [
+      {
+        "id": "D006.vdc_vsc_terminal_ownership",
+        "semantic_kind": "structure",
+        "scenario": "nominal",
+        "layer": "qualification",
+        "mandatory": true
+      }
+    ]
+  },
+  "schema_version": "1.0",
+  "scoring": "layered-continuous",
+  "domain": "facts",
+  "title": "D006: Three-phase STATCOM -> regulated DC-link + bipolar AC",
+  "routing": "behavior+structure+scenarios",
+  "prompt": "Build a three-phase shunt STATCOM for a 400 V line-to-line, 50 Hz system. A three-phase grid and load must share a common PCC, and a controllable three-phase voltage-source converter with DC-link energy storage must connect in shunt at that PCC through one coupling reactor per phase. Read Vsrc_LL and P_load from base-workspace variables; their nominal values are 400 V and 10000 W, and each operates over a +/-10% envelope. The converter must keep its measured DC-link voltage near 700 V as the grid voltage and load vary, while exchanging predominantly reactive compensation current with the PCC. The DC-link regulation and reactive compensation must establish promptly after startup. Log Timeseries Vdc, Vac, Igrid and Icomp. Vdc must be the physical DC-link voltage; Vac must be one physical PCC phase voltage; Igrid and Icomp must be the corresponding physical grid and converter-branch currents.",
+  "sim": {
+    "solver": [],
+    "stop": 0.2,
+    "max_step": []
+  },
+  "input_contract": {
+    "Vsrc_LL": {
+      "default": 400,
+      "required": true,
+      "required_block_any": [
+        "source|voltage"
+      ],
+      "required_parameter_any": [
+        "voltage|amplitude|vrms"
+      ],
+      "min_bindings": 1
+    },
+    "P_load": {
+      "default": 10000,
+      "required": true,
+      "required_block_any": [
+        "load|rlc|resist"
+      ],
+      "required_parameter_any": [
+        "activepower|resistance|value"
+      ],
+      "min_bindings": 1
+    }
+  },
+  "outputs": [
+    {
+      "name": "Vdc",
+      "role": "core",
+      "datatype": "timeseries",
+      "min_channels": 1,
+      "max_channels": 1,
+      "time_coverage": 0.95,
+      "min_samples": 16,
+      "provenance": {
+        "required_any_upstream": [
+          "voltage measurement",
+          "three-phase vi measurement"
+        ],
+        "forbidden_upstream": [
+          "constant",
+          "sine wave",
+          "signal builder"
+        ],
+        "max_trace_depth": 24
+      }
+    },
+    {
+      "name": "Vac",
+      "role": "core",
+      "datatype": "timeseries",
+      "min_channels": 1,
+      "max_channels": 1,
+      "time_coverage": 0.95,
+      "min_samples": 16,
+      "provenance": {
+        "required_any_upstream": [
+          "voltage measurement",
+          "three-phase vi measurement"
+        ],
+        "forbidden_upstream": [
+          "constant",
+          "sine wave",
+          "signal builder"
+        ],
+        "max_trace_depth": 24
+      }
+    },
+    {
+      "name": "Igrid",
+      "role": "core",
+      "datatype": "timeseries",
+      "min_channels": 1,
+      "max_channels": 1,
+      "time_coverage": 0.95,
+      "min_samples": 16,
+      "provenance": {
+        "required_any_upstream": [
+          "current measurement",
+          "three-phase vi measurement"
+        ],
+        "forbidden_upstream": [
+          "constant",
+          "sine wave",
+          "signal builder"
+        ],
+        "max_trace_depth": 24
+      }
+    },
+    {
+      "name": "Icomp",
+      "role": "core",
+      "datatype": "timeseries",
+      "min_channels": 1,
+      "max_channels": 1,
+      "time_coverage": 0.95,
+      "min_samples": 16,
+      "provenance": {
+        "required_any_upstream": [
+          "current measurement",
+          "three-phase vi measurement"
+        ],
+        "forbidden_upstream": [
+          "constant",
+          "sine wave",
+          "signal builder"
+        ],
+        "max_trace_depth": 24
+      }
+    }
+  ],
+  "behavioral": [
+    {
+      "id": "vdc_nom",
+      "signal": "Vdc",
+      "metric": "ss",
+      "scenario": "nominal",
+      "group": "nominal",
+      "criticality": "must",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 700,
+      "tol_pass": 35,
+      "tol_zero": 140,
+      "curve_p": 1,
+      "weight": 1,
+      "require_steady": true,
+      "steady_stat": "mean",
+      "steady_fraction": 0.2,
+      "steady_bins": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1
+    },
+    {
+      "id": "vac_freq",
+      "signal": "Vac",
+      "metric": "fund_freq",
+      "scenario": "nominal",
+      "group": "nominal",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 50,
+      "tol_pass": 1,
+      "tol_zero": 5,
+      "curve_p": 1,
+      "weight": 0.7,
+      "fundamental_hz": 50
+    },
+    {
+      "id": "icomp_freq",
+      "signal": "Icomp",
+      "metric": "fund_freq",
+      "scenario": "nominal",
+      "group": "nominal",
+      "criticality": "must",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 50,
+      "tol_pass": 1,
+      "tol_zero": 5,
+      "curve_p": 1,
+      "weight": 0.7,
+      "fundamental_hz": 50
+    },
+    {
+      "id": "icomp_phase",
+      "metric": "abs_phase_angle_deg",
+      "scenario": "nominal",
+      "group": "nominal",
+      "criticality": "must",
+      "basis": "expert",
+      "sided": "two",
+      "target": 90,
+      "tol_pass": 20,
+      "tol_zero": 70,
+      "curve_p": 1,
+      "weight": 1,
+      "fundamental_hz": 50,
+      "signals": [
+        "Vac",
+        "Icomp"
+      ],
+      "require_steady": true,
+      "steady_stat": "rms",
+      "steady_fraction": 0.5,
+      "steady_cycle_hz": 50,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1
+    },
+    {
+      "id": "vdc_ripple",
+      "signal": "Vdc",
+      "metric": "ripple_pp_frac",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "quality",
+      "basis": "reference",
+      "sided": "lower",
+      "target": 0.001,
+      "tol_pass": 0.01,
+      "tol_zero": 0.08,
+      "curve_p": 1,
+      "weight": 1
+    },
+    {
+      "id": "icomp_thd",
+      "signal": "Icomp",
+      "metric": "thd",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "quality",
+      "basis": "expert",
+      "sided": "lower",
+      "target": 0.03,
+      "tol_pass": 0.05,
+      "tol_zero": 0.25,
+      "curve_p": 1,
+      "weight": 1,
+      "fundamental_hz": 50
+    },
+    {
+      "id": "vac_rms_witness",
+      "signal": "Vac",
+      "metric": "rms",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "igrid_rms_witness",
+      "signal": "Igrid",
+      "metric": "rms",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "vdc_source_up",
+      "signal": "Vdc",
+      "metric": "ss",
+      "scenario": "source_up",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 700,
+      "tol_pass": 52.5,
+      "tol_zero": 175,
+      "curve_p": 1,
+      "weight": 1,
+      "require_steady": true,
+      "steady_stat": "mean",
+      "steady_fraction": 0.2,
+      "steady_bins": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1
+    },
+    {
+      "id": "phase_source_up",
+      "metric": "abs_phase_angle_deg",
+      "scenario": "source_up",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "expert",
+      "sided": "two",
+      "target": 90,
+      "tol_pass": 25,
+      "tol_zero": 80,
+      "curve_p": 1,
+      "weight": 0.8,
+      "fundamental_hz": 50,
+      "signals": [
+        "Vac",
+        "Icomp"
+      ],
+      "require_steady": true,
+      "steady_stat": "rms",
+      "steady_fraction": 0.5,
+      "steady_cycle_hz": 50,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1
+    },
+    {
+      "id": "vdc_source_down",
+      "signal": "Vdc",
+      "metric": "ss",
+      "scenario": "source_down",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 700,
+      "tol_pass": 52.5,
+      "tol_zero": 175,
+      "curve_p": 1,
+      "weight": 1,
+      "require_steady": true,
+      "steady_stat": "mean",
+      "steady_fraction": 0.2,
+      "steady_bins": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1
+    },
+    {
+      "id": "phase_source_down",
+      "metric": "abs_phase_angle_deg",
+      "scenario": "source_down",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "expert",
+      "sided": "two",
+      "target": 90,
+      "tol_pass": 25,
+      "tol_zero": 80,
+      "curve_p": 1,
+      "weight": 0.8,
+      "fundamental_hz": 50,
+      "signals": [
+        "Vac",
+        "Icomp"
+      ],
+      "require_steady": true,
+      "steady_stat": "rms",
+      "steady_fraction": 0.5,
+      "steady_cycle_hz": 50,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1
+    },
+    {
+      "id": "vdc_load_up",
+      "signal": "Vdc",
+      "metric": "ss",
+      "scenario": "load_up",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 700,
+      "tol_pass": 52.5,
+      "tol_zero": 175,
+      "curve_p": 1,
+      "weight": 1,
+      "require_steady": true,
+      "steady_stat": "mean",
+      "steady_fraction": 0.2,
+      "steady_bins": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1
+    },
+    {
+      "id": "phase_load_up",
+      "metric": "abs_phase_angle_deg",
+      "scenario": "load_up",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "expert",
+      "sided": "two",
+      "target": 90,
+      "tol_pass": 25,
+      "tol_zero": 80,
+      "curve_p": 1,
+      "weight": 0.8,
+      "fundamental_hz": 50,
+      "signals": [
+        "Vac",
+        "Icomp"
+      ],
+      "require_steady": true,
+      "steady_stat": "rms",
+      "steady_fraction": 0.5,
+      "steady_cycle_hz": 50,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1
+    },
+    {
+      "id": "vac_rms_source_up",
+      "signal": "Vac",
+      "metric": "rms",
+      "scenario": "source_up",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "vac_rms_source_down",
+      "signal": "Vac",
+      "metric": "rms",
+      "scenario": "source_down",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "igrid_rms_load_up",
+      "signal": "Igrid",
+      "metric": "rms",
+      "scenario": "load_up",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "vdc_load_down",
+      "signal": "Vdc",
+      "metric": "ss",
+      "scenario": "load_down",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 700,
+      "tol_pass": 60,
+      "tol_zero": 220,
+      "curve_p": 1,
+      "weight": 1,
+      "require_steady": true,
+      "steady_stat": "mean",
+      "steady_fraction": 0.2,
+      "steady_bins": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1
+    },
+    {
+      "id": "phase_load_down",
+      "metric": "abs_phase_angle_deg",
+      "scenario": "load_down",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "expert",
+      "sided": "two",
+      "target": 90,
+      "tol_pass": 25,
+      "tol_zero": 80,
+      "curve_p": 1,
+      "weight": 0.8,
+      "fundamental_hz": 50,
+      "signals": [
+        "Vac",
+        "Icomp"
+      ],
+      "require_steady": true,
+      "steady_stat": "rms",
+      "steady_fraction": 0.5,
+      "steady_cycle_hz": 50,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1
+    },
+    {
+      "id": "igrid_rms_load_down",
+      "signal": "Igrid",
+      "metric": "rms",
+      "scenario": "load_down",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "vdc_joint_low_source_high_load",
+      "signal": "Vdc",
+      "metric": "ss",
+      "scenario": "joint_low_source_high_load",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 700,
+      "tol_pass": 60,
+      "tol_zero": 220,
+      "curve_p": 1,
+      "weight": 1,
+      "require_steady": true,
+      "steady_stat": "mean",
+      "steady_fraction": 0.2,
+      "steady_bins": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1
+    },
+    {
+      "id": "phase_joint_low_source_high_load",
+      "metric": "abs_phase_angle_deg",
+      "scenario": "joint_low_source_high_load",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "expert",
+      "sided": "two",
+      "target": 90,
+      "tol_pass": 25,
+      "tol_zero": 80,
+      "curve_p": 1,
+      "weight": 0.8,
+      "fundamental_hz": 50,
+      "signals": [
+        "Vac",
+        "Icomp"
+      ],
+      "require_steady": true,
+      "steady_stat": "rms",
+      "steady_fraction": 0.5,
+      "steady_cycle_hz": 50,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1
+    },
+    {
+      "id": "vac_rms_joint_low_source_high_load",
+      "signal": "Vac",
+      "metric": "rms",
+      "scenario": "joint_low_source_high_load",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "vdc_joint_high_source_low_load",
+      "signal": "Vdc",
+      "metric": "ss",
+      "scenario": "joint_high_source_low_load",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 700,
+      "tol_pass": 60,
+      "tol_zero": 220,
+      "curve_p": 1,
+      "weight": 1,
+      "require_steady": true,
+      "steady_stat": "mean",
+      "steady_fraction": 0.2,
+      "steady_bins": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1
+    },
+    {
+      "id": "phase_joint_high_source_low_load",
+      "metric": "abs_phase_angle_deg",
+      "scenario": "joint_high_source_low_load",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "expert",
+      "sided": "two",
+      "target": 90,
+      "tol_pass": 25,
+      "tol_zero": 80,
+      "curve_p": 1,
+      "weight": 0.8,
+      "fundamental_hz": 50,
+      "signals": [
+        "Vac",
+        "Icomp"
+      ],
+      "require_steady": true,
+      "steady_stat": "rms",
+      "steady_fraction": 0.5,
+      "steady_cycle_hz": 50,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1
+    },
+    {
+      "id": "vac_rms_joint_high_source_low_load",
+      "signal": "Vac",
+      "metric": "rms",
+      "scenario": "joint_high_source_low_load",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    }
+  ],
+  "structural": {
+    "recognizers": [
+      {
+        "id": "switch_stage",
+        "prim": "has_power_device",
+        "args": [
+          "igbt",
+          "mosfet",
+          "gto",
+          "ideal switch"
+        ],
+        "mandatory": true,
+        "weight": 1
+      },
+      {
+        "id": "three_phase_vsc",
+        "prim": "three_phase_bridge",
+        "args": [],
+        "mandatory": true,
+        "weight": 1
+      },
+      {
+        "id": "three_phase_grid",
+        "prim": "three_phase_source",
+        "args": [],
+        "mandatory": true,
+        "weight": 1
+      },
+      {
+        "id": "vsc_coupling_to_pcc",
+        "prim": "physical_path",
+        "args": [],
+        "source": [
+          "^[^|]*\\|[^|]*\\|[^|]*\\|(universal bridge|three-level bridge|mosfet|igbt|gto|ideal switch)[^|]*\\|",
+          "^[^|]*\\|[^|]*\\|[^|]*\\|[^|]*\\|[^|]*(universal bridge|three-level bridge|mosfet|igbt|gto|ideal switch)"
+        ],
+        "via": [
+          "^[^|]*\\|[^|]*\\|[^|]*\\|(inductor|series rlc branch|three-phase series rlc branch)[^|]*\\|",
+          "^[^|]*\\|[^|]*\\|[^|]*\\|[^|]*\\|[^|]*(inductor|series rlc branch)"
+        ],
+        "target": [
+          "^[^|]*\\|[^|]*\\|[^|]*\\|(three-phase source|voltage source \\(three-phase\\)|three-phase programmable voltage source)[^|]*\\|",
+          "^[^|]*\\|[^|]*\\|[^|]*\\|[^|]*\\|[^|]*(three-phase source|voltage source \\(three-phase\\)|three-phase programmable voltage source)"
+        ],
+        "mandatory": true,
+        "weight": 1,
+        "require_via_cut": true
+      }
+    ]
+  },
+  "golden_tap": {
+    "Vdc": {
+      "by": "block_input",
+      "path": "DQstatcom3p/STATCOM DC Link voltage and current",
+      "port": 2
+    },
+    "Vac": {
+      "by": "block_input",
+      "path": "DQstatcom3p/STATCOM A phase voltage and current",
+      "port": 1
+    },
+    "Igrid": {
+      "by": "block_input",
+      "path": "DQstatcom3p/Grid A phase voltage and current",
+      "port": 2
+    },
+    "Icomp": {
+      "by": "block_input",
+      "path": "DQstatcom3p/STATCOM A phase voltage and current",
+      "port": 2
+    }
+  },
+  "task_specific_checks": [
+    {
+      "id": "D006.vdc_vsc_terminal_ownership",
+      "semantic_kind": "structure",
+      "scenario": "nominal",
+      "layer": "qualification",
+      "mandatory": true
+    }
+  ]
+}

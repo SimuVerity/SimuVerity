@@ -1,0 +1,70 @@
+{
+  "schema": "simuverity.task.v1",
+  "release": "simuverity-101-v1",
+  "task_id": "XAERO-10",
+  "ordinal": 17,
+  "collection": "XAERO",
+  "runtime_alias": "XAERO-10",
+  "required_model_file": "cand_XAERO10.slx",
+  "evaluation_policy_id": "simuverity-101-v1:xaero-10:scoring",
+  "candidate_closure": {
+    "public_input_names": [
+      "attitude_command_rad",
+      "measurement_noise_covariance"
+    ],
+    "nominal_provider": "simuverity_public_nominal_inputs"
+  },
+  "public_spec": "public_spec.json",
+  "official_scenarios": "official_scenarios.json",
+  "extractor": {
+    "kind": "matlab_function",
+    "path": "extractor/run.m",
+    "entrypoint": "run",
+    "implementation": "vendor/scripts/formal90/tasks/f90_xaero10/f90_xaero10_extract_candidate_evidence.m",
+    "closure_manifest": "extractor/manifest.json"
+  },
+  "scorer": {
+    "kind": "python_function",
+    "path": "scorer.py",
+    "entrypoint": "score",
+    "closure_manifest": "scorer/manifest.json",
+    "offline_only": true
+  },
+  "reference": {
+    "materialization": "bundled",
+    "path": "reference/files",
+    "manifest": "reference/manifest.json",
+    "entrypoint": "reference/files/source/2018_Simulink/comparison_noise_nonoise.slx",
+    "expected_valid_scenarios": 5,
+    "score_tolerance": 1e-12,
+    "expected_score": 99.999999996,
+    "expected_score_basis": "reference_replay",
+    "scenario_contract": {
+      "expected_ids": [
+        "nominal_zero_command",
+        "small_command",
+        "large_command",
+        "high_measurement_noise",
+        "combined_command_noise"
+      ],
+      "nominal_scenario_id": null,
+      "nominal_materialization": "authoritative_scenario_set"
+    },
+    "score_tolerance_basis": "source_authority_numeric_precision",
+    "runtime_manifest": "reference/runtime_manifest.json"
+  },
+  "applicable_groups": [
+    "G",
+    "A",
+    "Q",
+    "M",
+    "C",
+    "R",
+    "D"
+  ],
+  "release_license_status": "INCLUDED_THIRD_PARTY_LICENSE",
+  "system_profile": {
+    "path": "system_profile.json",
+    "schema": "simuverity.system-profile.v1"
+  }
+}

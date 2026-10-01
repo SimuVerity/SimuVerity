@@ -1,0 +1,147 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XBATT-03",
+  "scenarios": [
+    {
+      "id": "summer_city_nominal",
+      "class": "nominal_dynamic",
+      "drive_template": "UDDS",
+      "duration_s": 765,
+      "ambient_temperature_C": 40,
+      "initial_temperature_C": 40,
+      "relative_humidity": 0.5,
+      "solar_load_W": 600,
+      "cabin_temperature_setpoint_C": 22,
+      "initial_soc": 0.9,
+      "vehicle_mass_kg": 1611,
+      "cooling_enable": 1,
+      "speed_scale": 1.0
+    },
+    {
+      "id": "summer_city_high_solar",
+      "class": "paired_thermal_boundary",
+      "drive_template": "UDDS",
+      "duration_s": 765,
+      "ambient_temperature_C": 40,
+      "initial_temperature_C": 40,
+      "relative_humidity": 0.5,
+      "solar_load_W": 800,
+      "cabin_temperature_setpoint_C": 22,
+      "initial_soc": 0.9,
+      "vehicle_mass_kg": 1611,
+      "cooling_enable": 1,
+      "speed_scale": 1.0
+    },
+    {
+      "id": "winter_highway_nominal",
+      "class": "cold_dynamic",
+      "drive_template": "HWFET",
+      "duration_s": 765,
+      "ambient_temperature_C": -5,
+      "initial_temperature_C": -5,
+      "relative_humidity": 0.65,
+      "solar_load_W": 300,
+      "cabin_temperature_setpoint_C": 22,
+      "initial_soc": 0.9,
+      "vehicle_mass_kg": 1611,
+      "cooling_enable": 0,
+      "speed_scale": 1.0
+    },
+    {
+      "id": "winter_highway_low_soc",
+      "class": "cold_energy_boundary",
+      "drive_template": "HWFET",
+      "duration_s": 765,
+      "ambient_temperature_C": -5,
+      "initial_temperature_C": -5,
+      "relative_humidity": 0.65,
+      "solar_load_W": 300,
+      "cabin_temperature_setpoint_C": 22,
+      "initial_soc": 0.6,
+      "vehicle_mass_kg": 1611,
+      "cooling_enable": 0,
+      "speed_scale": 1.0
+    },
+    {
+      "id": "summer_city_heavy_duty",
+      "class": "joint_boundary_dynamic",
+      "drive_template": "UDDS",
+      "duration_s": 765,
+      "ambient_temperature_C": 42,
+      "initial_temperature_C": 42,
+      "relative_humidity": 0.65,
+      "solar_load_W": 750,
+      "cabin_temperature_setpoint_C": 20,
+      "initial_soc": 0.78,
+      "vehicle_mass_kg": 1800,
+      "cooling_enable": 1,
+      "speed_scale": 1.08
+    }
+  ],
+  "contract": {
+    "paired_scenarios": {
+      "solar_load": [
+        "summer_city_nominal",
+        "summer_city_high_solar"
+      ],
+      "initial_soc": [
+        "winter_highway_nominal",
+        "winter_highway_low_soc"
+      ]
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "normalize_threshold_to_100": false,
+      "groups": {
+        "G": "execution, evidence contract and physically connected causal implementation",
+        "A": "road-speed tracking, battery/cabin thermal objectives and energy-state achievement",
+        "Q": "temperature, actuator, pressure and heat-flow quality",
+        "M": "electrical-mechanical-thermal-fluid causal mechanisms and actuator-to-plant coupling",
+        "R": "worst required private operating condition",
+        "D": "dynamic recovery and paired-intervention response"
+      },
+      "weights": {
+        "A": 0.2,
+        "Q": 0.1,
+        "M": 0.3,
+        "R": 0.2,
+        "D": 0.2
+      },
+      "within_group_aggregation": "weighted_arithmetic",
+      "critical_multiscenario_aggregation": "100_percent_minimum",
+      "cross_group_aggregation": "weighted_geometric"
+    }
+  },
+  "paired_scenarios": {
+    "solar_load": [
+      "summer_city_nominal",
+      "summer_city_high_solar"
+    ],
+    "initial_soc": [
+      "winter_highway_nominal",
+      "winter_highway_low_soc"
+    ]
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "normalize_threshold_to_100": false,
+    "groups": {
+      "G": "execution, evidence contract and physically connected causal implementation",
+      "A": "road-speed tracking, battery/cabin thermal objectives and energy-state achievement",
+      "Q": "temperature, actuator, pressure and heat-flow quality",
+      "M": "electrical-mechanical-thermal-fluid causal mechanisms and actuator-to-plant coupling",
+      "R": "worst required private operating condition",
+      "D": "dynamic recovery and paired-intervention response"
+    },
+    "weights": {
+      "A": 0.2,
+      "Q": 0.1,
+      "M": 0.3,
+      "R": 0.2,
+      "D": 0.2
+    },
+    "within_group_aggregation": "weighted_arithmetic",
+    "critical_multiscenario_aggregation": "100_percent_minimum",
+    "cross_group_aggregation": "weighted_geometric"
+  }
+}

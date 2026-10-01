@@ -1,0 +1,15 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XTHERM-11",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/source/cstr_cascade.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 4,
+  "retained_bytes": 310118,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ]
+}

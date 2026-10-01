@@ -1,0 +1,21 @@
+<?xml-stylesheet href="defaultstyles.css" type="text/css"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:d="http://www.mathworks.com/blockgraphics" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg_3" width="312" height="174" d:options="PreserveAspect:On;ScalingOnResizeMax:2.0;Rotate:Off;Resize:FitToBlock">
+	<g id="layer_4" title="layer_0">
+		<line id="line_21" class="line" x1="150" y1="41.5" x2="101" y2="87"/>
+		<line id="line_54" class="line" x1="150" y1="41.5" x2="198" y2="87"/>
+		<line id="line_55" class="line" x1="118" y1="74.87" x2="118" y2="133.5"/>
+		<line id="line_74" class="line" x1="181.99" y1="74.87" x2="182" y2="133.5"/>
+		<line id="line_87" class="line" x1="142.5" y1="84" x2="156" y2="84"/>
+		<line id="line_103" class="line" x1="142.5" y1="84" x2="142.5" y2="133.5"/>
+		<line id="line_114" class="line" x1="156" y1="84" x2="156" y2="133.5"/>
+		<line id="line_120" class="line" x1="156" y1="133.5" x2="182" y2="133.5"/>
+		<line id="line_124" class="line" x1="142.5" y1="133.5" x2="118" y2="133.5"/>
+		<rect id="rect_144" class="rect" x="125.5" y="89.5" width="11.5" height="14" rx="0" ry="0"/>
+		<rect id="rect_145" class="rect" x="162.5" y="89.5" width="11.5" height="14" rx="0" ry="0"/>
+		<line id="line_151" class="line" x1="142.5" y1="126.5" x2="156" y2="126.5"/>
+		<line id="line_161" class="line" x1="131.24" y1="89.5" x2="131.24" y2="103.5"/>
+		<line id="line_173" class="line" x1="168.24" y1="89.5" x2="168.25" y2="103.5"/>
+		<line id="line_190" class="line" x1="125.5" y1="96.5" x2="137" y2="96.5"/>
+		<line id="line_205" class="line" x1="162.5" y1="96.5" x2="174" y2="96.5"/>
+	</g>
+</svg>

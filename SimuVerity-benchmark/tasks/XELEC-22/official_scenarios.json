@@ -1,0 +1,1878 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XELEC-22",
+  "scenarios": [
+    {
+      "id": "light_load",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "R_user": 11
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^Non-Linear\\s*Load\\s*/Series RLC Branch$",
+          "parameter": "Resistance",
+          "value": 11
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "lighter_load_reduces_user_power",
+          "nominal_band": "pload_diag",
+          "scenario_band": "pload_witness_light_load",
+          "relation": "decrease_frac_min",
+          "threshold": 0.03
+        },
+        {
+          "id": "ballast_absorbs_more_under_light_load",
+          "nominal_band": "pdump_diag",
+          "scenario_band": "pdump_witness_light_load",
+          "relation": "decrease_frac_min",
+          "threshold": 0.03
+        },
+        {
+          "id": "generator_power_stays_regulated_light",
+          "nominal_band": "psource_diag",
+          "scenario_band": "psource_witness_light_load",
+          "relation": "ratio_range",
+          "threshold": 0.97,
+          "min_ratio": 0.97,
+          "max_ratio": 1.03
+        }
+      ],
+      "public_envelope": "R_user +/-10%"
+    },
+    {
+      "id": "heavy_load",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "R_user": 9
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^Non-Linear\\s*Load\\s*/Series RLC Branch$",
+          "parameter": "Resistance",
+          "value": 9
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "heavier_load_increases_user_power",
+          "nominal_band": "pload_diag",
+          "scenario_band": "pload_witness_heavy_load",
+          "relation": "increase_frac_min",
+          "threshold": 0.03
+        },
+        {
+          "id": "ballast_absorbs_less_under_heavy_load",
+          "nominal_band": "pdump_diag",
+          "scenario_band": "pdump_witness_heavy_load",
+          "relation": "increase_frac_min",
+          "threshold": 0.03
+        },
+        {
+          "id": "generator_power_stays_regulated_heavy",
+          "nominal_band": "psource_diag",
+          "scenario_band": "psource_witness_heavy_load",
+          "relation": "ratio_range",
+          "threshold": 0.97,
+          "min_ratio": 0.97,
+          "max_ratio": 1.03
+        }
+      ],
+      "public_envelope": "R_user +/-10%"
+    },
+    {
+      "id": "private_light_load",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "R_user": 10.64
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^Non-Linear\\s*Load\\s*/Series RLC Branch$",
+          "parameter": "Resistance",
+          "value": 10.64
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "private_lighter_load_reduces_user_power",
+          "nominal_band": "pload_diag",
+          "scenario_band": "pload_witness_private_light_load",
+          "relation": "decrease_frac_min",
+          "threshold": 0.015
+        },
+        {
+          "id": "private_ballast_absorbs_more_under_light_load",
+          "nominal_band": "pdump_diag",
+          "scenario_band": "pdump_witness_private_light_load",
+          "relation": "decrease_frac_min",
+          "threshold": 0.015
+        },
+        {
+          "id": "private_generator_power_stays_regulated_light",
+          "nominal_band": "psource_diag",
+          "scenario_band": "psource_witness_private_light_load",
+          "relation": "ratio_range",
+          "threshold": 0.97,
+          "min_ratio": 0.97,
+          "max_ratio": 1.03
+        }
+      ],
+      "public_envelope": "private interior point inside R_user +/-10%"
+    },
+    {
+      "id": "private_heavy_load",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "R_user": 9.37
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^Non-Linear\\s*Load\\s*/Series RLC Branch$",
+          "parameter": "Resistance",
+          "value": 9.37
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "private_heavier_load_increases_user_power",
+          "nominal_band": "pload_diag",
+          "scenario_band": "pload_witness_private_heavy_load",
+          "relation": "increase_frac_min",
+          "threshold": 0.015
+        },
+        {
+          "id": "private_ballast_absorbs_less_under_heavy_load",
+          "nominal_band": "pdump_diag",
+          "scenario_band": "pdump_witness_private_heavy_load",
+          "relation": "increase_frac_min",
+          "threshold": 0.015
+        },
+        {
+          "id": "private_generator_power_stays_regulated_heavy",
+          "nominal_band": "psource_diag",
+          "scenario_band": "psource_witness_private_heavy_load",
+          "relation": "ratio_range",
+          "threshold": 0.97,
+          "min_ratio": 0.97,
+          "max_ratio": 1.03
+        }
+      ],
+      "public_envelope": "private interior point inside R_user +/-10%"
+    }
+  ],
+  "contract": {
+    "schema_version": "1.0",
+    "scoring": "layered-continuous",
+    "domain": "rectifier",
+    "title": "D022: Universal electronic load controller (ELC) for micro-hydro -> regulated DC bus + AC",
+    "routing": "behavior+structure+scenarios",
+    "prompt": "Build an electronic load controller for a three-phase 50 Hz micro-hydro generator. The generator must feed a common PCC with separate user-load and converter-controlled ballast-load branches connected in parallel. Read R_user from a base-workspace variable; its nominal value is 10 ohm and its operating range is +/-10%. Regulate ballast absorption in closed loop so generator active power remains approximately constant as user load changes. The converter DC-bus target is about 1 kV and the generator-speed target is 1 pu. The regulated states and generator active power must settle promptly across the stated load range. PCC voltage and current must remain balanced and reasonably sinusoidal. Psource is positive from generator into PCC, Pload from PCC into user load, and Pdump from ballast branch toward PCC. Log physical Timeseries Vdc, Vabc, Iabc, Psource, Pload, Pdump and Speed. Vabc and Iabc must contain all three measured PCC phases; the power signals must measure their respective branches; Speed must be physical generator speed.",
+    "sim": {
+      "solver": [],
+      "stop": 3.0,
+      "max_step": []
+    },
+    "steady_state_policy": {
+      "require_steady": true,
+      "steady_stat": "rms",
+      "steady_fraction": 0.2,
+      "steady_cycle_hz": 50,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1,
+      "steady_all_channels": true
+    },
+    "input_contract": {
+      "R_user": {
+        "default": 10,
+        "required": true,
+        "required_block_any": [
+          "load|rlc|resist"
+        ],
+        "required_parameter_any": [
+          "^(r|resistance|value)$"
+        ],
+        "require_conserving_connection": true,
+        "min_bindings": 1
+      }
+    },
+    "outputs": [
+      {
+        "name": "Vdc",
+        "role": "core",
+        "datatype": "timeseries",
+        "min_channels": 1,
+        "max_channels": 1,
+        "time_coverage": 0.95,
+        "min_samples": 16,
+        "provenance": {
+          "required_any_upstream": [
+            "voltage measurement",
+            "three-phase vi measurement"
+          ],
+          "forbidden_upstream": [
+            "constant",
+            "sine wave",
+            "signal builder"
+          ],
+          "max_trace_depth": 24
+        }
+      },
+      {
+        "name": "Vabc",
+        "role": "core",
+        "datatype": "timeseries",
+        "min_channels": 3,
+        "max_channels": 3,
+        "time_coverage": 0.95,
+        "min_samples": 16,
+        "provenance": {
+          "required_any_upstream": [
+            "voltage measurement",
+            "three-phase vi measurement"
+          ],
+          "forbidden_upstream": [
+            "constant",
+            "sine wave",
+            "signal builder"
+          ],
+          "max_trace_depth": 24,
+          "require_independent_channels": true,
+          "require_distinct_channel_origins": true,
+          "max_abs_channel_corr": 0.95
+        }
+      },
+      {
+        "name": "Iabc",
+        "role": "core",
+        "datatype": "timeseries",
+        "min_channels": 3,
+        "max_channels": 3,
+        "time_coverage": 0.95,
+        "min_samples": 16,
+        "provenance": {
+          "required_any_upstream": [
+            "current measurement",
+            "three-phase vi measurement"
+          ],
+          "forbidden_upstream": [
+            "constant",
+            "sine wave",
+            "signal builder"
+          ],
+          "max_trace_depth": 24,
+          "require_independent_channels": true,
+          "require_distinct_channel_origins": true,
+          "max_abs_channel_corr": 0.95
+        }
+      },
+      {
+        "name": "Psource",
+        "role": "core",
+        "datatype": "timeseries",
+        "min_channels": 1,
+        "max_channels": 1,
+        "time_coverage": 0.95,
+        "min_samples": 16,
+        "provenance": {
+          "required_any_upstream": [
+            "power \\(3ph",
+            "power measurement",
+            "three-phase vi measurement",
+            "voltage measurement",
+            "current measurement",
+            "machine measurement"
+          ],
+          "forbidden_upstream": [
+            "constant",
+            "sine wave",
+            "signal builder"
+          ],
+          "max_trace_depth": 24
+        }
+      },
+      {
+        "name": "Pload",
+        "role": "core",
+        "datatype": "timeseries",
+        "min_channels": 1,
+        "max_channels": 1,
+        "time_coverage": 0.95,
+        "min_samples": 16,
+        "provenance": {
+          "required_any_upstream": [
+            "power \\(3ph",
+            "power measurement",
+            "three-phase vi measurement",
+            "voltage measurement",
+            "current measurement"
+          ],
+          "forbidden_upstream": [
+            "constant",
+            "sine wave",
+            "signal builder"
+          ],
+          "max_trace_depth": 24
+        }
+      },
+      {
+        "name": "Pdump",
+        "role": "core",
+        "datatype": "timeseries",
+        "min_channels": 1,
+        "max_channels": 1,
+        "time_coverage": 0.95,
+        "min_samples": 16,
+        "provenance": {
+          "required_any_upstream": [
+            "power \\(3ph",
+            "power measurement",
+            "three-phase vi measurement",
+            "voltage measurement",
+            "current measurement"
+          ],
+          "forbidden_upstream": [
+            "constant",
+            "sine wave",
+            "signal builder"
+          ],
+          "max_trace_depth": 24
+        }
+      },
+      {
+        "name": "Speed",
+        "role": "core",
+        "datatype": "timeseries",
+        "min_channels": 1,
+        "max_channels": 1,
+        "time_coverage": 0.95,
+        "min_samples": 16,
+        "provenance": {
+          "required_any_upstream": [
+            "machine",
+            "synchronous generator",
+            "speed calculation",
+            "w\\(p\\.u\\)",
+            "bus selector"
+          ],
+          "forbidden_upstream": [
+            "constant",
+            "sine wave",
+            "signal builder"
+          ],
+          "max_trace_depth": 8
+        }
+      }
+    ],
+    "behavioral": [
+      {
+        "id": "power_balance",
+        "metric": "sum_residual_frac",
+        "scenario": "nominal",
+        "group": "nominal",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "lower",
+        "target": 0.03,
+        "tol_pass": 0.06,
+        "tol_zero": 0.25,
+        "curve_p": 1,
+        "weight": 1,
+        "signs": [
+          1,
+          -1,
+          1
+        ],
+        "signals": [
+          "Psource",
+          "Pload",
+          "Pdump"
+        ]
+      },
+      {
+        "id": "speed",
+        "signal": "Speed",
+        "metric": "ss",
+        "scenario": "nominal",
+        "group": "nominal",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "two",
+        "target": 1,
+        "tol_pass": 0.03,
+        "tol_zero": 0.15,
+        "curve_p": 1,
+        "weight": 0.8
+      },
+      {
+        "id": "vdc",
+        "signal": "Vdc",
+        "metric": "ss",
+        "scenario": "nominal",
+        "group": "nominal",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "two",
+        "target": 1000,
+        "tol_pass": 60,
+        "tol_zero": 240,
+        "curve_p": 1,
+        "weight": 0.7
+      },
+      {
+        "id": "vabc_freq",
+        "signal": "Vabc",
+        "metric": "fund_freq",
+        "scenario": "nominal",
+        "group": "quality",
+        "criticality": "quality",
+        "basis": "prompt",
+        "sided": "two",
+        "target": 50,
+        "tol_pass": 1,
+        "tol_zero": 5,
+        "curve_p": 1,
+        "weight": 0.7,
+        "fundamental_hz": 50
+      },
+      {
+        "id": "vabc_balance",
+        "signal": "Vabc",
+        "metric": "imbalance",
+        "scenario": "nominal",
+        "group": "quality",
+        "criticality": "quality",
+        "basis": "analytical",
+        "sided": "lower",
+        "target": 0.02,
+        "tol_pass": 0.05,
+        "tol_zero": 0.25,
+        "curve_p": 1,
+        "weight": 0.7
+      },
+      {
+        "id": "iabc_balance",
+        "signal": "Iabc",
+        "metric": "imbalance",
+        "scenario": "nominal",
+        "group": "quality",
+        "criticality": "quality",
+        "basis": "analytical",
+        "sided": "lower",
+        "target": 0.03,
+        "tol_pass": 0.08,
+        "tol_zero": 0.3,
+        "curve_p": 1,
+        "weight": 0.7
+      },
+      {
+        "id": "psource_diag",
+        "signal": "Psource",
+        "metric": "ss",
+        "scenario": "nominal",
+        "group": "quality",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "pload_diag",
+        "signal": "Pload",
+        "metric": "ss",
+        "scenario": "nominal",
+        "group": "quality",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "pdump_diag",
+        "signal": "Pdump",
+        "metric": "ss",
+        "scenario": "nominal",
+        "group": "quality",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "balance_light_load",
+        "metric": "sum_residual_frac",
+        "scenario": "light_load",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "analytical",
+        "sided": "lower",
+        "target": 0.04,
+        "tol_pass": 0.08,
+        "tol_zero": 0.3,
+        "curve_p": 1,
+        "weight": 1,
+        "signs": [
+          1,
+          -1,
+          1
+        ],
+        "signals": [
+          "Psource",
+          "Pload",
+          "Pdump"
+        ]
+      },
+      {
+        "id": "speed_light_load",
+        "signal": "Speed",
+        "metric": "ss",
+        "scenario": "light_load",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "two",
+        "target": 1,
+        "tol_pass": 0.04,
+        "tol_zero": 0.18,
+        "curve_p": 1,
+        "weight": 0.7
+      },
+      {
+        "id": "vdc_light_load",
+        "signal": "Vdc",
+        "metric": "ss",
+        "scenario": "light_load",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "two",
+        "target": 1000,
+        "tol_pass": 80,
+        "tol_zero": 280,
+        "curve_p": 1,
+        "weight": 0.7
+      },
+      {
+        "id": "psource_witness_light_load",
+        "signal": "Psource",
+        "metric": "ss",
+        "scenario": "light_load",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "pload_witness_light_load",
+        "signal": "Pload",
+        "metric": "ss",
+        "scenario": "light_load",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "pdump_witness_light_load",
+        "signal": "Pdump",
+        "metric": "ss",
+        "scenario": "light_load",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "balance_heavy_load",
+        "metric": "sum_residual_frac",
+        "scenario": "heavy_load",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "analytical",
+        "sided": "lower",
+        "target": 0.04,
+        "tol_pass": 0.08,
+        "tol_zero": 0.3,
+        "curve_p": 1,
+        "weight": 1,
+        "signs": [
+          1,
+          -1,
+          1
+        ],
+        "signals": [
+          "Psource",
+          "Pload",
+          "Pdump"
+        ]
+      },
+      {
+        "id": "speed_heavy_load",
+        "signal": "Speed",
+        "metric": "ss",
+        "scenario": "heavy_load",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "two",
+        "target": 1,
+        "tol_pass": 0.04,
+        "tol_zero": 0.18,
+        "curve_p": 1,
+        "weight": 0.7
+      },
+      {
+        "id": "vdc_heavy_load",
+        "signal": "Vdc",
+        "metric": "ss",
+        "scenario": "heavy_load",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "two",
+        "target": 1000,
+        "tol_pass": 80,
+        "tol_zero": 280,
+        "curve_p": 1,
+        "weight": 0.7
+      },
+      {
+        "id": "psource_witness_heavy_load",
+        "signal": "Psource",
+        "metric": "ss",
+        "scenario": "heavy_load",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "pload_witness_heavy_load",
+        "signal": "Pload",
+        "metric": "ss",
+        "scenario": "heavy_load",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "pdump_witness_heavy_load",
+        "signal": "Pdump",
+        "metric": "ss",
+        "scenario": "heavy_load",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "balance_private_light_load",
+        "metric": "sum_residual_frac",
+        "scenario": "private_light_load",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "analytical",
+        "sided": "lower",
+        "target": 0.04,
+        "tol_pass": 0.08,
+        "tol_zero": 0.3,
+        "curve_p": 1,
+        "weight": 1,
+        "signs": [
+          1,
+          -1,
+          1
+        ],
+        "signals": [
+          "Psource",
+          "Pload",
+          "Pdump"
+        ]
+      },
+      {
+        "id": "speed_private_light_load",
+        "signal": "Speed",
+        "metric": "ss",
+        "scenario": "private_light_load",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "two",
+        "target": 1,
+        "tol_pass": 0.04,
+        "tol_zero": 0.18,
+        "curve_p": 1,
+        "weight": 0.7
+      },
+      {
+        "id": "vdc_private_light_load",
+        "signal": "Vdc",
+        "metric": "ss",
+        "scenario": "private_light_load",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "two",
+        "target": 1000,
+        "tol_pass": 80,
+        "tol_zero": 280,
+        "curve_p": 1,
+        "weight": 0.7
+      },
+      {
+        "id": "psource_witness_private_light_load",
+        "signal": "Psource",
+        "metric": "ss",
+        "scenario": "private_light_load",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "pload_witness_private_light_load",
+        "signal": "Pload",
+        "metric": "ss",
+        "scenario": "private_light_load",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "pdump_witness_private_light_load",
+        "signal": "Pdump",
+        "metric": "ss",
+        "scenario": "private_light_load",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "balance_private_heavy_load",
+        "metric": "sum_residual_frac",
+        "scenario": "private_heavy_load",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "analytical",
+        "sided": "lower",
+        "target": 0.04,
+        "tol_pass": 0.08,
+        "tol_zero": 0.3,
+        "curve_p": 1,
+        "weight": 1,
+        "signs": [
+          1,
+          -1,
+          1
+        ],
+        "signals": [
+          "Psource",
+          "Pload",
+          "Pdump"
+        ]
+      },
+      {
+        "id": "speed_private_heavy_load",
+        "signal": "Speed",
+        "metric": "ss",
+        "scenario": "private_heavy_load",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "two",
+        "target": 1,
+        "tol_pass": 0.04,
+        "tol_zero": 0.18,
+        "curve_p": 1,
+        "weight": 0.7
+      },
+      {
+        "id": "vdc_private_heavy_load",
+        "signal": "Vdc",
+        "metric": "ss",
+        "scenario": "private_heavy_load",
+        "group": "robustness",
+        "criticality": "must",
+        "basis": "prompt",
+        "sided": "two",
+        "target": 1000,
+        "tol_pass": 80,
+        "tol_zero": 280,
+        "curve_p": 1,
+        "weight": 0.7
+      },
+      {
+        "id": "psource_witness_private_heavy_load",
+        "signal": "Psource",
+        "metric": "ss",
+        "scenario": "private_heavy_load",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "pload_witness_private_heavy_load",
+        "signal": "Pload",
+        "metric": "ss",
+        "scenario": "private_heavy_load",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      },
+      {
+        "id": "pdump_witness_private_heavy_load",
+        "signal": "Pdump",
+        "metric": "ss",
+        "scenario": "private_heavy_load",
+        "group": "robustness",
+        "criticality": "diagnostic",
+        "basis": "analytical",
+        "sided": "two",
+        "target": 0,
+        "tol_pass": 1,
+        "tol_zero": 2,
+        "curve_p": 1,
+        "weight": 0
+      }
+    ],
+    "structural": {
+      "recognizers": [
+        {
+          "id": "three_phase_stage",
+          "prim": "three_phase_bridge",
+          "args": [],
+          "mandatory": false,
+          "weight": 1
+        },
+        {
+          "id": "generator_converter_ballast_path",
+          "prim": "physical_path",
+          "args": [],
+          "source": [
+            "\\|synchronous\\s*generator\\|",
+            "\\|synchronous machine[^|]*\\|",
+            "\\|subsystem\\|simplified\\s+synchronous\\s+machine\\|spssimplifiedsynchronousmachine(?:puunits|siunits)lib/simplified\\s+synchronous\\s+machine",
+            "\\|generator[^|]*\\|"
+          ],
+          "via": [
+            "\\|universal bridge[^|]*\\|subsystem\\|universal bridge",
+            "\\|converter[^|]*\\|",
+            "\\|inverter[^|]*\\|",
+            "\\|igbt[^|]*\\|",
+            "\\|mosfet[^|]*\\|",
+            "\\|gto[^|]*\\|",
+            "\\|ideal switch[^|]*\\|"
+          ],
+          "target": [
+            "\\|resistor[^|]*\\|",
+            "\\|series rlc branch[^|]*\\|",
+            "\\|parallel rlc load[^|]*\\|",
+            "\\|load[^|]*\\|"
+          ],
+          "mandatory": false,
+          "weight": 1,
+          "require_via_cut": false
+        }
+      ]
+    },
+    "golden_tap": {
+      "Vdc": {
+        "by": "block_input",
+        "path": "Universal_ELC_for_MicroHydoPlant/Output/Capacitor \nVoltage",
+        "port": 1
+      },
+      "Vabc": {
+        "by": "block_input",
+        "path": "Universal_ELC_for_MicroHydoPlant/Output/IL,Ic,Is,V",
+        "port": 4
+      },
+      "Iabc": {
+        "by": "block_input",
+        "path": "Universal_ELC_for_MicroHydoPlant/Output/IL,Ic,Is,V",
+        "port": 3
+      },
+      "Psource": {
+        "by": "block_input",
+        "path": "Universal_ELC_for_MicroHydoPlant/Output/Source\nPQ",
+        "port": 1
+      },
+      "Pload": {
+        "by": "block_input",
+        "path": "Universal_ELC_for_MicroHydoPlant/Output/Load\nPQ",
+        "port": 1
+      },
+      "Pdump": {
+        "by": "block_input",
+        "path": "Universal_ELC_for_MicroHydoPlant/Output/ELC\nPQ",
+        "port": 1
+      },
+      "Speed": {
+        "by": "block_input",
+        "path": "Universal_ELC_for_MicroHydoPlant/Output/Speed(pu)",
+        "port": 1
+      }
+    },
+    "task_specific_checks": [
+      {
+        "id": "D022.energy_path_ownership",
+        "semantic_kind": "structure",
+        "scenario": "nominal",
+        "layer": "qualification",
+        "mandatory": true
+      },
+      {
+        "id": "D022.power_branch_ownership",
+        "semantic_kind": "structure",
+        "scenario": "nominal",
+        "layer": "qualification",
+        "mandatory": true
+      },
+      {
+        "id": "D022.closed_loop_ballast_ownership",
+        "semantic_kind": "structure",
+        "scenario": "nominal",
+        "layer": "qualification",
+        "mandatory": true
+      },
+      {
+        "id": "D022.ballast_load_response_witness_group",
+        "semantic_kind": "witness_group",
+        "scenario": "suite",
+        "layer": "robustness",
+        "mandatory": true
+      }
+    ]
+  },
+  "schema_version": "1.0",
+  "scoring": "layered-continuous",
+  "domain": "rectifier",
+  "title": "D022: Universal electronic load controller (ELC) for micro-hydro -> regulated DC bus + AC",
+  "routing": "behavior+structure+scenarios",
+  "prompt": "Build an electronic load controller for a three-phase 50 Hz micro-hydro generator. The generator must feed a common PCC with separate user-load and converter-controlled ballast-load branches connected in parallel. Read R_user from a base-workspace variable; its nominal value is 10 ohm and its operating range is +/-10%. Regulate ballast absorption in closed loop so generator active power remains approximately constant as user load changes. The converter DC-bus target is about 1 kV and the generator-speed target is 1 pu. The regulated states and generator active power must settle promptly across the stated load range. PCC voltage and current must remain balanced and reasonably sinusoidal. Psource is positive from generator into PCC, Pload from PCC into user load, and Pdump from ballast branch toward PCC. Log physical Timeseries Vdc, Vabc, Iabc, Psource, Pload, Pdump and Speed. Vabc and Iabc must contain all three measured PCC phases; the power signals must measure their respective branches; Speed must be physical generator speed.",
+  "sim": {
+    "solver": [],
+    "stop": 3.0,
+    "max_step": []
+  },
+  "steady_state_policy": {
+    "require_steady": true,
+    "steady_stat": "rms",
+    "steady_fraction": 0.2,
+    "steady_cycle_hz": 50,
+    "steady_cycles": 5,
+    "steady_rel_range_max": 0.1,
+    "steady_rel_drift_max": 0.1,
+    "steady_all_channels": true
+  },
+  "input_contract": {
+    "R_user": {
+      "default": 10,
+      "required": true,
+      "required_block_any": [
+        "load|rlc|resist"
+      ],
+      "required_parameter_any": [
+        "^(r|resistance|value)$"
+      ],
+      "require_conserving_connection": true,
+      "min_bindings": 1
+    }
+  },
+  "outputs": [
+    {
+      "name": "Vdc",
+      "role": "core",
+      "datatype": "timeseries",
+      "min_channels": 1,
+      "max_channels": 1,
+      "time_coverage": 0.95,
+      "min_samples": 16,
+      "provenance": {
+        "required_any_upstream": [
+          "voltage measurement",
+          "three-phase vi measurement"
+        ],
+        "forbidden_upstream": [
+          "constant",
+          "sine wave",
+          "signal builder"
+        ],
+        "max_trace_depth": 24
+      }
+    },
+    {
+      "name": "Vabc",
+      "role": "core",
+      "datatype": "timeseries",
+      "min_channels": 3,
+      "max_channels": 3,
+      "time_coverage": 0.95,
+      "min_samples": 16,
+      "provenance": {
+        "required_any_upstream": [
+          "voltage measurement",
+          "three-phase vi measurement"
+        ],
+        "forbidden_upstream": [
+          "constant",
+          "sine wave",
+          "signal builder"
+        ],
+        "max_trace_depth": 24,
+        "require_independent_channels": true,
+        "require_distinct_channel_origins": true,
+        "max_abs_channel_corr": 0.95
+      }
+    },
+    {
+      "name": "Iabc",
+      "role": "core",
+      "datatype": "timeseries",
+      "min_channels": 3,
+      "max_channels": 3,
+      "time_coverage": 0.95,
+      "min_samples": 16,
+      "provenance": {
+        "required_any_upstream": [
+          "current measurement",
+          "three-phase vi measurement"
+        ],
+        "forbidden_upstream": [
+          "constant",
+          "sine wave",
+          "signal builder"
+        ],
+        "max_trace_depth": 24,
+        "require_independent_channels": true,
+        "require_distinct_channel_origins": true,
+        "max_abs_channel_corr": 0.95
+      }
+    },
+    {
+      "name": "Psource",
+      "role": "core",
+      "datatype": "timeseries",
+      "min_channels": 1,
+      "max_channels": 1,
+      "time_coverage": 0.95,
+      "min_samples": 16,
+      "provenance": {
+        "required_any_upstream": [
+          "power \\(3ph",
+          "power measurement",
+          "three-phase vi measurement",
+          "voltage measurement",
+          "current measurement",
+          "machine measurement"
+        ],
+        "forbidden_upstream": [
+          "constant",
+          "sine wave",
+          "signal builder"
+        ],
+        "max_trace_depth": 24
+      }
+    },
+    {
+      "name": "Pload",
+      "role": "core",
+      "datatype": "timeseries",
+      "min_channels": 1,
+      "max_channels": 1,
+      "time_coverage": 0.95,
+      "min_samples": 16,
+      "provenance": {
+        "required_any_upstream": [
+          "power \\(3ph",
+          "power measurement",
+          "three-phase vi measurement",
+          "voltage measurement",
+          "current measurement"
+        ],
+        "forbidden_upstream": [
+          "constant",
+          "sine wave",
+          "signal builder"
+        ],
+        "max_trace_depth": 24
+      }
+    },
+    {
+      "name": "Pdump",
+      "role": "core",
+      "datatype": "timeseries",
+      "min_channels": 1,
+      "max_channels": 1,
+      "time_coverage": 0.95,
+      "min_samples": 16,
+      "provenance": {
+        "required_any_upstream": [
+          "power \\(3ph",
+          "power measurement",
+          "three-phase vi measurement",
+          "voltage measurement",
+          "current measurement"
+        ],
+        "forbidden_upstream": [
+          "constant",
+          "sine wave",
+          "signal builder"
+        ],
+        "max_trace_depth": 24
+      }
+    },
+    {
+      "name": "Speed",
+      "role": "core",
+      "datatype": "timeseries",
+      "min_channels": 1,
+      "max_channels": 1,
+      "time_coverage": 0.95,
+      "min_samples": 16,
+      "provenance": {
+        "required_any_upstream": [
+          "machine",
+          "synchronous generator",
+          "speed calculation",
+          "w\\(p\\.u\\)",
+          "bus selector"
+        ],
+        "forbidden_upstream": [
+          "constant",
+          "sine wave",
+          "signal builder"
+        ],
+        "max_trace_depth": 8
+      }
+    }
+  ],
+  "behavioral": [
+    {
+      "id": "power_balance",
+      "metric": "sum_residual_frac",
+      "scenario": "nominal",
+      "group": "nominal",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "lower",
+      "target": 0.03,
+      "tol_pass": 0.06,
+      "tol_zero": 0.25,
+      "curve_p": 1,
+      "weight": 1,
+      "signs": [
+        1,
+        -1,
+        1
+      ],
+      "signals": [
+        "Psource",
+        "Pload",
+        "Pdump"
+      ]
+    },
+    {
+      "id": "speed",
+      "signal": "Speed",
+      "metric": "ss",
+      "scenario": "nominal",
+      "group": "nominal",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 1,
+      "tol_pass": 0.03,
+      "tol_zero": 0.15,
+      "curve_p": 1,
+      "weight": 0.8
+    },
+    {
+      "id": "vdc",
+      "signal": "Vdc",
+      "metric": "ss",
+      "scenario": "nominal",
+      "group": "nominal",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 1000,
+      "tol_pass": 60,
+      "tol_zero": 240,
+      "curve_p": 1,
+      "weight": 0.7
+    },
+    {
+      "id": "vabc_freq",
+      "signal": "Vabc",
+      "metric": "fund_freq",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "quality",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 50,
+      "tol_pass": 1,
+      "tol_zero": 5,
+      "curve_p": 1,
+      "weight": 0.7,
+      "fundamental_hz": 50
+    },
+    {
+      "id": "vabc_balance",
+      "signal": "Vabc",
+      "metric": "imbalance",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "quality",
+      "basis": "analytical",
+      "sided": "lower",
+      "target": 0.02,
+      "tol_pass": 0.05,
+      "tol_zero": 0.25,
+      "curve_p": 1,
+      "weight": 0.7
+    },
+    {
+      "id": "iabc_balance",
+      "signal": "Iabc",
+      "metric": "imbalance",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "quality",
+      "basis": "analytical",
+      "sided": "lower",
+      "target": 0.03,
+      "tol_pass": 0.08,
+      "tol_zero": 0.3,
+      "curve_p": 1,
+      "weight": 0.7
+    },
+    {
+      "id": "psource_diag",
+      "signal": "Psource",
+      "metric": "ss",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "pload_diag",
+      "signal": "Pload",
+      "metric": "ss",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "pdump_diag",
+      "signal": "Pdump",
+      "metric": "ss",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "balance_light_load",
+      "metric": "sum_residual_frac",
+      "scenario": "light_load",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "analytical",
+      "sided": "lower",
+      "target": 0.04,
+      "tol_pass": 0.08,
+      "tol_zero": 0.3,
+      "curve_p": 1,
+      "weight": 1,
+      "signs": [
+        1,
+        -1,
+        1
+      ],
+      "signals": [
+        "Psource",
+        "Pload",
+        "Pdump"
+      ]
+    },
+    {
+      "id": "speed_light_load",
+      "signal": "Speed",
+      "metric": "ss",
+      "scenario": "light_load",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 1,
+      "tol_pass": 0.04,
+      "tol_zero": 0.18,
+      "curve_p": 1,
+      "weight": 0.7
+    },
+    {
+      "id": "vdc_light_load",
+      "signal": "Vdc",
+      "metric": "ss",
+      "scenario": "light_load",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 1000,
+      "tol_pass": 80,
+      "tol_zero": 280,
+      "curve_p": 1,
+      "weight": 0.7
+    },
+    {
+      "id": "psource_witness_light_load",
+      "signal": "Psource",
+      "metric": "ss",
+      "scenario": "light_load",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "pload_witness_light_load",
+      "signal": "Pload",
+      "metric": "ss",
+      "scenario": "light_load",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "pdump_witness_light_load",
+      "signal": "Pdump",
+      "metric": "ss",
+      "scenario": "light_load",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "balance_heavy_load",
+      "metric": "sum_residual_frac",
+      "scenario": "heavy_load",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "analytical",
+      "sided": "lower",
+      "target": 0.04,
+      "tol_pass": 0.08,
+      "tol_zero": 0.3,
+      "curve_p": 1,
+      "weight": 1,
+      "signs": [
+        1,
+        -1,
+        1
+      ],
+      "signals": [
+        "Psource",
+        "Pload",
+        "Pdump"
+      ]
+    },
+    {
+      "id": "speed_heavy_load",
+      "signal": "Speed",
+      "metric": "ss",
+      "scenario": "heavy_load",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 1,
+      "tol_pass": 0.04,
+      "tol_zero": 0.18,
+      "curve_p": 1,
+      "weight": 0.7
+    },
+    {
+      "id": "vdc_heavy_load",
+      "signal": "Vdc",
+      "metric": "ss",
+      "scenario": "heavy_load",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 1000,
+      "tol_pass": 80,
+      "tol_zero": 280,
+      "curve_p": 1,
+      "weight": 0.7
+    },
+    {
+      "id": "psource_witness_heavy_load",
+      "signal": "Psource",
+      "metric": "ss",
+      "scenario": "heavy_load",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "pload_witness_heavy_load",
+      "signal": "Pload",
+      "metric": "ss",
+      "scenario": "heavy_load",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "pdump_witness_heavy_load",
+      "signal": "Pdump",
+      "metric": "ss",
+      "scenario": "heavy_load",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "balance_private_light_load",
+      "metric": "sum_residual_frac",
+      "scenario": "private_light_load",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "analytical",
+      "sided": "lower",
+      "target": 0.04,
+      "tol_pass": 0.08,
+      "tol_zero": 0.3,
+      "curve_p": 1,
+      "weight": 1,
+      "signs": [
+        1,
+        -1,
+        1
+      ],
+      "signals": [
+        "Psource",
+        "Pload",
+        "Pdump"
+      ]
+    },
+    {
+      "id": "speed_private_light_load",
+      "signal": "Speed",
+      "metric": "ss",
+      "scenario": "private_light_load",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 1,
+      "tol_pass": 0.04,
+      "tol_zero": 0.18,
+      "curve_p": 1,
+      "weight": 0.7
+    },
+    {
+      "id": "vdc_private_light_load",
+      "signal": "Vdc",
+      "metric": "ss",
+      "scenario": "private_light_load",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 1000,
+      "tol_pass": 80,
+      "tol_zero": 280,
+      "curve_p": 1,
+      "weight": 0.7
+    },
+    {
+      "id": "psource_witness_private_light_load",
+      "signal": "Psource",
+      "metric": "ss",
+      "scenario": "private_light_load",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "pload_witness_private_light_load",
+      "signal": "Pload",
+      "metric": "ss",
+      "scenario": "private_light_load",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "pdump_witness_private_light_load",
+      "signal": "Pdump",
+      "metric": "ss",
+      "scenario": "private_light_load",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "balance_private_heavy_load",
+      "metric": "sum_residual_frac",
+      "scenario": "private_heavy_load",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "analytical",
+      "sided": "lower",
+      "target": 0.04,
+      "tol_pass": 0.08,
+      "tol_zero": 0.3,
+      "curve_p": 1,
+      "weight": 1,
+      "signs": [
+        1,
+        -1,
+        1
+      ],
+      "signals": [
+        "Psource",
+        "Pload",
+        "Pdump"
+      ]
+    },
+    {
+      "id": "speed_private_heavy_load",
+      "signal": "Speed",
+      "metric": "ss",
+      "scenario": "private_heavy_load",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 1,
+      "tol_pass": 0.04,
+      "tol_zero": 0.18,
+      "curve_p": 1,
+      "weight": 0.7
+    },
+    {
+      "id": "vdc_private_heavy_load",
+      "signal": "Vdc",
+      "metric": "ss",
+      "scenario": "private_heavy_load",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 1000,
+      "tol_pass": 80,
+      "tol_zero": 280,
+      "curve_p": 1,
+      "weight": 0.7
+    },
+    {
+      "id": "psource_witness_private_heavy_load",
+      "signal": "Psource",
+      "metric": "ss",
+      "scenario": "private_heavy_load",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "pload_witness_private_heavy_load",
+      "signal": "Pload",
+      "metric": "ss",
+      "scenario": "private_heavy_load",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "pdump_witness_private_heavy_load",
+      "signal": "Pdump",
+      "metric": "ss",
+      "scenario": "private_heavy_load",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    }
+  ],
+  "structural": {
+    "recognizers": [
+      {
+        "id": "three_phase_stage",
+        "prim": "three_phase_bridge",
+        "args": [],
+        "mandatory": false,
+        "weight": 1
+      },
+      {
+        "id": "generator_converter_ballast_path",
+        "prim": "physical_path",
+        "args": [],
+        "source": [
+          "\\|synchronous\\s*generator\\|",
+          "\\|synchronous machine[^|]*\\|",
+          "\\|subsystem\\|simplified\\s+synchronous\\s+machine\\|spssimplifiedsynchronousmachine(?:puunits|siunits)lib/simplified\\s+synchronous\\s+machine",
+          "\\|generator[^|]*\\|"
+        ],
+        "via": [
+          "\\|universal bridge[^|]*\\|subsystem\\|universal bridge",
+          "\\|converter[^|]*\\|",
+          "\\|inverter[^|]*\\|",
+          "\\|igbt[^|]*\\|",
+          "\\|mosfet[^|]*\\|",
+          "\\|gto[^|]*\\|",
+          "\\|ideal switch[^|]*\\|"
+        ],
+        "target": [
+          "\\|resistor[^|]*\\|",
+          "\\|series rlc branch[^|]*\\|",
+          "\\|parallel rlc load[^|]*\\|",
+          "\\|load[^|]*\\|"
+        ],
+        "mandatory": false,
+        "weight": 1,
+        "require_via_cut": false
+      }
+    ]
+  },
+  "golden_tap": {
+    "Vdc": {
+      "by": "block_input",
+      "path": "Universal_ELC_for_MicroHydoPlant/Output/Capacitor \nVoltage",
+      "port": 1
+    },
+    "Vabc": {
+      "by": "block_input",
+      "path": "Universal_ELC_for_MicroHydoPlant/Output/IL,Ic,Is,V",
+      "port": 4
+    },
+    "Iabc": {
+      "by": "block_input",
+      "path": "Universal_ELC_for_MicroHydoPlant/Output/IL,Ic,Is,V",
+      "port": 3
+    },
+    "Psource": {
+      "by": "block_input",
+      "path": "Universal_ELC_for_MicroHydoPlant/Output/Source\nPQ",
+      "port": 1
+    },
+    "Pload": {
+      "by": "block_input",
+      "path": "Universal_ELC_for_MicroHydoPlant/Output/Load\nPQ",
+      "port": 1
+    },
+    "Pdump": {
+      "by": "block_input",
+      "path": "Universal_ELC_for_MicroHydoPlant/Output/ELC\nPQ",
+      "port": 1
+    },
+    "Speed": {
+      "by": "block_input",
+      "path": "Universal_ELC_for_MicroHydoPlant/Output/Speed(pu)",
+      "port": 1
+    }
+  },
+  "task_specific_checks": [
+    {
+      "id": "D022.energy_path_ownership",
+      "semantic_kind": "structure",
+      "scenario": "nominal",
+      "layer": "qualification",
+      "mandatory": true
+    },
+    {
+      "id": "D022.power_branch_ownership",
+      "semantic_kind": "structure",
+      "scenario": "nominal",
+      "layer": "qualification",
+      "mandatory": true
+    },
+    {
+      "id": "D022.closed_loop_ballast_ownership",
+      "semantic_kind": "structure",
+      "scenario": "nominal",
+      "layer": "qualification",
+      "mandatory": true
+    },
+    {
+      "id": "D022.ballast_load_response_witness_group",
+      "semantic_kind": "witness_group",
+      "scenario": "suite",
+      "layer": "robustness",
+      "mandatory": true
+    }
+  ]
+}

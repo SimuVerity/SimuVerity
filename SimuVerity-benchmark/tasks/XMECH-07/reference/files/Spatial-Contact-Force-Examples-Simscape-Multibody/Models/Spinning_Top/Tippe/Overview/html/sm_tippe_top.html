@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+<title>Spinning Top, Contact Methods (Tippe Shape)</title>
+<meta name="generator" content="MATLAB 25.1">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2026-01-13">
+<meta name="DC.source" content="sm_tippe_top.m">
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="content">
+<h1>Spinning Top, Contact Methods (Tippe Shape)</h1>
+<!--introduction-->
+<p>This example models a top spinning on a flat surface. The top consists of a narrow shaft and a truncated sphere. When spun at high speeds, the stem will tilt downwards until it lifts the body of the top off of the ground. Mask parameters select whether contact with the floor is modeled using a sphere or a point cloud. A point cloud will result in higher amounts of friction forces with the floor for the same friction coefficients.</p>
+<!--/introduction-->
+<h2>Contents</h2>
+<div>
+<ul>
+<li>
+<a href="#1">Model</a>
+</li>
+<li>
+<a href="#2">Body of Top and Contact Proxies</a>
+</li>
+<li>
+<a href="#3">Points For Truncated Sphere</a>
+</li>
+<li>
+<a href="#4">Convex Hull</a>
+</li>
+<li>
+<a href="#5">Simulation Results from Simscape Logging</a>
+</li>
+<li>
+<a href="#7">Simulation Results from Simscape Logging: Comparing Contact Proxies</a>
+</li>
+</ul>
+</div>
+<h2 id="1">Model</h2>
+<img vspace="5" hspace="5" src="sm_tippe_top_01.png" alt=""> <h2 id="2">Body of Top and Contact Proxies</h2>
+<p>Two types of geometry can used to model contact the floor. For both the truncated sphere and the stem, either a single sphere (single point of contact) or a point cloud can be used. The biggest difference in behavior is that for objects spinning about an axis that goes through the point of contact, no friction is generated. As a result, the point cloud will have higher levels of friction for the spinning top for the same friction coefficients.</p>
+<img vspace="5" hspace="5" src="sm_tippe_top_02.png" alt=""> <h2 id="3">Points For Truncated Sphere</h2>
+<p>A set of points is used to define the profile of the truncated sphere. The internal profile of the sphere adjusts the location of the center of mass which influences how quickly the top will flip over.</p>
+<img vspace="5" hspace="5" src="sm_tippe_top_03.png" alt=""> <h2 id="4">Convex Hull</h2>
+<p>If the top were defined as a single solid, the Spatial Contact Force block would use its convex hull to detect contact with the floor. This plot shows what that convex hull would look like.</p>
+<img vspace="5" hspace="5" src="sm_tippe_top_04.png" alt=""> <h2 id="5">Simulation Results from Simscape Logging</h2>
+<p>This is a plot of the rotational speed of the top. The rotational speed of the top about its axis switches direction as the top flips over and stands on its stem. Eventually the top slows down enough that both the stem and the body are touching the ground, and the top is rolling in a circle.</p>
+<img vspace="5" hspace="5" src="sm_tippe_top_05.png" alt=""> <h2 id="7">Simulation Results from Simscape Logging: Comparing Contact Proxies</h2>
+<p>This plot compares the effect of selected contact proxies at the head and base of the top. The Point Cloud will result in higher levels of friction than the sphere for the same friction coefficients. This is because multi-point contact will have a higher relative velocity, especially for objects that spin about an axis that passes through the contact point.</p>
+<img vspace="5" hspace="5" src="sm_tippe_top_06.png" alt=""> <img vspace="5" hspace="5" src="sm_tippe_top_07.png" alt=""> <p class="footer">Copyright 2022-2026 The MathWorks, Inc.<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2025a</a>
+<br>
+</p>
+</div>
+<!--
+##### SOURCE BEGIN #####
+%% Spinning Top, Contact Methods (Tippe Shape)
+%
+% This example models a top spinning on a flat surface. The top consists of
+% a narrow shaft and a truncated sphere. When spun at high speeds, the stem
+% will tilt downwards until it lifts the body of the top off of the ground.
+% Mask parameters select whether contact with the floor is modeled using a
+% sphere or a point cloud. A point cloud will result in higher amounts of
+% friction forces with the floor for the same friction coefficients.
+%
+% Copyright 2022-2026 The MathWorks, Inc.
+
+%% Model
+
+open_system('sm_tippe_top')
+
+set_param(find_system('sm_tippe_top','MatchFilter',@Simulink.match.allVariants,'FindAll', 'on','type','annotation','Tag','ModelFeatures'),'Interpreter','off')
+
+%% Body of Top and Contact Proxies
+%
+% Two types of geometry can used to model contact the floor. For both the
+% truncated sphere and the stem, either a single sphere (single point of
+% contact) or a point cloud can be used.  The biggest difference in
+% behavior is that for objects spinning about an axis that goes through the
+% point of contact, no friction is generated.  As a result, the point cloud
+% will have higher levels of friction for the spinning top for the same
+% friction coefficients.
+
+open_system('sm_tippe_top/Top','force')
+
+
+%% Points For Truncated Sphere
+%
+% A set of points is used to define the profile of the truncated sphere.
+% The internal profile of the sphere adjusts the location of the center of
+% mass which influences how quickly the top will flip over.
+%
+sm_tippe_top_plot3headrevolution;
+
+%% Convex Hull 
+%
+% If the top were defined as a single solid, the Spatial Contact Force
+% block would use its convex hull to detect contact with the floor.  This
+% plot shows what that convex hull would look like.
+%
+sm_convex_hull_pointcloud(ptcld_cvh,'none','plot');
+
+%% Simulation Results from Simscape Logging
+%%
+%
+% This is a plot of the rotational speed of the top. The rotational speed
+% of the top about its axis switches direction as the top flips over and
+% stands on its stem. Eventually the top slows down enough that both the
+% stem and the body are touching the ground, and the top is rolling in a
+% circle.
+%
+
+sm_tippe_top_plot1speed;
+
+%% Simulation Results from Simscape Logging: Comparing Contact Proxies
+%%
+%
+% This plot compares the effect of selected contact proxies at the head and
+% base of the top.  The Point Cloud will result in higher levels of
+% friction than the sphere for the same friction coefficients.  This is
+% because multi-point contact will have a higher relative velocity,
+% especially for objects that spin about an axis that passes through the
+% contact point.
+%
+
+sm_tippe_top_plot2compareproxies;
+
+%%
+
+%clear all
+close all
+bdclose all
+
+##### SOURCE END #####
+-->
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XFLUID-12",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/repo/examples/RM3/RM3.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 130,
+  "retained_bytes": 18020155,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ],
+  "clean_replay_setup": {
+    "phase": "before_load",
+    "path": "tasks/XFLUID-12/reference/clean_replay_setup/ext_xfluid_wecsim_rm3_reference_clean_replay_setup.m",
+    "entrypoint": "ext_xfluid_wecsim_rm3_reference_clean_replay_setup"
+  }
+}

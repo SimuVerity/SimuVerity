@@ -1,0 +1,125 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XROBO-10",
+  "scenarios": [
+    {
+      "id": "nominal_line_cycle",
+      "BallOffsetXY": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "ball_offset_positive",
+      "BallOffsetXY": [
+        0.025,
+        -0.02
+      ]
+    },
+    {
+      "id": "ball_offset_negative",
+      "BallOffsetXY": [
+        -0.025,
+        0.02
+      ]
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "start_s": 0.0,
+      "stop_s": 50.0,
+      "evidence_resample_s": 0.05
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "preferred_reference_score": 90.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.2,
+          "meaning": "nominal dual-workcell assembly and unloading completion"
+        },
+        "Q": {
+          "weight": 0.2,
+          "meaning": "two-arm joint tracking, finite dynamics, joint bounds and torque quality"
+        },
+        "M": {
+          "weight": 0.25,
+          "meaning": "real reference-to-torque-to-dynamics-to-feedback and actor-transfer causality"
+        },
+        "R": {
+          "weight": 0.2,
+          "meaning": "worst private ball-location scenario"
+        },
+        "D": {
+          "weight": 0.15,
+          "meaning": "dynamic sequencing, shuttle handoff order and later-cycle continuity"
+        }
+      },
+      "within_group": "weighted_arithmetic_mean",
+      "across_groups": "weighted_geometric_mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum",
+      "policy_id": "simuverity-101-v1:xrobo-10:scoring"
+    },
+    "shortcut_sanity_contract": [
+      "missing_one_robot_workcell",
+      "missing_required_outputs",
+      "constant_or_prerecorded_joint_motion",
+      "actor_pose_teleport_bypassing_joint_torque_and_dynamics",
+      "disconnected_joint_feedback",
+      "first_shuttle_only_replay",
+      "declared_transfer_without_attach_detach_events",
+      "ball_offset_ignored",
+      "unloading_declared_without_completed_product_sequence"
+    ]
+  },
+  "simulation": {
+    "start_s": 0.0,
+    "stop_s": 50.0,
+    "evidence_resample_s": 0.05
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "preferred_reference_score": 90.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.2,
+        "meaning": "nominal dual-workcell assembly and unloading completion"
+      },
+      "Q": {
+        "weight": 0.2,
+        "meaning": "two-arm joint tracking, finite dynamics, joint bounds and torque quality"
+      },
+      "M": {
+        "weight": 0.25,
+        "meaning": "real reference-to-torque-to-dynamics-to-feedback and actor-transfer causality"
+      },
+      "R": {
+        "weight": 0.2,
+        "meaning": "worst private ball-location scenario"
+      },
+      "D": {
+        "weight": 0.15,
+        "meaning": "dynamic sequencing, shuttle handoff order and later-cycle continuity"
+      }
+    },
+    "within_group": "weighted_arithmetic_mean",
+    "across_groups": "weighted_geometric_mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum",
+    "policy_id": "simuverity-101-v1:xrobo-10:scoring"
+  },
+  "shortcut_sanity_contract": [
+    "missing_one_robot_workcell",
+    "missing_required_outputs",
+    "constant_or_prerecorded_joint_motion",
+    "actor_pose_teleport_bypassing_joint_torque_and_dynamics",
+    "disconnected_joint_feedback",
+    "first_shuttle_only_replay",
+    "declared_transfer_without_attach_detach_events",
+    "ball_offset_ignored",
+    "unloading_declared_without_completed_product_sequence"
+  ]
+}

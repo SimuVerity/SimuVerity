@@ -1,0 +1,198 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XAERO-09",
+  "scenarios": [
+    {
+      "id": "nominal_yaw_step",
+      "attitude_command_offset_deg": [
+        0,
+        0,
+        2
+      ],
+      "initial_body_rate_deg_s": [
+        0.573,
+        0.573,
+        6.808
+      ],
+      "jet_count_mode": 2,
+      "pitch_roll_jet_mode": 2,
+      "thruster_force_scale": 1.0
+    },
+    {
+      "id": "multiaxis_four_jet",
+      "attitude_command_offset_deg": [
+        8,
+        -6,
+        10
+      ],
+      "initial_body_rate_deg_s": [
+        5,
+        4,
+        12
+      ],
+      "jet_count_mode": 4,
+      "pitch_roll_jet_mode": 2,
+      "thruster_force_scale": 1.0
+    },
+    {
+      "id": "low_authority_mode_one",
+      "attitude_command_offset_deg": [
+        -7,
+        5,
+        -12
+      ],
+      "initial_body_rate_deg_s": [
+        7,
+        6,
+        18
+      ],
+      "jet_count_mode": 2,
+      "pitch_roll_jet_mode": 1,
+      "thruster_force_scale": 0.8
+    },
+    {
+      "id": "high_authority_recovery",
+      "attitude_command_offset_deg": [
+        4,
+        7,
+        -6
+      ],
+      "initial_body_rate_deg_s": [
+        -4,
+        8,
+        -10
+      ],
+      "jet_count_mode": 4,
+      "pitch_roll_jet_mode": 2,
+      "thruster_force_scale": 1.2
+    },
+    {
+      "id": "yaw_dominant_mixed_rate",
+      "attitude_command_offset_deg": [
+        -3,
+        2,
+        15
+      ],
+      "initial_body_rate_deg_s": [
+        2,
+        -3,
+        20
+      ],
+      "jet_count_mode": 2,
+      "pitch_roll_jet_mode": 2,
+      "thruster_force_scale": 0.9
+    }
+  ],
+  "contract": {
+    "difficulty": {
+      "score": 9,
+      "maximum": 12,
+      "basis": [
+        "three coupled rotational axes with attitude-error/rate phase-plane switching and pulsed RCS actuation",
+        "discrete two-jet/four-jet and pitch/roll selection modes plus thrust-authority/propellant-use tradeoff",
+        "five private conditions vary command, initial rate, jet mode, and available thrust authority",
+        "distinct from XAERO-08 rocket trajectory/terminal flight and XAERO-11 orbit-coupled spacecraft ADCS"
+      ]
+    },
+    "simulation": {
+      "duration_seconds": 30,
+      "evidence_grid_step_seconds": 0.05
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85,
+      "preferred_reference_score": 90,
+      "normalize_or_rescale": false,
+      "groups": {
+        "A": {
+          "weight": 0.24,
+          "meaning": "three-axis attitude, rate, and tracking-error trajectory accuracy"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "finite complete logs with exact public interface and time coverage"
+        },
+        "M": {
+          "weight": 0.22,
+          "meaning": "phase-plane/RCS switching and thrust-authority mechanism fidelity"
+        },
+        "C": {
+          "weight": 0.18,
+          "meaning": "command, initial-rate, jet-mode, and force-scale causal fidelity"
+        },
+        "R": {
+          "weight": 0.14,
+          "meaning": "worst private-condition accuracy and numerical robustness"
+        },
+        "D": {
+          "weight": 0.12,
+          "meaning": "rate recovery, tracking transient, and jet switching dynamics"
+        }
+      },
+      "across_groups": "weighted geometric mean; missing critical mechanism or causal behavior may zero its group"
+    },
+    "minimum_shortcut_sanity_contract": [
+      "missing required output",
+      "one scenario replayed for every intervention",
+      "zero attitude/rate trajectory",
+      "constant or zero jet commands",
+      "command copied as physical attitude",
+      "force or jet mode ignored",
+      "truncated run"
+    ]
+  },
+  "difficulty": {
+    "score": 9,
+    "maximum": 12,
+    "basis": [
+      "three coupled rotational axes with attitude-error/rate phase-plane switching and pulsed RCS actuation",
+      "discrete two-jet/four-jet and pitch/roll selection modes plus thrust-authority/propellant-use tradeoff",
+      "five private conditions vary command, initial rate, jet mode, and available thrust authority",
+      "distinct from XAERO-08 rocket trajectory/terminal flight and XAERO-11 orbit-coupled spacecraft ADCS"
+    ]
+  },
+  "simulation": {
+    "duration_seconds": 30,
+    "evidence_grid_step_seconds": 0.05
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85,
+    "preferred_reference_score": 90,
+    "normalize_or_rescale": false,
+    "groups": {
+      "A": {
+        "weight": 0.24,
+        "meaning": "three-axis attitude, rate, and tracking-error trajectory accuracy"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "finite complete logs with exact public interface and time coverage"
+      },
+      "M": {
+        "weight": 0.22,
+        "meaning": "phase-plane/RCS switching and thrust-authority mechanism fidelity"
+      },
+      "C": {
+        "weight": 0.18,
+        "meaning": "command, initial-rate, jet-mode, and force-scale causal fidelity"
+      },
+      "R": {
+        "weight": 0.14,
+        "meaning": "worst private-condition accuracy and numerical robustness"
+      },
+      "D": {
+        "weight": 0.12,
+        "meaning": "rate recovery, tracking transient, and jet switching dynamics"
+      }
+    },
+    "across_groups": "weighted geometric mean; missing critical mechanism or causal behavior may zero its group"
+  },
+  "minimum_shortcut_sanity_contract": [
+    "missing required output",
+    "one scenario replayed for every intervention",
+    "zero attitude/rate trajectory",
+    "constant or zero jet commands",
+    "command copied as physical attitude",
+    "force or jet mode ignored",
+    "truncated run"
+  ]
+}

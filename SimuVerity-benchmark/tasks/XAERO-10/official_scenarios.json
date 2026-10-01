@@ -1,0 +1,145 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XAERO-10",
+  "scenarios": [
+    {
+      "id": "nominal_zero_command",
+      "attitude_command_rad": 0.0,
+      "measurement_noise_covariance": 1.0
+    },
+    {
+      "id": "small_command",
+      "attitude_command_rad": 0.1,
+      "measurement_noise_covariance": 1.0
+    },
+    {
+      "id": "large_command",
+      "attitude_command_rad": 0.2,
+      "measurement_noise_covariance": 1.0
+    },
+    {
+      "id": "high_measurement_noise",
+      "attitude_command_rad": 0.0,
+      "measurement_noise_covariance": 5.0
+    },
+    {
+      "id": "combined_command_noise",
+      "attitude_command_rad": 0.2,
+      "measurement_noise_covariance": 5.0
+    }
+  ],
+  "contract": {
+    "difficulty": {
+      "score": 9,
+      "maximum": 12,
+      "basis": [
+        "one source-native model contains two coupled nonlinear pitch-yaw closed-loop branches for noisy/noise-free comparison",
+        "state estimation, disturbance/noise rejection, cross-axis rotor actuation, and actuator saturation",
+        "two independently effective intervention families: attitude-command excursion and measurement-noise covariance",
+        "five private conditions expose tracking, coupling, observer consistency, noise rejection, saturation, and recovery tradeoffs"
+      ]
+    },
+    "simulation": {
+      "duration_seconds": 10.0,
+      "evidence_grid_step_seconds": 0.02
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85,
+      "preferred_reference_score": 90,
+      "normalize_or_rescale": false,
+      "groups": {
+        "A": {
+          "weight": 0.24,
+          "meaning": "pitch/yaw angle and rate trajectory accuracy in both branches"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "finite complete exact-width ten-second output contract"
+        },
+        "M": {
+          "weight": 0.2,
+          "meaning": "coupled nonlinear plant, dynamic actuation, estimator, and branch-divergence fidelity"
+        },
+        "C": {
+          "weight": 0.2,
+          "meaning": "command and measurement-noise intervention causality plus closed-loop tracking"
+        },
+        "R": {
+          "weight": 0.14,
+          "meaning": "worst private-condition behavior and numerical robustness"
+        },
+        "D": {
+          "weight": 0.12,
+          "meaning": "startup, transient, recovery, and terminal-rate fidelity"
+        }
+      },
+      "within_group": "task-specific arithmetic aggregation with explicit worst-condition retention",
+      "across_groups": "weighted geometric mean; absent critical mechanism groups may be zero"
+    },
+    "minimum_shortcut_sanity_contract": [
+      "missing required output",
+      "one scenario replayed for all interventions",
+      "zero state",
+      "noisy branch copied from noise-free branch",
+      "commands copied as states",
+      "noise covariance ignored",
+      "truncated run"
+    ]
+  },
+  "difficulty": {
+    "score": 9,
+    "maximum": 12,
+    "basis": [
+      "one source-native model contains two coupled nonlinear pitch-yaw closed-loop branches for noisy/noise-free comparison",
+      "state estimation, disturbance/noise rejection, cross-axis rotor actuation, and actuator saturation",
+      "two independently effective intervention families: attitude-command excursion and measurement-noise covariance",
+      "five private conditions expose tracking, coupling, observer consistency, noise rejection, saturation, and recovery tradeoffs"
+    ]
+  },
+  "simulation": {
+    "duration_seconds": 10.0,
+    "evidence_grid_step_seconds": 0.02
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85,
+    "preferred_reference_score": 90,
+    "normalize_or_rescale": false,
+    "groups": {
+      "A": {
+        "weight": 0.24,
+        "meaning": "pitch/yaw angle and rate trajectory accuracy in both branches"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "finite complete exact-width ten-second output contract"
+      },
+      "M": {
+        "weight": 0.2,
+        "meaning": "coupled nonlinear plant, dynamic actuation, estimator, and branch-divergence fidelity"
+      },
+      "C": {
+        "weight": 0.2,
+        "meaning": "command and measurement-noise intervention causality plus closed-loop tracking"
+      },
+      "R": {
+        "weight": 0.14,
+        "meaning": "worst private-condition behavior and numerical robustness"
+      },
+      "D": {
+        "weight": 0.12,
+        "meaning": "startup, transient, recovery, and terminal-rate fidelity"
+      }
+    },
+    "within_group": "task-specific arithmetic aggregation with explicit worst-condition retention",
+    "across_groups": "weighted geometric mean; absent critical mechanism groups may be zero"
+  },
+  "minimum_shortcut_sanity_contract": [
+    "missing required output",
+    "one scenario replayed for all interventions",
+    "zero state",
+    "noisy branch copied from noise-free branch",
+    "commands copied as states",
+    "noise covariance ignored",
+    "truncated run"
+  ]
+}

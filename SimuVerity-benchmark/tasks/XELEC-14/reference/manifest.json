@@ -1,0 +1,40 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XELEC-14",
+  "file_count": 3,
+  "files": [
+    {
+      "path": "reference/files/license.txt",
+      "size_bytes": 1310
+    },
+    {
+      "path": "reference/files/single_phase_to_3phase.mdl",
+      "size_bytes": 194794
+    },
+    {
+      "path": "reference/files/single_phase_to_3phase.mdl.r2008a",
+      "size_bytes": 129506
+    }
+  ],
+  "entrypoint": "reference/files/single_phase_to_3phase.mdl",
+  "expected_score": 91.03806167323117,
+  "expected_valid_scenarios": 8,
+  "score_tolerance": 5e-05,
+  "scenario_contract": {
+    "expected_ids": [
+      "source_up",
+      "source_down",
+      "load_up",
+      "load_down",
+      "joint_low_source_high_load",
+      "joint_high_source_low_load",
+      "joint_interior_a",
+      "joint_interior_b"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 325610,
+  "excluded_files": []
+}

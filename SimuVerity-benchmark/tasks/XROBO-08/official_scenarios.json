@@ -1,0 +1,186 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XROBO-08",
+  "scenarios": [
+    {
+      "id": "nominal_offset",
+      "class": "nominal_closed_loop",
+      "BallInitialX_m": 0.07,
+      "BallInitialY_m": -0.05,
+      "BallInitialVX_mps": 0.0,
+      "BallInitialVY_mps": 0.0,
+      "BallMassScale": 1.0,
+      "ContactFrictionScale": 1.0,
+      "TorqueAuthorityScale": 1.0,
+      "stop_time_s": 10.0
+    },
+    {
+      "id": "opposite_quadrant",
+      "class": "directional_boundary",
+      "BallInitialX_m": -0.08,
+      "BallInitialY_m": 0.07,
+      "BallInitialVX_mps": 0.0,
+      "BallInitialVY_mps": 0.0,
+      "BallMassScale": 1.0,
+      "ContactFrictionScale": 1.0,
+      "TorqueAuthorityScale": 1.0,
+      "stop_time_s": 10.0
+    },
+    {
+      "id": "near_edge_recovery",
+      "class": "position_boundary_dynamic",
+      "BallInitialX_m": 0.112,
+      "BallInitialY_m": -0.015,
+      "BallInitialVX_mps": 0.0,
+      "BallInitialVY_mps": 0.0,
+      "BallMassScale": 1.0,
+      "ContactFrictionScale": 1.0,
+      "TorqueAuthorityScale": 1.0,
+      "stop_time_s": 10.0
+    },
+    {
+      "id": "initial_velocity_recovery",
+      "class": "velocity_dynamic",
+      "BallInitialX_m": 0.03,
+      "BallInitialY_m": -0.02,
+      "BallInitialVX_mps": 0.018,
+      "BallInitialVY_mps": -0.015,
+      "BallMassScale": 1.0,
+      "ContactFrictionScale": 1.0,
+      "TorqueAuthorityScale": 1.0,
+      "stop_time_s": 10.0
+    },
+    {
+      "id": "ball_mass_margin",
+      "class": "plant_parameter_boundary",
+      "BallInitialX_m": -0.06,
+      "BallInitialY_m": -0.04,
+      "BallInitialVX_mps": 0.0,
+      "BallInitialVY_mps": 0.0,
+      "BallMassScale": 1.1,
+      "ContactFrictionScale": 1.0,
+      "TorqueAuthorityScale": 1.0,
+      "stop_time_s": 10.0
+    },
+    {
+      "id": "contact_friction_margin",
+      "class": "contact_parameter_boundary",
+      "BallInitialX_m": 0.06,
+      "BallInitialY_m": 0.04,
+      "BallInitialVX_mps": 0.0,
+      "BallInitialVY_mps": 0.0,
+      "BallMassScale": 1.0,
+      "ContactFrictionScale": 0.8,
+      "TorqueAuthorityScale": 1.0,
+      "stop_time_s": 10.0
+    },
+    {
+      "id": "actuator_derating",
+      "class": "actuator_boundary",
+      "BallInitialX_m": -0.06,
+      "BallInitialY_m": 0.05,
+      "BallInitialVX_mps": 0.0,
+      "BallInitialVY_mps": 0.0,
+      "BallMassScale": 1.0,
+      "ContactFrictionScale": 1.0,
+      "TorqueAuthorityScale": 0.88,
+      "stop_time_s": 10.0
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "one_isolated_persistent_matlab_session": true,
+      "evidence_then_offline_scoring": true,
+      "reference_adapter": "Load the pinned pretrained policy, expose the existing 6-DOF joint x/y initial-velocity targets in memory, expose existing base-workspace parameters, add in-memory measurement taps, and close the model without saving."
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "preferred_reference_target_raw": 90.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.2,
+          "meaning": "nominal ball-centering and survival"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "plate attitude, bounded commands and motion quality"
+        },
+        "M": {
+          "weight": 0.3,
+          "meaning": "physical contact-feedback-command-torque-motion causality"
+        },
+        "R": {
+          "weight": 0.2,
+          "meaning": "worst private operating condition"
+        },
+        "D": {
+          "weight": 0.2,
+          "meaning": "near-edge, velocity and finite-authority recovery"
+        }
+      },
+      "within_group": "dedicated weighted arithmetic mean",
+      "across_groups": "weighted geometric mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum",
+      "policy_id": "simuverity-101-v1:xrobo-08:scoring"
+    },
+    "shortcut_sanity_contract": [
+      "qualification_or_required_output_missing",
+      "direct_ball_position_assignment_or_center_constraint",
+      "missing_physical_ball_plate_contact",
+      "missing_observation_to_controller_to_torque_feedback",
+      "fixed_plate_or_inactive_joint_actuation",
+      "prerecorded_action_or_trajectory_playback",
+      "private_initial_condition_or_parameter_inputs_ignored",
+      "success_reported_after_ball_leaves_plate"
+    ]
+  },
+  "simulation": {
+    "one_isolated_persistent_matlab_session": true,
+    "evidence_then_offline_scoring": true,
+    "reference_adapter": "Load the pinned pretrained policy, expose the existing 6-DOF joint x/y initial-velocity targets in memory, expose existing base-workspace parameters, add in-memory measurement taps, and close the model without saving."
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "preferred_reference_target_raw": 90.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.2,
+        "meaning": "nominal ball-centering and survival"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "plate attitude, bounded commands and motion quality"
+      },
+      "M": {
+        "weight": 0.3,
+        "meaning": "physical contact-feedback-command-torque-motion causality"
+      },
+      "R": {
+        "weight": 0.2,
+        "meaning": "worst private operating condition"
+      },
+      "D": {
+        "weight": 0.2,
+        "meaning": "near-edge, velocity and finite-authority recovery"
+      }
+    },
+    "within_group": "dedicated weighted arithmetic mean",
+    "across_groups": "weighted geometric mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum",
+    "policy_id": "simuverity-101-v1:xrobo-08:scoring"
+  },
+  "shortcut_sanity_contract": [
+    "qualification_or_required_output_missing",
+    "direct_ball_position_assignment_or_center_constraint",
+    "missing_physical_ball_plate_contact",
+    "missing_observation_to_controller_to_torque_feedback",
+    "fixed_plate_or_inactive_joint_actuation",
+    "prerecorded_action_or_trajectory_playback",
+    "private_initial_condition_or_parameter_inputs_ignored",
+    "success_reported_after_ball_leaves_plate"
+  ]
+}

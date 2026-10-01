@@ -1,0 +1,15 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XAUTO-10",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/source/simulink/torque_vectoring_sim.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 83,
+  "retained_bytes": 682246,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ]
+}

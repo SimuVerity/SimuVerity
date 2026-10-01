@@ -1,0 +1,8 @@
+{
+  "schema": "simuverity.public-spec.v1",
+  "task_id": "XMED-04",
+  "collection": "XMED",
+  "runtime_alias": "XMED-04",
+  "candidate_filename": "cand_XMED04.slx",
+  "prompt": "Build a closed-loop artificial-pancreas model in Simulink for a person with type-1 diabetes. The model must contain a dynamic patient glucose-insulin physiology, meal carbohydrate absorption, sampled glucose monitoring, an insulin controller and a subcutaneous insulin pump connected in one causal loop. The controller architecture is unrestricted.\n\nRegulate blood glucose primarily within 70 to 180 mg/dL over the meal schedule, avoid severe hypoglycaemia below 54 mg/dL and severe hyperglycaemia above 250 mg/dL, and recover after meal disturbances without relying on prescribed glucose trajectories.\n\nRead MealTimes_min, MealCarbs_g, PatientWeight_kg and SensorSampleTime_s from the MATLAB base workspace. MealTimes_min is a strictly increasing three-element vector of breakfast, lunch and dinner times in minutes. MealCarbs_g is the paired three-element carbohydrate vector with each meal between 20 and 60 g. PatientWeight_kg is between 55 and 90 kg, and SensorSampleTime_s is between 180 and 600 s.\n\nLog complete-run scalar MATLAB Timeseries named TrueGlucose_mg_dL, ObservedGlucose_mg_dL, InsulinInfusion_mU_min, MealCarbohydrateRate_g_s and AbsorbedGlucoseRate_mmol_s. Every output must come from the connected physiology, measurement, controller, pump or meal-absorption path; do not replay meal-specific outputs or copy a glucose target as a measurement.\n\nSubmission filename contract: create, edit, and save the final self-contained Simulink model as cand_XMED04.slx in the assigned submission directory; keep the latest usable state at that exact path throughout the run."
+}

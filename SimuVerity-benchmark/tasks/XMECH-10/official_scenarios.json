@@ -1,0 +1,141 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XMECH-10",
+  "scenarios": [
+    {
+      "id": "nominal_transfer",
+      "SupplyVoltage_V": 24.0,
+      "PayloadMass_kg": 0.4,
+      "JointFrictionScale": 1.0,
+      "SequenceDelayScale": 1.0
+    },
+    {
+      "id": "low_supply_boundary",
+      "SupplyVoltage_V": 21.6,
+      "PayloadMass_kg": 0.4,
+      "JointFrictionScale": 1.0,
+      "SequenceDelayScale": 1.0
+    },
+    {
+      "id": "heavy_payload_boundary",
+      "SupplyVoltage_V": 24.0,
+      "PayloadMass_kg": 0.5,
+      "JointFrictionScale": 1.0,
+      "SequenceDelayScale": 1.0
+    },
+    {
+      "id": "high_friction_boundary",
+      "SupplyVoltage_V": 24.0,
+      "PayloadMass_kg": 0.4,
+      "JointFrictionScale": 1.2,
+      "SequenceDelayScale": 1.0
+    },
+    {
+      "id": "slow_sequence_boundary",
+      "SupplyVoltage_V": 24.0,
+      "PayloadMass_kg": 0.4,
+      "JointFrictionScale": 1.0,
+      "SequenceDelayScale": 1.1
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "start_s": 0.0,
+      "stop_s": 20.0,
+      "smoke_stop_s": 0.05,
+      "evidence_sample_s": 0.02
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "preferred_reference_score": 90.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.2,
+          "meaning": "nominal pickup, multi-axis transport, release, and output conveyance"
+        },
+        "Q": {
+          "weight": 0.15,
+          "meaning": "joint tracking, finite electrical effort, bounded contact and smooth motion"
+        },
+        "M": {
+          "weight": 0.3,
+          "meaning": "electrical-drive, transmission, feedback, payload, friction, and sensing causality"
+        },
+        "R": {
+          "weight": 0.2,
+          "meaning": "worst retained private operating condition"
+        },
+        "D": {
+          "weight": 0.15,
+          "meaning": "ordered sensor-contact-transfer dynamics and post-release continuity"
+        }
+      },
+      "within_group": "weighted_arithmetic_mean",
+      "across_groups": "weighted_geometric_mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum",
+      "policy_id": "simuverity-101-v1:xmech-10:scoring"
+    },
+    "shortcut_sanity_contract": [
+      "prescribed_motion_instead_of_electrical_actuation",
+      "missing_required_outputs",
+      "constant_or_copied_joint_state",
+      "disconnected_position_feedback",
+      "motor_or_gear_disconnected_from_joint",
+      "workspace_input_ignored",
+      "welded_or_teleported_payload",
+      "declared_transfer_without_ordered_sensor_and_payload_motion",
+      "release_declared_without_output_conveyor_motion"
+    ]
+  },
+  "simulation": {
+    "start_s": 0.0,
+    "stop_s": 20.0,
+    "smoke_stop_s": 0.05,
+    "evidence_sample_s": 0.02
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "preferred_reference_score": 90.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.2,
+        "meaning": "nominal pickup, multi-axis transport, release, and output conveyance"
+      },
+      "Q": {
+        "weight": 0.15,
+        "meaning": "joint tracking, finite electrical effort, bounded contact and smooth motion"
+      },
+      "M": {
+        "weight": 0.3,
+        "meaning": "electrical-drive, transmission, feedback, payload, friction, and sensing causality"
+      },
+      "R": {
+        "weight": 0.2,
+        "meaning": "worst retained private operating condition"
+      },
+      "D": {
+        "weight": 0.15,
+        "meaning": "ordered sensor-contact-transfer dynamics and post-release continuity"
+      }
+    },
+    "within_group": "weighted_arithmetic_mean",
+    "across_groups": "weighted_geometric_mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum",
+    "policy_id": "simuverity-101-v1:xmech-10:scoring"
+  },
+  "shortcut_sanity_contract": [
+    "prescribed_motion_instead_of_electrical_actuation",
+    "missing_required_outputs",
+    "constant_or_copied_joint_state",
+    "disconnected_position_feedback",
+    "motor_or_gear_disconnected_from_joint",
+    "workspace_input_ignored",
+    "welded_or_teleported_payload",
+    "declared_transfer_without_ordered_sensor_and_payload_motion",
+    "release_declared_without_output_conveyor_motion"
+  ]
+}

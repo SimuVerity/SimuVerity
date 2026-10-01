@@ -1,0 +1,138 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XAERO-09",
+  "collection": "XAERO",
+  "reference": {
+    "identity_path": "tasks/XAERO-09/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "aero_dap3dof.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XAERO-09",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a closed-loop Simulink model of a three-axis lunar-module digital attitude autopilot driven by reaction-control jets.",
+    "engineering_objects": [
+      "Couple the controller to three-axis rotational dynamics, discrete jet selection, bounded jet torque, and the available two-jet/four-jet and pitch/roll selection modes.",
+      "The applied RCS torque must change consistently with available thruster force.",
+      "jet_count_mode selects 2 or 4 available jets, pitch_roll_jet_mode selects mode 1 or 2, and thruster_force_scale scales nominal RCS authority."
+    ],
+    "physical_paths": [
+      "Prescribed attitude histories, replayed outputs, continuously applied ideal torque that bypasses the jet commands, or disconnected feedback are invalid.",
+      "Couple the controller to three-axis rotational dynamics, discrete jet selection, bounded jet torque, and the available two-jet/four-jet and pitch/roll selection modes.",
+      "The applied RCS torque must change consistently with available thruster force.",
+      "jet_count_mode selects 2 or 4 available jets, pitch_roll_jet_mode selects mode 1 or 2, and thruster_force_scale scales nominal RCS authority."
+    ],
+    "functional_paths": [
+      "Build a closed-loop Simulink model of a three-axis lunar-module digital attitude autopilot driven by reaction-control jets.",
+      "Couple the controller to three-axis rotational dynamics, discrete jet selection, bounded jet torque, and the available two-jet/four-jet and pitch/roll selection modes.",
+      "Tracking error is command offset minus attitude change relative to the initial attitude."
+    ],
+    "information_paths": [
+      "lunar_dap_case_input -> F90-XAERO-09 plant/control path -> attitude_state, phase_plane_state, rcs_state"
+    ],
+    "modes_and_events": [
+      "Build a closed-loop Simulink model of a three-axis lunar-module digital attitude autopilot driven by reaction-control jets.",
+      "Use attitude-error and body-rate feedback with phase-plane switching or an engineering-equivalent nonlinear pulse decision law on all three axes.",
+      "Couple the controller to three-axis rotational dynamics, discrete jet selection, bounded jet torque, and the available two-jet/four-jet and pitch/roll selection modes."
+    ],
+    "interfaces": [
+      {
+        "name": "lunar_dap_case_input",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "MATLAB struct"
+        ],
+        "range_or_shape": "Read lunar_dap_case_input from the MATLAB base workspace and simulate from 0 to 30 seconds. The lunar_dap_case_input struct has attitude_command_offset_deg as a finite real 3-by-1 vector in roll, pitch, yaw order with each component in [-15, 15] deg; initial_body_rate_deg_s as a finite real 3-by-1 vector in p, q, r order with each component in [-20, 20] deg/s; jet_count_mode as an integer scalar 2 or 4; pitch_roll_jet_mode as an integer scalar 1 or 2; and thruster_force_scale as a real scalar in [0.8, 1.2].",
+        "source": "tasks/XAERO-09/public_spec.json"
+      },
+      {
+        "name": "attitude_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad/s",
+          "rad"
+        ],
+        "range_or_shape": "attitude_state has width 6 in this order: roll_rad (rad), pitch_rad (rad), yaw_rad (rad), p_rad_s (rad/s), q_rad_s (rad/s), r_rad_s (rad/s).",
+        "source": "tasks/XAERO-09/public_spec.json"
+      },
+      {
+        "name": "phase_plane_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad"
+        ],
+        "range_or_shape": "phase_plane_state has width 6 in this order: roll_command_offset_rad (rad), pitch_command_offset_rad (rad), yaw_command_offset_rad (rad), roll_tracking_error_rad (rad), pitch_tracking_error_rad (rad), yaw_tracking_error_rad (rad).",
+        "source": "tasks/XAERO-09/public_spec.json"
+      },
+      {
+        "name": "rcs_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "rcs_state has width 6 in this order: yaw_jet_command (dimensionless), pitch_jet_command (dimensionless), roll_jet_command (dimensionless), jet_count_mode (dimensionless), pitch_roll_jet_mode (dimensionless), thruster_force_scale (dimensionless).",
+        "source": "tasks/XAERO-09/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a closed-loop Simulink model of a three-axis lunar-module digital attitude autopilot driven by reaction-control jets.",
+      "Use attitude-error and body-rate feedback with phase-plane switching or an engineering-equivalent nonlinear pulse decision law on all three axes.",
+      "Couple the controller to three-axis rotational dynamics, discrete jet selection, bounded jet torque, and the available two-jet/four-jet and pitch/roll selection modes."
+    ],
+    "feedback_and_control_causality": [
+      "Build a closed-loop Simulink model of a three-axis lunar-module digital attitude autopilot driven by reaction-control jets.",
+      "Use attitude-error and body-rate feedback with phase-plane switching or an engineering-equivalent nonlinear pulse decision law on all three axes.",
+      "Couple the controller to three-axis rotational dynamics, discrete jet selection, bounded jet torque, and the available two-jet/four-jet and pitch/roll selection modes."
+    ],
+    "signal_sources": [
+      "lunar_dap_case_input is read from the public MATLAB base-workspace input contract.",
+      "attitude_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "phase_plane_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "rcs_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "lunar_dap_case_input: Read lunar_dap_case_input from the MATLAB base workspace and simulate from 0 to 30 seconds. The lunar_dap_case_input struct has attitude_command_offset_deg as a finite real 3-by-1 vector in roll, pitch, yaw order with each component in [-15, 15] deg; initial_body_rate_deg_s as a finite real 3-by-1 vector in p, q, r order with each component in [-20, 20] deg/s; jet_count_mode as an integer scalar 2 or 4; pitch_roll_jet_mode as an integer scalar 1 or 2; and thruster_force_scale as a real scalar in [0.8, 1.2]."
+    ],
+    "disturbances": [
+      "Deliver beside the model every submission-authored dependency required to load and simulate it."
+    ],
+    "dynamic_processes": [
+      "Use attitude-error and body-rate feedback with phase-plane switching or an engineering-equivalent nonlinear pulse decision law on all three axes.",
+      "Couple the controller to three-axis rotational dynamics, discrete jet selection, bounded jet torque, and the available two-jet/four-jet and pitch/roll selection modes.",
+      "Tracking error is command offset minus attitude change relative to the initial attitude."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XAERO-09: prescribing attitude_state directly would bypass the system path described by: Prescribed attitude histories, replayed outputs, continuously applied ideal torque that bypasses the jet commands, or disconnected feedback are invalid.",
+      "F90-XAERO-09: replaying a fixed attitude_state trace would ignore causal variation in lunar_dap_case_input."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XAERO-09/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XAERO-09/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XAERO-09/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

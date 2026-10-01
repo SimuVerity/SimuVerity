@@ -1,0 +1,160 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XBATT-10",
+  "scenarios": [
+    {
+      "id": "baseline",
+      "profile": "standard",
+      "vehicle_mass_kg": 2885,
+      "powertrain_rating_kw": 132,
+      "battery_initial_soc_fraction": 0.8,
+      "regenerative_braking_enabled": 1
+    },
+    {
+      "id": "heavy_mass",
+      "profile": "standard",
+      "vehicle_mass_kg": 5885,
+      "powertrain_rating_kw": 132,
+      "battery_initial_soc_fraction": 0.8,
+      "regenerative_braking_enabled": 1
+    },
+    {
+      "id": "low_soc",
+      "profile": "standard",
+      "vehicle_mass_kg": 2885,
+      "powertrain_rating_kw": 132,
+      "battery_initial_soc_fraction": 0.5,
+      "regenerative_braking_enabled": 1
+    },
+    {
+      "id": "low_power_heavy",
+      "profile": "aggressive",
+      "vehicle_mass_kg": 5885,
+      "powertrain_rating_kw": 95,
+      "battery_initial_soc_fraction": 0.8,
+      "regenerative_braking_enabled": 1
+    },
+    {
+      "id": "high_power_heavy",
+      "profile": "aggressive",
+      "vehicle_mass_kg": 5885,
+      "powertrain_rating_kw": 150,
+      "battery_initial_soc_fraction": 0.8,
+      "regenerative_braking_enabled": 1
+    },
+    {
+      "id": "regen_off",
+      "profile": "standard",
+      "vehicle_mass_kg": 2885,
+      "powertrain_rating_kw": 132,
+      "battery_initial_soc_fraction": 0.8,
+      "regenerative_braking_enabled": 0
+    }
+  ],
+  "contract": {
+    "difficulty": {
+      "score": 11,
+      "maximum": 12,
+      "basis": [
+        "battery-motor-vehicle multidomain path",
+        "closed longitudinal control",
+        "regenerative and friction braking",
+        "three motor ratings",
+        "mass and SOC design axes",
+        "1194-block reference hierarchy"
+      ]
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85,
+      "preferred_reference_score": 90,
+      "normalize_threshold_to_100": false,
+      "groups": {
+        "A": {
+          "weight": 0.25,
+          "meaning": "speed tracking and motor/battery trajectory accuracy"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "finite complete unit-consistent outputs"
+        },
+        "M": {
+          "weight": 0.25,
+          "meaning": "connected battery-motor-vehicle power path and regenerative energy flow"
+        },
+        "C": {
+          "weight": 0.2,
+          "meaning": "causal mass, power-rating, SOC and regeneration effects"
+        },
+        "R": {
+          "weight": 0.1,
+          "meaning": "worst private scenario"
+        },
+        "D": {
+          "weight": 0.1,
+          "meaning": "acceleration, braking and recovery dynamics"
+        }
+      }
+    },
+    "minimum_shortcut_sanity_contract": [
+      "missing_battery_log",
+      "fixed_outputs_across_scenarios",
+      "mass_without_effect",
+      "power_rating_without_effect",
+      "soc_without_effect",
+      "regen_flag_without_effect",
+      "disconnected_energy_path"
+    ]
+  },
+  "difficulty": {
+    "score": 11,
+    "maximum": 12,
+    "basis": [
+      "battery-motor-vehicle multidomain path",
+      "closed longitudinal control",
+      "regenerative and friction braking",
+      "three motor ratings",
+      "mass and SOC design axes",
+      "1194-block reference hierarchy"
+    ]
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85,
+    "preferred_reference_score": 90,
+    "normalize_threshold_to_100": false,
+    "groups": {
+      "A": {
+        "weight": 0.25,
+        "meaning": "speed tracking and motor/battery trajectory accuracy"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "finite complete unit-consistent outputs"
+      },
+      "M": {
+        "weight": 0.25,
+        "meaning": "connected battery-motor-vehicle power path and regenerative energy flow"
+      },
+      "C": {
+        "weight": 0.2,
+        "meaning": "causal mass, power-rating, SOC and regeneration effects"
+      },
+      "R": {
+        "weight": 0.1,
+        "meaning": "worst private scenario"
+      },
+      "D": {
+        "weight": 0.1,
+        "meaning": "acceleration, braking and recovery dynamics"
+      }
+    }
+  },
+  "minimum_shortcut_sanity_contract": [
+    "missing_battery_log",
+    "fixed_outputs_across_scenarios",
+    "mass_without_effect",
+    "power_rating_without_effect",
+    "soc_without_effect",
+    "regen_flag_without_effect",
+    "disconnected_energy_path"
+  ]
+}

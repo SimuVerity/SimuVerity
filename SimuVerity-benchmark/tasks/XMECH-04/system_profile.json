@@ -1,0 +1,199 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XMECH-04",
+  "collection": "XMECH",
+  "reference": {
+    "identity_path": "tasks/XMECH-04/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/XMECH04_reference.slx",
+    "model_path": "tasks/XMECH-04/reference/files/XMECH04_reference.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XMECH-04",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a six-revolute-joint serial robotic arm with finite link inertia and closed-loop joint actuation.",
+    "engineering_objects": [
+      "base"
+    ],
+    "physical_paths": [
+      "Build a six-revolute-joint serial robotic arm with finite link inertia and closed-loop joint actuation."
+    ],
+    "functional_paths": [
+      "The arm must solve the Cartesian positioning problem for a desired wrist-centre location and regulate all six joints while carrying a payload, respecting finite actuator torque limits, and recovering from a temporary external joint-load disturbance."
+    ],
+    "information_paths": [
+      "target_xyz_cm, wrist_target_deg, move_time, payload_mass, torque_limit_scale, disturbance_torque_nm, disturbance_start -> F90-XMECH-04 plant/control path -> joint_state, end_effector_pose, joint_torque"
+    ],
+    "modes_and_events": [
+      "F90-XMECH-04 startup and continuous operation follow the current public task contract."
+    ],
+    "interfaces": [
+      {
+        "name": "target_xyz_cm",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "cm"
+        ],
+        "range_or_shape": "Read target_xyz_cm, wrist_target_deg, move_time, payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables.",
+        "source": "tasks/XMECH-04/public_spec.json"
+      },
+      {
+        "name": "wrist_target_deg",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "deg"
+        ],
+        "range_or_shape": "Read target_xyz_cm, wrist_target_deg, move_time, payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables.",
+        "source": "tasks/XMECH-04/public_spec.json"
+      },
+      {
+        "name": "move_time",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read target_xyz_cm, wrist_target_deg, move_time, payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables. The target position operates over x = 38--62 cm, y = -28--32 cm, z = 25--55 cm; the three wrist targets operate over [-35,35], [-25,25], and [-35,35] deg; move_time is 2.4--4.2 s; payload_mass is 0.2--2.2 kg; torque_limit_scale is 0.72--1.15; disturbance_start is 1.35--3.65 s.",
+        "source": "tasks/XMECH-04/public_spec.json"
+      },
+      {
+        "name": "payload_mass",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kg"
+        ],
+        "range_or_shape": "Read target_xyz_cm, wrist_target_deg, move_time, payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables. The target position operates over x = 38--62 cm, y = -28--32 cm, z = 25--55 cm; the three wrist targets operate over [-35,35], [-25,25], and [-35,35] deg; move_time is 2.4--4.2 s; payload_mass is 0.2--2.2 kg; torque_limit_scale is 0.72--1.15; disturbance_start is 1.35--3.65 s.",
+        "source": "tasks/XMECH-04/public_spec.json"
+      },
+      {
+        "name": "torque_limit_scale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read target_xyz_cm, wrist_target_deg, move_time, payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables. The target position operates over x = 38--62 cm, y = -28--32 cm, z = 25--55 cm; the three wrist targets operate over [-35,35], [-25,25], and [-35,35] deg; move_time is 2.4--4.2 s; payload_mass is 0.2--2.2 kg; torque_limit_scale is 0.72--1.15; disturbance_start is 1.35--3.65 s.",
+        "source": "tasks/XMECH-04/public_spec.json"
+      },
+      {
+        "name": "disturbance_torque_nm",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "N*m"
+        ],
+        "range_or_shape": "Read target_xyz_cm, wrist_target_deg, move_time, payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables.",
+        "source": "tasks/XMECH-04/public_spec.json"
+      },
+      {
+        "name": "disturbance_start",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read target_xyz_cm, wrist_target_deg, move_time, payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables. The target position operates over x = 38--62 cm, y = -28--32 cm, z = 25--55 cm; the three wrist targets operate over [-35,35], [-25,25], and [-35,35] deg; move_time is 2.4--4.2 s; payload_mass is 0.2--2.2 kg; torque_limit_scale is 0.72--1.15; disturbance_start is 1.35--3.65 s. The six disturbance-torque components operate respectively within +/-[4,5,4,2,2,1.5] N*m and act temporarily after disturbance_start.",
+        "source": "tasks/XMECH-04/public_spec.json"
+      },
+      {
+        "name": "joint_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "mixed"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries joint_state, end_effector_pose, and joint_torque. joint_state must contain measured [q1..q6 in rad, dq1..dq6 in rad/s] from the physical joints.",
+        "source": "tasks/XMECH-04/public_spec.json"
+      },
+      {
+        "name": "end_effector_pose",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "mixed"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries joint_state, end_effector_pose, and joint_torque. end_effector_pose must contain measured [x,y,z in cm, yaw,pitch,roll in deg] under one fixed right-handed base-frame and ZYX Euler convention.",
+        "source": "tasks/XMECH-04/public_spec.json"
+      },
+      {
+        "name": "joint_torque",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "mixed"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries joint_state, end_effector_pose, and joint_torque. joint_torque must contain the bounded six actuator torques in N*m.",
+        "source": "tasks/XMECH-04/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "end_effector_pose must contain measured [x,y,z in cm, yaw,pitch,roll in deg] under one fixed right-handed base-frame and ZYX Euler convention."
+    ],
+    "feedback_and_control_causality": [
+      "Build a six-revolute-joint serial robotic arm with finite link inertia and closed-loop joint actuation.",
+      "The arm must solve the Cartesian positioning problem for a desired wrist-centre location and regulate all six joints while carrying a payload, respecting finite actuator torque limits, and recovering from a temporary external joint-load disturbance.",
+      "The unscaled actuator torque limits for joints 1--6 are [80,70,60,22,18,14] N*m."
+    ],
+    "signal_sources": [
+      "target_xyz_cm is read from the public MATLAB base-workspace input contract.",
+      "wrist_target_deg is read from the public MATLAB base-workspace input contract.",
+      "move_time is read from the public MATLAB base-workspace input contract.",
+      "payload_mass is read from the public MATLAB base-workspace input contract.",
+      "torque_limit_scale is read from the public MATLAB base-workspace input contract.",
+      "disturbance_torque_nm is read from the public MATLAB base-workspace input contract.",
+      "disturbance_start is read from the public MATLAB base-workspace input contract.",
+      "joint_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "end_effector_pose is produced by the implemented plant or controller and logged under the public output contract.",
+      "joint_torque is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "target_xyz_cm: Read target_xyz_cm, wrist_target_deg, move_time, payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables.",
+      "wrist_target_deg: Read target_xyz_cm, wrist_target_deg, move_time, payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables.",
+      "move_time: Read target_xyz_cm, wrist_target_deg, move_time, payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables. The target position operates over x = 38--62 cm, y = -28--32 cm, z = 25--55 cm; the three wrist targets operate over [-35,35], [-25,25], and [-35,35] deg; move_time is 2.4--4.2 s; payload_mass is 0.2--2.2 kg; torque_limit_scale is 0.72--1.15; disturbance_start is 1.35--3.65 s.",
+      "payload_mass: Read target_xyz_cm, wrist_target_deg, move_time, payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables. The target position operates over x = 38--62 cm, y = -28--32 cm, z = 25--55 cm; the three wrist targets operate over [-35,35], [-25,25], and [-35,35] deg; move_time is 2.4--4.2 s; payload_mass is 0.2--2.2 kg; torque_limit_scale is 0.72--1.15; disturbance_start is 1.35--3.65 s.",
+      "torque_limit_scale: Read target_xyz_cm, wrist_target_deg, move_time, payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables. The target position operates over x = 38--62 cm, y = -28--32 cm, z = 25--55 cm; the three wrist targets operate over [-35,35], [-25,25], and [-35,35] deg; move_time is 2.4--4.2 s; payload_mass is 0.2--2.2 kg; torque_limit_scale is 0.72--1.15; disturbance_start is 1.35--3.65 s.",
+      "disturbance_torque_nm: Read target_xyz_cm, wrist_target_deg, move_time, payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables.",
+      "disturbance_start: Read target_xyz_cm, wrist_target_deg, move_time, payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables. The target position operates over x = 38--62 cm, y = -28--32 cm, z = 25--55 cm; the three wrist targets operate over [-35,35], [-25,25], and [-35,35] deg; move_time is 2.4--4.2 s; payload_mass is 0.2--2.2 kg; torque_limit_scale is 0.72--1.15; disturbance_start is 1.35--3.65 s. The six disturbance-torque components operate respectively within +/-[4,5,4,2,2,1.5] N*m and act temporarily after disturbance_start."
+    ],
+    "disturbances": [
+      "The arm must solve the Cartesian positioning problem for a desired wrist-centre location and regulate all six joints while carrying a payload, respecting finite actuator torque limits, and recovering from a temporary external joint-load disturbance.",
+      "Read target_xyz_cm, wrist_target_deg, move_time, payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables.",
+      "payload_mass is 0.2--2.2 kg;"
+    ],
+    "dynamic_processes": [
+      "The arm must solve the Cartesian positioning problem for a desired wrist-centre location and regulate all six joints while carrying a payload, respecting finite actuator torque limits, and recovering from a temporary external joint-load disturbance.",
+      "Across the declared ranges, reach the requested wrist-centre position and wrist posture, keep the mechanism dynamically bounded, and settle after both the commanded move and the temporary disturbance."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XMECH-04: prescribing joint_state directly would bypass the system path described by: Build a six-revolute-joint serial robotic arm with finite link inertia and closed-loop joint actuation.",
+      "F90-XMECH-04: replaying a fixed joint_state trace would ignore causal variation in target_xyz_cm."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XMECH-04/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XMECH-04/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XMECH-04/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

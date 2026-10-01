@@ -1,0 +1,78 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XTHERM-03",
+  "file_count": 13,
+  "files": [
+    {
+      "path": "reference/files/source/LATENT.m",
+      "size_bytes": 708
+    },
+    {
+      "path": "reference/files/source/LICENSE",
+      "size_bytes": 35149
+    },
+    {
+      "path": "reference/files/source/msf.jpg",
+      "size_bytes": 192341
+    },
+    {
+      "path": "reference/files/source/MSFcascade.mdl",
+      "size_bytes": 106698
+    },
+    {
+      "path": "reference/files/source/msfplant.m",
+      "size_bytes": 7393
+    },
+    {
+      "path": "reference/files/source/msfplot.m",
+      "size_bytes": 1838
+    },
+    {
+      "path": "reference/files/source/MSFprocess.m",
+      "size_bytes": 3255
+    },
+    {
+      "path": "reference/files/source/PRESS.m",
+      "size_bytes": 201
+    },
+    {
+      "path": "reference/files/source/README.md",
+      "size_bytes": 1827
+    },
+    {
+      "path": "reference/files/source/StratifiedHotWaterStorageTank.png",
+      "size_bytes": 3941
+    },
+    {
+      "path": "reference/files/source/StratifiedHotWaterStorageTank.slx",
+      "size_bytes": 88445
+    },
+    {
+      "path": "reference/files/source/StratifiedHotWaterStorageTankConstantVolume.ssc",
+      "size_bytes": 5894
+    },
+    {
+      "path": "reference/files/source/x68.inc",
+      "size_bytes": 1825
+    }
+  ],
+  "entrypoint": "reference/files/source/MSFcascade.mdl",
+  "expected_score": 92.2402175553616,
+  "expected_valid_scenarios": 6,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal",
+      "cold_feed_step",
+      "hot_feed_step",
+      "low_recycle_step",
+      "high_recycle_step",
+      "combined_hot_low_recycle"
+    ],
+    "nominal_scenario_id": "nominal",
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 449515,
+  "excluded_files": []
+}

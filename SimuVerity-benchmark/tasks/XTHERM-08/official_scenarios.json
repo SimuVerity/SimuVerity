@@ -1,0 +1,146 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XTHERM-08",
+  "scenarios": [
+    {
+      "id": "nominal_variable_week",
+      "ServerLoadScale": 1.0,
+      "AmbientTemperatureOffset_C": 0.0,
+      "RelativeHumidityScale": 1.0,
+      "ChilledWaterPumpCapacityScale": 1.0,
+      "ChillerCapacityScale": 1.0
+    },
+    {
+      "id": "high_server_load",
+      "ServerLoadScale": 1.2,
+      "AmbientTemperatureOffset_C": 0.0,
+      "RelativeHumidityScale": 1.0,
+      "ChilledWaterPumpCapacityScale": 1.0,
+      "ChillerCapacityScale": 1.0
+    },
+    {
+      "id": "hot_humid_weather",
+      "ServerLoadScale": 1.0,
+      "AmbientTemperatureOffset_C": 4.0,
+      "RelativeHumidityScale": 1.1,
+      "ChilledWaterPumpCapacityScale": 1.0,
+      "ChillerCapacityScale": 1.0
+    },
+    {
+      "id": "moderate_joint_capacity",
+      "ServerLoadScale": 1.15,
+      "AmbientTemperatureOffset_C": 3.0,
+      "RelativeHumidityScale": 1.05,
+      "ChilledWaterPumpCapacityScale": 1.0,
+      "ChillerCapacityScale": 1.0
+    },
+    {
+      "id": "chilled_pump_derate",
+      "ServerLoadScale": 1.0,
+      "AmbientTemperatureOffset_C": 0.0,
+      "RelativeHumidityScale": 1.0,
+      "ChilledWaterPumpCapacityScale": 0.85,
+      "ChillerCapacityScale": 1.0
+    },
+    {
+      "id": "chiller_capacity_derate",
+      "ServerLoadScale": 1.0,
+      "AmbientTemperatureOffset_C": 0.0,
+      "RelativeHumidityScale": 1.0,
+      "ChilledWaterPumpCapacityScale": 1.0,
+      "ChillerCapacityScale": 0.85
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "start_s": 0,
+      "stop_s": 604800,
+      "chiller_variant": "abstract model",
+      "server_load_variant": "variable load",
+      "environment_variant": "variable environment"
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.2,
+          "meaning": "nominal closed-loop thermal regulation"
+        },
+        "Q": {
+          "weight": 0.2,
+          "meaning": "flow, heat, power and water-use consistency"
+        },
+        "M": {
+          "weight": 0.3,
+          "meaning": "two-loop physical mechanism and input causality"
+        },
+        "R": {
+          "weight": 0.2,
+          "meaning": "worst private-scenario capacity margin"
+        },
+        "D": {
+          "weight": 0.1,
+          "meaning": "profile-change recovery and staged actuation"
+        }
+      },
+      "within_group": "weighted_arithmetic_mean",
+      "across_groups": "weighted_geometric_mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum"
+    },
+    "shortcut_sanity_contract": [
+      "one_loop_ideal_sink",
+      "constant_or_replayed_temperature_trace",
+      "disconnected_temperature_feedback",
+      "fixed_pump_commands",
+      "hard_coded_power_or_cop",
+      "missing_weather_or_evaporation_coupling"
+    ]
+  },
+  "simulation": {
+    "start_s": 0,
+    "stop_s": 604800,
+    "chiller_variant": "abstract model",
+    "server_load_variant": "variable load",
+    "environment_variant": "variable environment"
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.2,
+        "meaning": "nominal closed-loop thermal regulation"
+      },
+      "Q": {
+        "weight": 0.2,
+        "meaning": "flow, heat, power and water-use consistency"
+      },
+      "M": {
+        "weight": 0.3,
+        "meaning": "two-loop physical mechanism and input causality"
+      },
+      "R": {
+        "weight": 0.2,
+        "meaning": "worst private-scenario capacity margin"
+      },
+      "D": {
+        "weight": 0.1,
+        "meaning": "profile-change recovery and staged actuation"
+      }
+    },
+    "within_group": "weighted_arithmetic_mean",
+    "across_groups": "weighted_geometric_mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum"
+  },
+  "shortcut_sanity_contract": [
+    "one_loop_ideal_sink",
+    "constant_or_replayed_temperature_trace",
+    "disconnected_temperature_feedback",
+    "fixed_pump_commands",
+    "hard_coded_power_or_cop",
+    "missing_weather_or_evaporation_coupling"
+  ]
+}

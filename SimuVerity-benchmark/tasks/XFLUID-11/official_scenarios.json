@@ -1,0 +1,114 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XFLUID-11",
+  "scenarios": [
+    {
+      "id": "nominal_sea",
+      "wave_height_m": 2.64,
+      "wave_period_s": 9.86
+    },
+    {
+      "id": "low_sea",
+      "wave_height_m": 1.8,
+      "wave_period_s": 8.0
+    },
+    {
+      "id": "high_sea",
+      "wave_height_m": 3.6,
+      "wave_period_s": 11.0
+    },
+    {
+      "id": "height_intervention",
+      "wave_height_m": 3.6,
+      "wave_period_s": 9.86
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "start_time_s": 0,
+      "stop_time_s": 60,
+      "ramp_time_s": 15,
+      "fixed_step_s": 0.01,
+      "output_step_s": 0.1,
+      "phase_seed": 1
+    },
+    "score_policy": {
+      "raw_admission_threshold": 90.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "applicable_groups": [
+        "A",
+        "Q",
+        "M",
+        "C",
+        "R",
+        "D"
+      ],
+      "group_weights": {
+        "A": 0.16,
+        "Q": 0.1,
+        "M": 0.24,
+        "C": 0.22,
+        "R": 0.16,
+        "D": 0.12
+      },
+      "within_group": "task_local_weighted_arithmetic_or_bottleneck",
+      "across_groups": "strict_weighted_geometric_mean",
+      "strict_zero_rule": "any applicable group zero means total zero",
+      "epsilon_floor": false,
+      "post_total_cap": false,
+      "evaluation_policy_id": "simuverity-101-v1:xfluid-11:scoring"
+    },
+    "shortcut_sanity_contract": [
+      "required_output_missing",
+      "mechanical_to_hydraulic_path_missing",
+      "RO_split_missing",
+      "pressure_exchanger_path_missing",
+      "wave_command_ignored",
+      "constant_or_prerecorded_outputs"
+    ]
+  },
+  "simulation": {
+    "start_time_s": 0,
+    "stop_time_s": 60,
+    "ramp_time_s": 15,
+    "fixed_step_s": 0.01,
+    "output_step_s": 0.1,
+    "phase_seed": 1
+  },
+  "score_policy": {
+    "raw_admission_threshold": 90.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "applicable_groups": [
+      "A",
+      "Q",
+      "M",
+      "C",
+      "R",
+      "D"
+    ],
+    "group_weights": {
+      "A": 0.16,
+      "Q": 0.1,
+      "M": 0.24,
+      "C": 0.22,
+      "R": 0.16,
+      "D": 0.12
+    },
+    "within_group": "task_local_weighted_arithmetic_or_bottleneck",
+    "across_groups": "strict_weighted_geometric_mean",
+    "strict_zero_rule": "any applicable group zero means total zero",
+    "epsilon_floor": false,
+    "post_total_cap": false,
+    "evaluation_policy_id": "simuverity-101-v1:xfluid-11:scoring"
+  },
+  "shortcut_sanity_contract": [
+    "required_output_missing",
+    "mechanical_to_hydraulic_path_missing",
+    "RO_split_missing",
+    "pressure_exchanger_path_missing",
+    "wave_command_ignored",
+    "constant_or_prerecorded_outputs"
+  ]
+}

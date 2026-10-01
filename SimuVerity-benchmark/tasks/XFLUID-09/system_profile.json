@@ -1,0 +1,193 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XFLUID-09",
+  "collection": "XFLUID",
+  "reference": {
+    "identity_path": "tasks/XFLUID-09/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "HydrogenRefuelingStation.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XFLUID-09",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a Simscape Fluids model of a high-pressure hydrogen refueling station.",
+    "engineering_objects": [
+      "Build a Simscape Fluids model of a high-pressure hydrogen refueling station.",
+      "The implemented physical paths must remain connected from storage to the vehicle.",
+      "Read p_storage, p_vehicle_init, T_env, and T_fluid from the MATLAB base workspace."
+    ],
+    "physical_paths": [
+      "Hydrogen shall pass from a low-pressure supply through multistage compression with intercooling into a three-level cascade buffer.",
+      "The implemented physical paths must remain connected from storage to the vehicle.",
+      "Build a Simscape Fluids model of a high-pressure hydrogen refueling station.",
+      "Read p_storage, p_vehicle_init, T_env, and T_fluid from the MATLAB base workspace."
+    ],
+    "functional_paths": [
+      "A controlled reduction valve and a precooling path shall then deliver hydrogen to a vehicle tank.",
+      "Measured vehicle-tank pressure and delivered-hydrogen temperature shall regulate the dispensing valve and the precooling action, while a supervisory sequence selects an available cascade buffer as the vehicle pressure rises.",
+      "These must be physical or implemented controller measurements, not prescribed output waveforms."
+    ],
+    "information_paths": [
+      "p_storage, p_vehicle_init, T_env, T_fluid -> F90-XFLUID-09 plant/control path -> VehiclePressure_bar, VehicleTemperature_C, VehicleMassFlow_kg_s, ReductionValveCommand, BufferPressure_bar"
+    ],
+    "modes_and_events": [
+      "Build a Simscape Fluids model of a high-pressure hydrogen refueling station.",
+      "The model must operate with p_storage from 180 to 220 bar, p_vehicle_init from 50 to 200 bar, T_env from 15 to 35 degC, and T_fluid from -60 to -45 degC."
+    ],
+    "interfaces": [
+      {
+        "name": "p_storage",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "bar"
+        ],
+        "range_or_shape": "Read p_storage, p_vehicle_init, T_env, and T_fluid from the MATLAB base workspace. The model must operate with p_storage from 180 to 220 bar, p_vehicle_init from 50 to 200 bar, T_env from 15 to 35 degC, and T_fluid from -60 to -45 degC.",
+        "source": "tasks/XFLUID-09/public_spec.json"
+      },
+      {
+        "name": "p_vehicle_init",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "bar"
+        ],
+        "range_or_shape": "Read p_storage, p_vehicle_init, T_env, and T_fluid from the MATLAB base workspace. The model must operate with p_storage from 180 to 220 bar, p_vehicle_init from 50 to 200 bar, T_env from 15 to 35 degC, and T_fluid from -60 to -45 degC.",
+        "source": "tasks/XFLUID-09/public_spec.json"
+      },
+      {
+        "name": "T_env",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Read p_storage, p_vehicle_init, T_env, and T_fluid from the MATLAB base workspace. The model must operate with p_storage from 180 to 220 bar, p_vehicle_init from 50 to 200 bar, T_env from 15 to 35 degC, and T_fluid from -60 to -45 degC.",
+        "source": "tasks/XFLUID-09/public_spec.json"
+      },
+      {
+        "name": "T_fluid",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Read p_storage, p_vehicle_init, T_env, and T_fluid from the MATLAB base workspace. The model must operate with p_storage from 180 to 220 bar, p_vehicle_init from 50 to 200 bar, T_env from 15 to 35 degC, and T_fluid from -60 to -45 degC.",
+        "source": "tasks/XFLUID-09/public_spec.json"
+      },
+      {
+        "name": "VehiclePressure_bar",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "bar"
+        ],
+        "range_or_shape": "Record complete Timeseries from simulation start to finish for VehiclePressure_bar, VehicleTemperature_C, VehicleMassFlow_kg_s, ReductionValveCommand, and three-channel BufferPressure_bar.",
+        "source": "tasks/XFLUID-09/public_spec.json"
+      },
+      {
+        "name": "VehicleTemperature_C",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "bar",
+          "kg/s"
+        ],
+        "range_or_shape": "Record complete Timeseries from simulation start to finish for VehiclePressure_bar, VehicleTemperature_C, VehicleMassFlow_kg_s, ReductionValveCommand, and three-channel BufferPressure_bar.",
+        "source": "tasks/XFLUID-09/public_spec.json"
+      },
+      {
+        "name": "VehicleMassFlow_kg_s",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "kg/s"
+        ],
+        "range_or_shape": "Record complete Timeseries from simulation start to finish for VehiclePressure_bar, VehicleTemperature_C, VehicleMassFlow_kg_s, ReductionValveCommand, and three-channel BufferPressure_bar.",
+        "source": "tasks/XFLUID-09/public_spec.json"
+      },
+      {
+        "name": "ReductionValveCommand",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "bar",
+          "kg/s"
+        ],
+        "range_or_shape": "Record complete Timeseries from simulation start to finish for VehiclePressure_bar, VehicleTemperature_C, VehicleMassFlow_kg_s, ReductionValveCommand, and three-channel BufferPressure_bar.",
+        "source": "tasks/XFLUID-09/public_spec.json"
+      },
+      {
+        "name": "BufferPressure_bar",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "bar"
+        ],
+        "range_or_shape": "Record complete Timeseries from simulation start to finish for VehiclePressure_bar, VehicleTemperature_C, VehicleMassFlow_kg_s, ReductionValveCommand, and three-channel BufferPressure_bar.",
+        "source": "tasks/XFLUID-09/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "A controlled reduction valve and a precooling path shall then deliver hydrogen to a vehicle tank.",
+      "These must be physical or implemented controller measurements, not prescribed output waveforms."
+    ],
+    "feedback_and_control_causality": [
+      "Implement closed-loop vehicle filling.",
+      "Measured vehicle-tank pressure and delivered-hydrogen temperature shall regulate the dispensing valve and the precooling action, while a supervisory sequence selects an available cascade buffer as the vehicle pressure rises.",
+      "These must be physical or implemented controller measurements, not prescribed output waveforms."
+    ],
+    "signal_sources": [
+      "p_storage is read from the public MATLAB base-workspace input contract.",
+      "p_vehicle_init is read from the public MATLAB base-workspace input contract.",
+      "T_env is read from the public MATLAB base-workspace input contract.",
+      "T_fluid is read from the public MATLAB base-workspace input contract.",
+      "VehiclePressure_bar is produced by the implemented plant or controller and logged under the public output contract.",
+      "VehicleTemperature_C is produced by the implemented plant or controller and logged under the public output contract.",
+      "VehicleMassFlow_kg_s is produced by the implemented plant or controller and logged under the public output contract.",
+      "ReductionValveCommand is produced by the implemented plant or controller and logged under the public output contract.",
+      "BufferPressure_bar is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "p_storage: Read p_storage, p_vehicle_init, T_env, and T_fluid from the MATLAB base workspace. The model must operate with p_storage from 180 to 220 bar, p_vehicle_init from 50 to 200 bar, T_env from 15 to 35 degC, and T_fluid from -60 to -45 degC.",
+      "p_vehicle_init: Read p_storage, p_vehicle_init, T_env, and T_fluid from the MATLAB base workspace. The model must operate with p_storage from 180 to 220 bar, p_vehicle_init from 50 to 200 bar, T_env from 15 to 35 degC, and T_fluid from -60 to -45 degC.",
+      "T_env: Read p_storage, p_vehicle_init, T_env, and T_fluid from the MATLAB base workspace. The model must operate with p_storage from 180 to 220 bar, p_vehicle_init from 50 to 200 bar, T_env from 15 to 35 degC, and T_fluid from -60 to -45 degC.",
+      "T_fluid: Read p_storage, p_vehicle_init, T_env, and T_fluid from the MATLAB base workspace. The model must operate with p_storage from 180 to 220 bar, p_vehicle_init from 50 to 200 bar, T_env from 15 to 35 degC, and T_fluid from -60 to -45 degC."
+    ],
+    "disturbances": [
+      "F90-XFLUID-09 operating variation is supplied through p_storage, p_vehicle_init, T_env, T_fluid."
+    ],
+    "dynamic_processes": [
+      "F90-XFLUID-09 produces time-varying VehiclePressure_bar, VehicleTemperature_C, VehicleMassFlow_kg_s, ReductionValveCommand, BufferPressure_bar over the declared run."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XFLUID-09: prescribing VehiclePressure_bar directly would bypass the system path described by: Hydrogen shall pass from a low-pressure supply through multistage compression with intercooling into a three-level cascade buffer.",
+      "F90-XFLUID-09: replaying a fixed VehiclePressure_bar trace would ignore causal variation in p_storage."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XFLUID-09/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XFLUID-09/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XFLUID-09/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

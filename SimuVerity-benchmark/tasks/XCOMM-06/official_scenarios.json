@@ -1,0 +1,142 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XCOMM-06",
+  "scenarios": [
+    {
+      "id": "nominal_triangle",
+      "EbNo_dB": 20.0,
+      "CarrierOffset_Hz": 5000.0,
+      "CarrierPhase_deg": 47.0,
+      "TimingProfile": "Triangle",
+      "TimingStep_samples_per_frame": 0.025,
+      "TimingSpan_samples": 4.0,
+      "PayloadShift_bits": 0,
+      "seed": 6101
+    },
+    {
+      "id": "noise_margin",
+      "EbNo_dB": 14.0,
+      "CarrierOffset_Hz": 3500.0,
+      "CarrierPhase_deg": 47.0,
+      "TimingProfile": "Triangle",
+      "TimingStep_samples_per_frame": 0.025,
+      "TimingSpan_samples": 4.0,
+      "PayloadShift_bits": 17,
+      "seed": 6102
+    },
+    {
+      "id": "negative_carrier",
+      "EbNo_dB": 18.0,
+      "CarrierOffset_Hz": -5000.0,
+      "CarrierPhase_deg": -47.0,
+      "TimingProfile": "Triangle",
+      "TimingStep_samples_per_frame": 0.025,
+      "TimingSpan_samples": 4.0,
+      "PayloadShift_bits": 31,
+      "seed": 6103
+    },
+    {
+      "id": "phase_quadrant",
+      "EbNo_dB": 18.0,
+      "CarrierOffset_Hz": 3500.0,
+      "CarrierPhase_deg": 137.0,
+      "TimingProfile": "Triangle",
+      "TimingStep_samples_per_frame": 0.025,
+      "TimingSpan_samples": 3.0,
+      "PayloadShift_bits": 47,
+      "seed": 6104
+    },
+    {
+      "id": "ramp_timing",
+      "EbNo_dB": 18.0,
+      "CarrierOffset_Hz": 3000.0,
+      "CarrierPhase_deg": -95.0,
+      "TimingProfile": "Ramp",
+      "TimingStep_samples_per_frame": 0.025,
+      "TimingSpan_samples": 4.0,
+      "PayloadShift_bits": 63,
+      "seed": 6105
+    },
+    {
+      "id": "moderate_combined",
+      "EbNo_dB": 14.0,
+      "CarrierOffset_Hz": -4500.0,
+      "CarrierPhase_deg": -137.0,
+      "TimingProfile": "Triangle",
+      "TimingStep_samples_per_frame": 0.035,
+      "TimingSpan_samples": 4.0,
+      "PayloadShift_bits": 79,
+      "seed": 6106
+    }
+  ],
+  "contract": {
+    "preferred_reference_score": 90,
+    "final_reference_score": 96.32792434383119,
+    "simulation": {
+      "frames": 150,
+      "one_persistent_matlab_session": true
+    },
+    "groups": {
+      "G": "runnable end-to-end link and complete evidence contract",
+      "A": "payload and symbol recovery accuracy",
+      "Q": "constellation, frame, and BER evidence quality",
+      "M": "causal impaired-channel and synchronization mechanism",
+      "R": "worst required private operating condition",
+      "D": "cold-start acquisition and time-varying tracking"
+    },
+    "weights": {
+      "A": 0.25,
+      "Q": 0.15,
+      "M": 0.25,
+      "R": 0.2,
+      "D": 0.15
+    },
+    "aggregation": {
+      "within_group": "weighted arithmetic mean",
+      "critical_multi_scenario": "100 percent minimum",
+      "total": "G * 100 * A^0.25 * Q^0.15 * M^0.25 * R^0.20 * D^0.15"
+    },
+    "shortcut_minimum": [
+      "copied BER or empty compared-bit denominator",
+      "transmitter-to-decoder bypass around the impaired channel",
+      "permanently asserted frame-valid signal",
+      "hard-coded payload output",
+      "fixed carrier correction that fails opposite-sign offsets",
+      "fixed delay that ignores ramp and triangle timing profiles",
+      "missing gain, carrier, timing, frame, or ambiguity-recovery behavior"
+    ]
+  },
+  "simulation": {
+    "frames": 150,
+    "one_persistent_matlab_session": true
+  },
+  "groups": {
+    "G": "runnable end-to-end link and complete evidence contract",
+    "A": "payload and symbol recovery accuracy",
+    "Q": "constellation, frame, and BER evidence quality",
+    "M": "causal impaired-channel and synchronization mechanism",
+    "R": "worst required private operating condition",
+    "D": "cold-start acquisition and time-varying tracking"
+  },
+  "weights": {
+    "A": 0.25,
+    "Q": 0.15,
+    "M": 0.25,
+    "R": 0.2,
+    "D": 0.15
+  },
+  "aggregation": {
+    "within_group": "weighted arithmetic mean",
+    "critical_multi_scenario": "100 percent minimum",
+    "total": "G * 100 * A^0.25 * Q^0.15 * M^0.25 * R^0.20 * D^0.15"
+  },
+  "shortcut_minimum": [
+    "copied BER or empty compared-bit denominator",
+    "transmitter-to-decoder bypass around the impaired channel",
+    "permanently asserted frame-valid signal",
+    "hard-coded payload output",
+    "fixed carrier correction that fails opposite-sign offsets",
+    "fixed delay that ignores ramp and triangle timing profiles",
+    "missing gain, carrier, timing, frame, or ambiguity-recovery behavior"
+  ]
+}

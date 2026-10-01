@@ -1,0 +1,150 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XTHERM-03",
+  "scenarios": [
+    {
+      "id": "nominal",
+      "feed_temperature_C": 35.0,
+      "recycle_brine_flow_ton_per_min": 217.25,
+      "steam_feed_kg_per_min": 2453.6,
+      "top_brine_temperature_setpoint_C": 93.0,
+      "distillate_flow_setpoint_ton_per_min": 19.1826,
+      "disturbance_start_s": 60.0,
+      "feed_temperature_step_C": 0.0,
+      "recycle_flow_step_ton_per_min": 0.0
+    },
+    {
+      "id": "cold_feed_step",
+      "feed_temperature_C": 35.0,
+      "recycle_brine_flow_ton_per_min": 217.25,
+      "steam_feed_kg_per_min": 2453.6,
+      "top_brine_temperature_setpoint_C": 93.0,
+      "distillate_flow_setpoint_ton_per_min": 19.1826,
+      "disturbance_start_s": 60.0,
+      "feed_temperature_step_C": -5.0,
+      "recycle_flow_step_ton_per_min": 0.0
+    },
+    {
+      "id": "hot_feed_step",
+      "feed_temperature_C": 35.0,
+      "recycle_brine_flow_ton_per_min": 217.25,
+      "steam_feed_kg_per_min": 2453.6,
+      "top_brine_temperature_setpoint_C": 93.0,
+      "distillate_flow_setpoint_ton_per_min": 19.1826,
+      "disturbance_start_s": 60.0,
+      "feed_temperature_step_C": 5.0,
+      "recycle_flow_step_ton_per_min": 0.0
+    },
+    {
+      "id": "low_recycle_step",
+      "feed_temperature_C": 35.0,
+      "recycle_brine_flow_ton_per_min": 217.25,
+      "steam_feed_kg_per_min": 2453.6,
+      "top_brine_temperature_setpoint_C": 93.0,
+      "distillate_flow_setpoint_ton_per_min": 19.1826,
+      "disturbance_start_s": 60.0,
+      "feed_temperature_step_C": 0.0,
+      "recycle_flow_step_ton_per_min": -15.0
+    },
+    {
+      "id": "high_recycle_step",
+      "feed_temperature_C": 35.0,
+      "recycle_brine_flow_ton_per_min": 217.25,
+      "steam_feed_kg_per_min": 2453.6,
+      "top_brine_temperature_setpoint_C": 93.0,
+      "distillate_flow_setpoint_ton_per_min": 19.1826,
+      "disturbance_start_s": 60.0,
+      "feed_temperature_step_C": 0.0,
+      "recycle_flow_step_ton_per_min": 15.0
+    },
+    {
+      "id": "combined_hot_low_recycle",
+      "feed_temperature_C": 36.0,
+      "recycle_brine_flow_ton_per_min": 215.0,
+      "steam_feed_kg_per_min": 2500.0,
+      "top_brine_temperature_setpoint_C": 95.0,
+      "distillate_flow_setpoint_ton_per_min": 18.5,
+      "disturbance_start_s": 75.0,
+      "feed_temperature_step_C": 4.0,
+      "recycle_flow_step_ton_per_min": -12.0
+    }
+  ],
+  "contract": {
+    "difficulty": {
+      "score_12": 11,
+      "basis": [
+        "22-stage nonlinear flashing plant",
+        "mass and thermal coupling",
+        "two feedback loops",
+        "steam and liquid-flow actuation",
+        "feed and recycle disturbances",
+        "dynamic and terminal objectives"
+      ]
+    },
+    "simulation": {
+      "stop_time_s": 300.0,
+      "fixed_step_s": 0.1
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "preferred_reference_score": 90.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "policy_id": "simuverity-101-v1:xtherm-03:scoring",
+      "groups": {
+        "A": 0.18,
+        "Q": 0.12,
+        "M": 0.2,
+        "C": 0.2,
+        "R": 0.15,
+        "D": 0.15
+      },
+      "within_group": "weighted_arithmetic_mean",
+      "across_groups": "weighted_geometric_mean",
+      "critical_multiscenario_aggregation": "minimum"
+    },
+    "minimum_shortcut_sanity_contract": [
+      "missing_feedback_or_steam_actuation",
+      "single_lumped_or_open_loop_plant",
+      "copied_nominal_outputs_across_private_inputs"
+    ]
+  },
+  "difficulty": {
+    "score_12": 11,
+    "basis": [
+      "22-stage nonlinear flashing plant",
+      "mass and thermal coupling",
+      "two feedback loops",
+      "steam and liquid-flow actuation",
+      "feed and recycle disturbances",
+      "dynamic and terminal objectives"
+    ]
+  },
+  "simulation": {
+    "stop_time_s": 300.0,
+    "fixed_step_s": 0.1
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "preferred_reference_score": 90.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "policy_id": "simuverity-101-v1:xtherm-03:scoring",
+    "groups": {
+      "A": 0.18,
+      "Q": 0.12,
+      "M": 0.2,
+      "C": 0.2,
+      "R": 0.15,
+      "D": 0.15
+    },
+    "within_group": "weighted_arithmetic_mean",
+    "across_groups": "weighted_geometric_mean",
+    "critical_multiscenario_aggregation": "minimum"
+  },
+  "minimum_shortcut_sanity_contract": [
+    "missing_feedback_or_steam_actuation",
+    "single_lumped_or_open_loop_plant",
+    "copied_nominal_outputs_across_private_inputs"
+  ]
+}

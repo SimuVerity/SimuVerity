@@ -1,0 +1,216 @@
+{
+  "schema": "simuverity.extractor-closure.v1",
+  "task_id": "XELEC-19",
+  "entrypoint": "vendor/scripts/unified/d16/tasks/d019/d019_extract_candidate_evidence.m",
+  "public_wrapper": "extractor/run.m",
+  "files": [
+    {
+      "source_name": "D019.json",
+      "public_path": "vendor/data/specs/D019.json"
+    },
+    {
+      "source_name": "sat_channel_origins.m",
+      "public_path": "vendor/engine/sat_channel_origins.m"
+    },
+    {
+      "source_name": "sat_check_D002_active_npc_topology.m",
+      "public_path": "vendor/engine/sat_check_D002_active_npc_topology.m"
+    },
+    {
+      "source_name": "sat_check_D006_vdc_vsc_terminal_ownership.m",
+      "public_path": "vendor/engine/sat_check_D006_vdc_vsc_terminal_ownership.m"
+    },
+    {
+      "source_name": "sat_check_D007_active_current_feedback_ownership.m",
+      "public_path": "vendor/engine/sat_check_D007_active_current_feedback_ownership.m"
+    },
+    {
+      "source_name": "sat_check_D008_q_load_response_witness_group.m",
+      "public_path": "vendor/engine/sat_check_D008_q_load_response_witness_group.m"
+    },
+    {
+      "source_name": "sat_check_D011_active_svpwm_gate_ownership.m",
+      "public_path": "vendor/engine/sat_check_D011_active_svpwm_gate_ownership.m"
+    },
+    {
+      "source_name": "sat_check_D012_active_speed_closed_loop_ownership.m",
+      "public_path": "vendor/engine/sat_check_D012_active_speed_closed_loop_ownership.m"
+    },
+    {
+      "source_name": "sat_check_D014_measured_power_path_ownership.m",
+      "public_path": "vendor/engine/sat_check_D014_measured_power_path_ownership.m"
+    },
+    {
+      "source_name": "sat_check_D015_active_svpwm_gate_ownership.m",
+      "public_path": "vendor/engine/sat_check_D015_active_svpwm_gate_ownership.m"
+    },
+    {
+      "source_name": "sat_check_D019_internal_multilevel_stage_level_count.m",
+      "public_path": "vendor/engine/sat_check_D019_internal_multilevel_stage_level_count.m"
+    },
+    {
+      "source_name": "sat_check_D019_physical_vout_level_count.m",
+      "public_path": "vendor/engine/sat_check_D019_physical_vout_level_count.m"
+    },
+    {
+      "source_name": "sat_check_D021_active_svpwm_gate_ownership.m",
+      "public_path": "vendor/engine/sat_check_D021_active_svpwm_gate_ownership.m"
+    },
+    {
+      "source_name": "sat_check_D022_ballast_load_response_witness_group.m",
+      "public_path": "vendor/engine/sat_check_D022_ballast_load_response_witness_group.m"
+    },
+    {
+      "source_name": "sat_check_D022_closed_loop_ballast_ownership.m",
+      "public_path": "vendor/engine/sat_check_D022_closed_loop_ballast_ownership.m"
+    },
+    {
+      "source_name": "sat_check_D022_energy_path_ownership.m",
+      "public_path": "vendor/engine/sat_check_D022_energy_path_ownership.m"
+    },
+    {
+      "source_name": "sat_check_D022_power_branch_ownership.m",
+      "public_path": "vendor/engine/sat_check_D022_power_branch_ownership.m"
+    },
+    {
+      "source_name": "sat_check_D023_active_vsc_compensation_ownership.m",
+      "public_path": "vendor/engine/sat_check_D023_active_vsc_compensation_ownership.m"
+    },
+    {
+      "source_name": "sat_check_D025_active_power_feedback_ownership.m",
+      "public_path": "vendor/engine/sat_check_D025_active_power_feedback_ownership.m"
+    },
+    {
+      "source_name": "sat_check_D025_foundation_npc.m",
+      "public_path": "vendor/engine/sat_check_D025_foundation_npc.m"
+    },
+    {
+      "source_name": "sat_check_D026_active_svpwm_gate_ownership.m",
+      "public_path": "vendor/engine/sat_check_D026_active_svpwm_gate_ownership.m"
+    },
+    {
+      "source_name": "sat_check_D026_split_dc_balance.m",
+      "public_path": "vendor/engine/sat_check_D026_split_dc_balance.m"
+    },
+    {
+      "source_name": "sat_check_D027_active_current_feedback_ownership.m",
+      "public_path": "vendor/engine/sat_check_D027_active_current_feedback_ownership.m"
+    },
+    {
+      "source_name": "sat_check_D028_active_phase_shift_branch_ownership.m",
+      "public_path": "vendor/engine/sat_check_D028_active_phase_shift_branch_ownership.m"
+    },
+    {
+      "source_name": "sat_d019_ideal_semiconductor_stage.m",
+      "public_path": "vendor/engine/sat_d019_ideal_semiconductor_stage.m"
+    },
+    {
+      "source_name": "sat_d022_power_witness.m",
+      "public_path": "vendor/engine/sat_d022_power_witness.m"
+    },
+    {
+      "source_name": "sat_d027_npc_population.m",
+      "public_path": "vendor/engine/sat_d027_npc_population.m"
+    },
+    {
+      "source_name": "sat_D028_phase_lattice.m",
+      "public_path": "vendor/engine/sat_D028_phase_lattice.m"
+    },
+    {
+      "source_name": "sat_eval_struct.m",
+      "public_path": "vendor/engine/sat_eval_struct.m"
+    },
+    {
+      "source_name": "sat_eval_task_specific_suite.m",
+      "public_path": "vendor/engine/sat_eval_task_specific_suite.m"
+    },
+    {
+      "source_name": "sat_eval_task_specific.m",
+      "public_path": "vendor/engine/sat_eval_task_specific.m"
+    },
+    {
+      "source_name": "sat_graph_query.m",
+      "public_path": "vendor/engine/sat_graph_query.m"
+    },
+    {
+      "source_name": "sat_input_contract.m",
+      "public_path": "vendor/engine/sat_input_contract.m"
+    },
+    {
+      "source_name": "sat_metrics.m",
+      "public_path": "vendor/engine/sat_metrics.m"
+    },
+    {
+      "source_name": "sat_model_graph.m",
+      "public_path": "vendor/engine/sat_model_graph.m"
+    },
+    {
+      "source_name": "sat_native_physical_line_nets.m",
+      "public_path": "vendor/engine/sat_native_physical_line_nets.m"
+    },
+    {
+      "source_name": "sat_npc_clamp_coverage.m",
+      "public_path": "vendor/engine/sat_npc_clamp_coverage.m"
+    },
+    {
+      "source_name": "sat_output_contract.m",
+      "public_path": "vendor/engine/sat_output_contract.m"
+    },
+    {
+      "source_name": "sat_physical_path.m",
+      "public_path": "vendor/engine/sat_physical_path.m"
+    },
+    {
+      "source_name": "sat_prepare_D019_internal_probe.m",
+      "public_path": "vendor/engine/sat_prepare_D019_internal_probe.m"
+    },
+    {
+      "source_name": "sat_prepare_golden.m",
+      "public_path": "vendor/engine/sat_prepare_golden.m"
+    },
+    {
+      "source_name": "sat_prepare_task_specific.m",
+      "public_path": "vendor/engine/sat_prepare_task_specific.m"
+    },
+    {
+      "source_name": "sat_prims.m",
+      "public_path": "vendor/engine/sat_prims.m"
+    },
+    {
+      "source_name": "sat_provenance_semantic.m",
+      "public_path": "vendor/engine/sat_provenance_semantic.m"
+    },
+    {
+      "source_name": "sat_signal_path.m",
+      "public_path": "vendor/engine/sat_signal_path.m"
+    },
+    {
+      "source_name": "sat_trace_upstream.m",
+      "public_path": "vendor/engine/sat_trace_upstream.m"
+    },
+    {
+      "source_name": "sat_validate_D025_output_semantics.m",
+      "public_path": "vendor/engine/sat_validate_D025_output_semantics.m"
+    },
+    {
+      "source_name": "d16_eval_task_specific.m",
+      "public_path": "vendor/scripts/unified/d16/shared/d16_eval_task_specific.m"
+    },
+    {
+      "source_name": "d16_extract_scenario.m",
+      "public_path": "vendor/scripts/unified/d16/shared/d16_extract_scenario.m"
+    },
+    {
+      "source_name": "d16_extract_suite.m",
+      "public_path": "vendor/scripts/unified/d16/shared/d16_extract_suite.m"
+    },
+    {
+      "source_name": "d16_write_d019_evidence.m",
+      "public_path": "vendor/scripts/unified/d16/shared/d16_write_d019_evidence.m"
+    },
+    {
+      "source_name": "d019_extract_candidate_evidence.m",
+      "public_path": "vendor/scripts/unified/d16/tasks/d019/d019_extract_candidate_evidence.m"
+    }
+  ]
+}

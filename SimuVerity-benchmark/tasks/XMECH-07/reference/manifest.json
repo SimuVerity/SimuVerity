@@ -1,0 +1,3950 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XMECH-07",
+  "file_count": 981,
+  "files": [
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/CAD/Geometry/Steering_Wheel.STEP",
+      "size_bytes": 4658268
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Libraries/Extrusions/Extr_Data_Block_NotchCircle.m",
+      "size_bytes": 4838
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Libraries/Extrusions/Extr_Data_Box.m",
+      "size_bytes": 3160
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Libraries/Extrusions/Extr_Data_Cam_Circles.m",
+      "size_bytes": 3623
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Libraries/Extrusions/Extr_Data_Cam_Roller_Curve.m",
+      "size_bytes": 4643
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Libraries/Extrusions/Extr_Data_Custom.m",
+      "size_bytes": 980
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Libraries/Extrusions/Extr_Data_Ellipse.m",
+      "size_bytes": 4423
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Libraries/Extrusions/Extr_Data_Frustum_Conical.m",
+      "size_bytes": 4357
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Libraries/Extrusions/Extr_Data_Link2Hole.m",
+      "size_bytes": 2641
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Libraries/Extrusions/Extr_Data_LinkHoles.m",
+      "size_bytes": 2933
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Libraries/Extrusions/Extr_Data_Ring.m",
+      "size_bytes": 3700
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Libraries/Extrusions/Extr_Data_TriangleRounded_Holes.m",
+      "size_bytes": 3655
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Libraries/Images/Link_End_nx_IMAGE.png",
+      "size_bytes": 4190
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Libraries/Images/Link_End_px_IMAGE.png",
+      "size_bytes": 3923
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Libraries/Images/Link_Seg_2_Hole_IMAGE.png",
+      "size_bytes": 3330
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Libraries/Images/Rod_nZ_IMAGE.png",
+      "size_bytes": 3757
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Libraries/Images/Rod_pZ_IMAGE.png",
+      "size_bytes": 3716
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Libraries/Images/SFC_Belt_to_Object_IMAGE.png",
+      "size_bytes": 6462
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Libraries/Images/Triangle_Link_IMAGE.png",
+      "size_bytes": 13227
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Libraries/Libraries/SCF_Custom_Forces_lib.slx",
+      "size_bytes": 171588
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Libraries/Parts_Lib.slx",
+      "size_bytes": 106412
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/LICENSE.md",
+      "size_bytes": 1501
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Bouncing_Ball/Overview/html/sm_contact_ball.html",
+      "size_bytes": 8781
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Bouncing_Ball/Overview/html/sm_contact_ball.png",
+      "size_bytes": 4615
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Bouncing_Ball/Overview/html/sm_contact_ball_01.png",
+      "size_bytes": 39205
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Bouncing_Ball/Overview/html/sm_contact_ball_02.png",
+      "size_bytes": 40771
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Bouncing_Ball/Overview/html/sm_contact_ball_03.png",
+      "size_bytes": 68399
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Bouncing_Ball/Overview/html/sm_contact_ball_04.png",
+      "size_bytes": 49479
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Bouncing_Ball/Overview/html/sm_contact_ball_05.png",
+      "size_bytes": 222453
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Bouncing_Ball/Overview/sm_contact_ball.m",
+      "size_bytes": 2373
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Bouncing_Ball/sm_contact_ball.slx",
+      "size_bytes": 82675
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Bouncing_Ball/sm_contact_ball_plot1time.m",
+      "size_bytes": 1507
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Bouncing_Ball/sm_contact_ball_plot2comparezcs.m",
+      "size_bytes": 2502
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Contact_Pairs/sm_contact_pairs.slx",
+      "size_bytes": 88998
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Disk_Basic/Overview/html/sm_disk_cyl_on_floor.html",
+      "size_bytes": 7284
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Disk_Basic/Overview/html/sm_disk_cyl_on_floor.png",
+      "size_bytes": 3414
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Disk_Basic/Overview/html/sm_disk_cyl_on_floor_01.png",
+      "size_bytes": 45582
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Disk_Basic/Overview/html/sm_disk_cyl_on_floor_02.png",
+      "size_bytes": 56664
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Disk_Basic/Overview/sm_disk_cyl_on_floor.m",
+      "size_bytes": 1501
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Disk_Basic/sm_disk_cyl_on_floor.slx",
+      "size_bytes": 94911
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Disk_Basic/sm_disk_cyl_on_floor_enable_cyl.m",
+      "size_bytes": 1081
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Disk_Basic/sm_disk_cyl_on_floor_param.m",
+      "size_bytes": 1648
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Disk_Basic/sm_disk_cyl_on_floor_test_methods.m",
+      "size_bytes": 1899
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Disk_Floor/Overview/html/sm_disk_floor_custom_friction.html",
+      "size_bytes": 7949
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Disk_Floor/Overview/html/sm_disk_floor_custom_friction.png",
+      "size_bytes": 2112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Disk_Floor/Overview/html/sm_disk_floor_custom_friction_01.png",
+      "size_bytes": 59477
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Disk_Floor/Overview/html/sm_disk_floor_custom_friction_02.png",
+      "size_bytes": 23214
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Disk_Floor/Overview/html/sm_disk_floor_custom_friction_03.png",
+      "size_bytes": 35954
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Disk_Floor/Overview/sm_disk_floor_custom_friction.m",
+      "size_bytes": 1778
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Disk_Floor/sm_disk_floor_custom_friction.png",
+      "size_bytes": 3204
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Disk_Floor/sm_disk_floor_custom_friction.slx",
+      "size_bytes": 123184
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Disk_Floor/sm_disk_floor_custom_friction_param.m",
+      "size_bytes": 758
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Disk_Floor/sm_disk_floor_custom_friction_plot1xy.m",
+      "size_bytes": 2287
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Disk_Floor/sm_disk_floor_standard_friction.png",
+      "size_bytes": 2962
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Gripper_2Belts/ball_on_conveyor.slx",
+      "size_bytes": 225215
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Gripper_2Belts/ball_on_conveyor_plot1vtang.m",
+      "size_bytes": 2445
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Gripper_2Belts/Gripper_2Belts.slx",
+      "size_bytes": 126387
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Gripper_2Belts/Gripper_2Belts_plot1boxposition.m",
+      "size_bytes": 1517
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Gripper_2Belts/Overview/ball_on_conveyor.m",
+      "size_bytes": 3098
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Gripper_2Belts/Overview/Gripper_2Belts.m",
+      "size_bytes": 3017
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Gripper_2Belts/Overview/html/ball_on_conveyor.html",
+      "size_bytes": 10392
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Gripper_2Belts/Overview/html/ball_on_conveyor.png",
+      "size_bytes": 2164
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Gripper_2Belts/Overview/html/ball_on_conveyor_01.png",
+      "size_bytes": 26312
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Gripper_2Belts/Overview/html/ball_on_conveyor_02.png",
+      "size_bytes": 14219
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Gripper_2Belts/Overview/html/ball_on_conveyor_03.png",
+      "size_bytes": 45487
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Gripper_2Belts/Overview/html/ball_on_conveyor_04.png",
+      "size_bytes": 41277
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Gripper_2Belts/Overview/html/Gripper_2Belts.html",
+      "size_bytes": 10291
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Gripper_2Belts/Overview/html/Gripper_2Belts.png",
+      "size_bytes": 2149
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Gripper_2Belts/Overview/html/Gripper_2Belts_01.png",
+      "size_bytes": 56741
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Gripper_2Belts/Overview/html/Gripper_2Belts_02.png",
+      "size_bytes": 15432
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Gripper_2Belts/Overview/html/Gripper_2Belts_03.png",
+      "size_bytes": 48641
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Gripper_2Belts/Overview/html/Gripper_2Belts_04.png",
+      "size_bytes": 31020
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Mesh_Grid/membrane_grid_params.m",
+      "size_bytes": 1526
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Mesh_Grid/Overview/html/sm_membrane_ball.html",
+      "size_bytes": 8634
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Mesh_Grid/Overview/html/sm_membrane_ball.png",
+      "size_bytes": 2023
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Mesh_Grid/Overview/html/sm_membrane_ball_01.png",
+      "size_bytes": 42942
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Mesh_Grid/Overview/html/sm_membrane_ball_02.png",
+      "size_bytes": 34823
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Mesh_Grid/Overview/html/sm_membrane_ball_03.png",
+      "size_bytes": 34824
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Mesh_Grid/Overview/html/sm_membrane_ball_04.png",
+      "size_bytes": 38139
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Mesh_Grid/Overview/html/sm_membrane_ball_05.png",
+      "size_bytes": 33783
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Mesh_Grid/Overview/html/sm_membrane_ball_mechExpAnim_membr1.png",
+      "size_bytes": 130211
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Mesh_Grid/Overview/sm_membrane_ball.m",
+      "size_bytes": 2293
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Mesh_Grid/sm_membrane_ball.slx",
+      "size_bytes": 93484
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Mesh_Grid/sm_membrane_ball_params.m",
+      "size_bytes": 775
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Mesh_Grid/sm_membrane_ball_plot1ballvel.m",
+      "size_bytes": 1851
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Mesh_Grid/stem_params.m",
+      "size_bytes": 2644
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Point_Cloud_Basic/Overview/html/sm_ptcld_cyl_on_ramp.html",
+      "size_bytes": 8027
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Point_Cloud_Basic/Overview/html/sm_ptcld_cyl_on_ramp.png",
+      "size_bytes": 2286
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Point_Cloud_Basic/Overview/html/sm_ptcld_cyl_on_ramp_01.png",
+      "size_bytes": 42006
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Point_Cloud_Basic/Overview/html/sm_ptcld_cyl_on_ramp_02.png",
+      "size_bytes": 75032
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Point_Cloud_Basic/Overview/html/sm_ptcld_cyl_on_ramp_03.png",
+      "size_bytes": 48194
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Point_Cloud_Basic/Overview/html/sm_ptcld_cyl_on_ramp_04.png",
+      "size_bytes": 139697
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Point_Cloud_Basic/Overview/html/sm_ptcld_cyl_on_ramp_05.png",
+      "size_bytes": 46280
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Point_Cloud_Basic/Overview/html/sm_ptcld_cyl_on_ramp_anim_fewPts.png",
+      "size_bytes": 24183
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Point_Cloud_Basic/Overview/html/sm_ptcld_cyl_on_ramp_anim_manyPts.png",
+      "size_bytes": 53045
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Point_Cloud_Basic/Overview/sm_ptcld_cyl_on_ramp.m",
+      "size_bytes": 1802
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Point_Cloud_Basic/sm_ptcld_cyl_on_ramp.slx",
+      "size_bytes": 85240
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Point_Cloud_Basic/sm_ptcld_cyl_on_ramp_param.m",
+      "size_bytes": 1636
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Point_Cloud_Basic/sm_ptcld_cyl_on_ramp_plot1vel.m",
+      "size_bytes": 2024
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Point_Cloud_StrWhl/Overview/html/sm_point_cloud_steering_wheel.html",
+      "size_bytes": 7589
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Point_Cloud_StrWhl/Overview/html/sm_point_cloud_steering_wheel.png",
+      "size_bytes": 1796
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Point_Cloud_StrWhl/Overview/html/sm_point_cloud_steering_wheel_01.png",
+      "size_bytes": 64194
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Point_Cloud_StrWhl/Overview/html/sm_point_cloud_steering_wheel_02.png",
+      "size_bytes": 80137
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Point_Cloud_StrWhl/Overview/html/sm_point_cloud_steering_wheel_03.png",
+      "size_bytes": 24696
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Point_Cloud_StrWhl/Overview/sm_point_cloud_steering_wheel.m",
+      "size_bytes": 1626
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Point_Cloud_StrWhl/sm_point_cloud_steering_wheel.slx",
+      "size_bytes": 96346
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Point_Cloud_StrWhl/sm_point_cloud_steering_wheel_adjust.m",
+      "size_bytes": 529
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Point_Cloud_StrWhl/sm_point_cloud_steering_wheel_plot1xyz.m",
+      "size_bytes": 3075
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Point_Cloud_StrWhl/steering_wheel_ctr.stl",
+      "size_bytes": 162384
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Point_Cloud_StrWhl/steering_wheel_ctr_convex_hull.stl",
+      "size_bytes": 33584
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Point_Cloud_StrWhl/steering_wheel_orig.STL",
+      "size_bytes": 162384
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Ratchet_Pawl/Images/sm_ratchet_pawl_driver_arm.png",
+      "size_bytes": 402
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Ratchet_Pawl/Images/sm_ratchet_pawl_driver_pawl.png",
+      "size_bytes": 2504
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Ratchet_Pawl/Images/sm_ratchet_pawl_lines.png",
+      "size_bytes": 11071
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Ratchet_Pawl/Images/sm_ratchet_pawl_locking_pawl.png",
+      "size_bytes": 2402
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Ratchet_Pawl/Images/sm_ratchet_pawl_wheel.png",
+      "size_bytes": 7471
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Ratchet_Pawl/Images/sm_ratchet_pawl_wheel_lines.png",
+      "size_bytes": 9021
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Ratchet_Pawl/Libraries/sm_ratchet_pawl_lib.slx",
+      "size_bytes": 150954
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Ratchet_Pawl/Overview/html/sm_ratchet_pawl.html",
+      "size_bytes": 8363
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Ratchet_Pawl/Overview/html/sm_ratchet_pawl.png",
+      "size_bytes": 3098
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Ratchet_Pawl/Overview/html/sm_ratchet_pawl_01.png",
+      "size_bytes": 57858
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Ratchet_Pawl/Overview/html/sm_ratchet_pawl_02.png",
+      "size_bytes": 37403
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Ratchet_Pawl/Overview/html/sm_ratchet_pawl_03.png",
+      "size_bytes": 28353
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Ratchet_Pawl/Overview/html/sm_ratchet_pawl_04.png",
+      "size_bytes": 15612
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Ratchet_Pawl/Overview/html/sm_ratchet_pawl_05.png",
+      "size_bytes": 58970
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Ratchet_Pawl/Overview/sm_ratchet_pawl.m",
+      "size_bytes": 1982
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Ratchet_Pawl/Scripts_Data/Extr_Data_Pawl.m",
+      "size_bytes": 4826
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Ratchet_Pawl/Scripts_Data/Extr_Data_Ratchet_Wheel.m",
+      "size_bytes": 3096
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Ratchet_Pawl/Scripts_Data/sm_ratchet_pawl_param.m",
+      "size_bytes": 1915
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Ratchet_Pawl/Scripts_Data/sm_ratchet_pawl_plot1speeds.m",
+      "size_bytes": 1629
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Ratchet_Pawl/sm_ratchet_pawl.slx",
+      "size_bytes": 362846
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Tippe/Overview/html/sm_tippe_top.html",
+      "size_bytes": 10357
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Tippe/Overview/html/sm_tippe_top.png",
+      "size_bytes": 1917
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Tippe/Overview/html/sm_tippe_top_01.png",
+      "size_bytes": 38766
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Tippe/Overview/html/sm_tippe_top_02.png",
+      "size_bytes": 44839
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Tippe/Overview/html/sm_tippe_top_03.png",
+      "size_bytes": 91289
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Tippe/Overview/html/sm_tippe_top_04.png",
+      "size_bytes": 64436
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Tippe/Overview/html/sm_tippe_top_05.png",
+      "size_bytes": 21204
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Tippe/Overview/html/sm_tippe_top_06.png",
+      "size_bytes": 9009
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Tippe/Overview/sm_tippe_top.m",
+      "size_bytes": 2813
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Tippe/ptcld_spheres.mat",
+      "size_bytes": 27884
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Tippe/sm_tippe_top.slx",
+      "size_bytes": 109096
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Tippe/sm_tippe_top_image.png",
+      "size_bytes": 17994
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Tippe/sm_tippe_top_param.m",
+      "size_bytes": 1885
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Tippe/sm_tippe_top_plot1speed.m",
+      "size_bytes": 1197
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Tippe/sm_tippe_top_plot2compareproxies.m",
+      "size_bytes": 2535
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Tippe/sm_tippe_top_plot3headrevolution.m",
+      "size_bytes": 359
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Tippe/tippe_top_cvh.stl",
+      "size_bytes": 105584
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Totem/Overview/html/sm_spinning_top_totem.html",
+      "size_bytes": 6700
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Totem/Overview/html/sm_spinning_top_totem.png",
+      "size_bytes": 1305
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Totem/Overview/html/sm_spinning_top_totem_01.png",
+      "size_bytes": 37442
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Totem/Overview/html/sm_spinning_top_totem_02.png",
+      "size_bytes": 36263
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Totem/Overview/html/sm_spinning_top_totem_03.png",
+      "size_bytes": 21229
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Totem/Overview/sm_spinning_top_totem.m",
+      "size_bytes": 1168
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Totem/sm_spinning_top_totem.slx",
+      "size_bytes": 98769
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Totem/sm_spinning_top_totem_extr_data.mat",
+      "size_bytes": 4273
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Totem/sm_spinning_top_totem_param.m",
+      "size_bytes": 3070
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Totem/sm_spinning_top_totem_plot1speed.m",
+      "size_bytes": 1035
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Totem/top_totem_complete.png",
+      "size_bytes": 10837
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Spinning_Top/Totem/top_totem_complete_convex_hull.stl",
+      "size_bytes": 129984
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Tracked_Vehicle/Camera/Camera_Frame_Definitions.slx",
+      "size_bytes": 279940
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Tracked_Vehicle/Camera/sm_car_define_camera.m",
+      "size_bytes": 4663
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Tracked_Vehicle/Camera/sm_car_define_camera_sedan.m",
+      "size_bytes": 2006
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Tracked_Vehicle/Overview/html/sm_tracked_vehicle_belt.html",
+      "size_bytes": 16550
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Tracked_Vehicle/Overview/html/sm_tracked_vehicle_belt.png",
+      "size_bytes": 2181
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Tracked_Vehicle/Overview/html/sm_tracked_vehicle_belt_01.png",
+      "size_bytes": 36164
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Tracked_Vehicle/Overview/html/sm_tracked_vehicle_belt_02.png",
+      "size_bytes": 32375
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Tracked_Vehicle/Overview/html/sm_tracked_vehicle_belt_03.png",
+      "size_bytes": 29746
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Tracked_Vehicle/Overview/html/sm_tracked_vehicle_belt_04.png",
+      "size_bytes": 22193
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Tracked_Vehicle/Overview/html/sm_tracked_vehicle_belt_05.png",
+      "size_bytes": 15504
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Tracked_Vehicle/Overview/html/sm_tracked_vehicle_belt_06.png",
+      "size_bytes": 15432
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Tracked_Vehicle/Overview/html/sm_tracked_vehicle_belt_07.png",
+      "size_bytes": 48641
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Tracked_Vehicle/Overview/html/sm_tracked_vehicle_belt_08.png",
+      "size_bytes": 33483
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Tracked_Vehicle/Overview/html/sm_tracked_vehicle_belt_09.png",
+      "size_bytes": 36463
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Tracked_Vehicle/Overview/sm_tracked_vehicle_belt.m",
+      "size_bytes": 6153
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Tracked_Vehicle/Scripts_Data/resampleConvexHull.m",
+      "size_bytes": 4127
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Tracked_Vehicle/Scripts_Data/sm_tracked_vehicle_belt_lib.slx",
+      "size_bytes": 144133
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Tracked_Vehicle/Scripts_Data/sm_tracked_vehicle_belt_param.m",
+      "size_bytes": 1927
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Tracked_Vehicle/Scripts_Data/sm_tracked_vehicle_belt_plot1posvel.m",
+      "size_bytes": 2020
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Tracked_Vehicle/Scripts_Data/sm_tracked_vehicle_belt_plot_extr_ptcld.m",
+      "size_bytes": 777
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Tracked_Vehicle/sm_tracked_vehicle_belt.slx",
+      "size_bytes": 88913
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Tracked_Vehicle/Terrain/hills_terrain.rights",
+      "size_bytes": 915
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Tracked_Vehicle/Terrain/hills_terrain.stl",
+      "size_bytes": 6375484
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Tracked_Vehicle/Terrain/stl_to_gridsurface.m",
+      "size_bytes": 3683
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Multibody_Contact_Force_Examples.prj",
+      "size_bytes": 177
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/README.md",
+      "size_bytes": 3057
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/-XwIhgUekQH56GYbAvDDzeSw1vEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/-XwIhgUekQH56GYbAvDDzeSw1vEp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/FyaTa5jAbbNpTXx8meWki5KFjkId.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/FyaTa5jAbbNpTXx8meWki5KFjkIp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/HDQSQhMyx1IUi1jJQsbB1CcTeCsd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/HDQSQhMyx1IUi1jJQsbB1CcTeCsp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/i7qF3jBDzhGHegn85rueh2pXbOUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/i7qF3jBDzhGHegn85rueh2pXbOUp.xml",
+      "size_bytes": 88
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/j8n0Xwglzi6z5ROQrJR95yLn6Jcd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/j8n0Xwglzi6z5ROQrJR95yLn6Jcp.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/kGuUe5c4ceJlloGlvHI67EzHpmId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/kGuUe5c4ceJlloGlvHI67EzHpmIp.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/og--DhWuWrFDoU7BVI5WwZg_m4Md.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/og--DhWuWrFDoU7BVI5WwZg_m4Mp.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/qUQ3lsSLOipN6r9vXrgfjxrSqJsd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/qUQ3lsSLOipN6r9vXrgfjxrSqJsp.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/RJ7qkL1gXUW7bCrsBH6rzpVTW7Id.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/RJ7qkL1gXUW7bCrsBH6rzpVTW7Ip.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/TaFIzS5xOnYi1jUj6TpdJgmJvCsd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/TaFIzS5xOnYi1jUj6TpdJgmJvCsp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/VdPmBMwoDf7Z0K1nUWaLWFgZOKAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/VdPmBMwoDf7Z0K1nUWaLWFgZOKAp.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/Zk3_2T3lPJ2MLbjJEQOJHMSKR80d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/Zk3_2T3lPJ2MLbjJEQOJHMSKR80p.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-XwIhgUekQH56GYbAvDDzeSw1vE/33S9muOinhLQgMY3reCni49ugPMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-XwIhgUekQH56GYbAvDDzeSw1vE/33S9muOinhLQgMY3reCni49ugPMp.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-XwIhgUekQH56GYbAvDDzeSw1vE/6itwKo0qWRAY0YfzqZrJhOaBjYUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-XwIhgUekQH56GYbAvDDzeSw1vE/6itwKo0qWRAY0YfzqZrJhOaBjYUp.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-XwIhgUekQH56GYbAvDDzeSw1vE/agMKEZTg5IpzN_wbw8NWcQlMvHMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-XwIhgUekQH56GYbAvDDzeSw1vE/agMKEZTg5IpzN_wbw8NWcQlMvHMp.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-XwIhgUekQH56GYbAvDDzeSw1vE/kiDShe4MYqWKsbgNGtHasItL4O0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-XwIhgUekQH56GYbAvDDzeSw1vE/kiDShe4MYqWKsbgNGtHasItL4O0p.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-XwIhgUekQH56GYbAvDDzeSw1vE/opP5vZDg3JvmA1ukIz-0huL6Pewd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-XwIhgUekQH56GYbAvDDzeSw1vE/opP5vZDg3JvmA1ukIz-0huL6Pewp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-XwIhgUekQH56GYbAvDDzeSw1vE/vLpA2f-8AxzsEqsopSCR10xigpEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-XwIhgUekQH56GYbAvDDzeSw1vE/vLpA2f-8AxzsEqsopSCR10xigpEp.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-XwIhgUekQH56GYbAvDDzeSw1vE/Vuul31Eymce_X7HdH3N1r3_2RwEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/-XwIhgUekQH56GYbAvDDzeSw1vE/Vuul31Eymce_X7HdH3N1r3_2RwEp.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/06_LhEGxrweTOM9h52iCymDE_A0/c6Jkh_tgXzmBcgUN8Vgk0HThaN4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/06_LhEGxrweTOM9h52iCymDE_A0/c6Jkh_tgXzmBcgUN8Vgk0HThaN4p.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/06_LhEGxrweTOM9h52iCymDE_A0/q0bANhx_Ap25dMw1cJ8-MhDRhKAd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/06_LhEGxrweTOM9h52iCymDE_A0/q0bANhx_Ap25dMw1cJ8-MhDRhKAp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/06_LhEGxrweTOM9h52iCymDE_A0/RxlHBr55W30izBz_0B1M6_vsfM4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/06_LhEGxrweTOM9h52iCymDE_A0/RxlHBr55W30izBz_0B1M6_vsfM4p.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/5BhIyFutvfWQaZHL8piD5ikuCRA/7-bqUAWO7UI1E7OStuqHI8TNcmAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/5BhIyFutvfWQaZHL8piD5ikuCRA/7-bqUAWO7UI1E7OStuqHI8TNcmAp.xml",
+      "size_bytes": 88
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/5BhIyFutvfWQaZHL8piD5ikuCRA/a9m9luwslTI_FHU6VRaj31s5LJId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/5BhIyFutvfWQaZHL8piD5ikuCRA/a9m9luwslTI_FHU6VRaj31s5LJIp.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/5BhIyFutvfWQaZHL8piD5ikuCRA/fvj7poCMnVfW768xKZ5vJa5uEmId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/5BhIyFutvfWQaZHL8piD5ikuCRA/fvj7poCMnVfW768xKZ5vJa5uEmIp.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/5BhIyFutvfWQaZHL8piD5ikuCRA/gmkT4OP5XSvSnon4nSydf6eGywAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/5BhIyFutvfWQaZHL8piD5ikuCRA/gmkT4OP5XSvSnon4nSydf6eGywAp.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/5BhIyFutvfWQaZHL8piD5ikuCRA/koN0Wp8eG4DSVZjrmYimPl_UoIUd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/5BhIyFutvfWQaZHL8piD5ikuCRA/koN0Wp8eG4DSVZjrmYimPl_UoIUp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/5BhIyFutvfWQaZHL8piD5ikuCRA/NLtJArBCHN3T1HO2mmB_jUC1TFod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/5BhIyFutvfWQaZHL8piD5ikuCRA/NLtJArBCHN3T1HO2mmB_jUC1TFop.xml",
+      "size_bytes": 105
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/5BhIyFutvfWQaZHL8piD5ikuCRA/nmUJckpxkWi9xSq0d1Ia2X_fbuUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/5BhIyFutvfWQaZHL8piD5ikuCRA/nmUJckpxkWi9xSq0d1Ia2X_fbuUp.xml",
+      "size_bytes": 88
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/5BhIyFutvfWQaZHL8piD5ikuCRA/pAjZjcnXLTQ4ziuLi6JpFndL3dcd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/5BhIyFutvfWQaZHL8piD5ikuCRA/pAjZjcnXLTQ4ziuLi6JpFndL3dcp.xml",
+      "size_bytes": 105
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/5BhIyFutvfWQaZHL8piD5ikuCRA/Uo39_yqq54mr-vN6LjbmLW-MZbgd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/5BhIyFutvfWQaZHL8piD5ikuCRA/Uo39_yqq54mr-vN6LjbmLW-MZbgp.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/5BhIyFutvfWQaZHL8piD5ikuCRA/vhgNM2hdC2528xfu46oWDVogYvMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/5BhIyFutvfWQaZHL8piD5ikuCRA/vhgNM2hdC2528xfu46oWDVogYvMp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/6itwKo0qWRAY0YfzqZrJhOaBjYU/7I6HTYMTwsqYZy12aHWbj7dzRt8d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/6itwKo0qWRAY0YfzqZrJhOaBjYU/7I6HTYMTwsqYZy12aHWbj7dzRt8p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/6itwKo0qWRAY0YfzqZrJhOaBjYU/lmWIJGrm9JupqgLgQqGEpK0xL2od.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/6itwKo0qWRAY0YfzqZrJhOaBjYU/lmWIJGrm9JupqgLgQqGEpK0xL2op.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/6itwKo0qWRAY0YfzqZrJhOaBjYU/ScSTcSFouhIRUIGgilWCLmSQJfwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/6itwKo0qWRAY0YfzqZrJhOaBjYU/ScSTcSFouhIRUIGgilWCLmSQJfwp.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/9nXsSHV9HifRJeSARvZxjCMxL2I/-lyTQFablAstjaQyIIxXcQ2SR8Ad.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/9nXsSHV9HifRJeSARvZxjCMxL2I/-lyTQFablAstjaQyIIxXcQ2SR8Ap.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/9nXsSHV9HifRJeSARvZxjCMxL2I/0IiIKU3964fu0M_cdQcw1wT7vXId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/9nXsSHV9HifRJeSARvZxjCMxL2I/0IiIKU3964fu0M_cdQcw1wT7vXIp.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/9nXsSHV9HifRJeSARvZxjCMxL2I/_nAqFuOUp9jHXXyfJuWv6VECpuwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/9nXsSHV9HifRJeSARvZxjCMxL2I/_nAqFuOUp9jHXXyfJuWv6VECpuwp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/9nXsSHV9HifRJeSARvZxjCMxL2I/DtlU1cdBgToD1jFkyap68Cbmr9wd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/9nXsSHV9HifRJeSARvZxjCMxL2I/DtlU1cdBgToD1jFkyap68Cbmr9wp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/9nXsSHV9HifRJeSARvZxjCMxL2I/KX6KxD8bFuh9a3JlLcX_qeomMTYd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/9nXsSHV9HifRJeSARvZxjCMxL2I/KX6KxD8bFuh9a3JlLcX_qeomMTYp.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/9nXsSHV9HifRJeSARvZxjCMxL2I/sc1Zx3X2bQvjN_mwcla0vn8KQm8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/9nXsSHV9HifRJeSARvZxjCMxL2I/sc1Zx3X2bQvjN_mwcla0vn8KQm8p.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/9nXsSHV9HifRJeSARvZxjCMxL2I/ZF5i56cViIKEsX2-i312gZokDEId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/9nXsSHV9HifRJeSARvZxjCMxL2I/ZF5i56cViIKEsX2-i312gZokDEIp.xml",
+      "size_bytes": 103
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/AeFSykeF_SqEhivdbcl0QlXvXqU/crw4Tb3HTIfH3ogGm40cCxhQ_f4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/AeFSykeF_SqEhivdbcl0QlXvXqU/crw4Tb3HTIfH3ogGm40cCxhQ_f4p.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/AeFSykeF_SqEhivdbcl0QlXvXqU/GFQuuWFuxoMBsccT8vJNoy-1cyEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/AeFSykeF_SqEhivdbcl0QlXvXqU/GFQuuWFuxoMBsccT8vJNoy-1cyEp.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/AeFSykeF_SqEhivdbcl0QlXvXqU/IlQB9VcqTNHZ_iTWK6VIFEgnYvUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/AeFSykeF_SqEhivdbcl0QlXvXqU/IlQB9VcqTNHZ_iTWK6VIFEgnYvUp.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/AeFSykeF_SqEhivdbcl0QlXvXqU/jaMitKsthPuI8p7pkYHSxo9EtrId.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/AeFSykeF_SqEhivdbcl0QlXvXqU/jaMitKsthPuI8p7pkYHSxo9EtrIp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/AeFSykeF_SqEhivdbcl0QlXvXqU/JY4EvAv4hfz4WpUJfMYfBi0UVHAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/AeFSykeF_SqEhivdbcl0QlXvXqU/JY4EvAv4hfz4WpUJfMYfBi0UVHAp.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/AeFSykeF_SqEhivdbcl0QlXvXqU/VFYCXU9CmH1dHCfBP1Yd-HCUXX8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/AeFSykeF_SqEhivdbcl0QlXvXqU/VFYCXU9CmH1dHCfBP1Yd-HCUXX8p.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Bi3VdYat8UpYSfSQw9hC-2T0Omc/3a0e2pBxtWdS1kkDkPLYyujT6Kgd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Bi3VdYat8UpYSfSQw9hC-2T0Omc/3a0e2pBxtWdS1kkDkPLYyujT6Kgp.xml",
+      "size_bytes": 107
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Bi3VdYat8UpYSfSQw9hC-2T0Omc/3Wp5yU85bPqjM1hw93UqH4Utqgcd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Bi3VdYat8UpYSfSQw9hC-2T0Omc/3Wp5yU85bPqjM1hw93UqH4Utqgcp.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Bi3VdYat8UpYSfSQw9hC-2T0Omc/6Y8lARCf1PQnAzxByGebfWE6ZLYd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Bi3VdYat8UpYSfSQw9hC-2T0Omc/6Y8lARCf1PQnAzxByGebfWE6ZLYp.xml",
+      "size_bytes": 105
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Bi3VdYat8UpYSfSQw9hC-2T0Omc/LKWSud7kJHuoEPaW28wrJfExUCQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Bi3VdYat8UpYSfSQw9hC-2T0Omc/LKWSud7kJHuoEPaW28wrJfExUCQp.xml",
+      "size_bytes": 107
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Bi3VdYat8UpYSfSQw9hC-2T0Omc/pD_k7uP2FfmK6YsFDTHu7a-da4Yd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Bi3VdYat8UpYSfSQw9hC-2T0Omc/pD_k7uP2FfmK6YsFDTHu7a-da4Yp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Bi3VdYat8UpYSfSQw9hC-2T0Omc/pEj9ZLhnsCd8AtNuMkevJ9IjHCod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Bi3VdYat8UpYSfSQw9hC-2T0Omc/pEj9ZLhnsCd8AtNuMkevJ9IjHCop.xml",
+      "size_bytes": 107
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/bYGi4eOh7SIAvxTkiV3K2pz6Jm8/Cbo4ufyNd2yqbPXauhHVDsAzcdod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/bYGi4eOh7SIAvxTkiV3K2pz6Jm8/Cbo4ufyNd2yqbPXauhHVDsAzcdop.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/bYGi4eOh7SIAvxTkiV3K2pz6Jm8/DyO9-IfwszdyQ2dSdteWHY8zXg4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/bYGi4eOh7SIAvxTkiV3K2pz6Jm8/DyO9-IfwszdyQ2dSdteWHY8zXg4p.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/bYGi4eOh7SIAvxTkiV3K2pz6Jm8/FD5BroG4jGZMQ2fmZwIiFg37nWAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/bYGi4eOh7SIAvxTkiV3K2pz6Jm8/FD5BroG4jGZMQ2fmZwIiFg37nWAp.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/bYGi4eOh7SIAvxTkiV3K2pz6Jm8/hKGcEzZaiZq8ZniiYBRnjy2-pHMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/bYGi4eOh7SIAvxTkiV3K2pz6Jm8/hKGcEzZaiZq8ZniiYBRnjy2-pHMp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/bYGi4eOh7SIAvxTkiV3K2pz6Jm8/KRy7U317EbOyf02240rKSrQ_fGgd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/bYGi4eOh7SIAvxTkiV3K2pz6Jm8/KRy7U317EbOyf02240rKSrQ_fGgp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/bYGi4eOh7SIAvxTkiV3K2pz6Jm8/PbvE-d4LTsPK0GtGgBQ2PXqq9Fwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/bYGi4eOh7SIAvxTkiV3K2pz6Jm8/PbvE-d4LTsPK0GtGgBQ2PXqq9Fwp.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/bYGi4eOh7SIAvxTkiV3K2pz6Jm8/pQg8roGabcJoBWsn4YN6bV8rnyEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/bYGi4eOh7SIAvxTkiV3K2pz6Jm8/pQg8roGabcJoBWsn4YN6bV8rnyEp.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/bYGi4eOh7SIAvxTkiV3K2pz6Jm8/SGv0aU7-y1NbIjoGP9Yb5CkzQwwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/bYGi4eOh7SIAvxTkiV3K2pz6Jm8/SGv0aU7-y1NbIjoGP9Yb5CkzQwwp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/bYGi4eOh7SIAvxTkiV3K2pz6Jm8/sGZ5PCfFB1qqKTFKHwZll-QP0cId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/bYGi4eOh7SIAvxTkiV3K2pz6Jm8/sGZ5PCfFB1qqKTFKHwZll-QP0cIp.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/bYGi4eOh7SIAvxTkiV3K2pz6Jm8/XuUCfc7Qr0Y9nNZCuw2ocbRKL-Qd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/bYGi4eOh7SIAvxTkiV3K2pz6Jm8/XuUCfc7Qr0Y9nNZCuw2ocbRKL-Qp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/bYGi4eOh7SIAvxTkiV3K2pz6Jm8/z-OAQnUNiTa-cRm6dGEg-2SFv6sd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/bYGi4eOh7SIAvxTkiV3K2pz6Jm8/z-OAQnUNiTa-cRm6dGEg-2SFv6sp.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/bYGi4eOh7SIAvxTkiV3K2pz6Jm8/ZaaIkT0iHiWbrgO-tcV8qP5S3Mkd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/bYGi4eOh7SIAvxTkiV3K2pz6Jm8/ZaaIkT0iHiWbrgO-tcV8qP5S3Mkp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Cud2S3cUP_hZ_prUAUUhceD5sXE/k78q6-5M9IehG5UDwWy67PunHT4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Cud2S3cUP_hZ_prUAUUhceD5sXE/k78q6-5M9IehG5UDwWy67PunHT4p.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Cud2S3cUP_hZ_prUAUUhceD5sXE/yKJWHHVRyKPxQoQEc3baP_f9EGQd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Cud2S3cUP_hZ_prUAUUhceD5sXE/yKJWHHVRyKPxQoQEc3baP_f9EGQp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/d6E4R1F3YjZ3l819p-LthcjQCHI/_nC4YeBwljeMJC5LhofxnpK3YZsd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/d6E4R1F3YjZ3l819p-LthcjQCHI/_nC4YeBwljeMJC5LhofxnpK3YZsp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/d6E4R1F3YjZ3l819p-LthcjQCHI/crLHVtDakr7mMHJz33ybIUf_gu8d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/d6E4R1F3YjZ3l819p-LthcjQCHI/crLHVtDakr7mMHJz33ybIUf_gu8p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/d6E4R1F3YjZ3l819p-LthcjQCHI/jAVkZZ2ciTW26HbvA3CBwVLW-BMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/d6E4R1F3YjZ3l819p-LthcjQCHI/jAVkZZ2ciTW26HbvA3CBwVLW-BMp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/d6E4R1F3YjZ3l819p-LthcjQCHI/Km5kTX3Wn-HWFluUggAgpJ8DKqod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/d6E4R1F3YjZ3l819p-LthcjQCHI/Km5kTX3Wn-HWFluUggAgpJ8DKqop.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/d6E4R1F3YjZ3l819p-LthcjQCHI/UTeHbAYS4FOm9BUf14my6Tf0qykd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/d6E4R1F3YjZ3l819p-LthcjQCHI/UTeHbAYS4FOm9BUf14my6Tf0qykp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/d6E4R1F3YjZ3l819p-LthcjQCHI/ZE_nLDGzpvhDN-N-yzi1rGDHtUsd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/d6E4R1F3YjZ3l819p-LthcjQCHI/ZE_nLDGzpvhDN-N-yzi1rGDHtUsp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/DaVhTTO60SaTVfaS92Eqk4AIeFQ/Lj3NOIz5jaZjAxm39qzmUoUsKE8d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/DaVhTTO60SaTVfaS92Eqk4AIeFQ/Lj3NOIz5jaZjAxm39qzmUoUsKE8p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/DaVhTTO60SaTVfaS92Eqk4AIeFQ/ly0dUih0XVI03PWEyKoEXxHGucEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/DaVhTTO60SaTVfaS92Eqk4AIeFQ/ly0dUih0XVI03PWEyKoEXxHGucEp.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/DaVhTTO60SaTVfaS92Eqk4AIeFQ/nDiHvuQJ9Zk3vkersj4oUlYdJPQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/DaVhTTO60SaTVfaS92Eqk4AIeFQ/nDiHvuQJ9Zk3vkersj4oUlYdJPQp.xml",
+      "size_bytes": 88
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Dej1EXCHO1lBMUOrVa6CRBeDYwc/14Uhi12DFW7jt-uoP2fY5Pg0yWQd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Dej1EXCHO1lBMUOrVa6CRBeDYwc/14Uhi12DFW7jt-uoP2fY5Pg0yWQp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Dej1EXCHO1lBMUOrVa6CRBeDYwc/Hdv0mT0P2_2vgP3iTZ_QUuLTOREd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Dej1EXCHO1lBMUOrVa6CRBeDYwc/Hdv0mT0P2_2vgP3iTZ_QUuLTOREp.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/DpGFPrOk7Pd3h4aaUmx_WKfm69M/d1LFjo9l6DWf7BJPnhQ0WWeSKzQd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/DpGFPrOk7Pd3h4aaUmx_WKfm69M/d1LFjo9l6DWf7BJPnhQ0WWeSKzQp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/DpGFPrOk7Pd3h4aaUmx_WKfm69M/kHi1OI6mJT-mGw29ZD9FUtWa3w4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/DpGFPrOk7Pd3h4aaUmx_WKfm69M/kHi1OI6mJT-mGw29ZD9FUtWa3w4p.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/DpGFPrOk7Pd3h4aaUmx_WKfm69M/r5l_7Og2TVr1CJbmIGd5qaeR52gd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/DpGFPrOk7Pd3h4aaUmx_WKfm69M/r5l_7Og2TVr1CJbmIGd5qaeR52gp.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/DpGFPrOk7Pd3h4aaUmx_WKfm69M/SE9JH0XkGsnQd9uNsy1v878E6icd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/DpGFPrOk7Pd3h4aaUmx_WKfm69M/SE9JH0XkGsnQd9uNsy1v878E6icp.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/0IYviZkJ1n7r1SwQIf4Uw7cbhoMd.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/0IYviZkJ1n7r1SwQIf4Uw7cbhoMp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/0LvHhLwi3pPas5SnqdBqMrHWvlAd.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/0LvHhLwi3pPas5SnqdBqMrHWvlAp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/1w5KMRaW_29ljLmyhUoD4qbaKEUd.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/1w5KMRaW_29ljLmyhUoD4qbaKEUp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/3EOeP5sdRDRrphQD3L0orRyLazId.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/3EOeP5sdRDRrphQD3L0orRyLazIp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/4AnaLvL6IYcz9FvbHoidDhBGK-4d.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/4AnaLvL6IYcz9FvbHoidDhBGK-4p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/5KMbbusy0aPIUFimM6HCsxVtCfAd.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/5KMbbusy0aPIUFimM6HCsxVtCfAp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/6BVSvDFS4wP_6oiDxbUtBU_-KN8d.xml",
+      "size_bytes": 105
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/6BVSvDFS4wP_6oiDxbUtBU_-KN8p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/87aKEw_py2gFhDYCpSd4vvY2elcd.xml",
+      "size_bytes": 106
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/87aKEw_py2gFhDYCpSd4vvY2elcp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/9JNPxNNLqVdJEd8pStsYQRBWgAkd.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/9JNPxNNLqVdJEd8pStsYQRBWgAkp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/9ryFsoK4JiNU2C-Gx0uf2qhYt14d.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/9ryFsoK4JiNU2C-Gx0uf2qhYt14p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/_03ieP6dVqjpkcvGhNXsa9wONUYd.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/_03ieP6dVqjpkcvGhNXsa9wONUYp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/bOp_xkDOQL6ank9lhAax95u1SyEd.xml",
+      "size_bytes": 105
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/bOp_xkDOQL6ank9lhAax95u1SyEp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/btJK0sa4sQn4FK1fab7OUpFEhEId.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/btJK0sa4sQn4FK1fab7OUpFEhEIp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/Bu6_IRRUDsYUs838jJSnVUu9maYd.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/Bu6_IRRUDsYUs838jJSnVUu9maYp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/BxefmfB9fDY691S26xtxkkGSf9Md.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/BxefmfB9fDY691S26xtxkkGSf9Mp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/cDshqLyegl1AVzGR52IL6a05zDcd.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/cDshqLyegl1AVzGR52IL6a05zDcp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/dwNZw-ZHoo_dH96Se-WRXoFX1Y4d.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/dwNZw-ZHoo_dH96Se-WRXoFX1Y4p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/FcltfEBN_s4EpTfkP_mQAc0pgyId.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/FcltfEBN_s4EpTfkP_mQAc0pgyIp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/FT3ZgKACHGBcosSUMCFoRr97jucd.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/FT3ZgKACHGBcosSUMCFoRr97jucp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/fxq7mkEiq-6rUU2gCFIukfz8a-8d.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/fxq7mkEiq-6rUU2gCFIukfz8a-8p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/GwA2xOZp67CvW1GA_S0TEYh4xTYd.xml",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/GwA2xOZp67CvW1GA_S0TEYh4xTYp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/iZ34Mwy0_Zy7FqcityZkK2s0imcd.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/iZ34Mwy0_Zy7FqcityZkK2s0imcp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/JP9iTX1eGZvLPPDAutKOvH6spvUd.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/JP9iTX1eGZvLPPDAutKOvH6spvUp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/jUvokQMaem2Q3uHUWyCwg17yQx8d.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/jUvokQMaem2Q3uHUWyCwg17yQx8p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/Kg55C8UcTWListqh1ZwvnGUpL58d.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/Kg55C8UcTWListqh1ZwvnGUpL58p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/KTlEt2cyijy-DEqAl6Q9VThDyhId.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/KTlEt2cyijy-DEqAl6Q9VThDyhIp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/L6LeRtUYMTGh08he4owX8T5Kp_Yd.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/L6LeRtUYMTGh08he4owX8T5Kp_Yp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/LPY421AzCIq3IU1BfSDUvG6FU6od.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/LPY421AzCIq3IU1BfSDUvG6FU6op.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/nF8-DpDdJZ3BJRVzlinOzAr4PNQd.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/nF8-DpDdJZ3BJRVzlinOzAr4PNQp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/p0ySlUaEAmmTC5xq8l0dcDNqQ0gd.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/p0ySlUaEAmmTC5xq8l0dcDNqQ0gp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/QvPbd9o8JIUp07Lr2CqXKaTDdzgd.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/QvPbd9o8JIUp07Lr2CqXKaTDdzgp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/r9bPhkRR0A-49Xx7Frj3RY4idB0d.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/r9bPhkRR0A-49Xx7Frj3RY4idB0p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/RSCiZuVfqe2sn1v9EXJIimW3R_wd.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/RSCiZuVfqe2sn1v9EXJIimW3R_wp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/SaKQi-xYSL7TW99RiIKlzocNw6cd.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/SaKQi-xYSL7TW99RiIKlzocNw6cp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/tJOsBkfXR6DluZ8Vd11Q0Y72T0Ed.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/tJOsBkfXR6DluZ8Vd11Q0Y72T0Ep.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/uPpf8jaBwHRSEscg0q7NSBibziEd.xml",
+      "size_bytes": 103
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/uPpf8jaBwHRSEscg0q7NSBibziEp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/Vcjer4c7nWYGtqVJsEx05hLtO6Ed.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/Vcjer4c7nWYGtqVJsEx05hLtO6Ep.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/wa4ztFuxIdDsJx50rG9NH6nKpS0d.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/wa4ztFuxIdDsJx50rG9NH6nKpS0p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/wNtnCeJPFGFnI9V3SYx2WTZVfx8d.xml",
+      "size_bytes": 70
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/wNtnCeJPFGFnI9V3SYx2WTZVfx8p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/WPYLz1UJFzV242PXNYETWeZU2DAd.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/WPYLz1UJFzV242PXNYETWeZU2DAp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/X1M94tw4K5Wd41czvJuFEjm8rPMd.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/X1M94tw4K5Wd41czvJuFEjm8rPMp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ET-2oK8RT9EB3nifCq58UFkMpVA/-dNBJEGWyGA1PdHKRrxWSf34CEod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ET-2oK8RT9EB3nifCq58UFkMpVA/-dNBJEGWyGA1PdHKRrxWSf34CEop.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ET-2oK8RT9EB3nifCq58UFkMpVA/MDWj5qC4jPRMBYH2xYO4MBTKfn8d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ET-2oK8RT9EB3nifCq58UFkMpVA/MDWj5qC4jPRMBYH2xYO4MBTKfn8p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ET-2oK8RT9EB3nifCq58UFkMpVA/nm1msBjllZZ6ZqIe8-ZSyqc4X78d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ET-2oK8RT9EB3nifCq58UFkMpVA/nm1msBjllZZ6ZqIe8-ZSyqc4X78p.xml",
+      "size_bytes": 88
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ET-2oK8RT9EB3nifCq58UFkMpVA/V2lSDjwRK3HtPx3UGlDj2xZscVUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ET-2oK8RT9EB3nifCq58UFkMpVA/V2lSDjwRK3HtPx3UGlDj2xZscVUp.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsd.xml",
+      "size_bytes": 115
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/FPjk2kLzIupXiFm3pS4GfBs0mNQ/7fkQ6gEsCy62eEh9W_wiQX4GldId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/FPjk2kLzIupXiFm3pS4GfBs0mNQ/7fkQ6gEsCy62eEh9W_wiQX4GldIp.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/FPjk2kLzIupXiFm3pS4GfBs0mNQ/BNkN4_IkzIs7PfT6g7bNlTAUwEgd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/FPjk2kLzIupXiFm3pS4GfBs0mNQ/BNkN4_IkzIs7PfT6g7bNlTAUwEgp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/FPjk2kLzIupXiFm3pS4GfBs0mNQ/EBcfjBTB0cO6EArigOa2MadwwwYd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/FPjk2kLzIupXiFm3pS4GfBs0mNQ/EBcfjBTB0cO6EArigOa2MadwwwYp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/FPjk2kLzIupXiFm3pS4GfBs0mNQ/JdEra816GInQh9UW1tM5-fxu07Md.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/FPjk2kLzIupXiFm3pS4GfBs0mNQ/JdEra816GInQh9UW1tM5-fxu07Mp.xml",
+      "size_bytes": 106
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/FPjk2kLzIupXiFm3pS4GfBs0mNQ/Lhl3lchJqAq04mw8ieODlwDI2sgd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/FPjk2kLzIupXiFm3pS4GfBs0mNQ/Lhl3lchJqAq04mw8ieODlwDI2sgp.xml",
+      "size_bytes": 105
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/FPjk2kLzIupXiFm3pS4GfBs0mNQ/mG8waAReCvNG1nmbQPqYG9t5ai0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/FPjk2kLzIupXiFm3pS4GfBs0mNQ/mG8waAReCvNG1nmbQPqYG9t5ai0p.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/FPjk2kLzIupXiFm3pS4GfBs0mNQ/TG3OYuwb-hIuH54qfXarxz8JryId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/FPjk2kLzIupXiFm3pS4GfBs0mNQ/TG3OYuwb-hIuH54qfXarxz8JryIp.xml",
+      "size_bytes": 105
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/FPjk2kLzIupXiFm3pS4GfBs0mNQ/WfGD6nhRR-HjuBUfbUsbHpAMLzId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/FPjk2kLzIupXiFm3pS4GfBs0mNQ/WfGD6nhRR-HjuBUfbUsbHpAMLzIp.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/gmkT4OP5XSvSnon4nSydf6eGywA/aVGJOVF2O35WuOb-SzcMfeVL-1Yd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/gmkT4OP5XSvSnon4nSydf6eGywA/aVGJOVF2O35WuOb-SzcMfeVL-1Yp.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/gmkT4OP5XSvSnon4nSydf6eGywA/Z4OmCookNsX796rRMv0kzFti3O0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/gmkT4OP5XSvSnon4nSydf6eGywA/Z4OmCookNsX796rRMv0kzFti3O0p.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/gmkT4OP5XSvSnon4nSydf6eGywA/ZyVZ4apolqH20QENolp0i_2nn1gd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/gmkT4OP5XSvSnon4nSydf6eGywA/ZyVZ4apolqH20QENolp0i_2nn1gp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Gytk92LuPdvW1flWgKHXuLPmIY4/2c_EOnnaZuq4xG_Dv40pup3M830d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Gytk92LuPdvW1flWgKHXuLPmIY4/2c_EOnnaZuq4xG_Dv40pup3M830p.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Gytk92LuPdvW1flWgKHXuLPmIY4/9MfxDCrqlP0kwucn8kZu7pmx-WEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Gytk92LuPdvW1flWgKHXuLPmIY4/9MfxDCrqlP0kwucn8kZu7pmx-WEp.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Gytk92LuPdvW1flWgKHXuLPmIY4/h5ylyjYNtGsZ1FrjN1eGx7xZlCod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Gytk92LuPdvW1flWgKHXuLPmIY4/h5ylyjYNtGsZ1FrjN1eGx7xZlCop.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Gytk92LuPdvW1flWgKHXuLPmIY4/L6YW4evEQFT2MPLPCpTX9zocjggd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Gytk92LuPdvW1flWgKHXuLPmIY4/L6YW4evEQFT2MPLPCpTX9zocjggp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Gytk92LuPdvW1flWgKHXuLPmIY4/NsdjiwJbOoDX-aAGUd-8-L3KGq8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Gytk92LuPdvW1flWgKHXuLPmIY4/NsdjiwJbOoDX-aAGUd-8-L3KGq8p.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Gytk92LuPdvW1flWgKHXuLPmIY4/SeJo5Oi_ae2F60EW-tTJIrqboQEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Gytk92LuPdvW1flWgKHXuLPmIY4/SeJo5Oi_ae2F60EW-tTJIrqboQEp.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Gytk92LuPdvW1flWgKHXuLPmIY4/W4eMQVAedqFD0hnHoRRUIk1ED6Id.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Gytk92LuPdvW1flWgKHXuLPmIY4/W4eMQVAedqFD0hnHoRRUIk1ED6Ip.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Gytk92LuPdvW1flWgKHXuLPmIY4/WPccEScs-1akawVRRfJi0HRam5Yd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Gytk92LuPdvW1flWgKHXuLPmIY4/WPccEScs-1akawVRRfJi0HRam5Yp.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/HDQSQhMyx1IUi1jJQsbB1CcTeCs/-vSgAHJaOzwtnnRotXs5UuL08NQd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/HDQSQhMyx1IUi1jJQsbB1CcTeCs/-vSgAHJaOzwtnnRotXs5UuL08NQp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/HDQSQhMyx1IUi1jJQsbB1CcTeCs/oLnC2LYRrkwAMEOmg386EAc4f5od.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/HDQSQhMyx1IUi1jJQsbB1CcTeCs/oLnC2LYRrkwAMEOmg386EAc4f5op.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/HDQSQhMyx1IUi1jJQsbB1CcTeCs/qSVLqo-QnvMvhg5JFLzdcgNmU0od.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/HDQSQhMyx1IUi1jJQsbB1CcTeCs/qSVLqo-QnvMvhg5JFLzdcgNmU0op.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/HDQSQhMyx1IUi1jJQsbB1CcTeCs/RpOjMRnkmQHx5wMlXGC4Bm4zi3wd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/HDQSQhMyx1IUi1jJQsbB1CcTeCs/RpOjMRnkmQHx5wMlXGC4Bm4zi3wp.xml",
+      "size_bytes": 110
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/HDQSQhMyx1IUi1jJQsbB1CcTeCs/vcDzQRXsSqPXHpWdUXhYaCuAltwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/HDQSQhMyx1IUi1jJQsbB1CcTeCs/vcDzQRXsSqPXHpWdUXhYaCuAltwp.xml",
+      "size_bytes": 106
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/HDQSQhMyx1IUi1jJQsbB1CcTeCs/ymd5yxL1zm0aEQ_tcF3f8JxbCacd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/HDQSQhMyx1IUi1jJQsbB1CcTeCs/ymd5yxL1zm0aEQ_tcF3f8JxbCacp.xml",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/HDQSQhMyx1IUi1jJQsbB1CcTeCs/YreCMVekV9iQM47AiKlcobqKrC0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/HDQSQhMyx1IUi1jJQsbB1CcTeCs/YreCMVekV9iQM47AiKlcobqKrC0p.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Hdv0mT0P2_2vgP3iTZ_QUuLTORE/HHIgfScQlgpumZSzKhCAWvfGkOkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Hdv0mT0P2_2vgP3iTZ_QUuLTORE/HHIgfScQlgpumZSzKhCAWvfGkOkp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Hdv0mT0P2_2vgP3iTZ_QUuLTORE/w4XkRawBR3uY1XzbcxSdve6hkZMd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Hdv0mT0P2_2vgP3iTZ_QUuLTORE/w4XkRawBR3uY1XzbcxSdve6hkZMp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/i7qF3jBDzhGHegn85rueh2pXbOU/PEmLkutWKUl_SNI4wJ0K0z0ekM8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/i7qF3jBDzhGHegn85rueh2pXbOU/PEmLkutWKUl_SNI4wJ0K0z0ekM8p.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/i7qF3jBDzhGHegn85rueh2pXbOU/TqZ0mBNxLV76lA3iU5XDUJOxFzUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/i7qF3jBDzhGHegn85rueh2pXbOU/TqZ0mBNxLV76lA3iU5XDUJOxFzUp.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/i7qF3jBDzhGHegn85rueh2pXbOU/w2r4IoDzIoq9mw1aChTN2DXaGcMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/i7qF3jBDzhGHegn85rueh2pXbOU/w2r4IoDzIoq9mw1aChTN2DXaGcMp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/i7qF3jBDzhGHegn85rueh2pXbOU/yg6uqclShD3KZL5oSiqLELZ68X0d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/i7qF3jBDzhGHegn85rueh2pXbOU/yg6uqclShD3KZL5oSiqLELZ68X0p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/i7qF3jBDzhGHegn85rueh2pXbOU/YL3ZBEJWGwzXX_jBPvl6iDx70yAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/i7qF3jBDzhGHegn85rueh2pXbOU/YL3ZBEJWGwzXX_jBPvl6iDx70yAp.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/j8n0Xwglzi6z5ROQrJR95yLn6Jc/8O2a57iudEbAO-jdKDHna8GhWDYd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/j8n0Xwglzi6z5ROQrJR95yLn6Jc/8O2a57iudEbAO-jdKDHna8GhWDYp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/j8n0Xwglzi6z5ROQrJR95yLn6Jc/ET-2oK8RT9EB3nifCq58UFkMpVAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/j8n0Xwglzi6z5ROQrJR95yLn6Jc/ET-2oK8RT9EB3nifCq58UFkMpVAp.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/j8n0Xwglzi6z5ROQrJR95yLn6Jc/PIqBXnxN1AXssItG9JRAzCGcs58d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/j8n0Xwglzi6z5ROQrJR95yLn6Jc/PIqBXnxN1AXssItG9JRAzCGcs58p.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/j8n0Xwglzi6z5ROQrJR95yLn6Jc/wLtRVNLJajxQpzAgKKJtvVZOvnkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/j8n0Xwglzi6z5ROQrJR95yLn6Jc/wLtRVNLJajxQpzAgKKJtvVZOvnkp.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/j8n0Xwglzi6z5ROQrJR95yLn6Jc/xa0o1mSgf2u48PAN5GdyQFctQocd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/j8n0Xwglzi6z5ROQrJR95yLn6Jc/xa0o1mSgf2u48PAN5GdyQFctQocp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/j8n0Xwglzi6z5ROQrJR95yLn6Jc/zanV23AXnt4j2-h8v0OBQLDJG4gd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/j8n0Xwglzi6z5ROQrJR95yLn6Jc/zanV23AXnt4j2-h8v0OBQLDJG4gp.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/JxHPs-VQg1xziWFim-lgbGuUsw0/6PqXdzdt06rFzb3HQnqGyBBsdYAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/JxHPs-VQg1xziWFim-lgbGuUsw0/6PqXdzdt06rFzb3HQnqGyBBsdYAp.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/JxHPs-VQg1xziWFim-lgbGuUsw0/avYylBo3K8jVZBzXjme4nE0yFjQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/JxHPs-VQg1xziWFim-lgbGuUsw0/avYylBo3K8jVZBzXjme4nE0yFjQp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/JxHPs-VQg1xziWFim-lgbGuUsw0/dsckTrWDo3Um9MHMFWoc1e4RkVcd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/JxHPs-VQg1xziWFim-lgbGuUsw0/dsckTrWDo3Um9MHMFWoc1e4RkVcp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/JxHPs-VQg1xziWFim-lgbGuUsw0/EqDYFNRiRz8rwP0wjeS7KlT4nyAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/JxHPs-VQg1xziWFim-lgbGuUsw0/EqDYFNRiRz8rwP0wjeS7KlT4nyAp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/JxHPs-VQg1xziWFim-lgbGuUsw0/GxfeOPe9w9_dS5_FmkGBNeAHzCId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/JxHPs-VQg1xziWFim-lgbGuUsw0/GxfeOPe9w9_dS5_FmkGBNeAHzCIp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/JxHPs-VQg1xziWFim-lgbGuUsw0/Hp7ve2GzRm_EufARpf04sKIRrBYd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/JxHPs-VQg1xziWFim-lgbGuUsw0/Hp7ve2GzRm_EufARpf04sKIRrBYp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/JxHPs-VQg1xziWFim-lgbGuUsw0/ime4QzBB_4mV96MAYntABTr57a4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/JxHPs-VQg1xziWFim-lgbGuUsw0/ime4QzBB_4mV96MAYntABTr57a4p.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/JxHPs-VQg1xziWFim-lgbGuUsw0/JoRbtkToLJna8FqfSYeLoLMg7dAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/JxHPs-VQg1xziWFim-lgbGuUsw0/JoRbtkToLJna8FqfSYeLoLMg7dAp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/JxHPs-VQg1xziWFim-lgbGuUsw0/kt1QKj5Uf1ZWN8FQYLkbTewWZy0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/JxHPs-VQg1xziWFim-lgbGuUsw0/kt1QKj5Uf1ZWN8FQYLkbTewWZy0p.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/JxHPs-VQg1xziWFim-lgbGuUsw0/rvGbbZD60sm4kRJwFh8_Mp_I-Lkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/JxHPs-VQg1xziWFim-lgbGuUsw0/rvGbbZD60sm4kRJwFh8_Mp_I-Lkp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/JxHPs-VQg1xziWFim-lgbGuUsw0/tuMQuo-Z1HE-xQEJariMacYGf7Ud.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/JxHPs-VQg1xziWFim-lgbGuUsw0/tuMQuo-Z1HE-xQEJariMacYGf7Up.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/JxHPs-VQg1xziWFim-lgbGuUsw0/vMmVQfyM_LgLwhmCWcA-2Np-1W0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/JxHPs-VQg1xziWFim-lgbGuUsw0/vMmVQfyM_LgLwhmCWcA-2Np-1W0p.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/7ZXv7N7jR35ayNz9GW_AwzmdcuId.xml",
+      "size_bytes": 166
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/7ZXv7N7jR35ayNz9GW_AwzmdcuIp.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/87539cvs7buNg2nx9YKiaYf57gYd.xml",
+      "size_bytes": 160
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/87539cvs7buNg2nx9YKiaYf57gYp.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/aDBINLl9TNdUIwcVNWLKGgIdcqAd.xml",
+      "size_bytes": 176
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/aDBINLl9TNdUIwcVNWLKGgIdcqAp.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/coydGzjJ-5iHgIsZT_CHdKdkEkId.xml",
+      "size_bytes": 177
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/coydGzjJ-5iHgIsZT_CHdKdkEkIp.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/DSuFK5AwEQRYuD8S37wZmvTq560d.xml",
+      "size_bytes": 154
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/DSuFK5AwEQRYuD8S37wZmvTq560p.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/FOxD48oK_Cam4cSPQDoLH8emRIAd.xml",
+      "size_bytes": 161
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/FOxD48oK_Cam4cSPQDoLH8emRIAp.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/l-_mAHuXlFuqNn3SHZtq72ekySAd.xml",
+      "size_bytes": 149
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/l-_mAHuXlFuqNn3SHZtq72ekySAp.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/MZ70cUbTDcyOw_FJ-N1o2e30SNYd.xml",
+      "size_bytes": 137
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/MZ70cUbTDcyOw_FJ-N1o2e30SNYp.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/NIVCf60s0gFEmTT_7a3JrVvFTOYd.xml",
+      "size_bytes": 164
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/NIVCf60s0gFEmTT_7a3JrVvFTOYp.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/oLkRDfX1Cs1OSh8iDzcAXX1YQzsd.xml",
+      "size_bytes": 157
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/oLkRDfX1Cs1OSh8iDzcAXX1YQzsp.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/qiWF0fMPQC87-D82uf9t1PbY7dod.xml",
+      "size_bytes": 150
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/qiWF0fMPQC87-D82uf9t1PbY7dop.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/qyx9PKie63UGOm0PzElBLQQrlZMd.xml",
+      "size_bytes": 159
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/qyx9PKie63UGOm0PzElBLQQrlZMp.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/xv4tN4148xRYg3XbBgLdVNlznWod.xml",
+      "size_bytes": 165
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/xv4tN4148xRYg3XbBgLdVNlznWop.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kGuUe5c4ceJlloGlvHI67EzHpmI/0vm1bH1d0mnIcfABNyrD5C7w4_Yd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kGuUe5c4ceJlloGlvHI67EzHpmI/0vm1bH1d0mnIcfABNyrD5C7w4_Yp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kGuUe5c4ceJlloGlvHI67EzHpmI/DaVhTTO60SaTVfaS92Eqk4AIeFQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kGuUe5c4ceJlloGlvHI67EzHpmI/DaVhTTO60SaTVfaS92Eqk4AIeFQp.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kGuUe5c4ceJlloGlvHI67EzHpmI/hdV3Oe_iJSYcQy8j7ENaZEUXB9Qd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kGuUe5c4ceJlloGlvHI67EzHpmI/hdV3Oe_iJSYcQy8j7ENaZEUXB9Qp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kGuUe5c4ceJlloGlvHI67EzHpmI/LXWSYDZtmE6Y2PWdlvRzuUpPHxMd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kGuUe5c4ceJlloGlvHI67EzHpmI/LXWSYDZtmE6Y2PWdlvRzuUpPHxMp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kGuUe5c4ceJlloGlvHI67EzHpmI/RrJJO5eRPKK0yPnEz1pu7FhQQ4gd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kGuUe5c4ceJlloGlvHI67EzHpmI/RrJJO5eRPKK0yPnEz1pu7FhQQ4gp.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kr22Nb6MHQUuDeIp2SXDhGz4U9A/0SrhIYrCLMLLVeZUUxEXFsgAeK8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kr22Nb6MHQUuDeIp2SXDhGz4U9A/0SrhIYrCLMLLVeZUUxEXFsgAeK8p.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kr22Nb6MHQUuDeIp2SXDhGz4U9A/0wSULJ_6zmlzG5ixatJOudbKimQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kr22Nb6MHQUuDeIp2SXDhGz4U9A/0wSULJ_6zmlzG5ixatJOudbKimQp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kr22Nb6MHQUuDeIp2SXDhGz4U9A/11fMx7pKB-LuWle6ZgNKXHIGj4od.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kr22Nb6MHQUuDeIp2SXDhGz4U9A/11fMx7pKB-LuWle6ZgNKXHIGj4op.xml",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kr22Nb6MHQUuDeIp2SXDhGz4U9A/4HkZg2SIcXDxYoOaYTWa0dASHCEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kr22Nb6MHQUuDeIp2SXDhGz4U9A/4HkZg2SIcXDxYoOaYTWa0dASHCEp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kr22Nb6MHQUuDeIp2SXDhGz4U9A/ht1mglgugpgpiQ5YSZ5f1YM5iIAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kr22Nb6MHQUuDeIp2SXDhGz4U9A/ht1mglgugpgpiQ5YSZ5f1YM5iIAp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kr22Nb6MHQUuDeIp2SXDhGz4U9A/LbFZ1jONe6GHjbLbBqgFIJz1V4Md.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kr22Nb6MHQUuDeIp2SXDhGz4U9A/LbFZ1jONe6GHjbLbBqgFIJz1V4Mp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kr22Nb6MHQUuDeIp2SXDhGz4U9A/QNTmBhHF8VjpsQ2cM3fv8bDKWPMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kr22Nb6MHQUuDeIp2SXDhGz4U9A/QNTmBhHF8VjpsQ2cM3fv8bDKWPMp.xml",
+      "size_bytes": 107
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kr22Nb6MHQUuDeIp2SXDhGz4U9A/rXcE7-hIticpaxXdORnrfxePkIkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kr22Nb6MHQUuDeIp2SXDhGz4U9A/rXcE7-hIticpaxXdORnrfxePkIkp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kr22Nb6MHQUuDeIp2SXDhGz4U9A/svCL3YXH3BuKacj-Ld9YpUwo5eUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kr22Nb6MHQUuDeIp2SXDhGz4U9A/svCL3YXH3BuKacj-Ld9YpUwo5eUp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kr22Nb6MHQUuDeIp2SXDhGz4U9A/vqkHq5eDVXCsI6fq0CGPuylf-5Yd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/kr22Nb6MHQUuDeIp2SXDhGz4U9A/vqkHq5eDVXCsI6fq0CGPuylf-5Yp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Ku1GztezL9EjyCgEHy-OJ5TN58o/2w1zYeqlf6OYebzHfF0s6SQ3IRUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Ku1GztezL9EjyCgEHy-OJ5TN58o/2w1zYeqlf6OYebzHfF0s6SQ3IRUp.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Ku1GztezL9EjyCgEHy-OJ5TN58o/bYGi4eOh7SIAvxTkiV3K2pz6Jm8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Ku1GztezL9EjyCgEHy-OJ5TN58o/bYGi4eOh7SIAvxTkiV3K2pz6Jm8p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Ku1GztezL9EjyCgEHy-OJ5TN58o/IvImEaWht1DCSt-baA1yrSqF640d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Ku1GztezL9EjyCgEHy-OJ5TN58o/IvImEaWht1DCSt-baA1yrSqF640p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Ku1GztezL9EjyCgEHy-OJ5TN58o/UWgl9nsX6Z2gvQGSOFwcjtT-rIsd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Ku1GztezL9EjyCgEHy-OJ5TN58o/UWgl9nsX6Z2gvQGSOFwcjtT-rIsp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Ku1GztezL9EjyCgEHy-OJ5TN58o/VqwXVTPB1ZXTrRDHR26oBzK0egod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Ku1GztezL9EjyCgEHy-OJ5TN58o/VqwXVTPB1ZXTrRDHR26oBzK0egop.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ly0dUih0XVI03PWEyKoEXxHGucE/45YJFlXoA3-R8Cc1dj2i74FJuukd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ly0dUih0XVI03PWEyKoEXxHGucE/45YJFlXoA3-R8Cc1dj2i74FJuukp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ly0dUih0XVI03PWEyKoEXxHGucE/f5SPnI1ypl5PSov43UZwnJQ9ahQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ly0dUih0XVI03PWEyKoEXxHGucE/f5SPnI1ypl5PSov43UZwnJQ9ahQp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ly0dUih0XVI03PWEyKoEXxHGucE/k9s80kxG-qqx85kqWji852Aj0L4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ly0dUih0XVI03PWEyKoEXxHGucE/k9s80kxG-qqx85kqWji852Aj0L4p.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ly0dUih0XVI03PWEyKoEXxHGucE/KaDWFf4DWiyYodWl3cJhXKH-Zqwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ly0dUih0XVI03PWEyKoEXxHGucE/KaDWFf4DWiyYodWl3cJhXKH-Zqwp.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ly0dUih0XVI03PWEyKoEXxHGucE/oAv-toIxXWE0Yr7sb3cydJfQcFUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ly0dUih0XVI03PWEyKoEXxHGucE/oAv-toIxXWE0Yr7sb3cydJfQcFUp.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ly0dUih0XVI03PWEyKoEXxHGucE/QCBnOkd2uzIO_T9A-6EjbbmRVCQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ly0dUih0XVI03PWEyKoEXxHGucE/QCBnOkd2uzIO_T9A-6EjbbmRVCQp.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ly0dUih0XVI03PWEyKoEXxHGucE/Tg3WU48a3jmU_Y3EJdNY62lCGTod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ly0dUih0XVI03PWEyKoEXxHGucE/Tg3WU48a3jmU_Y3EJdNY62lCGTop.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ly0dUih0XVI03PWEyKoEXxHGucE/u25Fffric5knbqpAqphPDkhTm_0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ly0dUih0XVI03PWEyKoEXxHGucE/u25Fffric5knbqpAqphPDkhTm_0p.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/mG8waAReCvNG1nmbQPqYG9t5ai0/AeFSykeF_SqEhivdbcl0QlXvXqUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/mG8waAReCvNG1nmbQPqYG9t5ai0/AeFSykeF_SqEhivdbcl0QlXvXqUp.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/mG8waAReCvNG1nmbQPqYG9t5ai0/GLa3zvOB1J_bFCXWgLdpIenO5fId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/mG8waAReCvNG1nmbQPqYG9t5ai0/GLa3zvOB1J_bFCXWgLdpIenO5fIp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/mG8waAReCvNG1nmbQPqYG9t5ai0/MjHTvWcHERlkFk1OOLBh-EZlcCcd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/mG8waAReCvNG1nmbQPqYG9t5ai0/MjHTvWcHERlkFk1OOLBh-EZlcCcp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/mxTQdYIIjWjZkGkHZSI3kj9XNVk/0j4N0J3GNuX93oh-qLQB9qEbRuod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/mxTQdYIIjWjZkGkHZSI3kj9XNVk/0j4N0J3GNuX93oh-qLQB9qEbRuop.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/mxTQdYIIjWjZkGkHZSI3kj9XNVk/6QvfsNAAg_69Ht07df4AvBeF5OMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/mxTQdYIIjWjZkGkHZSI3kj9XNVk/6QvfsNAAg_69Ht07df4AvBeF5OMp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/mxTQdYIIjWjZkGkHZSI3kj9XNVk/CDEDJAO3xKlWKmgcialSeFt6Xtsd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/mxTQdYIIjWjZkGkHZSI3kj9XNVk/CDEDJAO3xKlWKmgcialSeFt6Xtsp.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/mxTQdYIIjWjZkGkHZSI3kj9XNVk/K3MfFZDx_93u7q5l2nGbeFQm1csd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/mxTQdYIIjWjZkGkHZSI3kj9XNVk/K3MfFZDx_93u7q5l2nGbeFQm1csp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/mxTQdYIIjWjZkGkHZSI3kj9XNVk/KBYUq4uM4cSoLVaks6RSnYxjercd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/mxTQdYIIjWjZkGkHZSI3kj9XNVk/KBYUq4uM4cSoLVaks6RSnYxjercp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4d.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4p.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/5lwKMgFqf-TpBv4xv63Pr5qry3Ed.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/5lwKMgFqf-TpBv4xv63Pr5qry3Ep.xml",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZod.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZop.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/bhPO8Etuu9bSCvcu3re-nwPTvHId.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/bhPO8Etuu9bSCvcu3re-nwPTvHIp.xml",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencd.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencp.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8d.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8p.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4d.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4p.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Id.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Ip.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkd.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NMxyL_dRqWobaGN3-LvLGdrK7xs/46g2spr0DQs4vfA_jR4N7EIcE4Yd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NMxyL_dRqWobaGN3-LvLGdrK7xs/46g2spr0DQs4vfA_jR4N7EIcE4Yp.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NMxyL_dRqWobaGN3-LvLGdrK7xs/bckUpph3uyiJ76P4AJPPk7EY5oMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NMxyL_dRqWobaGN3-LvLGdrK7xs/bckUpph3uyiJ76P4AJPPk7EY5oMp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NMxyL_dRqWobaGN3-LvLGdrK7xs/D_wVp8rQ-TuJ-Fs_d9Hnt4vjyFUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NMxyL_dRqWobaGN3-LvLGdrK7xs/D_wVp8rQ-TuJ-Fs_d9Hnt4vjyFUp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NMxyL_dRqWobaGN3-LvLGdrK7xs/EQAcyhZ7Q-v-SS_cy87x6WKBZxId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NMxyL_dRqWobaGN3-LvLGdrK7xs/EQAcyhZ7Q-v-SS_cy87x6WKBZxIp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NMxyL_dRqWobaGN3-LvLGdrK7xs/V4SYvfE9NMj3hCbI-MfEN4wsSasd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/NMxyL_dRqWobaGN3-LvLGdrK7xs/V4SYvfE9NMj3hCbI-MfEN4wsSasp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/nTITzoDRztxhE_8pvPhlF3xhfrQ/rVCPtDH1bYy0qMiG-RvYip76HAQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/nTITzoDRztxhE_8pvPhlF3xhfrQ/rVCPtDH1bYy0qMiG-RvYip76HAQp.xml",
+      "size_bytes": 107
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/nTITzoDRztxhE_8pvPhlF3xhfrQ/uwbHsJ61UDMrY6VpQpW9RHzNuBId.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/nTITzoDRztxhE_8pvPhlF3xhfrQ/uwbHsJ61UDMrY6VpQpW9RHzNuBIp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/od18fveamKtotyviQClSlVc_iS0/oYul2YvZTLb6KcLd3_JQV4YGnyAd.xml",
+      "size_bytes": 72
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/od18fveamKtotyviQClSlVc_iS0/oYul2YvZTLb6KcLd3_JQV4YGnyAp.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/og--DhWuWrFDoU7BVI5WwZg_m4M/DpGFPrOk7Pd3h4aaUmx_WKfm69Md.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/og--DhWuWrFDoU7BVI5WwZg_m4M/DpGFPrOk7Pd3h4aaUmx_WKfm69Mp.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/og--DhWuWrFDoU7BVI5WwZg_m4M/MDT-I_A3SWlH0tyZLGPbhC6CdUUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/og--DhWuWrFDoU7BVI5WwZg_m4M/MDT-I_A3SWlH0tyZLGPbhC6CdUUp.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/og--DhWuWrFDoU7BVI5WwZg_m4M/oNkNNGIDj2bPXRBypxvfTyKr020d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/og--DhWuWrFDoU7BVI5WwZg_m4M/oNkNNGIDj2bPXRBypxvfTyKr020p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/og--DhWuWrFDoU7BVI5WwZg_m4M/qpxCtod1I1W95NCJNFYCTV-9E6Yd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/og--DhWuWrFDoU7BVI5WwZg_m4M/qpxCtod1I1W95NCJNFYCTV-9E6Yp.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/og--DhWuWrFDoU7BVI5WwZg_m4M/yDDv7mk81L5nKcvFcU-_NAfu4mcd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/og--DhWuWrFDoU7BVI5WwZg_m4M/yDDv7mk81L5nKcvFcU-_NAfu4mcp.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/og--DhWuWrFDoU7BVI5WwZg_m4M/Z_67FFgopKogzu8NnvEshFaRuXId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/og--DhWuWrFDoU7BVI5WwZg_m4M/Z_67FFgopKogzu8NnvEshFaRuXIp.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/86Hyllcs-qXyIJQTfZ_0sh9-MdMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/86Hyllcs-qXyIJQTfZ_0sh9-MdMp.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/8hNJg3qSJ6A5ciR_OoNxs9466tEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/8hNJg3qSJ6A5ciR_OoNxs9466tEp.xml",
+      "size_bytes": 114
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/cGoKN4DUzbxb-NEEXsg21Kwko-sd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/cGoKN4DUzbxb-NEEXsg21Kwko-sp.xml",
+      "size_bytes": 115
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/d6E4R1F3YjZ3l819p-LthcjQCHId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/d6E4R1F3YjZ3l819p-LthcjQCHIp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/GS-3qXHsEz6lC3Xcxgn05z7Q_bUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/GS-3qXHsEz6lC3Xcxgn05z7Q_bUp.xml",
+      "size_bytes": 103
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/LWF5Tt-d5JPUvSWSZd_5wJgVPkod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/LWF5Tt-d5JPUvSWSZd_5wJgVPkop.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/NMxyL_dRqWobaGN3-LvLGdrK7xsd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/NMxyL_dRqWobaGN3-LvLGdrK7xsp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/y3pIxeAZrmnsmUWA3VrtIokR004d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/y3pIxeAZrmnsmUWA3VrtIokR004p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/oxP-rL6O8faco8QpY_0LWBNVwYc/519TTqgZcniTZBiVCThR70KV01Yd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/oxP-rL6O8faco8QpY_0LWBNVwYc/519TTqgZcniTZBiVCThR70KV01Yp.xml",
+      "size_bytes": 88
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/oxP-rL6O8faco8QpY_0LWBNVwYc/6X2wOyLDZiu8sESZaEFTiE-ILOgd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/oxP-rL6O8faco8QpY_0LWBNVwYc/6X2wOyLDZiu8sESZaEFTiE-ILOgp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/oxP-rL6O8faco8QpY_0LWBNVwYc/Gytk92LuPdvW1flWgKHXuLPmIY4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/oxP-rL6O8faco8QpY_0LWBNVwYc/Gytk92LuPdvW1flWgKHXuLPmIY4p.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/PIqBXnxN1AXssItG9JRAzCGcs58/-al9NRaACw3IR_aauRJn8b5UlS0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/PIqBXnxN1AXssItG9JRAzCGcs58/-al9NRaACw3IR_aauRJn8b5UlS0p.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/PIqBXnxN1AXssItG9JRAzCGcs58/1qo03NaIqI7--13c8btfYRVlM2gd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/PIqBXnxN1AXssItG9JRAzCGcs58/1qo03NaIqI7--13c8btfYRVlM2gp.xml",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/PIqBXnxN1AXssItG9JRAzCGcs58/4wh05vYS6sGZm8XotvyMgAlNZkkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/PIqBXnxN1AXssItG9JRAzCGcs58/4wh05vYS6sGZm8XotvyMgAlNZkkp.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/PIqBXnxN1AXssItG9JRAzCGcs58/j0G4-2V3YZRoZ6C74BMGaU8Vuc0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/PIqBXnxN1AXssItG9JRAzCGcs58/j0G4-2V3YZRoZ6C74BMGaU8Vuc0p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/PIqBXnxN1AXssItG9JRAzCGcs58/vK39MvWXoXWSkjKQ_jLEJx7WgRwd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/PIqBXnxN1AXssItG9JRAzCGcs58/vK39MvWXoXWSkjKQ_jLEJx7WgRwp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/PIqBXnxN1AXssItG9JRAzCGcs58/YXHzV65GRYI74Fwtz1OwrYf9PEEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/PIqBXnxN1AXssItG9JRAzCGcs58/YXHzV65GRYI74Fwtz1OwrYf9PEEp.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Project.xml",
+      "size_bytes": 74
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/-Rce9Lxzt4v7MmBOh-k5NnO_YJMd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/-Rce9Lxzt4v7MmBOh-k5NnO_YJMp.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Dej1EXCHO1lBMUOrVa6CRBeDYwcd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Dej1EXCHO1lBMUOrVa6CRBeDYwcp.xml",
+      "size_bytes": 74
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Ku1GztezL9EjyCgEHy-OJ5TN58od.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Ku1GztezL9EjyCgEHy-OJ5TN58op.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/ojME0DLi1acAi9d0fF737hnpvFQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/ojME0DLi1acAi9d0fF737hnpvFQp.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/QMJD9OLFzxcTTbPOoh-ahQ4zTRUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/QMJD9OLFzxcTTbPOoh-ahQ4zTRUp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/qZzfNzcYlPNG4tag-34m4zeP9pkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/qZzfNzcYlPNG4tag-34m4zeP9pkp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/R0IsxKENiOKovWZXASFjrmpbBCYd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/R0IsxKENiOKovWZXASFjrmpbBCYp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/rh0jHbNfmojECiiHH7BQHmZTsWkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/rh0jHbNfmojECiiHH7BQHmZTsWkp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qUQ3lsSLOipN6r9vXrgfjxrSqJs/5BhIyFutvfWQaZHL8piD5ikuCRAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qUQ3lsSLOipN6r9vXrgfjxrSqJs/5BhIyFutvfWQaZHL8piD5ikuCRAp.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qUQ3lsSLOipN6r9vXrgfjxrSqJs/FPjk2kLzIupXiFm3pS4GfBs0mNQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qUQ3lsSLOipN6r9vXrgfjxrSqJs/FPjk2kLzIupXiFm3pS4GfBs0mNQp.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qUQ3lsSLOipN6r9vXrgfjxrSqJs/UNsmrZjOet1OiEiGSlf89_RIaZAd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qUQ3lsSLOipN6r9vXrgfjxrSqJs/UNsmrZjOet1OiEiGSlf89_RIaZAp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/d6vJEerjwidIEdtbtRp_n6XbzEUd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/d6vJEerjwidIEdtbtRp_n6XbzEUp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/nTITzoDRztxhE_8pvPhlF3xhfrQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/nTITzoDRztxhE_8pvPhlF3xhfrQp.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/RJ7qkL1gXUW7bCrsBH6rzpVTW7I/6MEGsbyBot5qInnnijdlRE5_Lz0d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/RJ7qkL1gXUW7bCrsBH6rzpVTW7I/6MEGsbyBot5qInnnijdlRE5_Lz0p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/RJ7qkL1gXUW7bCrsBH6rzpVTW7I/9nXsSHV9HifRJeSARvZxjCMxL2Id.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/RJ7qkL1gXUW7bCrsBH6rzpVTW7I/9nXsSHV9HifRJeSARvZxjCMxL2Ip.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/RJ7qkL1gXUW7bCrsBH6rzpVTW7I/Cud2S3cUP_hZ_prUAUUhceD5sXEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/RJ7qkL1gXUW7bCrsBH6rzpVTW7I/Cud2S3cUP_hZ_prUAUUhceD5sXEp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/RJ7qkL1gXUW7bCrsBH6rzpVTW7I/mxTQdYIIjWjZkGkHZSI3kj9XNVkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/RJ7qkL1gXUW7bCrsBH6rzpVTW7I/mxTQdYIIjWjZkGkHZSI3kj9XNVkp.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/RJ7qkL1gXUW7bCrsBH6rzpVTW7I/oxP-rL6O8faco8QpY_0LWBNVwYcd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/RJ7qkL1gXUW7bCrsBH6rzpVTW7I/oxP-rL6O8faco8QpY_0LWBNVwYcp.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/RJ7qkL1gXUW7bCrsBH6rzpVTW7I/TOz_x-rYsJq2RzvKxjGPNY2P9SMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/RJ7qkL1gXUW7bCrsBH6rzpVTW7I/TOz_x-rYsJq2RzvKxjGPNY2P9SMp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/root/6x1BhZX_fLnKpcwqra0qFwv1jIgp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/root/EEtUlUb-dLAdf0KpMVivaUlztwAp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/root/fjRQtWiSIy7hIlj-Kmk87M7s21kp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQd.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/root/KAXfQgCar2Yb8zOxgvf9hdmLP1Ep.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/root/NmGqIpAwUJcXFyLjFAGnU9uyN5Yp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/root/qaw0eS1zuuY1ar9TdPn1GMfrjbQp.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/root/Tpa2TdYQyLNeWJn7EF8wbNd7gFUp.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/root/WZRuNzqc-Db7NcQAZO8Y-R8U9ccp.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/rootp.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/RxlHBr55W30izBz_0B1M6_vsfM4/8tQ2biJKZn57pUoYqdRH3n07Dwsd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/RxlHBr55W30izBz_0B1M6_vsfM4/8tQ2biJKZn57pUoYqdRH3n07Dwsp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/RxlHBr55W30izBz_0B1M6_vsfM4/_Ajt77Lqb5hDIwYa7fq00GFsILYd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/RxlHBr55W30izBz_0B1M6_vsfM4/_Ajt77Lqb5hDIwYa7fq00GFsILYp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/RxlHBr55W30izBz_0B1M6_vsfM4/At6Mu7-Ytcutsd-nEqdhG0biMHYd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/RxlHBr55W30izBz_0B1M6_vsfM4/At6Mu7-Ytcutsd-nEqdhG0biMHYp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/RxlHBr55W30izBz_0B1M6_vsfM4/o6-1I9m6A81PPOOHeaUBxQtxSlsd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/RxlHBr55W30izBz_0B1M6_vsfM4/o6-1I9m6A81PPOOHeaUBxQtxSlsp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/RxlHBr55W30izBz_0B1M6_vsfM4/Ph9sO3xvF5V67Su4dm84Yvr_5zkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/RxlHBr55W30izBz_0B1M6_vsfM4/Ph9sO3xvF5V67Su4dm84Yvr_5zkp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ScSTcSFouhIRUIGgilWCLmSQJfw/78UOdeMaO5tb_JdlfUDYStTbgakd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ScSTcSFouhIRUIGgilWCLmSQJfw/78UOdeMaO5tb_JdlfUDYStTbgakp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ScSTcSFouhIRUIGgilWCLmSQJfw/9QLLwRQ9iD1CEhEqZJbTkq-PPTId.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ScSTcSFouhIRUIGgilWCLmSQJfw/9QLLwRQ9iD1CEhEqZJbTkq-PPTIp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ScSTcSFouhIRUIGgilWCLmSQJfw/BczFf-3TJSfFHec0BbsUzwq1tNod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ScSTcSFouhIRUIGgilWCLmSQJfw/BczFf-3TJSfFHec0BbsUzwq1tNop.xml",
+      "size_bytes": 110
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ScSTcSFouhIRUIGgilWCLmSQJfw/f6lzU-VvChMhlbQL6UkLTWqYS60d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ScSTcSFouhIRUIGgilWCLmSQJfw/f6lzU-VvChMhlbQL6UkLTWqYS60p.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ScSTcSFouhIRUIGgilWCLmSQJfw/j2m1zfGZOHm9AmonidVe5bGlAlMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ScSTcSFouhIRUIGgilWCLmSQJfw/j2m1zfGZOHm9AmonidVe5bGlAlMp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ScSTcSFouhIRUIGgilWCLmSQJfw/nBcpJeTEXih_t4dxPm3hfv44C-8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ScSTcSFouhIRUIGgilWCLmSQJfw/nBcpJeTEXih_t4dxPm3hfv44C-8p.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ScSTcSFouhIRUIGgilWCLmSQJfw/oau3y15HzbneKnM5WUXLhAXPWYUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ScSTcSFouhIRUIGgilWCLmSQJfw/oau3y15HzbneKnM5WUXLhAXPWYUp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ScSTcSFouhIRUIGgilWCLmSQJfw/ZcBVNWVuT09A-_8dvxBMX2LAhx0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ScSTcSFouhIRUIGgilWCLmSQJfw/ZcBVNWVuT09A-_8dvxBMX2LAhx0p.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ScSTcSFouhIRUIGgilWCLmSQJfw/ZJR3gyIU9tp2b4NMTb5uV6t_quUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ScSTcSFouhIRUIGgilWCLmSQJfw/ZJR3gyIU9tp2b4NMTb5uV6t_quUp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/04HxEFViX8e34mVBJKhCGF8p1kMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/04HxEFViX8e34mVBJKhCGF8p1kMp.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/1C05qSexAwtbV6HM13K6b3wLCEId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/1C05qSexAwtbV6HM13K6b3wLCEIp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/3TXpF8QW9NxEry9Dwg-L3Ci4iVcd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/3TXpF8QW9NxEry9Dwg-L3Ci4iVcp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/AZTSven9wKrDEEKEmdHFH0P0Jpwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/AZTSven9wKrDEEKEmdHFH0P0Jpwp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/DUVaabEusmnqtvhEQjXiMaQbSDAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/DUVaabEusmnqtvhEQjXiMaQbSDAp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/fYMkeIY6LnXPMxtPyRKUbrj_4gkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/fYMkeIY6LnXPMxtPyRKUbrj_4gkp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/HnjUEs0BfUmdyKY-3lSukO1enyEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/HnjUEs0BfUmdyKY-3lSukO1enyEp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/InBpPrt127Jjf4wFzTTaB1g9A0Qd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/InBpPrt127Jjf4wFzTTaB1g9A0Qp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/Mu361wAtG1GvT2LjxNb829d9V94d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/Mu361wAtG1GvT2LjxNb829d9V94p.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/Q5VH-dshi6guCz3h-H54_0tEwqwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/Q5VH-dshi6guCz3h-H54_0tEwqwp.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/S0AMasY0g-EIgCK3-LyG6hCinI8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/S0AMasY0g-EIgCK3-LyG6hCinI8p.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/s6CBIX5IdZEUb2WU_gxZobcKCVod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/s6CBIX5IdZEUb2WU_gxZobcKCVop.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/wF2mHn4dbQG81_yGYTgWVbAZONMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/SE9JH0XkGsnQd9uNsy1v878E6ic/wF2mHn4dbQG81_yGYTgWVbAZONMp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Sh0PfIWGJrLvIhqNj1Vmr5Mtgwg/od18fveamKtotyviQClSlVc_iS0p.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/TaFIzS5xOnYi1jUj6TpdJgmJvCs/06_LhEGxrweTOM9h52iCymDE_A0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/TaFIzS5xOnYi1jUj6TpdJgmJvCs/06_LhEGxrweTOM9h52iCymDE_A0p.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/TaFIzS5xOnYi1jUj6TpdJgmJvCs/cdQ5Mg31sQNNwfBRSjA6nzGXKiAd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/TaFIzS5xOnYi1jUj6TpdJgmJvCs/cdQ5Mg31sQNNwfBRSjA6nzGXKiAp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/TaFIzS5xOnYi1jUj6TpdJgmJvCs/dfVEunq14hXRR5VgoRHv2UQy9KAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/TaFIzS5xOnYi1jUj6TpdJgmJvCs/dfVEunq14hXRR5VgoRHv2UQy9KAp.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/TaFIzS5xOnYi1jUj6TpdJgmJvCs/JGuqHMGdunFetHDUxW0MtVeZutwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/TaFIzS5xOnYi1jUj6TpdJgmJvCs/JGuqHMGdunFetHDUxW0MtVeZutwp.xml",
+      "size_bytes": 106
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/TaFIzS5xOnYi1jUj6TpdJgmJvCs/nkEx2VuKXuce3hw0c1VfaDMVXHwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/TaFIzS5xOnYi1jUj6TpdJgmJvCs/nkEx2VuKXuce3hw0c1VfaDMVXHwp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/TaFIzS5xOnYi1jUj6TpdJgmJvCs/VcoQYut2TDqQa3uS-XKTUJV9SuUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/TaFIzS5xOnYi1jUj6TpdJgmJvCs/VcoQYut2TDqQa3uS-XKTUJV9SuUp.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/tB_0qgF610PTXLAHr6g5Q5xt6p4/0oRMFOTp6v42BnRsDpEeCVKmv-Ud.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/tB_0qgF610PTXLAHr6g5Q5xt6p4/0oRMFOTp6v42BnRsDpEeCVKmv-Up.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/tB_0qgF610PTXLAHr6g5Q5xt6p4/Bi3VdYat8UpYSfSQw9hC-2T0Omcd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/tB_0qgF610PTXLAHr6g5Q5xt6p4/Bi3VdYat8UpYSfSQw9hC-2T0Omcp.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/tB_0qgF610PTXLAHr6g5Q5xt6p4/GERp7y2owCEC8_I9DSWX8H4ZjNEd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/tB_0qgF610PTXLAHr6g5Q5xt6p4/GERp7y2owCEC8_I9DSWX8H4ZjNEp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Tpa2TdYQyLNeWJn7EF8wbNd7gFU/Sh0PfIWGJrLvIhqNj1Vmr5Mtgwgd.xml",
+      "size_bytes": 62
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Tpa2TdYQyLNeWJn7EF8wbNd7gFU/Sh0PfIWGJrLvIhqNj1Vmr5Mtgwgp.xml",
+      "size_bytes": 116
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/TqZ0mBNxLV76lA3iU5XDUJOxFzU/getmz_LJLck1gMbnSCDI12zy_R8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/TqZ0mBNxLV76lA3iU5XDUJOxFzU/getmz_LJLck1gMbnSCDI12zy_R8p.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/TqZ0mBNxLV76lA3iU5XDUJOxFzU/kr22Nb6MHQUuDeIp2SXDhGz4U9Ad.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/TqZ0mBNxLV76lA3iU5XDUJOxFzU/kr22Nb6MHQUuDeIp2SXDhGz4U9Ap.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/TqZ0mBNxLV76lA3iU5XDUJOxFzU/LQTt3fxbbV5x7hiyTUJjFWoizTId.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/TqZ0mBNxLV76lA3iU5XDUJOxFzU/LQTt3fxbbV5x7hiyTUJjFWoizTIp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/UWgl9nsX6Z2gvQGSOFwcjtT-rIs/1e7eUDNo1u6WhF_vO9h4yIFZWWQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/UWgl9nsX6Z2gvQGSOFwcjtT-rIs/1e7eUDNo1u6WhF_vO9h4yIFZWWQp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/UWgl9nsX6Z2gvQGSOFwcjtT-rIs/nJC3_2TDuUZugcqB2VGtoLWqRT4d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/UWgl9nsX6Z2gvQGSOFwcjtT-rIs/nJC3_2TDuUZugcqB2VGtoLWqRT4p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VdPmBMwoDf7Z0K1nUWaLWFgZOKA/0RNBXpZiYBjji9VBhkCDyah9VMgd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VdPmBMwoDf7Z0K1nUWaLWFgZOKA/0RNBXpZiYBjji9VBhkCDyah9VMgp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VdPmBMwoDf7Z0K1nUWaLWFgZOKA/4Wm4iUCRT9fGGSqPGSzVPrju_QMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VdPmBMwoDf7Z0K1nUWaLWFgZOKA/4Wm4iUCRT9fGGSqPGSzVPrju_QMp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VdPmBMwoDf7Z0K1nUWaLWFgZOKA/d6sN41JdJA7FwzU1-WcKmsd0tn8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VdPmBMwoDf7Z0K1nUWaLWFgZOKA/d6sN41JdJA7FwzU1-WcKmsd0tn8p.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VdPmBMwoDf7Z0K1nUWaLWFgZOKA/OFpAf5ObX9LuBg3dv1iE0o6_Licd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VdPmBMwoDf7Z0K1nUWaLWFgZOKA/OFpAf5ObX9LuBg3dv1iE0o6_Licp.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VdPmBMwoDf7Z0K1nUWaLWFgZOKA/s_q3-Snv0qY5H-ZkDTUeL17bg6Yd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VdPmBMwoDf7Z0K1nUWaLWFgZOKA/s_q3-Snv0qY5H-ZkDTUeL17bg6Yp.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VdPmBMwoDf7Z0K1nUWaLWFgZOKA/tB_0qgF610PTXLAHr6g5Q5xt6p4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VdPmBMwoDf7Z0K1nUWaLWFgZOKA/tB_0qgF610PTXLAHr6g5Q5xt6p4p.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VdPmBMwoDf7Z0K1nUWaLWFgZOKA/XBnMt7HaPxwYtkqsUGxwj7wwYCwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VdPmBMwoDf7Z0K1nUWaLWFgZOKA/XBnMt7HaPxwYtkqsUGxwj7wwYCwp.xml",
+      "size_bytes": 105
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VdPmBMwoDf7Z0K1nUWaLWFgZOKA/xGCZZs-9RHa713S9XwXG5LDqp7Ud.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VdPmBMwoDf7Z0K1nUWaLWFgZOKA/xGCZZs-9RHa713S9XwXG5LDqp7Up.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VqwXVTPB1ZXTrRDHR26oBzK0ego/_VcIpv68cG2y9MNN2MtWEmdNSOcd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VqwXVTPB1ZXTrRDHR26oBzK0ego/_VcIpv68cG2y9MNN2MtWEmdNSOcp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VqwXVTPB1ZXTrRDHR26oBzK0ego/AM2Hovo3B7hpkDDNKeui-XU0BSAd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VqwXVTPB1ZXTrRDHR26oBzK0ego/AM2Hovo3B7hpkDDNKeui-XU0BSAp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VqwXVTPB1ZXTrRDHR26oBzK0ego/gY-HdK2uB5go4DGYSunS7z11r2Id.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VqwXVTPB1ZXTrRDHR26oBzK0ego/gY-HdK2uB5go4DGYSunS7z11r2Ip.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VqwXVTPB1ZXTrRDHR26oBzK0ego/IOfImhIbsYxUTtlzabVfqt8XGikd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VqwXVTPB1ZXTrRDHR26oBzK0ego/IOfImhIbsYxUTtlzabVfqt8XGikp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VqwXVTPB1ZXTrRDHR26oBzK0ego/k98FcNimGNQMDPmYWynUbTnoB_kd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VqwXVTPB1ZXTrRDHR26oBzK0ego/k98FcNimGNQMDPmYWynUbTnoB_kp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VqwXVTPB1ZXTrRDHR26oBzK0ego/nP5MG3G5zCUn5SPUWYL_ThYX3XYd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VqwXVTPB1ZXTrRDHR26oBzK0ego/nP5MG3G5zCUn5SPUWYL_ThYX3XYp.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VqwXVTPB1ZXTrRDHR26oBzK0ego/YwfG2dA_uQmP3_10HqCL7gDKv3Ud.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VqwXVTPB1ZXTrRDHR26oBzK0ego/YwfG2dA_uQmP3_10HqCL7gDKv3Up.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VqwXVTPB1ZXTrRDHR26oBzK0ego/zJV6EDY_nGsf9006I_9Luz0LaeUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/VqwXVTPB1ZXTrRDHR26oBzK0ego/zJV6EDY_nGsf9006I_9Luz0LaeUp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/wLtRVNLJajxQpzAgKKJtvVZOvnk/0JXwg3NKpS99OMahss-Y4n5atUcd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/wLtRVNLJajxQpzAgKKJtvVZOvnk/0JXwg3NKpS99OMahss-Y4n5atUcp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/wLtRVNLJajxQpzAgKKJtvVZOvnk/JxHPs-VQg1xziWFim-lgbGuUsw0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/wLtRVNLJajxQpzAgKKJtvVZOvnk/JxHPs-VQg1xziWFim-lgbGuUsw0p.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/wLtRVNLJajxQpzAgKKJtvVZOvnk/jYqLR03LSd4FvAdLLdjTbiBqla0d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/wLtRVNLJajxQpzAgKKJtvVZOvnk/jYqLR03LSd4FvAdLLdjTbiBqla0p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/66WgGCcF5RIH9MCEgPmgjZK9k3Ud.xml",
+      "size_bytes": 74
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/66WgGCcF5RIH9MCEgPmgjZK9k3Up.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/AtMjXDrOSm8YDv3_4UFXiyrWqNEd.xml",
+      "size_bytes": 74
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/AtMjXDrOSm8YDv3_4UFXiyrWqNEp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/XeZu453s87nkKvmI9hNUVDgfY88/32c90VteWhIpbfo3mT-S_aICgkkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/XeZu453s87nkKvmI9hNUVDgfY88/32c90VteWhIpbfo3mT-S_aICgkkp.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/XeZu453s87nkKvmI9hNUVDgfY88/65RYpIP3e9pHlZ1z_WPyO_mZopQd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/XeZu453s87nkKvmI9hNUVDgfY88/65RYpIP3e9pHlZ1z_WPyO_mZopQp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/XeZu453s87nkKvmI9hNUVDgfY88/6ew1_4ZI1qnVM5ky6oQkOU5znLsd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/XeZu453s87nkKvmI9hNUVDgfY88/6ew1_4ZI1qnVM5ky6oQkOU5znLsp.xml",
+      "size_bytes": 107
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/XeZu453s87nkKvmI9hNUVDgfY88/nybP7jE9FaCGwQZSeMNgZbHryJ0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/XeZu453s87nkKvmI9hNUVDgfY88/nybP7jE9FaCGwQZSeMNgZbHryJ0p.xml",
+      "size_bytes": 107
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/XeZu453s87nkKvmI9hNUVDgfY88/qnsFUHFum838MjKVqD1szrzrWgEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/XeZu453s87nkKvmI9hNUVDgfY88/qnsFUHFum838MjKVqD1szrzrWgEp.xml",
+      "size_bytes": 105
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/XeZu453s87nkKvmI9hNUVDgfY88/qTHgVt656MkEXgXJo00L0lpICH4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/XeZu453s87nkKvmI9hNUVDgfY88/qTHgVt656MkEXgXJo00L0lpICH4p.xml",
+      "size_bytes": 107
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/YreCMVekV9iQM47AiKlcobqKrC0/9MxaEbklSrZalf8acPvMU0_6uOId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/YreCMVekV9iQM47AiKlcobqKrC0/9MxaEbklSrZalf8acPvMU0_6uOIp.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/YreCMVekV9iQM47AiKlcobqKrC0/KicRRCipL5JQ-q2DNRLWlUq_98Md.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/YreCMVekV9iQM47AiKlcobqKrC0/KicRRCipL5JQ-q2DNRLWlUq_98Mp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/YreCMVekV9iQM47AiKlcobqKrC0/XeZu453s87nkKvmI9hNUVDgfY88d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/YreCMVekV9iQM47AiKlcobqKrC0/XeZu453s87nkKvmI9hNUVDgfY88p.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Z4OmCookNsX796rRMv0kzFti3O0/c6xEF-GUQebzNKefRew1g4YmoEkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Z4OmCookNsX796rRMv0kzFti3O0/c6xEF-GUQebzNKefRew1g4YmoEkp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Z4OmCookNsX796rRMv0kzFti3O0/hUSXl3OSyobhPkl_c7aHfFbT65sd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Z4OmCookNsX796rRMv0kzFti3O0/hUSXl3OSyobhPkl_c7aHfFbT65sp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Z4OmCookNsX796rRMv0kzFti3O0/Je0eCgAC7yj_QwRj_uJlKWzVh08d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Z4OmCookNsX796rRMv0kzFti3O0/Je0eCgAC7yj_QwRj_uJlKWzVh08p.xml",
+      "size_bytes": 88
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Z4OmCookNsX796rRMv0kzFti3O0/lT0OG-awoOPJOtWe0wbG2nVL_H8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Z4OmCookNsX796rRMv0kzFti3O0/lT0OG-awoOPJOtWe0wbG2nVL_H8p.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Z4OmCookNsX796rRMv0kzFti3O0/OesGivKcC6SbXBrQpHcxMVVbTI0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Z4OmCookNsX796rRMv0kzFti3O0/OesGivKcC6SbXBrQpHcxMVVbTI0p.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Z4OmCookNsX796rRMv0kzFti3O0/onYScern08vxYv_d-AamnRSxM3Qd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Z4OmCookNsX796rRMv0kzFti3O0/onYScern08vxYv_d-AamnRSxM3Qp.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Z4OmCookNsX796rRMv0kzFti3O0/otYq8GDScInulUUdd-VEPmEutF4d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Z4OmCookNsX796rRMv0kzFti3O0/otYq8GDScInulUUdd-VEPmEutF4p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Z4OmCookNsX796rRMv0kzFti3O0/sUjdkOjQL9Tu81_PqbFTIP_m4Wsd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Z4OmCookNsX796rRMv0kzFti3O0/sUjdkOjQL9Tu81_PqbFTIP_m4Wsp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Z4OmCookNsX796rRMv0kzFti3O0/xrSzgtPnBAa_D9pjN4Cwe-9foOAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Z4OmCookNsX796rRMv0kzFti3O0/xrSzgtPnBAa_D9pjN4Cwe-9foOAp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/zanV23AXnt4j2-h8v0OBQLDJG4g/-U1trBSDyKG6QTQI8_omFvPj01Id.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/zanV23AXnt4j2-h8v0OBQLDJG4g/-U1trBSDyKG6QTQI8_omFvPj01Ip.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/zanV23AXnt4j2-h8v0OBQLDJG4g/FgypnlSEIUbioOyQbc56oUaorr8d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/zanV23AXnt4j2-h8v0OBQLDJG4g/FgypnlSEIUbioOyQbc56oUaorr8p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/zanV23AXnt4j2-h8v0OBQLDJG4g/fJQOedxwQafUHGLiCKm4kYsq3nQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/zanV23AXnt4j2-h8v0OBQLDJG4g/fJQOedxwQafUHGLiCKm4kYsq3nQp.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/zanV23AXnt4j2-h8v0OBQLDJG4g/vlXH9oFTxmhOwN-gQpMx_OrL0sQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/zanV23AXnt4j2-h8v0OBQLDJG4g/vlXH9oFTxmhOwN-gQpMx_OrL0sQp.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ZE_nLDGzpvhDN-N-yzi1rGDHtUs/-sLIV28VIpSy1XpNQph6NAXQcB4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ZE_nLDGzpvhDN-N-yzi1rGDHtUs/-sLIV28VIpSy1XpNQph6NAXQcB4p.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ZE_nLDGzpvhDN-N-yzi1rGDHtUs/1YJq51rw0VK1Fwmi92it4HTn0iYd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ZE_nLDGzpvhDN-N-yzi1rGDHtUs/1YJq51rw0VK1Fwmi92it4HTn0iYp.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ZE_nLDGzpvhDN-N-yzi1rGDHtUs/2DHToO-n7CTd0wQ7zn_ulhJqswYd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ZE_nLDGzpvhDN-N-yzi1rGDHtUs/2DHToO-n7CTd0wQ7zn_ulhJqswYp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ZE_nLDGzpvhDN-N-yzi1rGDHtUs/3lEXNw-RrR1UfjQqWvWadaKtDVYd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ZE_nLDGzpvhDN-N-yzi1rGDHtUs/3lEXNw-RrR1UfjQqWvWadaKtDVYp.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ZE_nLDGzpvhDN-N-yzi1rGDHtUs/gMiLbB3GTMtCoG45qiCjcNex-_gd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ZE_nLDGzpvhDN-N-yzi1rGDHtUs/gMiLbB3GTMtCoG45qiCjcNex-_gp.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ZE_nLDGzpvhDN-N-yzi1rGDHtUs/TBZR3jS5mR2-rSXSAJ_iI1BAvEcd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/ZE_nLDGzpvhDN-N-yzi1rGDHtUs/TBZR3jS5mR2-rSXSAJ_iI1BAvEcp.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Zk3_2T3lPJ2MLbjJEQOJHMSKR80/6UXdeoNnKd4CsqKyg7aJG5Uioxsd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Zk3_2T3lPJ2MLbjJEQOJHMSKR80/6UXdeoNnKd4CsqKyg7aJG5Uioxsp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Zk3_2T3lPJ2MLbjJEQOJHMSKR80/v22KOh7i8G6eapDkOmYBBsWO_Vkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/resources/project/Zk3_2T3lPJ2MLbjJEQOJHMSKR80/v22KOh7i8G6eapDkOmYBBsWO_Vkp.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Scripts_Data/Convex_Hull/sm_convex_hull_pointcloud.m",
+      "size_bytes": 2971
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Scripts_Data/Convex_Hull/sm_convex_hull_revolution.m",
+      "size_bytes": 3528
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Scripts_Data/Convex_Hull/sm_convex_hull_stlgeometry.m",
+      "size_bytes": 2909
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Scripts_Data/Convex_Hull/test_stl_steering_wheel.stl",
+      "size_bytes": 162384
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Scripts_Data/Multibody_Contact_Examples_Demo_Script.html",
+      "size_bytes": 11720
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Scripts_Data/Multibody_Contact_Examples_Demo_Script.m",
+      "size_bytes": 3754
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Scripts_Data/Multibody_Contact_Examples_Demo_Script_web.m",
+      "size_bytes": 50
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Scripts_Data/Point_Cloud/Point_Cloud_Data_Brick.m",
+      "size_bytes": 3418
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Scripts_Data/Point_Cloud/Point_Cloud_Data_Circle.m",
+      "size_bytes": 1997
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Scripts_Data/Point_Cloud/Point_Cloud_Data_Cylinder.m",
+      "size_bytes": 3766
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Scripts_Data/Point_Cloud/Point_Cloud_Data_Sphere.m",
+      "size_bytes": 2014
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Scripts_Data/Point_Cloud/Resources/ClosedMeshVolume.m",
+      "size_bytes": 1056
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Scripts_Data/Point_Cloud/Resources/GetMeshData.m",
+      "size_bytes": 1819
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Scripts_Data/Point_Cloud/Resources/ParticleSampleSphere.m",
+      "size_bytes": 20273
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Scripts_Data/Point_Cloud/Resources/RandSampleSphere.m",
+      "size_bytes": 1687
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Scripts_Data/Point_Cloud/Resources/S2_Sampling_Toolbox.rights",
+      "size_bytes": 1102
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Scripts_Data/shutdown_contact_examples_basic.m",
+      "size_bytes": 242
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Scripts_Data/startup_contact_examples_basic.m",
+      "size_bytes": 483
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/SECURITY.md",
+      "size_bytes": 394
+    },
+    {
+      "path": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Workflows/Testing/Contact_Force_Examples_publish_all.m",
+      "size_bytes": 1162
+    }
+  ],
+  "entrypoint": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Gripper_2Belts/Gripper_2Belts.slx",
+  "expected_score": 98.45085670276461,
+  "expected_valid_scenarios": 6,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "native_nominal_transfer",
+      "moderate_low_belt_friction",
+      "moderate_high_belt_friction",
+      "moderate_slow_belts",
+      "belt_speed_mismatch",
+      "heavier_payload_boundary"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 17563315,
+  "excluded_files": []
+}

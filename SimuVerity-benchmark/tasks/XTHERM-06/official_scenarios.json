@@ -1,0 +1,108 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XTHERM-06",
+  "scenarios": [
+    {
+      "id": "nominal",
+      "Cooling_Enable": 1,
+      "AmbientTemp_C": 45,
+      "CoolantMassFlow_kgps": 2
+    },
+    {
+      "id": "cool_boundary",
+      "Cooling_Enable": 1,
+      "AmbientTemp_C": 35,
+      "CoolantMassFlow_kgps": 2
+    },
+    {
+      "id": "hot_boundary",
+      "Cooling_Enable": 1,
+      "AmbientTemp_C": 55,
+      "CoolantMassFlow_kgps": 2
+    },
+    {
+      "id": "low_flow",
+      "Cooling_Enable": 1,
+      "AmbientTemp_C": 45,
+      "CoolantMassFlow_kgps": 1
+    },
+    {
+      "id": "cooling_loss",
+      "Cooling_Enable": 0,
+      "AmbientTemp_C": 45,
+      "CoolantMassFlow_kgps": 2
+    },
+    {
+      "id": "hot_low_flow",
+      "Cooling_Enable": 1,
+      "AmbientTemp_C": 55,
+      "CoolantMassFlow_kgps": 1
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "start_s": 0,
+      "stop_s": 720,
+      "one_persistent_matlab_session": true
+    },
+    "groups": {
+      "G": "load, update, compile, six simulations, full finite evidence, connected traction/feedback/thermal-fluid paths",
+      "A": "closed-loop passing-speed and traction-torque accuracy",
+      "Q": "nominal thermal-fluid quality and physical plausibility",
+      "M": "connected mechanism plus cooling, flow and ambient causal response",
+      "R": "100 percent worst-case aggregation over required non-fault conditions",
+      "D": "passing-event dynamic response and post-event thermal recovery"
+    },
+    "weights": {
+      "A": 0.15,
+      "Q": 0.15,
+      "M": 0.3,
+      "R": 0.2,
+      "D": 0.2
+    },
+    "aggregation": {
+      "within_group": "weighted arithmetic mean with explicit critical witnesses",
+      "required_non_fault_scenarios": "minimum",
+      "total": "G * 100 * A^0.15 * Q^0.15 * M^0.30 * R^0.20 * D^0.20"
+    },
+    "shortcut_minimum": [
+      "disconnected vehicle-speed feedback",
+      "command copied or replayed as measured speed",
+      "missing physical motor-to-casing-to-coolant heat path",
+      "Cooling_Enable ignored",
+      "coolant-flow and ambient perturbations produce no causal thermal response"
+    ]
+  },
+  "simulation": {
+    "start_s": 0,
+    "stop_s": 720,
+    "one_persistent_matlab_session": true
+  },
+  "groups": {
+    "G": "load, update, compile, six simulations, full finite evidence, connected traction/feedback/thermal-fluid paths",
+    "A": "closed-loop passing-speed and traction-torque accuracy",
+    "Q": "nominal thermal-fluid quality and physical plausibility",
+    "M": "connected mechanism plus cooling, flow and ambient causal response",
+    "R": "100 percent worst-case aggregation over required non-fault conditions",
+    "D": "passing-event dynamic response and post-event thermal recovery"
+  },
+  "weights": {
+    "A": 0.15,
+    "Q": 0.15,
+    "M": 0.3,
+    "R": 0.2,
+    "D": 0.2
+  },
+  "aggregation": {
+    "within_group": "weighted arithmetic mean with explicit critical witnesses",
+    "required_non_fault_scenarios": "minimum",
+    "total": "G * 100 * A^0.15 * Q^0.15 * M^0.30 * R^0.20 * D^0.20"
+  },
+  "shortcut_minimum": [
+    "disconnected vehicle-speed feedback",
+    "command copied or replayed as measured speed",
+    "missing physical motor-to-casing-to-coolant heat path",
+    "Cooling_Enable ignored",
+    "coolant-flow and ambient perturbations produce no causal thermal response"
+  ]
+}

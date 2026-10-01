@@ -1,0 +1,74 @@
+{
+  "schema": "simuverity.task.v1",
+  "release": "simuverity-101-v1",
+  "task_id": "XMED-01",
+  "ordinal": 94,
+  "collection": "XMED",
+  "runtime_alias": "XMED-01",
+  "required_model_file": "cand_XMED01.slx",
+  "evaluation_policy_id": "simuverity-101-v1:xmed-01:scoring",
+  "candidate_closure": {
+    "public_input_names": [
+      "patient_compliance",
+      "airway_resistance",
+      "leak_fraction",
+      "target_insp_pressure",
+      "obstruction_factor",
+      "obstruction_time"
+    ],
+    "nominal_provider": "simuverity_public_nominal_inputs"
+  },
+  "public_spec": "public_spec.json",
+  "official_scenarios": "official_scenarios.json",
+  "extractor": {
+    "kind": "matlab_function",
+    "path": "extractor/run.m",
+    "entrypoint": "run",
+    "implementation": "vendor/scripts/formal90/tasks/f90_xmed01/f90_xmed01_score_model.m",
+    "closure_manifest": "extractor/manifest.json"
+  },
+  "scorer": {
+    "kind": "python_function",
+    "path": "scorer.py",
+    "entrypoint": "score",
+    "closure_manifest": "scorer/manifest.json",
+    "offline_only": true
+  },
+  "reference": {
+    "materialization": "bundled",
+    "source_kind": "expert_built",
+    "path": "reference/files",
+    "manifest": "reference/manifest.json",
+    "entrypoint": "reference/files/XMED01_reference.slx",
+    "expected_valid_scenarios": 5,
+    "score_tolerance": 5e-07,
+    "expected_score": 97.58829689981866,
+    "expected_score_basis": "reference_replay",
+    "scenario_contract": {
+      "expected_ids": [
+        "leak_probe",
+        "stiff_obstructed",
+        "compliant_leaky",
+        "joint_interior",
+        "low_compliance_high_leak"
+      ],
+      "nominal_scenario_id": null,
+      "nominal_materialization": "authoritative_scenario_set"
+    },
+    "score_tolerance_basis": "source_authority_numeric_precision",
+    "runtime_manifest": "reference/runtime_manifest.json"
+  },
+  "applicable_groups": [
+    "G",
+    "A",
+    "Q",
+    "M",
+    "R",
+    "D"
+  ],
+  "release_license_status": "PROJECT_ORIGINAL_APACHE_2_0",
+  "system_profile": {
+    "path": "system_profile.json",
+    "schema": "simuverity.system-profile.v1"
+  }
+}

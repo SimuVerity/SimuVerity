@@ -1,0 +1,418 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XMED-10",
+  "file_count": 98,
+  "files": [
+    {
+      "path": "reference/files/requirements.txt",
+      "size_bytes": 246
+    },
+    {
+      "path": "reference/files/source/.gitignore",
+      "size_bytes": 380
+    },
+    {
+      "path": "reference/files/source/CODE_OF_CONDUCT.md",
+      "size_bytes": 5543
+    },
+    {
+      "path": "reference/files/source/docs/.readthedocs.yaml",
+      "size_bytes": 843
+    },
+    {
+      "path": "reference/files/source/docs/make.bat",
+      "size_bytes": 804
+    },
+    {
+      "path": "reference/files/source/docs/Makefile",
+      "size_bytes": 638
+    },
+    {
+      "path": "reference/files/source/docs/requirements.txt",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/source/docs/source/_static/API_scheme.svg",
+      "size_bytes": 57804
+    },
+    {
+      "path": "reference/files/source/docs/source/alarms.rst",
+      "size_bytes": 122
+    },
+    {
+      "path": "reference/files/source/docs/source/conf.py",
+      "size_bytes": 2813
+    },
+    {
+      "path": "reference/files/source/docs/source/contributing.md",
+      "size_bytes": 4517
+    },
+    {
+      "path": "reference/files/source/docs/source/disturbances.rst",
+      "size_bytes": 139
+    },
+    {
+      "path": "reference/files/source/docs/source/examples.rst",
+      "size_bytes": 694
+    },
+    {
+      "path": "reference/files/source/docs/source/examples/optimal_parameters_PID_reject.csv",
+      "size_bytes": 61
+    },
+    {
+      "path": "reference/files/source/docs/source/examples/pid_sim_functions.py",
+      "size_bytes": 17342
+    },
+    {
+      "path": "reference/files/source/docs/source/images/2_comportment_model.png",
+      "size_bytes": 31691
+    },
+    {
+      "path": "reference/files/source/docs/source/images/3_comportment_model.png",
+      "size_bytes": 50110
+    },
+    {
+      "path": "reference/files/source/docs/source/images/3Dhill.png",
+      "size_bytes": 152578
+    },
+    {
+      "path": "reference/files/source/docs/source/images/4_comportment_model.png",
+      "size_bytes": 40182
+    },
+    {
+      "path": "reference/files/source/docs/source/images/4_comportment_model_atracurium.svg",
+      "size_bytes": 83963
+    },
+    {
+      "path": "reference/files/source/docs/source/images/all_signal_comparison.png",
+      "size_bytes": 436501
+    },
+    {
+      "path": "reference/files/source/docs/source/images/all_signal_comparison_stimuli.png",
+      "size_bytes": 513373
+    },
+    {
+      "path": "reference/files/source/docs/source/images/all_signal_intub.png",
+      "size_bytes": 353594
+    },
+    {
+      "path": "reference/files/source/docs/source/images/all_signal_opstart.png",
+      "size_bytes": 342880
+    },
+    {
+      "path": "reference/files/source/docs/source/images/bis_bode.png",
+      "size_bytes": 78922
+    },
+    {
+      "path": "reference/files/source/docs/source/images/bis_diff.png",
+      "size_bytes": 142735
+    },
+    {
+      "path": "reference/files/source/docs/source/images/bis_noise.png",
+      "size_bytes": 84426
+    },
+    {
+      "path": "reference/files/source/docs/source/images/case_4864.png",
+      "size_bytes": 63794
+    },
+    {
+      "path": "reference/files/source/docs/source/images/hemo_sys_nore.png",
+      "size_bytes": 33749
+    },
+    {
+      "path": "reference/files/source/docs/source/images/hierarchical_model.png",
+      "size_bytes": 66455
+    },
+    {
+      "path": "reference/files/source/docs/source/images/hr_bode.png",
+      "size_bytes": 75176
+    },
+    {
+      "path": "reference/files/source/docs/source/images/hr_noise.png",
+      "size_bytes": 55007
+    },
+    {
+      "path": "reference/files/source/docs/source/images/logo_pas.png",
+      "size_bytes": 33810
+    },
+    {
+      "path": "reference/files/source/docs/source/images/map_bode.png",
+      "size_bytes": 75441
+    },
+    {
+      "path": "reference/files/source/docs/source/images/map_noise.png",
+      "size_bytes": 77962
+    },
+    {
+      "path": "reference/files/source/docs/source/images/ne_con.png",
+      "size_bytes": 33616
+    },
+    {
+      "path": "reference/files/source/docs/source/images/overall_scheme.svg",
+      "size_bytes": 417873
+    },
+    {
+      "path": "reference/files/source/docs/source/images/propofol_concentration.png",
+      "size_bytes": 78512
+    },
+    {
+      "path": "reference/files/source/docs/source/images/scheme_stimuli_model.png",
+      "size_bytes": 39425
+    },
+    {
+      "path": "reference/files/source/docs/source/images/sigmoid.png",
+      "size_bytes": 58110
+    },
+    {
+      "path": "reference/files/source/docs/source/images/standard_model.png",
+      "size_bytes": 81600
+    },
+    {
+      "path": "reference/files/source/docs/source/images/Su_model.png",
+      "size_bytes": 89383
+    },
+    {
+      "path": "reference/files/source/docs/source/index.rst",
+      "size_bytes": 1621
+    },
+    {
+      "path": "reference/files/source/docs/source/intro.rst",
+      "size_bytes": 5287
+    },
+    {
+      "path": "reference/files/source/docs/source/matlab.rst",
+      "size_bytes": 670
+    },
+    {
+      "path": "reference/files/source/docs/source/matlab/installation.md",
+      "size_bytes": 5636
+    },
+    {
+      "path": "reference/files/source/docs/source/matlab/matlab_examples/closed_loop_simulation/closed_loop_simulation.m",
+      "size_bytes": 3590
+    },
+    {
+      "path": "reference/files/source/docs/source/matlab/matlab_examples/closed_loop_simulation/pid_ratio.m",
+      "size_bytes": 2306
+    },
+    {
+      "path": "reference/files/source/docs/source/matlab/matlab_examples/closed_loop_simulation/README.md",
+      "size_bytes": 3478
+    },
+    {
+      "path": "reference/files/source/docs/source/matlab/matlab_examples/open_loop_simulation/open_loop_simulation.m",
+      "size_bytes": 3232
+    },
+    {
+      "path": "reference/files/source/docs/source/matlab/matlab_examples/open_loop_simulation/README.md",
+      "size_bytes": 2959
+    },
+    {
+      "path": "reference/files/source/docs/source/matlab/simulink_examples/closed_loop_simulation/callPython.m",
+      "size_bytes": 1796
+    },
+    {
+      "path": "reference/files/source/docs/source/matlab/simulink_examples/closed_loop_simulation/main_sim_closedloop.m",
+      "size_bytes": 3264
+    },
+    {
+      "path": "reference/files/source/docs/source/matlab/simulink_examples/closed_loop_simulation/README.md",
+      "size_bytes": 5114
+    },
+    {
+      "path": "reference/files/source/docs/source/matlab/simulink_examples/closed_loop_simulation/sim_closedloop.slx",
+      "size_bytes": 138073
+    },
+    {
+      "path": "reference/files/source/docs/source/matlab/simulink_examples/open_loop_simulation/callPython.m",
+      "size_bytes": 1796
+    },
+    {
+      "path": "reference/files/source/docs/source/matlab/simulink_examples/open_loop_simulation/main_sim_openloop.m",
+      "size_bytes": 2620
+    },
+    {
+      "path": "reference/files/source/docs/source/matlab/simulink_examples/open_loop_simulation/README.md",
+      "size_bytes": 4469
+    },
+    {
+      "path": "reference/files/source/docs/source/matlab/simulink_examples/open_loop_simulation/sim_openloop.slx",
+      "size_bytes": 109719
+    },
+    {
+      "path": "reference/files/source/docs/source/metrics.rst",
+      "size_bytes": 124
+    },
+    {
+      "path": "reference/files/source/docs/source/model/disturbance_identification.rst",
+      "size_bytes": 12357
+    },
+    {
+      "path": "reference/files/source/docs/source/model/noise_identification.rst",
+      "size_bytes": 3013
+    },
+    {
+      "path": "reference/files/source/docs/source/model/Non-linear interactions.rst",
+      "size_bytes": 6469
+    },
+    {
+      "path": "reference/files/source/docs/source/model/Pharmacodynamics.rst",
+      "size_bytes": 24548
+    },
+    {
+      "path": "reference/files/source/docs/source/model/Pharmacokinetics.rst",
+      "size_bytes": 11562
+    },
+    {
+      "path": "reference/files/source/docs/source/modelling_anesthesia.rst",
+      "size_bytes": 768
+    },
+    {
+      "path": "reference/files/source/docs/source/patient.rst",
+      "size_bytes": 124
+    },
+    {
+      "path": "reference/files/source/docs/source/pd_models.rst",
+      "size_bytes": 129
+    },
+    {
+      "path": "reference/files/source/docs/source/pk_models.rst",
+      "size_bytes": 136
+    },
+    {
+      "path": "reference/files/source/docs/source/python_anesthesia_simulator.rst",
+      "size_bytes": 814
+    },
+    {
+      "path": "reference/files/source/docs/source/simulator.rst",
+      "size_bytes": 128
+    },
+    {
+      "path": "reference/files/source/docs/source/tci_control.rst",
+      "size_bytes": 141
+    },
+    {
+      "path": "reference/files/source/LICENSE",
+      "size_bytes": 35092
+    },
+    {
+      "path": "reference/files/source/pyproject.toml",
+      "size_bytes": 1229
+    },
+    {
+      "path": "reference/files/source/README.md",
+      "size_bytes": 2838
+    },
+    {
+      "path": "reference/files/source/src/__init__.py",
+      "size_bytes": 0
+    },
+    {
+      "path": "reference/files/source/src/python_anesthesia_simulator/__init__.py",
+      "size_bytes": 324
+    },
+    {
+      "path": "reference/files/source/src/python_anesthesia_simulator/alarms.py",
+      "size_bytes": 2695
+    },
+    {
+      "path": "reference/files/source/src/python_anesthesia_simulator/disturbances.py",
+      "size_bytes": 18716
+    },
+    {
+      "path": "reference/files/source/src/python_anesthesia_simulator/metrics.py",
+      "size_bytes": 10229
+    },
+    {
+      "path": "reference/files/source/src/python_anesthesia_simulator/patient.py",
+      "size_bytes": 31378
+    },
+    {
+      "path": "reference/files/source/src/python_anesthesia_simulator/pd_models.py",
+      "size_bytes": 62132
+    },
+    {
+      "path": "reference/files/source/src/python_anesthesia_simulator/pk_models.py",
+      "size_bytes": 43798
+    },
+    {
+      "path": "reference/files/source/src/python_anesthesia_simulator/simulator.py",
+      "size_bytes": 28990
+    },
+    {
+      "path": "reference/files/source/src/python_anesthesia_simulator/tci_control.py",
+      "size_bytes": 10340
+    },
+    {
+      "path": "reference/files/source/tests/test_alarms.py",
+      "size_bytes": 3760
+    },
+    {
+      "path": "reference/files/source/tests/test_atracurium_models.py",
+      "size_bytes": 15529
+    },
+    {
+      "path": "reference/files/source/tests/test_bis_models.py",
+      "size_bytes": 4975
+    },
+    {
+      "path": "reference/files/source/tests/test_blood_loss.py",
+      "size_bytes": 4405
+    },
+    {
+      "path": "reference/files/source/tests/test_disturbance_and_metrics.py",
+      "size_bytes": 5785
+    },
+    {
+      "path": "reference/files/source/tests/test_eleveld_pd_model.py",
+      "size_bytes": 7774
+    },
+    {
+      "path": "reference/files/source/tests/test_equilibrium.py",
+      "size_bytes": 4445
+    },
+    {
+      "path": "reference/files/source/tests/test_norepinephrine_model.py",
+      "size_bytes": 5478
+    },
+    {
+      "path": "reference/files/source/tests/test_random_generation.py",
+      "size_bytes": 3506
+    },
+    {
+      "path": "reference/files/source/tests/test_simulation.py",
+      "size_bytes": 7217
+    },
+    {
+      "path": "reference/files/source/tests/test_sqi_delay.py",
+      "size_bytes": 5339
+    },
+    {
+      "path": "reference/files/source/tests/test_tci.py",
+      "size_bytes": 6727
+    },
+    {
+      "path": "reference/files/source_metadata.json",
+      "size_bytes": 660
+    }
+  ],
+  "entrypoint": "reference/files/source/docs/source/matlab/simulink_examples/closed_loop_simulation/sim_closedloop.slx",
+  "expected_score": 96.00592623156302,
+  "expected_valid_scenarios": 6,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal_adult_target50",
+      "young_adult_target50",
+      "older_adult_target50",
+      "low_body_mass_target50",
+      "high_body_mass_target50",
+      "nominal_adult_target44"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 4362288,
+  "excluded_files": []
+}

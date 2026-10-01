@@ -1,0 +1,175 @@
+{
+  "schema": "simuverity.matlab-local-importer-recipe.v1",
+  "task_id": "XROBO-06",
+  "release": "simuverity-101-v1",
+  "matlab_release": "R2025a",
+  "publisher": "The MathWorks, Inc.",
+  "redistributes_mathworks_files": false,
+  "destination": "%LOCALAPPDATA%/SimuVerity/assets/simuverity-101-v1/XROBO-06",
+  "discovery": {
+    "method": "mathworks_open_example_relative_root",
+    "example_id": "multibody_deeplearning/TrainHumanoidWalkerExample",
+    "source_root": {
+      "selection": "unique_relative_anchor_path",
+      "anchor_path": "sm_humanoid_walker_rl.slx"
+    },
+    "expected_files": [
+      {
+        "path": "imagebackground.PNG",
+        "size_bytes": 181601
+      },
+      {
+        "path": "sm_humanoid_arms.PNG",
+        "size_bytes": 28464
+      },
+      {
+        "path": "sm_humanoid_legs.PNG",
+        "size_bytes": 38501
+      },
+      {
+        "path": "sm_humanoid_robot.PNG",
+        "size_bytes": 72895
+      },
+      {
+        "path": "sm_humanoid_torso.PNG",
+        "size_bytes": 21198
+      },
+      {
+        "path": "sm_humanoid_walker_cover.stp",
+        "size_bytes": 7068
+      },
+      {
+        "path": "sm_humanoid_walker_create_networks.m",
+        "size_bytes": 3378
+      },
+      {
+        "path": "sm_humanoid_walker_foot.stp",
+        "size_bytes": 176238
+      },
+      {
+        "path": "sm_humanoid_walker_ga.slx",
+        "size_bytes": 100947
+      },
+      {
+        "path": "sm_humanoid_walker_ga_parameters.m",
+        "size_bytes": 3942
+      },
+      {
+        "path": "sm_humanoid_walker_ga_speedup.m",
+        "size_bytes": 1450
+      },
+      {
+        "path": "sm_humanoid_walker_ga_train.m",
+        "size_bytes": 3611
+      },
+      {
+        "path": "sm_humanoid_walker_generate_waypoints.m",
+        "size_bytes": 380
+      },
+      {
+        "path": "sm_humanoid_walker_hand.stp",
+        "size_bytes": 46075
+      },
+      {
+        "path": "sm_humanoid_walker_head.stp",
+        "size_bytes": 233477
+      },
+      {
+        "path": "sm_humanoid_walker_hip_swivel.stp",
+        "size_bytes": 77370
+      },
+      {
+        "path": "sm_humanoid_walker_lib.slx",
+        "size_bytes": 186267
+      },
+      {
+        "path": "sm_humanoid_walker_lower_arm.stp",
+        "size_bytes": 97636
+      },
+      {
+        "path": "sm_humanoid_walker_lower_leg.stp",
+        "size_bytes": 105479
+      },
+      {
+        "path": "sm_humanoid_walker_neck.stp",
+        "size_bytes": 50635
+      },
+      {
+        "path": "sm_humanoid_walker_rl.slx",
+        "size_bytes": 167749
+      },
+      {
+        "path": "sm_humanoid_walker_rl_parameters.m",
+        "size_bytes": 3940
+      },
+      {
+        "path": "sm_humanoid_walker_rl_train.m",
+        "size_bytes": 8465
+      },
+      {
+        "path": "sm_humanoid_walker_saved_agent.mat",
+        "size_bytes": 2087065
+      },
+      {
+        "path": "sm_humanoid_walker_shoulder.stp",
+        "size_bytes": 31411
+      },
+      {
+        "path": "sm_humanoid_walker_shoulder_swivel.stp",
+        "size_bytes": 24142
+      },
+      {
+        "path": "sm_humanoid_walker_sim_walking.m",
+        "size_bytes": 537
+      },
+      {
+        "path": "sm_humanoid_walker_trunk.stp",
+        "size_bytes": 110266
+      },
+      {
+        "path": "sm_humanoid_walker_upper_arm.stp",
+        "size_bytes": 96803
+      },
+      {
+        "path": "sm_humanoid_walker_upper_leg.stp",
+        "size_bytes": 111471
+      },
+      {
+        "path": "sm_humanoid_walker_waist.stp",
+        "size_bytes": 1475023
+      },
+      {
+        "path": "TrainHumanoidWalkerExample.mlx",
+        "size_bytes": 585672
+      }
+    ]
+  },
+  "transform": "transform.m",
+  "validation": {
+    "required": true,
+    "checks": [
+      "load",
+      "update",
+      "compile",
+      "simulate",
+      "all_official_scenarios",
+      "reference_score"
+    ],
+    "on_mismatch": "fail_closed"
+  },
+  "entrypoint": "sm_humanoid_walker_rl.slx",
+  "expected_valid_scenarios": 4,
+  "score_tolerance": 1e-12,
+  "expected_score": 99.7126425873605,
+  "scenario_contract": {
+    "expected_ids": [
+      "native_nominal_walk",
+      "moderate_low_friction",
+      "moderate_actuator_derating",
+      "cold_start_height_offset"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision"
+}

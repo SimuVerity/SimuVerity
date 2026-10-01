@@ -1,0 +1,32 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XMECH-01",
+  "file_count": 1,
+  "files": [
+    {
+      "path": "reference/files/XMECH01_reference.slx",
+      "size_bytes": 121190
+    }
+  ],
+  "entrypoint": "reference/files/XMECH01_reference.slx",
+  "expected_score": 99.49394800904588,
+  "expected_score_basis": "fixed_probe_energy_reference_replay",
+  "expected_valid_scenarios": 7,
+  "score_tolerance": 5e-05,
+  "scenario_contract": {
+    "expected_ids": [
+      "paired_no_loss",
+      "traction_binding_probe",
+      "traction_binding_probe_no_loss",
+      "turn_heavy_low_mu",
+      "downhill_reverse_turn",
+      "fast_loaded_grip",
+      "interior_asymmetric"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 121190,
+  "excluded_files": []
+}

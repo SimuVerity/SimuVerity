@@ -1,0 +1,176 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XMED-05",
+  "scenarios": [
+    {
+      "id": "normal_delay",
+      "class": "nominal",
+      "RhythmCondition": 0,
+      "SimulationDuration_ms": 8000,
+      "reference_parameter_pack": "models/parasNormal.mat",
+      "reference_overrides": {}
+    },
+    {
+      "id": "bradycardia",
+      "class": "lower_rate_support",
+      "RhythmCondition": 1,
+      "SimulationDuration_ms": 8000,
+      "reference_parameter_pack": "models/parasNormal.mat",
+      "reference_overrides": {
+        "pp_indices_1based": [
+          1
+        ],
+        "pp_values": [
+          1400
+        ]
+      }
+    },
+    {
+      "id": "av_block",
+      "class": "atrioventricular_support",
+      "RhythmCondition": 2,
+      "SimulationDuration_ms": 8000,
+      "reference_parameter_pack": "models/parasNormal.mat",
+      "reference_overrides": {
+        "path_slots_1based": [
+          6,
+          7
+        ],
+        "pPath_values": [
+          1813,
+          1818
+        ],
+        "pp_values": [
+          0,
+          0
+        ],
+        "ppPath_rows": [
+          [
+            23,
+            2,
+            0,
+            0,
+            1
+          ],
+          [
+            23,
+            7,
+            0,
+            0,
+            1
+          ]
+        ],
+        "pRange_rows": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "id": "combined_pathology",
+      "class": "bradycardia_av_block_ectopy_slow_conduction",
+      "RhythmCondition": 3,
+      "SimulationDuration_ms": 8000,
+      "reference_parameter_pack": "models/parasMulti.mat",
+      "reference_overrides": {}
+    },
+    {
+      "id": "pvc_retrograde_stress",
+      "class": "premature_ventricular_retrograde_stress",
+      "RhythmCondition": 4,
+      "SimulationDuration_ms": 8000,
+      "reference_parameter_pack": "models/parasMulti2.mat",
+      "reference_overrides": {}
+    },
+    {
+      "id": "extra_vp_reentry_stress",
+      "class": "extra_ventricular_reentry_stress",
+      "RhythmCondition": 5,
+      "SimulationDuration_ms": 8000,
+      "reference_parameter_pack": "models/parasMulti3.mat",
+      "reference_overrides": {}
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "start_ms": 0,
+      "simulation_mode": "normal",
+      "one_persistent_matlab_session": true,
+      "wall_watchdog_s": 1800
+    },
+    "groups": {
+      "G": "load, update, compile, six valid full-evidence scenarios, connected hybrid-heart and closed-loop DDD signature",
+      "A": "nominal chamber-event continuity, physiological effective rates and appropriate intrinsic-versus-paced behavior",
+      "Q": "finite nondegenerate EGMs, clean event pulses, bounded pacing intervals and refractory or upper-rate compliance",
+      "M": "heart, EGM, sensing, DDD timing and pacing-actuation mechanisms plus condition-dependent and pacing-to-response causality",
+      "R": "100 percent worst-condition rhythm operability",
+      "D": "lower-rate support, atrioventricular support, ectopy handling and re-entry-stress continuity"
+    },
+    "weights": {
+      "A": 0.2,
+      "Q": 0.15,
+      "M": 0.3,
+      "R": 0.2,
+      "D": 0.15
+    },
+    "aggregation": {
+      "within_group": "weighted arithmetic mean of dedicated normalized indicators",
+      "critical_multiscenario_performance": "minimum",
+      "total": "G * 100 * A^0.20 * Q^0.15 * M^0.30 * R^0.20 * D^0.15"
+    },
+    "shortcut_minimum": [
+      "missing required output or private condition",
+      "disconnected sensing path",
+      "disconnected atrial or ventricular pacing actuation",
+      "constant pacing independent of rhythm condition",
+      "replayed nominal event and EGM traces",
+      "copied event channels without pacing-to-cardiac-response timing"
+    ],
+    "scoring_policy": {
+      "policy_id": "simuverity-101-v1:xmed-05:scoring"
+    }
+  },
+  "simulation": {
+    "start_ms": 0,
+    "simulation_mode": "normal",
+    "one_persistent_matlab_session": true,
+    "wall_watchdog_s": 1800
+  },
+  "groups": {
+    "G": "load, update, compile, six valid full-evidence scenarios, connected hybrid-heart and closed-loop DDD signature",
+    "A": "nominal chamber-event continuity, physiological effective rates and appropriate intrinsic-versus-paced behavior",
+    "Q": "finite nondegenerate EGMs, clean event pulses, bounded pacing intervals and refractory or upper-rate compliance",
+    "M": "heart, EGM, sensing, DDD timing and pacing-actuation mechanisms plus condition-dependent and pacing-to-response causality",
+    "R": "100 percent worst-condition rhythm operability",
+    "D": "lower-rate support, atrioventricular support, ectopy handling and re-entry-stress continuity"
+  },
+  "weights": {
+    "A": 0.2,
+    "Q": 0.15,
+    "M": 0.3,
+    "R": 0.2,
+    "D": 0.15
+  },
+  "aggregation": {
+    "within_group": "weighted arithmetic mean of dedicated normalized indicators",
+    "critical_multiscenario_performance": "minimum",
+    "total": "G * 100 * A^0.20 * Q^0.15 * M^0.30 * R^0.20 * D^0.15"
+  },
+  "shortcut_minimum": [
+    "missing required output or private condition",
+    "disconnected sensing path",
+    "disconnected atrial or ventricular pacing actuation",
+    "constant pacing independent of rhythm condition",
+    "replayed nominal event and EGM traces",
+    "copied event channels without pacing-to-cardiac-response timing"
+  ],
+  "scoring_policy": {
+    "policy_id": "simuverity-101-v1:xmed-05:scoring"
+  }
+}

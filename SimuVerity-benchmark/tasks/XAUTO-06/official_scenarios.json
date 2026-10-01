@@ -1,0 +1,78 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XAUTO-06",
+  "scenarios": [
+    {
+      "id": "nominal",
+      "class": "nominal",
+      "drive_profile": "SimpleDrivePattern",
+      "peak_speed_kph": 95.0,
+      "road_grade_pattern": "flat",
+      "road_grade_pct": 0.0,
+      "initial_soc_pct": 70.0,
+      "stop_time_s": 200.0
+    },
+    {
+      "id": "uphill",
+      "class": "boundary",
+      "drive_profile": "SimpleDrivePattern",
+      "peak_speed_kph": 95.0,
+      "road_grade_pattern": "uphill_3_percent",
+      "road_grade_pct": 3.0,
+      "initial_soc_pct": 70.0,
+      "stop_time_s": 200.0
+    },
+    {
+      "id": "downhill",
+      "class": "boundary",
+      "drive_profile": "SimpleDrivePattern",
+      "peak_speed_kph": 95.0,
+      "road_grade_pattern": "downhill_5_percent",
+      "road_grade_pct": -5.0,
+      "initial_soc_pct": 70.0,
+      "stop_time_s": 200.0
+    },
+    {
+      "id": "accelerate_90",
+      "class": "dynamic",
+      "drive_profile": "Accelerate_Decelerate",
+      "peak_speed_kph": 90.0,
+      "road_grade_pattern": "flat",
+      "road_grade_pct": 0.0,
+      "initial_soc_pct": 70.0,
+      "stop_time_s": 200.0
+    },
+    {
+      "id": "accelerate_110_uphill",
+      "class": "dynamic_boundary",
+      "drive_profile": "Accelerate_Decelerate",
+      "peak_speed_kph": 110.0,
+      "road_grade_pattern": "uphill_3_percent",
+      "road_grade_pct": 3.0,
+      "initial_soc_pct": 50.0,
+      "stop_time_s": 200.0
+    }
+  ],
+  "contract": {
+    "scenario_contract": {
+      "aggregation": "tracking, battery bounds, power-split mechanism, resilience, and dynamic recovery use the literal worst valid private scenario when applicable",
+      "output_contract": "each scenario retains complete physical/control output evidence and derived metrics",
+      "harness_only_changes": [
+        "source-supported drive profile",
+        "source-supported road grade",
+        "existing initial battery state",
+        "simulation stop time"
+      ]
+    }
+  },
+  "scenario_contract": {
+    "aggregation": "tracking, battery bounds, power-split mechanism, resilience, and dynamic recovery use the literal worst valid private scenario when applicable",
+    "output_contract": "each scenario retains complete physical/control output evidence and derived metrics",
+    "harness_only_changes": [
+      "source-supported drive profile",
+      "source-supported road grade",
+      "existing initial battery state",
+      "simulation stop time"
+    ]
+  }
+}

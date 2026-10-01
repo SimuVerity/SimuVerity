@@ -1,0 +1,76 @@
+{
+  "schema": "simuverity.task.v1",
+  "release": "simuverity-101-v1",
+  "task_id": "XAERO-08",
+  "ordinal": 15,
+  "collection": "XAERO",
+  "runtime_alias": "XAERO-08",
+  "required_model_file": "cand_XAERO08.slx",
+  "evaluation_policy_id": "simuverity-101-v1:xaero-08:scoring",
+  "candidate_closure": {
+    "public_input_names": [
+      "mass_flow_kg_per_s",
+      "payload_mass_kg",
+      "gravity_turn_angle_rad"
+    ],
+    "nominal_provider": "simuverity_public_nominal_inputs"
+  },
+  "public_spec": "public_spec.json",
+  "official_scenarios": "official_scenarios.json",
+  "extractor": {
+    "kind": "matlab_function",
+    "path": "extractor/run.m",
+    "entrypoint": "run",
+    "implementation": "vendor/scripts/formal90/tasks/f90_xaero08/f90_xaero08_extract_candidate_evidence.m",
+    "closure_manifest": "extractor/manifest.json"
+  },
+  "scorer": {
+    "kind": "python_function",
+    "path": "scorer.py",
+    "entrypoint": "score",
+    "closure_manifest": "scorer/manifest.json",
+    "offline_only": true
+  },
+  "reference": {
+    "materialization": "bundled",
+    "path": "reference/files",
+    "manifest": "reference/manifest.json",
+    "entrypoint": "reference/files/source/simulink_stuff/Rocket.slx",
+    "expected_valid_scenarios": 5,
+    "score_tolerance": 1e-12,
+    "expected_score": 100.0,
+    "expected_score_basis": "reference_replay",
+    "scenario_contract": {
+      "expected_ids": [
+        "nominal",
+        "lower_mass_flow",
+        "higher_mass_flow",
+        "heavy_payload",
+        "stronger_gravity_turn"
+      ],
+      "nominal_scenario_id": "nominal",
+      "nominal_materialization": "authoritative_scenario_set"
+    },
+    "score_tolerance_basis": "source_authority_numeric_precision",
+    "clean_replay_setup": {
+      "phase": "before_load",
+      "path": "tasks/XAERO-08/reference/clean_replay_setup/f90_xaero08_reference_clean_replay_setup.m",
+      "entrypoint": "f90_xaero08_reference_clean_replay_setup"
+    },
+    "runtime_manifest": "reference/runtime_manifest.json"
+  },
+  "applicable_groups": [
+    "G",
+    "A",
+    "Q",
+    "M",
+    "C",
+    "R",
+    "D"
+  ],
+  "release_license_status": "INCLUDED_THIRD_PARTY_LICENSE",
+  "system_profile": {
+    "path": "system_profile.json",
+    "schema": "simuverity.system-profile.v1"
+  }
+}

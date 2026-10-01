@@ -1,0 +1,870 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XMECH-08",
+  "file_count": 211,
+  "files": [
+    {
+      "path": "reference/files/Four-Bar-Optim/Four_Bar_Optim.prj",
+      "size_bytes": 177
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Images/sm_four_bar_optim_arm_IMAGE.png",
+      "size_bytes": 2439
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Images/sm_four_bar_optim_bar_a_IMAGE.png",
+      "size_bytes": 2905
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Images/sm_four_bar_optim_bar_b_IMAGE.png",
+      "size_bytes": 2439
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Images/sm_four_bar_optim_bar_c_IMAGE.png",
+      "size_bytes": 2905
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Images/sm_four_bar_optim_length_d_IMAGE.png",
+      "size_bytes": 1410
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Images/sm_four_bar_optim_tip_IMAGE.png",
+      "size_bytes": 10027
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/LICENSE.md",
+      "size_bytes": 1501
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Overview/html/sm_four_bar_optim.html",
+      "size_bytes": 11017
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Overview/html/sm_four_bar_optim.png",
+      "size_bytes": 2009
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Overview/html/sm_four_bar_optim_01.png",
+      "size_bytes": 37083
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Overview/html/sm_four_bar_optim_02.png",
+      "size_bytes": 21527
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Overview/html/sm_four_bar_optim_03.png",
+      "size_bytes": 108925
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Overview/html/sm_four_bar_optim_04.png",
+      "size_bytes": 81399
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Overview/html/sm_four_bar_optim_05.png",
+      "size_bytes": 14475
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Overview/html/sm_four_bar_optim_06.png",
+      "size_bytes": 28345
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Overview/html/sm_four_bar_optim_mechanics_explorer_IMAGE.png",
+      "size_bytes": 54767
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Overview/html/sm_four_bar_optim_web.m",
+      "size_bytes": 29
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Overview/sm_four_bar_optim.m",
+      "size_bytes": 2609
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/README.md",
+      "size_bytes": 1234
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/0uQXSUTXwdK6lR_CxoruxFeEUUYd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/0uQXSUTXwdK6lR_CxoruxFeEUUYp.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/aaVwDkV4OnHkho75_R3VDUi8e_Ed.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/aaVwDkV4OnHkho75_R3VDUi8e_Ep.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/F77X7dqxX3khzzuKRBDdgpxXf1cd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/F77X7dqxX3khzzuKRBDdgpxXf1cp.xml",
+      "size_bytes": 107
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/iF_pTh_O-JB0Cs3c2LJP-MVos10d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/iF_pTh_O-JB0Cs3c2LJP-MVos10p.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Ur1esh7xN9L6aqDUKBE31DKE1Qod.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Ur1esh7xN9L6aqDUKBE31DKE1Qop.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/UrikHjf9d-mbDDF8bsD2ZyhJar0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/UrikHjf9d-mbDDF8bsD2ZyhJar0p.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Wh-Qjw06PQc-RvPyHwNk7lSts-0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Wh-Qjw06PQc-RvPyHwNk7lSts-0p.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/bw3rZC2lQGYsJnHBguJaUe15ng8/aWo79VZ-JH8rcxODiSfQ-p6f1XMd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/bw3rZC2lQGYsJnHBguJaUe15ng8/aWo79VZ-JH8rcxODiSfQ-p6f1XMp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/bw3rZC2lQGYsJnHBguJaUe15ng8/CI8ja8CbNAUaRMa3cY-yj8tHe4Md.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/bw3rZC2lQGYsJnHBguJaUe15ng8/CI8ja8CbNAUaRMa3cY-yj8tHe4Mp.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/bw3rZC2lQGYsJnHBguJaUe15ng8/hpDuk0T3Su0yHJqwfrCN-yp9Zv4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/bw3rZC2lQGYsJnHBguJaUe15ng8/hpDuk0T3Su0yHJqwfrCN-yp9Zv4p.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/cEHFJ3gayNdb-fk2whedPNro2cg/3sJcyI3ZX1ZiVT9rmowCVPhbX3od.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/cEHFJ3gayNdb-fk2whedPNro2cg/3sJcyI3ZX1ZiVT9rmowCVPhbX3op.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/cEHFJ3gayNdb-fk2whedPNro2cg/bj9aZpDU4ImYBEbhZlwPiePNqKcd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/cEHFJ3gayNdb-fk2whedPNro2cg/bj9aZpDU4ImYBEbhZlwPiePNqKcp.xml",
+      "size_bytes": 105
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/cEHFJ3gayNdb-fk2whedPNro2cg/F4luwvSK7-OsW3BzfptubH909P0d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/cEHFJ3gayNdb-fk2whedPNro2cg/F4luwvSK7-OsW3BzfptubH909P0p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/cEHFJ3gayNdb-fk2whedPNro2cg/m1e0_jL1Tbw22T2njafvPxO7FA0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/cEHFJ3gayNdb-fk2whedPNro2cg/m1e0_jL1Tbw22T2njafvPxO7FA0p.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/cEHFJ3gayNdb-fk2whedPNro2cg/N80nh20PfxX6-j2ORfAcLwsDs7Yd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/cEHFJ3gayNdb-fk2whedPNro2cg/N80nh20PfxX6-j2ORfAcLwsDs7Yp.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/cEHFJ3gayNdb-fk2whedPNro2cg/ukaNZYDQxX_RpCKLTFNq3_v9WJod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/cEHFJ3gayNdb-fk2whedPNro2cg/ukaNZYDQxX_RpCKLTFNq3_v9WJop.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/CI8ja8CbNAUaRMa3cY-yj8tHe4M/_ZIQLhjOwKLvSOU-th7LrHUY-Ikd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/CI8ja8CbNAUaRMa3cY-yj8tHe4M/_ZIQLhjOwKLvSOU-th7LrHUY-Ikp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/CI8ja8CbNAUaRMa3cY-yj8tHe4M/IZ7k9dmPd31o75yUU7ZsaXW6YZMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/CI8ja8CbNAUaRMa3cY-yj8tHe4M/IZ7k9dmPd31o75yUU7ZsaXW6YZMp.xml",
+      "size_bytes": 103
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/CI8ja8CbNAUaRMa3cY-yj8tHe4M/MEnBXZGUgGKttvaKIIG5QcWIsu4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/CI8ja8CbNAUaRMa3cY-yj8tHe4M/MEnBXZGUgGKttvaKIIG5QcWIsu4p.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/CI8ja8CbNAUaRMa3cY-yj8tHe4M/o1zCCLVugXUOnLlidvksLsGeTOMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/CI8ja8CbNAUaRMa3cY-yj8tHe4M/o1zCCLVugXUOnLlidvksLsGeTOMp.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/9uGePtLnO0KJ4u61e8GySBBq3Ssd.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/9uGePtLnO0KJ4u61e8GySBBq3Ssp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/Fm2tn2pzZlsvpo9qbsOUTYY8HLkd.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/Fm2tn2pzZlsvpo9qbsOUTYY8HLkp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/fVtFq0DLZPHVsp75zeGaQEfuteod.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/fVtFq0DLZPHVsp75zeGaQEfuteop.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/gs8HZKNJe_cXrnPEHhTBME_RcE0d.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/gs8HZKNJe_cXrnPEHhTBME_RcE0p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/Rpf9a5v04x2h5Oq4bBoKyhaytNUd.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/Rpf9a5v04x2h5Oq4bBoKyhaytNUp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/SABUFog1IHefphO1ywvz9XlhGvod.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/SABUFog1IHefphO1ywvz9XlhGvop.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/WdHY-ob4c6sW2SPG2kWy1rg1WSkd.xml",
+      "size_bytes": 70
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/WdHY-ob4c6sW2SPG2kWy1rg1WSkp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsd.xml",
+      "size_bytes": 115
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/8nuYM_2RKQgWKhW_WLtcAqpKfcId.xml",
+      "size_bytes": 163
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/8nuYM_2RKQgWKhW_WLtcAqpKfcIp.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/IOQr9N0sOtG4siTK817GBZAR7KUd.xml",
+      "size_bytes": 128
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/IOQr9N0sOtG4siTK817GBZAR7KUp.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/tgRh2es6YtUQWR2dCA7XPghJ1Lod.xml",
+      "size_bytes": 157
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/tgRh2es6YtUQWR2dCA7XPghJ1Lop.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/AVJ0aRIDhu6qPcAI-Czr65IBRNQd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/AVJ0aRIDhu6qPcAI-Czr65IBRNQp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/BFL0uqLnHGnmrL_eYHRZCOId9dgd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/BFL0uqLnHGnmrL_eYHRZCOId9dgp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/WS7L7U3R0F3ft4esx_Z4zRwM4vQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/WS7L7U3R0F3ft4esx_Z4zRwM4vQp.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/LuJKlCFDPcs8AasyRZn00hKKbaw/ObbDe-0eBiCrtYyz3IO1xppfMMUp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4d.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4p.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZod.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZop.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/iLciBaXvN-rv2j9L5epNfLSkyKId.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/iLciBaXvN-rv2j9L5epNfLSkyKIp.xml",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencd.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencp.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8d.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8p.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4d.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4p.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Id.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Ip.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkd.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/uZVAJUm-5yHI7_ZcjA6k2KRuq1Ud.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/uZVAJUm-5yHI7_ZcjA6k2KRuq1Up.xml",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/nTITzoDRztxhE_8pvPhlF3xhfrQ/5aVMun2a32TChCpHYTEOwQQVVPsd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/nTITzoDRztxhE_8pvPhlF3xhfrQ/5aVMun2a32TChCpHYTEOwQQVVPsp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/nTITzoDRztxhE_8pvPhlF3xhfrQ/uwbHsJ61UDMrY6VpQpW9RHzNuBId.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/nTITzoDRztxhE_8pvPhlF3xhfrQ/uwbHsJ61UDMrY6VpQpW9RHzNuBIp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/nTITzoDRztxhE_8pvPhlF3xhfrQ/v4O99ewy9svPd_QfZb1Q4jwnSTcd.xml",
+      "size_bytes": 143
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/nTITzoDRztxhE_8pvPhlF3xhfrQ/v4O99ewy9svPd_QfZb1Q4jwnSTcp.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/ObbDe-0eBiCrtYyz3IO1xppfMMU/OZ45__1K7cj_85H_kQxM6lal6Fkd.xml",
+      "size_bytes": 72
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/ObbDe-0eBiCrtYyz3IO1xppfMMU/OZ45__1K7cj_85H_kQxM6lal6Fkp.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/1R6NA3C1HPkP6416tovcC75q_ucd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/1R6NA3C1HPkP6416tovcC75q_ucp.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/8rz_1qkWvaP8-FpTogn6JOUQAAEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/8rz_1qkWvaP8-FpTogn6JOUQAAEp.xml",
+      "size_bytes": 107
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/_BwpI3z2JH-pnNu-bLRVE-z8VhMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/_BwpI3z2JH-pnNu-bLRVE-z8VhMp.xml",
+      "size_bytes": 106
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/IE85C4JaL1a7RfFyZQ01pRphfHgd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/IE85C4JaL1a7RfFyZQ01pRphfHgp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/iiO0OSpJkQoHECPw0RTzKDZlj2sd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/iiO0OSpJkQoHECPw0RTzKDZlj2sp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/IoYuFWylM49SYGbc6OzrxtT4k88d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/IoYuFWylM49SYGbc6OzrxtT4k88p.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/PF0Wtdls1YYWgXWm_JdxJa7DVIwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/PF0Wtdls1YYWgXWm_JdxJa7DVIwp.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/y3pIxeAZrmnsmUWA3VrtIokR004d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/y3pIxeAZrmnsmUWA3VrtIokR004p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/Project.xml",
+      "size_bytes": 74
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/BT5hWoz-UTefONdqForZyI91O8Yd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/BT5hWoz-UTefONdqForZyI91O8Yp.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/bw3rZC2lQGYsJnHBguJaUe15ng8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/bw3rZC2lQGYsJnHBguJaUe15ng8p.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/d_uNnzvthBCHH7oMz6CtC6y3Bf0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/d_uNnzvthBCHH7oMz6CtC6y3Bf0p.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQp.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/ojME0DLi1acAi9d0fF737hnpvFQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/ojME0DLi1acAi9d0fF737hnpvFQp.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/QMJD9OLFzxcTTbPOoh-ahQ4zTRUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/QMJD9OLFzxcTTbPOoh-ahQ4zTRUp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/qZzfNzcYlPNG4tag-34m4zeP9pkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/qZzfNzcYlPNG4tag-34m4zeP9pkp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/R0IsxKENiOKovWZXASFjrmpbBCYd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/R0IsxKENiOKovWZXASFjrmpbBCYp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/rh0jHbNfmojECiiHH7BQHmZTsWkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/rh0jHbNfmojECiiHH7BQHmZTsWkp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/cEHFJ3gayNdb-fk2whedPNro2cgd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/cEHFJ3gayNdb-fk2whedPNro2cgp.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/d6vJEerjwidIEdtbtRp_n6XbzEUd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/d6vJEerjwidIEdtbtRp_n6XbzEUp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/nTITzoDRztxhE_8pvPhlF3xhfrQd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/nTITzoDRztxhE_8pvPhlF3xhfrQp.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/root/6x1BhZX_fLnKpcwqra0qFwv1jIgp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/root/EEtUlUb-dLAdf0KpMVivaUlztwAp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/root/fjRQtWiSIy7hIlj-Kmk87M7s21kp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQd.xml",
+      "size_bytes": 69
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/root/KAXfQgCar2Yb8zOxgvf9hdmLP1Ep.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/root/NmGqIpAwUJcXFyLjFAGnU9uyN5Yp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/root/qaw0eS1zuuY1ar9TdPn1GMfrjbQp.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/root/Tpa2TdYQyLNeWJn7EF8wbNd7gFUp.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/root/WZRuNzqc-Db7NcQAZO8Y-R8U9ccp.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/rootp.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/Tpa2TdYQyLNeWJn7EF8wbNd7gFU/LuJKlCFDPcs8AasyRZn00hKKbawd.xml",
+      "size_bytes": 62
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/Tpa2TdYQyLNeWJn7EF8wbNd7gFU/LuJKlCFDPcs8AasyRZn00hKKbawp.xml",
+      "size_bytes": 116
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/99EEDiXIrnBuaEK9Nfp8j8xcyU4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/99EEDiXIrnBuaEK9Nfp8j8xcyU4p.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/aM_xBreCeM7PM7mwWiW18PTw66Id.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/aM_xBreCeM7PM7mwWiW18PTw66Ip.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/aOMkgJnKkmqlQfEEFegluAmSflAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/aOMkgJnKkmqlQfEEFegluAmSflAp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/b6Is0QMQ2WlvlkpLzlIJtwSUQekd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/b6Is0QMQ2WlvlkpLzlIJtwSUQekp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/JuSE_pwsA80hYJHp0vfw6i4S6bEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/JuSE_pwsA80hYJHp0vfw6i4S6bEp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/PGbERXi4zoyK3kRREDyvqWK-jPkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/PGbERXi4zoyK3kRREDyvqWK-jPkp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/QP6rJL1m_H9MajRrxUv4gX5HyxUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/QP6rJL1m_H9MajRrxUv4gX5HyxUp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/SIptBIIqNBEbOl-x5alIuGBxmTQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/SIptBIIqNBEbOl-x5alIuGBxmTQp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/V8UrMUE_Vuc2YWYrUwaJk_xGlwwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/V8UrMUE_Vuc2YWYrUwaJk_xGlwwp.xml",
+      "size_bytes": 117
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/XZyo8FVnmCHNj7V8Z0t7uPWm41gd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/XZyo8FVnmCHNj7V8Z0t7uPWm41gp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/ZCuDW17hFlZW9rBGPySkNjwiYMAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/ZCuDW17hFlZW9rBGPySkNjwiYMAp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/66WgGCcF5RIH9MCEgPmgjZK9k3Ud.xml",
+      "size_bytes": 74
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/66WgGCcF5RIH9MCEgPmgjZK9k3Up.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/AtMjXDrOSm8YDv3_4UFXiyrWqNEd.xml",
+      "size_bytes": 74
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/AtMjXDrOSm8YDv3_4UFXiyrWqNEp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Scripts_Data/sm_four_bar_optim_center_plot.m",
+      "size_bytes": 457
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Scripts_Data/sm_four_bar_optim_param.m",
+      "size_bytes": 1118
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Scripts_Data/sm_four_bar_optim_param_sweep_plot.m",
+      "size_bytes": 872
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Scripts_Data/sm_four_bar_optim_param_sweep_run.m",
+      "size_bytes": 1975
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Scripts_Data/sm_four_bar_optim_plot1path.m",
+      "size_bytes": 1085
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Scripts_Data/sm_four_bar_optim_vistraj.m",
+      "size_bytes": 482
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Scripts_Data/startup_sm_four_bar_optim.m",
+      "size_bytes": 153
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/SECURITY.md",
+      "size_bytes": 394
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/sm_four_bar_optim.slx",
+      "size_bytes": 106968
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Workflows/Optim/obj_sm_four_bar_optim_match_path.m",
+      "size_bytes": 5220
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Workflows/Optim/sm_four_bar_optim_des.mat",
+      "size_bytes": 3664
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Workflows/Optim/sm_four_bar_optim_match_path.m",
+      "size_bytes": 4465
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Workflows/Optim/sm_four_bar_optim_plottraj.m",
+      "size_bytes": 999
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Workflows/Optim/sm_four_bar_optim_test_cost.m",
+      "size_bytes": 1778
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Workflows/Testing/IMT_Test_sm_four_bar_optim.m",
+      "size_bytes": 1151
+    },
+    {
+      "path": "reference/files/Four-Bar-Optim/Workflows/Testing/publish_sm_four_bar_optim.m",
+      "size_bytes": 506
+    }
+  ],
+  "entrypoint": "reference/files/Four-Bar-Optim/sm_four_bar_optim.slx",
+  "expected_score": 100.0,
+  "expected_valid_scenarios": 6,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal",
+      "short_crank",
+      "long_crank",
+      "short_coupler",
+      "long_coupler",
+      "near_grashof_boundary"
+    ],
+    "nominal_scenario_id": "nominal",
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 537996,
+  "excluded_files": []
+}

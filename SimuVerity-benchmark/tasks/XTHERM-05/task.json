@@ -1,0 +1,89 @@
+{
+  "schema": "simuverity.task.v1",
+  "release": "simuverity-101-v1",
+  "task_id": "XTHERM-05",
+  "ordinal": 82,
+  "collection": "XTHERM",
+  "runtime_alias": "XTHERM-05",
+  "required_model_file": "cand_XTHERM05.slx",
+  "evaluation_policy_id": "simuverity-101-v1:xtherm-05:scoring",
+  "candidate_closure": {
+    "public_input_names": [
+      "coolant_flow_lpm",
+      "coolant_inlet_temperature_K",
+      "charge_current_A",
+      "charge_step_fraction",
+      "charge_step_time_s",
+      "initial_battery_temperature_K",
+      "max_cell_voltage_V"
+    ],
+    "nominal_provider": "simuverity_public_nominal_inputs"
+  },
+  "public_spec": "public_spec.json",
+  "official_scenarios": "official_scenarios.json",
+  "extractor": {
+    "kind": "matlab_function",
+    "path": "extractor/run.m",
+    "entrypoint": "run",
+    "implementation": "vendor/scripts/formal90/tasks/f90_xtherm05/f90_xtherm05_extract_candidate_evidence.m",
+    "closure_manifest": "extractor/manifest.json"
+  },
+  "scorer": {
+    "kind": "python_function",
+    "path": "scorer.py",
+    "entrypoint": "score",
+    "closure_manifest": "scorer/manifest.json",
+    "offline_only": true
+  },
+  "reference": {
+    "materialization": "bundled",
+    "path": "reference/files",
+    "manifest": "reference/manifest.json",
+    "entrypoint": "reference/files/XTHERM05_reference.slx",
+    "derived_materialization": {
+      "path": "tasks/XTHERM-05/reference/materialization/f90_xtherm05_materialize_reference.m",
+      "entrypoint": "f90_xtherm05_materialize_reference",
+      "source_entrypoint": "reference/files/Battery-Cooling-Plate-Simscape/Model/PouchBatteryPack96S3PWithCustomCoolingPlateForCharging.slx",
+      "core_plant_or_controller_replacement": false
+    },
+    "clean_replay_setup": {
+      "phase": "before_load",
+      "path": "tasks/XTHERM-05/reference/clean_replay_setup/f90_xtherm05_reference_clean_replay_setup.m",
+      "entrypoint": "f90_xtherm05_reference_clean_replay_setup"
+    },
+    "expected_valid_scenarios": 9,
+    "score_tolerance": 1e-12,
+    "expected_score": 94.22749767382876,
+    "expected_score_basis": "reference_replay",
+    "scenario_contract": {
+      "expected_ids": [
+        "hot_low_flow",
+        "cold_high_flow",
+        "high_current_boundary",
+        "flow_pair_low",
+        "flow_pair_high",
+        "current_pair_up",
+        "current_pair_control",
+        "current_pair_down",
+        "warm_inlet_boundary"
+      ],
+      "nominal_scenario_id": null,
+      "nominal_materialization": "authoritative_scenario_set"
+    },
+    "score_tolerance_basis": "source_authority_numeric_precision",
+    "runtime_manifest": "reference/runtime_manifest.json"
+  },
+  "applicable_groups": [
+    "G",
+    "A",
+    "Q",
+    "M",
+    "R",
+    "D"
+  ],
+  "release_license_status": "INCLUDED_THIRD_PARTY_LICENSE",
+  "system_profile": {
+    "path": "system_profile.json",
+    "schema": "simuverity.system-profile.v1"
+  }
+}

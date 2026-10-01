@@ -1,0 +1,24 @@
+{
+  "schema": "simuverity.scorer-manifest.v1",
+  "task_id": "XFLUID-04",
+  "public_interface": "scorer.py:score",
+  "implementation": "scorer.py",
+  "source_modules": [
+    {
+      "module": "formal90_scoring_core",
+      "path": "vendor/scripts/formal90/formal90_scoring_core.py"
+    },
+    {
+      "module": "f90_xfluid04_scoring",
+      "path": "vendor/scripts/formal90/tasks/f90_xfluid04/f90_xfluid04_scoring.py"
+    }
+  ],
+  "final_module": {
+    "module": "f90_xfluid04_scoring",
+    "path": "vendor/scripts/formal90/tasks/f90_xfluid04/f90_xfluid04_scoring.py"
+  },
+  "payload_files": [],
+  "public_bridge": {
+    "mode": "function"
+  }
+}

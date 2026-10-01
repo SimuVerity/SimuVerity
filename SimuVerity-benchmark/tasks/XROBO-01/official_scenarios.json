@@ -1,0 +1,957 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XROBO-01",
+  "scenarios": [
+    {
+      "id": "nominal",
+      "role": "nominal cyclic locomotion",
+      "kind": "nominal",
+      "pair": "",
+      "values": {
+        "initial_forward_speed_mps": 2,
+        "supported_mass_kg": 22.5,
+        "ground_stiffness_npm": 100000,
+        "ground_damping_nspm": 250,
+        "propulsive_torque_nm": 0.5,
+        "knee_stiffness_nmprad": 549.764473015946
+      }
+    },
+    {
+      "id": "soft_ground_heavy",
+      "role": "soft-ground heavy-mass boundary",
+      "kind": "joint_boundary",
+      "pair": "",
+      "values": {
+        "initial_forward_speed_mps": 1.82,
+        "supported_mass_kg": 25.2,
+        "ground_stiffness_npm": 78000,
+        "ground_damping_nspm": 330,
+        "propulsive_torque_nm": 0.62,
+        "knee_stiffness_nmprad": 650
+      }
+    },
+    {
+      "id": "stiff_ground_fast",
+      "role": "stiff-ground fast boundary",
+      "kind": "joint_boundary",
+      "pair": "",
+      "values": {
+        "initial_forward_speed_mps": 2.22,
+        "supported_mass_kg": 20,
+        "ground_stiffness_npm": 127000,
+        "ground_damping_nspm": 190,
+        "propulsive_torque_nm": 0.43,
+        "knee_stiffness_nmprad": 455
+      }
+    },
+    {
+      "id": "low_propulsion_heavy",
+      "role": "low-propulsion heavy-load corner",
+      "kind": "joint_boundary",
+      "pair": "",
+      "values": {
+        "initial_forward_speed_mps": 1.94,
+        "supported_mass_kg": 25.3,
+        "ground_stiffness_npm": 106000,
+        "ground_damping_nspm": 275,
+        "propulsive_torque_nm": 0.39,
+        "knee_stiffness_nmprad": 570
+      }
+    },
+    {
+      "id": "interior_compliance",
+      "role": "interior compliance/contact point",
+      "kind": "fixed_interior",
+      "pair": "",
+      "values": {
+        "initial_forward_speed_mps": 2.1,
+        "supported_mass_kg": 23.4,
+        "ground_stiffness_npm": 88000,
+        "ground_damping_nspm": 225,
+        "propulsive_torque_nm": 0.56,
+        "knee_stiffness_nmprad": 470
+      }
+    },
+    {
+      "id": "torque_pair_low",
+      "role": "low member of the actuator-causality pair",
+      "kind": "paired_probe",
+      "pair": "propulsive_torque",
+      "values": {
+        "initial_forward_speed_mps": 2,
+        "supported_mass_kg": 22.5,
+        "ground_stiffness_npm": 100000,
+        "ground_damping_nspm": 250,
+        "propulsive_torque_nm": 0.4,
+        "knee_stiffness_nmprad": 549.764473015946
+      }
+    },
+    {
+      "id": "torque_pair_high",
+      "role": "high member of the actuator-causality pair",
+      "kind": "paired_probe",
+      "pair": "propulsive_torque",
+      "values": {
+        "initial_forward_speed_mps": 2,
+        "supported_mass_kg": 22.5,
+        "ground_stiffness_npm": 100000,
+        "ground_damping_nspm": 250,
+        "propulsive_torque_nm": 0.63,
+        "knee_stiffness_nmprad": 549.764473015946
+      }
+    },
+    {
+      "id": "ground_stiffness_pair_low",
+      "role": "low-stiffness member of the contact-causality pair",
+      "kind": "paired_probe",
+      "pair": "ground_stiffness",
+      "values": {
+        "initial_forward_speed_mps": 2,
+        "supported_mass_kg": 22.5,
+        "ground_stiffness_npm": 80000,
+        "ground_damping_nspm": 250,
+        "propulsive_torque_nm": 0.5,
+        "knee_stiffness_nmprad": 549.764473015946
+      }
+    },
+    {
+      "id": "ground_stiffness_pair_high",
+      "role": "high-stiffness member of the contact-causality pair",
+      "kind": "paired_probe",
+      "pair": "ground_stiffness",
+      "values": {
+        "initial_forward_speed_mps": 2,
+        "supported_mass_kg": 22.5,
+        "ground_stiffness_npm": 125000,
+        "ground_damping_nspm": 250,
+        "propulsive_torque_nm": 0.5,
+        "knee_stiffness_nmprad": 549.764473015946
+      }
+    },
+    {
+      "id": "ground_damping_pair_low",
+      "role": "low-damping member of the contact-causality pair",
+      "kind": "paired_probe",
+      "pair": "ground_damping",
+      "values": {
+        "initial_forward_speed_mps": 2,
+        "supported_mass_kg": 22.5,
+        "ground_stiffness_npm": 100000,
+        "ground_damping_nspm": 185,
+        "propulsive_torque_nm": 0.5,
+        "knee_stiffness_nmprad": 549.764473015946
+      }
+    },
+    {
+      "id": "ground_damping_pair_high",
+      "role": "high-damping member of the contact-causality pair",
+      "kind": "paired_probe",
+      "pair": "ground_damping",
+      "values": {
+        "initial_forward_speed_mps": 2,
+        "supported_mass_kg": 22.5,
+        "ground_stiffness_npm": 100000,
+        "ground_damping_nspm": 330,
+        "propulsive_torque_nm": 0.5,
+        "knee_stiffness_nmprad": 549.764473015946
+      }
+    }
+  ],
+  "contract": {
+    "sim": {
+      "start": 0,
+      "stop": 2.95184041250516,
+      "max_step": 0.002,
+      "solver": "ode15s"
+    },
+    "public_inputs": [
+      {
+        "name": "initial_forward_speed_mps",
+        "nominal": 2,
+        "min": 1.75,
+        "max": 2.25,
+        "unit": "m/s",
+        "meaning": "initial forward speed of the torso"
+      },
+      {
+        "name": "supported_mass_kg",
+        "nominal": 22.5,
+        "min": 19.5,
+        "max": 25.5,
+        "unit": "kg",
+        "meaning": "mass supported by the four legs at the torso"
+      },
+      {
+        "name": "ground_stiffness_npm",
+        "nominal": 100000,
+        "min": 75000,
+        "max": 130000,
+        "unit": "N/m",
+        "meaning": "normal penalty stiffness at every foot-ground contact"
+      },
+      {
+        "name": "ground_damping_nspm",
+        "nominal": 250,
+        "min": 175,
+        "max": 350,
+        "unit": "N*s/m",
+        "meaning": "normal penalty damping at every foot-ground contact"
+      },
+      {
+        "name": "propulsive_torque_nm",
+        "nominal": 0.5,
+        "min": 0.38,
+        "max": 0.65,
+        "unit": "N*m",
+        "meaning": "stance-phase propulsive hip torque magnitude"
+      },
+      {
+        "name": "knee_stiffness_nmprad",
+        "nominal": 549.764473015946,
+        "min": 430,
+        "max": 680,
+        "unit": "N*m/rad",
+        "meaning": "common compliant-knee torsional stiffness"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "body_state",
+        "channels": 6,
+        "order": "[x,y,z,vx,vy,vz]",
+        "unit": "m and m/s",
+        "physical_source": "world-referenced torso-frame translation and translational velocity measured by a physical transform sensor"
+      },
+      {
+        "name": "contact_state",
+        "channels": 4,
+        "order": "[left-front,left-rear,right-front,right-rear]",
+        "unit": "boolean",
+        "physical_source": "four independent foot-ground contact detections derived from foot penetration and relative velocity"
+      },
+      {
+        "name": "gait_state",
+        "channels": 3,
+        "order": "[rear-left/front-right aerial, rear-right/front-left aerial, phase]",
+        "unit": "boolean, boolean, integer",
+        "physical_source": "contact-driven gait-supervisor outputs"
+      },
+      {
+        "name": "electrical_state",
+        "channels": 3,
+        "order": "[bus power, total actuator load current, battery current]",
+        "unit": "W, A, A",
+        "physical_source": "physical voltage and current sensors on the shared actuator supply"
+      }
+    ],
+    "prompt": "Build a planar four-legged running robot in Simscape with a finite-mass torso, four articulated two-link legs, compliant knees, physical foot-ground contact, and finite electromechanical hip actuation. A battery-backed electrical supply with an energy-buffering capacitor must feed the actual hip actuators, which transmit torque through mechanical joints to the legs.\n\nRead initial_forward_speed_mps, supported_mass_kg, ground_stiffness_npm, ground_damping_nspm, propulsive_torque_nm, and knee_stiffness_nmprad from MATLAB base-workspace variables. Their nominal values are 2.0 m/s, 22.5 kg, 100000 N/m, 250 N*s/m, 0.5 N*m, and 549.764 N*m/rad; their operating ranges are respectively 1.75--2.25, 19.5--25.5, 75000--130000, 175--350, 0.38--0.65, and 430--680 in those units.\n\nAssume a clean MATLAB session in which only those declared inputs are provided; every other parameter and initialization dependency must be self-contained. Across the declared range, measured hip angle and angular speed must causally regulate the corresponding physical actuator during aerial motion, foot contact must govern the stance/aerial action, diagonal leg pairs must alternate support, and the torso must continue stable forward locomotion without bypassing the compliant legs or contact forces.\n\nLog Timeseries body_state, contact_state, gait_state, and electrical_state. body_state is measured [x,y,z,vx,vy,vz] in the fixed right-handed world frame. contact_state is [left-front,left-rear,right-front,right-rear]. gait_state is [rear-left/front-right aerial,rear-right/front-left aerial,phase]. electrical_state is [shared-bus power,total actuator load current,battery current] measured on the physical supply. Work directly in cand_XROBO01.slx and keep the latest usable state saved there throughout the task.",
+    "prompt_zh_review": "使用 Simscape 构建一个平面四足奔跑机器人，包含有限质量躯干、四条铰接式两连杆腿、柔顺膝关节、真实足地接触以及有限能力的机电髋关节执行机构。带电池和储能电容的电源必须向实际髋关节执行机构供电，执行机构通过机械关节向腿传递转矩。\n\n从 MATLAB 基础工作区读取 initial_forward_speed_mps、supported_mass_kg、ground_stiffness_npm、ground_damping_nspm、propulsive_torque_nm 和 knee_stiffness_nmprad。其标称值依次为 2.0 m/s、22.5 kg、100000 N/m、250 N*s/m、0.5 N*m 和 549.764 N*m/rad；工作范围依次为 1.75--2.25、19.5--25.5、75000--130000、175--350、0.38--0.65 和 430--680，单位同上。\n\n假设干净 MATLAB 会话中只提供上述公开输入；其他参数和初始化依赖必须自包含。在公开范围内，实测髋关节角度和角速度必须在腾空阶段因果地调节相应物理执行机构，足部接触必须决定支撑/腾空动作，对角腿组必须交替支撑，躯干必须持续稳定向前运动且不得绕过柔顺腿或接触力。\n\n记录 Timeseries 变量 body_state、contact_state、gait_state 和 electrical_state。body_state 是固定右手世界坐标系中的实测 [x,y,z,vx,vy,vz]；contact_state 为 [左前、左后、右前、右后]；gait_state 为 [左后/右前腾空、右后/左前腾空、相位]；electrical_state 是物理电源上的 [共享母线功率、执行机构总负载电流、电池电流]。直接在 cand_XROBO01.slx 中工作，并在整个任务过程中持续保存最新可用状态。",
+    "groups": {
+      "G": "physical qualification and complete output contract",
+      "A": "nominal forward locomotion and support accuracy",
+      "Q": "nominal body, contact and electrical quality",
+      "M": "sensor-controller-actuator-contact causal mechanism",
+      "R": "worst operating-point locomotion quality",
+      "D": "cyclic gait establishment and repeated landing evidence",
+      "weights": {
+        "A": 0.2,
+        "Q": 0.15,
+        "M": 0.25,
+        "R": 0.25,
+        "D": 0.15
+      }
+    },
+    "policy_id": "simuverity-101-v1:xrobo-01:scoring",
+    "scorer": {
+      "schema": "simuverity.f90-xrobo01-scorer-contract.v1",
+      "policy_id": "simuverity-101-v1:xrobo-01:scoring",
+      "formula": "G*100*A^0.20*Q^0.15*M^0.25*R^0.25*D^0.15",
+      "multiscenario_rule": "R and counted cyclic evidence use the worst required scenario",
+      "D": {
+        "scope": "intrinsic_cyclic_locomotion",
+        "score_role": "counted",
+        "disclosure_basis": "The public contract requires continued stable locomotion, diagonal support alternation and physical contact-driven action; no hidden run-time disturbance is injected."
+      },
+      "gate_caps": [
+        {
+          "condition": "G == 0",
+          "maximum_total": 0
+        },
+        {
+          "condition": "M < 0.35",
+          "maximum_total": 35
+        },
+        {
+          "condition": "M < 0.55",
+          "maximum_total": 55
+        },
+        {
+          "condition": "D < 0.25",
+          "maximum_total": 45
+        }
+      ],
+      "metric_cards": [
+        {
+          "id": "A.forward_displacement",
+          "group": "A",
+          "unit": "m",
+          "direction": "high",
+          "engineering_unusable_boundary": 0.6,
+          "full_score_boundary": 3.5,
+          "definition": "Net world-x torso displacement during the full run.",
+          "basis_type": "engineering_and_source_profile",
+          "basis": "Public stable-forward-locomotion objective; fixed physical scale.",
+          "reference_actual": "populated by fresh replay receipt",
+          "failure_diagnostic": "raw value, utility, scenario and reason"
+        },
+        {
+          "id": "A.positive_progress_fraction",
+          "group": "A",
+          "unit": "fraction",
+          "direction": "high",
+          "engineering_unusable_boundary": 0.55,
+          "full_score_boundary": 0.9,
+          "definition": "Fraction of valid body samples with positive world-x velocity.",
+          "basis_type": "engineering_and_source_profile",
+          "basis": "Rejects reverse or mostly stalled motion without treating the initial speed as a closed-loop reference.",
+          "reference_actual": "populated by fresh replay receipt",
+          "failure_diagnostic": "raw value, utility, scenario and reason"
+        },
+        {
+          "id": "A.minimum_body_height",
+          "group": "A",
+          "unit": "m",
+          "direction": "high",
+          "engineering_unusable_boundary": 0.05,
+          "full_score_boundary": 0.25,
+          "definition": "Minimum torso world-y translation after the first 0.15 s.",
+          "basis_type": "engineering_and_source_profile",
+          "basis": "Planar source geometry and a non-collapsed supported torso.",
+          "reference_actual": "populated by fresh replay receipt",
+          "failure_diagnostic": "raw value, utility, scenario and reason"
+        },
+        {
+          "id": "Q.lateral_span",
+          "group": "Q",
+          "unit": "m",
+          "direction": "low",
+          "engineering_unusable_boundary": 0.08,
+          "full_score_boundary": 0.01,
+          "definition": "Peak-to-peak torso world-z motion.",
+          "basis_type": "engineering_and_source_profile",
+          "basis": "The public task is planar; fixed world-coordinate definition.",
+          "reference_actual": "populated by fresh replay receipt",
+          "failure_diagnostic": "raw value, utility, scenario and reason"
+        },
+        {
+          "id": "Q.vertical_ripple",
+          "group": "Q",
+          "unit": "m",
+          "direction": "low",
+          "engineering_unusable_boundary": 0.65,
+          "full_score_boundary": 0.22,
+          "definition": "Robust 5--95 percentile torso world-y span.",
+          "basis_type": "engineering_and_source_profile",
+          "basis": "Allows a running flight cycle while rejecting loss of body support or explosive oscillation.",
+          "reference_actual": "populated by fresh replay receipt",
+          "failure_diagnostic": "raw value, utility, scenario and reason"
+        },
+        {
+          "id": "Q.bus_voltage",
+          "group": "Q",
+          "unit": "V",
+          "direction": "band",
+          "engineering_unusable_boundary": [
+            10,
+            40
+          ],
+          "full_score_boundary": [
+            20,
+            28
+          ],
+          "definition": "Median Pbus/Iload where load current is observable.",
+          "basis_type": "engineering_and_source_profile",
+          "basis": "Nominal 24 V physical supply with finite sensor tolerance.",
+          "reference_actual": "populated by fresh replay receipt",
+          "failure_diagnostic": "raw value, utility, scenario and reason"
+        },
+        {
+          "id": "Q.battery_smoothing",
+          "group": "Q",
+          "unit": "ratio",
+          "direction": "low",
+          "engineering_unusable_boundary": 1.4,
+          "full_score_boundary": 0.95,
+          "definition": "AC RMS battery current divided by AC RMS actuator-load current.",
+          "basis_type": "engineering_and_source_profile",
+          "basis": "The required energy buffer should not amplify battery ripple.",
+          "reference_actual": "populated by fresh replay receipt",
+          "failure_diagnostic": "raw value, utility, scenario and reason"
+        },
+        {
+          "id": "M.static_mechanism",
+          "group": "M",
+          "unit": "fraction",
+          "direction": "high",
+          "engineering_unusable_boundary": 0.35,
+          "full_score_boundary": 1,
+          "definition": "Connectivity-based physical-mechanism audit score.",
+          "basis_type": "engineering_and_source_profile",
+          "basis": "Public topology, feedback ownership and physical provenance.",
+          "reference_actual": "populated by fresh replay receipt",
+          "failure_diagnostic": "raw value, utility, scenario and reason"
+        },
+        {
+          "id": "M.body_kinematic_closure",
+          "group": "M",
+          "unit": "m/s",
+          "direction": "low",
+          "engineering_unusable_boundary": 0.35,
+          "full_score_boundary": 0.03,
+          "definition": "Robust error between dx/dt and logged physical vx.",
+          "basis_type": "engineering_and_source_profile",
+          "basis": "Representation-independent consistency of the measured body state.",
+          "reference_actual": "populated by fresh replay receipt",
+          "failure_diagnostic": "raw value, utility, scenario and reason"
+        },
+        {
+          "id": "M.contact_gait_consistency",
+          "group": "M",
+          "unit": "fraction",
+          "direction": "low",
+          "engineering_unusable_boundary": 0.45,
+          "full_score_boundary": 0.1,
+          "definition": "Mismatch between each diagonal aerial state and its foot contacts.",
+          "basis_type": "engineering_and_source_profile",
+          "basis": "Public contact-governed support/aerial requirement.",
+          "reference_actual": "populated by fresh replay receipt",
+          "failure_diagnostic": "raw value, utility, scenario and reason"
+        },
+        {
+          "id": "M.initial_speed_binding",
+          "group": "M",
+          "unit": "fraction",
+          "direction": "low",
+          "engineering_unusable_boundary": 0.2,
+          "full_score_boundary": 0.025,
+          "definition": "Worst fractional mismatch between the declared initial forward speed and the measured initial torso velocity.",
+          "basis_type": "engineering_and_source_profile",
+          "basis": "Direct causal binding of the public initial-condition input.",
+          "reference_actual": "populated by fresh replay receipt",
+          "failure_diagnostic": "raw value, utility, scenario and reason"
+        },
+        {
+          "id": "M.torque_pair_response",
+          "group": "M",
+          "unit": "paired output elasticity",
+          "direction": "high",
+          "engineering_unusable_boundary": 0.005,
+          "full_score_boundary": 0.08,
+          "definition": "Paired propulsion-output separation divided by the relative change in the propulsion input.",
+          "basis_type": "engineering_and_source_profile",
+          "basis": "Causal sensitivity inside the public torque range.",
+          "reference_actual": "populated by fresh replay receipt",
+          "failure_diagnostic": "raw value, utility, scenario and reason"
+        },
+        {
+          "id": "M.ground_stiffness_pair_response",
+          "group": "M",
+          "unit": "paired output elasticity",
+          "direction": "high",
+          "engineering_unusable_boundary": 0.005,
+          "full_score_boundary": 0.06,
+          "definition": "Strongest paired physical-output separation divided by the relative stiffness change, with damping fixed.",
+          "basis_type": "engineering_and_source_profile",
+          "basis": "One-factor causal sensitivity inside the public stiffness range.",
+          "reference_actual": "populated by fresh replay receipt",
+          "failure_diagnostic": "raw value, utility, scenario and reason"
+        },
+        {
+          "id": "M.ground_damping_pair_response",
+          "group": "M",
+          "unit": "paired output elasticity",
+          "direction": "high",
+          "engineering_unusable_boundary": 0.005,
+          "full_score_boundary": 0.06,
+          "definition": "Strongest paired physical-output separation divided by the relative damping change, with stiffness fixed.",
+          "basis_type": "engineering_and_source_profile",
+          "basis": "One-factor causal sensitivity inside the public damping range.",
+          "reference_actual": "populated by fresh replay receipt",
+          "failure_diagnostic": "raw value, utility, scenario and reason"
+        },
+        {
+          "id": "R.progress_ratio",
+          "group": "R",
+          "unit": "ratio",
+          "direction": "band",
+          "engineering_unusable_boundary": [
+            0.08,
+            2.5
+          ],
+          "full_score_boundary": [
+            0.55,
+            1.45
+          ],
+          "definition": "Net progress divided by initial speed times duration.",
+          "basis_type": "engineering_and_source_profile",
+          "basis": "Scale-fixed operating-point locomotion check, not speed tracking.",
+          "reference_actual": "populated by fresh replay receipt",
+          "failure_diagnostic": "raw value, utility, scenario and reason"
+        },
+        {
+          "id": "R.minimum_contact_transitions",
+          "group": "R",
+          "unit": "count",
+          "direction": "high",
+          "engineering_unusable_boundary": 0,
+          "full_score_boundary": 4,
+          "definition": "Minimum transition count across the four physical contacts.",
+          "basis_type": "engineering_and_source_profile",
+          "basis": "All four legs must participate across every required condition.",
+          "reference_actual": "populated by fresh replay receipt",
+          "failure_diagnostic": "raw value, utility, scenario and reason"
+        },
+        {
+          "id": "D.minimum_landings",
+          "group": "D",
+          "unit": "count",
+          "direction": "high",
+          "engineering_unusable_boundary": 0,
+          "full_score_boundary": 2,
+          "definition": "Minimum detected landing count across all feet.",
+          "basis_type": "engineering_and_source_profile",
+          "basis": "Each foot landing at least twice is complete repeated-landing evidence; this does not impose an undisclosed gait-rate target.",
+          "reference_actual": "populated by fresh replay receipt",
+          "failure_diagnostic": "raw value, utility, scenario and reason"
+        },
+        {
+          "id": "D.phase_coverage",
+          "group": "D",
+          "unit": "distinct phases",
+          "direction": "high",
+          "engineering_unusable_boundary": 3,
+          "full_score_boundary": 7,
+          "definition": "Number of distinct finite supervisor phase values.",
+          "basis_type": "engineering_and_source_profile",
+          "basis": "Cyclic gait establishment without requiring the golden algorithm.",
+          "reference_actual": "populated by fresh replay receipt",
+          "failure_diagnostic": "raw value, utility, scenario and reason"
+        },
+        {
+          "id": "D.establishment_time",
+          "group": "D",
+          "unit": "s",
+          "direction": "low",
+          "engineering_unusable_boundary": 2.7,
+          "full_score_boundary": 1,
+          "definition": "Time by which both diagonal support groups have completed a cycle.",
+          "basis_type": "engineering_and_source_profile",
+          "basis": "Public continued diagonal alternation; algorithm-neutral output.",
+          "reference_actual": "populated by fresh replay receipt",
+          "failure_diagnostic": "raw value, utility, scenario and reason"
+        }
+      ],
+      "representation_scope": {
+        "accepted": "native Simscape Multibody/Simscape Electrical implementations with explicit articulated legs, physical contacts, finite electromechanical actuation and physically sourced logs",
+        "known_current_boundary": "Custom user-authored Simscape components that hide all physical topology behind a single opaque block require manual review. Block names and canvas coordinates are never sufficient evidence."
+      }
+    }
+  },
+  "sim": {
+    "start": 0,
+    "stop": 2.95184041250516,
+    "max_step": 0.002,
+    "solver": "ode15s"
+  },
+  "public_inputs": [
+    {
+      "name": "initial_forward_speed_mps",
+      "nominal": 2,
+      "min": 1.75,
+      "max": 2.25,
+      "unit": "m/s",
+      "meaning": "initial forward speed of the torso"
+    },
+    {
+      "name": "supported_mass_kg",
+      "nominal": 22.5,
+      "min": 19.5,
+      "max": 25.5,
+      "unit": "kg",
+      "meaning": "mass supported by the four legs at the torso"
+    },
+    {
+      "name": "ground_stiffness_npm",
+      "nominal": 100000,
+      "min": 75000,
+      "max": 130000,
+      "unit": "N/m",
+      "meaning": "normal penalty stiffness at every foot-ground contact"
+    },
+    {
+      "name": "ground_damping_nspm",
+      "nominal": 250,
+      "min": 175,
+      "max": 350,
+      "unit": "N*s/m",
+      "meaning": "normal penalty damping at every foot-ground contact"
+    },
+    {
+      "name": "propulsive_torque_nm",
+      "nominal": 0.5,
+      "min": 0.38,
+      "max": 0.65,
+      "unit": "N*m",
+      "meaning": "stance-phase propulsive hip torque magnitude"
+    },
+    {
+      "name": "knee_stiffness_nmprad",
+      "nominal": 549.764473015946,
+      "min": 430,
+      "max": 680,
+      "unit": "N*m/rad",
+      "meaning": "common compliant-knee torsional stiffness"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "body_state",
+      "channels": 6,
+      "order": "[x,y,z,vx,vy,vz]",
+      "unit": "m and m/s",
+      "physical_source": "world-referenced torso-frame translation and translational velocity measured by a physical transform sensor"
+    },
+    {
+      "name": "contact_state",
+      "channels": 4,
+      "order": "[left-front,left-rear,right-front,right-rear]",
+      "unit": "boolean",
+      "physical_source": "four independent foot-ground contact detections derived from foot penetration and relative velocity"
+    },
+    {
+      "name": "gait_state",
+      "channels": 3,
+      "order": "[rear-left/front-right aerial, rear-right/front-left aerial, phase]",
+      "unit": "boolean, boolean, integer",
+      "physical_source": "contact-driven gait-supervisor outputs"
+    },
+    {
+      "name": "electrical_state",
+      "channels": 3,
+      "order": "[bus power, total actuator load current, battery current]",
+      "unit": "W, A, A",
+      "physical_source": "physical voltage and current sensors on the shared actuator supply"
+    }
+  ],
+  "prompt": "Build a planar four-legged running robot in Simscape with a finite-mass torso, four articulated two-link legs, compliant knees, physical foot-ground contact, and finite electromechanical hip actuation. A battery-backed electrical supply with an energy-buffering capacitor must feed the actual hip actuators, which transmit torque through mechanical joints to the legs.\n\nRead initial_forward_speed_mps, supported_mass_kg, ground_stiffness_npm, ground_damping_nspm, propulsive_torque_nm, and knee_stiffness_nmprad from MATLAB base-workspace variables. Their nominal values are 2.0 m/s, 22.5 kg, 100000 N/m, 250 N*s/m, 0.5 N*m, and 549.764 N*m/rad; their operating ranges are respectively 1.75--2.25, 19.5--25.5, 75000--130000, 175--350, 0.38--0.65, and 430--680 in those units.\n\nAssume a clean MATLAB session in which only those declared inputs are provided; every other parameter and initialization dependency must be self-contained. Across the declared range, measured hip angle and angular speed must causally regulate the corresponding physical actuator during aerial motion, foot contact must govern the stance/aerial action, diagonal leg pairs must alternate support, and the torso must continue stable forward locomotion without bypassing the compliant legs or contact forces.\n\nLog Timeseries body_state, contact_state, gait_state, and electrical_state. body_state is measured [x,y,z,vx,vy,vz] in the fixed right-handed world frame. contact_state is [left-front,left-rear,right-front,right-rear]. gait_state is [rear-left/front-right aerial,rear-right/front-left aerial,phase]. electrical_state is [shared-bus power,total actuator load current,battery current] measured on the physical supply. Work directly in cand_XROBO01.slx and keep the latest usable state saved there throughout the task.",
+  "groups": {
+    "G": "physical qualification and complete output contract",
+    "A": "nominal forward locomotion and support accuracy",
+    "Q": "nominal body, contact and electrical quality",
+    "M": "sensor-controller-actuator-contact causal mechanism",
+    "R": "worst operating-point locomotion quality",
+    "D": "cyclic gait establishment and repeated landing evidence",
+    "weights": {
+      "A": 0.2,
+      "Q": 0.15,
+      "M": 0.25,
+      "R": 0.25,
+      "D": 0.15
+    }
+  },
+  "policy_id": "simuverity-101-v1:xrobo-01:scoring",
+  "scorer": {
+    "schema": "simuverity.f90-xrobo01-scorer-contract.v1",
+    "policy_id": "simuverity-101-v1:xrobo-01:scoring",
+    "formula": "G*100*A^0.20*Q^0.15*M^0.25*R^0.25*D^0.15",
+    "multiscenario_rule": "R and counted cyclic evidence use the worst required scenario",
+    "D": {
+      "scope": "intrinsic_cyclic_locomotion",
+      "score_role": "counted",
+      "disclosure_basis": "The public contract requires continued stable locomotion, diagonal support alternation and physical contact-driven action; no hidden run-time disturbance is injected."
+    },
+    "gate_caps": [
+      {
+        "condition": "G == 0",
+        "maximum_total": 0
+      },
+      {
+        "condition": "M < 0.35",
+        "maximum_total": 35
+      },
+      {
+        "condition": "M < 0.55",
+        "maximum_total": 55
+      },
+      {
+        "condition": "D < 0.25",
+        "maximum_total": 45
+      }
+    ],
+    "metric_cards": [
+      {
+        "id": "A.forward_displacement",
+        "group": "A",
+        "unit": "m",
+        "direction": "high",
+        "engineering_unusable_boundary": 0.6,
+        "full_score_boundary": 3.5,
+        "definition": "Net world-x torso displacement during the full run.",
+        "basis_type": "engineering_and_source_profile",
+        "basis": "Public stable-forward-locomotion objective; fixed physical scale.",
+        "reference_actual": "populated by fresh replay receipt",
+        "failure_diagnostic": "raw value, utility, scenario and reason"
+      },
+      {
+        "id": "A.positive_progress_fraction",
+        "group": "A",
+        "unit": "fraction",
+        "direction": "high",
+        "engineering_unusable_boundary": 0.55,
+        "full_score_boundary": 0.9,
+        "definition": "Fraction of valid body samples with positive world-x velocity.",
+        "basis_type": "engineering_and_source_profile",
+        "basis": "Rejects reverse or mostly stalled motion without treating the initial speed as a closed-loop reference.",
+        "reference_actual": "populated by fresh replay receipt",
+        "failure_diagnostic": "raw value, utility, scenario and reason"
+      },
+      {
+        "id": "A.minimum_body_height",
+        "group": "A",
+        "unit": "m",
+        "direction": "high",
+        "engineering_unusable_boundary": 0.05,
+        "full_score_boundary": 0.25,
+        "definition": "Minimum torso world-y translation after the first 0.15 s.",
+        "basis_type": "engineering_and_source_profile",
+        "basis": "Planar source geometry and a non-collapsed supported torso.",
+        "reference_actual": "populated by fresh replay receipt",
+        "failure_diagnostic": "raw value, utility, scenario and reason"
+      },
+      {
+        "id": "Q.lateral_span",
+        "group": "Q",
+        "unit": "m",
+        "direction": "low",
+        "engineering_unusable_boundary": 0.08,
+        "full_score_boundary": 0.01,
+        "definition": "Peak-to-peak torso world-z motion.",
+        "basis_type": "engineering_and_source_profile",
+        "basis": "The public task is planar; fixed world-coordinate definition.",
+        "reference_actual": "populated by fresh replay receipt",
+        "failure_diagnostic": "raw value, utility, scenario and reason"
+      },
+      {
+        "id": "Q.vertical_ripple",
+        "group": "Q",
+        "unit": "m",
+        "direction": "low",
+        "engineering_unusable_boundary": 0.65,
+        "full_score_boundary": 0.22,
+        "definition": "Robust 5--95 percentile torso world-y span.",
+        "basis_type": "engineering_and_source_profile",
+        "basis": "Allows a running flight cycle while rejecting loss of body support or explosive oscillation.",
+        "reference_actual": "populated by fresh replay receipt",
+        "failure_diagnostic": "raw value, utility, scenario and reason"
+      },
+      {
+        "id": "Q.bus_voltage",
+        "group": "Q",
+        "unit": "V",
+        "direction": "band",
+        "engineering_unusable_boundary": [
+          10,
+          40
+        ],
+        "full_score_boundary": [
+          20,
+          28
+        ],
+        "definition": "Median Pbus/Iload where load current is observable.",
+        "basis_type": "engineering_and_source_profile",
+        "basis": "Nominal 24 V physical supply with finite sensor tolerance.",
+        "reference_actual": "populated by fresh replay receipt",
+        "failure_diagnostic": "raw value, utility, scenario and reason"
+      },
+      {
+        "id": "Q.battery_smoothing",
+        "group": "Q",
+        "unit": "ratio",
+        "direction": "low",
+        "engineering_unusable_boundary": 1.4,
+        "full_score_boundary": 0.95,
+        "definition": "AC RMS battery current divided by AC RMS actuator-load current.",
+        "basis_type": "engineering_and_source_profile",
+        "basis": "The required energy buffer should not amplify battery ripple.",
+        "reference_actual": "populated by fresh replay receipt",
+        "failure_diagnostic": "raw value, utility, scenario and reason"
+      },
+      {
+        "id": "M.static_mechanism",
+        "group": "M",
+        "unit": "fraction",
+        "direction": "high",
+        "engineering_unusable_boundary": 0.35,
+        "full_score_boundary": 1,
+        "definition": "Connectivity-based physical-mechanism audit score.",
+        "basis_type": "engineering_and_source_profile",
+        "basis": "Public topology, feedback ownership and physical provenance.",
+        "reference_actual": "populated by fresh replay receipt",
+        "failure_diagnostic": "raw value, utility, scenario and reason"
+      },
+      {
+        "id": "M.body_kinematic_closure",
+        "group": "M",
+        "unit": "m/s",
+        "direction": "low",
+        "engineering_unusable_boundary": 0.35,
+        "full_score_boundary": 0.03,
+        "definition": "Robust error between dx/dt and logged physical vx.",
+        "basis_type": "engineering_and_source_profile",
+        "basis": "Representation-independent consistency of the measured body state.",
+        "reference_actual": "populated by fresh replay receipt",
+        "failure_diagnostic": "raw value, utility, scenario and reason"
+      },
+      {
+        "id": "M.contact_gait_consistency",
+        "group": "M",
+        "unit": "fraction",
+        "direction": "low",
+        "engineering_unusable_boundary": 0.45,
+        "full_score_boundary": 0.1,
+        "definition": "Mismatch between each diagonal aerial state and its foot contacts.",
+        "basis_type": "engineering_and_source_profile",
+        "basis": "Public contact-governed support/aerial requirement.",
+        "reference_actual": "populated by fresh replay receipt",
+        "failure_diagnostic": "raw value, utility, scenario and reason"
+      },
+      {
+        "id": "M.initial_speed_binding",
+        "group": "M",
+        "unit": "fraction",
+        "direction": "low",
+        "engineering_unusable_boundary": 0.2,
+        "full_score_boundary": 0.025,
+        "definition": "Worst fractional mismatch between the declared initial forward speed and the measured initial torso velocity.",
+        "basis_type": "engineering_and_source_profile",
+        "basis": "Direct causal binding of the public initial-condition input.",
+        "reference_actual": "populated by fresh replay receipt",
+        "failure_diagnostic": "raw value, utility, scenario and reason"
+      },
+      {
+        "id": "M.torque_pair_response",
+        "group": "M",
+        "unit": "paired output elasticity",
+        "direction": "high",
+        "engineering_unusable_boundary": 0.005,
+        "full_score_boundary": 0.08,
+        "definition": "Paired propulsion-output separation divided by the relative change in the propulsion input.",
+        "basis_type": "engineering_and_source_profile",
+        "basis": "Causal sensitivity inside the public torque range.",
+        "reference_actual": "populated by fresh replay receipt",
+        "failure_diagnostic": "raw value, utility, scenario and reason"
+      },
+      {
+        "id": "M.ground_stiffness_pair_response",
+        "group": "M",
+        "unit": "paired output elasticity",
+        "direction": "high",
+        "engineering_unusable_boundary": 0.005,
+        "full_score_boundary": 0.06,
+        "definition": "Strongest paired physical-output separation divided by the relative stiffness change, with damping fixed.",
+        "basis_type": "engineering_and_source_profile",
+        "basis": "One-factor causal sensitivity inside the public stiffness range.",
+        "reference_actual": "populated by fresh replay receipt",
+        "failure_diagnostic": "raw value, utility, scenario and reason"
+      },
+      {
+        "id": "M.ground_damping_pair_response",
+        "group": "M",
+        "unit": "paired output elasticity",
+        "direction": "high",
+        "engineering_unusable_boundary": 0.005,
+        "full_score_boundary": 0.06,
+        "definition": "Strongest paired physical-output separation divided by the relative damping change, with stiffness fixed.",
+        "basis_type": "engineering_and_source_profile",
+        "basis": "One-factor causal sensitivity inside the public damping range.",
+        "reference_actual": "populated by fresh replay receipt",
+        "failure_diagnostic": "raw value, utility, scenario and reason"
+      },
+      {
+        "id": "R.progress_ratio",
+        "group": "R",
+        "unit": "ratio",
+        "direction": "band",
+        "engineering_unusable_boundary": [
+          0.08,
+          2.5
+        ],
+        "full_score_boundary": [
+          0.55,
+          1.45
+        ],
+        "definition": "Net progress divided by initial speed times duration.",
+        "basis_type": "engineering_and_source_profile",
+        "basis": "Scale-fixed operating-point locomotion check, not speed tracking.",
+        "reference_actual": "populated by fresh replay receipt",
+        "failure_diagnostic": "raw value, utility, scenario and reason"
+      },
+      {
+        "id": "R.minimum_contact_transitions",
+        "group": "R",
+        "unit": "count",
+        "direction": "high",
+        "engineering_unusable_boundary": 0,
+        "full_score_boundary": 4,
+        "definition": "Minimum transition count across the four physical contacts.",
+        "basis_type": "engineering_and_source_profile",
+        "basis": "All four legs must participate across every required condition.",
+        "reference_actual": "populated by fresh replay receipt",
+        "failure_diagnostic": "raw value, utility, scenario and reason"
+      },
+      {
+        "id": "D.minimum_landings",
+        "group": "D",
+        "unit": "count",
+        "direction": "high",
+        "engineering_unusable_boundary": 0,
+        "full_score_boundary": 2,
+        "definition": "Minimum detected landing count across all feet.",
+        "basis_type": "engineering_and_source_profile",
+        "basis": "Each foot landing at least twice is complete repeated-landing evidence; this does not impose an undisclosed gait-rate target.",
+        "reference_actual": "populated by fresh replay receipt",
+        "failure_diagnostic": "raw value, utility, scenario and reason"
+      },
+      {
+        "id": "D.phase_coverage",
+        "group": "D",
+        "unit": "distinct phases",
+        "direction": "high",
+        "engineering_unusable_boundary": 3,
+        "full_score_boundary": 7,
+        "definition": "Number of distinct finite supervisor phase values.",
+        "basis_type": "engineering_and_source_profile",
+        "basis": "Cyclic gait establishment without requiring the golden algorithm.",
+        "reference_actual": "populated by fresh replay receipt",
+        "failure_diagnostic": "raw value, utility, scenario and reason"
+      },
+      {
+        "id": "D.establishment_time",
+        "group": "D",
+        "unit": "s",
+        "direction": "low",
+        "engineering_unusable_boundary": 2.7,
+        "full_score_boundary": 1,
+        "definition": "Time by which both diagonal support groups have completed a cycle.",
+        "basis_type": "engineering_and_source_profile",
+        "basis": "Public continued diagonal alternation; algorithm-neutral output.",
+        "reference_actual": "populated by fresh replay receipt",
+        "failure_diagnostic": "raw value, utility, scenario and reason"
+      }
+    ],
+    "representation_scope": {
+      "accepted": "native Simscape Multibody/Simscape Electrical implementations with explicit articulated legs, physical contacts, finite electromechanical actuation and physically sourced logs",
+      "known_current_boundary": "Custom user-authored Simscape components that hide all physical topology behind a single opaque block require manual review. Block names and canvas coordinates are never sufficient evidence."
+    }
+  }
+}

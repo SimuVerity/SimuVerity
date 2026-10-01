@@ -1,0 +1,78 @@
+{
+  "schema": "simuverity.matlab-local-importer-recipe.v1",
+  "task_id": "XCOMM-06",
+  "release": "simuverity-101-v1",
+  "matlab_release": "R2025a",
+  "publisher": "The MathWorks, Inc.",
+  "redistributes_mathworks_files": false,
+  "destination": "%LOCALAPPDATA%/SimuVerity/assets/simuverity-101-v1/XCOMM-06",
+  "discovery": {
+    "method": "matlab_example_or_installed_product_search",
+    "example_id": "comm/QPSKTransmitterAndReceiverSimulinkExample",
+    "expected_source_filenames": [
+      "FrameSynchronizer.m",
+      "commqpsktxrx.slx",
+      "commqpsktxrx_init.m",
+      "commqpsktxrx_mask.m",
+      "updateTgtParamFromEdit.m",
+      "updateTgtParamFromPopup.m"
+    ],
+    "expected_files": [
+      {
+        "name": "FrameSynchronizer.m",
+        "size_bytes": 17256
+      },
+      {
+        "name": "commqpsktxrx.slx",
+        "size_bytes": 78870
+      },
+      {
+        "name": "commqpsktxrx_init.m",
+        "size_bytes": 4175
+      },
+      {
+        "name": "commqpsktxrx_mask.m",
+        "size_bytes": 17381
+      },
+      {
+        "name": "updateTgtParamFromEdit.m",
+        "size_bytes": 1009
+      },
+      {
+        "name": "updateTgtParamFromPopup.m",
+        "size_bytes": 1162
+      }
+    ]
+  },
+  "transform": "transform.m",
+  "validation": {
+    "required": true,
+    "checks": [
+      "load",
+      "update",
+      "compile",
+      "simulate",
+      "all_official_scenarios",
+      "reference_score"
+    ],
+    "on_mismatch": "fail_closed"
+  },
+  "entrypoint": "commqpsktxrx.slx",
+  "expected_valid_scenarios": 6,
+  "score_tolerance": 1e-12,
+  "expected_score": 91.92180823241341,
+  "expected_score_basis": "reference_replay",
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal_triangle",
+      "noise_margin",
+      "negative_carrier",
+      "phase_quadrant",
+      "ramp_timing",
+      "moderate_combined"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision"
+}

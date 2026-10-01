@@ -1,0 +1,20 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XAERO-08",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/source/simulink_stuff/Rocket.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 18,
+  "retained_bytes": 993664,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ],
+  "clean_replay_setup": {
+    "phase": "before_load",
+    "path": "tasks/XAERO-08/reference/clean_replay_setup/f90_xaero08_reference_clean_replay_setup.m",
+    "entrypoint": "f90_xaero08_reference_clean_replay_setup"
+  }
+}

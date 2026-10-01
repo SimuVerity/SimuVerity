@@ -1,0 +1,501 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+<title>Battery Electric Vehicle Thermal Management System</title>
+<meta name="generator" content="MATLAB 25.1">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2025-12-24">
+<meta name="DC.source" content="BEV_Thermal_Management_Overview.m">
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="content">
+<h1>Battery Electric Vehicle Thermal Management System</h1>
+<!--introduction-->
+<p>This example models a battery electric vehicle (BEV) with a thermal management system. This virtual vehicle is parameterized to represent a mid-size sedan with rear wheel drive.</p>
+<p>The design is composed of five systems:</p>
+<div>
+<ol>
+<li>
+<b>Electric Powertrain</b> (battery, charger, and motor)</li>
+<li>
+<b>Driveline</b> (tires and chassis)</li>
+<li>
+<b>Refrigerant Cycle</b> (compressor, chiller, and condenser)</li>
+<li>
+<b>Coolant Cycle</b> (radiator, valves)</li>
+<li>
+<b>Cabin Cycle</b> (blower, evaporator, PTC)</li>
+</ol>
+</div>
+<p>The model can be easily adjusted to simulate different vehicle types, such as small city cars or SUVs, with minimal modifications and parameter adjustments.</p>
+<!--/introduction-->
+<h2>Contents</h2>
+<div>
+<ul>
+<li>
+<a href="#1">Model</a>
+</li>
+<li>
+<a href="#2">Electric Powertrain: Battery</a>
+</li>
+<li>
+<a href="#3">Electric Powertrain: Motor</a>
+</li>
+<li>
+<a href="#4">DC-DC Converter</a>
+</li>
+<li>
+<a href="#5">Driveline</a>
+</li>
+<li>
+<a href="#6">Refrigerant cycle</a>
+</li>
+<li>
+<a href="#7">Cabin cycle</a>
+</li>
+<li>
+<a href="#8">Coolant cycle</a>
+</li>
+<li>
+<a href="#9">Scenarios</a>
+</li>
+<li>
+<a href="#10">Postprocessing</a>
+</li>
+<li>
+<a href="#11">Sensitivity Analysis Workflow</a>
+</li>
+<li>
+<a href="#12">Single Sensitivity</a>
+</li>
+<li>
+<a href="#13">Global Sensitivity</a>
+</li>
+<li>
+<a href="#14">Optimization</a>
+</li>
+</ul>
+</div>
+<h2 id="1">Model</h2>
+<img vspace="5" hspace="5" src="BEV_Thermal_Management_Overview_01.png" alt=""> <h2 id="2">Electric Powertrain: Battery</h2>
+<p>The battery consists of 3072 cylindrical cells (21700 format) in a 96s32p electrical scheme, with a total energy of ~50 kWh when fully charged. It is modeled with Simscape Battery using an electrothermal model. The electrical model monitors the State of Charge (SOC) of the battery, the losses, and the remaining capacity. The thermal model calculates the change in cell temperature due to electrical losses. The battery supplies current to the powertrain on the HV network and is actively cooled by a cooling plate composed of 12 parallel channels.</p>
+<img vspace="5" hspace="5" src="BEV_Thermal_Management_Overview_02.png" alt=""> <h2 id="3">Electric Powertrain: Motor</h2>
+<p>The electric motor is driven by the HV network and is mechanically connected to the vehicle&rsquo;s rear axle. The virtual vehicle can be easily extended to describe other powertrain architectures (e.g., front or all-wheel drive). The motor&rsquo;s characteristics and losses are modeled with efficiency maps. Its temperature depends upon the electrical losses and its thermal mass. To transmit the torque to the wheels, the motor is coupled with a gearbox with a constant transmission ratio. The gearbox losses are modeled with a constant efficiency.</p>
+<p>
+<a href="matlab:open_system('BEV_Thermal_Management');open_system('BEV_Thermal_Management/Motor','force');">Open Subsystem</a>
+</p>
+<img vspace="5" hspace="5" src="BEV_Thermal_Management_Overview_03.png" alt=""> <h2 id="4">DC-DC Converter</h2>
+<p>The DC-DC converter transforms the battery&rsquo;s voltage (~380 V) to a lower voltage level (12 V) and supplies the LV components (pumps, blower, and condenser fan). Electrical losses are accounted for with a constant efficiency. A thermal model calculates the temperature change based on the DC-DC thermal mass and its electrical losses.</p>
+<p>
+<a href="matlab:open_system('BEV_Thermal_Management');open_system('BEV_Thermal_Management/DCDC','force');">Open Subsystem</a>
+</p>
+<img vspace="5" hspace="5" src="BEV_Thermal_Management_Overview_04.png" alt=""> <h2 id="5">Driveline</h2>
+<p>The driveline includes tires and vehicle body. The tire models account for rolling resistance, inertia, and slip. The vehicle body model calculates drag, wind, and road incline losses. The vehicle body also accounts for the impact of the vehicle's mass on acceleration behavior.</p>
+<p>
+<a href="matlab:open_system('BEV_Thermal_Management');open_system('BEV_Thermal_Management/Driveline','force');">Open Subsystem</a>
+</p>
+<img vspace="5" hspace="5" src="BEV_Thermal_Management_Overview_05.png" alt=""> <h2 id="6">Refrigerant cycle</h2>
+<p>The refrigerant cycle comprises compressor, condenser, chiller expansion valve (EV1), evaporator expansion value (EV2), chiller, and evaporator. More information regarding the refrigerant cycle is available at [2]. The refrigerant flow is driven by the compressor, which is connected to the HV electrical network. The refrigerant flow continues to the condenser where heat is dissipated to the air. The air flow within the condenser is driven by the vehicle speed the condenser fan. Latter is connected to the LV network. The refrigerant then flows through EV1 and EV2 and continues to chiller and evaporator. In the chiller, the refrigerant absorbs heat from the coolant cycle. In the evaporator the refrigerant absorbs heat from the cabin air and continues its way back to the compressor. The figure below shows the main component of the compressor subsystem:</p>
+<p>
+<a href="matlab:open_system('BEV_Thermal_Management');open_system('BEV_Thermal_Management/Compressor','force');">Open Subsystem</a>
+</p>
+<img vspace="5" hspace="5" src="BEV_Thermal_Management_Overview_06.png" alt=""> <h2 id="7">Cabin cycle</h2>
+<p>The cabin cycle comprises cabin, blower, Positive Temperature Coefficient Heater (PTC), and evaporator. More information to this regard is available at [2]. The cabin subsystem models the thermal resistances between interior and external environment (considering the convection and conduction through doors, roof, and widows). Additionally, the model also accounts for the radiation heat entering the cabin. The blower drives the airflow in the cabin and is supplied by the LV network. The air from the blower passes through the evaporator where it can dissipate its heat to the refrigerant. If cabin heating is required, the PTC is activated and heats up the air entering the cabin. Otherwise, the PTC remains turned off. The figure below shows the cabin model:</p>
+<p>
+<a href="matlab:open_system('BEV_Thermal_Management');open_system('BEV_Thermal_Management/Cabin','force');">Open Subsystem</a>
+</p>
+<img vspace="5" hspace="5" src="BEV_Thermal_Management_Overview_07.png" alt=""> <h2 id="8">Coolant cycle</h2>
+<p>The coolant cycle comprises motor pump (P1), battery pump (P2), radiator, radiator bypass valve, heater, chiller bypass valve, and four-way valve. This cycle cools down the electric powertrain components. More information to this regard is available at [2]. The pumps P1 and P2 drive the coolant flow and are supplied by the LV network. In the radiator, the coolant dissipates heat to the neighboring air (driven by the fan and the moving vehicle). If the outer temperature is lower than 20&deg;C, the radiator is bypassed. If the battery reaches a temperature below 5&deg;C, the heater is activated (supplied by HV current) and heats up the coolant. If the battery reaches a temperature below 30&deg;C the chiller is bypassed via the chiller bypass valve. Finally, the four-way valve can switch between a parallel and a serial cooling strategy based on the environmental conditions and the temperatures of the powertrain components. In serial mode (A connected to B, C connected to D), the battery coolant cycle is connected to the motor coolant cycle. In parallel mode (A connected to D, B connected to C), the two coolant cycles are separated and operate with their own coolant tanks and pumps. The figure below shows the battery pump (P2)</p>
+<img vspace="5" hspace="5" src="BEV_Thermal_Management_Overview_08.png" alt=""> <h2 id="9">Scenarios</h2>
+<p>The thermal management system is tested in a drive cycle. The vehicle follows a given speed profile over time by following the commands given by a driver controller. There are three possible drive cycles:</p>
+<div>
+<ol>
+<li>
+<b>Summer</b>: In the summer scenario the outer temperature is set to 40&deg;C and the vehicle drives an urban cycle (low speed and several stops)</li>
+<li>
+<b>Winter</b>: In the winter scenario the outer temperature is set to 5&deg;C and the vehicle drives a highway cycle (high speed and no stop)</li>
+<li>
+<b>Highway with Charging Stops</b>: A highway cycle in summer with two charging stops and a total length of 600 km</li>
+</ol>
+</div>
+<p>The first two cycles are implemented for the sensitivity and optimization workflow presented in the next sections. The drive cycle are set in the Scenario subsystem: The drive cycles are loaded as a variable containing the speed over time profile of the vehicle. The cycles will use different components. For example, components like Evaporator, Condenser, Chiller are used only in summer. On the other hand, component such as the heater and the PTC heater are needed only in winter. The figure below shows the drive cycle that is used for the Summer scenario:</p>
+<p>
+<a href="matlab:open_system('BEV_Thermal_Management');open_system('BEV_Thermal_Management/Scenario','force');">Open Subsystem</a>
+</p>
+<img vspace="5" hspace="5" src="BEV_Thermal_Management_Overview_09.png" alt=""> <h2 id="10">Postprocessing</h2>
+<p>The function <a href="matlab:open('calcVehicleEnergy');">calcVehicleEnergy</a> calculates the energy losses. The results of this function call can be plotted by using the plotting functions <a href="matlab:open('plotEnergySankey');">plotEnergySankey</a>, <a href="matlab:open('plotHVACEnergy');">plotHVACEnergy</a>, and <a href="matlab:open('plotVehicleEnergy');">plotVehicleEnergy</a> The plot below show a typical output of the model</p>
+<img vspace="5" hspace="5" src="BEV_Thermal_Management_Overview_10.png" alt=""> <img vspace="5" hspace="5" src="BEV_Thermal_Management_Overview_11.png" alt=""> <img vspace="5" hspace="5" src="BEV_Thermal_Management_Overview_12.png" alt=""> <img vspace="5" hspace="5" src="BEV_Thermal_Management_Overview_13.png" alt=""> <h2 id="11">Sensitivity Analysis Workflow</h2>
+<p>This repository contains the workflows for performing sensitivity analysis on the model. The analysis is divided into two primary workflows:</p>
+<div>
+<ol>
+<li>
+<b>Single Parameter Sensitivity</b>
+</li>
+<li>
+<b>Multiple Parameter Sensitivity</b>
+</li>
+</ol>
+</div>
+<p>The Single Parameter Sensitivity evaluates the impact of a single parameter on the entire model. It helps identify how specific interdependencies are affected by that parameter. The Multiple Parameters Sensitivity assesses simultaneous variation of multiple parameters to understand how the several parameters collectively impact a certain objective For both types of sensitivity analysis, the impact of the parameter variation is assessed based on two key objectives:</p>
+<div>
+<ol>
+<li>
+<b>Consumption</b>: The overall vehicle consumption in the summer of in the winter cycle.</li>
+<li>
+<b>Battery Time</b>: The time required for the battery to reach a "safe temperature zone", ensuring it is neither too hot nor too cold. This variable indicates thermal management performance.</li>
+</ol>
+</div>
+<h2 id="12">Single Sensitivity</h2>
+<p>The single sensitivity analysis tests the impact of individual parameters on various variables. The parameters considered include:</p>
+<div>
+<ol>
+<li>Plate pipe radius, see script <a href="matlab:open('sensitivityPlate');">sensitivityPlate</a>
+</li>
+<li>Heater and PTC power, see script <a href="matlab:open('sensitivityHeater');">sensitivityHeater</a>
+</li>
+<li>Chiller radius, see script <a href="matlab:open('sensitivityChiller');">sensitivityChiller</a>
+</li>
+<li>Evaporator and condenser length, see script <a href="matlab:open('sensitivityCondenser');">sensitivityCondenser</a>
+</li>
+<li>Gearbox ratio, see script <a href="matlab:open('sensitivityTransmission');">sensitivityTransmission</a>
+</li>
+</ol>
+</div>
+<p>Each parameter has a dedicated script for sensitivity analysis. The scripts perform the analysis for specific scenarios (e.g., winter or summer) and display results using various plots.</p>
+<h2 id="13">Global Sensitivity</h2>
+<p>Global sensitivity analysis requires Simulink Design Optimization. This workflow simultaneously alters all the parameters mentioned in the previous section. The implementation is documented in the script <a href="matlab:open('sensitivityGlobal');">sensitivityGlobal</a>.</p>
+<p>The results can be represented with the function <a href="matlab:open('postproSensitivity.m');">postproSensitivity.m</a>. Provided that a parallel computing toolbox is available, the sensitivity analysis can also be parallelized to save time.</p>
+<h2 id="14">Optimization</h2>
+<p>This project includes an optimization workflow using surrogateopt to minimize vehicle consumption by varying specific parameters. The goal is to optimize the following parameters:</p>
+<div>
+<ol>
+<li>Plate pipe radius</li>
+<li>Heater and PTC power</li>
+<li>Chiller radius</li>
+<li>Evaporator and condenser length</li>
+<li>Gearbox ratio</li>
+</ol>
+</div>
+<p>The optimization seeks to minimize the combined consumption of the vehicle, which includes both summer and winter scenarios. Given the difference in magnitude between these scenarios, they are scaled before being combined. The objective function is defined as:</p>
+<p>F(x) = s1 * consumption_winter + s2 * consumption_summer</p>
+<p>Where s1 and s2 are scaling factors.</p>
+<p>The optimization process ensures that the following constraints are met:</p>
+<div>
+<ol>
+<li>The cabin must reach the target temperature within 12 minutes.</li>
+<li>The battery must reach the target temperature within 10 minutes.</li>
+</ol>
+</div>
+<p>To explore the implementation details of the optimization, refer to the script <a href="matlab:open('surrOptBEV');">surrOptBEV</a>. If a Parallel Computing toolbox is available, the optimization can be parallelized using the function <a href="matlab:open('surrOptBEVParallel');">surrOptBEVParallel</a>. For post processing the results, you can use the function <a href="matlab:open('postproOptim.m');">postproOptim.m</a>.</p>
+<p class="footer">Copyright 2021-2025 The MathWorks, Inc.<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2025a</a>
+<br>
+</p>
+</div>
+<!--
+##### SOURCE BEGIN #####
+%% Battery Electric Vehicle Thermal Management System
+%
+% This example models a battery electric vehicle (BEV) with a thermal
+% management system. This virtual vehicle is parameterized to represent a
+% mid-size sedan with rear wheel drive.
+% 
+% The design is composed of five systems:
+% 
+% # *Electric Powertrain* (battery, charger, and motor)
+% # *Driveline* (tires and chassis)
+% # *Refrigerant Cycle* (compressor, chiller, and condenser)
+% # *Coolant Cycle* (radiator, valves)
+% # *Cabin Cycle* (blower, evaporator, PTC)
+%
+% The model can be easily adjusted to simulate different vehicle types, such
+% as small city cars or SUVs, with minimal modifications and parameter
+% adjustments.
+%
+% Copyright 2021-2025 The MathWorks, Inc.
+
+%% Model
+
+open_system('BEV_Thermal_Management')
+
+set_param(find_system('BEV_Thermal_Management','MatchFilter',@Simulink.match.allVariants,'FindAll', 'on','SearchDepth',1,'type','annotation','Tag','ModelFeatures'),'Interpreter','off')
+
+%% Electric Powertrain: Battery
+%
+% The battery consists of 3072 cylindrical cells (21700 format) in a 96s32p
+% electrical scheme, with a total energy of ~50 kWh when fully charged. It
+% is modeled with Simscape Battery using an electrothermal model. The
+% electrical model monitors the State of Charge (SOC) of the battery, the
+% losses, and the remaining capacity. The thermal model calculates the
+% change in cell temperature due to electrical losses. The battery supplies
+% current to the powertrain on the HV network and is actively cooled by a
+% cooling plate composed of 12 parallel channels. 
+
+open_system('BEV_Thermal_Management/Battery/Lumped','force')
+
+%% Electric Powertrain: Motor
+%
+% The electric motor is driven by the HV network and is mechanically
+% connected to the vehicle’s rear axle. The virtual vehicle can be easily
+% extended to describe other powertrain architectures (e.g., front or
+% all-wheel drive). The motor’s characteristics and losses are modeled
+% with efficiency maps. Its temperature depends upon the electrical losses
+% and its thermal mass. To transmit the torque to the wheels, the motor is
+% coupled with a gearbox with a constant transmission ratio. The gearbox
+% losses are modeled with a constant efficiency.       
+%
+% <matlab:open_system('BEV_Thermal_Management');open_system('BEV_Thermal_Management/Motor','force'); Open Subsystem>
+
+open_system('BEV_Thermal_Management/Motor','force')
+
+
+%% DC-DC Converter
+% The DC-DC converter transforms the battery’s voltage (~380 V) to a lower
+% voltage level (12 V) and supplies the LV components (pumps, blower, and
+% condenser fan). Electrical losses are accounted for with a constant
+% efficiency. A thermal model calculates the temperature change based on
+% the DC-DC thermal mass and its electrical losses.    
+%
+% <matlab:open_system('BEV_Thermal_Management');open_system('BEV_Thermal_Management/DCDC','force'); Open Subsystem>
+
+open_system('BEV_Thermal_Management/DCDC','force');
+
+
+%% Driveline 
+% The driveline includes tires and vehicle body. The tire models account for
+% rolling resistance, inertia, and slip. The vehicle body
+% model calculates drag, wind, and road incline losses. The vehicle body
+% also accounts for the impact of the vehicle's mass on acceleration behavior.     
+%
+% <matlab:open_system('BEV_Thermal_Management');open_system('BEV_Thermal_Management/Driveline','force'); Open Subsystem>
+
+open_system('BEV_Thermal_Management/Driveline','force');
+
+
+%% Refrigerant cycle
+% The refrigerant cycle comprises compressor, condenser, chiller expansion valve (EV1),
+% evaporator expansion value (EV2), chiller, and evaporator. More information 
+% regarding the refrigerant cycle is available at [2].
+% The refrigerant flow is driven by the compressor, which is connected to the
+% HV electrical network. The refrigerant flow continues to the condenser where
+% heat is dissipated to the air. The air flow within the condenser is driven
+% by the vehicle speed the condenser fan. Latter is connected to the LV network.
+% The refrigerant then flows through EV1 and EV2 and continues to chiller
+% and evaporator. In the chiller, the refrigerant absorbs heat from the
+% coolant cycle. In the evaporator the refrigerant absorbs heat from the
+% cabin air and continues its way back to the compressor.
+% The figure below shows the main component of the compressor subsystem:
+%
+% <matlab:open_system('BEV_Thermal_Management');open_system('BEV_Thermal_Management/Compressor','force'); Open Subsystem>
+
+open_system('BEV_Thermal_Management/Compressor','force')
+
+%% Cabin cycle
+% The cabin cycle comprises cabin, blower, Positive Temperature Coefficient Heater (PTC),
+% and evaporator. More information to this regard is available at [2]. The 
+% cabin subsystem models the thermal resistances between interior and external
+% environment (considering the convection and conduction through doors, roof,
+% and widows). Additionally, the model also accounts for the radiation heat
+% entering the cabin. The blower drives the airflow in the cabin and is supplied 
+% by the LV network. The air from the blower passes through the evaporator
+% where it can dissipate its heat to the refrigerant. If cabin heating is 
+% required, the PTC is activated and heats up the air entering the cabin.
+% Otherwise, the PTC remains turned off.
+% The figure below shows the cabin model:
+%
+% <matlab:open_system('BEV_Thermal_Management');open_system('BEV_Thermal_Management/Cabin','force'); Open Subsystem>
+
+open_system('BEV_Thermal_Management/Cabin','force')
+
+%% Coolant cycle
+% The coolant cycle comprises motor pump (P1), battery pump (P2), radiator,
+% radiator bypass valve, heater, chiller bypass valve, and four-way valve.
+% This cycle cools down the electric powertrain components.
+% More information to this regard is available at [2].
+% The pumps P1 and P2 drive the coolant flow and are supplied by the LV network.
+% In the radiator, the coolant dissipates heat to the neighboring air
+% (driven by the fan and the moving vehicle). If the outer temperature is
+% lower than 20°C, the radiator is bypassed. If the battery reaches 
+% a temperature below 5°C, the heater is activated (supplied by HV current) 
+% and heats up the coolant. If the battery reaches a temperature below 30°C 
+% the chiller is bypassed via the chiller bypass valve. Finally, the four-way 
+% valve can switch between a parallel and a serial cooling strategy based on 
+% the environmental conditions and the temperatures of the powertrain components. 
+% In serial mode (A connected to B, C connected to D), the battery coolant cycle 
+% is connected to the motor coolant cycle. In parallel mode (A connected to D, B 
+% connected to C), the two coolant cycles are separated and operate with 
+% their own coolant tanks and pumps.
+% The figure below shows the battery pump (P2)
+
+open_system('BEV_Thermal_Management/Battery Pump','force')
+
+%% Scenarios
+% The thermal management system is tested in a drive cycle. The vehicle
+% follows a given speed profile over time by following the commands given
+% by a driver controller. There are three possible drive cycles: 
+% 
+% # *Summer*: In the summer scenario the outer temperature is set to 40°C and the vehicle drives an urban cycle (low speed and several stops)
+% # *Winter*: In the winter scenario the outer temperature is set to 5°C and the vehicle drives a highway cycle (high speed and no stop)
+% # *Highway with Charging Stops*: A highway cycle in summer with two charging stops and a total length of 600 km
+%
+% The first two cycles are implemented for the sensitivity and optimization workflow presented in the next sections. The drive cycle are set in the Scenario subsystem:
+% The drive cycles are loaded as a variable containing the speed over time profile of the vehicle. 
+% The cycles will use different components. For example, components like Evaporator, Condenser, Chiller are used only in summer. On the other hand, component such as the heater and the PTC heater are needed only in winter.
+% The figure below shows the drive cycle that is used for the Summer scenario:
+% 
+% <matlab:open_system('BEV_Thermal_Management');open_system('BEV_Thermal_Management/Scenario','force'); Open Subsystem>
+
+open_system('BEV_Thermal_Management/Scenario','force');
+
+%% Postprocessing
+%
+% The function
+% <matlab:open('calcVehicleEnergy'); calcVehicleEnergy> calculates the
+% energy losses.
+% The results of this function call can be plotted by
+% using the plotting functions
+% <matlab:open('plotEnergySankey'); plotEnergySankey>, 
+% <matlab:open('plotHVACEnergy'); plotHVACEnergy>, and 
+% <matlab:open('plotVehicleEnergy'); plotVehicleEnergy>
+% The plot below show a typical output of the model
+
+simres = sim(bdroot);
+vehEnergies=calcVehicleEnergy(simres.sscThermalManagement);
+
+plotDriveChargeCycle;
+plotVehicleEnergy(vehEnergies);
+plotHVACEnergy(vehEnergies);
+plotEnergySankey(vehEnergies);
+
+%% Sensitivity Analysis Workflow
+% This repository contains the workflows for performing sensitivity analysis on the model. The analysis is divided into two primary workflows:
+%
+% # *Single Parameter Sensitivity*
+% # *Multiple Parameter Sensitivity*
+%
+% The Single Parameter Sensitivity evaluates the impact of a single parameter on the entire model. It helps identify how specific interdependencies are affected by that parameter.
+% The Multiple Parameters Sensitivity assesses simultaneous variation of multiple parameters to understand how the several parameters collectively impact a certain objective
+% For both types of sensitivity analysis, the impact of the parameter variation is assessed based on two key objectives:
+%
+% # *Consumption*: The overall vehicle consumption in the summer of in the winter cycle.
+% # *Battery Time*: The time required for the battery to reach a "safe temperature zone", ensuring it is neither too hot nor too cold. This variable indicates thermal management performance.
+
+%% Single Sensitivity
+% The single sensitivity analysis tests the impact of individual parameters on various variables. The parameters considered include:
+%
+% # Plate pipe radius, see script <matlab:open('sensitivityPlate'); sensitivityPlate>
+% # Heater and PTC power, see script <matlab:open('sensitivityHeater'); sensitivityHeater> 
+% # Chiller radius, see script <matlab:open('sensitivityChiller'); sensitivityChiller> 
+% # Evaporator and condenser length, see script <matlab:open('sensitivityCondenser'); sensitivityCondenser> 
+% # Gearbox ratio, see script <matlab:open('sensitivityTransmission'); sensitivityTransmission>  
+%
+% Each parameter has a dedicated script for sensitivity analysis. The scripts perform the analysis for specific scenarios (e.g., winter or summer) and display results using various plots.
+
+%% Global Sensitivity
+% Global sensitivity analysis requires Simulink Design Optimization. This workflow simultaneously alters all the parameters mentioned in the previous section.
+% The implementation is documented in the script <matlab:open('sensitivityGlobal'); sensitivityGlobal>.
+%
+% The results can be represented with the function <matlab:open('postproSensitivity.m'); postproSensitivity.m>. Provided that a parallel computing toolbox is available, the sensitivity analysis can also be parallelized to save time.
+
+%% Optimization
+% This project includes an optimization workflow using surrogateopt to minimize vehicle consumption by varying specific parameters. The goal is to optimize the following parameters:
+%
+% # Plate pipe radius
+% # Heater and PTC power
+% # Chiller radius
+% # Evaporator and condenser length
+% # Gearbox ratio
+% 
+% The optimization seeks to minimize the combined consumption of the vehicle, which includes both summer and winter scenarios. Given the difference in magnitude between these scenarios, they are scaled before being combined. The objective function is defined as:
+% 
+% F(x) = s1 * consumption_winter + s2 * consumption_summer
+% 
+% Where s1 and s2 are scaling factors.
+% 
+% The optimization process ensures that the following constraints are met:
+%
+% # The cabin must reach the target temperature within 12 minutes.
+% # The battery must reach the target temperature within 10 minutes.
+%
+% To explore the implementation details of the optimization, refer to the script <matlab:open('surrOptBEV'); surrOptBEV>.
+% If a Parallel Computing toolbox is available, the optimization can be parallelized using the function <matlab:open('surrOptBEVParallel'); surrOptBEVParallel>.
+% For post processing the results, you can use the function
+% <matlab:open('postproOptim.m'); postproOptim.m>.
+%%
+bdclose('BEV_Thermal_Management')
+
+%%
+%clear all
+close all
+
+##### SOURCE END #####
+-->
+</body>
+</html>

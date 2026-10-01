@@ -1,0 +1,71 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XFLUID-09",
+  "scenarios": [
+    {
+      "id": "nominal",
+      "class": "nominal",
+      "p_storage": 200.0,
+      "p_vehicle_init": 100.0,
+      "T_env": 25.0,
+      "T_fluid": -60.0,
+      "stop_time_s": 3600
+    },
+    {
+      "id": "low_initial_vehicle_pressure",
+      "class": "boundary",
+      "p_storage": 200.0,
+      "p_vehicle_init": 50.0,
+      "T_env": 25.0,
+      "T_fluid": -60.0,
+      "stop_time_s": 3600
+    },
+    {
+      "id": "warm_ambient",
+      "class": "boundary",
+      "p_storage": 200.0,
+      "p_vehicle_init": 100.0,
+      "T_env": 35.0,
+      "T_fluid": -60.0,
+      "stop_time_s": 3600
+    },
+    {
+      "id": "warmer_precoolant",
+      "class": "boundary",
+      "p_storage": 200.0,
+      "p_vehicle_init": 100.0,
+      "T_env": 25.0,
+      "T_fluid": -45.0,
+      "stop_time_s": 3600
+    },
+    {
+      "id": "reduced_supply_pressure",
+      "class": "boundary",
+      "p_storage": 180.0,
+      "p_vehicle_init": 100.0,
+      "T_env": 25.0,
+      "T_fluid": -60.0,
+      "stop_time_s": 3600
+    }
+  ],
+  "contract": {
+    "scenario_contract": {
+      "aggregation": "critical fill completion, temperature safety, mass transfer, and causal control performance use the worst valid scenario",
+      "output_contract": "scenario evidence retains complete derived physical trajectories and metrics",
+      "harness_only_changes": [
+        "existing workspace inputs",
+        "temporary measurement tap",
+        "simulation stop time"
+      ]
+    }
+  },
+  "scenario_contract": {
+    "aggregation": "critical fill completion, temperature safety, mass transfer, and causal control performance use the worst valid scenario",
+    "output_contract": "scenario evidence retains complete derived physical trajectories and metrics",
+    "harness_only_changes": [
+      "existing workspace inputs",
+      "temporary measurement tap",
+      "simulation stop time"
+    ]
+  }
+}

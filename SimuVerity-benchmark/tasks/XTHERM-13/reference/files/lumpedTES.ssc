@@ -1,0 +1,158 @@
+component (Propagation = blocks) lumpedTES
+    % TES:2.5
+    % This component models a thermal energy storage (TES) or a sand battery which
+    % stores thermal energy in form of sensible heat of the sand.
+    % This battery is charged by electrical nodes, and discharged by moist air nodes.
+    % The sand is heated when electric current flows through the resistive heater.
+    % For removing the heat out from the sand battery, air must be blown through the metallic pipe terminals at node A and B.
+
+    % Copyright 2023-24 The MathWorks, Inc.
+
+    nodes
+        A = foundation.moist_air.moist_air;
+        n = foundation.electrical.electrical;%-:left
+        B = foundation.moist_air.moist_air;
+        p = foundation.electrical.electrical;%+:right
+        H = foundation.thermal.thermal;
+    end
+    annotations
+        A:Side = left; % Air flow inlet port
+        B:Side = right;% Air flow outlet port
+        H:Side = bottom;% Thermal port
+    end
+
+    annotations
+        UILayout = [UIGroup('Layout',coilShape,numCoilX,numCoilY,cellRefT)...
+            UIGroup('Heater Element',coilWidthHeater,coilDiameterHeater,coilDepthHeater,nturnsHeater,heaterTubeDia,heaterTimeconst,heaterRes,heaterEmissivity,heaterMaxT)...
+            UIGroup('Air Duct',coilWidthCooler,coilDiameterCooler,coilDepthCooler,nturnsCooler,pipeHydraulicDia)...
+            UIGroup('Sand Properties',sandDensity,sandThCond,sandSpHeat,sandInitT)];
+        Icon = 'ThermalBattery.svg';
+    end
+
+    parameters
+        coilShape = layoutShape.HelicalCoil; % Coil shape
+        numCoilX = {1,'1'}; % Number of coil rows
+        numCoilY = {1,'1'}; % Number of coils in each row
+        coilDepthHeater = {0.1, 'm'}; % Depth of heating coil
+        nturnsHeater = {2,'1'}; % Number of heating coil turns
+        coilDepthCooler = {0.1, 'm'}; % Depth of cooling coil
+        nturnsCooler = {2,'1'}; % Number of cooling coil turns
+        sandDensity = {1500, 'kg/m^3'}; % Density of sand
+        sandThCond = {1.2, 'W/(K*m)'}; % Thermal conductivity of sand
+        sandSpHeat = {850, 'J/(K*kg)'}; % Specific heat of the sand
+        cellRefT = {298.15, 'K'}; % Reference temperature for heating potential
+        sandInitT = {298.15, 'K'}; % Initial sand mass temperature
+        pipeHydraulicDia = {0.01, 'm'}; % Hydraulic diameter of air pipe
+        heaterTubeDia = {0.01, 'm'}; % Diameter of heater tube
+        heaterEmissivity = {0.8 , '1'}; % Heater tube emissivity
+        heaterTimeconst = {0.2, 's'}; % Heater filament thermal time constant
+        heaterRes = {1, 'Ohm'}; % Heater filament electrical resistance
+        heaterMaxT = {750, 'degC'}; % Heater filament temperature upper limit
+    end
+    parameters (ExternalAccess = none)
+        stfBtz = {5.670374419e-8, 'W/(K^4*m^2)'};
+        numTube = numCoilX * numCoilY; % total no of cooling or heating tube
+        hotSandMass = numTube * hotSandVol * sandDensity; % mass of the sand associated with heating element
+        coldSandMass = numTube * coldSandVol * sandDensity; % mass of the sand associated with cooling element
+        pipeArea = numTube * pi * pipeHydraulicDia * coolerLen; % area for heat conduction B/W sand and air pipe
+        eqHydrlcD = numTube * pipeHydraulicDia; % equivalent pipe hydraulic diameter
+        heaterArea = numTube * pi * heaterTubeDia * heaterLen; % area for heat conduction B/W sand and electrical resistance
+        coldSandEquivalentDia = (biotFactor * pipeHydraulicDia + coilWidthCooler) / 2; % equivalent OD of cold sand volume
+        radiationCoefficient = stfBtz * heaterEmissivity;
+        coilWidthHeater = {0.1, 'm'}; % Width of heating coil
+        coilDiameterHeater = {0.1, 'm'}; % Diameter of heating coil
+        coilWidthCooler = {0.1, 'm'}; % Width of cooling coil
+        coilDiameterCooler = {0.1, 'm'}; % Diameter of cooling coil
+    end
+
+    parameters (ExternalAccess = none)
+        biotFactor = {7.04, '1'}; % ratio of sand column diameter to cooling pipe diameter to maintain Biot Number = 0.1
+    end
+
+    if coilShape == layoutShape.UshapedCoil
+        annotations
+            [coilWidthHeater] : ExternalAccess = modify
+            [coilWidthCooler] : ExternalAccess = modify
+        end
+        parameters (ExternalAccess = none)
+            heaterLen = nturnsHeater * coilWidthHeater + (nturnsHeater - 1) * (pi / 2) * coilDepthHeater / nturnsHeater; % length of heater element for S-type option
+            coolerLen = nturnsCooler * coilWidthCooler + (nturnsCooler - 1) * (pi / 2) * coilDepthCooler / nturnsCooler; % length of cooler element for S-type option
+            sandConductionAr = (biotFactor / 4) * (coilDepthCooler + coilDepthHeater) * (pipeHydraulicDia + heaterTubeDia); % heat conduction area B/W hot and cold sand
+            sandConductionL = (coilWidthCooler + coilWidthHeater) / 2;
+            hotSandVol = (biotFactor * coilWidthHeater * heaterTubeDia * coilDepthHeater) - (heaterLen * pi * (heaterTubeDia ^ 2) / 4);
+            coldSandVol = (biotFactor * coilWidthCooler * pipeHydraulicDia * coilDepthCooler) - (coolerLen * pi * (pipeHydraulicDia ^ 2) / 4);
+        end
+    else
+        annotations
+            [coilDiameterHeater] : ExternalAccess = modify
+            [coilDiameterCooler] : ExternalAccess = modify
+        end
+        parameters (ExternalAccess = none)
+            heaterLen = sqrt((2 * pi * coilDiameterHeater) ^ 2 + (coilDepthHeater / nturnsHeater) ^ 2); % length of heater element for Helix option
+            coolerLen = sqrt((2 * pi * coilDiameterCooler) ^ 2 + (coilDepthCooler / nturnsCooler) ^ 2); % length of cooler element for Helix option
+            sandConductionAr = (coilDepthCooler + coilDepthHeater) * (coilDiameterCooler + coilDiameterHeater) / 4; % heat conduction area B/W hot and cold sand
+            sandConductionL = (coilDiameterCooler + coilWidthHeater) / 2;
+            hotSandVol = (coilWidthHeater ^ 2 * coilDepthHeater) - (heaterLen * pi * (heaterTubeDia ^ 2) / 4);
+            coldSandVol = (coilDiameterCooler ^ 2 * coilDepthCooler) - (coolerLen * pi * (pipeHydraulicDia ^ 2) / 4);
+        end
+    end
+
+
+
+    equations
+        assert(heaterLen > 0, 'Heating element length must be greater than 0')
+        assert(coolerLen > 0, 'Air pipe length must be greater than 0')
+        assert(sandConductionAr > 0)
+        assert(sandConductionL > 0)
+        assert(hotSandVol > 0, 'Calculated sand volume is negative or zero for given inputs')
+        assert(coldSandVol > 0, 'Calculated sand volume is negative or zero for given inputs')
+        assert(hotSandMass > 0, 'Calculated sand mass is negative or zero for given inputs')
+        assert(coldSandMass > 0, 'Calculated sand mass is negative or zero for given inputs')
+        assert(coldSandEquivalentDia > 0)
+        assert(numCoilX >= 1, 'Number of coil rows must be a positive integer')
+        assert(numCoilY >= 1, 'Number of coils must be a positive integer')
+    end
+
+    variables (ExternalAccess = observe)
+        hPotential = {value =  sandSpHeat * hotSandMass * (sandInitT - cellRefT) +  sandSpHeat * coldSandMass * (sandInitT - cellRefT), priority = priority.high}; % battery sensible heat potential
+    end
+
+    variables
+        filamentTemp = {298.15, 'K'}; % Heater filament temperature
+    end
+
+    components(ExternalAccess = observe)
+        hotSand = foundation.thermal.elements.mass(mass = hotSandMass, num_ports = int32(1), sp_heat = sandSpHeat, T = {value = sandInitT, priority = priority.high});
+        coldSand = foundation.thermal.elements.mass(mass = coldSandMass, num_ports = int32(1), sp_heat = sandSpHeat, T = {value = sandInitT, priority = priority.high});
+        heater = foundation.electrical.elements.thermal_resistor(K_d = {800, 'W/K'}, R0 = heaterRes / numTube, T0 = {298.15, 'K'}, alpha = {5e-05, '1/K'}, tc = heaterTimeconst, T = {value = sandInitT, priority = priority.high});
+        HTradiate = foundation.thermal.elements.radiation(area = numTube * heaterArea, rad_tr_coeff = radiationCoefficient);
+        airDuct = foundation.moist_air.elements.pipe(Dh = eqHydrlcD, Nu_lam = 3.66, RH_ws = 1, Re_lam = 2000, Re_tur = 4000, area = pipeArea, length = coolerLen, length_add = coolerLen / 5,...
+            moisture_trace_gas_source = int32(0), roughness = {1.5e-05, 'm'}, shape_factor = 64, wall_condensation = int32(0));
+        HTcond1 = foundation.thermal.elements.conduction(L =  coolerLen, d_in = pipeHydraulicDia, d_out = coldSandEquivalentDia, th_cond = sandThCond, thermal_type = int32(1), wall_geometry = int32(2));
+        HTcond2 = foundation.thermal.elements.conduction(area =  sandConductionAr, th_cond = sandThCond, thermal_type = int32(1), thickness = sandConductionL, wall_geometry = int32(1));
+    end
+
+    intermediates (ExternalAccess = none)
+        hPot = sandSpHeat * hotSandMass * (hotSand.M.T - cellRefT) +  sandSpHeat * coldSandMass * (coldSand.M.T - cellRefT);
+        heaterCoilT = heater.H.T;
+    end
+
+    equations
+        hPotential == hPot;
+        filamentTemp == heaterCoilT;
+    end
+
+    connections
+        connect(n, heater.n);
+        connect(HTradiate.A, heater.H);
+        connect(B, airDuct.B);
+        connect(A, airDuct.A);
+        connect(HTcond1.B, airDuct.H);
+        connect(H, HTcond2.B);
+        connect(H, HTcond1.A);
+        connect(H, coldSand.M);
+        connect(p, heater.p);
+        connect(HTcond2.A, HTradiate.B);
+        connect(HTcond2.A, hotSand.M);
+    end
+end

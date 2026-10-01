@@ -1,0 +1,17 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XROBO-08",
+  "materialization": "local_importer",
+  "entrypoint": "main/rlKinovaBallBalance.slx",
+  "recipe": "reference/importer_recipe.json",
+  "transform": "reference/transform.m",
+  "retained_file_count": 0,
+  "retained_bytes": 0,
+  "excluded_files": [],
+  "clean_replay_setup": {
+    "phase": "after_load_before_update",
+    "path": "tasks/XROBO-08/reference/clean_replay_setup/f90_xrobo08_reference_clean_replay_setup.m",
+    "entrypoint": "f90_xrobo08_reference_clean_replay_setup"
+  },
+  "expected_source_file_count": 6
+}

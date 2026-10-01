@@ -1,0 +1,160 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XCOMM-07",
+  "collection": "XCOMM",
+  "reference": {
+    "identity_path": "tasks/XCOMM-07/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "wlanhdlReceiver.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XCOMM-07",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a complete complex-baseband SISO VHT WLAN link in Simulink for a fixed 20 MHz channel and one packet per run.",
+    "engineering_objects": [
+      "F90-XCOMM-07 plant and controller described by the current public task contract",
+      "Measured output interfaces: channel_waveform, bit_recovery, header_constellation, data_constellation, packet_detection, cfo_estimation"
+    ],
+    "physical_paths": [
+      "wlan_link_input is a MATLAB struct with these public fields: mcs is an integer from 0 through 7; channel_coding is a character vector or string equal to BCC or LDPC; snr_dB is a real scalar in 18--35 dB; and carrier_frequency_offset_Hz is a real scalar in -100000--100000 Hz.",
+      "Generate a reproducible nontrivial payload, construct the VHT packet through the actual scrambling, channel coding, interleaving, QAM mapping, pilot/training-field insertion, and OFDM modulation path, and pass the waveform through a multipath channel with the requested AWGN and carrier-frequency offset.",
+      "The connected receiver must perform packet detection, coarse and fine time/frequency synchronization, OFDM demodulation, training-field channel estimation, equalization, common-phase correction, header recovery, and BCC or LDPC payload decoding."
+    ],
+    "functional_paths": [
+      "Packet detection and CFO estimates must come from the synchronization path."
+    ],
+    "information_paths": [
+      "wlan_link_input -> F90-XCOMM-07 plant/control path -> channel_waveform, bit_recovery, header_constellation, data_constellation, packet_detection, cfo_estimation"
+    ],
+    "modes_and_events": [
+      "F90-XCOMM-07 startup and continuous operation follow the current public task contract."
+    ],
+    "interfaces": [
+      {
+        "name": "wlan_link_input",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read wlan_link_input from the MATLAB base workspace. wlan_link_input is a MATLAB struct with these public fields: mcs is an integer from 0 through 7; channel_coding is a character vector or string equal to BCC or LDPC; snr_dB is a real scalar in 18--35 dB; and carrier_frequency_offset_Hz is a real scalar in -100000--100000 Hz.",
+        "source": "tasks/XCOMM-07/public_spec.json"
+      },
+      {
+        "name": "channel_waveform",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "normalized amplitude"
+        ],
+        "range_or_shape": "channel_waveform has width 2 in this order: real, imag; both are in normalized amplitude, with receiver input sample index as time. channel_waveform must be the impaired waveform that actually drives the receiver.",
+        "source": "tasks/XCOMM-07/public_spec.json"
+      },
+      {
+        "name": "bit_recovery",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "bit_recovery has width 3 in this order: tx_bit, decoded_bit, bit_error; all have unit 1, with valid decoded-bit index as time. bit_recovery must pair the actual transmitted and valid decoded payload bits and include their XOR error indicator.",
+        "source": "tasks/XCOMM-07/public_spec.json"
+      },
+      {
+        "name": "header_constellation",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "normalized amplitude"
+        ],
+        "range_or_shape": "header_constellation has width 2 in this order: in_phase, quadrature; both are in normalized amplitude, with valid header-symbol index as time.",
+        "source": "tasks/XCOMM-07/public_spec.json"
+      },
+      {
+        "name": "data_constellation",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "normalized amplitude"
+        ],
+        "range_or_shape": "data_constellation has width 2 in this order: in_phase, quadrature; both are in normalized amplitude, with valid data-symbol index as time.",
+        "source": "tasks/XCOMM-07/public_spec.json"
+      },
+      {
+        "name": "packet_detection",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "packet_detection has width 1: detected, unit 1, with receiver processing sample index as time.",
+        "source": "tasks/XCOMM-07/public_spec.json"
+      },
+      {
+        "name": "cfo_estimation",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "cycles/sample",
+          "Hz"
+        ],
+        "range_or_shape": "cfo_estimation has width 2 in this order: normalized_frequency in cycles/sample, estimated_frequency_Hz in Hz, with valid CFO-estimate index as time.",
+        "source": "tasks/XCOMM-07/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "The connected receiver must perform packet detection, coarse and fine time/frequency synchronization, OFDM demodulation, training-field channel estimation, equalization, common-phase correction, header recovery, and BCC or LDPC payload decoding."
+    ],
+    "feedback_and_control_causality": [
+      "Packet detection and CFO estimates must come from the synchronization path."
+    ],
+    "signal_sources": [
+      "wlan_link_input is read from the public MATLAB base-workspace input contract.",
+      "channel_waveform is produced by the implemented plant or controller and logged under the public output contract.",
+      "bit_recovery is produced by the implemented plant or controller and logged under the public output contract.",
+      "header_constellation is produced by the implemented plant or controller and logged under the public output contract.",
+      "data_constellation is produced by the implemented plant or controller and logged under the public output contract.",
+      "packet_detection is produced by the implemented plant or controller and logged under the public output contract.",
+      "cfo_estimation is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "wlan_link_input: Read wlan_link_input from the MATLAB base workspace. wlan_link_input is a MATLAB struct with these public fields: mcs is an integer from 0 through 7; channel_coding is a character vector or string equal to BCC or LDPC; snr_dB is a real scalar in 18--35 dB; and carrier_frequency_offset_Hz is a real scalar in -100000--100000 Hz."
+    ],
+    "disturbances": [
+      "Generate a reproducible nontrivial payload, construct the VHT packet through the actual scrambling, channel coding, interleaving, QAM mapping, pilot/training-field insertion, and OFDM modulation path, and pass the waveform through a multipath channel with the requested AWGN and carrier-frequency offset.",
+      "The connected receiver must perform packet detection, coarse and fine time/frequency synchronization, OFDM demodulation, training-field channel estimation, equalization, common-phase correction, header recovery, and BCC or LDPC payload decoding.",
+      "bit_recovery must pair the actual transmitted and valid decoded payload bits and include their XOR error indicator."
+    ],
+    "dynamic_processes": [
+      "The connected receiver must perform packet detection, coarse and fine time/frequency synchronization, OFDM demodulation, training-field channel estimation, equalization, common-phase correction, header recovery, and BCC or LDPC payload decoding.",
+      "bit_recovery must pair the actual transmitted and valid decoded payload bits and include their XOR error indicator."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XCOMM-07: prescribing channel_waveform directly would bypass the system path described by: wlan_link_input is a MATLAB struct with these public fields: mcs is an integer from 0 through 7; channel_coding is a character vector or string equal to BCC or LDPC; snr_dB is a real scalar in 18--35 dB; and carrier_frequency_offset_Hz is a real scalar in -100000--100000 Hz.",
+      "F90-XCOMM-07: replaying a fixed channel_waveform trace would ignore causal variation in wlan_link_input."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XCOMM-07/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XCOMM-07/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XCOMM-07/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

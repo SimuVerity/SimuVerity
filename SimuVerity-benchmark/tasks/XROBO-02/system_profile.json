@@ -1,0 +1,212 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XROBO-02",
+  "collection": "XROBO",
+  "reference": {
+    "identity_path": "tasks/XROBO-02/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/XROBO02_reference.slx",
+    "model_path": "tasks/XROBO-02/reference/files/XROBO02_reference.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XROBO-02",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a finite-inertia dual-arm robot with two seven-revolute-joint arms and genuine closed-loop torque actuation.",
+    "engineering_objects": [
+      "F90-XROBO-02 plant and controller described by the current public task contract",
+      "Measured output interfaces: joint_state, end_effector_pose, joint_torque, coordination_state"
+    ],
+    "physical_paths": [
+      "Build a finite-inertia dual-arm robot with two seven-revolute-joint arms and genuine closed-loop torque actuation."
+    ],
+    "functional_paths": [
+      "Both arms must execute a coordinated point-to-point motion under a shared payload-equivalent load, respect finite joint-torque limits, remain stable, and recover after a temporary external joint load."
+    ],
+    "information_paths": [
+      "left_target_rad, right_target_rad, move_duration, shared_payload_mass, torque_limit_scale, disturbance_torque_nm, disturbance_start -> F90-XROBO-02 plant/control path -> joint_state, end_effector_pose, joint_torque, coordination_state"
+    ],
+    "modes_and_events": [
+      "F90-XROBO-02 startup and continuous operation follow the current public task contract."
+    ],
+    "interfaces": [
+      {
+        "name": "left_target_rad",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "rad"
+        ],
+        "range_or_shape": "Read left_target_rad, right_target_rad, move_duration, shared_payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables. left_target_rad and right_target_rad are finite real 7-element vectors in rad with componentwise bounds.",
+        "source": "tasks/XROBO-02/public_spec.json"
+      },
+      {
+        "name": "right_target_rad",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "rad"
+        ],
+        "range_or_shape": "Read left_target_rad, right_target_rad, move_duration, shared_payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables. left_target_rad and right_target_rad are finite real 7-element vectors in rad with componentwise bounds.",
+        "source": "tasks/XROBO-02/public_spec.json"
+      },
+      {
+        "name": "move_duration",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read left_target_rad, right_target_rad, move_duration, shared_payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables. The seven left and right targets operate within the published min/max arrays in the task specification; move_duration is 3.2--5.2 s, shared_payload_mass is 0.2--1.0 kg, torque_limit_scale is 0.75--1.15, and disturbance_start is 2.8--6.1 s. move_duration, shared_payload_mass, torque_limit_scale, and disturbance_start are real scalars in [3.2, 5.2] s, [0.2, 1.0] kg, [0.75, 1.15] (unitless), and [2.8, 6.1] s, respectively.",
+        "source": "tasks/XROBO-02/public_spec.json"
+      },
+      {
+        "name": "shared_payload_mass",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kg"
+        ],
+        "range_or_shape": "Read left_target_rad, right_target_rad, move_duration, shared_payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables. The seven left and right targets operate within the published min/max arrays in the task specification; move_duration is 3.2--5.2 s, shared_payload_mass is 0.2--1.0 kg, torque_limit_scale is 0.75--1.15, and disturbance_start is 2.8--6.1 s. move_duration, shared_payload_mass, torque_limit_scale, and disturbance_start are real scalars in [3.2, 5.2] s, [0.2, 1.0] kg, [0.75, 1.15] (unitless), and [2.8, 6.1] s, respectively.",
+        "source": "tasks/XROBO-02/public_spec.json"
+      },
+      {
+        "name": "torque_limit_scale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read left_target_rad, right_target_rad, move_duration, shared_payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables. The seven left and right targets operate within the published min/max arrays in the task specification; move_duration is 3.2--5.2 s, shared_payload_mass is 0.2--1.0 kg, torque_limit_scale is 0.75--1.15, and disturbance_start is 2.8--6.1 s. move_duration, shared_payload_mass, torque_limit_scale, and disturbance_start are real scalars in [3.2, 5.2] s, [0.2, 1.0] kg, [0.75, 1.15] (unitless), and [2.8, 6.1] s, respectively.",
+        "source": "tasks/XROBO-02/public_spec.json"
+      },
+      {
+        "name": "disturbance_torque_nm",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "N*m"
+        ],
+        "range_or_shape": "Read left_target_rad, right_target_rad, move_duration, shared_payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables. disturbance_torque_nm is a finite real 14-element vector ordered left joints 1-7 then right joints 1-7; the per-joint magnitude bounds in each arm are [5, 5, 3, 2, 1.8, 1.2, 0.8] N*m.",
+        "source": "tasks/XROBO-02/public_spec.json"
+      },
+      {
+        "name": "disturbance_start",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read left_target_rad, right_target_rad, move_duration, shared_payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables. The seven left and right targets operate within the published min/max arrays in the task specification; move_duration is 3.2--5.2 s, shared_payload_mass is 0.2--1.0 kg, torque_limit_scale is 0.75--1.15, and disturbance_start is 2.8--6.1 s. The fourteen disturbance components operate within the published componentwise bounds and act temporarily after disturbance_start. move_duration, shared_payload_mass, torque_limit_scale, and disturbance_start are real scalars in [3.2, 5.2] s, [0.2, 1.0] kg, [0.75, 1.15] (unitless), and [2.8, 6.1] s, respectively.",
+        "source": "tasks/XROBO-02/public_spec.json"
+      },
+      {
+        "name": "joint_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "mixed"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named joint_state, end_effector_pose, joint_torque, and coordination_state. joint_state has 28 channels in this order: qL1..qL7 and qR1..qR7 (rad), followed by dqL1..dqL7 and dqR1..dqR7 (rad/s).",
+        "source": "tasks/XROBO-02/public_spec.json"
+      },
+      {
+        "name": "end_effector_pose",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "mixed"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named joint_state, end_effector_pose, joint_torque, and coordination_state. end_effector_pose has 12 channels in this order: left xyz (m), left rpy (rad), right xyz (m), and right rpy (rad), all in a fixed right-handed base frame.",
+        "source": "tasks/XROBO-02/public_spec.json"
+      },
+      {
+        "name": "joint_torque",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "mixed"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named joint_state, end_effector_pose, joint_torque, and coordination_state. joint_torque has 14 channels [left tau1..tau7,right tau1..tau7], all in N*m.",
+        "source": "tasks/XROBO-02/public_spec.json"
+      },
+      {
+        "name": "coordination_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "mixed"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named joint_state, end_effector_pose, joint_torque, and coordination_state. coordination_state has 4 channels in this order: left progress, right progress, absolute progress mismatch, and measured gripper separation.",
+        "source": "tasks/XROBO-02/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a finite-inertia dual-arm robot with two seven-revolute-joint arms and genuine closed-loop torque actuation.",
+      "Both arms must execute a coordinated point-to-point motion under a shared payload-equivalent load, respect finite joint-torque limits, remain stable, and recover after a temporary external joint load.",
+      "Across the declared ranges, both measured end effectors must reach the poses implied by their requested joint targets, the two arms must remain synchronized during the coordinated move, and the mechanism must settle after both the move and the temporary load."
+    ],
+    "feedback_and_control_causality": [
+      "Build a finite-inertia dual-arm robot with two seven-revolute-joint arms and genuine closed-loop torque actuation.",
+      "Logs must arise from the causal closed-loop plant rather than copied commands or precomputed output trajectories."
+    ],
+    "signal_sources": [
+      "left_target_rad is read from the public MATLAB base-workspace input contract.",
+      "right_target_rad is read from the public MATLAB base-workspace input contract.",
+      "move_duration is read from the public MATLAB base-workspace input contract.",
+      "shared_payload_mass is read from the public MATLAB base-workspace input contract.",
+      "torque_limit_scale is read from the public MATLAB base-workspace input contract.",
+      "disturbance_torque_nm is read from the public MATLAB base-workspace input contract.",
+      "disturbance_start is read from the public MATLAB base-workspace input contract.",
+      "joint_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "end_effector_pose is produced by the implemented plant or controller and logged under the public output contract.",
+      "joint_torque is produced by the implemented plant or controller and logged under the public output contract.",
+      "coordination_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "left_target_rad: Read left_target_rad, right_target_rad, move_duration, shared_payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables. left_target_rad and right_target_rad are finite real 7-element vectors in rad with componentwise bounds.",
+      "right_target_rad: Read left_target_rad, right_target_rad, move_duration, shared_payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables. left_target_rad and right_target_rad are finite real 7-element vectors in rad with componentwise bounds.",
+      "move_duration: Read left_target_rad, right_target_rad, move_duration, shared_payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables. The seven left and right targets operate within the published min/max arrays in the task specification; move_duration is 3.2--5.2 s, shared_payload_mass is 0.2--1.0 kg, torque_limit_scale is 0.75--1.15, and disturbance_start is 2.8--6.1 s. move_duration, shared_payload_mass, torque_limit_scale, and disturbance_start are real scalars in [3.2, 5.2] s, [0.2, 1.0] kg, [0.75, 1.15] (unitless), and [2.8, 6.1] s, respectively.",
+      "shared_payload_mass: Read left_target_rad, right_target_rad, move_duration, shared_payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables. The seven left and right targets operate within the published min/max arrays in the task specification; move_duration is 3.2--5.2 s, shared_payload_mass is 0.2--1.0 kg, torque_limit_scale is 0.75--1.15, and disturbance_start is 2.8--6.1 s. move_duration, shared_payload_mass, torque_limit_scale, and disturbance_start are real scalars in [3.2, 5.2] s, [0.2, 1.0] kg, [0.75, 1.15] (unitless), and [2.8, 6.1] s, respectively.",
+      "torque_limit_scale: Read left_target_rad, right_target_rad, move_duration, shared_payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables. The seven left and right targets operate within the published min/max arrays in the task specification; move_duration is 3.2--5.2 s, shared_payload_mass is 0.2--1.0 kg, torque_limit_scale is 0.75--1.15, and disturbance_start is 2.8--6.1 s. move_duration, shared_payload_mass, torque_limit_scale, and disturbance_start are real scalars in [3.2, 5.2] s, [0.2, 1.0] kg, [0.75, 1.15] (unitless), and [2.8, 6.1] s, respectively.",
+      "disturbance_torque_nm: Read left_target_rad, right_target_rad, move_duration, shared_payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables. disturbance_torque_nm is a finite real 14-element vector ordered left joints 1-7 then right joints 1-7; the per-joint magnitude bounds in each arm are [5, 5, 3, 2, 1.8, 1.2, 0.8] N*m.",
+      "disturbance_start: Read left_target_rad, right_target_rad, move_duration, shared_payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables. The seven left and right targets operate within the published min/max arrays in the task specification; move_duration is 3.2--5.2 s, shared_payload_mass is 0.2--1.0 kg, torque_limit_scale is 0.75--1.15, and disturbance_start is 2.8--6.1 s. The fourteen disturbance components operate within the published componentwise bounds and act temporarily after disturbance_start. move_duration, shared_payload_mass, torque_limit_scale, and disturbance_start are real scalars in [3.2, 5.2] s, [0.2, 1.0] kg, [0.75, 1.15] (unitless), and [2.8, 6.1] s, respectively."
+    ],
+    "disturbances": [
+      "Both arms must execute a coordinated point-to-point motion under a shared payload-equivalent load, respect finite joint-torque limits, remain stable, and recover after a temporary external joint load.",
+      "Read left_target_rad, right_target_rad, move_duration, shared_payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables.",
+      "move_duration is 3.2--5.2 s, shared_payload_mass is 0.2--1.0 kg, torque_limit_scale is 0.75--1.15, and disturbance_start is 2.8--6.1 s."
+    ],
+    "dynamic_processes": [
+      "Both arms must execute a coordinated point-to-point motion under a shared payload-equivalent load, respect finite joint-torque limits, remain stable, and recover after a temporary external joint load.",
+      "Across the declared ranges, both measured end effectors must reach the poses implied by their requested joint targets, the two arms must remain synchronized during the coordinated move, and the mechanism must settle after both the move and the temporary load."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XROBO-02: prescribing joint_state directly would bypass the system path described by: Build a finite-inertia dual-arm robot with two seven-revolute-joint arms and genuine closed-loop torque actuation.",
+      "F90-XROBO-02: replaying a fixed joint_state trace would ignore causal variation in left_target_rad."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XROBO-02/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XROBO-02/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XROBO-02/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

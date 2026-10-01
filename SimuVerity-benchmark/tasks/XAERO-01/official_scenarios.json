@@ -1,0 +1,374 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XAERO-01",
+  "scenarios": [
+    {
+      "id": "heavy_strong_crosswind",
+      "values": {
+        "target_x": 12.2,
+        "target_y": -6.4,
+        "target_z": 9.8,
+        "payload_mass": 2.08,
+        "wind_speed": 16.8,
+        "wind_heading": 112,
+        "gust_factor": 0.78,
+        "gust_time": 5.1,
+        "payload_release_time": 10.8
+      }
+    },
+    {
+      "id": "high_altitude_reverse_wind",
+      "values": {
+        "target_x": 6.1,
+        "target_y": 7.3,
+        "target_z": 10.6,
+        "payload_mass": 1.72,
+        "wind_speed": 14.2,
+        "wind_heading": -142,
+        "gust_factor": 0.64,
+        "gust_time": 7.55,
+        "payload_release_time": 11.7
+      }
+    },
+    {
+      "id": "fast_event_light_payload",
+      "values": {
+        "target_x": 11.4,
+        "target_y": 2.2,
+        "target_z": 5.2,
+        "payload_mass": 0.58,
+        "wind_speed": 9.5,
+        "wind_heading": -28,
+        "gust_factor": 0.83,
+        "gust_time": 4.65,
+        "payload_release_time": 8.7
+      }
+    },
+    {
+      "id": "joint_interior",
+      "values": {
+        "target_x": 9.7,
+        "target_y": -3.5,
+        "target_z": 8.4,
+        "payload_mass": 1.42,
+        "wind_speed": 11.7,
+        "wind_heading": 67,
+        "gust_factor": 0.39,
+        "gust_time": 6.85,
+        "payload_release_time": 9.35
+      }
+    }
+  ],
+  "contract": {
+    "application_domain": "aerospace unmanned aerial vehicles",
+    "physical_domains": [
+      "six-degree-of-freedom rigid-body flight",
+      "four-channel electric propulsion",
+      "aerodynamic wind loading"
+    ],
+    "modeling_paradigm": "causal nonlinear flight dynamics with bounded rotor actuators",
+    "capability_types": [
+      "6-DOF plant construction",
+      "position and attitude regulation",
+      "payload transition",
+      "gust recovery"
+    ],
+    "difficulty": {
+      "physical_coupling": 2,
+      "nonlinear_or_switching": 2,
+      "dynamic_or_fault": 2,
+      "joint_operating_points": 2,
+      "multichannel_or_units": 2,
+      "functional_and_safety_constraints": 0,
+      "total": 10
+    },
+    "sim": {
+      "step": 0.002,
+      "stop": 18
+    },
+    "public_inputs": [
+      {
+        "name": "target_x",
+        "nominal": 8,
+        "min": 5,
+        "max": 13,
+        "unit": "m",
+        "meaning": "requested hover-point x coordinate"
+      },
+      {
+        "name": "target_y",
+        "nominal": 4,
+        "min": -8,
+        "max": 8,
+        "unit": "m",
+        "meaning": "requested hover-point y coordinate"
+      },
+      {
+        "name": "target_z",
+        "nominal": 7,
+        "min": 4,
+        "max": 11,
+        "unit": "m",
+        "meaning": "requested hover altitude"
+      },
+      {
+        "name": "payload_mass",
+        "nominal": 1.1,
+        "min": 0.5,
+        "max": 2.2,
+        "unit": "kg",
+        "meaning": "payload carried until the release event"
+      },
+      {
+        "name": "wind_speed",
+        "nominal": 7,
+        "min": 0,
+        "max": 18,
+        "unit": "m/s",
+        "meaning": "horizontal background wind speed"
+      },
+      {
+        "name": "wind_heading",
+        "nominal": 30,
+        "min": -180,
+        "max": 180,
+        "unit": "deg",
+        "meaning": "direction toward which background wind acts"
+      },
+      {
+        "name": "gust_factor",
+        "nominal": 0.55,
+        "min": 0.2,
+        "max": 0.85,
+        "unit": "1",
+        "meaning": "temporary gust magnitude relative to background wind"
+      },
+      {
+        "name": "gust_time",
+        "nominal": 6,
+        "min": 4.5,
+        "max": 8,
+        "unit": "s",
+        "meaning": "start time of a 1.2 s cross-wind gust"
+      },
+      {
+        "name": "payload_release_time",
+        "nominal": 10,
+        "min": 8.5,
+        "max": 12,
+        "unit": "s",
+        "meaning": "time at which the payload is released"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "flight_state",
+        "channels": 12,
+        "order": "[x, y, z, vx, vy, vz, roll, pitch, yaw, p, q, r]",
+        "unit": "[m,m,m,m/s,m/s,m/s,rad,rad,rad,rad/s,rad/s,rad/s]",
+        "physical_source": "measured vehicle rigid-body states"
+      },
+      {
+        "name": "propulsion",
+        "channels": 10,
+        "order": "[FL, FR, RL, RR thrust; four rotor speeds; electrical power; remaining energy]",
+        "unit": "[N x4,rad/s x4,W,Wh]",
+        "physical_source": "actual bounded rotor thrusts, rotor states and propulsion-energy measurements"
+      },
+      {
+        "name": "environment_state",
+        "channels": 4,
+        "order": "[wind x, wind y, wind z, attached payload mass]",
+        "unit": "[m/s,m/s,m/s,kg]",
+        "physical_source": "actual wind applied to the airframe and payload state used by the plant"
+      }
+    ],
+    "prompt": "Build a four-rotor unmanned aircraft with nonlinear six-degree-of-freedom rigid-body dynamics, four finite-response propulsion channels, aerodynamic wind loading, and closed-loop hover-point regulation. Rotor thrusts and moments must drive the aircraft states through the rigid-body equations; directly prescribing position or attitude is not a valid implementation.\n\nRead target_x, target_y, target_z, payload_mass, wind_speed, wind_heading, gust_factor, gust_time, and payload_release_time from base-workspace variables. Their nominal values are 8 m, 4 m, 7 m, 1.1 kg, 7 m/s, 30 deg, 0.55, 6.0 s, and 10.0 s. They operate respectively over 5--13 m, -8--8 m, 4--11 m, 0.5--2.2 kg, 0--18 m/s, -180--180 deg, 0.20--0.85, 4.5--8.0 s, and 8.5--12.0 s. A 1.2 s cross-wind gust begins at gust_time, and the payload is released at payload_release_time.\n\nAssume a clean MATLAB session in which only the declared public inputs are provided. Use a 3.2 kg unloaded airframe with body axes aligned to its principal inertia axes, a 0.32 m rotor arm, and a 0.018 N*m/N rotor yaw-moment coefficient. Limit each rotor to 20 N and 1100 rad/s, limit total propulsion electrical power to 2.4 kW, and keep absolute roll and pitch below 0.70 rad. Move from the origin to the requested hover point, remain stable in the declared wind and payload range, and recover hover-point regulation after both the gust and payload release. The control and allocation methods are not prescribed.\n\nUse a right-handed world frame with positive z upward. Attitude is the 3-2-1 yaw-pitch-roll orientation from body to world, reported in the order [roll, pitch, yaw]; p, q, and r are angular-velocity components about the body x, y, and z axes, not Euler-angle derivatives. Log Timeseries flight_state, propulsion, and environment_state. flight_state must contain [x, y, z in m, vx, vy, vz in m/s, roll, pitch, yaw in rad, p, q, r in rad/s]. propulsion must contain [FL, FR, RL, RR actual thrust in N, the corresponding four rotor speeds in rad/s, electrical power in W, remaining energy in Wh]. environment_state must contain the actual applied [wind x, wind y, wind z in m/s, attached payload mass in kg]. Logged quantities must come from the same causal flight and propulsion simulation rather than from commands or precomputed trajectories.\n\nWork directly in the required model file and keep the latest usable state saved at that path throughout the task.",
+    "groups": {
+      "G": "simulation, complete multichannel contract and bounded rigid-body/rotor states",
+      "A": "nominal hover-point, velocity and attitude accuracy",
+      "Q": "flight-envelope, propulsion-saturation and path quality",
+      "M": "public-mass three-axis force balance with relative-wind drag, rigid-body angular response with shared passive damping and wind-moment candidates, representation-neutral monotone thrust-power coupling and energy consistency; rotor speed is diagnostic because pitch and actuation strategy are not prescribed",
+      "R": "worst joint waypoint, payload and wind operating point",
+      "D": "reported gust and payload events cross-checked against actual acceleration/thrust response and recovery",
+      "weights": {
+        "A": 0.2,
+        "Q": 0.1,
+        "M": 0.3,
+        "R": 0.2,
+        "D": 0.2
+      }
+    },
+    "reference_sources": [
+      {
+        "source_type": "screened mechanism source",
+        "source_url": "https://github.com/mathworks/Quadcopter-Drone-Model-Simscape",
+        "license": "MathWorks 3-clause product-restricted license; no model code copied",
+        "revision": "91bde8b4072cc5ae6fa5e5be41d84945eda7c5ec",
+        "use": "mechanism and scale audit: four electric propulsion channels, 6-DOF dynamics, payload transition and wind sweeps"
+      },
+      {
+        "source_type": "original equations",
+        "source_url": "",
+        "license": "original implementation; project license applies",
+        "revision": "simuverity-101-v1",
+        "use": "self-contained rigid-body force/moment balances, rotor allocation, drag and propulsion-energy dynamics"
+      }
+    ]
+  },
+  "application_domain": "aerospace unmanned aerial vehicles",
+  "physical_domains": [
+    "six-degree-of-freedom rigid-body flight",
+    "four-channel electric propulsion",
+    "aerodynamic wind loading"
+  ],
+  "modeling_paradigm": "causal nonlinear flight dynamics with bounded rotor actuators",
+  "capability_types": [
+    "6-DOF plant construction",
+    "position and attitude regulation",
+    "payload transition",
+    "gust recovery"
+  ],
+  "difficulty": {
+    "physical_coupling": 2,
+    "nonlinear_or_switching": 2,
+    "dynamic_or_fault": 2,
+    "joint_operating_points": 2,
+    "multichannel_or_units": 2,
+    "functional_and_safety_constraints": 0,
+    "total": 10
+  },
+  "sim": {
+    "step": 0.002,
+    "stop": 18
+  },
+  "public_inputs": [
+    {
+      "name": "target_x",
+      "nominal": 8,
+      "min": 5,
+      "max": 13,
+      "unit": "m",
+      "meaning": "requested hover-point x coordinate"
+    },
+    {
+      "name": "target_y",
+      "nominal": 4,
+      "min": -8,
+      "max": 8,
+      "unit": "m",
+      "meaning": "requested hover-point y coordinate"
+    },
+    {
+      "name": "target_z",
+      "nominal": 7,
+      "min": 4,
+      "max": 11,
+      "unit": "m",
+      "meaning": "requested hover altitude"
+    },
+    {
+      "name": "payload_mass",
+      "nominal": 1.1,
+      "min": 0.5,
+      "max": 2.2,
+      "unit": "kg",
+      "meaning": "payload carried until the release event"
+    },
+    {
+      "name": "wind_speed",
+      "nominal": 7,
+      "min": 0,
+      "max": 18,
+      "unit": "m/s",
+      "meaning": "horizontal background wind speed"
+    },
+    {
+      "name": "wind_heading",
+      "nominal": 30,
+      "min": -180,
+      "max": 180,
+      "unit": "deg",
+      "meaning": "direction toward which background wind acts"
+    },
+    {
+      "name": "gust_factor",
+      "nominal": 0.55,
+      "min": 0.2,
+      "max": 0.85,
+      "unit": "1",
+      "meaning": "temporary gust magnitude relative to background wind"
+    },
+    {
+      "name": "gust_time",
+      "nominal": 6,
+      "min": 4.5,
+      "max": 8,
+      "unit": "s",
+      "meaning": "start time of a 1.2 s cross-wind gust"
+    },
+    {
+      "name": "payload_release_time",
+      "nominal": 10,
+      "min": 8.5,
+      "max": 12,
+      "unit": "s",
+      "meaning": "time at which the payload is released"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "flight_state",
+      "channels": 12,
+      "order": "[x, y, z, vx, vy, vz, roll, pitch, yaw, p, q, r]",
+      "unit": "[m,m,m,m/s,m/s,m/s,rad,rad,rad,rad/s,rad/s,rad/s]",
+      "physical_source": "measured vehicle rigid-body states"
+    },
+    {
+      "name": "propulsion",
+      "channels": 10,
+      "order": "[FL, FR, RL, RR thrust; four rotor speeds; electrical power; remaining energy]",
+      "unit": "[N x4,rad/s x4,W,Wh]",
+      "physical_source": "actual bounded rotor thrusts, rotor states and propulsion-energy measurements"
+    },
+    {
+      "name": "environment_state",
+      "channels": 4,
+      "order": "[wind x, wind y, wind z, attached payload mass]",
+      "unit": "[m/s,m/s,m/s,kg]",
+      "physical_source": "actual wind applied to the airframe and payload state used by the plant"
+    }
+  ],
+  "prompt": "Build a four-rotor unmanned aircraft with nonlinear six-degree-of-freedom rigid-body dynamics, four finite-response propulsion channels, aerodynamic wind loading, and closed-loop hover-point regulation. Rotor thrusts and moments must drive the aircraft states through the rigid-body equations; directly prescribing position or attitude is not a valid implementation.\n\nRead target_x, target_y, target_z, payload_mass, wind_speed, wind_heading, gust_factor, gust_time, and payload_release_time from base-workspace variables. Their nominal values are 8 m, 4 m, 7 m, 1.1 kg, 7 m/s, 30 deg, 0.55, 6.0 s, and 10.0 s. They operate respectively over 5--13 m, -8--8 m, 4--11 m, 0.5--2.2 kg, 0--18 m/s, -180--180 deg, 0.20--0.85, 4.5--8.0 s, and 8.5--12.0 s. A 1.2 s cross-wind gust begins at gust_time, and the payload is released at payload_release_time.\n\nAssume a clean MATLAB session in which only the declared public inputs are provided. Use a 3.2 kg unloaded airframe with body axes aligned to its principal inertia axes, a 0.32 m rotor arm, and a 0.018 N*m/N rotor yaw-moment coefficient. Limit each rotor to 20 N and 1100 rad/s, limit total propulsion electrical power to 2.4 kW, and keep absolute roll and pitch below 0.70 rad. Move from the origin to the requested hover point, remain stable in the declared wind and payload range, and recover hover-point regulation after both the gust and payload release. The control and allocation methods are not prescribed.\n\nUse a right-handed world frame with positive z upward. Attitude is the 3-2-1 yaw-pitch-roll orientation from body to world, reported in the order [roll, pitch, yaw]; p, q, and r are angular-velocity components about the body x, y, and z axes, not Euler-angle derivatives. Log Timeseries flight_state, propulsion, and environment_state. flight_state must contain [x, y, z in m, vx, vy, vz in m/s, roll, pitch, yaw in rad, p, q, r in rad/s]. propulsion must contain [FL, FR, RL, RR actual thrust in N, the corresponding four rotor speeds in rad/s, electrical power in W, remaining energy in Wh]. environment_state must contain the actual applied [wind x, wind y, wind z in m/s, attached payload mass in kg]. Logged quantities must come from the same causal flight and propulsion simulation rather than from commands or precomputed trajectories.\n\nWork directly in the required model file and keep the latest usable state saved at that path throughout the task.",
+  "groups": {
+    "G": "simulation, complete multichannel contract and bounded rigid-body/rotor states",
+    "A": "nominal hover-point, velocity and attitude accuracy",
+    "Q": "flight-envelope, propulsion-saturation and path quality",
+    "M": "public-mass three-axis force balance with relative-wind drag, rigid-body angular response with shared passive damping and wind-moment candidates, representation-neutral monotone thrust-power coupling and energy consistency; rotor speed is diagnostic because pitch and actuation strategy are not prescribed",
+    "R": "worst joint waypoint, payload and wind operating point",
+    "D": "reported gust and payload events cross-checked against actual acceleration/thrust response and recovery",
+    "weights": {
+      "A": 0.2,
+      "Q": 0.1,
+      "M": 0.3,
+      "R": 0.2,
+      "D": 0.2
+    }
+  },
+  "reference_sources": [
+    {
+      "source_type": "screened mechanism source",
+      "source_url": "https://github.com/mathworks/Quadcopter-Drone-Model-Simscape",
+      "license": "MathWorks 3-clause product-restricted license; no model code copied",
+      "revision": "91bde8b4072cc5ae6fa5e5be41d84945eda7c5ec",
+      "use": "mechanism and scale audit: four electric propulsion channels, 6-DOF dynamics, payload transition and wind sweeps"
+    },
+    {
+      "source_type": "original equations",
+      "source_url": "",
+      "license": "original implementation; project license applies",
+      "revision": "simuverity-101-v1",
+      "use": "self-contained rigid-body force/moment balances, rotor allocation, drag and propulsion-energy dynamics"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schema": "simuverity.matlab-evaluator-support-closure.v1",
+  "files": [
+    {
+      "name": "simuverity_run_candidate_evidence.m"
+    },
+    {
+      "name": "simuverity_candidate_structure.m"
+    },
+    {
+      "name": "simuverity_public_output_compatibility.m"
+    },
+    {
+      "name": "simuverity_publish_evidence_closure.m"
+    }
+  ]
+}

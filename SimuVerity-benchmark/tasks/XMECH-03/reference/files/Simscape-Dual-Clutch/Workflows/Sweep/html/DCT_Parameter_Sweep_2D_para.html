@@ -1,0 +1,318 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+<title>Dual Clutch Transmission - Parameter Sweep, 2 Parameter, Parallel Computing</title>
+<meta name="generator" content="MATLAB 25.1">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2025-12-22">
+<meta name="DC.source" content="DCT_Parameter_Sweep_2D_para.m">
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="content">
+<h1>Dual Clutch Transmission - Parameter Sweep, 2 Parameter, Parallel Computing</h1>
+<!--introduction-->
+<p>This example shows a vehicle with a five-speed automatic dual-clutch transmission. The transmission controller converts the pedal deflection into a demanded torque. This demanded torque is then passed to the engine management. The pedal deflection and the vehicle speed are also used by the transmission controller to determine when the gear shifts should occur. Gear shifts are implemented via the two clutches, one clutch pressure being ramped up as the other clutch pressure is ramped down. Gear pre-selection via dog clutches ensures that the correct gear is fully selected before the on-going clutch is enabled.</p>
+<p>The script below uses varies the shift map to see the impact on fuel economy. The shift map is parameterized with 2 parameters to limit the design space.</p>
+<!--/introduction-->
+<h2>Contents</h2>
+<div>
+<ul>
+<li>
+<a href="#1">Model</a>
+</li>
+<li>
+<a href="#2">Run Parameter Sweep</a>
+</li>
+</ul>
+</div>
+<h2 id="1">Model</h2>
+<img vspace="5" hspace="5" src="DCT_Parameter_Sweep_2D_para_01.png" alt=""> <h2 id="2">Run Parameter Sweep</h2>
+<pre class="codeoutput">[22-Dec-2025 17:19:51] Checking for availability of parallel pool...
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Preserving jobs with IDs: 1 because they contain crash dump files.
+You can use 'delete(myCluster.Jobs)' to remove all jobs created with profile Processes. To create 'myCluster' use 'myCluster = parcluster('Processes')'.
+Connected to parallel pool with 4 workers.
+[22-Dec-2025 17:20:09] Starting Simulink on parallel workers...
+[22-Dec-2025 17:20:14] Configuring simulation cache folder on parallel workers...
+[22-Dec-2025 17:20:14] Transferring base workspace variables used in the model to parallel workers...
+[22-Dec-2025 17:20:14] Total size of base workspace variables to send to parallel workers is 13.87 MB.
+[22-Dec-2025 17:20:14] Loading model on parallel workers...
+[22-Dec-2025 17:20:23] Running simulations...
+[22-Dec-2025 17:20:53] Completed 1 of 20 simulation runs
+[22-Dec-2025 17:20:53] Received simulation output (size: 1.07 MB) for run 1 from parallel worker.
+[22-Dec-2025 17:20:54] Completed 2 of 20 simulation runs
+[22-Dec-2025 17:20:54] Received simulation output (size: 1.08 MB) for run 2 from parallel worker.
+[22-Dec-2025 17:20:54] Completed 3 of 20 simulation runs
+[22-Dec-2025 17:20:54] Received simulation output (size: 1.07 MB) for run 4 from parallel worker.
+[22-Dec-2025 17:20:54] Completed 4 of 20 simulation runs
+[22-Dec-2025 17:20:54] Received simulation output (size: 1.09 MB) for run 3 from parallel worker.
+[22-Dec-2025 17:21:04] Completed 5 of 20 simulation runs
+[22-Dec-2025 17:21:04] Received simulation output (size: 1.11 MB) for run 7 from parallel worker.
+[22-Dec-2025 17:21:04] Completed 6 of 20 simulation runs
+[22-Dec-2025 17:21:04] Received simulation output (size: 1.18 MB) for run 5 from parallel worker.
+[22-Dec-2025 17:21:04] Completed 7 of 20 simulation runs
+[22-Dec-2025 17:21:04] Received simulation output (size: 1.14 MB) for run 6 from parallel worker.
+[22-Dec-2025 17:21:04] Completed 8 of 20 simulation runs
+[22-Dec-2025 17:21:04] Received simulation output (size: 1.12 MB) for run 8 from parallel worker.
+[22-Dec-2025 17:21:14] Completed 9 of 20 simulation runs
+[22-Dec-2025 17:21:14] Received simulation output (size: 1.16 MB) for run 10 from parallel worker.
+[22-Dec-2025 17:21:14] Completed 10 of 20 simulation runs
+[22-Dec-2025 17:21:14] Received simulation output (size: 1.16 MB) for run 9 from parallel worker.
+[22-Dec-2025 17:21:14] Completed 11 of 20 simulation runs
+[22-Dec-2025 17:21:14] Received simulation output (size: 1.17 MB) for run 11 from parallel worker.
+[22-Dec-2025 17:21:15] Completed 12 of 20 simulation runs
+[22-Dec-2025 17:21:15] Received simulation output (size: 1.18 MB) for run 12 from parallel worker.
+[22-Dec-2025 17:21:24] Completed 13 of 20 simulation runs
+[22-Dec-2025 17:21:24] Received simulation output (size: 1.21 MB) for run 14 from parallel worker.
+[22-Dec-2025 17:21:24] Completed 14 of 20 simulation runs
+[22-Dec-2025 17:21:24] Received simulation output (size: 1.19 MB) for run 13 from parallel worker.
+[22-Dec-2025 17:21:24] Completed 15 of 20 simulation runs
+[22-Dec-2025 17:21:24] Received simulation output (size: 1.20 MB) for run 15 from parallel worker.
+[22-Dec-2025 17:21:24] Completed 16 of 20 simulation runs
+[22-Dec-2025 17:21:24] Received simulation output (size: 1.18 MB) for run 16 from parallel worker.
+[22-Dec-2025 17:21:33] Completed 17 of 20 simulation runs
+[22-Dec-2025 17:21:34] Received simulation output (size: 1.21 MB) for run 17 from parallel worker.
+[22-Dec-2025 17:21:34] Completed 18 of 20 simulation runs
+[22-Dec-2025 17:21:34] Received simulation output (size: 1.21 MB) for run 18 from parallel worker.
+[22-Dec-2025 17:21:34] Completed 19 of 20 simulation runs
+[22-Dec-2025 17:21:34] Received simulation output (size: 1.20 MB) for run 19 from parallel worker.
+[22-Dec-2025 17:21:34] Completed 20 of 20 simulation runs
+[22-Dec-2025 17:21:34] Received simulation output (size: 1.20 MB) for run 20 from parallel worker.
+[22-Dec-2025 17:21:34] Cleaning up parallel workers...
+Parallel pool using the 'Processes' profile is shutting down.
+</pre>
+<img vspace="5" hspace="5" src="DCT_Parameter_Sweep_2D_para_02.png" alt=""> <img vspace="5" hspace="5" src="DCT_Parameter_Sweep_2D_para_03.png" alt=""> <p class="footer">Copyright 2014-2025 The MathWorks, Inc.<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2025a</a>
+<br>
+</p>
+</div>
+<!--
+##### SOURCE BEGIN #####
+%% Dual Clutch Transmission - Parameter Sweep, 2 Parameter, Parallel Computing
+%
+% This example shows a vehicle with a five-speed automatic dual-clutch
+% transmission. The transmission controller converts the pedal deflection
+% into a demanded torque. This demanded torque is then passed to the engine
+% management. The pedal deflection and the vehicle speed are also used by
+% the transmission controller to determine when the gear shifts should
+% occur. Gear shifts are implemented via the two clutches, one clutch
+% pressure being ramped up as the other clutch pressure is ramped down.
+% Gear pre-selection via dog clutches ensures that the correct gear is
+% fully selected before the on-going clutch is enabled.
+% 
+% The script below uses varies the shift map to see the impact on fuel
+% economy. The shift map is parameterized with 2 parameters to limit the
+% design space. 
+%
+% Copyright 2014-2025 The MathWorks, Inc.
+
+%% Model
+
+open_system('Dual_Clutch_Trans')
+
+set_param(find_system('Dual_Clutch_Trans','MatchFilter',@Simulink.match.allVariants,'FindAll', 'on','type','annotation','Tag','ModelFeatures'),'Interpreter','off')
+
+%% Run Parameter Sweep
+
+% Open and configure model
+cd(fileparts(which(mfilename)));
+orig_mdl = 'Dual_Clutch_Trans';
+mdl = [orig_mdl '_pct_temp']; % Normally would add suffix for PCT copy
+open_system(orig_mdl);
+save_system(orig_mdl,[pwd filesep mdl]);
+
+setup_model_param_sweep
+
+% Generate parameter sets
+
+% Quick test
+mingeardiff = 16:1.25:20;
+rampconst = 0:15:60;
+
+% For comparing methods/solvers
+%mingeardiff = 16:1:20;
+%rampconst = 0:5:60;
+
+% Detailed sweep
+%mingeardiff = 16:0.2:20;
+%rampconst = 0:1:60;
+
+pSetNum = 0;
+for rc_i = 1:length(rampconst)
+    for mgd_i = 1:length(mingeardiff)
+        pSetNum = pSetNum+1;
+        [Upshift_Speeds, Downshift_Speeds, Pedal_Positions] = Calc_Shift_Map_RO(rampconst(rc_i),mingeardiff(mgd_i));
+
+        simInput(pSetNum) = Simulink.SimulationInput(mdl);
+        simInput(pSetNum) = simInput(pSetNum).setVariable('Upshift_Speeds',Upshift_Speeds);
+        simInput(pSetNum) = simInput(pSetNum).setVariable('Downshift_Speeds',Downshift_Speeds);
+        rc(pSetNum) = rampconst(rc_i);
+        mg(pSetNum) = mingeardiff(mgd_i);
+    end
+end
+
+% Run simulations
+simOut = parsim(simInput,...
+    'ShowProgress','on',...
+    'UseFastRestart','on',...
+    'ShowSimulationManager','on',...
+    'TransferBaseWorkspaceVariables','on');
+
+% Plot results
+out_i = 0;
+for rc_i=1:length(rampconst)
+    for mg_i=1:length(mingeardiff)
+        out_i = out_i+1;
+        FuelUsedSET(mg_i,rc_i) = simOut(out_i).FuelUsedLiters;
+        logsout_i = simOut(out_i).logsout_Dual_Clutch_Trans;
+        testData_i(out_i)  = logsout_i.get('Vehicle_Speed');
+    end
+end
+
+% Reuse figure if it exists, else create new figure
+if ~exist('h5_Dual_Clutch_Trans', 'var') || ...
+        ~isgraphics(h5_Dual_Clutch_Trans, 'figure')
+    h5_Dual_Clutch_Trans = figure('Name', 'Dual_Clutch_Trans_2D_Sweep');
+end
+figure(h5_Dual_Clutch_Trans)
+clf(h5_Dual_Clutch_Trans)
+
+set(gcf,'Position',[104   78   560   420]);
+[rc_array, mgd_array] = meshgrid(rampconst,mingeardiff);
+mesh(mgd_array,rc_array,FuelUsedSET);
+%surf(mgd_array,rc_array,FuelUsedSET);
+title('Fuel Use With Varying Shift Schedule','FontWeight','Bold','FontSize',14);
+xlabel('Offset Parameter','FontWeight','Bold','FontSize',12);
+ylabel('Ramp Parameter','FontWeight','Bold','FontSize',12);
+zlabel('Fuel Used (L)','FontWeight','Bold','FontSize',12);
+legend('Parameter Sweep','Location','NorthWest');
+
+% Reuse figure if it exists, else create new figure
+if ~exist('h6_Dual_Clutch_Trans', 'var') || ...
+        ~isgraphics(h6_Dual_Clutch_Trans, 'figure')
+    h6_Dual_Clutch_Trans = figure('Name', 'Dual_Clutch_Trans_2D_Sweep');
+end
+figure(h6_Dual_Clutch_Trans)
+clf(h6_Dual_Clutch_Trans)
+out_i = 0;
+for rc_i=1:length(rampconst)
+    for mg_i=1:length(mingeardiff)
+        out_i = out_i+1;
+        logsout_i = simOut(out_i).logsout_Dual_Clutch_Trans;
+        testData_i  = logsout_i.get('Engine_Speed');
+        plot(testData_i.Values.Time,testData_i.Values.Data)
+        hold on
+        legend_str{out_i} = ['Test ' num2str(out_i)];
+    end
+end
+hold off
+title('Engine Speed With Varying Shift Schedule');
+ylabel('Engine Speed (rpm)');
+xlabel('Time (s)');
+legend(legend_str,'Location','East');
+
+% Save results
+% Uncomment to save results
+%{
+trans_var = get_param([mdl '/Dual Clutch Transmission'],'LabelModeActiveChoice');
+veh_var = get_param([mdl '/Vehicle Dynamics'],'LabelModeActiveChoice');
+solver_setting = get_param(mdl,'Solver');
+if (strcmp(solver_setting,'ode23t'))
+    solver_var = 'Desktop';
+else
+    solver_var = 'Real Time';
+end
+
+SaveVarName = ['FuelUsedSweep2D_' trans_var(1:3) solver_var(1:3) '_' num2str(numel(FuelUsedSET))];
+eval([SaveVarName '.FuelUsedSET = FuelUsedSET;']);
+eval([SaveVarName '.rampconst = rampconst;']);
+eval([SaveVarName '.mingeardiff = mingeardiff;']);
+eval([SaveVarName '.Elapsed_Sim_Time = Elapsed_Sim_Time;']);
+eval([SaveVarName '.Variants.Transmission = ''' trans_var ''';']);
+eval([SaveVarName '.Variants.Vehicle = ''' veh_var ''';']);
+eval([SaveVarName '.Variants.SolverSettings = ''' solver_var ''';']);
+
+save(SaveVarName, SaveVarName);
+%}
+
+clear rampconst mingeardiff FuelUsedSET
+
+% Reset model and close pool
+delete(gcp);
+bdclose(mdl);
+%delete('*.mex*')
+%!rmdir slprj /S/Q
+delete([mdl '.slx']);
+
+
+##### SOURCE END #####
+-->
+</body>
+</html>

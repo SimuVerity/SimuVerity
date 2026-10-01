@@ -1,0 +1,191 @@
+{
+  "schema": "simuverity.matlab-local-importer-recipe.v1",
+  "task_id": "XMECH-05",
+  "release": "simuverity-101-v1",
+  "matlab_release": "R2025a",
+  "publisher": "The MathWorks, Inc.",
+  "redistributes_mathworks_files": false,
+  "destination": "%LOCALAPPDATA%/SimuVerity/assets/simuverity-101-v1/XMECH-05",
+  "discovery": {
+    "method": "matlab_example_or_installed_product_search",
+    "example_id": "sm/ForkliftExample",
+    "source_files": [
+      {
+        "name": "Forklift.slx"
+      }
+    ],
+    "expected_files": [
+      {
+        "path": "Forklift.slx",
+        "size_bytes": 1560613
+      },
+      {
+        "path": "ForkliftSupport/Data/ControlSignals.mat",
+        "size_bytes": 3279
+      },
+      {
+        "path": "ForkliftSupport/Geometries/Box.SLDPRT",
+        "size_bytes": 60907
+      },
+      {
+        "path": "ForkliftSupport/Geometries/Box.STEP",
+        "size_bytes": 23453
+      },
+      {
+        "path": "ForkliftSupport/Geometries/Bump.SLDPRT",
+        "size_bytes": 69150
+      },
+      {
+        "path": "ForkliftSupport/Geometries/Cage.SLDPRT",
+        "size_bytes": 143820
+      },
+      {
+        "path": "ForkliftSupport/Geometries/Fork.SLDPRT",
+        "size_bytes": 65296
+      },
+      {
+        "path": "ForkliftSupport/Geometries/Fork.STEP",
+        "size_bytes": 116718
+      },
+      {
+        "path": "ForkliftSupport/Geometries/ForkFrame.SLDPRT",
+        "size_bytes": 183139
+      },
+      {
+        "path": "ForkliftSupport/Geometries/ForkliftPulley.STEP",
+        "size_bytes": 253129
+      },
+      {
+        "path": "ForkliftSupport/Geometries/FrontFrame.STEP",
+        "size_bytes": 290529
+      },
+      {
+        "path": "ForkliftSupport/Geometries/LargePulley.step",
+        "size_bytes": 200900
+      },
+      {
+        "path": "ForkliftSupport/Geometries/MainFrame.SLDPRT",
+        "size_bytes": 375440
+      },
+      {
+        "path": "ForkliftSupport/Geometries/MainFrame.STEP",
+        "size_bytes": 600906
+      },
+      {
+        "path": "ForkliftSupport/Geometries/Palette.step",
+        "size_bytes": 346868
+      },
+      {
+        "path": "ForkliftSupport/Geometries/Pulley.SLDPRT",
+        "size_bytes": 364795
+      },
+      {
+        "path": "ForkliftSupport/Geometries/RackAngleBrace.step",
+        "size_bytes": 52478
+      },
+      {
+        "path": "ForkliftSupport/Geometries/RackLeg.step",
+        "size_bytes": 1518948
+      },
+      {
+        "path": "ForkliftSupport/Geometries/RackShelfBar.step",
+        "size_bytes": 131915
+      },
+      {
+        "path": "ForkliftSupport/Geometries/RackShelfEdge.step",
+        "size_bytes": 132090
+      },
+      {
+        "path": "ForkliftSupport/Geometries/RackShelfEnd.step",
+        "size_bytes": 52390
+      },
+      {
+        "path": "ForkliftSupport/Geometries/RefJoints.SLDPRT",
+        "size_bytes": 384395
+      },
+      {
+        "path": "ForkliftSupport/Geometries/Road.SLDPRT",
+        "size_bytes": 75227
+      },
+      {
+        "path": "ForkliftSupport/Geometries/Road.STEP",
+        "size_bytes": 19145
+      },
+      {
+        "path": "ForkliftSupport/Geometries/Seat.step",
+        "size_bytes": 158598
+      },
+      {
+        "path": "ForkliftSupport/Geometries/SteerJoint.SLDPRT",
+        "size_bytes": 76287
+      },
+      {
+        "path": "ForkliftSupport/Geometries/SteerJoint.STEP",
+        "size_bytes": 25706
+      },
+      {
+        "path": "ForkliftSupport/Geometries/SteeringColumn.step",
+        "size_bytes": 135854
+      },
+      {
+        "path": "ForkliftSupport/Geometries/SteeringWheel.step",
+        "size_bytes": 123987
+      },
+      {
+        "path": "ForkliftSupport/Geometries/TopFrame.SLDPRT",
+        "size_bytes": 101886
+      },
+      {
+        "path": "ForkliftSupport/Geometries/TopFrame.STEP",
+        "size_bytes": 61039
+      },
+      {
+        "path": "ForkliftSupport/Scripts/ForkliftMarker.m",
+        "size_bytes": 2506
+      },
+      {
+        "path": "ForkliftSupport/Scripts/ForkliftParameters.m",
+        "size_bytes": 1921
+      },
+      {
+        "path": "ForkliftSupport/Scripts/ForkliftPlots.m",
+        "size_bytes": 9091
+      },
+      {
+        "path": "ForkliftSupport/Scripts/RackParameters.m",
+        "size_bytes": 81958
+      }
+    ]
+  },
+  "transform": "transform.m",
+  "validation": {
+    "required": true,
+    "checks": [
+      "load",
+      "update",
+      "compile",
+      "simulate",
+      "all_official_scenarios",
+      "reference_score"
+    ],
+    "on_mismatch": "fail_closed"
+  },
+  "entrypoint": "Forklift.slx",
+  "expected_valid_scenarios": 7,
+  "score_tolerance": 1e-09,
+  "expected_score": 95.2124973731,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal",
+      "light_payload",
+      "heavy_payload",
+      "low_friction",
+      "high_friction",
+      "large_bump",
+      "combined_boundary"
+    ],
+    "nominal_scenario_id": "nominal",
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision"
+}

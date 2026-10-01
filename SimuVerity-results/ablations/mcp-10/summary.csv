@@ -1,0 +1,4 @@
+condition,run_id,model,harness,taskset_id,task_count,repeat_count,result_count,scored_count,protocol_zero_count,score_sum,score_mean,delta_vs_full_mean,delivered_count,native_executable_count,g_pass_count
+full_mcp,opus-4-8-claude-code-full-mcp-10,Claude Opus 4.8,Claude Code,simuverity-mcp-ablation-10-v1,10,3,30,30,0,784.624548,78.462455,0.000000,30,30,30
+no_simulation,opus-4-8-claude-code-no-simulation-10,Claude Opus 4.8,Claude Code,simuverity-mcp-ablation-10-v1,10,3,30,10,26,78.837205,7.883721,-70.578734,16,10,4
+batch_only,opus-4-8-claude-code-batch-only-10,Claude Opus 4.8,Claude Code,simuverity-mcp-ablation-10-v1,10,3,30,15,18,182.302333,18.230233,-60.232222,18,15,12

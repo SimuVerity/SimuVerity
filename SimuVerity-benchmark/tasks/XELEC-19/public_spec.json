@@ -1,0 +1,8 @@
+{
+  "schema": "simuverity.public-spec.v1",
+  "task_id": "XELEC-19",
+  "collection": "XELEC",
+  "runtime_alias": "XELEC-19",
+  "candidate_filename": "cand_XELEC19.slx",
+  "prompt": "Build a three-phase multilevel inverter with an explicit power stage made from discrete controllable semiconductor switches rather than a preassembled bridge block. A DC source must feed the multilevel switching stage, which must supply a balanced three-phase load. Read P_load from a base-workspace variable; its nominal value is 500 W and its operating envelope is +/-10%. At nominal conditions one physically measured output phase must be a stepped bipolar 50 Hz waveform near 412 V peak-to-peak, and it must remain at the intended frequency and voltage level across the stated load envelope. Log that physical output phase voltage as a complete-run MATLAB Timeseries named Vout.\n\nSubmission filename contract: create, edit, and save the final self-contained Simulink model as cand_XELEC19.slx in the assigned submission directory; keep the latest usable state at that exact path throughout the run."
+}

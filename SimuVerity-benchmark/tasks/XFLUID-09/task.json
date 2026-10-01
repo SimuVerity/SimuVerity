@@ -1,0 +1,70 @@
+{
+  "schema": "simuverity.task.v1",
+  "release": "simuverity-101-v1",
+  "task_id": "XFLUID-09",
+  "ordinal": 50,
+  "collection": "XFLUID",
+  "runtime_alias": "XFLUID-09",
+  "required_model_file": "cand_XFLUID09.slx",
+  "evaluation_policy_id": "simuverity-101-v1:xfluid-09:scoring",
+  "candidate_closure": {
+    "public_input_names": [
+      "p_storage",
+      "p_vehicle_init",
+      "T_env",
+      "T_fluid"
+    ],
+    "nominal_provider": "simuverity_public_nominal_inputs"
+  },
+  "public_spec": "public_spec.json",
+  "official_scenarios": "official_scenarios.json",
+  "extractor": {
+    "kind": "matlab_function",
+    "path": "extractor/run.m",
+    "entrypoint": "run",
+    "implementation": "vendor/scripts/formal90/tasks/f90_xfluid09/f90_xfluid09_extract_candidate_evidence.m",
+    "closure_manifest": "extractor/manifest.json"
+  },
+  "scorer": {
+    "kind": "python_function",
+    "path": "scorer.py",
+    "entrypoint": "score",
+    "closure_manifest": "scorer/manifest.json",
+    "offline_only": true
+  },
+  "reference": {
+    "materialization": "local_importer",
+    "recipe": "reference/importer_recipe.json",
+    "entrypoint": "HydrogenRefuelingStation.slx",
+    "expected_valid_scenarios": 5,
+    "score_tolerance": 1e-12,
+    "expected_score": 90.62360631038996,
+    "expected_score_basis": "reference_replay",
+    "scenario_contract": {
+      "expected_ids": [
+        "nominal",
+        "low_initial_vehicle_pressure",
+        "warm_ambient",
+        "warmer_precoolant",
+        "reduced_supply_pressure"
+      ],
+      "nominal_scenario_id": "nominal",
+      "nominal_materialization": "authoritative_scenario_set"
+    },
+    "score_tolerance_basis": "source_authority_numeric_precision",
+    "runtime_manifest": "reference/runtime_manifest.json"
+  },
+  "applicable_groups": [
+    "G",
+    "A",
+    "Q",
+    "M",
+    "R",
+    "D"
+  ],
+  "release_license_status": "MATHWORKS_LOCAL_IMPORT_NO_REDISTRIBUTION",
+  "system_profile": {
+    "path": "system_profile.json",
+    "schema": "simuverity.system-profile.v1"
+  }
+}

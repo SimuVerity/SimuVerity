@@ -1,0 +1,157 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XAUTO-07",
+  "scenarios": [
+    {
+      "id": "nominal_start_stop",
+      "acceleration_scale": 1.0,
+      "brake_scale": 1.0
+    },
+    {
+      "id": "reduced_acceleration",
+      "acceleration_scale": 0.55,
+      "brake_scale": 1.0
+    },
+    {
+      "id": "reduced_braking",
+      "acceleration_scale": 1.0,
+      "brake_scale": 0.5
+    },
+    {
+      "id": "moderate_cycle",
+      "acceleration_scale": 0.75,
+      "brake_scale": 0.75
+    },
+    {
+      "id": "strong_motoring_light_brake",
+      "acceleration_scale": 0.9,
+      "brake_scale": 0.4
+    }
+  ],
+  "contract": {
+    "difficulty": {
+      "score": 11,
+      "maximum": 12,
+      "basis": [
+        "battery/DC-link/converter/IPMSM electromechanical path",
+        "closed-loop phase-current and torque regulation",
+        "motoring-to-generating transition",
+        "fixed-ratio axle and finite-mass vehicle dynamics",
+        "500001-sample physical traces per 5 s run",
+        "five pedal-scale scenarios"
+      ]
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85,
+      "preferred_reference_score": 90,
+      "normalize_threshold_to_100": false,
+      "groups": {
+        "A": {
+          "weight": 0.25,
+          "meaning": "measured torque tracking, torque estimation and vehicle response"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "finite complete unit-consistent torque/current/speed logs and bounded drive behavior"
+        },
+        "M": {
+          "weight": 0.25,
+          "meaning": "connected battery, converter, IPMSM, current feedback, gear and finite-mass vehicle mechanisms"
+        },
+        "C": {
+          "weight": 0.2,
+          "meaning": "causal response to independently varied acceleration and brake scales"
+        },
+        "R": {
+          "weight": 0.1,
+          "meaning": "worst private pedal-scale scenario"
+        },
+        "D": {
+          "weight": 0.1,
+          "meaning": "motoring-to-generating transition and regenerative deceleration dynamics"
+        }
+      },
+      "reference_raw_score": 100.0,
+      "reference_group_scores": {
+        "A": 100.0,
+        "Q": 100.0,
+        "M": 100.0,
+        "C": 100.0,
+        "R": 100.0,
+        "D": 100.0
+      },
+      "fresh_replay_pass": true
+    },
+    "minimum_shortcut_sanity_contract": [
+      "missing_torque_outputs",
+      "missing_phase_currents",
+      "fixed_outputs_across_scenarios",
+      "acceleration_without_effect",
+      "brake_without_effect",
+      "no_generating_operation",
+      "disconnected_converter_or_vehicle"
+    ]
+  },
+  "difficulty": {
+    "score": 11,
+    "maximum": 12,
+    "basis": [
+      "battery/DC-link/converter/IPMSM electromechanical path",
+      "closed-loop phase-current and torque regulation",
+      "motoring-to-generating transition",
+      "fixed-ratio axle and finite-mass vehicle dynamics",
+      "500001-sample physical traces per 5 s run",
+      "five pedal-scale scenarios"
+    ]
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85,
+    "preferred_reference_score": 90,
+    "normalize_threshold_to_100": false,
+    "groups": {
+      "A": {
+        "weight": 0.25,
+        "meaning": "measured torque tracking, torque estimation and vehicle response"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "finite complete unit-consistent torque/current/speed logs and bounded drive behavior"
+      },
+      "M": {
+        "weight": 0.25,
+        "meaning": "connected battery, converter, IPMSM, current feedback, gear and finite-mass vehicle mechanisms"
+      },
+      "C": {
+        "weight": 0.2,
+        "meaning": "causal response to independently varied acceleration and brake scales"
+      },
+      "R": {
+        "weight": 0.1,
+        "meaning": "worst private pedal-scale scenario"
+      },
+      "D": {
+        "weight": 0.1,
+        "meaning": "motoring-to-generating transition and regenerative deceleration dynamics"
+      }
+    },
+    "reference_raw_score": 100.0,
+    "reference_group_scores": {
+      "A": 100.0,
+      "Q": 100.0,
+      "M": 100.0,
+      "C": 100.0,
+      "R": 100.0,
+      "D": 100.0
+    },
+    "fresh_replay_pass": true
+  },
+  "minimum_shortcut_sanity_contract": [
+    "missing_torque_outputs",
+    "missing_phase_currents",
+    "fixed_outputs_across_scenarios",
+    "acceleration_without_effect",
+    "brake_without_effect",
+    "no_generating_operation",
+    "disconnected_converter_or_vehicle"
+  ]
+}

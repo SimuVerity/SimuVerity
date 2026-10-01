@@ -1,0 +1,533 @@
+{
+  "schema": "simuverity.system-profile-manifest.v1",
+  "release": "simuverity-101-v1",
+  "task_count": 101,
+  "collection_counts": {
+    "XELEC": 9,
+    "XAERO": 10,
+    "XAUTO": 11,
+    "XBATT": 10,
+    "XCOMM": 9,
+    "XFLUID": 11,
+    "XMECH": 11,
+    "XMED": 9,
+    "XROBO": 10,
+    "XTHERM": 11
+  },
+  "profile_schema": {
+    "path": "schemas/system_profile_v1.schema.json"
+  },
+  "validator": {
+    "path": "tools/validate_system_profiles.py"
+  },
+  "bindings": {
+    "path": "registry/system_profile_bindings.json"
+  },
+  "tasks": [
+    {
+      "task_id": "XELEC-06",
+      "collection": "XELEC",
+      "path": "tasks/XELEC-06/system_profile.json"
+    },
+    {
+      "task_id": "XELEC-07",
+      "collection": "XELEC",
+      "path": "tasks/XELEC-07/system_profile.json"
+    },
+    {
+      "task_id": "XELEC-08",
+      "collection": "XELEC",
+      "path": "tasks/XELEC-08/system_profile.json"
+    },
+    {
+      "task_id": "XELEC-11",
+      "collection": "XELEC",
+      "path": "tasks/XELEC-11/system_profile.json"
+    },
+    {
+      "task_id": "XELEC-14",
+      "collection": "XELEC",
+      "path": "tasks/XELEC-14/system_profile.json"
+    },
+    {
+      "task_id": "XELEC-19",
+      "collection": "XELEC",
+      "path": "tasks/XELEC-19/system_profile.json"
+    },
+    {
+      "task_id": "XELEC-22",
+      "collection": "XELEC",
+      "path": "tasks/XELEC-22/system_profile.json"
+    },
+    {
+      "task_id": "XELEC-23",
+      "collection": "XELEC",
+      "path": "tasks/XELEC-23/system_profile.json"
+    },
+    {
+      "task_id": "XELEC-27",
+      "collection": "XELEC",
+      "path": "tasks/XELEC-27/system_profile.json"
+    },
+    {
+      "task_id": "XAERO-02",
+      "collection": "XAERO",
+      "path": "tasks/XAERO-02/system_profile.json"
+    },
+    {
+      "task_id": "XAERO-03",
+      "collection": "XAERO",
+      "path": "tasks/XAERO-03/system_profile.json"
+    },
+    {
+      "task_id": "XAERO-04",
+      "collection": "XAERO",
+      "path": "tasks/XAERO-04/system_profile.json"
+    },
+    {
+      "task_id": "XAERO-06",
+      "collection": "XAERO",
+      "path": "tasks/XAERO-06/system_profile.json"
+    },
+    {
+      "task_id": "XAERO-07",
+      "collection": "XAERO",
+      "path": "tasks/XAERO-07/system_profile.json"
+    },
+    {
+      "task_id": "XAERO-08",
+      "collection": "XAERO",
+      "path": "tasks/XAERO-08/system_profile.json"
+    },
+    {
+      "task_id": "XAERO-09",
+      "collection": "XAERO",
+      "path": "tasks/XAERO-09/system_profile.json"
+    },
+    {
+      "task_id": "XAERO-10",
+      "collection": "XAERO",
+      "path": "tasks/XAERO-10/system_profile.json"
+    },
+    {
+      "task_id": "XAERO-11",
+      "collection": "XAERO",
+      "path": "tasks/XAERO-11/system_profile.json"
+    },
+    {
+      "task_id": "XAUTO-02",
+      "collection": "XAUTO",
+      "path": "tasks/XAUTO-02/system_profile.json"
+    },
+    {
+      "task_id": "XAUTO-03",
+      "collection": "XAUTO",
+      "path": "tasks/XAUTO-03/system_profile.json"
+    },
+    {
+      "task_id": "XAUTO-04",
+      "collection": "XAUTO",
+      "path": "tasks/XAUTO-04/system_profile.json"
+    },
+    {
+      "task_id": "XAUTO-06",
+      "collection": "XAUTO",
+      "path": "tasks/XAUTO-06/system_profile.json"
+    },
+    {
+      "task_id": "XAUTO-07",
+      "collection": "XAUTO",
+      "path": "tasks/XAUTO-07/system_profile.json"
+    },
+    {
+      "task_id": "XAUTO-09",
+      "collection": "XAUTO",
+      "path": "tasks/XAUTO-09/system_profile.json"
+    },
+    {
+      "task_id": "XAUTO-10",
+      "collection": "XAUTO",
+      "path": "tasks/XAUTO-10/system_profile.json"
+    },
+    {
+      "task_id": "XAUTO-11",
+      "collection": "XAUTO",
+      "path": "tasks/XAUTO-11/system_profile.json"
+    },
+    {
+      "task_id": "XBATT-02",
+      "collection": "XBATT",
+      "path": "tasks/XBATT-02/system_profile.json"
+    },
+    {
+      "task_id": "XBATT-03",
+      "collection": "XBATT",
+      "path": "tasks/XBATT-03/system_profile.json"
+    },
+    {
+      "task_id": "XBATT-04",
+      "collection": "XBATT",
+      "path": "tasks/XBATT-04/system_profile.json"
+    },
+    {
+      "task_id": "XBATT-05",
+      "collection": "XBATT",
+      "path": "tasks/XBATT-05/system_profile.json"
+    },
+    {
+      "task_id": "XBATT-06",
+      "collection": "XBATT",
+      "path": "tasks/XBATT-06/system_profile.json"
+    },
+    {
+      "task_id": "XBATT-07",
+      "collection": "XBATT",
+      "path": "tasks/XBATT-07/system_profile.json"
+    },
+    {
+      "task_id": "XBATT-08",
+      "collection": "XBATT",
+      "path": "tasks/XBATT-08/system_profile.json"
+    },
+    {
+      "task_id": "XBATT-09",
+      "collection": "XBATT",
+      "path": "tasks/XBATT-09/system_profile.json"
+    },
+    {
+      "task_id": "XBATT-10",
+      "collection": "XBATT",
+      "path": "tasks/XBATT-10/system_profile.json"
+    },
+    {
+      "task_id": "XCOMM-02",
+      "collection": "XCOMM",
+      "path": "tasks/XCOMM-02/system_profile.json"
+    },
+    {
+      "task_id": "XCOMM-03",
+      "collection": "XCOMM",
+      "path": "tasks/XCOMM-03/system_profile.json"
+    },
+    {
+      "task_id": "XCOMM-04",
+      "collection": "XCOMM",
+      "path": "tasks/XCOMM-04/system_profile.json"
+    },
+    {
+      "task_id": "XCOMM-05",
+      "collection": "XCOMM",
+      "path": "tasks/XCOMM-05/system_profile.json"
+    },
+    {
+      "task_id": "XCOMM-06",
+      "collection": "XCOMM",
+      "path": "tasks/XCOMM-06/system_profile.json"
+    },
+    {
+      "task_id": "XCOMM-07",
+      "collection": "XCOMM",
+      "path": "tasks/XCOMM-07/system_profile.json"
+    },
+    {
+      "task_id": "XCOMM-08",
+      "collection": "XCOMM",
+      "path": "tasks/XCOMM-08/system_profile.json"
+    },
+    {
+      "task_id": "XCOMM-09",
+      "collection": "XCOMM",
+      "path": "tasks/XCOMM-09/system_profile.json"
+    },
+    {
+      "task_id": "XFLUID-02",
+      "collection": "XFLUID",
+      "path": "tasks/XFLUID-02/system_profile.json"
+    },
+    {
+      "task_id": "XFLUID-03",
+      "collection": "XFLUID",
+      "path": "tasks/XFLUID-03/system_profile.json"
+    },
+    {
+      "task_id": "XFLUID-04",
+      "collection": "XFLUID",
+      "path": "tasks/XFLUID-04/system_profile.json"
+    },
+    {
+      "task_id": "XFLUID-05",
+      "collection": "XFLUID",
+      "path": "tasks/XFLUID-05/system_profile.json"
+    },
+    {
+      "task_id": "XFLUID-07",
+      "collection": "XFLUID",
+      "path": "tasks/XFLUID-07/system_profile.json"
+    },
+    {
+      "task_id": "XFLUID-08",
+      "collection": "XFLUID",
+      "path": "tasks/XFLUID-08/system_profile.json"
+    },
+    {
+      "task_id": "XFLUID-09",
+      "collection": "XFLUID",
+      "path": "tasks/XFLUID-09/system_profile.json"
+    },
+    {
+      "task_id": "XFLUID-10",
+      "collection": "XFLUID",
+      "path": "tasks/XFLUID-10/system_profile.json"
+    },
+    {
+      "task_id": "XMECH-02",
+      "collection": "XMECH",
+      "path": "tasks/XMECH-02/system_profile.json"
+    },
+    {
+      "task_id": "XMECH-03",
+      "collection": "XMECH",
+      "path": "tasks/XMECH-03/system_profile.json"
+    },
+    {
+      "task_id": "XMECH-04",
+      "collection": "XMECH",
+      "path": "tasks/XMECH-04/system_profile.json"
+    },
+    {
+      "task_id": "XMECH-05",
+      "collection": "XMECH",
+      "path": "tasks/XMECH-05/system_profile.json"
+    },
+    {
+      "task_id": "XMECH-06",
+      "collection": "XMECH",
+      "path": "tasks/XMECH-06/system_profile.json"
+    },
+    {
+      "task_id": "XMECH-07",
+      "collection": "XMECH",
+      "path": "tasks/XMECH-07/system_profile.json"
+    },
+    {
+      "task_id": "XMECH-08",
+      "collection": "XMECH",
+      "path": "tasks/XMECH-08/system_profile.json"
+    },
+    {
+      "task_id": "XMECH-09",
+      "collection": "XMECH",
+      "path": "tasks/XMECH-09/system_profile.json"
+    },
+    {
+      "task_id": "XMECH-10",
+      "collection": "XMECH",
+      "path": "tasks/XMECH-10/system_profile.json"
+    },
+    {
+      "task_id": "XMED-02",
+      "collection": "XMED",
+      "path": "tasks/XMED-02/system_profile.json"
+    },
+    {
+      "task_id": "XMED-03",
+      "collection": "XMED",
+      "path": "tasks/XMED-03/system_profile.json"
+    },
+    {
+      "task_id": "XMED-04",
+      "collection": "XMED",
+      "path": "tasks/XMED-04/system_profile.json"
+    },
+    {
+      "task_id": "XMED-05",
+      "collection": "XMED",
+      "path": "tasks/XMED-05/system_profile.json"
+    },
+    {
+      "task_id": "XMED-07",
+      "collection": "XMED",
+      "path": "tasks/XMED-07/system_profile.json"
+    },
+    {
+      "task_id": "XMED-08",
+      "collection": "XMED",
+      "path": "tasks/XMED-08/system_profile.json"
+    },
+    {
+      "task_id": "XMED-09",
+      "collection": "XMED",
+      "path": "tasks/XMED-09/system_profile.json"
+    },
+    {
+      "task_id": "XMED-10",
+      "collection": "XMED",
+      "path": "tasks/XMED-10/system_profile.json"
+    },
+    {
+      "task_id": "XROBO-01",
+      "collection": "XROBO",
+      "path": "tasks/XROBO-01/system_profile.json"
+    },
+    {
+      "task_id": "XROBO-02",
+      "collection": "XROBO",
+      "path": "tasks/XROBO-02/system_profile.json"
+    },
+    {
+      "task_id": "XROBO-03",
+      "collection": "XROBO",
+      "path": "tasks/XROBO-03/system_profile.json"
+    },
+    {
+      "task_id": "XROBO-04",
+      "collection": "XROBO",
+      "path": "tasks/XROBO-04/system_profile.json"
+    },
+    {
+      "task_id": "XROBO-05",
+      "collection": "XROBO",
+      "path": "tasks/XROBO-05/system_profile.json"
+    },
+    {
+      "task_id": "XROBO-06",
+      "collection": "XROBO",
+      "path": "tasks/XROBO-06/system_profile.json"
+    },
+    {
+      "task_id": "XROBO-07",
+      "collection": "XROBO",
+      "path": "tasks/XROBO-07/system_profile.json"
+    },
+    {
+      "task_id": "XROBO-08",
+      "collection": "XROBO",
+      "path": "tasks/XROBO-08/system_profile.json"
+    },
+    {
+      "task_id": "XROBO-09",
+      "collection": "XROBO",
+      "path": "tasks/XROBO-09/system_profile.json"
+    },
+    {
+      "task_id": "XROBO-10",
+      "collection": "XROBO",
+      "path": "tasks/XROBO-10/system_profile.json"
+    },
+    {
+      "task_id": "XTHERM-01",
+      "collection": "XTHERM",
+      "path": "tasks/XTHERM-01/system_profile.json"
+    },
+    {
+      "task_id": "XTHERM-03",
+      "collection": "XTHERM",
+      "path": "tasks/XTHERM-03/system_profile.json"
+    },
+    {
+      "task_id": "XTHERM-04",
+      "collection": "XTHERM",
+      "path": "tasks/XTHERM-04/system_profile.json"
+    },
+    {
+      "task_id": "XTHERM-05",
+      "collection": "XTHERM",
+      "path": "tasks/XTHERM-05/system_profile.json"
+    },
+    {
+      "task_id": "XTHERM-06",
+      "collection": "XTHERM",
+      "path": "tasks/XTHERM-06/system_profile.json"
+    },
+    {
+      "task_id": "XTHERM-07",
+      "collection": "XTHERM",
+      "path": "tasks/XTHERM-07/system_profile.json"
+    },
+    {
+      "task_id": "XTHERM-08",
+      "collection": "XTHERM",
+      "path": "tasks/XTHERM-08/system_profile.json"
+    },
+    {
+      "task_id": "XTHERM-09",
+      "collection": "XTHERM",
+      "path": "tasks/XTHERM-09/system_profile.json"
+    },
+    {
+      "task_id": "XTHERM-11",
+      "collection": "XTHERM",
+      "path": "tasks/XTHERM-11/system_profile.json"
+    },
+    {
+      "task_id": "XAERO-01",
+      "collection": "XAERO",
+      "path": "tasks/XAERO-01/system_profile.json"
+    },
+    {
+      "task_id": "XAUTO-01",
+      "collection": "XAUTO",
+      "path": "tasks/XAUTO-01/system_profile.json"
+    },
+    {
+      "task_id": "XBATT-01",
+      "collection": "XBATT",
+      "path": "tasks/XBATT-01/system_profile.json"
+    },
+    {
+      "task_id": "XCOMM-01",
+      "collection": "XCOMM",
+      "path": "tasks/XCOMM-01/system_profile.json"
+    },
+    {
+      "task_id": "XFLUID-01",
+      "collection": "XFLUID",
+      "path": "tasks/XFLUID-01/system_profile.json"
+    },
+    {
+      "task_id": "XMECH-01",
+      "collection": "XMECH",
+      "path": "tasks/XMECH-01/system_profile.json"
+    },
+    {
+      "task_id": "XMED-01",
+      "collection": "XMED",
+      "path": "tasks/XMED-01/system_profile.json"
+    },
+    {
+      "task_id": "XAUTO-12",
+      "collection": "XAUTO",
+      "path": "tasks/XAUTO-12/system_profile.json"
+    },
+    {
+      "task_id": "XAUTO-13",
+      "collection": "XAUTO",
+      "path": "tasks/XAUTO-13/system_profile.json"
+    },
+    {
+      "task_id": "XFLUID-11",
+      "collection": "XFLUID",
+      "path": "tasks/XFLUID-11/system_profile.json"
+    },
+    {
+      "task_id": "XFLUID-12",
+      "collection": "XFLUID",
+      "path": "tasks/XFLUID-12/system_profile.json"
+    },
+    {
+      "task_id": "XMECH-11",
+      "collection": "XMECH",
+      "path": "tasks/XMECH-11/system_profile.json"
+    },
+    {
+      "task_id": "XTHERM-12",
+      "collection": "XTHERM",
+      "path": "tasks/XTHERM-12/system_profile.json"
+    },
+    {
+      "task_id": "XTHERM-13",
+      "collection": "XTHERM",
+      "path": "tasks/XTHERM-13/system_profile.json"
+    }
+  ]
+}

@@ -1,0 +1,434 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XAUTO-02",
+  "scenarios": [
+    {
+      "id": "nominal",
+      "values": {
+        "speed_reference": 13.5,
+        "initial_speed": 12.0,
+        "vehicle_mass": 1600,
+        "road_amplitude": 0.035,
+        "road_wavelength": 3.0,
+        "left_right_phase": 0.55,
+        "drive_loss_fraction": 0.45,
+        "drive_loss_time": 5.0
+      }
+    },
+    {
+      "id": "rough_fast_heavy",
+      "values": {
+        "speed_reference": 17.2,
+        "initial_speed": 16,
+        "vehicle_mass": 1830,
+        "road_amplitude": 0.067,
+        "road_wavelength": 2.35,
+        "left_right_phase": 0.35,
+        "drive_loss_fraction": 0.62,
+        "drive_loss_time": 4.2
+      }
+    },
+    {
+      "id": "cross_phase_roll",
+      "values": {
+        "speed_reference": 14.8,
+        "initial_speed": 14.8,
+        "vehicle_mass": 1680,
+        "road_amplitude": 0.055,
+        "road_wavelength": 3.4,
+        "left_right_phase": 2.65,
+        "drive_loss_fraction": 0.52,
+        "drive_loss_time": 5.6
+      }
+    },
+    {
+      "id": "slow_long_wave",
+      "values": {
+        "speed_reference": 8.6,
+        "initial_speed": 10.2,
+        "vehicle_mass": 1470,
+        "road_amplitude": 0.02,
+        "road_wavelength": 5.3,
+        "left_right_phase": 1.4,
+        "drive_loss_fraction": 0.3,
+        "drive_loss_time": 6.5
+      }
+    },
+    {
+      "id": "target_probe_low",
+      "values": {
+        "speed_reference": 10,
+        "initial_speed": 12,
+        "vehicle_mass": 1600,
+        "road_amplitude": 0.025,
+        "road_wavelength": 3.8,
+        "left_right_phase": 0.2,
+        "drive_loss_fraction": 0,
+        "drive_loss_time": 6.8
+      }
+    },
+    {
+      "id": "target_probe_high",
+      "values": {
+        "speed_reference": 16,
+        "initial_speed": 12,
+        "vehicle_mass": 1600,
+        "road_amplitude": 0.025,
+        "road_wavelength": 3.8,
+        "left_right_phase": 0.2,
+        "drive_loss_fraction": 0,
+        "drive_loss_time": 6.8
+      }
+    },
+    {
+      "id": "road_probe_low",
+      "values": {
+        "speed_reference": 13.5,
+        "initial_speed": 13.5,
+        "vehicle_mass": 1600,
+        "road_amplitude": 0.015,
+        "road_wavelength": 3.1,
+        "left_right_phase": 2.2,
+        "drive_loss_fraction": 0,
+        "drive_loss_time": 6.8
+      }
+    },
+    {
+      "id": "road_probe_high",
+      "values": {
+        "speed_reference": 13.5,
+        "initial_speed": 13.5,
+        "vehicle_mass": 1600,
+        "road_amplitude": 0.065,
+        "road_wavelength": 3.1,
+        "left_right_phase": 2.2,
+        "drive_loss_fraction": 0,
+        "drive_loss_time": 6.8
+      }
+    },
+    {
+      "id": "fault_pair_none",
+      "values": {
+        "speed_reference": 13.5,
+        "initial_speed": 12.5,
+        "vehicle_mass": 1720,
+        "road_amplitude": 0.045,
+        "road_wavelength": 2.75,
+        "left_right_phase": 0.9,
+        "drive_loss_fraction": 0,
+        "drive_loss_time": 4.6
+      }
+    },
+    {
+      "id": "fault_pair_loss",
+      "values": {
+        "speed_reference": 13.5,
+        "initial_speed": 12.5,
+        "vehicle_mass": 1720,
+        "road_amplitude": 0.045,
+        "road_wavelength": 2.75,
+        "left_right_phase": 0.9,
+        "drive_loss_fraction": 0.68,
+        "drive_loss_time": 4.6
+      }
+    }
+  ],
+  "contract": {
+    "application_domain": "automotive ride dynamics and four-wheel longitudinal control",
+    "physical_domains": [
+      "rigid-body longitudinal, heave, pitch and roll dynamics",
+      "front and rear axle heave and roll dynamics",
+      "four wheel rotational dynamics",
+      "nonlinear tire-road contact on spatially uneven terrain"
+    ],
+    "capability_types": [
+      "plant construction",
+      "closed-loop wheel-torque speed regulation",
+      "multi-body ride response",
+      "actuator-loss disturbance recovery"
+    ],
+    "sim": {
+      "step": 0.002,
+      "stop": 10
+    },
+    "public_constants": {
+      "effective_tire_radius_m": 0.34,
+      "track_width_m": 1.6,
+      "wheelbase_m": 3,
+      "drive_loss_duration_s": 1.2
+    },
+    "public_inputs": [
+      {
+        "name": "speed_reference",
+        "nominal": 13.5,
+        "min": 8,
+        "max": 18,
+        "unit": "m/s",
+        "meaning": "closed-loop forward-speed reference"
+      },
+      {
+        "name": "initial_speed",
+        "nominal": 12,
+        "min": 8,
+        "max": 16,
+        "unit": "m/s",
+        "meaning": "vehicle forward speed at release"
+      },
+      {
+        "name": "vehicle_mass",
+        "nominal": 1600,
+        "min": 1450,
+        "max": 1850,
+        "unit": "kg",
+        "meaning": "total supported vehicle mass"
+      },
+      {
+        "name": "road_amplitude",
+        "nominal": 0.035,
+        "min": 0.015,
+        "max": 0.07,
+        "unit": "m",
+        "meaning": "terrain-height scale"
+      },
+      {
+        "name": "road_wavelength",
+        "nominal": 3,
+        "min": 2.2,
+        "max": 5.5,
+        "unit": "m",
+        "meaning": "dominant spatial roughness wavelength"
+      },
+      {
+        "name": "left_right_phase",
+        "nominal": 0.55,
+        "min": 0,
+        "max": 3.141592653589793,
+        "unit": "rad",
+        "meaning": "phase offset between the left and right wheel tracks"
+      },
+      {
+        "name": "drive_loss_fraction",
+        "nominal": 0.45,
+        "min": 0,
+        "max": 0.75,
+        "unit": "1",
+        "meaning": "temporary fractional loss of delivered right-side wheel torque"
+      },
+      {
+        "name": "drive_loss_time",
+        "nominal": 5,
+        "min": 3.5,
+        "max": 7,
+        "unit": "s",
+        "meaning": "start time of the temporary right-side drive loss"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "body_state",
+        "channels": 10,
+        "order": "[x, vx, body heave, heave rate, pitch, pitch rate, roll, roll rate, longitudinal acceleration, vertical acceleration]",
+        "unit": "[m,m/s,m,m/s,rad,rad/s,rad,rad/s,m/s^2,m/s^2]",
+        "physical_source": "measured states of the simulated vehicle body"
+      },
+      {
+        "name": "axle_state",
+        "channels": 8,
+        "order": "[front heave, front heave rate, front roll, front roll rate, rear heave, rear heave rate, rear roll, rear roll rate]",
+        "unit": "[m,m/s,rad,rad/s,m,m/s,rad,rad/s]",
+        "physical_source": "measured front and rear unsprung-axle states"
+      },
+      {
+        "name": "wheel_contact",
+        "channels": 24,
+        "order": "[four wheel speeds, four longitudinal slips, four normal forces, four longitudinal forces, four road heights, four tire vertical deflections] in FL, FR, RL, RR order within each group",
+        "unit": "[rad/s x4,1 x4,N x4,N x4,m x4,m x4]",
+        "physical_source": "actual wheel rotation, tire contact and terrain measurements"
+      },
+      {
+        "name": "actuation",
+        "channels": 10,
+        "order": "[four requested wheel torques, four delivered wheel torques, speed error, right-side loss indicator]",
+        "unit": "[N*m x4,N*m x4,m/s,1]",
+        "physical_source": "controller requests and physical wheel-shaft actuation"
+      }
+    ],
+    "prompt": "Build a four-wheel vehicle model that traverses spatially uneven terrain while regulating forward speed in closed loop. The minimum physical topology is a finite-mass vehicle body with longitudinal, heave, pitch, and roll motion; front and rear unsprung axles with independent heave and roll; four finite-inertia rotating wheels; compliant tire/road vertical contact; nonlinear longitudinal tire force; and four wheel-torque actuators. The body, axle, wheel, suspension, and tire states must evolve causally from forces and moments. Prescribing the requested motion or replaying precomputed trajectories is not valid.\n\nRead speed_reference, initial_speed, vehicle_mass, road_amplitude, road_wavelength, left_right_phase, drive_loss_fraction, and drive_loss_time from base-workspace variables. Nominal values are 13.5 m/s, 12.0 m/s, 1600 kg, 0.035 m, 3.0 m, 0.55 rad, 0.45, and 5.0 s. Their operating ranges are respectively 8--18 m/s, 8--16 m/s, 1450--1850 kg, 0.015--0.070 m, 2.2--5.5 m, 0--pi rad, 0--0.75, and 3.5--7.0 s. The right-side delivered wheel torque is reduced by drive_loss_fraction for 1.20 s beginning at drive_loss_time.\n\nUse a 0.34 m effective tire radius, a 1.60 m track width, and a 3.00 m wheelbase. The two wheels on one side encounter the same spatial track with the rear axle delayed by the wheelbase; left_right_phase offsets the right track. The control law is not prescribed, but it must use measured vehicle or wheel behavior to regulate speed through actual wheel torque and must react to the temporary actuator loss. The model should keep the vehicle bounded, retain useful tire contact, limit wheel slip and body attitude, and recover speed regulation over the declared joint range.\n\nLog four Timeseries named body_state, axle_state, wheel_contact, and actuation. body_state has 10 channels [x, vx, body heave, heave rate, pitch, pitch rate, roll, roll rate, longitudinal acceleration, vertical acceleration]. axle_state has 8 channels [front heave, front heave rate, front roll, front roll rate, rear heave, rear heave rate, rear roll, rear roll rate]. wheel_contact has 24 channels: four wheel angular speeds, four longitudinal slip ratios, four tire normal forces, four tire longitudinal forces, four local road heights, and four tire vertical deflections, using FL, FR, RL, RR order within every group. actuation has 10 channels: four requested wheel torques, four delivered wheel torques, measured speed error, and the physical right-side loss indicator. Logs must be measurements from the same causal simulation, not copies of inputs or independently generated traces.\n\nWork directly in the required model file and keep the latest usable state saved at that path throughout the task.",
+    "groups": {
+      "G": "load, update, simulation, output contract, finite and broadly physical domains",
+      "A": "nominal speed regulation and useful ride response",
+      "Q": "contact retention, slip, attitude and actuation quality",
+      "M": "longitudinal, wheel, vertical and roll balance plus causal input-to-plant evidence",
+      "R": "worst required joint operating condition",
+      "D": "worst actuator-loss response and paired disturbance recovery",
+      "weights": {
+        "A": 0.18,
+        "Q": 0.12,
+        "M": 0.32,
+        "R": 0.2,
+        "D": 0.18
+      }
+    },
+    "range_scenario_ids": [
+      "nominal",
+      "rough_fast_heavy",
+      "cross_phase_roll",
+      "slow_long_wave"
+    ],
+    "dynamic_scenario_ids": [
+      "nominal",
+      "rough_fast_heavy",
+      "cross_phase_roll",
+      "slow_long_wave",
+      "fault_pair_loss"
+    ]
+  },
+  "application_domain": "automotive ride dynamics and four-wheel longitudinal control",
+  "physical_domains": [
+    "rigid-body longitudinal, heave, pitch and roll dynamics",
+    "front and rear axle heave and roll dynamics",
+    "four wheel rotational dynamics",
+    "nonlinear tire-road contact on spatially uneven terrain"
+  ],
+  "capability_types": [
+    "plant construction",
+    "closed-loop wheel-torque speed regulation",
+    "multi-body ride response",
+    "actuator-loss disturbance recovery"
+  ],
+  "sim": {
+    "step": 0.002,
+    "stop": 10
+  },
+  "public_constants": {
+    "effective_tire_radius_m": 0.34,
+    "track_width_m": 1.6,
+    "wheelbase_m": 3,
+    "drive_loss_duration_s": 1.2
+  },
+  "public_inputs": [
+    {
+      "name": "speed_reference",
+      "nominal": 13.5,
+      "min": 8,
+      "max": 18,
+      "unit": "m/s",
+      "meaning": "closed-loop forward-speed reference"
+    },
+    {
+      "name": "initial_speed",
+      "nominal": 12,
+      "min": 8,
+      "max": 16,
+      "unit": "m/s",
+      "meaning": "vehicle forward speed at release"
+    },
+    {
+      "name": "vehicle_mass",
+      "nominal": 1600,
+      "min": 1450,
+      "max": 1850,
+      "unit": "kg",
+      "meaning": "total supported vehicle mass"
+    },
+    {
+      "name": "road_amplitude",
+      "nominal": 0.035,
+      "min": 0.015,
+      "max": 0.07,
+      "unit": "m",
+      "meaning": "terrain-height scale"
+    },
+    {
+      "name": "road_wavelength",
+      "nominal": 3,
+      "min": 2.2,
+      "max": 5.5,
+      "unit": "m",
+      "meaning": "dominant spatial roughness wavelength"
+    },
+    {
+      "name": "left_right_phase",
+      "nominal": 0.55,
+      "min": 0,
+      "max": 3.141592653589793,
+      "unit": "rad",
+      "meaning": "phase offset between the left and right wheel tracks"
+    },
+    {
+      "name": "drive_loss_fraction",
+      "nominal": 0.45,
+      "min": 0,
+      "max": 0.75,
+      "unit": "1",
+      "meaning": "temporary fractional loss of delivered right-side wheel torque"
+    },
+    {
+      "name": "drive_loss_time",
+      "nominal": 5,
+      "min": 3.5,
+      "max": 7,
+      "unit": "s",
+      "meaning": "start time of the temporary right-side drive loss"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "body_state",
+      "channels": 10,
+      "order": "[x, vx, body heave, heave rate, pitch, pitch rate, roll, roll rate, longitudinal acceleration, vertical acceleration]",
+      "unit": "[m,m/s,m,m/s,rad,rad/s,rad,rad/s,m/s^2,m/s^2]",
+      "physical_source": "measured states of the simulated vehicle body"
+    },
+    {
+      "name": "axle_state",
+      "channels": 8,
+      "order": "[front heave, front heave rate, front roll, front roll rate, rear heave, rear heave rate, rear roll, rear roll rate]",
+      "unit": "[m,m/s,rad,rad/s,m,m/s,rad,rad/s]",
+      "physical_source": "measured front and rear unsprung-axle states"
+    },
+    {
+      "name": "wheel_contact",
+      "channels": 24,
+      "order": "[four wheel speeds, four longitudinal slips, four normal forces, four longitudinal forces, four road heights, four tire vertical deflections] in FL, FR, RL, RR order within each group",
+      "unit": "[rad/s x4,1 x4,N x4,N x4,m x4,m x4]",
+      "physical_source": "actual wheel rotation, tire contact and terrain measurements"
+    },
+    {
+      "name": "actuation",
+      "channels": 10,
+      "order": "[four requested wheel torques, four delivered wheel torques, speed error, right-side loss indicator]",
+      "unit": "[N*m x4,N*m x4,m/s,1]",
+      "physical_source": "controller requests and physical wheel-shaft actuation"
+    }
+  ],
+  "prompt": "Build a four-wheel vehicle model that traverses spatially uneven terrain while regulating forward speed in closed loop. The minimum physical topology is a finite-mass vehicle body with longitudinal, heave, pitch, and roll motion; front and rear unsprung axles with independent heave and roll; four finite-inertia rotating wheels; compliant tire/road vertical contact; nonlinear longitudinal tire force; and four wheel-torque actuators. The body, axle, wheel, suspension, and tire states must evolve causally from forces and moments. Prescribing the requested motion or replaying precomputed trajectories is not valid.\n\nRead speed_reference, initial_speed, vehicle_mass, road_amplitude, road_wavelength, left_right_phase, drive_loss_fraction, and drive_loss_time from base-workspace variables. Nominal values are 13.5 m/s, 12.0 m/s, 1600 kg, 0.035 m, 3.0 m, 0.55 rad, 0.45, and 5.0 s. Their operating ranges are respectively 8--18 m/s, 8--16 m/s, 1450--1850 kg, 0.015--0.070 m, 2.2--5.5 m, 0--pi rad, 0--0.75, and 3.5--7.0 s. The right-side delivered wheel torque is reduced by drive_loss_fraction for 1.20 s beginning at drive_loss_time.\n\nUse a 0.34 m effective tire radius, a 1.60 m track width, and a 3.00 m wheelbase. The two wheels on one side encounter the same spatial track with the rear axle delayed by the wheelbase; left_right_phase offsets the right track. The control law is not prescribed, but it must use measured vehicle or wheel behavior to regulate speed through actual wheel torque and must react to the temporary actuator loss. The model should keep the vehicle bounded, retain useful tire contact, limit wheel slip and body attitude, and recover speed regulation over the declared joint range.\n\nLog four Timeseries named body_state, axle_state, wheel_contact, and actuation. body_state has 10 channels [x, vx, body heave, heave rate, pitch, pitch rate, roll, roll rate, longitudinal acceleration, vertical acceleration]. axle_state has 8 channels [front heave, front heave rate, front roll, front roll rate, rear heave, rear heave rate, rear roll, rear roll rate]. wheel_contact has 24 channels: four wheel angular speeds, four longitudinal slip ratios, four tire normal forces, four tire longitudinal forces, four local road heights, and four tire vertical deflections, using FL, FR, RL, RR order within every group. actuation has 10 channels: four requested wheel torques, four delivered wheel torques, measured speed error, and the physical right-side loss indicator. Logs must be measurements from the same causal simulation, not copies of inputs or independently generated traces.\n\nWork directly in the required model file and keep the latest usable state saved at that path throughout the task.",
+  "groups": {
+    "G": "load, update, simulation, output contract, finite and broadly physical domains",
+    "A": "nominal speed regulation and useful ride response",
+    "Q": "contact retention, slip, attitude and actuation quality",
+    "M": "longitudinal, wheel, vertical and roll balance plus causal input-to-plant evidence",
+    "R": "worst required joint operating condition",
+    "D": "worst actuator-loss response and paired disturbance recovery",
+    "weights": {
+      "A": 0.18,
+      "Q": 0.12,
+      "M": 0.32,
+      "R": 0.2,
+      "D": 0.18
+    }
+  },
+  "range_scenario_ids": [
+    "nominal",
+    "rough_fast_heavy",
+    "cross_phase_roll",
+    "slow_long_wave"
+  ],
+  "dynamic_scenario_ids": [
+    "nominal",
+    "rough_fast_heavy",
+    "cross_phase_roll",
+    "slow_long_wave",
+    "fault_pair_loss"
+  ]
+}

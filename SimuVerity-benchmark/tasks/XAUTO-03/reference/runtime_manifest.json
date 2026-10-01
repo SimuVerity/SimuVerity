@@ -1,0 +1,15 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XAUTO-03",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/source/automotive-electrical-system/ssc_battery_management_R2019b.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 10,
+  "retained_bytes": 315825,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XROBO-08",
+  "collection": "XROBO",
+  "reference": {
+    "identity_path": "tasks/XROBO-08/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "main/rlKinovaBallBalance.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XROBO-08",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a closed-loop robotic ball-balancing system in Simulink and Simscape Multibody.",
+    "engineering_objects": [
+      "The physical mechanism must contain an articulated seven-degree-of-freedom arm, a plate rigidly attached to its end effector, a freely moving spherical ball, gravity, and actual ball-plate contact.",
+      "Support the ranges stated in public_inputs, and connect each variable to the corresponding physical initial condition, parameter, contact property, or actuator authority.",
+      "Every recorded value must come from the connected physical or closed-loop control path."
+    ],
+    "physical_paths": [
+      "Support the ranges stated in public_inputs, and connect each variable to the corresponding physical initial condition, parameter, contact property, or actuator authority.",
+      "Every recorded value must come from the connected physical or closed-loop control path.",
+      "The physical mechanism must contain an articulated seven-degree-of-freedom arm, a plate rigidly attached to its end effector, a freely moving spherical ball, gravity, and actual ball-plate contact."
+    ],
+    "functional_paths": [
+      "ControlState has 4 channels [normalized command 1, normalized command 2, applied joint torque 1 (N*m), applied joint torque 2 (N*m)].",
+      "Every recorded value must come from the connected physical or closed-loop control path."
+    ],
+    "information_paths": [
+      "BallInitialX_m, BallInitialY_m, BallInitialVX_mps, BallInitialVY_mps, BallMassScale, ContactFrictionScale, TorqueAuthorityScale -> F90-XROBO-08 plant/control path -> BallState, PlateState, ActuatedJointState, ControlState, TaskState"
+    ],
+    "modes_and_events": [
+      "F90-XROBO-08 startup and continuous operation follow the current public task contract."
+    ],
+    "interfaces": [
+      {
+        "name": "BallInitialX_m",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read BallInitialX_m, BallInitialY_m, BallInitialVX_mps, BallInitialVY_mps, BallMassScale, ContactFrictionScale, and TorqueAuthorityScale from MATLAB base-workspace variables. BallInitialX_m and BallInitialY_m are finite real scalars in [-0.115, 0.115] m; BallInitialVX_mps and BallInitialVY_mps are finite real scalars in [-0.02, 0.02] m/s; BallMassScale is a finite real scalar in [0.9, 1.1] (unitless); ContactFrictionScale is a finite real scalar in [0.8, 1.0] (unitless); and TorqueAuthorityScale is a finite real scalar in [0.88, 1.0] (unitless).",
+        "source": "tasks/XROBO-08/public_spec.json"
+      },
+      {
+        "name": "BallInitialY_m",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read BallInitialX_m, BallInitialY_m, BallInitialVX_mps, BallInitialVY_mps, BallMassScale, ContactFrictionScale, and TorqueAuthorityScale from MATLAB base-workspace variables. BallInitialX_m and BallInitialY_m are finite real scalars in [-0.115, 0.115] m; BallInitialVX_mps and BallInitialVY_mps are finite real scalars in [-0.02, 0.02] m/s; BallMassScale is a finite real scalar in [0.9, 1.1] (unitless); ContactFrictionScale is a finite real scalar in [0.8, 1.0] (unitless); and TorqueAuthorityScale is a finite real scalar in [0.88, 1.0] (unitless).",
+        "source": "tasks/XROBO-08/public_spec.json"
+      },
+      {
+        "name": "BallInitialVX_mps",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Read BallInitialX_m, BallInitialY_m, BallInitialVX_mps, BallInitialVY_mps, BallMassScale, ContactFrictionScale, and TorqueAuthorityScale from MATLAB base-workspace variables. BallInitialX_m and BallInitialY_m are finite real scalars in [-0.115, 0.115] m; BallInitialVX_mps and BallInitialVY_mps are finite real scalars in [-0.02, 0.02] m/s; BallMassScale is a finite real scalar in [0.9, 1.1] (unitless); ContactFrictionScale is a finite real scalar in [0.8, 1.0] (unitless); and TorqueAuthorityScale is a finite real scalar in [0.88, 1.0] (unitless).",
+        "source": "tasks/XROBO-08/public_spec.json"
+      },
+      {
+        "name": "BallInitialVY_mps",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Read BallInitialX_m, BallInitialY_m, BallInitialVX_mps, BallInitialVY_mps, BallMassScale, ContactFrictionScale, and TorqueAuthorityScale from MATLAB base-workspace variables. BallInitialX_m and BallInitialY_m are finite real scalars in [-0.115, 0.115] m; BallInitialVX_mps and BallInitialVY_mps are finite real scalars in [-0.02, 0.02] m/s; BallMassScale is a finite real scalar in [0.9, 1.1] (unitless); ContactFrictionScale is a finite real scalar in [0.8, 1.0] (unitless); and TorqueAuthorityScale is a finite real scalar in [0.88, 1.0] (unitless).",
+        "source": "tasks/XROBO-08/public_spec.json"
+      },
+      {
+        "name": "BallMassScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read BallInitialX_m, BallInitialY_m, BallInitialVX_mps, BallInitialVY_mps, BallMassScale, ContactFrictionScale, and TorqueAuthorityScale from MATLAB base-workspace variables. BallInitialX_m and BallInitialY_m are finite real scalars in [-0.115, 0.115] m; BallInitialVX_mps and BallInitialVY_mps are finite real scalars in [-0.02, 0.02] m/s; BallMassScale is a finite real scalar in [0.9, 1.1] (unitless); ContactFrictionScale is a finite real scalar in [0.8, 1.0] (unitless); and TorqueAuthorityScale is a finite real scalar in [0.88, 1.0] (unitless).",
+        "source": "tasks/XROBO-08/public_spec.json"
+      },
+      {
+        "name": "ContactFrictionScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read BallInitialX_m, BallInitialY_m, BallInitialVX_mps, BallInitialVY_mps, BallMassScale, ContactFrictionScale, and TorqueAuthorityScale from MATLAB base-workspace variables. BallInitialX_m and BallInitialY_m are finite real scalars in [-0.115, 0.115] m; BallInitialVX_mps and BallInitialVY_mps are finite real scalars in [-0.02, 0.02] m/s; BallMassScale is a finite real scalar in [0.9, 1.1] (unitless); ContactFrictionScale is a finite real scalar in [0.8, 1.0] (unitless); and TorqueAuthorityScale is a finite real scalar in [0.88, 1.0] (unitless).",
+        "source": "tasks/XROBO-08/public_spec.json"
+      },
+      {
+        "name": "TorqueAuthorityScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read BallInitialX_m, BallInitialY_m, BallInitialVX_mps, BallInitialVY_mps, BallMassScale, ContactFrictionScale, and TorqueAuthorityScale from MATLAB base-workspace variables. BallInitialX_m and BallInitialY_m are finite real scalars in [-0.115, 0.115] m; BallInitialVX_mps and BallInitialVY_mps are finite real scalars in [-0.02, 0.02] m/s; BallMassScale is a finite real scalar in [0.9, 1.1] (unitless); ContactFrictionScale is a finite real scalar in [0.8, 1.0] (unitless); and TorqueAuthorityScale is a finite real scalar in [0.88, 1.0] (unitless).",
+        "source": "tasks/XROBO-08/public_spec.json"
+      },
+      {
+        "name": "BallState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m",
+          "m/s"
+        ],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named BallState, PlateState, ActuatedJointState, ControlState, and TaskState. BallState has 4 channels [x_m,y_m,vx_mps,vy_mps].",
+        "source": "tasks/XROBO-08/public_spec.json"
+      },
+      {
+        "name": "PlateState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named BallState, PlateState, ActuatedJointState, ControlState, and TaskState. PlateState has 8 channels [quaternion w,x,y,z, then quaternion-rate w,x,y,z per second].",
+        "source": "tasks/XROBO-08/public_spec.json"
+      },
+      {
+        "name": "ActuatedJointState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad/s",
+          "rad"
+        ],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named BallState, PlateState, ActuatedJointState, ControlState, and TaskState. ActuatedJointState has 4 channels [joint 1 angle (rad), joint 1 rate (rad/s), joint 2 angle (rad), joint 2 rate (rad/s)].",
+        "source": "tasks/XROBO-08/public_spec.json"
+      },
+      {
+        "name": "ControlState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N*m"
+        ],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named BallState, PlateState, ActuatedJointState, ControlState, and TaskState. ControlState has 4 channels [normalized command 1, normalized command 2, applied joint torque 1 (N*m), applied joint torque 2 (N*m)].",
+        "source": "tasks/XROBO-08/public_spec.json"
+      },
+      {
+        "name": "TaskState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named BallState, PlateState, ActuatedJointState, ControlState, and TaskState. TaskState has 2 channels [instantaneous objective, ball-off-plate flag].",
+        "source": "tasks/XROBO-08/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "F90-XROBO-08 uses the channel order and units declared for BallState, PlateState, ActuatedJointState, ControlState, TaskState."
+    ],
+    "feedback_and_control_causality": [
+      "Build a closed-loop robotic ball-balancing system in Simulink and Simscape Multibody.",
+      "The final two arm joints must be driven by finite torque actuators.",
+      "Use measured ball motion, plate orientation, and actuated-joint state in feedback to keep the ball near the plate center without directly prescribing the ball trajectory or constraining it to the center."
+    ],
+    "signal_sources": [
+      "BallInitialX_m is read from the public MATLAB base-workspace input contract.",
+      "BallInitialY_m is read from the public MATLAB base-workspace input contract.",
+      "BallInitialVX_mps is read from the public MATLAB base-workspace input contract.",
+      "BallInitialVY_mps is read from the public MATLAB base-workspace input contract.",
+      "BallMassScale is read from the public MATLAB base-workspace input contract.",
+      "ContactFrictionScale is read from the public MATLAB base-workspace input contract.",
+      "TorqueAuthorityScale is read from the public MATLAB base-workspace input contract.",
+      "BallState is produced by the implemented plant or controller and logged under the public output contract.",
+      "PlateState is produced by the implemented plant or controller and logged under the public output contract.",
+      "ActuatedJointState is produced by the implemented plant or controller and logged under the public output contract.",
+      "ControlState is produced by the implemented plant or controller and logged under the public output contract.",
+      "TaskState is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "BallInitialX_m: Read BallInitialX_m, BallInitialY_m, BallInitialVX_mps, BallInitialVY_mps, BallMassScale, ContactFrictionScale, and TorqueAuthorityScale from MATLAB base-workspace variables. BallInitialX_m and BallInitialY_m are finite real scalars in [-0.115, 0.115] m; BallInitialVX_mps and BallInitialVY_mps are finite real scalars in [-0.02, 0.02] m/s; BallMassScale is a finite real scalar in [0.9, 1.1] (unitless); ContactFrictionScale is a finite real scalar in [0.8, 1.0] (unitless); and TorqueAuthorityScale is a finite real scalar in [0.88, 1.0] (unitless).",
+      "BallInitialY_m: Read BallInitialX_m, BallInitialY_m, BallInitialVX_mps, BallInitialVY_mps, BallMassScale, ContactFrictionScale, and TorqueAuthorityScale from MATLAB base-workspace variables. BallInitialX_m and BallInitialY_m are finite real scalars in [-0.115, 0.115] m; BallInitialVX_mps and BallInitialVY_mps are finite real scalars in [-0.02, 0.02] m/s; BallMassScale is a finite real scalar in [0.9, 1.1] (unitless); ContactFrictionScale is a finite real scalar in [0.8, 1.0] (unitless); and TorqueAuthorityScale is a finite real scalar in [0.88, 1.0] (unitless).",
+      "BallInitialVX_mps: Read BallInitialX_m, BallInitialY_m, BallInitialVX_mps, BallInitialVY_mps, BallMassScale, ContactFrictionScale, and TorqueAuthorityScale from MATLAB base-workspace variables. BallInitialX_m and BallInitialY_m are finite real scalars in [-0.115, 0.115] m; BallInitialVX_mps and BallInitialVY_mps are finite real scalars in [-0.02, 0.02] m/s; BallMassScale is a finite real scalar in [0.9, 1.1] (unitless); ContactFrictionScale is a finite real scalar in [0.8, 1.0] (unitless); and TorqueAuthorityScale is a finite real scalar in [0.88, 1.0] (unitless).",
+      "BallInitialVY_mps: Read BallInitialX_m, BallInitialY_m, BallInitialVX_mps, BallInitialVY_mps, BallMassScale, ContactFrictionScale, and TorqueAuthorityScale from MATLAB base-workspace variables. BallInitialX_m and BallInitialY_m are finite real scalars in [-0.115, 0.115] m; BallInitialVX_mps and BallInitialVY_mps are finite real scalars in [-0.02, 0.02] m/s; BallMassScale is a finite real scalar in [0.9, 1.1] (unitless); ContactFrictionScale is a finite real scalar in [0.8, 1.0] (unitless); and TorqueAuthorityScale is a finite real scalar in [0.88, 1.0] (unitless).",
+      "BallMassScale: Read BallInitialX_m, BallInitialY_m, BallInitialVX_mps, BallInitialVY_mps, BallMassScale, ContactFrictionScale, and TorqueAuthorityScale from MATLAB base-workspace variables. BallInitialX_m and BallInitialY_m are finite real scalars in [-0.115, 0.115] m; BallInitialVX_mps and BallInitialVY_mps are finite real scalars in [-0.02, 0.02] m/s; BallMassScale is a finite real scalar in [0.9, 1.1] (unitless); ContactFrictionScale is a finite real scalar in [0.8, 1.0] (unitless); and TorqueAuthorityScale is a finite real scalar in [0.88, 1.0] (unitless).",
+      "ContactFrictionScale: Read BallInitialX_m, BallInitialY_m, BallInitialVX_mps, BallInitialVY_mps, BallMassScale, ContactFrictionScale, and TorqueAuthorityScale from MATLAB base-workspace variables. BallInitialX_m and BallInitialY_m are finite real scalars in [-0.115, 0.115] m; BallInitialVX_mps and BallInitialVY_mps are finite real scalars in [-0.02, 0.02] m/s; BallMassScale is a finite real scalar in [0.9, 1.1] (unitless); ContactFrictionScale is a finite real scalar in [0.8, 1.0] (unitless); and TorqueAuthorityScale is a finite real scalar in [0.88, 1.0] (unitless).",
+      "TorqueAuthorityScale: Read BallInitialX_m, BallInitialY_m, BallInitialVX_mps, BallInitialVY_mps, BallMassScale, ContactFrictionScale, and TorqueAuthorityScale from MATLAB base-workspace variables. BallInitialX_m and BallInitialY_m are finite real scalars in [-0.115, 0.115] m; BallInitialVX_mps and BallInitialVY_mps are finite real scalars in [-0.02, 0.02] m/s; BallMassScale is a finite real scalar in [0.9, 1.1] (unitless); ContactFrictionScale is a finite real scalar in [0.8, 1.0] (unitless); and TorqueAuthorityScale is a finite real scalar in [0.88, 1.0] (unitless)."
+    ],
+    "disturbances": [
+      "F90-XROBO-08 operating variation is supplied through BallInitialX_m, BallInitialY_m, BallInitialVX_mps, BallInitialVY_mps, BallMassScale, ContactFrictionScale, TorqueAuthorityScale."
+    ],
+    "dynamic_processes": [
+      "Record complete-run MATLAB Timeseries named BallState, PlateState, ActuatedJointState, ControlState, and TaskState."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XROBO-08: prescribing BallState directly would bypass the system path described by: Support the ranges stated in public_inputs, and connect each variable to the corresponding physical initial condition, parameter, contact property, or actuator authority.",
+      "F90-XROBO-08: replaying a fixed BallState trace would ignore causal variation in BallInitialX_m."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XROBO-08/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XROBO-08/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XROBO-08/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

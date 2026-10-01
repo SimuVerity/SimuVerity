@@ -1,0 +1,39 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XELEC-19",
+  "file_count": 2,
+  "files": [
+    {
+      "path": "reference/files/license.txt",
+      "size_bytes": 1317
+    },
+    {
+      "path": "reference/files/MLI17.slx",
+      "size_bytes": 630995
+    }
+  ],
+  "entrypoint": "reference/files/MLI17.slx",
+  "expected_score": 93.83747636049078,
+  "expected_valid_scenarios": 2,
+  "score_tolerance": 1e-12,
+  "expected_score_basis": "reference_replay",
+  "scenario_contract": {
+    "expected_ids": [
+      "load_up",
+      "load_down"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 632312,
+  "excluded_files": [
+    {
+      "path": "reference/files/MLI17.slx.r2012b",
+      "size_bytes": 69048,
+      "category": "obsolete_model_backup",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    }
+  ]
+}

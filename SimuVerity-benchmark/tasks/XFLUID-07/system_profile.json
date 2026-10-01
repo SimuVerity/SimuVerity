@@ -1,0 +1,160 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XFLUID-07",
+  "collection": "XFLUID",
+  "reference": {
+    "identity_path": "tasks/XFLUID-07/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/Tractor-Simscape/Workflow/TransmissionTradeOffStudy/TractorTransmissionTradeOff.slx",
+    "model_path": "tasks/XFLUID-07/reference/files/Tractor-Simscape/Workflow/TransmissionTradeOffStudy/TractorTransmissionTradeOff.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XFLUID-07",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a physically causal tractor drivetrain with a hydrostatic continuously variable transmission.",
+    "engineering_objects": [
+      "Build a physically causal tractor drivetrain with a hydrostatic continuously variable transmission.",
+      "The system must include a governed prime mover, a variable-displacement hydraulic pump, a closed hydraulic loop with charge-flow and pressure protection, hydraulic motors that drive both the front and rear axles, a finite-mass tractor body, four tire--soil contacts, and an implement that applies a physical field load.",
+      "Hydraulic pressure and flow must transmit power from the prime mover through the pump and motors to the driven wheels."
+    ],
+    "physical_paths": [
+      "Hydraulic pressure and flow must transmit power from the prime mover through the pump and motors to the driven wheels.",
+      "Across the declared operating range, the tractor must track the commanded speed without prescribed vehicle motion, remain dynamically stable from a cold start, keep hydraulic pressure and flow finite, and preserve the causal path from speed error through the variable pump and hydraulic transmission to vehicle motion.",
+      "Build a physically causal tractor drivetrain with a hydrostatic continuously variable transmission.",
+      "The system must include a governed prime mover, a variable-displacement hydraulic pump, a closed hydraulic loop with charge-flow and pressure protection, hydraulic motors that drive both the front and rear axles, a finite-mass tractor body, four tire--soil contacts, and an implement that applies a physical field load."
+    ],
+    "functional_paths": [
+      "Use closed-loop control of the measured tractor speed by varying pump displacement so that the vehicle follows a distance-indexed speed command.",
+      "Across the declared operating range, the tractor must track the commanded speed without prescribed vehicle motion, remain dynamically stable from a cold start, keep hydraulic pressure and flow finite, and preserve the causal path from speed error through the variable pump and hydraulic transmission to vehicle motion.",
+      "Log three Timeseries named speed_control, hydraulic_state, and drivetrain_effort for the complete simulation interval."
+    ],
+    "information_paths": [
+      "distance_breakpoints_m, target_velocity_kph, engine_speed_rpm -> F90-XFLUID-07 plant/control path -> speed_control, hydraulic_state, drivetrain_effort"
+    ],
+    "modes_and_events": [
+      "The system must include a governed prime mover, a variable-displacement hydraulic pump, a closed hydraulic loop with charge-flow and pressure protection, hydraulic motors that drive both the front and rear axles, a finite-mass tractor body, four tire--soil contacts, and an implement that applies a physical field load."
+    ],
+    "interfaces": [
+      {
+        "name": "distance_breakpoints_m",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read distance_breakpoints_m, target_velocity_kph, and engine_speed_rpm from MATLAB base-workspace variables.",
+        "source": "tasks/XFLUID-07/public_spec.json"
+      },
+      {
+        "name": "target_velocity_kph",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "km/h"
+        ],
+        "range_or_shape": "Read distance_breakpoints_m, target_velocity_kph, and engine_speed_rpm from MATLAB base-workspace variables.",
+        "source": "tasks/XFLUID-07/public_spec.json"
+      },
+      {
+        "name": "engine_speed_rpm",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "rpm"
+        ],
+        "range_or_shape": "Read distance_breakpoints_m, target_velocity_kph, and engine_speed_rpm from MATLAB base-workspace variables.",
+        "source": "tasks/XFLUID-07/public_spec.json"
+      },
+      {
+        "name": "speed_control",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m^3",
+          "km/h",
+          "km"
+        ],
+        "range_or_shape": "Log three Timeseries named speed_control, hydraulic_state, and drivetrain_effort for the complete simulation interval. speed_control contains [target speed, measured speed, pump displacement] in [km/h, km/h, cm^3/rev].",
+        "source": "tasks/XFLUID-07/public_spec.json"
+      },
+      {
+        "name": "hydraulic_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m^3",
+          "rpm",
+          "bar"
+        ],
+        "range_or_shape": "Log three Timeseries named speed_control, hydraulic_state, and drivetrain_effort for the complete simulation interval. hydraulic_state contains [loop high pressure, main-pump flow, front-motor speed, rear-motor speed] in [bar, m^3/s, rpm, rpm].",
+        "source": "tasks/XFLUID-07/public_spec.json"
+      },
+      {
+        "name": "drivetrain_effort",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N*m",
+          "rpm"
+        ],
+        "range_or_shape": "Log three Timeseries named speed_control, hydraulic_state, and drivetrain_effort for the complete simulation interval. drivetrain_effort contains [engine speed, main-pump torque, front-motor torque, rear-motor torque] in [rpm, N*m, N*m, N*m].",
+        "source": "tasks/XFLUID-07/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "F90-XFLUID-07 uses the channel order and units declared for speed_control, hydraulic_state, drivetrain_effort."
+    ],
+    "feedback_and_control_causality": [
+      "Build a physically causal tractor drivetrain with a hydrostatic continuously variable transmission.",
+      "Use closed-loop control of the measured tractor speed by varying pump displacement so that the vehicle follows a distance-indexed speed command.",
+      "Across the declared operating range, the tractor must track the commanded speed without prescribed vehicle motion, remain dynamically stable from a cold start, keep hydraulic pressure and flow finite, and preserve the causal path from speed error through the variable pump and hydraulic transmission to vehicle motion."
+    ],
+    "signal_sources": [
+      "distance_breakpoints_m is read from the public MATLAB base-workspace input contract.",
+      "target_velocity_kph is read from the public MATLAB base-workspace input contract.",
+      "engine_speed_rpm is read from the public MATLAB base-workspace input contract.",
+      "speed_control is produced by the implemented plant or controller and logged under the public output contract.",
+      "hydraulic_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "drivetrain_effort is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "distance_breakpoints_m: Read distance_breakpoints_m, target_velocity_kph, and engine_speed_rpm from MATLAB base-workspace variables.",
+      "target_velocity_kph: Read distance_breakpoints_m, target_velocity_kph, and engine_speed_rpm from MATLAB base-workspace variables.",
+      "engine_speed_rpm: Read distance_breakpoints_m, target_velocity_kph, and engine_speed_rpm from MATLAB base-workspace variables."
+    ],
+    "disturbances": [
+      "The system must include a governed prime mover, a variable-displacement hydraulic pump, a closed hydraulic loop with charge-flow and pressure protection, hydraulic motors that drive both the front and rear axles, a finite-mass tractor body, four tire--soil contacts, and an implement that applies a physical field load."
+    ],
+    "dynamic_processes": [
+      "Across the declared operating range, the tractor must track the commanded speed without prescribed vehicle motion, remain dynamically stable from a cold start, keep hydraulic pressure and flow finite, and preserve the causal path from speed error through the variable pump and hydraulic transmission to vehicle motion."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XFLUID-07: prescribing speed_control directly would bypass the system path described by: Hydraulic pressure and flow must transmit power from the prime mover through the pump and motors to the driven wheels.",
+      "F90-XFLUID-07: replaying a fixed speed_control trace would ignore causal variation in distance_breakpoints_m."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XFLUID-07/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XFLUID-07/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XFLUID-07/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

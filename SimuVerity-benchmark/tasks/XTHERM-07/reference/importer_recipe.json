@@ -1,0 +1,52 @@
+{
+  "schema": "simuverity.matlab-local-importer-recipe.v1",
+  "task_id": "XTHERM-07",
+  "release": "simuverity-101-v1",
+  "matlab_release": "R2025a",
+  "publisher": "The MathWorks, Inc.",
+  "redistributes_mathworks_files": false,
+  "destination": "%LOCALAPPDATA%/SimuVerity/assets/simuverity-101-v1/XTHERM-07",
+  "discovery": {
+    "method": "matlab_example_or_installed_product_search",
+    "example_id": "simscapefluids/SimpleCPUCoolingSystemExample",
+    "expected_source_filenames": [
+      "SimpleCPUCoolingSystem.slx"
+    ],
+    "expected_files": [
+      {
+        "name": "SimpleCPUCoolingSystem.slx",
+        "size_bytes": 118636
+      }
+    ]
+  },
+  "transform": "transform.m",
+  "validation": {
+    "required": true,
+    "checks": [
+      "load",
+      "update",
+      "compile",
+      "simulate",
+      "all_official_scenarios",
+      "reference_score"
+    ],
+    "on_mismatch": "fail_closed"
+  },
+  "entrypoint": "SimpleCPUCoolingSystem.slx",
+  "expected_valid_scenarios": 6,
+  "score_tolerance": 1e-12,
+  "expected_score": 94.9144865584677,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal",
+      "high_heat",
+      "warm_ambient",
+      "restricted_flow",
+      "degraded_fan",
+      "joint_service"
+    ],
+    "nominal_scenario_id": "nominal",
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision"
+}

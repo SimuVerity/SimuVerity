@@ -1,0 +1,1718 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XROBO-01",
+  "file_count": 418,
+  "files": [
+    {
+      "path": "reference/files/08dfa52d-9a7c-45b1-b258-47243cf94e0e.type.Reference.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/0a5cd3f2-c205-4d30-96e0-ae5ec8c38981.type.EntryPoint.xml",
+      "size_bytes": 144
+    },
+    {
+      "path": "reference/files/1.type.DIR_SIGNIFIER.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/1171bfae-6825-41a2-adae-c7bbc6e5e89b.type.ExportProfile.xml",
+      "size_bytes": 62
+    },
+    {
+      "path": "reference/files/1e5a6af0-74ff-446e-a0a7-6b7fad616157.type.EntryPoint.xml",
+      "size_bytes": 144
+    },
+    {
+      "path": "reference/files/224154e8-e8c9-495c-a80d-fda8a029a147.type.Reference.xml",
+      "size_bytes": 70
+    },
+    {
+      "path": "reference/files/2f7890d3-d0f2-4274-9e77-874646b9dddf.type.Reference.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/3f9848d3-a4a8-45f5-97c9-1c145258abe5.type.Reference.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/3fc27bca-2485-4719-aada-5c5a2a61aa2b.type.Reference.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/40fb2c00-cda2-480a-92a1-5087f404e32e.type.Reference.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/4be8644b-8f68-4136-a7ab-6a8d3e0a7c86.type.Reference.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/52c3b364-c937-4fe9-8b94-9b36fb6223a3.type.Reference.xml",
+      "size_bytes": 70
+    },
+    {
+      "path": "reference/files/6638756b-9824-4909-878f-aae1de859f20.type.Reference.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/690a80af-d687-4127-9805-ea21f13e4fb8.type.Reference.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/74be83e4-d0af-48cd-b36d-ed8b6497f920.type.EntryPoint.xml",
+      "size_bytes": 168
+    },
+    {
+      "path": "reference/files/8ce3a14a-037f-477d-a407-65465c1a4154.type.EntryPoint.xml",
+      "size_bytes": 129
+    },
+    {
+      "path": "reference/files/8e9967b0-a2d8-41ad-a6e1-dcc84287c152.type.Reference.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/9a8ac6f1-8f5e-46ef-91fd-f0fa15e4ce05.type.EntryPoint.xml",
+      "size_bytes": 181
+    },
+    {
+      "path": "reference/files/a427e084-34dc-4cf9-94d6-023fc2faeea6.type.EntryPoint.xml",
+      "size_bytes": 167
+    },
+    {
+      "path": "reference/files/a462be51-172c-450f-972c-e538a82c6fce.type.EntryPoint.xml",
+      "size_bytes": 165
+    },
+    {
+      "path": "reference/files/ad2dea70-790c-4d13-aa0b-381399c1ae7d.type.Label.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/af09a29b-124e-4f32-a28c-2e9d92e805e5.type.Reference.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/artifact.type.Label.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/b2dcfef5-3f09-43eb-b11a-5caa54b15ec7.type.ExportProfile.xml",
+      "size_bytes": 62
+    },
+    {
+      "path": "reference/files/b5eafdb8-6faf-4e6a-b26f-5ece86a492ce.type.Reference.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/b75ed792-f10e-42b9-af6a-c05deb53fa47.type.EntryPoint.xml",
+      "size_bytes": 155
+    },
+    {
+      "path": "reference/files/Box_to_Belt_Contact.html",
+      "size_bytes": 5568
+    },
+    {
+      "path": "reference/files/Box_to_Belt_Contact.html.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Box_to_Belt_Contact.m",
+      "size_bytes": 625
+    },
+    {
+      "path": "reference/files/Box_to_Belt_Contact.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Box_to_Belt_Contact_IMAGE.jpg",
+      "size_bytes": 3873
+    },
+    {
+      "path": "reference/files/Box_to_Belt_Contact_IMAGE.jpg.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Box_to_Belt_DBox_IMAGE.png",
+      "size_bytes": 18420
+    },
+    {
+      "path": "reference/files/Box_to_Belt_DBox_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Box_to_Belt_Ends_IMAGE.jpg",
+      "size_bytes": 15694
+    },
+    {
+      "path": "reference/files/Box_to_Belt_Ends_IMAGE.jpg.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Box_to_Belt_Faces_IMAGE.jpg",
+      "size_bytes": 14458
+    },
+    {
+      "path": "reference/files/Box_to_Belt_Faces_IMAGE.jpg.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Box_to_Belt_Help_IMAGE.png",
+      "size_bytes": 106982
+    },
+    {
+      "path": "reference/files/Box_to_Belt_Help_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Box_to_Box_Contact.html",
+      "size_bytes": 5374
+    },
+    {
+      "path": "reference/files/Box_to_Box_Contact.html.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Box_to_Box_Contact.m",
+      "size_bytes": 527
+    },
+    {
+      "path": "reference/files/Box_to_Box_Contact.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Box_to_Box_Contact_Forces_BoxB_Corners.html",
+      "size_bytes": 5794
+    },
+    {
+      "path": "reference/files/Box_to_Box_Contact_Forces_BoxB_Corners.html.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Box_to_Box_Contact_Forces_BoxB_Corners.m",
+      "size_bytes": 706
+    },
+    {
+      "path": "reference/files/Box_to_Box_Contact_Forces_BoxB_Corners.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Box_to_Box_Contact_Forces_BoxB_Corners_Help_IMAGE.png",
+      "size_bytes": 81065
+    },
+    {
+      "path": "reference/files/Box_to_Box_Contact_Forces_BoxF_Corners.html",
+      "size_bytes": 5794
+    },
+    {
+      "path": "reference/files/Box_to_Box_Contact_Forces_BoxF_Corners.html.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Box_to_Box_Contact_Forces_BoxF_Corners.m",
+      "size_bytes": 706
+    },
+    {
+      "path": "reference/files/Box_to_Box_Contact_Forces_BoxF_Corners.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Box_to_Box_Contact_Forces_BoxF_Corners_Help_IMAGE.png",
+      "size_bytes": 79283
+    },
+    {
+      "path": "reference/files/Box_to_Box_Contact_Forces_Help_IMAGE.png",
+      "size_bytes": 90033
+    },
+    {
+      "path": "reference/files/Box_to_Box_Contact_Forces_Help_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Box_to_Box_Contact_IMAGE.jpg",
+      "size_bytes": 2702
+    },
+    {
+      "path": "reference/files/Box_to_Box_Contact_IMAGE.jpg.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Box_to_Box_Dbox_IMAGE.png",
+      "size_bytes": 5974
+    },
+    {
+      "path": "reference/files/Box_to_Box_Dbox_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/BoxB_Corners_IMAGE.jpg",
+      "size_bytes": 9530
+    },
+    {
+      "path": "reference/files/BoxB_Corners_IMAGE.jpg.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/BoxF_Corners_IMAGE.jpg",
+      "size_bytes": 9848
+    },
+    {
+      "path": "reference/files/BoxF_Corners_IMAGE.jpg.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/CFL_activeVariantBlock.m",
+      "size_bytes": 382
+    },
+    {
+      "path": "reference/files/CFL_activeVariantBlock.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/CFL_contact_setModel.m",
+      "size_bytes": 2529
+    },
+    {
+      "path": "reference/files/CFL_contact_setModel.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/CFL_friction_setModel.m",
+      "size_bytes": 2553
+    },
+    {
+      "path": "reference/files/CFL_friction_setModel.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/CFL_publish_all_scripts.m",
+      "size_bytes": 316
+    },
+    {
+      "path": "reference/files/CFL_publish_all_scripts.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/CFL_visual_setOnOff.m",
+      "size_bytes": 2482
+    },
+    {
+      "path": "reference/files/CFL_visual_setOnOff.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Circle_to_Circle_Contact.html",
+      "size_bytes": 5584
+    },
+    {
+      "path": "reference/files/Circle_to_Circle_Contact.html.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Circle_to_Circle_Contact.m",
+      "size_bytes": 625
+    },
+    {
+      "path": "reference/files/Circle_to_Circle_Contact.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Circle_to_Circle_Contact_Enabled_IMAGE.jpg",
+      "size_bytes": 4783
+    },
+    {
+      "path": "reference/files/Circle_to_Circle_Contact_Enabled_IMAGE.jpg.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Circle_to_Circle_Contact_IMAGE.jpg",
+      "size_bytes": 3844
+    },
+    {
+      "path": "reference/files/Circle_to_Circle_Contact_IMAGE.jpg.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Circle_to_Circle_DBox_IMAGE.png",
+      "size_bytes": 17529
+    },
+    {
+      "path": "reference/files/Circle_to_Circle_DBox_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Circle_to_Circle_Help_IMAGE.png",
+      "size_bytes": 94578
+    },
+    {
+      "path": "reference/files/Circle_to_Circle_Help_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Circle_to_Finite_Line_Contact.html",
+      "size_bytes": 5856
+    },
+    {
+      "path": "reference/files/Circle_to_Finite_Line_Contact.html.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Circle_to_Finite_Line_Contact.m",
+      "size_bytes": 747
+    },
+    {
+      "path": "reference/files/Circle_to_Finite_Line_Contact.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Circle_to_Finite_Line_Contact_Enabled_IMAGE.jpg",
+      "size_bytes": 3923
+    },
+    {
+      "path": "reference/files/Circle_to_Finite_Line_Contact_Enabled_IMAGE.jpg.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Circle_to_Finite_Line_Contact_IMAGE.jpg",
+      "size_bytes": 2322
+    },
+    {
+      "path": "reference/files/Circle_to_Finite_Line_Contact_IMAGE.jpg.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Circle_to_Finite_Line_DBox_IMAGE.png",
+      "size_bytes": 10406
+    },
+    {
+      "path": "reference/files/Circle_to_Finite_Line_DBox_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Circle_to_Finite_Line_Help_IMAGE.png",
+      "size_bytes": 80386
+    },
+    {
+      "path": "reference/files/Circle_to_Finite_Line_Help_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Circle_to_Hole_Attraction_IMAGE.jpg",
+      "size_bytes": 3820
+    },
+    {
+      "path": "reference/files/Circle_to_Hole_Attraction_IMAGE.jpg.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Circle_to_Ring_Contact.html",
+      "size_bytes": 5657
+    },
+    {
+      "path": "reference/files/Circle_to_Ring_Contact.html.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Circle_to_Ring_Contact.m",
+      "size_bytes": 664
+    },
+    {
+      "path": "reference/files/Circle_to_Ring_Contact.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Circle_to_Ring_Contact_IMAGE.jpg",
+      "size_bytes": 3251
+    },
+    {
+      "path": "reference/files/Circle_to_Ring_Contact_IMAGE.jpg.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Circle_to_Ring_DBox_IMAGE.png",
+      "size_bytes": 45683
+    },
+    {
+      "path": "reference/files/Circle_to_Ring_DBox_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Circle_to_Ring_Help_IMAGE.png",
+      "size_bytes": 129777
+    },
+    {
+      "path": "reference/files/Circle_to_Ring_Help_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/collisions/63a798cf4490/Contact_Forces_Library_Use_Help1_IMAGE.png",
+      "size_bytes": 118529
+    },
+    {
+      "path": "reference/files/collisions/b30579684dda/Contact_Forces_Library_Use_Help2_IMAGE.png",
+      "size_bytes": 163648
+    },
+    {
+      "path": "reference/files/collisions/ccb596e545f5/html.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/collisions/ccb596e545f5/Libraries.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/collisions/ccb596e545f5/Scripts_Data.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/collisions/e1106763af4b/ProjectData.type.Info.xml",
+      "size_bytes": 70
+    },
+    {
+      "path": "reference/files/Contact_Forces_Core.prj",
+      "size_bytes": 177
+    },
+    {
+      "path": "reference/files/Contact_Forces_Demo_Script_Library_Only.html",
+      "size_bytes": 8550
+    },
+    {
+      "path": "reference/files/Contact_Forces_Demo_Script_Library_Only.html.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Contact_Forces_Demo_Script_Library_Only.m",
+      "size_bytes": 2155
+    },
+    {
+      "path": "reference/files/Contact_Forces_Demo_Script_Library_Only.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Contact_Forces_Lib.slx",
+      "size_bytes": 813071
+    },
+    {
+      "path": "reference/files/Contact_Forces_Lib.slx.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Contact_Forces_Library_Use.html",
+      "size_bytes": 4832
+    },
+    {
+      "path": "reference/files/Contact_Forces_Library_Use.html.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Contact_Forces_Library_Use.m",
+      "size_bytes": 239
+    },
+    {
+      "path": "reference/files/Contact_Forces_Library_Use.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Contact_Forces_Library_Use_Help1_IMAGE.png",
+      "size_bytes": 134656
+    },
+    {
+      "path": "reference/files/Contact_Forces_Library_Use_Help1_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Contact_Forces_Library_Use_Help2_IMAGE.png",
+      "size_bytes": 172197
+    },
+    {
+      "path": "reference/files/Contact_Forces_Library_Use_Help2_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Contact_Forces_Sphere_Cone.pptx.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Contact_Images.pptx.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/convenience.type.Label.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/d21e07a6-e5ce-4730-bb9d-89ee7d7a97f1.type.Reference.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/d704a52e-544c-427d-b411-02eb384c26ab.type.Reference.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/d9221dd9-8629-4311-bd80-807675be03ee.type.Label.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/derived.type.Label.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Design.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/design.type.Label.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Doc.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/e758491f-dede-4c34-ae7d-553888133829.type.Label.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/eb753152-7f02-407f-82e8-a05c4cc66320.type.Filter.xml",
+      "size_bytes": 72
+    },
+    {
+      "path": "reference/files/eb753152-7f02-407f-82e8-a05c4cc66320.type.Label.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/ef85410d-0d6b-41fb-9a5e-f0b9e77169df.type.Reference.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Extr_Data_Block_NotchCircle.m",
+      "size_bytes": 4838
+    },
+    {
+      "path": "reference/files/Extr_Data_Block_NotchCircle.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Extr_Data_Box.m",
+      "size_bytes": 3160
+    },
+    {
+      "path": "reference/files/Extr_Data_Box.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Extr_Data_Cam_Circles.m",
+      "size_bytes": 3623
+    },
+    {
+      "path": "reference/files/Extr_Data_Cam_Circles.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Extr_Data_Cam_Roller_Curve.m",
+      "size_bytes": 4643
+    },
+    {
+      "path": "reference/files/Extr_Data_Cam_Roller_Curve.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Extr_Data_Custom.m",
+      "size_bytes": 980
+    },
+    {
+      "path": "reference/files/Extr_Data_Custom.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Extr_Data_Ellipse.m",
+      "size_bytes": 4423
+    },
+    {
+      "path": "reference/files/Extr_Data_Ellipse.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Extr_Data_Frustum_Conical.m",
+      "size_bytes": 4357
+    },
+    {
+      "path": "reference/files/Extr_Data_Frustum_Conical.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Extr_Data_Link2Hole.m",
+      "size_bytes": 2641
+    },
+    {
+      "path": "reference/files/Extr_Data_Link2Hole.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Extr_Data_LinkEndHole.m",
+      "size_bytes": 3634
+    },
+    {
+      "path": "reference/files/Extr_Data_LinkEndHole.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Extr_Data_LinkHoles.m",
+      "size_bytes": 2933
+    },
+    {
+      "path": "reference/files/Extr_Data_LinkHoles.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Extr_Data_Mesh.m",
+      "size_bytes": 3900
+    },
+    {
+      "path": "reference/files/Extr_Data_Mesh.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Extr_Data_Ring.m",
+      "size_bytes": 3700
+    },
+    {
+      "path": "reference/files/Extr_Data_Ring.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Extr_Data_TriangleRounded_Holes.m",
+      "size_bytes": 3655
+    },
+    {
+      "path": "reference/files/Extr_Data_TriangleRounded_Holes.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Extrusions.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/f2c1a077-d286-44b5-bddb-d3f8b2339738.type.Reference.xml",
+      "size_bytes": 88
+    },
+    {
+      "path": "reference/files/Face_to_Belt_Faces_IMAGE.jpg",
+      "size_bytes": 5330
+    },
+    {
+      "path": "reference/files/Face_to_Belt_Faces_IMAGE.jpg.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Face_to_Plane_Contact.html",
+      "size_bytes": 6134
+    },
+    {
+      "path": "reference/files/Face_to_Plane_Contact.html.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Face_to_Plane_Contact.m",
+      "size_bytes": 899
+    },
+    {
+      "path": "reference/files/Face_to_Plane_Contact.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Face_to_Plane_Contact_IMAGE.jpg",
+      "size_bytes": 2935
+    },
+    {
+      "path": "reference/files/Face_to_Plane_Contact_IMAGE.jpg.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Face_to_Plane_DBox_IMAGE.png",
+      "size_bytes": 23589
+    },
+    {
+      "path": "reference/files/Face_to_Plane_DBox_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Face_to_Plane_Help_IMAGE.png",
+      "size_bytes": 152830
+    },
+    {
+      "path": "reference/files/Face_to_Plane_Help_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/FileClassCategory.type.Category.xml",
+      "size_bytes": 115
+    },
+    {
+      "path": "reference/files/Force_Laws.html",
+      "size_bytes": 5591
+    },
+    {
+      "path": "reference/files/Force_Laws.html.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Force_Laws.m",
+      "size_bytes": 646
+    },
+    {
+      "path": "reference/files/Force_Laws.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Force_Laws_Help_IMAGE.png",
+      "size_bytes": 205785
+    },
+    {
+      "path": "reference/files/Force_Laws_Help_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Friction_Laws.html",
+      "size_bytes": 5003
+    },
+    {
+      "path": "reference/files/Friction_Laws.html.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Friction_Laws.m",
+      "size_bytes": 359
+    },
+    {
+      "path": "reference/files/Friction_Laws.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Friction_Laws_Help_IMAGE.png",
+      "size_bytes": 148250
+    },
+    {
+      "path": "reference/files/Friction_Laws_Help_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/HD-002739.pdf.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Help.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/html.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Images.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Libraries.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/LICENSE.md",
+      "size_bytes": 1501
+    },
+    {
+      "path": "reference/files/LICENSE.md.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Link_End_nx_IMAGE.png",
+      "size_bytes": 4190
+    },
+    {
+      "path": "reference/files/Link_End_nx_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Link_End_px_IMAGE.png",
+      "size_bytes": 3923
+    },
+    {
+      "path": "reference/files/Link_End_px_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Link_Seg_2_Hole_IMAGE.png",
+      "size_bytes": 3330
+    },
+    {
+      "path": "reference/files/Link_Seg_2_Hole_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/none.type.Label.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/other.type.Label.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Overview.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Papers.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Parts_Lib.slx",
+      "size_bytes": 89899
+    },
+    {
+      "path": "reference/files/Parts_Lib.slx.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Project.xml",
+      "size_bytes": 74
+    },
+    {
+      "path": "reference/files/ProjectData.type.Info.xml",
+      "size_bytes": 74
+    },
+    {
+      "path": "reference/files/publish_sm_robot_run_4legs.m",
+      "size_bytes": 1134
+    },
+    {
+      "path": "reference/files/publish_sm_robot_run_4legs.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/README.md",
+      "size_bytes": 1205
+    },
+    {
+      "path": "reference/files/README.md.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/README_contact_forces_core.txt",
+      "size_bytes": 14142
+    },
+    {
+      "path": "reference/files/README_contact_forces_core.txt.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Robot_Run_4Legs.prj",
+      "size_bytes": 177
+    },
+    {
+      "path": "reference/files/Rod_nZ_IMAGE.png",
+      "size_bytes": 3757
+    },
+    {
+      "path": "reference/files/Rod_nZ_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Rod_pZ_IMAGE.png",
+      "size_bytes": 3716
+    },
+    {
+      "path": "reference/files/Rod_pZ_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Scripts_Data.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/SECURITY.md",
+      "size_bytes": 394
+    },
+    {
+      "path": "reference/files/SECURITY.md.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/SimulinkCacheFolder.type.Reference.xml",
+      "size_bytes": 74
+    },
+    {
+      "path": "reference/files/SimulinkCodeGenFolder.type.Reference.xml",
+      "size_bytes": 74
+    },
+    {
+      "path": "reference/files/slblocks.m",
+      "size_bytes": 4035
+    },
+    {
+      "path": "reference/files/slblocks.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_01_gait_selection.slx",
+      "size_bytes": 99994
+    },
+    {
+      "path": "reference/files/sm_robot_run_01_gait_selection.slx.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_01_gait_selection_plot1gaittrajectory.m",
+      "size_bytes": 5857
+    },
+    {
+      "path": "reference/files/sm_robot_run_01_gait_selection_plot1gaittrajectory.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_01_gait_selection_plot2gaitsweep.m",
+      "size_bytes": 3767
+    },
+    {
+      "path": "reference/files/sm_robot_run_01_gait_selection_plot2gaitsweep.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_02_aerial_trajectory.slx",
+      "size_bytes": 46901
+    },
+    {
+      "path": "reference/files/sm_robot_run_02_aerial_trajectory.slx.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_02_aerial_trajectory_plot1legangletrajectory.m",
+      "size_bytes": 5343
+    },
+    {
+      "path": "reference/files/sm_robot_run_02_aerial_trajectory_plot1legangletrajectory.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_03_leg_inverse_dyn.slx",
+      "size_bytes": 87824
+    },
+    {
+      "path": "reference/files/sm_robot_run_03_leg_inverse_dyn.slx.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_03_leg_inverse_dyn_plot1trq.m",
+      "size_bytes": 2257
+    },
+    {
+      "path": "reference/files/sm_robot_run_03_leg_inverse_dyn_plot1trq.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_04_actuator.slx",
+      "size_bytes": 108333
+    },
+    {
+      "path": "reference/files/sm_robot_run_04_actuator.slx.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_04_actuator_plot1current.m",
+      "size_bytes": 1962
+    },
+    {
+      "path": "reference/files/sm_robot_run_04_actuator_plot1current.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs.html",
+      "size_bytes": 12950
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs.html.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs.m",
+      "size_bytes": 4400
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs.png",
+      "size_bytes": 2830
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs.slx",
+      "size_bytes": 144174
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs.slx.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_01.png",
+      "size_bytes": 48195
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_01.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_02.png",
+      "size_bytes": 25064
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_02.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_03.png",
+      "size_bytes": 23957
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_03.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_04.png",
+      "size_bytes": 15477
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_04.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_05.png",
+      "size_bytes": 37797
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_05.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_06.png",
+      "size_bytes": 15338
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_06.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_07.png",
+      "size_bytes": 16446
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_07.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_08.png",
+      "size_bytes": 50179
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_08.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_activeVariantBlock.m",
+      "size_bytes": 397
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_activeVariantBlock.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_lib.slx",
+      "size_bytes": 92764
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_lib.slx.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_mechExp.png",
+      "size_bytes": 73406
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_mechExp.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_mechExp_Anim.gif",
+      "size_bytes": 1679582
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_mechExp_Anim.gif.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_param_create_save_defaults.m",
+      "size_bytes": 192
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_param_create_save_defaults.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_param_def.mat",
+      "size_bytes": 51975
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_param_def.mat.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_param_def_copy.mat",
+      "size_bytes": 51975
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_param_def_copy.mat.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_param_def_load.m",
+      "size_bytes": 2166
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_param_def_load.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_plot1current.m",
+      "size_bytes": 2210
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_plot1current.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_setconstraints.m",
+      "size_bytes": 2243
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_setconstraints.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_web.m",
+      "size_bytes": 30
+    },
+    {
+      "path": "reference/files/sm_robot_run_4legs_web.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_body_IMAGE.png",
+      "size_bytes": 1217
+    },
+    {
+      "path": "reference/files/sm_robot_run_body_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_leg_IMAGE.png",
+      "size_bytes": 4281
+    },
+    {
+      "path": "reference/files/sm_robot_run_leg_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design.html",
+      "size_bytes": 16522
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design.html.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design.m",
+      "size_bytes": 6079
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design.png",
+      "size_bytes": 2369
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design_01.png",
+      "size_bytes": 62040
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design_01.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design_02.png",
+      "size_bytes": 40706
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design_02.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design_03.png",
+      "size_bytes": 61872
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design_03.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design_04.png",
+      "size_bytes": 45278
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design_04.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design_05.png",
+      "size_bytes": 23137
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design_05.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design_06.png",
+      "size_bytes": 38765
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design_06.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design_07.png",
+      "size_bytes": 38884
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design_07.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design_08.png",
+      "size_bytes": 39702
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design_08.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design_09.png",
+      "size_bytes": 47273
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design_09.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design_10.png",
+      "size_bytes": 35753
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design_10.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design_web.m",
+      "size_bytes": 36
+    },
+    {
+      "path": "reference/files/sm_robot_run_limb_design_web.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sm_robot_run_script_design_limb.m",
+      "size_bytes": 4540
+    },
+    {
+      "path": "reference/files/sm_robot_run_script_design_limb.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_in_Sphere_Contact.html",
+      "size_bytes": 5581
+    },
+    {
+      "path": "reference/files/Sphere_in_Sphere_Contact.html.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_in_Sphere_Contact.m",
+      "size_bytes": 626
+    },
+    {
+      "path": "reference/files/Sphere_in_Sphere_Contact.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_in_Sphere_Contact_IMAGE.jpg",
+      "size_bytes": 3425
+    },
+    {
+      "path": "reference/files/Sphere_in_Sphere_Contact_IMAGE.jpg.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_in_Sphere_DBox_IMAGE.png",
+      "size_bytes": 25957
+    },
+    {
+      "path": "reference/files/Sphere_in_Sphere_DBox_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_in_Sphere_Help_IMAGE.png",
+      "size_bytes": 88291
+    },
+    {
+      "path": "reference/files/Sphere_in_Sphere_Help_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Belt_Contact.html",
+      "size_bytes": 6014
+    },
+    {
+      "path": "reference/files/Sphere_to_Belt_Contact.html.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Belt_Contact.m",
+      "size_bytes": 872
+    },
+    {
+      "path": "reference/files/Sphere_to_Belt_Contact.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Belt_DBox_IMAGE.png",
+      "size_bytes": 32520
+    },
+    {
+      "path": "reference/files/Sphere_to_Belt_DBox_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Belt_Help_IMAGE.png",
+      "size_bytes": 124610
+    },
+    {
+      "path": "reference/files/Sphere_to_Belt_Help_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Belt_IMAGE.jpg",
+      "size_bytes": 4555
+    },
+    {
+      "path": "reference/files/Sphere_to_Belt_IMAGE.jpg.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Cone_Contact.html",
+      "size_bytes": 5871
+    },
+    {
+      "path": "reference/files/Sphere_to_Cone_Contact.html.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Cone_Contact.m",
+      "size_bytes": 762
+    },
+    {
+      "path": "reference/files/Sphere_to_Cone_Contact.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Cone_Contact_IMAGE.jpg",
+      "size_bytes": 3452
+    },
+    {
+      "path": "reference/files/Sphere_to_Cone_Contact_IMAGE.jpg.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Cone_DBox_IMAGE.png",
+      "size_bytes": 35573
+    },
+    {
+      "path": "reference/files/Sphere_to_Cone_DBox_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Cone_Help_IMAGE.png",
+      "size_bytes": 137036
+    },
+    {
+      "path": "reference/files/Sphere_to_Cone_Help_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Plane_Contact.html",
+      "size_bytes": 5826
+    },
+    {
+      "path": "reference/files/Sphere_to_Plane_Contact.html.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Plane_Contact.m",
+      "size_bytes": 738
+    },
+    {
+      "path": "reference/files/Sphere_to_Plane_Contact.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Plane_Contact_Enabled_IMAGE.jpg",
+      "size_bytes": 3744
+    },
+    {
+      "path": "reference/files/Sphere_to_Plane_Contact_Enabled_IMAGE.jpg.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Plane_Contact_IMAGE.jpg",
+      "size_bytes": 3504
+    },
+    {
+      "path": "reference/files/Sphere_to_Plane_Contact_IMAGE.jpg.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Plane_DBox_IMAGE.png",
+      "size_bytes": 26179
+    },
+    {
+      "path": "reference/files/Sphere_to_Plane_DBox_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Plane_Help_IMAGE.png",
+      "size_bytes": 115857
+    },
+    {
+      "path": "reference/files/Sphere_to_Plane_Help_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Sphere_Contact.html",
+      "size_bytes": 5454
+    },
+    {
+      "path": "reference/files/Sphere_to_Sphere_Contact.html.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Sphere_Contact.m",
+      "size_bytes": 558
+    },
+    {
+      "path": "reference/files/Sphere_to_Sphere_Contact.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Sphere_Contact_IMAGE.jpg",
+      "size_bytes": 3970
+    },
+    {
+      "path": "reference/files/Sphere_to_Sphere_Contact_IMAGE.jpg.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Sphere_DBox_IMAGE.png",
+      "size_bytes": 30739
+    },
+    {
+      "path": "reference/files/Sphere_to_Sphere_DBox_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Sphere_Help_IMAGE.png",
+      "size_bytes": 84242
+    },
+    {
+      "path": "reference/files/Sphere_to_Sphere_Help_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Tube_Contact.html",
+      "size_bytes": 5872
+    },
+    {
+      "path": "reference/files/Sphere_to_Tube_Contact.html.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Tube_Contact.m",
+      "size_bytes": 760
+    },
+    {
+      "path": "reference/files/Sphere_to_Tube_Contact.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Tube_Contact_Enabled_IMAGE.jpg",
+      "size_bytes": 3619
+    },
+    {
+      "path": "reference/files/Sphere_to_Tube_Contact_Enabled_IMAGE.jpg.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Tube_Contact_IMAGE.jpg",
+      "size_bytes": 3577
+    },
+    {
+      "path": "reference/files/Sphere_to_Tube_Contact_IMAGE.jpg.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Tube_DBox_IMAGE.png",
+      "size_bytes": 50752
+    },
+    {
+      "path": "reference/files/Sphere_to_Tube_DBox_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Sphere_to_Tube_Help_IMAGE.png",
+      "size_bytes": 141443
+    },
+    {
+      "path": "reference/files/Sphere_to_Tube_Help_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/startup_Contact_Forces_Core.m",
+      "size_bytes": 1103
+    },
+    {
+      "path": "reference/files/startup_Contact_Forces_Core.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/startup_sm_robot_run_4legs.m",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/startup_sm_robot_run_4legs.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/test.type.Label.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Test2D_Disks_in_Box.slx",
+      "size_bytes": 91757
+    },
+    {
+      "path": "reference/files/Test2D_Disks_in_Box.slx.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Test2D_Disks_in_Box_plot1diskpos.m",
+      "size_bytes": 2179
+    },
+    {
+      "path": "reference/files/Test2D_Disks_in_Box_plot1diskpos.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Test3D_Balls_in_Box.slx",
+      "size_bytes": 89702
+    },
+    {
+      "path": "reference/files/Test3D_Balls_in_Box.slx.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Test3D_Balls_in_Box_plot1ballpos.m",
+      "size_bytes": 1631
+    },
+    {
+      "path": "reference/files/Test3D_Balls_in_Box_plot1ballpos.m.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Test_Models.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Testing.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Triangle_Link_IMAGE.png",
+      "size_bytes": 13227
+    },
+    {
+      "path": "reference/files/Triangle_Link_IMAGE.png.type.File.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Workflows.type.File.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/XROBO01_reference.slx",
+      "size_bytes": 186373
+    }
+  ],
+  "entrypoint": "reference/files/XROBO01_reference.slx",
+  "expected_score": 99.78814422735029,
+  "expected_valid_scenarios": 11,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal",
+      "soft_ground_heavy",
+      "stiff_ground_fast",
+      "low_propulsion_heavy",
+      "interior_compliance",
+      "torque_pair_low",
+      "torque_pair_high",
+      "ground_stiffness_pair_low",
+      "ground_stiffness_pair_high",
+      "ground_damping_pair_low",
+      "ground_damping_pair_high"
+    ],
+    "nominal_scenario_id": "nominal",
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 7614233,
+  "excluded_files": [
+    {
+      "path": "reference/files/Contact_Forces_Sphere_Cone.pptx",
+      "size_bytes": 374561,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/Contact_Images.pptx",
+      "size_bytes": 713107,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    }
+  ]
+}

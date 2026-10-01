@@ -1,0 +1,15 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XTHERM-06",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/bev_motor_cooling.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 4,
+  "retained_bytes": 166616,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ]
+}

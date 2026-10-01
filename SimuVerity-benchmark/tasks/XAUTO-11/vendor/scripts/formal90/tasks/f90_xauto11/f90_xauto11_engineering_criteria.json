@@ -1,0 +1,34 @@
+{
+  "criteria_id": "simuverity-101-v1:f90-xauto-11:engineering-criteria",
+  "effect_targets": {
+    "baseline_scenario": "nominal_body",
+    "binding": "fixed_multi_metric_effects_derived_from_lossless_scenario_targets",
+    "intervention_scenarios": [
+      "light_body",
+      "intermediate_body",
+      "soft_low_damping",
+      "rougher_faster_road"
+    ]
+  },
+  "normalizers": {
+    "binding": "unchanged_formula_derived_from_fixed_scenario_targets",
+    "operation_order": "declared"
+  },
+  "qualification_targets": {
+    "evidence_complete": true,
+    "compile_pass": true,
+    "load_pass": true,
+    "task_id": "F90-XAUTO-11",
+    "update_pass": true
+  },
+  "runtime_source_reference_required": false,
+  "scenario_targets": {
+    "numeric_conversion": "none",
+    "payload_codec": "gzip-json",
+    "payload_file": "f90_xauto11_engineering_criteria_targets.json.gz",
+    "representation": "lossless_timeseries_lookup_table",
+    "sample_order": "preserved_exactly"
+  },
+  "schema": "simuverity.engineering-criteria.v1",
+  "task_id": "F90-XAUTO-11"
+}

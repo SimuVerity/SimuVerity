@@ -1,0 +1,67 @@
+{
+  "schema": "simuverity.matlab-local-importer-recipe.v1",
+  "task_id": "XCOMM-03",
+  "release": "simuverity-101-v1",
+  "matlab_release": "R2025a",
+  "publisher": "The MathWorks, Inc.",
+  "redistributes_mathworks_files": false,
+  "destination": "%LOCALAPPDATA%/SimuVerity/assets/simuverity-101-v1/XCOMM-03",
+  "discovery": {
+    "method": "matlab_example_or_installed_product_search",
+    "example_id": "radar/slexSTAPExampleExample",
+    "expected_source_filenames": [
+      "SensorArrayTabExpression.png",
+      "helperslexSTAPParam.m",
+      "slexSTAPExample.slx",
+      "slexSTAPExampleExample.m"
+    ],
+    "expected_files": [
+      {
+        "name": "SensorArrayTabExpression.png",
+        "size_bytes": 9004
+      },
+      {
+        "name": "helperslexSTAPParam.m",
+        "size_bytes": 4377
+      },
+      {
+        "name": "slexSTAPExample.slx",
+        "size_bytes": 62142
+      },
+      {
+        "name": "slexSTAPExampleExample.m",
+        "size_bytes": 7036
+      }
+    ]
+  },
+  "transform": "transform.m",
+  "validation": {
+    "required": true,
+    "checks": [
+      "load",
+      "update",
+      "compile",
+      "simulate",
+      "all_official_scenarios",
+      "reference_score"
+    ],
+    "on_mismatch": "fail_closed"
+  },
+  "entrypoint": "slexSTAPExample.slx",
+  "expected_valid_scenarios": 6,
+  "score_tolerance": 1e-12,
+  "expected_score": 90.0574068369043,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal",
+      "range_boundary",
+      "doppler_boundary",
+      "jammer_geometry",
+      "weak_target_strong_clutter",
+      "joint_service"
+    ],
+    "nominal_scenario_id": "nominal",
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision"
+}

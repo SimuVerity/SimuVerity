@@ -1,0 +1,75 @@
+{
+  "schema": "simuverity.task.v1",
+  "release": "simuverity-101-v1",
+  "task_id": "XBATT-07",
+  "ordinal": 32,
+  "collection": "XBATT",
+  "runtime_alias": "XBATT-07",
+  "required_model_file": "cand_XBATT07.slx",
+  "evaluation_policy_id": "simuverity-101-v1:xbatt-07:scoring",
+  "candidate_closure": {
+    "public_input_names": [
+      "bms_input"
+    ],
+    "nominal_provider": "simuverity_public_nominal_inputs"
+  },
+  "public_spec": "public_spec.json",
+  "official_scenarios": "official_scenarios.json",
+  "extractor": {
+    "kind": "matlab_function",
+    "path": "extractor/run.m",
+    "entrypoint": "run",
+    "implementation": "vendor/scripts/formal90/tasks/f90_xbatt07/f90_xbatt07_extract_candidate_evidence.m",
+    "closure_manifest": "extractor/manifest.json"
+  },
+  "scorer": {
+    "kind": "python_function",
+    "path": "scorer.py",
+    "entrypoint": "score",
+    "closure_manifest": "scorer/manifest.json",
+    "offline_only": true
+  },
+  "reference": {
+    "materialization": "bundled",
+    "path": "reference/files",
+    "manifest": "reference/manifest.json",
+    "entrypoint": "reference/files/XBATT07_reference_harness.slx",
+    "clean_replay_setup": {
+      "phase": "before_load",
+      "path": "tasks/XBATT-07/reference/clean_replay_setup/f90_xbatt07_reference_clean_replay_setup.m",
+      "entrypoint": "f90_xbatt07_reference_clean_replay_setup"
+    },
+    "expected_valid_scenarios": 6,
+    "score_tolerance": 1e-12,
+    "expected_score": 100.0,
+    "expected_score_basis": "reference_replay",
+    "scenario_contract": {
+      "expected_ids": [
+        "nominal_standby",
+        "drive_precharge_ready",
+        "drive_precharge_incomplete",
+        "charge_precharge_ready",
+        "voltage_temperature_derating",
+        "overvoltage_overtemperature_fault"
+      ],
+      "nominal_scenario_id": null,
+      "nominal_materialization": "authoritative_scenario_set"
+    },
+    "score_tolerance_basis": "source_authority_numeric_precision",
+    "runtime_manifest": "reference/runtime_manifest.json"
+  },
+  "applicable_groups": [
+    "G",
+    "A",
+    "Q",
+    "M",
+    "C",
+    "R",
+    "D"
+  ],
+  "release_license_status": "INCLUDED_THIRD_PARTY_LICENSE",
+  "system_profile": {
+    "path": "system_profile.json",
+    "schema": "simuverity.system-profile.v1"
+  }
+}

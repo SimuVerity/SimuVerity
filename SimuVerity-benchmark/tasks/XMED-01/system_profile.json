@@ -1,0 +1,200 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XMED-01",
+  "collection": "XMED",
+  "reference": {
+    "identity_path": "tasks/XMED-01/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/XMED01_reference.slx",
+    "model_path": "tasks/XMED-01/reference/files/XMED01_reference.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id P9-XMED01",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a pressure-controlled mechanical-ventilation model coupled to a causal single-compartment patient lung.",
+    "engineering_objects": [
+      "P9-XMED01 plant and controller described by the current public task contract",
+      "Measured output interfaces: airway, lung_state, circuit_flow, actuator"
+    ],
+    "physical_paths": [
+      "The ventilator must supply the patient through an airway with finite resistance and compliance, include inspiratory and expiratory flow actuation, and include a safety alarm that responds to over-pressure or persistent regulation error."
+    ],
+    "functional_paths": [
+      "Build a pressure-controlled mechanical-ventilation model coupled to a causal single-compartment patient lung.",
+      "The ventilator must supply the patient through an airway with finite resistance and compliance, include inspiratory and expiratory flow actuation, and include a safety alarm that responds to over-pressure or persistent regulation error.",
+      "No particular persistent-error threshold, alarm hold time, or controller structure is prescribed."
+    ],
+    "information_paths": [
+      "patient_compliance, airway_resistance, leak_fraction, target_insp_pressure, obstruction_factor, obstruction_time -> P9-XMED01 plant/control path -> airway, lung_state, circuit_flow, actuator"
+    ],
+    "modes_and_events": [
+      "Build a pressure-controlled mechanical-ventilation model coupled to a causal single-compartment patient lung."
+    ],
+    "interfaces": [
+      {
+        "name": "patient_compliance",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "L/cmH2O"
+        ],
+        "range_or_shape": "Read patient_compliance, airway_resistance, leak_fraction, target_insp_pressure, obstruction_factor, and obstruction_time from base-workspace variables.",
+        "source": "tasks/XMED-01/public_spec.json"
+      },
+      {
+        "name": "airway_resistance",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "cmH2O*s/L"
+        ],
+        "range_or_shape": "Read patient_compliance, airway_resistance, leak_fraction, target_insp_pressure, obstruction_factor, and obstruction_time from base-workspace variables.",
+        "source": "tasks/XMED-01/public_spec.json"
+      },
+      {
+        "name": "leak_fraction",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read patient_compliance, airway_resistance, leak_fraction, target_insp_pressure, obstruction_factor, and obstruction_time from base-workspace variables.",
+        "source": "tasks/XMED-01/public_spec.json"
+      },
+      {
+        "name": "target_insp_pressure",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "cmH2O"
+        ],
+        "range_or_shape": "Read patient_compliance, airway_resistance, leak_fraction, target_insp_pressure, obstruction_factor, and obstruction_time from base-workspace variables.",
+        "source": "tasks/XMED-01/public_spec.json"
+      },
+      {
+        "name": "obstruction_factor",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read patient_compliance, airway_resistance, leak_fraction, target_insp_pressure, obstruction_factor, and obstruction_time from base-workspace variables.",
+        "source": "tasks/XMED-01/public_spec.json"
+      },
+      {
+        "name": "obstruction_time",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read patient_compliance, airway_resistance, leak_fraction, target_insp_pressure, obstruction_factor, and obstruction_time from base-workspace variables. The obstruction factor applies for one second beginning at obstruction_time.",
+        "source": "tasks/XMED-01/public_spec.json"
+      },
+      {
+        "name": "airway",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[cmH2O,L/s,L]"
+        ],
+        "range_or_shape": "The ventilator must supply the patient through an airway with finite resistance and compliance, include inspiratory and expiratory flow actuation, and include a safety alarm that responds to over-pressure or persistent regulation error. Read patient_compliance, airway_resistance, leak_fraction, target_insp_pressure, obstruction_factor, and obstruction_time from base-workspace variables. Across the declared patient and leak range, airway pressure must be closed-loop regulated to the inspiratory target and PEEP, maintain physiologically directed patient flow and volume, respect a 35 cmH2O safety ceiling, and recover after the temporary obstruction. Log Timeseries airway, lung_state, circuit_flow, and actuator. airway must contain [airway pressure in cmH2O, patient-directed flow in L/s, lung volume above PEEP in L].",
+        "source": "tasks/XMED-01/public_spec.json"
+      },
+      {
+        "name": "lung_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[cmH2O]"
+        ],
+        "range_or_shape": "Log Timeseries airway, lung_state, circuit_flow, and actuator. lung_state must contain the alveolar pressure in cmH2O computed from the patient volume and compliance.",
+        "source": "tasks/XMED-01/public_spec.json"
+      },
+      {
+        "name": "circuit_flow",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[L/s,L/s]"
+        ],
+        "range_or_shape": "Log Timeseries airway, lung_state, circuit_flow, and actuator. circuit_flow must contain [ventilator delivered flow in L/s, circuit leak flow in L/s] measured at the downstream circuit junction, so that delivered flow supplies the patient branch and leak branch.",
+        "source": "tasks/XMED-01/public_spec.json"
+      },
+      {
+        "name": "actuator",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[1,1,boolean]"
+        ],
+        "range_or_shape": "Log Timeseries airway, lung_state, circuit_flow, and actuator. actuator must contain [inspiratory-valve command, expiratory-valve command, alarm state].",
+        "source": "tasks/XMED-01/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a pressure-controlled mechanical-ventilation model coupled to a causal single-compartment patient lung.",
+      "No particular persistent-error threshold, alarm hold time, or controller structure is prescribed.",
+      "Use a 20 breaths/min pressure-controlled cycle with a 1:2 inspiratory-to-expiratory ratio and 5 cmH2O PEEP."
+    ],
+    "feedback_and_control_causality": [
+      "Build a pressure-controlled mechanical-ventilation model coupled to a causal single-compartment patient lung.",
+      "The ventilator must supply the patient through an airway with finite resistance and compliance, include inspiratory and expiratory flow actuation, and include a safety alarm that responds to over-pressure or persistent regulation error.",
+      "No particular persistent-error threshold, alarm hold time, or controller structure is prescribed."
+    ],
+    "signal_sources": [
+      "patient_compliance is read from the public MATLAB base-workspace input contract.",
+      "airway_resistance is read from the public MATLAB base-workspace input contract.",
+      "leak_fraction is read from the public MATLAB base-workspace input contract.",
+      "target_insp_pressure is read from the public MATLAB base-workspace input contract.",
+      "obstruction_factor is read from the public MATLAB base-workspace input contract.",
+      "obstruction_time is read from the public MATLAB base-workspace input contract.",
+      "airway is produced by the implemented plant or controller and logged under the public output contract.",
+      "lung_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "circuit_flow is produced by the implemented plant or controller and logged under the public output contract.",
+      "actuator is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "patient_compliance: Read patient_compliance, airway_resistance, leak_fraction, target_insp_pressure, obstruction_factor, and obstruction_time from base-workspace variables.",
+      "airway_resistance: Read patient_compliance, airway_resistance, leak_fraction, target_insp_pressure, obstruction_factor, and obstruction_time from base-workspace variables.",
+      "leak_fraction: Read patient_compliance, airway_resistance, leak_fraction, target_insp_pressure, obstruction_factor, and obstruction_time from base-workspace variables.",
+      "target_insp_pressure: Read patient_compliance, airway_resistance, leak_fraction, target_insp_pressure, obstruction_factor, and obstruction_time from base-workspace variables.",
+      "obstruction_factor: Read patient_compliance, airway_resistance, leak_fraction, target_insp_pressure, obstruction_factor, and obstruction_time from base-workspace variables.",
+      "obstruction_time: Read patient_compliance, airway_resistance, leak_fraction, target_insp_pressure, obstruction_factor, and obstruction_time from base-workspace variables. The obstruction factor applies for one second beginning at obstruction_time."
+    ],
+    "disturbances": [
+      "P9-XMED01 operating variation is supplied through patient_compliance, airway_resistance, leak_fraction, target_insp_pressure, obstruction_factor, obstruction_time."
+    ],
+    "dynamic_processes": [
+      "Across the declared patient and leak range, airway pressure must be closed-loop regulated to the inspiratory target and PEEP, maintain physiologically directed patient flow and volume, respect a 35 cmH2O safety ceiling, and recover after the temporary obstruction."
+    ],
+    "task_specific_shortcuts": [
+      "P9-XMED01: prescribing airway directly would bypass the system path described by: The ventilator must supply the patient through an airway with finite resistance and compliance, include inspiratory and expiratory flow actuation, and include a safety alarm that responds to over-pressure or persistent regulation error.",
+      "P9-XMED01: replaying a fixed airway trace would ignore causal variation in patient_compliance."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XMED-01/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XMED-01/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XMED-01/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

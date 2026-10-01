@@ -1,0 +1,170 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XBATT-05",
+  "collection": "XBATT",
+  "reference": {
+    "identity_path": "tasks/XBATT-05/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/src/Examples/simpleExamples/TSPMeA_AdvancedCharger.slx",
+    "model_path": "tasks/XBATT-05/reference/files/src/Examples/simpleExamples/TSPMeA_AdvancedCharger.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XBATT-05",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a closed-loop bidirectional charger around a thermally coupled lithium-ion electrochemical cell.",
+    "engineering_objects": [
+      "Build a closed-loop bidirectional charger around a thermally coupled lithium-ion electrochemical cell.",
+      "The cell must have finite solid and electrolyte dynamics, terminal electrical behavior, heat generation, temperature-dependent electrochemical response, and physically connected SEI-film and lithium-plating states.",
+      "Starting from rest, perform a 5 W constant-power discharge until the measured terminal voltage reaches 2.5 V, rest, then charge at 5 A constant current."
+    ],
+    "physical_paths": [
+      "The cell must have finite solid and electrolyte dynamics, terminal electrical behavior, heat generation, temperature-dependent electrochemical response, and physically connected SEI-film and lithium-plating states.",
+      "Build a closed-loop bidirectional charger around a thermally coupled lithium-ion electrochemical cell.",
+      "Starting from rest, perform a 5 W constant-power discharge until the measured terminal voltage reaches 2.5 V, rest, then charge at 5 A constant current."
+    ],
+    "functional_paths": [
+      "The control architecture is not prescribed, but phase changes and termination must be caused by actual terminal-voltage and terminal-current feedback, and the electrical source must act on the same physical cell that produces the logged measurements."
+    ],
+    "information_paths": [
+      "initial_soc, initial_temperature_C, ambient_temperature_C, heat_transfer_coefficient_W_per_m2K -> F90-XBATT-05 plant/control path -> cell_state, charger_state, electrochemical_state"
+    ],
+    "modes_and_events": [
+      "A scalar SOC integrator, prescribed battery trajectories, or an electrical model with an unrelated temperature display is not sufficient."
+    ],
+    "interfaces": [
+      {
+        "name": "initial_soc",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read initial_soc, initial_temperature_C, ambient_temperature_C, and heat_transfer_coefficient_W_per_m2K from the MATLAB base workspace.",
+        "source": "tasks/XBATT-05/public_spec.json"
+      },
+      {
+        "name": "initial_temperature_C",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Read initial_soc, initial_temperature_C, ambient_temperature_C, and heat_transfer_coefficient_W_per_m2K from the MATLAB base workspace.",
+        "source": "tasks/XBATT-05/public_spec.json"
+      },
+      {
+        "name": "ambient_temperature_C",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Read initial_soc, initial_temperature_C, ambient_temperature_C, and heat_transfer_coefficient_W_per_m2K from the MATLAB base workspace.",
+        "source": "tasks/XBATT-05/public_spec.json"
+      },
+      {
+        "name": "heat_transfer_coefficient_W_per_m2K",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "W/(m^2*K)"
+        ],
+        "range_or_shape": "Read initial_soc, initial_temperature_C, ambient_temperature_C, and heat_transfer_coefficient_W_per_m2K from the MATLAB base workspace.",
+        "source": "tasks/XBATT-05/public_spec.json"
+      },
+      {
+        "name": "cell_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "degC",
+          "V",
+          "A",
+          "1"
+        ],
+        "range_or_shape": "Log complete-run Timeseries named cell_state, charger_state, and electrochemical_state. cell_state has width 4 in this order: terminal voltage (V), terminal current (A), cell temperature (degC), and surface SOC (unitless fraction).",
+        "source": "tasks/XBATT-05/public_spec.json"
+      },
+      {
+        "name": "charger_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "W",
+          "1"
+        ],
+        "range_or_shape": "Log complete-run Timeseries named cell_state, charger_state, and electrochemical_state. charger_state has width 4 in this order: phase code (unitless integer), phase command, actual terminal power (W), and completed sequence count (unitless), with phase codes 0 for rest, 1 for constant-power discharge, 2 for constant-current charge, and 3 for constant-voltage charge.",
+        "source": "tasks/XBATT-05/public_spec.json"
+      },
+      {
+        "name": "electrochemical_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "um",
+          "V",
+          "1"
+        ],
+        "range_or_shape": "Log complete-run Timeseries named cell_state, charger_state, and electrochemical_state. electrochemical_state has width 8 in this order: positive collector potential (V), open-circuit voltage (V), negative collector potential (V), average SEI-film thickness (um), negative-electrode porosity (unitless fraction), capacity state of health (unitless fraction), SEI capacity loss (unitless fraction), and lithium-plating capacity loss (unitless fraction).",
+        "source": "tasks/XBATT-05/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "The control architecture is not prescribed, but phase changes and termination must be caused by actual terminal-voltage and terminal-current feedback, and the electrical source must act on the same physical cell that produces the logged measurements."
+    ],
+    "feedback_and_control_causality": [
+      "Build a closed-loop bidirectional charger around a thermally coupled lithium-ion electrochemical cell.",
+      "The control architecture is not prescribed, but phase changes and termination must be caused by actual terminal-voltage and terminal-current feedback, and the electrical source must act on the same physical cell that produces the logged measurements.",
+      "Logs must come from one causal simulation rather than precomputed waveforms or copies of workspace inputs."
+    ],
+    "signal_sources": [
+      "initial_soc is read from the public MATLAB base-workspace input contract.",
+      "initial_temperature_C is read from the public MATLAB base-workspace input contract.",
+      "ambient_temperature_C is read from the public MATLAB base-workspace input contract.",
+      "heat_transfer_coefficient_W_per_m2K is read from the public MATLAB base-workspace input contract.",
+      "cell_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "charger_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "electrochemical_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "initial_soc: Read initial_soc, initial_temperature_C, ambient_temperature_C, and heat_transfer_coefficient_W_per_m2K from the MATLAB base workspace.",
+      "initial_temperature_C: Read initial_soc, initial_temperature_C, ambient_temperature_C, and heat_transfer_coefficient_W_per_m2K from the MATLAB base workspace.",
+      "ambient_temperature_C: Read initial_soc, initial_temperature_C, ambient_temperature_C, and heat_transfer_coefficient_W_per_m2K from the MATLAB base workspace.",
+      "heat_transfer_coefficient_W_per_m2K: Read initial_soc, initial_temperature_C, ambient_temperature_C, and heat_transfer_coefficient_W_per_m2K from the MATLAB base workspace."
+    ],
+    "disturbances": [
+      "F90-XBATT-05 operating variation is supplied through initial_soc, initial_temperature_C, ambient_temperature_C, heat_transfer_coefficient_W_per_m2K."
+    ],
+    "dynamic_processes": [
+      "The cell must have finite solid and electrolyte dynamics, terminal electrical behavior, heat generation, temperature-dependent electrochemical response, and physically connected SEI-film and lithium-plating states."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XBATT-05: prescribing cell_state directly would bypass the system path described by: The cell must have finite solid and electrolyte dynamics, terminal electrical behavior, heat generation, temperature-dependent electrochemical response, and physically connected SEI-film and lithium-plating states.",
+      "F90-XBATT-05: replaying a fixed cell_state trace would ignore causal variation in initial_soc."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XBATT-05/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XBATT-05/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XBATT-05/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

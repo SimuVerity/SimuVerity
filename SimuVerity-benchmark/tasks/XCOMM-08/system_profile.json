@@ -1,0 +1,246 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XCOMM-08",
+  "collection": "XCOMM",
+  "reference": {
+    "identity_path": "tasks/XCOMM-08/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "commdvbt.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XCOMM-08",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a complete complex-baseband terrestrial digital-video packet link in Simulink using the DVB-T 2k-mode signal structure.",
+    "engineering_objects": [
+      "F90-XCOMM-08 plant and controller described by the current public task contract",
+      "Measured output interfaces: SourcePackets, RSCodedBytes, InnerCodedBits, TxQAMSymbols, TxOFDMWaveform, RxOFDMWaveform, SoftMetrics, InnerDecodedBits, RecoveredPackets, InnerBERStats, OuterBERStats"
+    ],
+    "physical_paths": [
+      "A source of 188-byte packets must pass through shortened Reed-Solomon (204,188) outer coding, outer convolutional interleaving, rate-3/4 punctured convolutional coding, DVB-T bit and symbol interleaving, nonhierarchical normalized 64-QAM mapping, 2048-point OFDM modulation, and an AWGN channel.",
+      "Each signal must come from its actual connected processing stage and retain that stage's public data type: packet bytes, coded bits or bytes, complex QAM or OFDM samples, soft metrics, or recovered packet bytes as applicable."
+    ],
+    "functional_paths": [
+      "The receiver must perform OFDM demodulation, soft 64-QAM demapping, matching inner deinterleaving and Viterbi decoding, outer deinterleaving, Reed-Solomon decoding, and packet recovery.",
+      "Across the declared SNR and seed range, the full receiver must recover source packets and must expose both the post-inner-decoder and final post-outer-decoder error measurements.",
+      "Log MATLAB Timeseries named SourcePackets, RSCodedBytes, InnerCodedBits, TxQAMSymbols, TxOFDMWaveform, RxOFDMWaveform, SoftMetrics, InnerDecodedBits, RecoveredPackets, InnerBERStats, and OuterBERStats."
+    ],
+    "information_paths": [
+      "ChannelSNR_dB, SourceSeed, NoiseSeed -> F90-XCOMM-08 plant/control path -> SourcePackets, RSCodedBytes, InnerCodedBits, TxQAMSymbols, TxOFDMWaveform, RxOFDMWaveform, SoftMetrics, InnerDecodedBits, RecoveredPackets, InnerBERStats, OuterBERStats"
+    ],
+    "modes_and_events": [
+      "Build a complete complex-baseband terrestrial digital-video packet link in Simulink using the DVB-T 2k-mode signal structure."
+    ],
+    "interfaces": [
+      {
+        "name": "ChannelSNR_dB",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "dB"
+        ],
+        "range_or_shape": "Read ChannelSNR_dB, SourceSeed, and NoiseSeed from the MATLAB base workspace; their nominal values are 18.5 dB, 1234573, and 54321, and their supported ranges are 17 to 22 dB and integer seeds from 1 to 10000000.",
+        "source": "tasks/XCOMM-08/public_spec.json"
+      },
+      {
+        "name": "SourceSeed",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "integer"
+        ],
+        "range_or_shape": "Read ChannelSNR_dB, SourceSeed, and NoiseSeed from the MATLAB base workspace; their nominal values are 18.5 dB, 1234573, and 54321, and their supported ranges are 17 to 22 dB and integer seeds from 1 to 10000000.",
+        "source": "tasks/XCOMM-08/public_spec.json"
+      },
+      {
+        "name": "NoiseSeed",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "integer"
+        ],
+        "range_or_shape": "Read ChannelSNR_dB, SourceSeed, and NoiseSeed from the MATLAB base workspace; their nominal values are 18.5 dB, 1234573, and 54321, and their supported ranges are 17 to 22 dB and integer seeds from 1 to 10000000.",
+        "source": "tasks/XCOMM-08/public_spec.json"
+      },
+      {
+        "name": "SourcePackets",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "byte"
+        ],
+        "range_or_shape": "Log MATLAB Timeseries named SourcePackets, RSCodedBytes, InnerCodedBits, TxQAMSymbols, TxOFDMWaveform, RxOFDMWaveform, SoftMetrics, InnerDecodedBits, RecoveredPackets, InnerBERStats, and OuterBERStats. SourcePackets and RecoveredPackets contain 188 packet-byte channels; RSCodedBytes contains 204 coded-byte channels; InnerCodedBits and InnerDecodedBits contain 1632 bit channels; TxQAMSymbols contains 1512 normalized complex 64-QAM-symbol channels; TxOFDMWaveform and RxOFDMWaveform each contain 2048 complex OFDM-sample channels; and SoftMetrics contains 1512 real soft-metric channels.",
+        "source": "tasks/XCOMM-08/public_spec.json"
+      },
+      {
+        "name": "RSCodedBytes",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "byte"
+        ],
+        "range_or_shape": "Log MATLAB Timeseries named SourcePackets, RSCodedBytes, InnerCodedBits, TxQAMSymbols, TxOFDMWaveform, RxOFDMWaveform, SoftMetrics, InnerDecodedBits, RecoveredPackets, InnerBERStats, and OuterBERStats. SourcePackets and RecoveredPackets contain 188 packet-byte channels; RSCodedBytes contains 204 coded-byte channels; InnerCodedBits and InnerDecodedBits contain 1632 bit channels; TxQAMSymbols contains 1512 normalized complex 64-QAM-symbol channels; TxOFDMWaveform and RxOFDMWaveform each contain 2048 complex OFDM-sample channels; and SoftMetrics contains 1512 real soft-metric channels.",
+        "source": "tasks/XCOMM-08/public_spec.json"
+      },
+      {
+        "name": "InnerCodedBits",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "bit"
+        ],
+        "range_or_shape": "Log MATLAB Timeseries named SourcePackets, RSCodedBytes, InnerCodedBits, TxQAMSymbols, TxOFDMWaveform, RxOFDMWaveform, SoftMetrics, InnerDecodedBits, RecoveredPackets, InnerBERStats, and OuterBERStats. SourcePackets and RecoveredPackets contain 188 packet-byte channels; RSCodedBytes contains 204 coded-byte channels; InnerCodedBits and InnerDecodedBits contain 1632 bit channels; TxQAMSymbols contains 1512 normalized complex 64-QAM-symbol channels; TxOFDMWaveform and RxOFDMWaveform each contain 2048 complex OFDM-sample channels; and SoftMetrics contains 1512 real soft-metric channels.",
+        "source": "tasks/XCOMM-08/public_spec.json"
+      },
+      {
+        "name": "TxQAMSymbols",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "complex symbol",
+          "complex sample",
+          "soft metric"
+        ],
+        "range_or_shape": "Log MATLAB Timeseries named SourcePackets, RSCodedBytes, InnerCodedBits, TxQAMSymbols, TxOFDMWaveform, RxOFDMWaveform, SoftMetrics, InnerDecodedBits, RecoveredPackets, InnerBERStats, and OuterBERStats. SourcePackets and RecoveredPackets contain 188 packet-byte channels; RSCodedBytes contains 204 coded-byte channels; InnerCodedBits and InnerDecodedBits contain 1632 bit channels; TxQAMSymbols contains 1512 normalized complex 64-QAM-symbol channels; TxOFDMWaveform and RxOFDMWaveform each contain 2048 complex OFDM-sample channels; and SoftMetrics contains 1512 real soft-metric channels.",
+        "source": "tasks/XCOMM-08/public_spec.json"
+      },
+      {
+        "name": "TxOFDMWaveform",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "complex sample",
+          "soft metric"
+        ],
+        "range_or_shape": "Log MATLAB Timeseries named SourcePackets, RSCodedBytes, InnerCodedBits, TxQAMSymbols, TxOFDMWaveform, RxOFDMWaveform, SoftMetrics, InnerDecodedBits, RecoveredPackets, InnerBERStats, and OuterBERStats. SourcePackets and RecoveredPackets contain 188 packet-byte channels; RSCodedBytes contains 204 coded-byte channels; InnerCodedBits and InnerDecodedBits contain 1632 bit channels; TxQAMSymbols contains 1512 normalized complex 64-QAM-symbol channels; TxOFDMWaveform and RxOFDMWaveform each contain 2048 complex OFDM-sample channels; and SoftMetrics contains 1512 real soft-metric channels.",
+        "source": "tasks/XCOMM-08/public_spec.json"
+      },
+      {
+        "name": "RxOFDMWaveform",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "complex sample",
+          "soft metric"
+        ],
+        "range_or_shape": "Log MATLAB Timeseries named SourcePackets, RSCodedBytes, InnerCodedBits, TxQAMSymbols, TxOFDMWaveform, RxOFDMWaveform, SoftMetrics, InnerDecodedBits, RecoveredPackets, InnerBERStats, and OuterBERStats. SourcePackets and RecoveredPackets contain 188 packet-byte channels; RSCodedBytes contains 204 coded-byte channels; InnerCodedBits and InnerDecodedBits contain 1632 bit channels; TxQAMSymbols contains 1512 normalized complex 64-QAM-symbol channels; TxOFDMWaveform and RxOFDMWaveform each contain 2048 complex OFDM-sample channels; and SoftMetrics contains 1512 real soft-metric channels.",
+        "source": "tasks/XCOMM-08/public_spec.json"
+      },
+      {
+        "name": "SoftMetrics",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "soft metric"
+        ],
+        "range_or_shape": "Log MATLAB Timeseries named SourcePackets, RSCodedBytes, InnerCodedBits, TxQAMSymbols, TxOFDMWaveform, RxOFDMWaveform, SoftMetrics, InnerDecodedBits, RecoveredPackets, InnerBERStats, and OuterBERStats. SourcePackets and RecoveredPackets contain 188 packet-byte channels; RSCodedBytes contains 204 coded-byte channels; InnerCodedBits and InnerDecodedBits contain 1632 bit channels; TxQAMSymbols contains 1512 normalized complex 64-QAM-symbol channels; TxOFDMWaveform and RxOFDMWaveform each contain 2048 complex OFDM-sample channels; and SoftMetrics contains 1512 real soft-metric channels.",
+        "source": "tasks/XCOMM-08/public_spec.json"
+      },
+      {
+        "name": "InnerDecodedBits",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "bit"
+        ],
+        "range_or_shape": "Log MATLAB Timeseries named SourcePackets, RSCodedBytes, InnerCodedBits, TxQAMSymbols, TxOFDMWaveform, RxOFDMWaveform, SoftMetrics, InnerDecodedBits, RecoveredPackets, InnerBERStats, and OuterBERStats. SourcePackets and RecoveredPackets contain 188 packet-byte channels; RSCodedBytes contains 204 coded-byte channels; InnerCodedBits and InnerDecodedBits contain 1632 bit channels; TxQAMSymbols contains 1512 normalized complex 64-QAM-symbol channels; TxOFDMWaveform and RxOFDMWaveform each contain 2048 complex OFDM-sample channels; and SoftMetrics contains 1512 real soft-metric channels.",
+        "source": "tasks/XCOMM-08/public_spec.json"
+      },
+      {
+        "name": "RecoveredPackets",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "byte"
+        ],
+        "range_or_shape": "Log MATLAB Timeseries named SourcePackets, RSCodedBytes, InnerCodedBits, TxQAMSymbols, TxOFDMWaveform, RxOFDMWaveform, SoftMetrics, InnerDecodedBits, RecoveredPackets, InnerBERStats, and OuterBERStats. SourcePackets and RecoveredPackets contain 188 packet-byte channels; RSCodedBytes contains 204 coded-byte channels; InnerCodedBits and InnerDecodedBits contain 1632 bit channels; TxQAMSymbols contains 1512 normalized complex 64-QAM-symbol channels; TxOFDMWaveform and RxOFDMWaveform each contain 2048 complex OFDM-sample channels; and SoftMetrics contains 1512 real soft-metric channels.",
+        "source": "tasks/XCOMM-08/public_spec.json"
+      },
+      {
+        "name": "InnerBERStats",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1",
+          "count"
+        ],
+        "range_or_shape": "Log MATLAB Timeseries named SourcePackets, RSCodedBytes, InnerCodedBits, TxQAMSymbols, TxOFDMWaveform, RxOFDMWaveform, SoftMetrics, InnerDecodedBits, RecoveredPackets, InnerBERStats, and OuterBERStats. InnerBERStats and OuterBERStats each have 3 channels in this order: bit-error rate, cumulative error count, and cumulative compared-bit count.",
+        "source": "tasks/XCOMM-08/public_spec.json"
+      },
+      {
+        "name": "OuterBERStats",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1",
+          "count"
+        ],
+        "range_or_shape": "Log MATLAB Timeseries named SourcePackets, RSCodedBytes, InnerCodedBits, TxQAMSymbols, TxOFDMWaveform, RxOFDMWaveform, SoftMetrics, InnerDecodedBits, RecoveredPackets, InnerBERStats, and OuterBERStats. InnerBERStats and OuterBERStats each have 3 channels in this order: bit-error rate, cumulative error count, and cumulative compared-bit count.",
+        "source": "tasks/XCOMM-08/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "InnerBERStats and OuterBERStats each have 3 channels in this order: bit-error rate, cumulative error count, and cumulative compared-bit count."
+    ],
+    "feedback_and_control_causality": [
+      "The receiver must perform OFDM demodulation, soft 64-QAM demapping, matching inner deinterleaving and Viterbi decoding, outer deinterleaving, Reed-Solomon decoding, and packet recovery."
+    ],
+    "signal_sources": [
+      "ChannelSNR_dB is read from the public MATLAB base-workspace input contract.",
+      "SourceSeed is read from the public MATLAB base-workspace input contract.",
+      "NoiseSeed is read from the public MATLAB base-workspace input contract.",
+      "SourcePackets is produced by the implemented plant or controller and logged under the public output contract.",
+      "RSCodedBytes is produced by the implemented plant or controller and logged under the public output contract.",
+      "InnerCodedBits is produced by the implemented plant or controller and logged under the public output contract.",
+      "TxQAMSymbols is produced by the implemented plant or controller and logged under the public output contract.",
+      "TxOFDMWaveform is produced by the implemented plant or controller and logged under the public output contract.",
+      "RxOFDMWaveform is produced by the implemented plant or controller and logged under the public output contract.",
+      "SoftMetrics is produced by the implemented plant or controller and logged under the public output contract.",
+      "InnerDecodedBits is produced by the implemented plant or controller and logged under the public output contract.",
+      "RecoveredPackets is produced by the implemented plant or controller and logged under the public output contract.",
+      "InnerBERStats is produced by the implemented plant or controller and logged under the public output contract.",
+      "OuterBERStats is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "ChannelSNR_dB: Read ChannelSNR_dB, SourceSeed, and NoiseSeed from the MATLAB base workspace; their nominal values are 18.5 dB, 1234573, and 54321, and their supported ranges are 17 to 22 dB and integer seeds from 1 to 10000000.",
+      "SourceSeed: Read ChannelSNR_dB, SourceSeed, and NoiseSeed from the MATLAB base workspace; their nominal values are 18.5 dB, 1234573, and 54321, and their supported ranges are 17 to 22 dB and integer seeds from 1 to 10000000.",
+      "NoiseSeed: Read ChannelSNR_dB, SourceSeed, and NoiseSeed from the MATLAB base workspace; their nominal values are 18.5 dB, 1234573, and 54321, and their supported ranges are 17 to 22 dB and integer seeds from 1 to 10000000."
+    ],
+    "disturbances": [
+      "Read ChannelSNR_dB, SourceSeed, and NoiseSeed from the MATLAB base workspace;"
+    ],
+    "dynamic_processes": [
+      "The receiver must perform OFDM demodulation, soft 64-QAM demapping, matching inner deinterleaving and Viterbi decoding, outer deinterleaving, Reed-Solomon decoding, and packet recovery.",
+      "Across the declared SNR and seed range, the full receiver must recover source packets and must expose both the post-inner-decoder and final post-outer-decoder error measurements.",
+      "Log MATLAB Timeseries named SourcePackets, RSCodedBytes, InnerCodedBits, TxQAMSymbols, TxOFDMWaveform, RxOFDMWaveform, SoftMetrics, InnerDecodedBits, RecoveredPackets, InnerBERStats, and OuterBERStats."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XCOMM-08: prescribing SourcePackets directly would bypass the system path described by: A source of 188-byte packets must pass through shortened Reed-Solomon (204,188) outer coding, outer convolutional interleaving, rate-3/4 punctured convolutional coding, DVB-T bit and symbol interleaving, nonhierarchical normalized 64-QAM mapping, 2048-point OFDM modulation, and an AWGN channel.",
+      "F90-XCOMM-08: replaying a fixed SourcePackets trace would ignore causal variation in ChannelSNR_dB."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XCOMM-08/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XCOMM-08/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XCOMM-08/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

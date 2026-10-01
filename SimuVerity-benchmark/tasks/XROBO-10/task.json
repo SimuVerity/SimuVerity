@@ -1,0 +1,65 @@
+{
+  "schema": "simuverity.task.v1",
+  "release": "simuverity-101-v1",
+  "task_id": "XROBO-10",
+  "ordinal": 78,
+  "collection": "XROBO",
+  "runtime_alias": "XROBO-10",
+  "required_model_file": "cand_XROBO10.slx",
+  "evaluation_policy_id": "simuverity-101-v1:xrobo-10:scoring",
+  "candidate_closure": {
+    "public_input_names": [
+      "BallOffsetXY"
+    ],
+    "nominal_provider": "simuverity_public_nominal_inputs"
+  },
+  "public_spec": "public_spec.json",
+  "official_scenarios": "official_scenarios.json",
+  "extractor": {
+    "kind": "matlab_function",
+    "path": "extractor/run.m",
+    "entrypoint": "run",
+    "implementation": "vendor/scripts/formal90/tasks/f90_xrobo10/f90_xrobo10_extract_candidate_evidence.m",
+    "closure_manifest": "extractor/manifest.json"
+  },
+  "scorer": {
+    "kind": "python_function",
+    "path": "scorer.py",
+    "entrypoint": "score",
+    "closure_manifest": "scorer/manifest.json",
+    "offline_only": true
+  },
+  "reference": {
+    "materialization": "local_importer",
+    "recipe": "reference/importer_recipe.json",
+    "entrypoint": "smart4iRobotDynamics.slx",
+    "expected_valid_scenarios": 3,
+    "score_tolerance": 1e-12,
+    "expected_score": 96.6595018841588,
+    "expected_score_basis": "reference_replay",
+    "scenario_contract": {
+      "expected_ids": [
+        "nominal_line_cycle",
+        "ball_offset_positive",
+        "ball_offset_negative"
+      ],
+      "nominal_scenario_id": null,
+      "nominal_materialization": "authoritative_scenario_set"
+    },
+    "score_tolerance_basis": "source_authority_numeric_precision",
+    "runtime_manifest": "reference/runtime_manifest.json"
+  },
+  "applicable_groups": [
+    "G",
+    "A",
+    "Q",
+    "M",
+    "R",
+    "D"
+  ],
+  "release_license_status": "MATHWORKS_LOCAL_IMPORT_NO_REDISTRIBUTION",
+  "system_profile": {
+    "path": "system_profile.json",
+    "schema": "simuverity.system-profile.v1"
+  }
+}

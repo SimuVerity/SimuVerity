@@ -1,0 +1,133 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XBATT-09",
+  "collection": "XBATT",
+  "reference": {
+    "identity_path": "tasks/XBATT-09/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "disconnectedCellDetection.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XBATT-09",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a 100 s battery-module and BMS contact-monitoring model.",
+    "engineering_objects": [
+      "The physical module must contain 15 series-connected parallel assemblies whose voltage response depends on the applied current.",
+      "the event must alter the physical electrical path rather than only a displayed flag.",
+      "The pack voltage and voltage spread must be derived from the physical assembly voltages."
+    ],
+    "physical_paths": [
+      "The physical module must contain 15 series-connected parallel assemblies whose voltage response depends on the applied current.",
+      "Model a contact-loss event in one cell of parallel assembly 01 when contact_fault_enable is true, beginning at contact_fault_time_s; the event must alter the physical electrical path rather than only a displayed flag.",
+      "Normal operation must not report a disconnected-cell error, and a real loss of contact must be localized to parallel assembly 01.",
+      "the event must alter the physical electrical path rather than only a displayed flag."
+    ],
+    "functional_paths": [
+      "Build a 100 s battery-module and BMS contact-monitoring model."
+    ],
+    "information_paths": [
+      "xbatt09_input -> F90-XBATT-09 plant/control path -> assembly_voltage, contact_state, battery_state"
+    ],
+    "modes_and_events": [
+      "Build a 100 s battery-module and BMS contact-monitoring model.",
+      "Model a contact-loss event in one cell of parallel assembly 01 when contact_fault_enable is true, beginning at contact_fault_time_s;",
+      "the event must alter the physical electrical path rather than only a displayed flag."
+    ],
+    "interfaces": [
+      {
+        "name": "xbatt09_input",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read xbatt09_input from the MATLAB base workspace. xbatt09_input is a MATLAB struct with these public fields: current_time_s is a strictly increasing real vector beginning at 0 s and ending at 100 s; current_A is a real vector of the same length, with positive current charging the module and negative current discharging it; contact_fault_enable is a logical scalar; and contact_fault_time_s is a real scalar in 15--70 s, ignored when contact_fault_enable is false.",
+        "source": "tasks/XBATT-09/public_spec.json"
+      },
+      {
+        "name": "assembly_voltage",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "V"
+        ],
+        "range_or_shape": "assembly_voltage has width 15 in this order: parallel_assembly_voltage_01_V through parallel_assembly_voltage_15_V, all in V. battery_state has width 3 in this order: pack_voltage_V in V, pack_current_A in A, and parallel_assembly_voltage_spread_V in V.",
+        "source": "tasks/XBATT-09/public_spec.json"
+      },
+      {
+        "name": "contact_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "unitless logical or 0/1 numeric"
+        ],
+        "range_or_shape": "contact_state has width 30: its first 15 channels are the contact-loss symptoms for parallel assemblies 01 through 15 in that order, and its next 15 channels are the qualified contact-loss errors for parallel assemblies 01 through 15 in that order; all channels are unitless logical or 0/1 numeric values.",
+        "source": "tasks/XBATT-09/public_spec.json"
+      },
+      {
+        "name": "battery_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "V",
+          "A"
+        ],
+        "range_or_shape": "battery_state has width 3 in this order: pack_voltage_V in V, pack_current_A in A, and parallel_assembly_voltage_spread_V in V.",
+        "source": "tasks/XBATT-09/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "xbatt09_input is a MATLAB struct with these public fields: current_time_s is a strictly increasing real vector beginning at 0 s and ending at 100 s; current_A is a real vector of the same length, with positive current charging the module and negative current discharging it; contact_fault_enable is a logical scalar; and contact_fault_time_s is a real scalar in 15--70 s, ignored when contact_fault_enable is false.",
+      "assembly_voltage has width 15 in this order: parallel_assembly_voltage_01_V through parallel_assembly_voltage_15_V, all in V.",
+      "battery_state has width 3 in this order: pack_voltage_V in V, pack_current_A in A, and parallel_assembly_voltage_spread_V in V."
+    ],
+    "feedback_and_control_causality": [
+      "The symptom and error outputs must be causally driven by measured voltage behavior;"
+    ],
+    "signal_sources": [
+      "xbatt09_input is read from the public MATLAB base-workspace input contract.",
+      "assembly_voltage is produced by the implemented plant or controller and logged under the public output contract.",
+      "contact_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "battery_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "xbatt09_input: Read xbatt09_input from the MATLAB base workspace. xbatt09_input is a MATLAB struct with these public fields: current_time_s is a strictly increasing real vector beginning at 0 s and ending at 100 s; current_A is a real vector of the same length, with positive current charging the module and negative current discharging it; contact_fault_enable is a logical scalar; and contact_fault_time_s is a real scalar in 15--70 s, ignored when contact_fault_enable is false."
+    ],
+    "disturbances": [
+      "Model a contact-loss event in one cell of parallel assembly 01 when contact_fault_enable is true, beginning at contact_fault_time_s;",
+      "Produce an immediate per-assembly symptom and a separately qualified per-assembly error, so a brief transient does not directly become a persistent fault.",
+      "directly copying contact_fault_enable or contact_fault_time_s to the outputs, fabricating Timeseries, or using a disconnected monitoring path is not acceptable."
+    ],
+    "dynamic_processes": [
+      "The monitor must use the parallel-assembly voltage behavior to distinguish a true contact loss from ordinary current transients.",
+      "Produce an immediate per-assembly symptom and a separately qualified per-assembly error, so a brief transient does not directly become a persistent fault."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XBATT-09: prescribing assembly_voltage directly would bypass the system path described by: The physical module must contain 15 series-connected parallel assemblies whose voltage response depends on the applied current.",
+      "F90-XBATT-09: replaying a fixed assembly_voltage trace would ignore causal variation in xbatt09_input."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XBATT-09/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XBATT-09/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XBATT-09/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

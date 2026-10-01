@@ -1,0 +1,72 @@
+{
+  "schema": "simuverity.task.v1",
+  "release": "simuverity-101-v1",
+  "task_id": "XCOMM-07",
+  "ordinal": 41,
+  "collection": "XCOMM",
+  "runtime_alias": "XCOMM-07",
+  "required_model_file": "cand_XCOMM07.slx",
+  "evaluation_policy_id": "simuverity-101-v1:xcomm-07:scoring",
+  "candidate_closure": {
+    "public_input_names": [
+      "wlan_link_input"
+    ],
+    "nominal_provider": "simuverity_public_nominal_inputs"
+  },
+  "public_spec": "public_spec.json",
+  "official_scenarios": "official_scenarios.json",
+  "extractor": {
+    "kind": "matlab_function",
+    "path": "extractor/run.m",
+    "entrypoint": "run",
+    "implementation": "vendor/scripts/formal90/tasks/f90_xcomm07/f90_xcomm07_extract_candidate_evidence.m",
+    "closure_manifest": "extractor/manifest.json"
+  },
+  "scorer": {
+    "kind": "python_function",
+    "path": "scorer.py",
+    "entrypoint": "score",
+    "closure_manifest": "scorer/manifest.json",
+    "offline_only": true
+  },
+  "reference": {
+    "materialization": "local_importer",
+    "recipe": "reference/importer_recipe.json",
+    "entrypoint": "wlanhdlReceiver.slx",
+    "clean_replay_setup": {
+      "phase": "before_load",
+      "path": "tasks/XCOMM-07/reference/clean_replay_setup/f90_xcomm07_reference_clean_replay_setup.m",
+      "entrypoint": "f90_xcomm07_reference_clean_replay_setup"
+    },
+    "expected_valid_scenarios": 4,
+    "score_tolerance": 1e-12,
+    "expected_score": 100.0,
+    "expected_score_basis": "reference_replay",
+    "scenario_contract": {
+      "expected_ids": [
+        "bcc_nominal",
+        "bcc_low_snr",
+        "bcc_cfo_stress",
+        "ldpc_negative_cfo"
+      ],
+      "nominal_scenario_id": null,
+      "nominal_materialization": "authoritative_scenario_set"
+    },
+    "score_tolerance_basis": "source_authority_numeric_precision",
+    "runtime_manifest": "reference/runtime_manifest.json"
+  },
+  "applicable_groups": [
+    "G",
+    "A",
+    "Q",
+    "M",
+    "C",
+    "R",
+    "D"
+  ],
+  "release_license_status": "MATHWORKS_LOCAL_IMPORT_NO_REDISTRIBUTION",
+  "system_profile": {
+    "path": "system_profile.json",
+    "schema": "simuverity.system-profile.v1"
+  }
+}

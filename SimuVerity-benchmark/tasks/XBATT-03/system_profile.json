@@ -1,0 +1,240 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XBATT-03",
+  "collection": "XBATT",
+  "reference": {
+    "identity_path": "tasks/XBATT-03/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Models/BEV_Thermal_Management.slx",
+    "model_path": "tasks/XBATT-03/reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Models/BEV_Thermal_Management.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XBATT-03",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build an integrated rear-wheel-drive battery-electric vehicle with coupled electrical, mechanical, coolant, refrigerant and cabin-air dynamics.",
+    "engineering_objects": [
+      "Build an integrated rear-wheel-drive battery-electric vehicle with coupled electrical, mechanical, coolant, refrigerant and cabin-air dynamics.",
+      "The physical vehicle must include a traction battery, traction motor with fixed-ratio driveline and vehicle body, an HV-to-LV supply for auxiliaries, liquid thermal paths for the battery and motor, and a cabin HVAC system.",
+      "The thermal plant must contain real coolant pumps, radiator and bypass path, coolant heater, a controllable series/parallel coolant routing path, and a refrigerant loop with compressor, condenser, expansion paths, evaporator and coolant chiller."
+    ],
+    "physical_paths": [
+      "A controller output that is not causally connected to its physical actuator is not a valid implementation.",
+      "All values must be measurements or commands from the same causal simulation; precomputed answer trajectories, copied workspace inputs presented as measurements, and disconnected diagnostic replicas are invalid.",
+      "Build an integrated rear-wheel-drive battery-electric vehicle with coupled electrical, mechanical, coolant, refrigerant and cabin-air dynamics.",
+      "The physical vehicle must include a traction battery, traction motor with fixed-ratio driveline and vehicle body, an HV-to-LV supply for auxiliaries, liquid thermal paths for the battery and motor, and a cabin HVAC system."
+    ],
+    "functional_paths": [
+      "The thermal plant must contain real coolant pumps, radiator and bypass path, coolant heater, a controllable series/parallel coolant routing path, and a refrigerant loop with compressor, condenser, expansion paths, evaporator and coolant chiller.",
+      "the exact controller architecture is not prescribed.",
+      "Use measured road speed in a closed-loop driver to track speed_command."
+    ],
+    "information_paths": [
+      "speed_command, ambient_temperature_C, initial_temperature_C, relative_humidity, solar_load_W, cabin_temperature_setpoint_C, initial_soc, vehicle_mass_kg, cooling_enable -> F90-XBATT-03 plant/control path -> vehicle_state, temperature_state, thermal_control, heat_flow_state"
+    ],
+    "modes_and_events": [
+      "F90-XBATT-03 startup and continuous operation follow the current public task contract."
+    ],
+    "interfaces": [
+      {
+        "name": "speed_command",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "km/h"
+        ],
+        "range_or_shape": "Read speed_command, ambient_temperature_C, initial_temperature_C, relative_humidity, solar_load_W, cabin_temperature_setpoint_C, initial_soc, vehicle_mass_kg and cooling_enable from the MATLAB base workspace. speed_command is a Timeseries in km/h and remains within 0--130 km/h. Use measured road speed in a closed-loop driver to track speed_command.",
+        "source": "tasks/XBATT-03/public_spec.json"
+      },
+      {
+        "name": "ambient_temperature_C",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Read speed_command, ambient_temperature_C, initial_temperature_C, relative_humidity, solar_load_W, cabin_temperature_setpoint_C, initial_soc, vehicle_mass_kg and cooling_enable from the MATLAB base workspace.",
+        "source": "tasks/XBATT-03/public_spec.json"
+      },
+      {
+        "name": "initial_temperature_C",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Read speed_command, ambient_temperature_C, initial_temperature_C, relative_humidity, solar_load_W, cabin_temperature_setpoint_C, initial_soc, vehicle_mass_kg and cooling_enable from the MATLAB base workspace.",
+        "source": "tasks/XBATT-03/public_spec.json"
+      },
+      {
+        "name": "relative_humidity",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read speed_command, ambient_temperature_C, initial_temperature_C, relative_humidity, solar_load_W, cabin_temperature_setpoint_C, initial_soc, vehicle_mass_kg and cooling_enable from the MATLAB base workspace.",
+        "source": "tasks/XBATT-03/public_spec.json"
+      },
+      {
+        "name": "solar_load_W",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "W"
+        ],
+        "range_or_shape": "Read speed_command, ambient_temperature_C, initial_temperature_C, relative_humidity, solar_load_W, cabin_temperature_setpoint_C, initial_soc, vehicle_mass_kg and cooling_enable from the MATLAB base workspace.",
+        "source": "tasks/XBATT-03/public_spec.json"
+      },
+      {
+        "name": "cabin_temperature_setpoint_C",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Read speed_command, ambient_temperature_C, initial_temperature_C, relative_humidity, solar_load_W, cabin_temperature_setpoint_C, initial_soc, vehicle_mass_kg and cooling_enable from the MATLAB base workspace.",
+        "source": "tasks/XBATT-03/public_spec.json"
+      },
+      {
+        "name": "initial_soc",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read speed_command, ambient_temperature_C, initial_temperature_C, relative_humidity, solar_load_W, cabin_temperature_setpoint_C, initial_soc, vehicle_mass_kg and cooling_enable from the MATLAB base workspace.",
+        "source": "tasks/XBATT-03/public_spec.json"
+      },
+      {
+        "name": "vehicle_mass_kg",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kg"
+        ],
+        "range_or_shape": "Read speed_command, ambient_temperature_C, initial_temperature_C, relative_humidity, solar_load_W, cabin_temperature_setpoint_C, initial_soc, vehicle_mass_kg and cooling_enable from the MATLAB base workspace.",
+        "source": "tasks/XBATT-03/public_spec.json"
+      },
+      {
+        "name": "cooling_enable",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "boolean"
+        ],
+        "range_or_shape": "Read speed_command, ambient_temperature_C, initial_temperature_C, relative_humidity, solar_load_W, cabin_temperature_setpoint_C, initial_soc, vehicle_mass_kg and cooling_enable from the MATLAB base workspace.",
+        "source": "tasks/XBATT-03/public_spec.json"
+      },
+      {
+        "name": "vehicle_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[km/h,km/h,1,A,N*m]"
+        ],
+        "range_or_shape": "Log full-interval MATLAB Timeseries named vehicle_state, temperature_state, thermal_control, and heat_flow_state. vehicle_state has 5 channels in this order: speed command (km/h), measured road speed (km/h), battery SOC (1), battery current (A), and measured motor torque (N*m).",
+        "source": "tasks/XBATT-03/public_spec.json"
+      },
+      {
+        "name": "temperature_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Log full-interval MATLAB Timeseries named vehicle_state, temperature_state, thermal_control, and heat_flow_state. temperature_state has 7 channels in this order: ambient, cabin, maximum battery-cell, battery cold-plate, motor, battery-coolant inlet, and motor-coolant outlet temperature, all in degC.",
+        "source": "tasks/XBATT-03/public_spec.json"
+      },
+      {
+        "name": "thermal_control",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[1,1,1,1,1,W,W,boolean,boolean,boolean]"
+        ],
+        "range_or_shape": "Log full-interval MATLAB Timeseries named vehicle_state, temperature_state, thermal_control, and heat_flow_state. thermal_control has 10 channels in this order: battery pump, motor pump, compressor, condenser fan, and cabin blower commands (1); coolant-heater and cabin-PTC-heater power (W); then chiller-bypass, radiator-bypass, and serial/parallel-valve states (boolean).",
+        "source": "tasks/XBATT-03/public_spec.json"
+      },
+      {
+        "name": "heat_flow_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "W"
+        ],
+        "range_or_shape": "Log full-interval MATLAB Timeseries named vehicle_state, temperature_state, thermal_control, and heat_flow_state. heat_flow_state has 4 channels in this order: net battery, motor, condenser, and chiller heat flow, all in W.",
+        "source": "tasks/XBATT-03/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "The thermal plant must contain real coolant pumps, radiator and bypass path, coolant heater, a controllable series/parallel coolant routing path, and a refrigerant loop with compressor, condenser, expansion paths, evaporator and coolant chiller.",
+      "the exact controller architecture is not prescribed.",
+      "A controller output that is not causally connected to its physical actuator is not a valid implementation."
+    ],
+    "feedback_and_control_causality": [
+      "The thermal plant must contain real coolant pumps, radiator and bypass path, coolant heater, a controllable series/parallel coolant routing path, and a refrigerant loop with compressor, condenser, expansion paths, evaporator and coolant chiller.",
+      "the exact controller architecture is not prescribed.",
+      "Use measured road speed in a closed-loop driver to track speed_command."
+    ],
+    "signal_sources": [
+      "speed_command is read from the public MATLAB base-workspace input contract.",
+      "ambient_temperature_C is read from the public MATLAB base-workspace input contract.",
+      "initial_temperature_C is read from the public MATLAB base-workspace input contract.",
+      "relative_humidity is read from the public MATLAB base-workspace input contract.",
+      "solar_load_W is read from the public MATLAB base-workspace input contract.",
+      "cabin_temperature_setpoint_C is read from the public MATLAB base-workspace input contract.",
+      "initial_soc is read from the public MATLAB base-workspace input contract.",
+      "vehicle_mass_kg is read from the public MATLAB base-workspace input contract.",
+      "cooling_enable is read from the public MATLAB base-workspace input contract.",
+      "vehicle_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "temperature_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "thermal_control is produced by the implemented plant or controller and logged under the public output contract.",
+      "heat_flow_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "speed_command: Read speed_command, ambient_temperature_C, initial_temperature_C, relative_humidity, solar_load_W, cabin_temperature_setpoint_C, initial_soc, vehicle_mass_kg and cooling_enable from the MATLAB base workspace. speed_command is a Timeseries in km/h and remains within 0--130 km/h. Use measured road speed in a closed-loop driver to track speed_command.",
+      "ambient_temperature_C: Read speed_command, ambient_temperature_C, initial_temperature_C, relative_humidity, solar_load_W, cabin_temperature_setpoint_C, initial_soc, vehicle_mass_kg and cooling_enable from the MATLAB base workspace.",
+      "initial_temperature_C: Read speed_command, ambient_temperature_C, initial_temperature_C, relative_humidity, solar_load_W, cabin_temperature_setpoint_C, initial_soc, vehicle_mass_kg and cooling_enable from the MATLAB base workspace.",
+      "relative_humidity: Read speed_command, ambient_temperature_C, initial_temperature_C, relative_humidity, solar_load_W, cabin_temperature_setpoint_C, initial_soc, vehicle_mass_kg and cooling_enable from the MATLAB base workspace.",
+      "solar_load_W: Read speed_command, ambient_temperature_C, initial_temperature_C, relative_humidity, solar_load_W, cabin_temperature_setpoint_C, initial_soc, vehicle_mass_kg and cooling_enable from the MATLAB base workspace.",
+      "cabin_temperature_setpoint_C: Read speed_command, ambient_temperature_C, initial_temperature_C, relative_humidity, solar_load_W, cabin_temperature_setpoint_C, initial_soc, vehicle_mass_kg and cooling_enable from the MATLAB base workspace.",
+      "initial_soc: Read speed_command, ambient_temperature_C, initial_temperature_C, relative_humidity, solar_load_W, cabin_temperature_setpoint_C, initial_soc, vehicle_mass_kg and cooling_enable from the MATLAB base workspace.",
+      "vehicle_mass_kg: Read speed_command, ambient_temperature_C, initial_temperature_C, relative_humidity, solar_load_W, cabin_temperature_setpoint_C, initial_soc, vehicle_mass_kg and cooling_enable from the MATLAB base workspace."
+    ],
+    "disturbances": [
+      "Read speed_command, ambient_temperature_C, initial_temperature_C, relative_humidity, solar_load_W, cabin_temperature_setpoint_C, initial_soc, vehicle_mass_kg and cooling_enable from the MATLAB base workspace."
+    ],
+    "dynamic_processes": [
+      "Build an integrated rear-wheel-drive battery-electric vehicle with coupled electrical, mechanical, coolant, refrigerant and cabin-air dynamics.",
+      "Use measured road speed in a closed-loop driver to track speed_command."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XBATT-03: prescribing vehicle_state directly would bypass the system path described by: A controller output that is not causally connected to its physical actuator is not a valid implementation.",
+      "F90-XBATT-03: replaying a fixed vehicle_state trace would ignore causal variation in speed_command."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XBATT-03/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XBATT-03/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XBATT-03/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "criteria_id": "simuverity-101-v1:f90-xaero-10:engineering-criteria",
+  "effect_targets": {
+    "baseline_scenario": "nominal_zero_command",
+    "binding": "fixed_scalar_effects_derived_from_lossless_scenario_targets",
+    "intervention_scenarios": [
+      "small_command",
+      "large_command",
+      "high_measurement_noise",
+      "combined_command_noise"
+    ]
+  },
+  "normalizers": {
+    "binding": "unchanged_formula_derived_from_fixed_scenario_targets",
+    "operation_order": "declared"
+  },
+  "qualification_targets": {
+    "evidence_complete": true,
+    "all_scenarios_valid": true,
+    "simulate_pass": true,
+    "task_id": "F90-XAERO-10"
+  },
+  "runtime_source_reference_required": false,
+  "scenario_targets": {
+    "numeric_conversion": "none",
+    "payload_codec": "gzip-json",
+    "payload_file": "f90_xaero10_engineering_criteria_targets.json.gz",
+    "representation": "lossless_timeseries_lookup_table",
+    "sample_order": "preserved_exactly"
+  },
+  "schema": "simuverity.engineering-criteria.v1",
+  "task_id": "F90-XAERO-10"
+}

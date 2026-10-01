@@ -1,0 +1,147 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XAERO-07",
+  "collection": "XAERO",
+  "reference": {
+    "identity_path": "tasks/XAERO-07/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/ssc_aircraft_elec.slx",
+    "model_path": "tasks/XAERO-07/reference/files/ssc_aircraft_elec.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XAERO-07",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build an open electric-aircraft mission and powertrain plant in Simulink/Simscape.",
+    "engineering_objects": [
+      "Build an open electric-aircraft mission and powertrain plant in Simulink/Simscape.",
+      "The plant must use finite aircraft and battery mass so that battery capacity and payload both affect the required power and achievable mission range.",
+      "Treat the requested profile as the mission/load demand followed by the open plant."
+    ],
+    "physical_paths": [
+      "Prescribed range, replayed battery trajectories, and disconnected electrical or aerodynamic paths are invalid.",
+      "Keep voltages, currents, charge, distance, and time finite; show nonzero motor demand and switched auxiliary-load activity; and retain connected flight-cycle, aerodynamic, mechanical, high-voltage electrical, and low-voltage distribution mechanisms.",
+      "Build an open electric-aircraft mission and powertrain plant in Simulink/Simscape.",
+      "The plant must use finite aircraft and battery mass so that battery capacity and payload both affect the required power and achievable mission range."
+    ],
+    "functional_paths": [
+      "Couple a height-based flight-cycle command, an aerodynamic aircraft load with lift and drag, thrust and propeller/load-torque conversion, a controlled electric motor and drive, a high-voltage battery, DC conversion and distribution, and switched low-voltage lamp, heater, and avionics loads.",
+      "This is not an autopilot task: do not claim or fabricate a flight-control computer, nonlinear-dynamic-inversion controller, or closed-loop flight-path controller."
+    ],
+    "information_paths": [
+      "aircraft_design_input -> F90-XAERO-07 plant/control path -> flight_distance, battery_state, motor_current, low_voltage_load_power"
+    ],
+    "modes_and_events": [
+      "Couple a height-based flight-cycle command, an aerodynamic aircraft load with lift and drag, thrust and propeller/load-torque conversion, a controlled electric motor and drive, a high-voltage battery, DC conversion and distribution, and switched low-voltage lamp, heater, and avionics loads.",
+      "show nonzero motor demand and switched auxiliary-load activity;"
+    ],
+    "interfaces": [
+      {
+        "name": "aircraft_design_input",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read aircraft_design_input from the MATLAB base workspace.",
+        "source": "tasks/XAERO-07/public_spec.json"
+      },
+      {
+        "name": "flight_distance",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "km"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named flight_distance, battery_state, motor_current, and low_voltage_load_power. flight_distance has width 1: mission distance (km).",
+        "source": "tasks/XAERO-07/public_spec.json"
+      },
+      {
+        "name": "battery_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "A*h",
+          "V",
+          "A"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named flight_distance, battery_state, motor_current, and low_voltage_load_power. battery_state has width 3 in this order: remaining charge (A*h), terminal voltage (V), and battery current (A).",
+        "source": "tasks/XAERO-07/public_spec.json"
+      },
+      {
+        "name": "motor_current",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named flight_distance, battery_state, motor_current, and low_voltage_load_power. motor_current has width 1: motor current (A).",
+        "source": "tasks/XAERO-07/public_spec.json"
+      },
+      {
+        "name": "low_voltage_load_power",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "W"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named flight_distance, battery_state, motor_current, and low_voltage_load_power. low_voltage_load_power has width 3 in this order: lamp, heater, and avionics power (W).",
+        "source": "tasks/XAERO-07/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Couple a height-based flight-cycle command, an aerodynamic aircraft load with lift and drag, thrust and propeller/load-torque conversion, a controlled electric motor and drive, a high-voltage battery, DC conversion and distribution, and switched low-voltage lamp, heater, and avionics loads.",
+      "This is not an autopilot task: do not claim or fabricate a flight-control computer, nonlinear-dynamic-inversion controller, or closed-loop flight-path controller."
+    ],
+    "feedback_and_control_causality": [
+      "Build an open electric-aircraft mission and powertrain plant in Simulink/Simscape.",
+      "The plant must use finite aircraft and battery mass so that battery capacity and payload both affect the required power and achievable mission range.",
+      "This is not an autopilot task: do not claim or fabricate a flight-control computer, nonlinear-dynamic-inversion controller, or closed-loop flight-path controller."
+    ],
+    "signal_sources": [
+      "aircraft_design_input is read from the public MATLAB base-workspace input contract.",
+      "flight_distance is produced by the implemented plant or controller and logged under the public output contract.",
+      "battery_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "motor_current is produced by the implemented plant or controller and logged under the public output contract.",
+      "low_voltage_load_power is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "aircraft_design_input: Read aircraft_design_input from the MATLAB base workspace."
+    ],
+    "disturbances": [
+      "Couple a height-based flight-cycle command, an aerodynamic aircraft load with lift and drag, thrust and propeller/load-torque conversion, a controlled electric motor and drive, a high-voltage battery, DC conversion and distribution, and switched low-voltage lamp, heater, and avionics loads.",
+      "The plant must use finite aircraft and battery mass so that battery capacity and payload both affect the required power and achievable mission range.",
+      "battery_capacity_Ah is in 100--160 A*h and payload_mass_kg is in 0--80 kg."
+    ],
+    "dynamic_processes": [
+      "Couple a height-based flight-cycle command, an aerodynamic aircraft load with lift and drag, thrust and propeller/load-torque conversion, a controlled electric motor and drive, a high-voltage battery, DC conversion and distribution, and switched low-voltage lamp, heater, and avionics loads.",
+      "This is not an autopilot task: do not claim or fabricate a flight-control computer, nonlinear-dynamic-inversion controller, or closed-loop flight-path controller.",
+      "payload must influence aircraft mass and aerodynamic/mechanical power demand."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XAERO-07: prescribing flight_distance directly would bypass the system path described by: Prescribed range, replayed battery trajectories, and disconnected electrical or aerodynamic paths are invalid.",
+      "F90-XAERO-07: replaying a fixed flight_distance trace would ignore causal variation in aircraft_design_input."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XAERO-07/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XAERO-07/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XAERO-07/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

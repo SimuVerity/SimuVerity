@@ -1,0 +1,156 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XBATT-08",
+  "scenarios": [
+    {
+      "id": "baseline_all",
+      "strategy_mode": 0,
+      "battery_mass_kg": 1.0,
+      "ultracapacitor_mass_kg": 4.5,
+      "motor_generator_mass_kg": 4.5
+    },
+    {
+      "id": "selected_default",
+      "strategy_mode": 1,
+      "battery_mass_kg": 1.0,
+      "ultracapacitor_mass_kg": 4.5,
+      "motor_generator_mass_kg": 4.5
+    },
+    {
+      "id": "light_ultracap_all",
+      "strategy_mode": 0,
+      "battery_mass_kg": 1.0,
+      "ultracapacitor_mass_kg": 1.0,
+      "motor_generator_mass_kg": 4.5
+    },
+    {
+      "id": "heavy_ultracap_all",
+      "strategy_mode": 0,
+      "battery_mass_kg": 1.0,
+      "ultracapacitor_mass_kg": 8.0,
+      "motor_generator_mass_kg": 4.5
+    },
+    {
+      "id": "light_battery_selected",
+      "strategy_mode": 1,
+      "battery_mass_kg": 0.5,
+      "ultracapacitor_mass_kg": 4.5,
+      "motor_generator_mass_kg": 4.5
+    },
+    {
+      "id": "heavy_battery_selected",
+      "strategy_mode": 1,
+      "battery_mass_kg": 3.0,
+      "ultracapacitor_mass_kg": 4.5,
+      "motor_generator_mass_kg": 4.5
+    }
+  ],
+  "contract": {
+    "difficulty": {
+      "score": 10,
+      "maximum": 12,
+      "basis": [
+        "coupled longitudinal mechanical and electrical energy paths",
+        "battery and ultracapacitor with complementary power and energy limits",
+        "regenerative braking and acceleration assistance through one motor-generator",
+        "source-native strategy and component-sizing inputs",
+        "multi-scenario dynamic power-flow evidence"
+      ]
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85,
+      "preferred_reference_score": 90,
+      "normalize_threshold_to_100": false,
+      "groups": {
+        "A": {
+          "weight": 0.25,
+          "meaning": "vehicle, torque, voltage, and power trajectory accuracy"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "finite, complete, unit-consistent dynamic outputs"
+        },
+        "M": {
+          "weight": 0.25,
+          "meaning": "battery-ultracapacitor physical power sharing and bidirectional energy flow"
+        },
+        "C": {
+          "weight": 0.2,
+          "meaning": "causal strategy and design-input effects"
+        },
+        "R": {
+          "weight": 0.1,
+          "meaning": "worst private operating condition"
+        },
+        "D": {
+          "weight": 0.1,
+          "meaning": "braking recovery and acceleration-response dynamics"
+        }
+      },
+      "within_group": "weighted arithmetic mean with explicit causal-separation floors",
+      "across_groups": "weighted geometric mean",
+      "critical_multiscenario_aggregation": "worst scenario or causal pair where specified"
+    },
+    "minimum_shortcut_sanity_contract": [
+      "missing_storage_power",
+      "fixed_outputs_across_scenarios",
+      "strategy_without_physical_effect",
+      "ultracap_mass_without_physical_effect",
+      "battery_mass_without_physical_effect",
+      "disconnected_storage_paths"
+    ]
+  },
+  "difficulty": {
+    "score": 10,
+    "maximum": 12,
+    "basis": [
+      "coupled longitudinal mechanical and electrical energy paths",
+      "battery and ultracapacitor with complementary power and energy limits",
+      "regenerative braking and acceleration assistance through one motor-generator",
+      "source-native strategy and component-sizing inputs",
+      "multi-scenario dynamic power-flow evidence"
+    ]
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85,
+    "preferred_reference_score": 90,
+    "normalize_threshold_to_100": false,
+    "groups": {
+      "A": {
+        "weight": 0.25,
+        "meaning": "vehicle, torque, voltage, and power trajectory accuracy"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "finite, complete, unit-consistent dynamic outputs"
+      },
+      "M": {
+        "weight": 0.25,
+        "meaning": "battery-ultracapacitor physical power sharing and bidirectional energy flow"
+      },
+      "C": {
+        "weight": 0.2,
+        "meaning": "causal strategy and design-input effects"
+      },
+      "R": {
+        "weight": 0.1,
+        "meaning": "worst private operating condition"
+      },
+      "D": {
+        "weight": 0.1,
+        "meaning": "braking recovery and acceleration-response dynamics"
+      }
+    },
+    "within_group": "weighted arithmetic mean with explicit causal-separation floors",
+    "across_groups": "weighted geometric mean",
+    "critical_multiscenario_aggregation": "worst scenario or causal pair where specified"
+  },
+  "minimum_shortcut_sanity_contract": [
+    "missing_storage_power",
+    "fixed_outputs_across_scenarios",
+    "strategy_without_physical_effect",
+    "ultracap_mass_without_physical_effect",
+    "battery_mass_without_physical_effect",
+    "disconnected_storage_paths"
+  ]
+}

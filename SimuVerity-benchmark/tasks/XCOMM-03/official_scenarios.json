@@ -1,0 +1,232 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XCOMM-03",
+  "scenarios": [
+    {
+      "id": "nominal",
+      "class": "nominal",
+      "TargetPosition_m": [
+        1000,
+        1000,
+        0
+      ],
+      "TargetVelocity_mps": [
+        30,
+        30,
+        0
+      ],
+      "TargetRCS_m2": 1.0,
+      "JammerPosition_m": [
+        1000,
+        1732,
+        1000
+      ],
+      "ClutterPowerScale": 1.0
+    },
+    {
+      "id": "range_boundary",
+      "class": "target_range_boundary",
+      "TargetPosition_m": [
+        2200,
+        800,
+        0
+      ],
+      "TargetVelocity_mps": [
+        30,
+        30,
+        0
+      ],
+      "TargetRCS_m2": 1.0,
+      "JammerPosition_m": [
+        1000,
+        1732,
+        1000
+      ],
+      "ClutterPowerScale": 1.0
+    },
+    {
+      "id": "doppler_boundary",
+      "class": "target_velocity_boundary",
+      "TargetPosition_m": [
+        1200,
+        900,
+        0
+      ],
+      "TargetVelocity_mps": [
+        15,
+        45,
+        0
+      ],
+      "TargetRCS_m2": 1.0,
+      "JammerPosition_m": [
+        1000,
+        1732,
+        1000
+      ],
+      "ClutterPowerScale": 1.0
+    },
+    {
+      "id": "jammer_geometry",
+      "class": "jammer_angle_boundary",
+      "TargetPosition_m": [
+        1000,
+        1000,
+        0
+      ],
+      "TargetVelocity_mps": [
+        30,
+        30,
+        0
+      ],
+      "TargetRCS_m2": 1.0,
+      "JammerPosition_m": [
+        1732,
+        1000,
+        1000
+      ],
+      "ClutterPowerScale": 1.0
+    },
+    {
+      "id": "weak_target_strong_clutter",
+      "class": "interference_boundary",
+      "TargetPosition_m": [
+        1000,
+        1000,
+        0
+      ],
+      "TargetVelocity_mps": [
+        30,
+        30,
+        0
+      ],
+      "TargetRCS_m2": 0.7,
+      "JammerPosition_m": [
+        1000,
+        1732,
+        1000
+      ],
+      "ClutterPowerScale": 1.5
+    },
+    {
+      "id": "joint_service",
+      "class": "joint_service",
+      "TargetPosition_m": [
+        1600,
+        1200,
+        0
+      ],
+      "TargetVelocity_mps": [
+        40,
+        20,
+        0
+      ],
+      "TargetRCS_m2": 0.8,
+      "JammerPosition_m": [
+        1200,
+        2078,
+        1000
+      ],
+      "ClutterPowerScale": 1.3
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "pulse_count": 20,
+      "coherent_processing_pulses": 10,
+      "range_bins": 200,
+      "array_elements": 6,
+      "one_persistent_matlab_session": true,
+      "wall_watchdog_s": 1800
+    },
+    "fixed_radar": {
+      "position_m": [
+        0,
+        0,
+        1000
+      ],
+      "carrier_frequency_hz": 10000000000,
+      "maximum_unambiguous_range_m": 5000,
+      "range_resolution_m": 50
+    },
+    "groups": {
+      "G": "load, update, compile, all six simulations, complete complex evidence, and a connected radar-to-adaptive-output path",
+      "A": "target-range localization and target prominence",
+      "Q": "clutter and jammer suppression, finite bounded output, and weight quality",
+      "M": "connected target, jammer, clutter, array and adaptive mechanisms plus causal scenario response",
+      "R": "100 percent worst-case critical performance over all six private scenarios",
+      "D": "coherent-processing availability and frame-to-frame target stability"
+    },
+    "weights": {
+      "A": 0.2,
+      "Q": 0.15,
+      "M": 0.3,
+      "R": 0.25,
+      "D": 0.1
+    },
+    "aggregation": {
+      "within_group": "weighted arithmetic mean of dedicated normalized indicators",
+      "critical_multiscenario_performance": "minimum",
+      "total": "G * 100 * A^0.20 * Q^0.15 * M^0.30 * R^0.25 * D^0.10"
+    },
+    "shortcut_minimum": [
+      "target parameters copied into a fabricated range spike",
+      "pre-suppression response reused as post-suppression output",
+      "fixed or scenario-invariant adaptive weights",
+      "jammer, clutter scale, target position, target velocity or target RCS ignored",
+      "missing connected target, jammer, clutter, array or adaptive processing path",
+      "prerecorded nominal response profiles"
+    ],
+    "scoring_policy": {
+      "policy_id": "simuverity-101-v1:xcomm-03:scoring"
+    }
+  },
+  "simulation": {
+    "pulse_count": 20,
+    "coherent_processing_pulses": 10,
+    "range_bins": 200,
+    "array_elements": 6,
+    "one_persistent_matlab_session": true,
+    "wall_watchdog_s": 1800
+  },
+  "fixed_radar": {
+    "position_m": [
+      0,
+      0,
+      1000
+    ],
+    "carrier_frequency_hz": 10000000000,
+    "maximum_unambiguous_range_m": 5000,
+    "range_resolution_m": 50
+  },
+  "groups": {
+    "G": "load, update, compile, all six simulations, complete complex evidence, and a connected radar-to-adaptive-output path",
+    "A": "target-range localization and target prominence",
+    "Q": "clutter and jammer suppression, finite bounded output, and weight quality",
+    "M": "connected target, jammer, clutter, array and adaptive mechanisms plus causal scenario response",
+    "R": "100 percent worst-case critical performance over all six private scenarios",
+    "D": "coherent-processing availability and frame-to-frame target stability"
+  },
+  "weights": {
+    "A": 0.2,
+    "Q": 0.15,
+    "M": 0.3,
+    "R": 0.25,
+    "D": 0.1
+  },
+  "aggregation": {
+    "within_group": "weighted arithmetic mean of dedicated normalized indicators",
+    "critical_multiscenario_performance": "minimum",
+    "total": "G * 100 * A^0.20 * Q^0.15 * M^0.30 * R^0.25 * D^0.10"
+  },
+  "shortcut_minimum": [
+    "target parameters copied into a fabricated range spike",
+    "pre-suppression response reused as post-suppression output",
+    "fixed or scenario-invariant adaptive weights",
+    "jammer, clutter scale, target position, target velocity or target RCS ignored",
+    "missing connected target, jammer, clutter, array or adaptive processing path",
+    "prerecorded nominal response profiles"
+  ],
+  "scoring_policy": {
+    "policy_id": "simuverity-101-v1:xcomm-03:scoring"
+  }
+}

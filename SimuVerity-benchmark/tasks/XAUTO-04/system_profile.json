@@ -1,0 +1,215 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XAUTO-04",
+  "collection": "XAUTO",
+  "reference": {
+    "identity_path": "tasks/XAUTO-04/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "BrakingTest/System/BTReferenceApplication.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XAUTO-04",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a full passenger-vehicle braking model in Simulink or Simscape.",
+    "engineering_objects": [
+      "The physical plant must include a finite-mass vehicle body with coupled longitudinal, lateral, yaw, roll, pitch and heave motion, four suspension and wheel paths, four distinct tire-road contacts, a powertrain capable of accelerating the vehicle, and four independently actuated wheel brakes.",
+      "The vehicle trajectory must result from the connected body, suspension, wheel, tire, driveline and brake dynamics;",
+      "When UseLowFrictionPatch is true, apply RoadFrictionScaleLow inside the supplied rectangular spatial region and RoadFrictionScaleHigh outside it, according to each wheel's physical contact location."
+    ],
+    "physical_paths": [
+      "The vehicle trajectory must result from the connected body, suspension, wheel, tire, driveline and brake dynamics; prescribed chassis motion, replayed outputs, duplicated wheel channels and open-loop braking are not valid solutions.",
+      "Measurements must come from the connected physical and control paths that determine vehicle motion.",
+      "The physical plant must include a finite-mass vehicle body with coupled longitudinal, lateral, yaw, roll, pitch and heave motion, four suspension and wheel paths, four distinct tire-road contacts, a powertrain capable of accelerating the vehicle, and four independently actuated wheel brakes.",
+      "The vehicle trajectory must result from the connected body, suspension, wheel, tire, driveline and brake dynamics;"
+    ],
+    "functional_paths": [
+      "Regulate all four wheel brakes in closed loop using measured vehicle and wheel motion.",
+      "Measurements must come from the connected physical and control paths that determine vehicle motion."
+    ],
+    "information_paths": [
+      "TargetSpeed_mps, BrakeStartDistance_m, RequestedDeceleration_g, RoadFrictionScaleHigh, RoadFrictionScaleLow, UseLowFrictionPatch, LowFrictionPatch_m -> F90-XAUTO-04 plant/control path -> VehicleState, WheelState, BrakeState, TireForceState"
+    ],
+    "modes_and_events": [
+      "Build a full passenger-vehicle braking model in Simulink or Simscape."
+    ],
+    "interfaces": [
+      {
+        "name": "TargetSpeed_mps",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Accelerate in a straight line toward TargetSpeed_mps and begin the commanded braking maneuver after the vehicle reaches BrakeStartDistance_m. Read TargetSpeed_mps, BrakeStartDistance_m, RequestedDeceleration_g, RoadFrictionScaleHigh, RoadFrictionScaleLow, UseLowFrictionPatch and LowFrictionPatch_m from the MATLAB base workspace. TargetSpeed_mps is a real scalar in [16, 22] m/s; BrakeStartDistance_m is a real scalar in [160, 220] m; RequestedDeceleration_g is a positive real scalar in [0.2, 0.5] g; RoadFrictionScaleHigh and RoadFrictionScaleLow are real scalars in [0.5, 0.8] and [0.2, 0.5], respectively, as dimensionless tire-friction scaling factors; UseLowFrictionPatch is a scalar logical; and LowFrictionPatch_m is a 1-by-4 real vector in m ordered [region start X, region start Y, region length in X, region width in Y].",
+        "source": "tasks/XAUTO-04/public_spec.json"
+      },
+      {
+        "name": "BrakeStartDistance_m",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Accelerate in a straight line toward TargetSpeed_mps and begin the commanded braking maneuver after the vehicle reaches BrakeStartDistance_m. Read TargetSpeed_mps, BrakeStartDistance_m, RequestedDeceleration_g, RoadFrictionScaleHigh, RoadFrictionScaleLow, UseLowFrictionPatch and LowFrictionPatch_m from the MATLAB base workspace. TargetSpeed_mps is a real scalar in [16, 22] m/s; BrakeStartDistance_m is a real scalar in [160, 220] m; RequestedDeceleration_g is a positive real scalar in [0.2, 0.5] g; RoadFrictionScaleHigh and RoadFrictionScaleLow are real scalars in [0.5, 0.8] and [0.2, 0.5], respectively, as dimensionless tire-friction scaling factors; UseLowFrictionPatch is a scalar logical; and LowFrictionPatch_m is a 1-by-4 real vector in m ordered [region start X, region start Y, region length in X, region width in Y].",
+        "source": "tasks/XAUTO-04/public_spec.json"
+      },
+      {
+        "name": "RequestedDeceleration_g",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "g"
+        ],
+        "range_or_shape": "Read TargetSpeed_mps, BrakeStartDistance_m, RequestedDeceleration_g, RoadFrictionScaleHigh, RoadFrictionScaleLow, UseLowFrictionPatch and LowFrictionPatch_m from the MATLAB base workspace. RequestedDeceleration_g is the positive requested longitudinal deceleration expressed as a fraction of standard gravity. TargetSpeed_mps is a real scalar in [16, 22] m/s; BrakeStartDistance_m is a real scalar in [160, 220] m; RequestedDeceleration_g is a positive real scalar in [0.2, 0.5] g; RoadFrictionScaleHigh and RoadFrictionScaleLow are real scalars in [0.5, 0.8] and [0.2, 0.5], respectively, as dimensionless tire-friction scaling factors; UseLowFrictionPatch is a scalar logical; and LowFrictionPatch_m is a 1-by-4 real vector in m ordered [region start X, region start Y, region length in X, region width in Y].",
+        "source": "tasks/XAUTO-04/public_spec.json"
+      },
+      {
+        "name": "RoadFrictionScaleHigh",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "dimensionless tire-friction scaling factor"
+        ],
+        "range_or_shape": "Read TargetSpeed_mps, BrakeStartDistance_m, RequestedDeceleration_g, RoadFrictionScaleHigh, RoadFrictionScaleLow, UseLowFrictionPatch and LowFrictionPatch_m from the MATLAB base workspace. TargetSpeed_mps is a real scalar in [16, 22] m/s; BrakeStartDistance_m is a real scalar in [160, 220] m; RequestedDeceleration_g is a positive real scalar in [0.2, 0.5] g; RoadFrictionScaleHigh and RoadFrictionScaleLow are real scalars in [0.5, 0.8] and [0.2, 0.5], respectively, as dimensionless tire-friction scaling factors; UseLowFrictionPatch is a scalar logical; and LowFrictionPatch_m is a 1-by-4 real vector in m ordered [region start X, region start Y, region length in X, region width in Y]. Use RoadFrictionScaleHigh for the uniform road. When UseLowFrictionPatch is true, apply RoadFrictionScaleLow inside the supplied rectangular spatial region and RoadFrictionScaleHigh outside it, according to each wheel's physical contact location.",
+        "source": "tasks/XAUTO-04/public_spec.json"
+      },
+      {
+        "name": "RoadFrictionScaleLow",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "dimensionless tire-friction scaling factor"
+        ],
+        "range_or_shape": "Read TargetSpeed_mps, BrakeStartDistance_m, RequestedDeceleration_g, RoadFrictionScaleHigh, RoadFrictionScaleLow, UseLowFrictionPatch and LowFrictionPatch_m from the MATLAB base workspace. TargetSpeed_mps is a real scalar in [16, 22] m/s; BrakeStartDistance_m is a real scalar in [160, 220] m; RequestedDeceleration_g is a positive real scalar in [0.2, 0.5] g; RoadFrictionScaleHigh and RoadFrictionScaleLow are real scalars in [0.5, 0.8] and [0.2, 0.5], respectively, as dimensionless tire-friction scaling factors; UseLowFrictionPatch is a scalar logical; and LowFrictionPatch_m is a 1-by-4 real vector in m ordered [region start X, region start Y, region length in X, region width in Y]. When UseLowFrictionPatch is true, apply RoadFrictionScaleLow inside the supplied rectangular spatial region and RoadFrictionScaleHigh outside it, according to each wheel's physical contact location.",
+        "source": "tasks/XAUTO-04/public_spec.json"
+      },
+      {
+        "name": "UseLowFrictionPatch",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read TargetSpeed_mps, BrakeStartDistance_m, RequestedDeceleration_g, RoadFrictionScaleHigh, RoadFrictionScaleLow, UseLowFrictionPatch and LowFrictionPatch_m from the MATLAB base workspace. TargetSpeed_mps is a real scalar in [16, 22] m/s; BrakeStartDistance_m is a real scalar in [160, 220] m; RequestedDeceleration_g is a positive real scalar in [0.2, 0.5] g; RoadFrictionScaleHigh and RoadFrictionScaleLow are real scalars in [0.5, 0.8] and [0.2, 0.5], respectively, as dimensionless tire-friction scaling factors; UseLowFrictionPatch is a scalar logical; and LowFrictionPatch_m is a 1-by-4 real vector in m ordered [region start X, region start Y, region length in X, region width in Y]. When UseLowFrictionPatch is true, apply RoadFrictionScaleLow inside the supplied rectangular spatial region and RoadFrictionScaleHigh outside it, according to each wheel's physical contact location.",
+        "source": "tasks/XAUTO-04/public_spec.json"
+      },
+      {
+        "name": "LowFrictionPatch_m",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read TargetSpeed_mps, BrakeStartDistance_m, RequestedDeceleration_g, RoadFrictionScaleHigh, RoadFrictionScaleLow, UseLowFrictionPatch and LowFrictionPatch_m from the MATLAB base workspace. TargetSpeed_mps is a real scalar in [16, 22] m/s; BrakeStartDistance_m is a real scalar in [160, 220] m; RequestedDeceleration_g is a positive real scalar in [0.2, 0.5] g; RoadFrictionScaleHigh and RoadFrictionScaleLow are real scalars in [0.5, 0.8] and [0.2, 0.5], respectively, as dimensionless tire-friction scaling factors; UseLowFrictionPatch is a scalar logical; and LowFrictionPatch_m is a 1-by-4 real vector in m ordered [region start X, region start Y, region length in X, region width in Y].",
+        "source": "tasks/XAUTO-04/public_spec.json"
+      },
+      {
+        "name": "VehicleState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s^2",
+          "m/s",
+          "rad/s",
+          "rad",
+          "m"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named VehicleState, WheelState, BrakeState, and TireForceState. VehicleState has 8 channels in this order: longitudinal position X (m), lateral position Y (m), longitudinal and lateral body speed (m/s), longitudinal and lateral body acceleration (m/s^2), yaw angle (rad), and yaw rate (rad/s).",
+        "source": "tasks/XAUTO-04/public_spec.json"
+      },
+      {
+        "name": "WheelState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad/s",
+          "m"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named VehicleState, WheelState, BrakeState, and TireForceState. WheelState has 12 channels in FL, FR, RL, RR order within each group: four wheel angular speeds (rad/s), four effective rolling radii (m), and four longitudinal slip ratios (1).",
+        "source": "tasks/XAUTO-04/public_spec.json"
+      },
+      {
+        "name": "BrakeState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named VehicleState, WheelState, BrakeState, and TireForceState. BrakeState has 12 channels in FL, FR, RL, RR order within each group: four commanded brake pressures, four measured brake pressures, and four ABS-active flags.",
+        "source": "tasks/XAUTO-04/public_spec.json"
+      },
+      {
+        "name": "TireForceState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named VehicleState, WheelState, BrakeState, and TireForceState. TireForceState has 8 channels in FL, FR, RL, RR order within each group: four longitudinal and four lateral tire forces (N).",
+        "source": "tasks/XAUTO-04/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "The physical plant must include a finite-mass vehicle body with coupled longitudinal, lateral, yaw, roll, pitch and heave motion, four suspension and wheel paths, four distinct tire-road contacts, a powertrain capable of accelerating the vehicle, and four independently actuated wheel brakes.",
+      "RequestedDeceleration_g is the positive requested longitudinal deceleration expressed as a fraction of standard gravity.",
+      "Support uniform and split-friction braking while limiting wheel lock, yaw and lateral departure."
+    ],
+    "feedback_and_control_causality": [
+      "The physical plant must include a finite-mass vehicle body with coupled longitudinal, lateral, yaw, roll, pitch and heave motion, four suspension and wheel paths, four distinct tire-road contacts, a powertrain capable of accelerating the vehicle, and four independently actuated wheel brakes.",
+      "Regulate all four wheel brakes in closed loop using measured vehicle and wheel motion."
+    ],
+    "signal_sources": [
+      "TargetSpeed_mps is read from the public MATLAB base-workspace input contract.",
+      "BrakeStartDistance_m is read from the public MATLAB base-workspace input contract.",
+      "RequestedDeceleration_g is read from the public MATLAB base-workspace input contract.",
+      "RoadFrictionScaleHigh is read from the public MATLAB base-workspace input contract.",
+      "RoadFrictionScaleLow is read from the public MATLAB base-workspace input contract.",
+      "UseLowFrictionPatch is read from the public MATLAB base-workspace input contract.",
+      "LowFrictionPatch_m is read from the public MATLAB base-workspace input contract.",
+      "VehicleState is produced by the implemented plant or controller and logged under the public output contract.",
+      "WheelState is produced by the implemented plant or controller and logged under the public output contract.",
+      "BrakeState is produced by the implemented plant or controller and logged under the public output contract.",
+      "TireForceState is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "TargetSpeed_mps: Accelerate in a straight line toward TargetSpeed_mps and begin the commanded braking maneuver after the vehicle reaches BrakeStartDistance_m. Read TargetSpeed_mps, BrakeStartDistance_m, RequestedDeceleration_g, RoadFrictionScaleHigh, RoadFrictionScaleLow, UseLowFrictionPatch and LowFrictionPatch_m from the MATLAB base workspace. TargetSpeed_mps is a real scalar in [16, 22] m/s; BrakeStartDistance_m is a real scalar in [160, 220] m; RequestedDeceleration_g is a positive real scalar in [0.2, 0.5] g; RoadFrictionScaleHigh and RoadFrictionScaleLow are real scalars in [0.5, 0.8] and [0.2, 0.5], respectively, as dimensionless tire-friction scaling factors; UseLowFrictionPatch is a scalar logical; and LowFrictionPatch_m is a 1-by-4 real vector in m ordered [region start X, region start Y, region length in X, region width in Y].",
+      "BrakeStartDistance_m: Accelerate in a straight line toward TargetSpeed_mps and begin the commanded braking maneuver after the vehicle reaches BrakeStartDistance_m. Read TargetSpeed_mps, BrakeStartDistance_m, RequestedDeceleration_g, RoadFrictionScaleHigh, RoadFrictionScaleLow, UseLowFrictionPatch and LowFrictionPatch_m from the MATLAB base workspace. TargetSpeed_mps is a real scalar in [16, 22] m/s; BrakeStartDistance_m is a real scalar in [160, 220] m; RequestedDeceleration_g is a positive real scalar in [0.2, 0.5] g; RoadFrictionScaleHigh and RoadFrictionScaleLow are real scalars in [0.5, 0.8] and [0.2, 0.5], respectively, as dimensionless tire-friction scaling factors; UseLowFrictionPatch is a scalar logical; and LowFrictionPatch_m is a 1-by-4 real vector in m ordered [region start X, region start Y, region length in X, region width in Y].",
+      "RequestedDeceleration_g: Read TargetSpeed_mps, BrakeStartDistance_m, RequestedDeceleration_g, RoadFrictionScaleHigh, RoadFrictionScaleLow, UseLowFrictionPatch and LowFrictionPatch_m from the MATLAB base workspace. RequestedDeceleration_g is the positive requested longitudinal deceleration expressed as a fraction of standard gravity. TargetSpeed_mps is a real scalar in [16, 22] m/s; BrakeStartDistance_m is a real scalar in [160, 220] m; RequestedDeceleration_g is a positive real scalar in [0.2, 0.5] g; RoadFrictionScaleHigh and RoadFrictionScaleLow are real scalars in [0.5, 0.8] and [0.2, 0.5], respectively, as dimensionless tire-friction scaling factors; UseLowFrictionPatch is a scalar logical; and LowFrictionPatch_m is a 1-by-4 real vector in m ordered [region start X, region start Y, region length in X, region width in Y].",
+      "RoadFrictionScaleHigh: Read TargetSpeed_mps, BrakeStartDistance_m, RequestedDeceleration_g, RoadFrictionScaleHigh, RoadFrictionScaleLow, UseLowFrictionPatch and LowFrictionPatch_m from the MATLAB base workspace. TargetSpeed_mps is a real scalar in [16, 22] m/s; BrakeStartDistance_m is a real scalar in [160, 220] m; RequestedDeceleration_g is a positive real scalar in [0.2, 0.5] g; RoadFrictionScaleHigh and RoadFrictionScaleLow are real scalars in [0.5, 0.8] and [0.2, 0.5], respectively, as dimensionless tire-friction scaling factors; UseLowFrictionPatch is a scalar logical; and LowFrictionPatch_m is a 1-by-4 real vector in m ordered [region start X, region start Y, region length in X, region width in Y]. Use RoadFrictionScaleHigh for the uniform road. When UseLowFrictionPatch is true, apply RoadFrictionScaleLow inside the supplied rectangular spatial region and RoadFrictionScaleHigh outside it, according to each wheel's physical contact location.",
+      "RoadFrictionScaleLow: Read TargetSpeed_mps, BrakeStartDistance_m, RequestedDeceleration_g, RoadFrictionScaleHigh, RoadFrictionScaleLow, UseLowFrictionPatch and LowFrictionPatch_m from the MATLAB base workspace. TargetSpeed_mps is a real scalar in [16, 22] m/s; BrakeStartDistance_m is a real scalar in [160, 220] m; RequestedDeceleration_g is a positive real scalar in [0.2, 0.5] g; RoadFrictionScaleHigh and RoadFrictionScaleLow are real scalars in [0.5, 0.8] and [0.2, 0.5], respectively, as dimensionless tire-friction scaling factors; UseLowFrictionPatch is a scalar logical; and LowFrictionPatch_m is a 1-by-4 real vector in m ordered [region start X, region start Y, region length in X, region width in Y]. When UseLowFrictionPatch is true, apply RoadFrictionScaleLow inside the supplied rectangular spatial region and RoadFrictionScaleHigh outside it, according to each wheel's physical contact location.",
+      "UseLowFrictionPatch: Read TargetSpeed_mps, BrakeStartDistance_m, RequestedDeceleration_g, RoadFrictionScaleHigh, RoadFrictionScaleLow, UseLowFrictionPatch and LowFrictionPatch_m from the MATLAB base workspace. TargetSpeed_mps is a real scalar in [16, 22] m/s; BrakeStartDistance_m is a real scalar in [160, 220] m; RequestedDeceleration_g is a positive real scalar in [0.2, 0.5] g; RoadFrictionScaleHigh and RoadFrictionScaleLow are real scalars in [0.5, 0.8] and [0.2, 0.5], respectively, as dimensionless tire-friction scaling factors; UseLowFrictionPatch is a scalar logical; and LowFrictionPatch_m is a 1-by-4 real vector in m ordered [region start X, region start Y, region length in X, region width in Y]. When UseLowFrictionPatch is true, apply RoadFrictionScaleLow inside the supplied rectangular spatial region and RoadFrictionScaleHigh outside it, according to each wheel's physical contact location.",
+      "LowFrictionPatch_m: Read TargetSpeed_mps, BrakeStartDistance_m, RequestedDeceleration_g, RoadFrictionScaleHigh, RoadFrictionScaleLow, UseLowFrictionPatch and LowFrictionPatch_m from the MATLAB base workspace. TargetSpeed_mps is a real scalar in [16, 22] m/s; BrakeStartDistance_m is a real scalar in [160, 220] m; RequestedDeceleration_g is a positive real scalar in [0.2, 0.5] g; RoadFrictionScaleHigh and RoadFrictionScaleLow are real scalars in [0.5, 0.8] and [0.2, 0.5], respectively, as dimensionless tire-friction scaling factors; UseLowFrictionPatch is a scalar logical; and LowFrictionPatch_m is a 1-by-4 real vector in m ordered [region start X, region start Y, region length in X, region width in Y]."
+    ],
+    "disturbances": [
+      "F90-XAUTO-04 operating variation is supplied through TargetSpeed_mps, BrakeStartDistance_m, RequestedDeceleration_g, RoadFrictionScaleHigh, RoadFrictionScaleLow, UseLowFrictionPatch, LowFrictionPatch_m."
+    ],
+    "dynamic_processes": [
+      "The vehicle trajectory must result from the connected body, suspension, wheel, tire, driveline and brake dynamics;"
+    ],
+    "task_specific_shortcuts": [
+      "F90-XAUTO-04: prescribing VehicleState directly would bypass the system path described by: The vehicle trajectory must result from the connected body, suspension, wheel, tire, driveline and brake dynamics; prescribed chassis motion, replayed outputs, duplicated wheel channels and open-loop braking are not valid solutions.",
+      "F90-XAUTO-04: replaying a fixed VehicleState trace would ignore causal variation in TargetSpeed_mps."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XAUTO-04/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XAUTO-04/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XAUTO-04/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

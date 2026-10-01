@@ -1,0 +1,20 @@
+{
+  "schema": "simuverity.extractor-closure.v1",
+  "task_id": "XTHERM-11",
+  "entrypoint": "vendor/scripts/formal90/tasks/f90_xtherm11/f90_xtherm11_extract_candidate_evidence.m",
+  "public_wrapper": "extractor/run.m",
+  "files": [
+    {
+      "source_name": "simuverity_official_scenarios_path.m",
+      "public_path": "extractor/support/simuverity_official_scenarios_path.m"
+    },
+    {
+      "source_name": "f90_xtherm11_extract_candidate_evidence.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xtherm11/f90_xtherm11_extract_candidate_evidence.m"
+    },
+    {
+      "source_name": "f90_xtherm11_extract_reference_evidence.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xtherm11/f90_xtherm11_extract_reference_evidence.m"
+    }
+  ]
+}

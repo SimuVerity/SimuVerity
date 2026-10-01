@@ -1,0 +1,279 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XTHERM-11",
+  "collection": "XTHERM",
+  "reference": {
+    "identity_path": "tasks/XTHERM-11/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/source/cstr_cascade.slx",
+    "model_path": "tasks/XTHERM-11/reference/files/source/cstr_cascade.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XTHERM-11",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a closed-loop nonlinear jacketed continuous stirred-tank reactor for a first-order exothermic reaction.",
+    "engineering_objects": [
+      "The dynamic plant must contain coupled mass and energy balances for reactant concentration, reactor temperature, jacket temperature, and liquid hold-up.",
+      "Both regulated paths must use measured plant feedback and dynamic actuation;",
+      "Afterwards, add each declared ramp slope multiplied by elapsed time since disturbance_start_s to its corresponding physical inlet."
+    ],
+    "physical_paths": [
+      "Catalyst activity and the effective heat-transfer factor must each equal one before disturbance_start_s and then decay as exp(-rate*(t-disturbance_start_s)).",
+      "Apply these quantities to the real reaction and jacket heat-transfer paths.",
+      "control_state has six channels [reactor-temperature setpoint in K, liquid-level setpoint in m, temperature error in K, level error in m, catalyst activity, effective heat-transfer factor].",
+      "The dynamic plant must contain coupled mass and energy balances for reactant concentration, reactor temperature, jacket temperature, and liquid hold-up."
+    ],
+    "functional_paths": [
+      "Maintain reactor temperature by manipulating the real coolant-flow path and maintain liquid level by manipulating the real outlet-flow path.",
+      "Both regulated paths must use measured plant feedback and dynamic actuation;",
+      "prescribed output trajectories, an open-loop lookup, or unrelated controllers are not sufficient."
+    ],
+    "information_paths": [
+      "reactor_temperature_setpoint_K, liquid_level_setpoint_m, feed_flow_kg_s, feed_concentration_kmol_m3, feed_temperature_K, coolant_inlet_temperature_K, disturbance_start_s, feed_flow_ramp_kg_s2, feed_concentration_ramp_kmol_m3_s, feed_temperature_ramp_K_s, coolant_inlet_temperature_ramp_K_s, catalyst_decay_rate_s_inverse, heat_transfer_decay_rate_s_inverse -> F90-XTHERM-11 plant/control path -> reactor_state, flow_state, control_state"
+    ],
+    "modes_and_events": [
+      "F90-XTHERM-11 startup and continuous operation follow the current public task contract."
+    ],
+    "interfaces": [
+      {
+        "name": "reactor_temperature_setpoint_K",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "K"
+        ],
+        "range_or_shape": "Read reactor_temperature_setpoint_K, liquid_level_setpoint_m, feed_flow_kg_s, feed_concentration_kmol_m3, feed_temperature_K, coolant_inlet_temperature_K, disturbance_start_s, feed_flow_ramp_kg_s2, feed_concentration_ramp_kmol_m3_s, feed_temperature_ramp_K_s, coolant_inlet_temperature_ramp_K_s, catalyst_decay_rate_s_inverse, and heat_transfer_decay_rate_s_inverse from the MATLAB base workspace and support the declared ranges. The scalar inputs have these ranges and units: reactor_temperature_setpoint_K [394, 404] K; liquid_level_setpoint_m [0.45, 0.55] m; feed_flow_kg_s [8, 12] kg/s; feed_concentration_kmol_m3 [0.8, 1.2] kmol/m^3; feed_temperature_K [330, 370] K; coolant_inlet_temperature_K [285, 320] K; disturbance_start_s [150, 350] s; feed_flow_ramp_kg_s2 [-0.004, 0.004] kg/s^2; feed_concentration_ramp_kmol_m3_s [-0.0005, 0.0005] kmol/m^3/s; feed_temperature_ramp_K_s [-0.04, 0.04] K/s; coolant_inlet_temperature_ramp_K_s [-0.04, 0.04] K/s; catalyst_decay_rate_s_inverse [0, 0.0005] 1/s; and heat_transfer_decay_rate_s_inverse [0, 0.0008] 1/s.",
+        "source": "tasks/XTHERM-11/public_spec.json"
+      },
+      {
+        "name": "liquid_level_setpoint_m",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read reactor_temperature_setpoint_K, liquid_level_setpoint_m, feed_flow_kg_s, feed_concentration_kmol_m3, feed_temperature_K, coolant_inlet_temperature_K, disturbance_start_s, feed_flow_ramp_kg_s2, feed_concentration_ramp_kmol_m3_s, feed_temperature_ramp_K_s, coolant_inlet_temperature_ramp_K_s, catalyst_decay_rate_s_inverse, and heat_transfer_decay_rate_s_inverse from the MATLAB base workspace and support the declared ranges. The scalar inputs have these ranges and units: reactor_temperature_setpoint_K [394, 404] K; liquid_level_setpoint_m [0.45, 0.55] m; feed_flow_kg_s [8, 12] kg/s; feed_concentration_kmol_m3 [0.8, 1.2] kmol/m^3; feed_temperature_K [330, 370] K; coolant_inlet_temperature_K [285, 320] K; disturbance_start_s [150, 350] s; feed_flow_ramp_kg_s2 [-0.004, 0.004] kg/s^2; feed_concentration_ramp_kmol_m3_s [-0.0005, 0.0005] kmol/m^3/s; feed_temperature_ramp_K_s [-0.04, 0.04] K/s; coolant_inlet_temperature_ramp_K_s [-0.04, 0.04] K/s; catalyst_decay_rate_s_inverse [0, 0.0005] 1/s; and heat_transfer_decay_rate_s_inverse [0, 0.0008] 1/s.",
+        "source": "tasks/XTHERM-11/public_spec.json"
+      },
+      {
+        "name": "feed_flow_kg_s",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kg/s"
+        ],
+        "range_or_shape": "Read reactor_temperature_setpoint_K, liquid_level_setpoint_m, feed_flow_kg_s, feed_concentration_kmol_m3, feed_temperature_K, coolant_inlet_temperature_K, disturbance_start_s, feed_flow_ramp_kg_s2, feed_concentration_ramp_kmol_m3_s, feed_temperature_ramp_K_s, coolant_inlet_temperature_ramp_K_s, catalyst_decay_rate_s_inverse, and heat_transfer_decay_rate_s_inverse from the MATLAB base workspace and support the declared ranges. The scalar inputs have these ranges and units: reactor_temperature_setpoint_K [394, 404] K; liquid_level_setpoint_m [0.45, 0.55] m; feed_flow_kg_s [8, 12] kg/s; feed_concentration_kmol_m3 [0.8, 1.2] kmol/m^3; feed_temperature_K [330, 370] K; coolant_inlet_temperature_K [285, 320] K; disturbance_start_s [150, 350] s; feed_flow_ramp_kg_s2 [-0.004, 0.004] kg/s^2; feed_concentration_ramp_kmol_m3_s [-0.0005, 0.0005] kmol/m^3/s; feed_temperature_ramp_K_s [-0.04, 0.04] K/s; coolant_inlet_temperature_ramp_K_s [-0.04, 0.04] K/s; catalyst_decay_rate_s_inverse [0, 0.0005] 1/s; and heat_transfer_decay_rate_s_inverse [0, 0.0008] 1/s.",
+        "source": "tasks/XTHERM-11/public_spec.json"
+      },
+      {
+        "name": "feed_concentration_kmol_m3",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kmol/m^3"
+        ],
+        "range_or_shape": "Read reactor_temperature_setpoint_K, liquid_level_setpoint_m, feed_flow_kg_s, feed_concentration_kmol_m3, feed_temperature_K, coolant_inlet_temperature_K, disturbance_start_s, feed_flow_ramp_kg_s2, feed_concentration_ramp_kmol_m3_s, feed_temperature_ramp_K_s, coolant_inlet_temperature_ramp_K_s, catalyst_decay_rate_s_inverse, and heat_transfer_decay_rate_s_inverse from the MATLAB base workspace and support the declared ranges. The scalar inputs have these ranges and units: reactor_temperature_setpoint_K [394, 404] K; liquid_level_setpoint_m [0.45, 0.55] m; feed_flow_kg_s [8, 12] kg/s; feed_concentration_kmol_m3 [0.8, 1.2] kmol/m^3; feed_temperature_K [330, 370] K; coolant_inlet_temperature_K [285, 320] K; disturbance_start_s [150, 350] s; feed_flow_ramp_kg_s2 [-0.004, 0.004] kg/s^2; feed_concentration_ramp_kmol_m3_s [-0.0005, 0.0005] kmol/m^3/s; feed_temperature_ramp_K_s [-0.04, 0.04] K/s; coolant_inlet_temperature_ramp_K_s [-0.04, 0.04] K/s; catalyst_decay_rate_s_inverse [0, 0.0005] 1/s; and heat_transfer_decay_rate_s_inverse [0, 0.0008] 1/s.",
+        "source": "tasks/XTHERM-11/public_spec.json"
+      },
+      {
+        "name": "feed_temperature_K",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "K"
+        ],
+        "range_or_shape": "Read reactor_temperature_setpoint_K, liquid_level_setpoint_m, feed_flow_kg_s, feed_concentration_kmol_m3, feed_temperature_K, coolant_inlet_temperature_K, disturbance_start_s, feed_flow_ramp_kg_s2, feed_concentration_ramp_kmol_m3_s, feed_temperature_ramp_K_s, coolant_inlet_temperature_ramp_K_s, catalyst_decay_rate_s_inverse, and heat_transfer_decay_rate_s_inverse from the MATLAB base workspace and support the declared ranges. The scalar inputs have these ranges and units: reactor_temperature_setpoint_K [394, 404] K; liquid_level_setpoint_m [0.45, 0.55] m; feed_flow_kg_s [8, 12] kg/s; feed_concentration_kmol_m3 [0.8, 1.2] kmol/m^3; feed_temperature_K [330, 370] K; coolant_inlet_temperature_K [285, 320] K; disturbance_start_s [150, 350] s; feed_flow_ramp_kg_s2 [-0.004, 0.004] kg/s^2; feed_concentration_ramp_kmol_m3_s [-0.0005, 0.0005] kmol/m^3/s; feed_temperature_ramp_K_s [-0.04, 0.04] K/s; coolant_inlet_temperature_ramp_K_s [-0.04, 0.04] K/s; catalyst_decay_rate_s_inverse [0, 0.0005] 1/s; and heat_transfer_decay_rate_s_inverse [0, 0.0008] 1/s.",
+        "source": "tasks/XTHERM-11/public_spec.json"
+      },
+      {
+        "name": "coolant_inlet_temperature_K",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "K"
+        ],
+        "range_or_shape": "Read reactor_temperature_setpoint_K, liquid_level_setpoint_m, feed_flow_kg_s, feed_concentration_kmol_m3, feed_temperature_K, coolant_inlet_temperature_K, disturbance_start_s, feed_flow_ramp_kg_s2, feed_concentration_ramp_kmol_m3_s, feed_temperature_ramp_K_s, coolant_inlet_temperature_ramp_K_s, catalyst_decay_rate_s_inverse, and heat_transfer_decay_rate_s_inverse from the MATLAB base workspace and support the declared ranges. The scalar inputs have these ranges and units: reactor_temperature_setpoint_K [394, 404] K; liquid_level_setpoint_m [0.45, 0.55] m; feed_flow_kg_s [8, 12] kg/s; feed_concentration_kmol_m3 [0.8, 1.2] kmol/m^3; feed_temperature_K [330, 370] K; coolant_inlet_temperature_K [285, 320] K; disturbance_start_s [150, 350] s; feed_flow_ramp_kg_s2 [-0.004, 0.004] kg/s^2; feed_concentration_ramp_kmol_m3_s [-0.0005, 0.0005] kmol/m^3/s; feed_temperature_ramp_K_s [-0.04, 0.04] K/s; coolant_inlet_temperature_ramp_K_s [-0.04, 0.04] K/s; catalyst_decay_rate_s_inverse [0, 0.0005] 1/s; and heat_transfer_decay_rate_s_inverse [0, 0.0008] 1/s.",
+        "source": "tasks/XTHERM-11/public_spec.json"
+      },
+      {
+        "name": "disturbance_start_s",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read reactor_temperature_setpoint_K, liquid_level_setpoint_m, feed_flow_kg_s, feed_concentration_kmol_m3, feed_temperature_K, coolant_inlet_temperature_K, disturbance_start_s, feed_flow_ramp_kg_s2, feed_concentration_ramp_kmol_m3_s, feed_temperature_ramp_K_s, coolant_inlet_temperature_ramp_K_s, catalyst_decay_rate_s_inverse, and heat_transfer_decay_rate_s_inverse from the MATLAB base workspace and support the declared ranges. Before disturbance_start_s, use the four declared feed and coolant inlet values. Afterwards, add each declared ramp slope multiplied by elapsed time since disturbance_start_s to its corresponding physical inlet. Catalyst activity and the effective heat-transfer factor must each equal one before disturbance_start_s and then decay as exp(-rate*(t-disturbance_start_s)). The scalar inputs have these ranges and units: reactor_temperature_setpoint_K [394, 404] K; liquid_level_setpoint_m [0.45, 0.55] m; feed_flow_kg_s [8, 12] kg/s; feed_concentration_kmol_m3 [0.8, 1.2] kmol/m^3; feed_temperature_K [330, 370] K; coolant_inlet_temperature_K [285, 320] K; disturbance_start_s [150, 350] s; feed_flow_ramp_kg_s2 [-0.004, 0.004] kg/s^2; feed_concentration_ramp_kmol_m3_s [-0.0005, 0.0005] kmol/m^3/s; feed_temperature_ramp_K_s [-0.04, 0.04] K/s; coolant_inlet_temperature_ramp_K_s [-0.04, 0.04] K/s; catalyst_decay_rate_s_inverse [0, 0.0005] 1/s; and heat_transfer_decay_rate_s_inverse [0, 0.0008] 1/s.",
+        "source": "tasks/XTHERM-11/public_spec.json"
+      },
+      {
+        "name": "feed_flow_ramp_kg_s2",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kg/s^2"
+        ],
+        "range_or_shape": "Read reactor_temperature_setpoint_K, liquid_level_setpoint_m, feed_flow_kg_s, feed_concentration_kmol_m3, feed_temperature_K, coolant_inlet_temperature_K, disturbance_start_s, feed_flow_ramp_kg_s2, feed_concentration_ramp_kmol_m3_s, feed_temperature_ramp_K_s, coolant_inlet_temperature_ramp_K_s, catalyst_decay_rate_s_inverse, and heat_transfer_decay_rate_s_inverse from the MATLAB base workspace and support the declared ranges. The scalar inputs have these ranges and units: reactor_temperature_setpoint_K [394, 404] K; liquid_level_setpoint_m [0.45, 0.55] m; feed_flow_kg_s [8, 12] kg/s; feed_concentration_kmol_m3 [0.8, 1.2] kmol/m^3; feed_temperature_K [330, 370] K; coolant_inlet_temperature_K [285, 320] K; disturbance_start_s [150, 350] s; feed_flow_ramp_kg_s2 [-0.004, 0.004] kg/s^2; feed_concentration_ramp_kmol_m3_s [-0.0005, 0.0005] kmol/m^3/s; feed_temperature_ramp_K_s [-0.04, 0.04] K/s; coolant_inlet_temperature_ramp_K_s [-0.04, 0.04] K/s; catalyst_decay_rate_s_inverse [0, 0.0005] 1/s; and heat_transfer_decay_rate_s_inverse [0, 0.0008] 1/s.",
+        "source": "tasks/XTHERM-11/public_spec.json"
+      },
+      {
+        "name": "feed_concentration_ramp_kmol_m3_s",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kmol/m^3/s"
+        ],
+        "range_or_shape": "Read reactor_temperature_setpoint_K, liquid_level_setpoint_m, feed_flow_kg_s, feed_concentration_kmol_m3, feed_temperature_K, coolant_inlet_temperature_K, disturbance_start_s, feed_flow_ramp_kg_s2, feed_concentration_ramp_kmol_m3_s, feed_temperature_ramp_K_s, coolant_inlet_temperature_ramp_K_s, catalyst_decay_rate_s_inverse, and heat_transfer_decay_rate_s_inverse from the MATLAB base workspace and support the declared ranges. The scalar inputs have these ranges and units: reactor_temperature_setpoint_K [394, 404] K; liquid_level_setpoint_m [0.45, 0.55] m; feed_flow_kg_s [8, 12] kg/s; feed_concentration_kmol_m3 [0.8, 1.2] kmol/m^3; feed_temperature_K [330, 370] K; coolant_inlet_temperature_K [285, 320] K; disturbance_start_s [150, 350] s; feed_flow_ramp_kg_s2 [-0.004, 0.004] kg/s^2; feed_concentration_ramp_kmol_m3_s [-0.0005, 0.0005] kmol/m^3/s; feed_temperature_ramp_K_s [-0.04, 0.04] K/s; coolant_inlet_temperature_ramp_K_s [-0.04, 0.04] K/s; catalyst_decay_rate_s_inverse [0, 0.0005] 1/s; and heat_transfer_decay_rate_s_inverse [0, 0.0008] 1/s.",
+        "source": "tasks/XTHERM-11/public_spec.json"
+      },
+      {
+        "name": "feed_temperature_ramp_K_s",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "K/s"
+        ],
+        "range_or_shape": "Read reactor_temperature_setpoint_K, liquid_level_setpoint_m, feed_flow_kg_s, feed_concentration_kmol_m3, feed_temperature_K, coolant_inlet_temperature_K, disturbance_start_s, feed_flow_ramp_kg_s2, feed_concentration_ramp_kmol_m3_s, feed_temperature_ramp_K_s, coolant_inlet_temperature_ramp_K_s, catalyst_decay_rate_s_inverse, and heat_transfer_decay_rate_s_inverse from the MATLAB base workspace and support the declared ranges. The scalar inputs have these ranges and units: reactor_temperature_setpoint_K [394, 404] K; liquid_level_setpoint_m [0.45, 0.55] m; feed_flow_kg_s [8, 12] kg/s; feed_concentration_kmol_m3 [0.8, 1.2] kmol/m^3; feed_temperature_K [330, 370] K; coolant_inlet_temperature_K [285, 320] K; disturbance_start_s [150, 350] s; feed_flow_ramp_kg_s2 [-0.004, 0.004] kg/s^2; feed_concentration_ramp_kmol_m3_s [-0.0005, 0.0005] kmol/m^3/s; feed_temperature_ramp_K_s [-0.04, 0.04] K/s; coolant_inlet_temperature_ramp_K_s [-0.04, 0.04] K/s; catalyst_decay_rate_s_inverse [0, 0.0005] 1/s; and heat_transfer_decay_rate_s_inverse [0, 0.0008] 1/s.",
+        "source": "tasks/XTHERM-11/public_spec.json"
+      },
+      {
+        "name": "coolant_inlet_temperature_ramp_K_s",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "K/s"
+        ],
+        "range_or_shape": "Read reactor_temperature_setpoint_K, liquid_level_setpoint_m, feed_flow_kg_s, feed_concentration_kmol_m3, feed_temperature_K, coolant_inlet_temperature_K, disturbance_start_s, feed_flow_ramp_kg_s2, feed_concentration_ramp_kmol_m3_s, feed_temperature_ramp_K_s, coolant_inlet_temperature_ramp_K_s, catalyst_decay_rate_s_inverse, and heat_transfer_decay_rate_s_inverse from the MATLAB base workspace and support the declared ranges. The scalar inputs have these ranges and units: reactor_temperature_setpoint_K [394, 404] K; liquid_level_setpoint_m [0.45, 0.55] m; feed_flow_kg_s [8, 12] kg/s; feed_concentration_kmol_m3 [0.8, 1.2] kmol/m^3; feed_temperature_K [330, 370] K; coolant_inlet_temperature_K [285, 320] K; disturbance_start_s [150, 350] s; feed_flow_ramp_kg_s2 [-0.004, 0.004] kg/s^2; feed_concentration_ramp_kmol_m3_s [-0.0005, 0.0005] kmol/m^3/s; feed_temperature_ramp_K_s [-0.04, 0.04] K/s; coolant_inlet_temperature_ramp_K_s [-0.04, 0.04] K/s; catalyst_decay_rate_s_inverse [0, 0.0005] 1/s; and heat_transfer_decay_rate_s_inverse [0, 0.0008] 1/s.",
+        "source": "tasks/XTHERM-11/public_spec.json"
+      },
+      {
+        "name": "catalyst_decay_rate_s_inverse",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1/s"
+        ],
+        "range_or_shape": "Read reactor_temperature_setpoint_K, liquid_level_setpoint_m, feed_flow_kg_s, feed_concentration_kmol_m3, feed_temperature_K, coolant_inlet_temperature_K, disturbance_start_s, feed_flow_ramp_kg_s2, feed_concentration_ramp_kmol_m3_s, feed_temperature_ramp_K_s, coolant_inlet_temperature_ramp_K_s, catalyst_decay_rate_s_inverse, and heat_transfer_decay_rate_s_inverse from the MATLAB base workspace and support the declared ranges. The scalar inputs have these ranges and units: reactor_temperature_setpoint_K [394, 404] K; liquid_level_setpoint_m [0.45, 0.55] m; feed_flow_kg_s [8, 12] kg/s; feed_concentration_kmol_m3 [0.8, 1.2] kmol/m^3; feed_temperature_K [330, 370] K; coolant_inlet_temperature_K [285, 320] K; disturbance_start_s [150, 350] s; feed_flow_ramp_kg_s2 [-0.004, 0.004] kg/s^2; feed_concentration_ramp_kmol_m3_s [-0.0005, 0.0005] kmol/m^3/s; feed_temperature_ramp_K_s [-0.04, 0.04] K/s; coolant_inlet_temperature_ramp_K_s [-0.04, 0.04] K/s; catalyst_decay_rate_s_inverse [0, 0.0005] 1/s; and heat_transfer_decay_rate_s_inverse [0, 0.0008] 1/s.",
+        "source": "tasks/XTHERM-11/public_spec.json"
+      },
+      {
+        "name": "heat_transfer_decay_rate_s_inverse",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1/s"
+        ],
+        "range_or_shape": "Read reactor_temperature_setpoint_K, liquid_level_setpoint_m, feed_flow_kg_s, feed_concentration_kmol_m3, feed_temperature_K, coolant_inlet_temperature_K, disturbance_start_s, feed_flow_ramp_kg_s2, feed_concentration_ramp_kmol_m3_s, feed_temperature_ramp_K_s, coolant_inlet_temperature_ramp_K_s, catalyst_decay_rate_s_inverse, and heat_transfer_decay_rate_s_inverse from the MATLAB base workspace and support the declared ranges. The scalar inputs have these ranges and units: reactor_temperature_setpoint_K [394, 404] K; liquid_level_setpoint_m [0.45, 0.55] m; feed_flow_kg_s [8, 12] kg/s; feed_concentration_kmol_m3 [0.8, 1.2] kmol/m^3; feed_temperature_K [330, 370] K; coolant_inlet_temperature_K [285, 320] K; disturbance_start_s [150, 350] s; feed_flow_ramp_kg_s2 [-0.004, 0.004] kg/s^2; feed_concentration_ramp_kmol_m3_s [-0.0005, 0.0005] kmol/m^3/s; feed_temperature_ramp_K_s [-0.04, 0.04] K/s; coolant_inlet_temperature_ramp_K_s [-0.04, 0.04] K/s; catalyst_decay_rate_s_inverse [0, 0.0005] 1/s; and heat_transfer_decay_rate_s_inverse [0, 0.0008] 1/s.",
+        "source": "tasks/XTHERM-11/public_spec.json"
+      },
+      {
+        "name": "reactor_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m^3",
+          "m"
+        ],
+        "range_or_shape": "Log complete-run Timeseries named reactor_state, flow_state, and control_state on one shared, strictly increasing time axis covering the complete simulation. reactor_state has four channels [liquid level in m, reactant concentration in kmol/m^3, reactor temperature in K, jacket temperature in K].",
+        "source": "tasks/XTHERM-11/public_spec.json"
+      },
+      {
+        "name": "flow_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "g/s",
+          "kg/s",
+          "m^3",
+          "kg"
+        ],
+        "range_or_shape": "Log complete-run Timeseries named reactor_state, flow_state, and control_state on one shared, strictly increasing time axis covering the complete simulation. flow_state has six channels [feed flow in kg/s, outlet flow in kg/s, coolant flow in kg/s, feed concentration in kmol/m^3, feed temperature in K, coolant inlet temperature in K].",
+        "source": "tasks/XTHERM-11/public_spec.json"
+      },
+      {
+        "name": "control_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Log complete-run Timeseries named reactor_state, flow_state, and control_state on one shared, strictly increasing time axis covering the complete simulation. control_state has six channels [reactor-temperature setpoint in K, liquid-level setpoint in m, temperature error in K, level error in m, catalyst activity, effective heat-transfer factor].",
+        "source": "tasks/XTHERM-11/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a closed-loop nonlinear jacketed continuous stirred-tank reactor for a first-order exothermic reaction.",
+      "prescribed output trajectories, an open-loop lookup, or unrelated controllers are not sufficient.",
+      "Log complete-run Timeseries named reactor_state, flow_state, and control_state on one shared, strictly increasing time axis covering the complete simulation."
+    ],
+    "feedback_and_control_causality": [
+      "Build a closed-loop nonlinear jacketed continuous stirred-tank reactor for a first-order exothermic reaction.",
+      "The dynamic plant must contain coupled mass and energy balances for reactant concentration, reactor temperature, jacket temperature, and liquid hold-up.",
+      "Both regulated paths must use measured plant feedback and dynamic actuation;"
+    ],
+    "signal_sources": [
+      "reactor_temperature_setpoint_K is read from the public MATLAB base-workspace input contract.",
+      "liquid_level_setpoint_m is read from the public MATLAB base-workspace input contract.",
+      "feed_flow_kg_s is read from the public MATLAB base-workspace input contract.",
+      "feed_concentration_kmol_m3 is read from the public MATLAB base-workspace input contract.",
+      "feed_temperature_K is read from the public MATLAB base-workspace input contract.",
+      "coolant_inlet_temperature_K is read from the public MATLAB base-workspace input contract.",
+      "disturbance_start_s is read from the public MATLAB base-workspace input contract.",
+      "feed_flow_ramp_kg_s2 is read from the public MATLAB base-workspace input contract.",
+      "feed_concentration_ramp_kmol_m3_s is read from the public MATLAB base-workspace input contract.",
+      "feed_temperature_ramp_K_s is read from the public MATLAB base-workspace input contract.",
+      "coolant_inlet_temperature_ramp_K_s is read from the public MATLAB base-workspace input contract.",
+      "catalyst_decay_rate_s_inverse is read from the public MATLAB base-workspace input contract.",
+      "heat_transfer_decay_rate_s_inverse is read from the public MATLAB base-workspace input contract.",
+      "reactor_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "flow_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "control_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "reactor_temperature_setpoint_K: Read reactor_temperature_setpoint_K, liquid_level_setpoint_m, feed_flow_kg_s, feed_concentration_kmol_m3, feed_temperature_K, coolant_inlet_temperature_K, disturbance_start_s, feed_flow_ramp_kg_s2, feed_concentration_ramp_kmol_m3_s, feed_temperature_ramp_K_s, coolant_inlet_temperature_ramp_K_s, catalyst_decay_rate_s_inverse, and heat_transfer_decay_rate_s_inverse from the MATLAB base workspace and support the declared ranges. The scalar inputs have these ranges and units: reactor_temperature_setpoint_K [394, 404] K; liquid_level_setpoint_m [0.45, 0.55] m; feed_flow_kg_s [8, 12] kg/s; feed_concentration_kmol_m3 [0.8, 1.2] kmol/m^3; feed_temperature_K [330, 370] K; coolant_inlet_temperature_K [285, 320] K; disturbance_start_s [150, 350] s; feed_flow_ramp_kg_s2 [-0.004, 0.004] kg/s^2; feed_concentration_ramp_kmol_m3_s [-0.0005, 0.0005] kmol/m^3/s; feed_temperature_ramp_K_s [-0.04, 0.04] K/s; coolant_inlet_temperature_ramp_K_s [-0.04, 0.04] K/s; catalyst_decay_rate_s_inverse [0, 0.0005] 1/s; and heat_transfer_decay_rate_s_inverse [0, 0.0008] 1/s.",
+      "liquid_level_setpoint_m: Read reactor_temperature_setpoint_K, liquid_level_setpoint_m, feed_flow_kg_s, feed_concentration_kmol_m3, feed_temperature_K, coolant_inlet_temperature_K, disturbance_start_s, feed_flow_ramp_kg_s2, feed_concentration_ramp_kmol_m3_s, feed_temperature_ramp_K_s, coolant_inlet_temperature_ramp_K_s, catalyst_decay_rate_s_inverse, and heat_transfer_decay_rate_s_inverse from the MATLAB base workspace and support the declared ranges. The scalar inputs have these ranges and units: reactor_temperature_setpoint_K [394, 404] K; liquid_level_setpoint_m [0.45, 0.55] m; feed_flow_kg_s [8, 12] kg/s; feed_concentration_kmol_m3 [0.8, 1.2] kmol/m^3; feed_temperature_K [330, 370] K; coolant_inlet_temperature_K [285, 320] K; disturbance_start_s [150, 350] s; feed_flow_ramp_kg_s2 [-0.004, 0.004] kg/s^2; feed_concentration_ramp_kmol_m3_s [-0.0005, 0.0005] kmol/m^3/s; feed_temperature_ramp_K_s [-0.04, 0.04] K/s; coolant_inlet_temperature_ramp_K_s [-0.04, 0.04] K/s; catalyst_decay_rate_s_inverse [0, 0.0005] 1/s; and heat_transfer_decay_rate_s_inverse [0, 0.0008] 1/s.",
+      "feed_flow_kg_s: Read reactor_temperature_setpoint_K, liquid_level_setpoint_m, feed_flow_kg_s, feed_concentration_kmol_m3, feed_temperature_K, coolant_inlet_temperature_K, disturbance_start_s, feed_flow_ramp_kg_s2, feed_concentration_ramp_kmol_m3_s, feed_temperature_ramp_K_s, coolant_inlet_temperature_ramp_K_s, catalyst_decay_rate_s_inverse, and heat_transfer_decay_rate_s_inverse from the MATLAB base workspace and support the declared ranges. The scalar inputs have these ranges and units: reactor_temperature_setpoint_K [394, 404] K; liquid_level_setpoint_m [0.45, 0.55] m; feed_flow_kg_s [8, 12] kg/s; feed_concentration_kmol_m3 [0.8, 1.2] kmol/m^3; feed_temperature_K [330, 370] K; coolant_inlet_temperature_K [285, 320] K; disturbance_start_s [150, 350] s; feed_flow_ramp_kg_s2 [-0.004, 0.004] kg/s^2; feed_concentration_ramp_kmol_m3_s [-0.0005, 0.0005] kmol/m^3/s; feed_temperature_ramp_K_s [-0.04, 0.04] K/s; coolant_inlet_temperature_ramp_K_s [-0.04, 0.04] K/s; catalyst_decay_rate_s_inverse [0, 0.0005] 1/s; and heat_transfer_decay_rate_s_inverse [0, 0.0008] 1/s.",
+      "feed_concentration_kmol_m3: Read reactor_temperature_setpoint_K, liquid_level_setpoint_m, feed_flow_kg_s, feed_concentration_kmol_m3, feed_temperature_K, coolant_inlet_temperature_K, disturbance_start_s, feed_flow_ramp_kg_s2, feed_concentration_ramp_kmol_m3_s, feed_temperature_ramp_K_s, coolant_inlet_temperature_ramp_K_s, catalyst_decay_rate_s_inverse, and heat_transfer_decay_rate_s_inverse from the MATLAB base workspace and support the declared ranges. The scalar inputs have these ranges and units: reactor_temperature_setpoint_K [394, 404] K; liquid_level_setpoint_m [0.45, 0.55] m; feed_flow_kg_s [8, 12] kg/s; feed_concentration_kmol_m3 [0.8, 1.2] kmol/m^3; feed_temperature_K [330, 370] K; coolant_inlet_temperature_K [285, 320] K; disturbance_start_s [150, 350] s; feed_flow_ramp_kg_s2 [-0.004, 0.004] kg/s^2; feed_concentration_ramp_kmol_m3_s [-0.0005, 0.0005] kmol/m^3/s; feed_temperature_ramp_K_s [-0.04, 0.04] K/s; coolant_inlet_temperature_ramp_K_s [-0.04, 0.04] K/s; catalyst_decay_rate_s_inverse [0, 0.0005] 1/s; and heat_transfer_decay_rate_s_inverse [0, 0.0008] 1/s.",
+      "feed_temperature_K: Read reactor_temperature_setpoint_K, liquid_level_setpoint_m, feed_flow_kg_s, feed_concentration_kmol_m3, feed_temperature_K, coolant_inlet_temperature_K, disturbance_start_s, feed_flow_ramp_kg_s2, feed_concentration_ramp_kmol_m3_s, feed_temperature_ramp_K_s, coolant_inlet_temperature_ramp_K_s, catalyst_decay_rate_s_inverse, and heat_transfer_decay_rate_s_inverse from the MATLAB base workspace and support the declared ranges. The scalar inputs have these ranges and units: reactor_temperature_setpoint_K [394, 404] K; liquid_level_setpoint_m [0.45, 0.55] m; feed_flow_kg_s [8, 12] kg/s; feed_concentration_kmol_m3 [0.8, 1.2] kmol/m^3; feed_temperature_K [330, 370] K; coolant_inlet_temperature_K [285, 320] K; disturbance_start_s [150, 350] s; feed_flow_ramp_kg_s2 [-0.004, 0.004] kg/s^2; feed_concentration_ramp_kmol_m3_s [-0.0005, 0.0005] kmol/m^3/s; feed_temperature_ramp_K_s [-0.04, 0.04] K/s; coolant_inlet_temperature_ramp_K_s [-0.04, 0.04] K/s; catalyst_decay_rate_s_inverse [0, 0.0005] 1/s; and heat_transfer_decay_rate_s_inverse [0, 0.0008] 1/s.",
+      "coolant_inlet_temperature_K: Read reactor_temperature_setpoint_K, liquid_level_setpoint_m, feed_flow_kg_s, feed_concentration_kmol_m3, feed_temperature_K, coolant_inlet_temperature_K, disturbance_start_s, feed_flow_ramp_kg_s2, feed_concentration_ramp_kmol_m3_s, feed_temperature_ramp_K_s, coolant_inlet_temperature_ramp_K_s, catalyst_decay_rate_s_inverse, and heat_transfer_decay_rate_s_inverse from the MATLAB base workspace and support the declared ranges. The scalar inputs have these ranges and units: reactor_temperature_setpoint_K [394, 404] K; liquid_level_setpoint_m [0.45, 0.55] m; feed_flow_kg_s [8, 12] kg/s; feed_concentration_kmol_m3 [0.8, 1.2] kmol/m^3; feed_temperature_K [330, 370] K; coolant_inlet_temperature_K [285, 320] K; disturbance_start_s [150, 350] s; feed_flow_ramp_kg_s2 [-0.004, 0.004] kg/s^2; feed_concentration_ramp_kmol_m3_s [-0.0005, 0.0005] kmol/m^3/s; feed_temperature_ramp_K_s [-0.04, 0.04] K/s; coolant_inlet_temperature_ramp_K_s [-0.04, 0.04] K/s; catalyst_decay_rate_s_inverse [0, 0.0005] 1/s; and heat_transfer_decay_rate_s_inverse [0, 0.0008] 1/s.",
+      "disturbance_start_s: Read reactor_temperature_setpoint_K, liquid_level_setpoint_m, feed_flow_kg_s, feed_concentration_kmol_m3, feed_temperature_K, coolant_inlet_temperature_K, disturbance_start_s, feed_flow_ramp_kg_s2, feed_concentration_ramp_kmol_m3_s, feed_temperature_ramp_K_s, coolant_inlet_temperature_ramp_K_s, catalyst_decay_rate_s_inverse, and heat_transfer_decay_rate_s_inverse from the MATLAB base workspace and support the declared ranges. Before disturbance_start_s, use the four declared feed and coolant inlet values. Afterwards, add each declared ramp slope multiplied by elapsed time since disturbance_start_s to its corresponding physical inlet. Catalyst activity and the effective heat-transfer factor must each equal one before disturbance_start_s and then decay as exp(-rate*(t-disturbance_start_s)). The scalar inputs have these ranges and units: reactor_temperature_setpoint_K [394, 404] K; liquid_level_setpoint_m [0.45, 0.55] m; feed_flow_kg_s [8, 12] kg/s; feed_concentration_kmol_m3 [0.8, 1.2] kmol/m^3; feed_temperature_K [330, 370] K; coolant_inlet_temperature_K [285, 320] K; disturbance_start_s [150, 350] s; feed_flow_ramp_kg_s2 [-0.004, 0.004] kg/s^2; feed_concentration_ramp_kmol_m3_s [-0.0005, 0.0005] kmol/m^3/s; feed_temperature_ramp_K_s [-0.04, 0.04] K/s; coolant_inlet_temperature_ramp_K_s [-0.04, 0.04] K/s; catalyst_decay_rate_s_inverse [0, 0.0005] 1/s; and heat_transfer_decay_rate_s_inverse [0, 0.0008] 1/s.",
+      "feed_flow_ramp_kg_s2: Read reactor_temperature_setpoint_K, liquid_level_setpoint_m, feed_flow_kg_s, feed_concentration_kmol_m3, feed_temperature_K, coolant_inlet_temperature_K, disturbance_start_s, feed_flow_ramp_kg_s2, feed_concentration_ramp_kmol_m3_s, feed_temperature_ramp_K_s, coolant_inlet_temperature_ramp_K_s, catalyst_decay_rate_s_inverse, and heat_transfer_decay_rate_s_inverse from the MATLAB base workspace and support the declared ranges. The scalar inputs have these ranges and units: reactor_temperature_setpoint_K [394, 404] K; liquid_level_setpoint_m [0.45, 0.55] m; feed_flow_kg_s [8, 12] kg/s; feed_concentration_kmol_m3 [0.8, 1.2] kmol/m^3; feed_temperature_K [330, 370] K; coolant_inlet_temperature_K [285, 320] K; disturbance_start_s [150, 350] s; feed_flow_ramp_kg_s2 [-0.004, 0.004] kg/s^2; feed_concentration_ramp_kmol_m3_s [-0.0005, 0.0005] kmol/m^3/s; feed_temperature_ramp_K_s [-0.04, 0.04] K/s; coolant_inlet_temperature_ramp_K_s [-0.04, 0.04] K/s; catalyst_decay_rate_s_inverse [0, 0.0005] 1/s; and heat_transfer_decay_rate_s_inverse [0, 0.0008] 1/s."
+    ],
+    "disturbances": [
+      "Read reactor_temperature_setpoint_K, liquid_level_setpoint_m, feed_flow_kg_s, feed_concentration_kmol_m3, feed_temperature_K, coolant_inlet_temperature_K, disturbance_start_s, feed_flow_ramp_kg_s2, feed_concentration_ramp_kmol_m3_s, feed_temperature_ramp_K_s, coolant_inlet_temperature_ramp_K_s, catalyst_decay_rate_s_inverse, and heat_transfer_decay_rate_s_inverse from the MATLAB base workspace and support the declared ranges.",
+      "Before disturbance_start_s, use the four declared feed and coolant inlet values.",
+      "Afterwards, add each declared ramp slope multiplied by elapsed time since disturbance_start_s to its corresponding physical inlet."
+    ],
+    "dynamic_processes": [
+      "The dynamic plant must contain coupled mass and energy balances for reactant concentration, reactor temperature, jacket temperature, and liquid hold-up.",
+      "Both regulated paths must use measured plant feedback and dynamic actuation;"
+    ],
+    "task_specific_shortcuts": [
+      "F90-XTHERM-11: prescribing reactor_state directly would bypass the system path described by: Catalyst activity and the effective heat-transfer factor must each equal one before disturbance_start_s and then decay as exp(-rate*(t-disturbance_start_s)).",
+      "F90-XTHERM-11: replaying a fixed reactor_state trace would ignore causal variation in reactor_temperature_setpoint_K."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XTHERM-11/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XTHERM-11/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XTHERM-11/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

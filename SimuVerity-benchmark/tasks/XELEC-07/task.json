@@ -1,0 +1,78 @@
+{
+  "schema": "simuverity.task.v1",
+  "release": "simuverity-101-v1",
+  "task_id": "XELEC-07",
+  "ordinal": 2,
+  "collection": "XELEC",
+  "runtime_alias": "XELEC-07",
+  "required_model_file": "cand_XELEC07.slx",
+  "evaluation_policy_id": "simuverity-101-v1:xelec-07:scoring",
+  "candidate_closure": {
+    "public_input_names": [
+      "Id_ref_cmd",
+      "Iq_ref_cmd",
+      "Vgrid_scale"
+    ],
+    "nominal_provider": "simuverity_public_nominal_inputs"
+  },
+  "public_spec": "public_spec.json",
+  "official_scenarios": "official_scenarios.json",
+  "extractor": {
+    "kind": "matlab_function",
+    "path": "extractor/run.m",
+    "entrypoint": "run",
+    "implementation": "vendor/scripts/unified/d16/tasks/d007/d007_extract_candidate_evidence.m",
+    "closure_manifest": "extractor/manifest.json"
+  },
+  "scorer": {
+    "kind": "python_function",
+    "path": "scorer.py",
+    "entrypoint": "score",
+    "closure_manifest": "scorer/manifest.json",
+    "offline_only": true
+  },
+  "reference": {
+    "materialization": "bundled",
+    "path": "reference/files",
+    "manifest": "reference/manifest.json",
+    "entrypoint": "reference/files/DQsinepwm3pGrid.mdl",
+    "expected_valid_scenarios": 13,
+    "score_tolerance": 5e-08,
+    "expected_score": 91.2563486,
+    "expected_score_basis": "reference_replay",
+    "scenario_contract": {
+      "expected_ids": [
+        "id_less",
+        "id_more",
+        "iq_positive",
+        "iq_negative",
+        "id_iq_joint",
+        "id_iq_interior_pos",
+        "id_iq_interior_neg",
+        "grid_low",
+        "grid_high",
+        "joint_grid_low_pos",
+        "joint_grid_high_neg",
+        "joint_grid_low_endpoint_pos",
+        "joint_grid_high_endpoint_neg"
+      ],
+      "nominal_scenario_id": null,
+      "nominal_materialization": "authoritative_scenario_set"
+    },
+    "score_tolerance_basis": "source_authority_numeric_precision",
+    "runtime_manifest": "reference/runtime_manifest.json"
+  },
+  "applicable_groups": [
+    "G",
+    "A",
+    "Q",
+    "C",
+    "R",
+    "D"
+  ],
+  "release_license_status": "INCLUDED_THIRD_PARTY_LICENSE",
+  "system_profile": {
+    "path": "system_profile.json",
+    "schema": "simuverity.system-profile.v1"
+  }
+}

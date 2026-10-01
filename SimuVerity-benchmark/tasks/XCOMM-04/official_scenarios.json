@@ -1,0 +1,116 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XCOMM-04",
+  "scenarios": [
+    {
+      "id": "nominal",
+      "class": "nominal",
+      "InputScale": 1.0,
+      "PaNonlinearityScale": 1.0
+    },
+    {
+      "id": "low_drive",
+      "class": "input_boundary",
+      "InputScale": 0.9,
+      "PaNonlinearityScale": 1.0
+    },
+    {
+      "id": "high_drive",
+      "class": "input_boundary",
+      "InputScale": 1.1,
+      "PaNonlinearityScale": 1.0
+    },
+    {
+      "id": "mild_nonlinearity",
+      "class": "amplifier_boundary",
+      "InputScale": 1.0,
+      "PaNonlinearityScale": 0.9
+    },
+    {
+      "id": "strong_nonlinearity",
+      "class": "amplifier_boundary",
+      "InputScale": 1.05,
+      "PaNonlinearityScale": 1.1
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "nominal_sample_rate_hz": 15360000,
+      "carrier_frequency_hz": 2400000000,
+      "reference_native_frames": 6,
+      "frames_per_private_scenario": 3,
+      "one_persistent_matlab_session": true,
+      "wall_watchdog_s": 1800
+    },
+    "groups": {
+      "G": "load, update, compile, all private simulations, complete finite evidence, and distinct connected transmitter/adaptation outputs",
+      "A": "post-amplifier aligned waveform accuracy and finite-gain fidelity",
+      "Q": "post-amplifier spectral quality, residual error and bounded adaptive state",
+      "M": "real predistorter activity, PA-output feedback, online coefficient updates and causal error reduction",
+      "R": "100 percent worst-case critical performance over all private scenarios",
+      "D": "cold-start convergence and recovery under supported operating changes"
+    },
+    "weights": {
+      "A": 0.25,
+      "Q": 0.2,
+      "M": 0.25,
+      "R": 0.2,
+      "D": 0.1
+    },
+    "aggregation": {
+      "within_group": "dedicated weighted arithmetic mean of normalized indicators",
+      "critical_multiscenario_performance": "minimum",
+      "total": "G * 100 * A^0.25 * Q^0.20 * M^0.25 * R^0.20 * D^0.10"
+    },
+    "shortcut_minimum": [
+      "missing transmitter, amplifier, feedback or adaptive-state evidence",
+      "PaOutput copied from TxBaseband or another required output",
+      "PredistortedDrive identical to TxBaseband while the nonlinear PA remains uncompensated",
+      "fixed or scenario-invariant adaptive coefficients",
+      "InputScale or PaNonlinearityScale ignored",
+      "prerecorded nominal outputs reused across private scenarios"
+    ],
+    "scoring_policy": {
+      "policy_id": "simuverity-101-v1:xcomm-04:scoring"
+    }
+  },
+  "simulation": {
+    "nominal_sample_rate_hz": 15360000,
+    "carrier_frequency_hz": 2400000000,
+    "reference_native_frames": 6,
+    "frames_per_private_scenario": 3,
+    "one_persistent_matlab_session": true,
+    "wall_watchdog_s": 1800
+  },
+  "groups": {
+    "G": "load, update, compile, all private simulations, complete finite evidence, and distinct connected transmitter/adaptation outputs",
+    "A": "post-amplifier aligned waveform accuracy and finite-gain fidelity",
+    "Q": "post-amplifier spectral quality, residual error and bounded adaptive state",
+    "M": "real predistorter activity, PA-output feedback, online coefficient updates and causal error reduction",
+    "R": "100 percent worst-case critical performance over all private scenarios",
+    "D": "cold-start convergence and recovery under supported operating changes"
+  },
+  "weights": {
+    "A": 0.25,
+    "Q": 0.2,
+    "M": 0.25,
+    "R": 0.2,
+    "D": 0.1
+  },
+  "aggregation": {
+    "within_group": "dedicated weighted arithmetic mean of normalized indicators",
+    "critical_multiscenario_performance": "minimum",
+    "total": "G * 100 * A^0.25 * Q^0.20 * M^0.25 * R^0.20 * D^0.10"
+  },
+  "shortcut_minimum": [
+    "missing transmitter, amplifier, feedback or adaptive-state evidence",
+    "PaOutput copied from TxBaseband or another required output",
+    "PredistortedDrive identical to TxBaseband while the nonlinear PA remains uncompensated",
+    "fixed or scenario-invariant adaptive coefficients",
+    "InputScale or PaNonlinearityScale ignored",
+    "prerecorded nominal outputs reused across private scenarios"
+  ],
+  "scoring_policy": {
+    "policy_id": "simuverity-101-v1:xcomm-04:scoring"
+  }
+}

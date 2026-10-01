@@ -1,0 +1,154 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XMECH-07",
+  "scenarios": [
+    {
+      "id": "native_nominal_transfer",
+      "InputBeltSpeedScale": 1.0,
+      "OutputBeltSpeedScale": 1.0,
+      "BeltKineticFrictionScale": 1.0,
+      "BeltStaticFrictionScale": 1.0,
+      "PayloadDensityScale": 1.0
+    },
+    {
+      "id": "moderate_low_belt_friction",
+      "InputBeltSpeedScale": 1.0,
+      "OutputBeltSpeedScale": 1.0,
+      "BeltKineticFrictionScale": 0.8,
+      "BeltStaticFrictionScale": 0.8,
+      "PayloadDensityScale": 1.0
+    },
+    {
+      "id": "moderate_high_belt_friction",
+      "InputBeltSpeedScale": 1.0,
+      "OutputBeltSpeedScale": 1.0,
+      "BeltKineticFrictionScale": 1.2,
+      "BeltStaticFrictionScale": 1.2,
+      "PayloadDensityScale": 1.0
+    },
+    {
+      "id": "moderate_slow_belts",
+      "InputBeltSpeedScale": 0.85,
+      "OutputBeltSpeedScale": 0.85,
+      "BeltKineticFrictionScale": 1.0,
+      "BeltStaticFrictionScale": 1.0,
+      "PayloadDensityScale": 1.0
+    },
+    {
+      "id": "belt_speed_mismatch",
+      "InputBeltSpeedScale": 1.1,
+      "OutputBeltSpeedScale": 0.9,
+      "BeltKineticFrictionScale": 1.0,
+      "BeltStaticFrictionScale": 1.0,
+      "PayloadDensityScale": 1.0
+    },
+    {
+      "id": "heavier_payload_boundary",
+      "InputBeltSpeedScale": 1.0,
+      "OutputBeltSpeedScale": 1.0,
+      "BeltKineticFrictionScale": 1.0,
+      "BeltStaticFrictionScale": 1.0,
+      "PayloadDensityScale": 1.25
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "start_s": 0.0,
+      "stop_s": 30.0,
+      "solver": "ode23t",
+      "maximum_step_s": 0.01
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.2,
+          "meaning": "nominal multi-stage pickup, transfer, release and final placement"
+        },
+        "Q": {
+          "weight": 0.15,
+          "meaning": "finite 6DOF motion, bounded penetration and physically consistent contact forces"
+        },
+        "M": {
+          "weight": 0.3,
+          "meaning": "real belt-friction-gripper-payload causal mechanism"
+        },
+        "R": {
+          "weight": 0.2,
+          "meaning": "worst private-scenario transfer robustness"
+        },
+        "D": {
+          "weight": 0.15,
+          "meaning": "phase ordering, capture retention, release and post-release transport"
+        }
+      },
+      "within_group": "weighted_arithmetic_mean",
+      "across_groups": "weighted_geometric_mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum",
+      "final_raw_reference_score": 98.45085670276461,
+      "final_shortcut_sanity_pass": true
+    },
+    "shortcut_sanity_contract": [
+      "missing_free_6dof_or_contact_force_core",
+      "missing_required_outputs",
+      "constant_or_replayed_box_pose",
+      "kinematic_pose_assignment_without_supported_contact",
+      "one_belt_only",
+      "gripper_free_transfer",
+      "disconnected_friction_inputs",
+      "disconnected_belt_speed_inputs",
+      "endpoint_only_without_valid_phase_transient"
+    ]
+  },
+  "simulation": {
+    "start_s": 0.0,
+    "stop_s": 30.0,
+    "solver": "ode23t",
+    "maximum_step_s": 0.01
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.2,
+        "meaning": "nominal multi-stage pickup, transfer, release and final placement"
+      },
+      "Q": {
+        "weight": 0.15,
+        "meaning": "finite 6DOF motion, bounded penetration and physically consistent contact forces"
+      },
+      "M": {
+        "weight": 0.3,
+        "meaning": "real belt-friction-gripper-payload causal mechanism"
+      },
+      "R": {
+        "weight": 0.2,
+        "meaning": "worst private-scenario transfer robustness"
+      },
+      "D": {
+        "weight": 0.15,
+        "meaning": "phase ordering, capture retention, release and post-release transport"
+      }
+    },
+    "within_group": "weighted_arithmetic_mean",
+    "across_groups": "weighted_geometric_mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum",
+    "final_raw_reference_score": 98.45085670276461,
+    "final_shortcut_sanity_pass": true
+  },
+  "shortcut_sanity_contract": [
+    "missing_free_6dof_or_contact_force_core",
+    "missing_required_outputs",
+    "constant_or_replayed_box_pose",
+    "kinematic_pose_assignment_without_supported_contact",
+    "one_belt_only",
+    "gripper_free_transfer",
+    "disconnected_friction_inputs",
+    "disconnected_belt_speed_inputs",
+    "endpoint_only_without_valid_phase_transient"
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XCOMM-02",
+  "file_count": 16,
+  "files": [
+    {
+      "path": "reference/files/common/compareData.m",
+      "size_bytes": 2571
+    },
+    {
+      "path": "reference/files/common/deinterleave_complex.m",
+      "size_bytes": 235
+    },
+    {
+      "path": "reference/files/common/generate_qpsk_signal.m",
+      "size_bytes": 1422
+    },
+    {
+      "path": "reference/files/common/interleave_complex.m",
+      "size_bytes": 301
+    },
+    {
+      "path": "reference/files/common/maxabs.m",
+      "size_bytes": 167
+    },
+    {
+      "path": "reference/files/common/plot_beam_patterns.m",
+      "size_bytes": 1118
+    },
+    {
+      "path": "reference/files/common/qpsk_receive.m",
+      "size_bytes": 1889
+    },
+    {
+      "path": "reference/files/common/sim_with_progress.m",
+      "size_bytes": 2266
+    },
+    {
+      "path": "reference/files/common/unpack_complex.m",
+      "size_bytes": 213
+    },
+    {
+      "path": "reference/files/License.txt",
+      "size_bytes": 1499
+    },
+    {
+      "path": "reference/files/mvdr_4x4/model_init.m",
+      "size_bytes": 5571
+    },
+    {
+      "path": "reference/files/mvdr_4x4/mvdr_4x4_partial_systolic.slx",
+      "size_bytes": 131387
+    },
+    {
+      "path": "reference/files/mvdr_4x4/mvdr_reference.m",
+      "size_bytes": 1198
+    },
+    {
+      "path": "reference/files/mvdr_4x4/tb_mvdr_4x4_partial_systolic.m",
+      "size_bytes": 3590
+    },
+    {
+      "path": "reference/files/mvdr_README.md",
+      "size_bytes": 5904
+    },
+    {
+      "path": "reference/files/repository_README.md",
+      "size_bytes": 420
+    }
+  ],
+  "entrypoint": "reference/files/mvdr_4x4/mvdr_4x4_partial_systolic.slx",
+  "expected_score": 97.41184091588106,
+  "expected_valid_scenarios": 5,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal",
+      "mirrored",
+      "close_strong_interferer",
+      "low_snr_edge",
+      "loading_robustness"
+    ],
+    "nominal_scenario_id": "nominal",
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 159751,
+  "excluded_files": []
+}

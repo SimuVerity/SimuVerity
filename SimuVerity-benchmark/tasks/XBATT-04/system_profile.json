@@ -1,0 +1,204 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XBATT-04",
+  "collection": "XBATT",
+  "reference": {
+    "identity_path": "tasks/XBATT-04/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/Simscape-Battery-Library/Examples/viaMatlabCode/TSPMeA_Cycling.slx",
+    "model_path": "tasks/XBATT-04/reference/files/Simscape-Battery-Library/Examples/viaMatlabCode/TSPMeA_Cycling.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XBATT-04",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a physically causal, thermally coupled lithium-ion cell cycling model with electrochemical transport and ageing.",
+    "engineering_objects": [
+      "Build a physically causal, thermally coupled lithium-ion cell cycling model with electrochemical transport and ageing.",
+      "Ageing must evolve through physically connected SEI-film growth and lithium-plating mechanisms that reduce negative-electrode porosity and capacity state of health;",
+      "Across the declared range, keep voltage, current, temperature, state of charge, electrode potentials, porosity, film thickness, and all capacity-loss terms finite and physically consistent."
+    ],
+    "physical_paths": [
+      "Ageing must evolve through physically connected SEI-film growth and lithium-plating mechanisms that reduce negative-electrode porosity and capacity state of health; prescribing degradation traces is not valid.",
+      "Build a physically causal, thermally coupled lithium-ion cell cycling model with electrochemical transport and ageing.",
+      "Ageing must evolve through physically connected SEI-film growth and lithium-plating mechanisms that reduce negative-electrode porosity and capacity state of health;",
+      "Across the declared range, keep voltage, current, temperature, state of charge, electrode potentials, porosity, film thickness, and all capacity-loss terms finite and physically consistent."
+    ],
+    "functional_paths": [
+      "Build a physically causal, thermally coupled lithium-ion cell cycling model with electrochemical transport and ageing."
+    ],
+    "information_paths": [
+      "Vmax, Vmin, Ic, Id, ambient_temperature_K, initial_temperature_K, number_of_cycles -> F90-XBATT-04 plant/control path -> electrical_state, electrochemical_state, ageing_state"
+    ],
+    "modes_and_events": [
+      "Build a physically causal, thermally coupled lithium-ion cell cycling model with electrochemical transport and ageing.",
+      "A real event-driven cycler must perform constant-current charging, constant-voltage charging with current taper, a charge rest, constant-current discharge, and a discharge rest before repeating."
+    ],
+    "interfaces": [
+      {
+        "name": "Vmax",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "V"
+        ],
+        "range_or_shape": "Read Vmax, Vmin, Ic, Id, ambient_temperature_K, initial_temperature_K, and number_of_cycles from the MATLAB base workspace. Support Vmax from 4.1 to 4.2 V, Vmin from 2.5 to 2.7 V, Ic from 1.25 to 2.5 A, Id from -5 to -3.75 A, ambient and initial temperature from 283 to 313 K, and 50 to 100 completed cycles.",
+        "source": "tasks/XBATT-04/public_spec.json"
+      },
+      {
+        "name": "Vmin",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "V"
+        ],
+        "range_or_shape": "Read Vmax, Vmin, Ic, Id, ambient_temperature_K, initial_temperature_K, and number_of_cycles from the MATLAB base workspace. Support Vmax from 4.1 to 4.2 V, Vmin from 2.5 to 2.7 V, Ic from 1.25 to 2.5 A, Id from -5 to -3.75 A, ambient and initial temperature from 283 to 313 K, and 50 to 100 completed cycles.",
+        "source": "tasks/XBATT-04/public_spec.json"
+      },
+      {
+        "name": "Ic",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "Read Vmax, Vmin, Ic, Id, ambient_temperature_K, initial_temperature_K, and number_of_cycles from the MATLAB base workspace. Support Vmax from 4.1 to 4.2 V, Vmin from 2.5 to 2.7 V, Ic from 1.25 to 2.5 A, Id from -5 to -3.75 A, ambient and initial temperature from 283 to 313 K, and 50 to 100 completed cycles.",
+        "source": "tasks/XBATT-04/public_spec.json"
+      },
+      {
+        "name": "Id",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "Read Vmax, Vmin, Ic, Id, ambient_temperature_K, initial_temperature_K, and number_of_cycles from the MATLAB base workspace. Support Vmax from 4.1 to 4.2 V, Vmin from 2.5 to 2.7 V, Ic from 1.25 to 2.5 A, Id from -5 to -3.75 A, ambient and initial temperature from 283 to 313 K, and 50 to 100 completed cycles.",
+        "source": "tasks/XBATT-04/public_spec.json"
+      },
+      {
+        "name": "ambient_temperature_K",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "K"
+        ],
+        "range_or_shape": "Read Vmax, Vmin, Ic, Id, ambient_temperature_K, initial_temperature_K, and number_of_cycles from the MATLAB base workspace.",
+        "source": "tasks/XBATT-04/public_spec.json"
+      },
+      {
+        "name": "initial_temperature_K",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "K"
+        ],
+        "range_or_shape": "Read Vmax, Vmin, Ic, Id, ambient_temperature_K, initial_temperature_K, and number_of_cycles from the MATLAB base workspace.",
+        "source": "tasks/XBATT-04/public_spec.json"
+      },
+      {
+        "name": "number_of_cycles",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read Vmax, Vmin, Ic, Id, ambient_temperature_K, initial_temperature_K, and number_of_cycles from the MATLAB base workspace.",
+        "source": "tasks/XBATT-04/public_spec.json"
+      },
+      {
+        "name": "electrical_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "V",
+          "A"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named electrical_state, electrochemical_state, and ageing_state. electrical_state has 4 channels in this order: terminal voltage (V), terminal current (A), cell temperature (K), and completed cycle count.",
+        "source": "tasks/XBATT-04/public_spec.json"
+      },
+      {
+        "name": "electrochemical_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "V"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named electrical_state, electrochemical_state, and ageing_state. electrochemical_state has 4 channels in this order: surface SOC, positive-collector potential (V), open-circuit voltage (V), and negative-collector potential (V).",
+        "source": "tasks/XBATT-04/public_spec.json"
+      },
+      {
+        "name": "ageing_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "um"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named electrical_state, electrochemical_state, and ageing_state. ageing_state has 5 channels in this order: average film thickness (um), negative-electrode porosity, capacity SOH, SEI capacity loss, and lithium-plating capacity loss.",
+        "source": "tasks/XBATT-04/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Ageing must evolve through physically connected SEI-film growth and lithium-plating mechanisms that reduce negative-electrode porosity and capacity state of health;",
+      "The voltage limits must terminate the corresponding charge and discharge phases, and the completed-cycle count must terminate the requested run.",
+      "Across the declared range, keep voltage, current, temperature, state of charge, electrode potentials, porosity, film thickness, and all capacity-loss terms finite and physically consistent."
+    ],
+    "feedback_and_control_causality": [
+      "Build a physically causal, thermally coupled lithium-ion cell cycling model with electrochemical transport and ageing.",
+      "Temperature, current rate, and voltage limits must causally affect the same electrochemical and ageing path."
+    ],
+    "signal_sources": [
+      "Vmax is read from the public MATLAB base-workspace input contract.",
+      "Vmin is read from the public MATLAB base-workspace input contract.",
+      "Ic is read from the public MATLAB base-workspace input contract.",
+      "Id is read from the public MATLAB base-workspace input contract.",
+      "ambient_temperature_K is read from the public MATLAB base-workspace input contract.",
+      "initial_temperature_K is read from the public MATLAB base-workspace input contract.",
+      "number_of_cycles is read from the public MATLAB base-workspace input contract.",
+      "electrical_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "electrochemical_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "ageing_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "Vmax: Read Vmax, Vmin, Ic, Id, ambient_temperature_K, initial_temperature_K, and number_of_cycles from the MATLAB base workspace. Support Vmax from 4.1 to 4.2 V, Vmin from 2.5 to 2.7 V, Ic from 1.25 to 2.5 A, Id from -5 to -3.75 A, ambient and initial temperature from 283 to 313 K, and 50 to 100 completed cycles.",
+      "Vmin: Read Vmax, Vmin, Ic, Id, ambient_temperature_K, initial_temperature_K, and number_of_cycles from the MATLAB base workspace. Support Vmax from 4.1 to 4.2 V, Vmin from 2.5 to 2.7 V, Ic from 1.25 to 2.5 A, Id from -5 to -3.75 A, ambient and initial temperature from 283 to 313 K, and 50 to 100 completed cycles.",
+      "Ic: Read Vmax, Vmin, Ic, Id, ambient_temperature_K, initial_temperature_K, and number_of_cycles from the MATLAB base workspace. Support Vmax from 4.1 to 4.2 V, Vmin from 2.5 to 2.7 V, Ic from 1.25 to 2.5 A, Id from -5 to -3.75 A, ambient and initial temperature from 283 to 313 K, and 50 to 100 completed cycles.",
+      "Id: Read Vmax, Vmin, Ic, Id, ambient_temperature_K, initial_temperature_K, and number_of_cycles from the MATLAB base workspace. Support Vmax from 4.1 to 4.2 V, Vmin from 2.5 to 2.7 V, Ic from 1.25 to 2.5 A, Id from -5 to -3.75 A, ambient and initial temperature from 283 to 313 K, and 50 to 100 completed cycles.",
+      "ambient_temperature_K: Read Vmax, Vmin, Ic, Id, ambient_temperature_K, initial_temperature_K, and number_of_cycles from the MATLAB base workspace.",
+      "initial_temperature_K: Read Vmax, Vmin, Ic, Id, ambient_temperature_K, initial_temperature_K, and number_of_cycles from the MATLAB base workspace.",
+      "number_of_cycles: Read Vmax, Vmin, Ic, Id, ambient_temperature_K, initial_temperature_K, and number_of_cycles from the MATLAB base workspace."
+    ],
+    "disturbances": [
+      "F90-XBATT-04 operating variation is supplied through Vmax, Vmin, Ic, Id, ambient_temperature_K, initial_temperature_K, number_of_cycles."
+    ],
+    "dynamic_processes": [
+      "Log complete-run MATLAB Timeseries named electrical_state, electrochemical_state, and ageing_state."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XBATT-04: prescribing electrical_state directly would bypass the system path described by: Ageing must evolve through physically connected SEI-film growth and lithium-plating mechanisms that reduce negative-electrode porosity and capacity state of health; prescribing degradation traces is not valid.",
+      "F90-XBATT-04: replaying a fixed electrical_state trace would ignore causal variation in Vmax."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XBATT-04/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XBATT-04/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XBATT-04/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

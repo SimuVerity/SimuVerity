@@ -1,0 +1,8 @@
+{
+  "schema": "simuverity.public-spec.v1",
+  "task_id": "XELEC-27",
+  "collection": "XELEC",
+  "runtime_alias": "XELEC-27",
+  "candidate_filename": "cand_XELEC27.slx",
+  "prompt": "Build a three-phase three-level neutral-point-clamped inverter using Simscape Specialized Power Systems. A split 600 V DC bus must feed a physically connected three-leg NPC power stage with clamping paths and a balanced three-phase load. Read Iref_amp from a base-workspace variable; it is the peak amplitude of the balanced three-phase current command, nominally 5 A with an operating envelope of 4 to 6 A. Closed-loop current regulation must use physically measured output current so the measured balanced 50 Hz currents track the command throughout this envelope. The closed-loop current regulation must establish promptly after startup. The measured bridge-side line voltages must remain a 50 Hz multilevel three-phase set near 1200 V peak-to-peak. Log complete-run physical MATLAB Timeseries Vout and Iabc, each containing exactly the three measured phases in consistent phase order.\n\nSubmission filename contract: create, edit, and save the final self-contained Simulink model as cand_XELEC27.slx in the assigned submission directory; keep the latest usable state at that exact path throughout the run."
+}

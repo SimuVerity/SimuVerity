@@ -1,0 +1,15 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XTHERM-12",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/Models/BEV_Thermal_Management.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 585,
+  "retained_bytes": 16786114,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ]
+}

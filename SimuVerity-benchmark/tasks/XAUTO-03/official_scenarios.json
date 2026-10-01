@@ -1,0 +1,116 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XAUTO-03",
+  "scenarios": [
+    {
+      "id": "nominal_dynamic_load",
+      "class": "nominal_dynamic_load",
+      "alternator_selection": 1,
+      "driver_group": 1
+    },
+    {
+      "id": "accessory_profile_2",
+      "class": "accessory_load_boundary",
+      "alternator_selection": 1,
+      "driver_group": 2
+    },
+    {
+      "id": "accessory_profile_3",
+      "class": "combined_capacity_load_boundary",
+      "alternator_selection": 2,
+      "driver_group": 3
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "stop_time_s": 90.0,
+      "smoke_time_s": 5.0,
+      "evaluation_adapter": "In-memory To Workspace taps on existing measured physical signals; the pinned golden model is never saved."
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "preferred_reference_target_raw": 90.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.3,
+          "meaning": "nominal battery and load supply voltage regulation"
+        },
+        "Q": {
+          "weight": 0.15,
+          "meaning": "complete finite physical measurements and dynamic load evidence"
+        },
+        "M": {
+          "weight": 0.3,
+          "meaning": "real voltage-feedback alternator, battery, and load causal path"
+        },
+        "R": {
+          "weight": 0.1,
+          "meaning": "worst private operating-variant voltage retention"
+        },
+        "D": {
+          "weight": 0.15,
+          "meaning": "dynamic voltage recovery during native accessory-load changes"
+        }
+      },
+      "within_group": "dedicated weighted arithmetic mean",
+      "across_groups": "weighted geometric mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum",
+      "policy_id": "simuverity-101-v1:xauto-03:scoring",
+      "fixed_reference_raw_score": 98.87103828626496
+    },
+    "shortcut_sanity_contract": [
+      "qualification_or_required_output_missing",
+      "disconnected_voltage_feedback",
+      "missing_battery_or_alternator_physical_bus_path",
+      "prescribed_voltage_or_current_output",
+      "constant_load_replayed_for_all_private_operating_variants"
+    ]
+  },
+  "simulation": {
+    "stop_time_s": 90.0,
+    "smoke_time_s": 5.0,
+    "evaluation_adapter": "In-memory To Workspace taps on existing measured physical signals; the pinned golden model is never saved."
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "preferred_reference_target_raw": 90.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.3,
+        "meaning": "nominal battery and load supply voltage regulation"
+      },
+      "Q": {
+        "weight": 0.15,
+        "meaning": "complete finite physical measurements and dynamic load evidence"
+      },
+      "M": {
+        "weight": 0.3,
+        "meaning": "real voltage-feedback alternator, battery, and load causal path"
+      },
+      "R": {
+        "weight": 0.1,
+        "meaning": "worst private operating-variant voltage retention"
+      },
+      "D": {
+        "weight": 0.15,
+        "meaning": "dynamic voltage recovery during native accessory-load changes"
+      }
+    },
+    "within_group": "dedicated weighted arithmetic mean",
+    "across_groups": "weighted geometric mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum",
+    "policy_id": "simuverity-101-v1:xauto-03:scoring",
+    "fixed_reference_raw_score": 98.87103828626496
+  },
+  "shortcut_sanity_contract": [
+    "qualification_or_required_output_missing",
+    "disconnected_voltage_feedback",
+    "missing_battery_or_alternator_physical_bus_path",
+    "prescribed_voltage_or_current_output",
+    "constant_load_replayed_for_all_private_operating_variants"
+  ]
+}

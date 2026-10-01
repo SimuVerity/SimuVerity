@@ -1,0 +1,73 @@
+{
+  "schema": "simuverity.task.v1",
+  "release": "simuverity-101-v1",
+  "task_id": "XAUTO-09",
+  "ordinal": 24,
+  "collection": "XAUTO",
+  "runtime_alias": "XAUTO-09",
+  "required_model_file": "cand_XAUTO09.slx",
+  "evaluation_policy_id": "simuverity-101-v1:xauto-09:scoring",
+  "candidate_closure": {
+    "public_input_names": [
+      "lane_following_input"
+    ],
+    "nominal_provider": "simuverity_public_nominal_inputs"
+  },
+  "public_spec": "public_spec.json",
+  "official_scenarios": "official_scenarios.json",
+  "extractor": {
+    "kind": "matlab_function",
+    "path": "extractor/run.m",
+    "entrypoint": "run",
+    "implementation": "vendor/scripts/formal90/tasks/f90_xauto09/f90_xauto09_extract_candidate_evidence.m",
+    "closure_manifest": "extractor/manifest.json"
+  },
+  "scorer": {
+    "kind": "python_function",
+    "path": "scorer.py",
+    "entrypoint": "score",
+    "closure_manifest": "scorer/manifest.json",
+    "offline_only": true
+  },
+  "reference": {
+    "materialization": "local_importer",
+    "recipe": "reference/importer_recipe.json",
+    "entrypoint": "LFRefMdl.slx",
+    "expected_valid_scenarios": 5,
+    "score_tolerance": 1e-12,
+    "expected_score": 92.930168737,
+    "expected_score_basis": "reference_replay",
+    "scenario_contract": {
+      "expected_ids": [
+        "nominal_target_discrimination",
+        "lower_driver_set_speed",
+        "longer_time_gap",
+        "stop_and_go",
+        "curved_cut_in_out"
+      ],
+      "nominal_scenario_id": null,
+      "nominal_materialization": "authoritative_scenario_set"
+    },
+    "score_tolerance_basis": "source_authority_numeric_precision",
+    "clean_replay_setup": {
+      "phase": "after_load_before_update",
+      "path": "tasks/XAUTO-09/reference/clean_replay_setup/f90_xauto09_reference_clean_replay_setup.m",
+      "entrypoint": "f90_xauto09_reference_clean_replay_setup"
+    },
+    "runtime_manifest": "reference/runtime_manifest.json"
+  },
+  "applicable_groups": [
+    "G",
+    "A",
+    "Q",
+    "M",
+    "C",
+    "R",
+    "D"
+  ],
+  "release_license_status": "MATHWORKS_LOCAL_IMPORT_NO_REDISTRIBUTION",
+  "system_profile": {
+    "path": "system_profile.json",
+    "schema": "simuverity.system-profile.v1"
+  }
+}

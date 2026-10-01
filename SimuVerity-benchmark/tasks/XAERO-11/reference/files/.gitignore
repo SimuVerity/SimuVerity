@@ -1,0 +1,27 @@
+# ===============================
+# Operating system
+# ===============================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ===============================
+# MATLAB / Simulink
+# ===============================
+*.asv
+*.m~
+*.autosave
+
+# Simulink generated/cache
+slprj/
+sccprj/
+*.slxc
+
+# MATLAB binaries
+*.mex*
+*.p
+
+# ===============================
+# Optional: ignore large outputs
+# ===============================
+# results/raw/

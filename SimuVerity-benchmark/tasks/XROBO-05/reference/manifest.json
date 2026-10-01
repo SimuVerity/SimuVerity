@@ -1,0 +1,1750 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XROBO-05",
+  "file_count": 413,
+  "files": [
+    {
+      "path": "reference/files/MSS/.gitignore",
+      "size_bytes": 193
+    },
+    {
+      "path": "reference/files/MSS/Contents.m",
+      "size_bytes": 1388
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/AUV/models/DSRV.m",
+      "size_bytes": 2578
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/AUV/models/npsauv.m",
+      "size_bytes": 11933
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/AUV/models/remus100.m",
+      "size_bytes": 10522
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/AUV/SIMdsrv.m",
+      "size_bytes": 4677
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/AUV/SIMnpsauv.m",
+      "size_bytes": 20354
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/AUV/SIMremus100.m",
+      "size_bytes": 30853
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/Contents.m",
+      "size_bytes": 3285
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/models/clarke83.m",
+      "size_bytes": 3848
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/models/container.m",
+      "size_bytes": 6609
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/models/frigate.m",
+      "size_bytes": 2259
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/models/Lcontainer.m",
+      "size_bytes": 3175
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/models/mariner.m",
+      "size_bytes": 4517
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/models/navalvessel.m",
+      "size_bytes": 6605
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/models/navalVesselRAOs/forceRAO_navalvessel.m",
+      "size_bytes": 358879
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/models/navalVesselRAOs/forceRAO_navalvessel.mat",
+      "size_bytes": 202109
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/models/osv.m",
+      "size_bytes": 11556
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/models/semisubModels/data_rig.m",
+      "size_bytes": 3987
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/models/semisubModels/rig",
+      "size_bytes": 1279
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/models/semisubModels/rig.m",
+      "size_bytes": 9564
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/models/semisubModels/rig.mat",
+      "size_bytes": 611
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/models/shipModels/dataCaptPlaush.m",
+      "size_bytes": 3114
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/models/shipModels/dataContainer.m",
+      "size_bytes": 2480
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/models/shipModels/dataPretoria.m",
+      "size_bytes": 3414
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/models/shipModels/dataSpirit.m",
+      "size_bytes": 3536
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/models/shipModels/misc/shipsOrient.m",
+      "size_bytes": 1081
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/models/supply.m",
+      "size_bytes": 2825
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/models/tanker.m",
+      "size_bytes": 4880
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/models/utils/displayVehicleData.m",
+      "size_bytes": 1977
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/models/zeefakkel.m",
+      "size_bytes": 2308
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/SIMclarke83.m",
+      "size_bytes": 4197
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/SIMcontainer.m",
+      "size_bytes": 5193
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/SIMfrigate.m",
+      "size_bytes": 4364
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/SIMmariner.m",
+      "size_bytes": 11778
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/SIMnavalvessel.m",
+      "size_bytes": 4257
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/SIMosv.m",
+      "size_bytes": 15210
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/SIMsemisub.m",
+      "size_bytes": 6569
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/SIMsupply.m",
+      "size_bytes": 7396
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/SIMtanker.m",
+      "size_bytes": 4173
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/SHIP/SIMzeefakkel.m",
+      "size_bytes": 4443
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/USV/models/figs/SIMremus100.jpg",
+      "size_bytes": 247643
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/USV/models/otter.m",
+      "size_bytes": 9746
+    },
+    {
+      "path": "reference/files/MSS/CRAFT/USV/SIMotter.m",
+      "size_bytes": 14973
+    },
+    {
+      "path": "reference/files/MSS/documentation/Configuration guide for ShipX and Wamit vessels models/README.txt",
+      "size_bytes": 411
+    },
+    {
+      "path": "reference/files/MSS/documentation/FDI Identification of seakeeping models from frequency response data/README.tex",
+      "size_bytes": 566
+    },
+    {
+      "path": "reference/files/MSS/documentation/Tutoiral on modelling and simulation of marine craft/README.tex",
+      "size_bytes": 922
+    },
+    {
+      "path": "reference/files/MSS/FDI/Demo_FDIRadMod_NA.m",
+      "size_bytes": 1008
+    },
+    {
+      "path": "reference/files/MSS/FDI/Demo_FDIRadMod_WA.m",
+      "size_bytes": 1018
+    },
+    {
+      "path": "reference/files/MSS/FDI/EditAB.m",
+      "size_bytes": 4339
+    },
+    {
+      "path": "reference/files/MSS/FDI/FDIRadMod.m",
+      "size_bytes": 13714
+    },
+    {
+      "path": "reference/files/MSS/FDI/fit_siso_fresp.m",
+      "size_bytes": 2185
+    },
+    {
+      "path": "reference/files/MSS/FDI/fpso.mat",
+      "size_bytes": 453566
+    },
+    {
+      "path": "reference/files/MSS/FDI/ident_retardation_FD.m",
+      "size_bytes": 3457
+    },
+    {
+      "path": "reference/files/MSS/FDI/ident_retardation_FDna.m",
+      "size_bytes": 3249
+    },
+    {
+      "path": "reference/files/MSS/GNC/acc2rollpitch.m",
+      "size_bytes": 1446
+    },
+    {
+      "path": "reference/files/MSS/GNC/addIntermediateWaypoints.m",
+      "size_bytes": 1625
+    },
+    {
+      "path": "reference/files/MSS/GNC/allocPseudoinverse.m",
+      "size_bytes": 2278
+    },
+    {
+      "path": "reference/files/MSS/GNC/ALOS3D.m",
+      "size_bytes": 7014
+    },
+    {
+      "path": "reference/files/MSS/GNC/ALOSpsi.m",
+      "size_bytes": 5908
+    },
+    {
+      "path": "reference/files/MSS/GNC/ALOSpsiHermite.m",
+      "size_bytes": 4581
+    },
+    {
+      "path": "reference/files/MSS/GNC/crosstrack.m",
+      "size_bytes": 2914
+    },
+    {
+      "path": "reference/files/MSS/GNC/crosstrackWpt.m",
+      "size_bytes": 1402
+    },
+    {
+      "path": "reference/files/MSS/GNC/crosstrackWpt3D.m",
+      "size_bytes": 1485
+    },
+    {
+      "path": "reference/files/MSS/GNC/EKF_5states.m",
+      "size_bytes": 5890
+    },
+    {
+      "path": "reference/files/MSS/GNC/getPathSignals.m",
+      "size_bytes": 3583
+    },
+    {
+      "path": "reference/files/MSS/GNC/hermiteSpline.m",
+      "size_bytes": 4174
+    },
+    {
+      "path": "reference/files/MSS/GNC/hybridPath.m",
+      "size_bytes": 4772
+    },
+    {
+      "path": "reference/files/MSS/GNC/ILOSpsi.m",
+      "size_bytes": 5163
+    },
+    {
+      "path": "reference/files/MSS/GNC/integralSMCheading.m",
+      "size_bytes": 2429
+    },
+    {
+      "path": "reference/files/MSS/GNC/LOSchi.m",
+      "size_bytes": 4156
+    },
+    {
+      "path": "reference/files/MSS/GNC/LOSobserver.m",
+      "size_bytes": 2520
+    },
+    {
+      "path": "reference/files/MSS/GNC/lqtracker.m",
+      "size_bytes": 408
+    },
+    {
+      "path": "reference/files/MSS/GNC/nomoto.m",
+      "size_bytes": 972
+    },
+    {
+      "path": "reference/files/MSS/GNC/obsolete/rad2pipi.m",
+      "size_bytes": 181
+    },
+    {
+      "path": "reference/files/MSS/GNC/obsolete/rand_phases.m",
+      "size_bytes": 361
+    },
+    {
+      "path": "reference/files/MSS/GNC/obsolete/ucalloc.m",
+      "size_bytes": 384
+    },
+    {
+      "path": "reference/files/MSS/GNC/obsolete/wavespec.m",
+      "size_bytes": 476
+    },
+    {
+      "path": "reference/files/MSS/GNC/obsolete/ww2we.m",
+      "size_bytes": 197
+    },
+    {
+      "path": "reference/files/MSS/GNC/order3.m",
+      "size_bytes": 7482
+    },
+    {
+      "path": "reference/files/MSS/GNC/order5.m",
+      "size_bytes": 8941
+    },
+    {
+      "path": "reference/files/MSS/GNC/PIDnonlinearMIMO.m",
+      "size_bytes": 2873
+    },
+    {
+      "path": "reference/files/MSS/GNC/projectToPath.m",
+      "size_bytes": 4426
+    },
+    {
+      "path": "reference/files/MSS/GNC/refModel.m",
+      "size_bytes": 1315
+    },
+    {
+      "path": "reference/files/MSS/GNC/refModelPolyExp.m",
+      "size_bytes": 2351
+    },
+    {
+      "path": "reference/files/MSS/GNC/sat.m",
+      "size_bytes": 1047
+    },
+    {
+      "path": "reference/files/MSS/GNC/satlim.m",
+      "size_bytes": 979
+    },
+    {
+      "path": "reference/files/MSS/GNC/staticRollPitchYaw.m",
+      "size_bytes": 3509
+    },
+    {
+      "path": "reference/files/MSS/GNC/utils/controlMethod.m",
+      "size_bytes": 2292
+    },
+    {
+      "path": "reference/files/MSS/GNC/utils/conversion.m",
+      "size_bytes": 437
+    },
+    {
+      "path": "reference/files/MSS/GNC/utils/displayVesselStructure.m",
+      "size_bytes": 1323
+    },
+    {
+      "path": "reference/files/MSS/GNC/utils/isoctave.m",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/MSS/GNC/utils/rangeCheck.m",
+      "size_bytes": 959
+    },
+    {
+      "path": "reference/files/MSS/How to install MSS for GNU Octave.md",
+      "size_bytes": 1310
+    },
+    {
+      "path": "reference/files/MSS/How to install MSS for MATLAB.md",
+      "size_bytes": 1209
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/computeManeuveringModel.m",
+      "size_bytes": 3804
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/cylinderDrag.m",
+      "size_bytes": 2793
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/DPperiods.m",
+      "size_bytes": 3005
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/gdf/gdf2body.m",
+      "size_bytes": 4787
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/gdf/gdf_edit.m",
+      "size_bytes": 2599
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/gdf/gdf_waterline.m",
+      "size_bytes": 4755
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/gdf/plot_panel.m",
+      "size_bytes": 1078
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/gdf/plot_tecplot.m",
+      "size_bytes": 2520
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/gdf/plot_wamitgdf.m",
+      "size_bytes": 7072
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/gdf/plot_wamitidf.m",
+      "size_bytes": 2481
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/Hoerner.m",
+      "size_bytes": 1207
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/loadcond.m",
+      "size_bytes": 2280
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/plotAB_eq.m",
+      "size_bytes": 3046
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/plotABC.m",
+      "size_bytes": 3482
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/plotBv.m",
+      "size_bytes": 1654
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/plotTF.m",
+      "size_bytes": 6189
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/plotWD.m",
+      "size_bytes": 2268
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/shipPeriods.m",
+      "size_bytes": 6096
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/utils/ABCtransform.m",
+      "size_bytes": 2802
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/utils/fit_siso_fresp.m",
+      "size_bytes": 2436
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/utils/freqs.m",
+      "size_bytes": 3839
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/utils/imp2svd.m",
+      "size_bytes": 533
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/utils/invfreqs.m",
+      "size_bytes": 6469
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/utils/mss_interp2.m",
+      "size_bytes": 21208
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/utils/natfrequency.m",
+      "size_bytes": 5562
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/utils/plotting/plot_speedterms.m",
+      "size_bytes": 6320
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/utils/plotting/plotAterms.m",
+      "size_bytes": 1567
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/utils/readdata/read_veres_ABC.m",
+      "size_bytes": 9012
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/utils/readdata/read_veres_TF.m",
+      "size_bytes": 9267
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/utils/readdata/read_veres_WD.m",
+      "size_bytes": 7026
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/utils/retardation.m",
+      "size_bytes": 1064
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/utils/retardation2ss.m",
+      "size_bytes": 1182
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/utils/viscous.m",
+      "size_bytes": 3938
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/veres2vessel.m",
+      "size_bytes": 6563
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessel2ss.m",
+      "size_bytes": 7535
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_shipx/s175/input.hyd",
+      "size_bytes": 1702
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_shipx/s175/input.out",
+      "size_bytes": 8932094
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_shipx/s175/input.re1",
+      "size_bytes": 819642
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_shipx/s175/input.re2",
+      "size_bytes": 194402
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_shipx/s175/input.re7",
+      "size_bytes": 12297764
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_shipx/s175/input.re8",
+      "size_bytes": 819642
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_shipx/s175/input.re9",
+      "size_bytes": 119467
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_shipx/s175/input.str",
+      "size_bytes": 63755
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_shipx/s175/input.swy",
+      "size_bytes": 928966
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_shipx/s175/s175.mat",
+      "size_bytes": 1168030
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_shipx/s175/S175.shipx_ship",
+      "size_bytes": 2617026
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_shipx/s175/s175ABC.mat",
+      "size_bytes": 1336
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_shipx/supply/input.hyd",
+      "size_bytes": 1704
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_shipx/supply/input.out",
+      "size_bytes": 1799268
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_shipx/supply/input.re1",
+      "size_bytes": 164442
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_shipx/supply/input.re2",
+      "size_bytes": 39362
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_shipx/supply/input.re7",
+      "size_bytes": 2460548
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_shipx/supply/input.re8",
+      "size_bytes": 164442
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_shipx/supply/input.re9",
+      "size_bytes": 24407
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_shipx/supply/input.str",
+      "size_bytes": 63755
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_shipx/supply/input.swy",
+      "size_bytes": 186334
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_shipx/supply/MSS supply vessel description.doc",
+      "size_bytes": 70144
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_shipx/supply/supply.mat",
+      "size_bytes": 250118
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_shipx/supply/Supply.shipx_ship",
+      "size_bytes": 631533
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_shipx/supply/supplyABC.mat",
+      "size_bytes": 1474
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/fpso/config_parameters.m",
+      "size_bytes": 2566
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/fpso/fnames.wam",
+      "size_bytes": 38
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/fpso/fpso.1",
+      "size_bytes": 59976
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/fpso/fpso.3",
+      "size_bytes": 608304
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/fpso/fpso.4",
+      "size_bytes": 608304
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/fpso/fpso.9",
+      "size_bytes": 1051308
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/fpso/fpso.cfg",
+      "size_bytes": 150
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/fpso/fpso.frc",
+      "size_bytes": 127
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/fpso/fpso.gdf",
+      "size_bytes": 277
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/fpso/fpso.hst",
+      "size_bytes": 1044
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/fpso/fpso.mat",
+      "size_bytes": 426817
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/fpso/fpso.out",
+      "size_bytes": 1212234
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/fpso/fpso.pot",
+      "size_bytes": 550
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/fpso/fpso.spl",
+      "size_bytes": 314
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/fpso/fpso_low.gdf",
+      "size_bytes": 333847
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/fpso/fpso_pan.dat",
+      "size_bytes": 199226
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/fpso/fpso_pat.dat",
+      "size_bytes": 152116
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/fpso/fpsoABC.mat",
+      "size_bytes": 1754
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/fpso/run_fpso.m",
+      "size_bytes": 385
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/fpso/wamitlog.txt",
+      "size_bytes": 2157
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/semisub/config_parameters.m",
+      "size_bytes": 2498
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/semisub/fnames.wam",
+      "size_bytes": 50
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/semisub/semisub.1",
+      "size_bytes": 17080
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/semisub/semisub.3",
+      "size_bytes": 304152
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/semisub/semisub.4",
+      "size_bytes": 304152
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/semisub/semisub.9",
+      "size_bytes": 525654
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/semisub/semisub.cfg",
+      "size_bytes": 150
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/semisub/semisub.frc",
+      "size_bytes": 771
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/semisub/semisub.gdf",
+      "size_bytes": 231
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/semisub/semisub.hst",
+      "size_bytes": 1044
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/semisub/semisub.mat",
+      "size_bytes": 157021
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/semisub/semisub.out",
+      "size_bytes": 598240
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/semisub/semisub.png",
+      "size_bytes": 26941
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/semisub/semisub.pot",
+      "size_bytes": 370
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/semisub/semisub.spl",
+      "size_bytes": 453
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/semisub/semisub_low.gdf",
+      "size_bytes": 644047
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/semisub/semisub_pan.dat",
+      "size_bytes": 768844
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/semisub/semisub_pat.dat",
+      "size_bytes": 578592
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/semisub/semisubABC.mat",
+      "size_bytes": 1551
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/semisub/wamitlog.txt",
+      "size_bytes": 2371
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/tanker/config_parameters.m",
+      "size_bytes": 1483
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/tanker/fnames.wam",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/tanker/fort.1",
+      "size_bytes": 43
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/tanker/fort.30",
+      "size_bytes": 62160
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/tanker/fort.4",
+      "size_bytes": 135
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/tanker/tanker.1",
+      "size_bytes": 59976
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/tanker/tanker.3",
+      "size_bytes": 608304
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/tanker/tanker.4",
+      "size_bytes": 608304
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/tanker/tanker.9",
+      "size_bytes": 1051308
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/tanker/tanker.cfg",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/tanker/tanker.frc",
+      "size_bytes": 783
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/tanker/tanker.gdf",
+      "size_bytes": 290533
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/tanker/tanker.hst",
+      "size_bytes": 1044
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/tanker/tanker.idf",
+      "size_bytes": 862859
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/tanker/tanker.mat",
+      "size_bytes": 431185
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/tanker/tanker.out",
+      "size_bytes": 1211518
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/tanker/tanker.pot",
+      "size_bytes": 539
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/tanker/tanker_246m.3dm",
+      "size_bytes": 81350
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/tanker/tanker_252m.gdf",
+      "size_bytes": 289991
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/tanker/tanker_original_252m.3dm",
+      "size_bytes": 80185
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/tanker/tanker_original_252m.gdf",
+      "size_bytes": 289991
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/tanker/tankerABC.mat",
+      "size_bytes": 1553
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/vessels_wamit/tanker/wamitlog.txt",
+      "size_bytes": 2302
+    },
+    {
+      "path": "reference/files/MSS/HYDRO/wamit2vessel.m",
+      "size_bytes": 28414
+    },
+    {
+      "path": "reference/files/MSS/INS/functions/gravity.m",
+      "size_bytes": 388
+    },
+    {
+      "path": "reference/files/MSS/INS/functions/ins_ahrs.m",
+      "size_bytes": 4553
+    },
+    {
+      "path": "reference/files/MSS/INS/functions/ins_euler.m",
+      "size_bytes": 9766
+    },
+    {
+      "path": "reference/files/MSS/INS/functions/ins_heave.m",
+      "size_bytes": 3999
+    },
+    {
+      "path": "reference/files/MSS/INS/functions/ins_mekf.m",
+      "size_bytes": 9812
+    },
+    {
+      "path": "reference/files/MSS/INS/functions/ins_mekf_psi.m",
+      "size_bytes": 9023
+    },
+    {
+      "path": "reference/files/MSS/INS/functions/insSignal.m",
+      "size_bytes": 4312
+    },
+    {
+      "path": "reference/files/MSS/INS/functions/magneticField.m",
+      "size_bytes": 3532
+    },
+    {
+      "path": "reference/files/MSS/INS/functions/quatMEKF.m",
+      "size_bytes": 6940
+    },
+    {
+      "path": "reference/files/MSS/INS/functions/quatObserver.m",
+      "size_bytes": 6773
+    },
+    {
+      "path": "reference/files/MSS/INS/SIMaidedINSeuler.m",
+      "size_bytes": 22894
+    },
+    {
+      "path": "reference/files/MSS/INS/SIMaidedINSheave.m",
+      "size_bytes": 7252
+    },
+    {
+      "path": "reference/files/MSS/INS/SIMaidedINSquat.m",
+      "size_bytes": 17527
+    },
+    {
+      "path": "reference/files/MSS/INS/SIMquatMEKF.m",
+      "size_bytes": 8819
+    },
+    {
+      "path": "reference/files/MSS/INS/SIMquatObserver.m",
+      "size_bytes": 8962
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/environment/blendermann94.m",
+      "size_bytes": 3274
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/environment/encounter.m",
+      "size_bytes": 768
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/environment/hs2vw.m",
+      "size_bytes": 292
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/environment/isherwood72.m",
+      "size_bytes": 6675
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/environment/spheroidRAO.m",
+      "size_bytes": 6697
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/environment/torsetSpectrum.m",
+      "size_bytes": 8626
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/environment/vw2hs.m",
+      "size_bytes": 587
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/environment/waveDirectionalSpectrum.m",
+      "size_bytes": 6432
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/environment/waveForceRAO.m",
+      "size_bytes": 6248
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/environment/waveMotionRAO.m",
+      "size_bytes": 7425
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/environment/waveresponse345.m",
+      "size_bytes": 3573
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/environment/waveSpectrum.m",
+      "size_bytes": 9126
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/kinematics/ecef2llh.m",
+      "size_bytes": 1789
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/kinematics/euler2q.m",
+      "size_bytes": 822
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/kinematics/eulerang.m",
+      "size_bytes": 463
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/kinematics/flat2llh.m",
+      "size_bytes": 1278
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/kinematics/Hmtrx.m",
+      "size_bytes": 556
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/kinematics/llh2ecef.m",
+      "size_bytes": 641
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/kinematics/llh2flat.m",
+      "size_bytes": 1176
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/kinematics/q2euler.m",
+      "size_bytes": 568
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/kinematics/quatern.m",
+      "size_bytes": 417
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/kinematics/quatprod.m",
+      "size_bytes": 693
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/kinematics/quest.m",
+      "size_bytes": 1165
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/kinematics/quest6dof.m",
+      "size_bytes": 1920
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/kinematics/R2euler.m",
+      "size_bytes": 294
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/kinematics/Rll.m",
+      "size_bytes": 378
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/kinematics/Rquat.m",
+      "size_bytes": 414
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/kinematics/Rzyx.m",
+      "size_bytes": 524
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/kinematics/Smtrx.m",
+      "size_bytes": 398
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/kinematics/ssa.m",
+      "size_bytes": 1338
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/kinematics/Tquat.m",
+      "size_bytes": 1199
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/kinematics/Tzyx.m",
+      "size_bytes": 486
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/kinematics/vex.m",
+      "size_bytes": 462
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/maneuvering/animateShip.m",
+      "size_bytes": 3597
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/maneuvering/pullout.m",
+      "size_bytes": 1987
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/maneuvering/turncircle.m",
+      "size_bytes": 3584
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/maneuvering/utils/viking.png",
+      "size_bytes": 7218
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/maneuvering/zigzag.m",
+      "size_bytes": 2951
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/maneuvering/zigzag6dof.m",
+      "size_bytes": 3001
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/modeling/addedMassSurge.m",
+      "size_bytes": 1308
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/modeling/coeffLiftDrag.m",
+      "size_bytes": 3533
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/modeling/crossFlowDrag.m",
+      "size_bytes": 2077
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/modeling/Dmtrx.m",
+      "size_bytes": 2489
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/modeling/forceLiftDrag.m",
+      "size_bytes": 1248
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/modeling/forceSurgeDamping.m",
+      "size_bytes": 4416
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/modeling/GM_surfaced2submerged.m",
+      "size_bytes": 3265
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/modeling/Gmtrx.m",
+      "size_bytes": 1510
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/modeling/gRvect.m",
+      "size_bytes": 1319
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/modeling/gvect.m",
+      "size_bytes": 1167
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/modeling/imlay61.m",
+      "size_bytes": 2494
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/modeling/m2c.m",
+      "size_bytes": 2052
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/modeling/modalFromMDG.m",
+      "size_bytes": 2985
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/modeling/rbody.m",
+      "size_bytes": 1619
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/modeling/spheroid.m",
+      "size_bytes": 1872
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/modeling/thrConfig.m",
+      "size_bytes": 1802
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/modeling/utiles/WageningData.mat",
+      "size_bytes": 1588
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/modeling/utiles/WageningData.txt",
+      "size_bytes": 4089
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/modeling/vesselPeriods.m",
+      "size_bytes": 7475
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/modeling/wageningen.m",
+      "size_bytes": 1525
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/motionSickness/HMmsi.m",
+      "size_bytes": 1656
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/motionSickness/ISOmsi.m",
+      "size_bytes": 1574
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/numericalMethods/euler2.m",
+      "size_bytes": 351
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/numericalMethods/expm_squaresPade.m",
+      "size_bytes": 1982
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/numericalMethods/expm_taylor.m",
+      "size_bytes": 1399
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/numericalMethods/invQR.m",
+      "size_bytes": 1370
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/numericalMethods/rk4.m",
+      "size_bytes": 963
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/signalFilters/highPassFilter.m",
+      "size_bytes": 1345
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/signalFilters/lowPassFilter.m",
+      "size_bytes": 1338
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/signalFilters/makeLowPass.m",
+      "size_bytes": 1051
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/signalFilters/notchFilter.m",
+      "size_bytes": 2794
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/signalFilters/sawToothWave.m",
+      "size_bytes": 816
+    },
+    {
+      "path": "reference/files/MSS/LIBRARY/signalFilters/waveFreqObserver.m",
+      "size_bytes": 2245
+    },
+    {
+      "path": "reference/files/MSS/LICENSE",
+      "size_bytes": 1092
+    },
+    {
+      "path": "reference/files/MSS/MSS Quick Reference.md",
+      "size_bytes": 26766
+    },
+    {
+      "path": "reference/files/MSS/mssDemos/KinDemo.m",
+      "size_bytes": 2540
+    },
+    {
+      "path": "reference/files/MSS/mssDemos/ManDemo.m",
+      "size_bytes": 879
+    },
+    {
+      "path": "reference/files/MSS/mssDemos/StabDemo.m",
+      "size_bytes": 2192
+    },
+    {
+      "path": "reference/files/MSS/mssDemos/WaveDemo.m",
+      "size_bytes": 1637
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exAUVHydrostatics.m",
+      "size_bytes": 2846
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exBoxShapedShip.m",
+      "size_bytes": 2920
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exEKF.m",
+      "size_bytes": 3511
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exEKFparamterEstimation.m",
+      "size_bytes": 3539
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exFeedback.m",
+      "size_bytes": 1889
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exFFT.m",
+      "size_bytes": 1905
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exHermiteWaypoints.m",
+      "size_bytes": 4297
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exHybridPath.m",
+      "size_bytes": 1877
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exINS_AHRS.m",
+      "size_bytes": 58
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exINS_Euler.m",
+      "size_bytes": 59
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exINS_MEKF.m",
+      "size_bytes": 59
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exINSwaveFilter.m",
+      "size_bytes": 3460
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exIntWindup.m",
+      "size_bytes": 3358
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exKF.m",
+      "size_bytes": 3686
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exKT.m",
+      "size_bytes": 2064
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exLinspec.m",
+      "size_bytes": 2300
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exLQFinHor.m",
+      "size_bytes": 3284
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exLQR.m",
+      "size_bytes": 651
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exLQtrack.m",
+      "size_bytes": 592
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exManeuveringModel.m",
+      "size_bytes": 10380
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exMDS.m",
+      "size_bytes": 856
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exMSI.m",
+      "size_bytes": 1947
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exNomoto.m",
+      "size_bytes": 1821
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exObsCtr.m",
+      "size_bytes": 1546
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exOtter.m",
+      "size_bytes": 6865
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exPassiveObs.m",
+      "size_bytes": 1161
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exPathGen.m",
+      "size_bytes": 6775
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exPlotGM.m",
+      "size_bytes": 2513
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exPlotRAO.m",
+      "size_bytes": 1900
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exPullout.m",
+      "size_bytes": 1032
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exQuadProg.m",
+      "size_bytes": 2726
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exQuest.m",
+      "size_bytes": 2057
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exRefMod.m",
+      "size_bytes": 2288
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exResonance.m",
+      "size_bytes": 1800
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exRRD1.m",
+      "size_bytes": 2930
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exRRD2.m",
+      "size_bytes": 10921
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exRRD3.m",
+      "size_bytes": 1603
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exShipHydrostatics.m",
+      "size_bytes": 3872
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exSMC.m",
+      "size_bytes": 4894
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exSpline.m",
+      "size_bytes": 1350
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exSTA.m",
+      "size_bytes": 4524
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exTurnCircle.m",
+      "size_bytes": 1236
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exWageningen.m",
+      "size_bytes": 2841
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exWaveForceRAO.m",
+      "size_bytes": 12337
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exWaveFreqObserver.m",
+      "size_bytes": 2823
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exWaveMotionRAO.m",
+      "size_bytes": 10201
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exWindForce.m",
+      "size_bytes": 4340
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/exZigZag.m",
+      "size_bytes": 1840
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/python/exOptimalTrajectoryCasadi.py",
+      "size_bytes": 8632
+    },
+    {
+      "path": "reference/files/MSS/mssExamples/utils/displayMfileHeader.m",
+      "size_bytes": 1318
+    },
+    {
+      "path": "reference/files/MSS/mssHelp.m",
+      "size_bytes": 168
+    },
+    {
+      "path": "reference/files/MSS/mssPath.m",
+      "size_bytes": 2291
+    },
+    {
+      "path": "reference/files/MSS/README.md",
+      "size_bytes": 4460
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/figs/clarke.jpg",
+      "size_bytes": 51223
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/figs/compass.jpg",
+      "size_bytes": 111920
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/figs/container.jpg",
+      "size_bytes": 63667
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/figs/cs.jpg",
+      "size_bytes": 41862
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/figs/CSLspirit.jpg",
+      "size_bytes": 5981
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/figs/DSRV.jpg",
+      "size_bytes": 45248
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/figs/fpso.jpg",
+      "size_bytes": 65487
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/figs/frigate.jpg",
+      "size_bytes": 91758
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/figs/HanjinPretoria.jpg",
+      "size_bytes": 7652
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/figs/highspeed.jpg",
+      "size_bytes": 14004
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/figs/mariner.jpg",
+      "size_bytes": 166402
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/figs/mooring.jpg",
+      "size_bytes": 11413
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/figs/npsauv.png",
+      "size_bytes": 238445
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/figs/nvessel.jpg",
+      "size_bytes": 24075
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/figs/otter.jpg",
+      "size_bytes": 41697
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/figs/propeller.jpg",
+      "size_bytes": 4048
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/figs/remus100.jpg",
+      "size_bytes": 8651
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/figs/semisub.jpg",
+      "size_bytes": 81250
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/figs/supply.jpg",
+      "size_bytes": 50672
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/figs/tanker.jpg",
+      "size_bytes": 65280
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/figs/zeefakkel.jpg",
+      "size_bytes": 32473
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/init/initCS2.m",
+      "size_bytes": 2450
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/init/initIsherwood72.m",
+      "size_bytes": 5445
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/init/MSS_mask_page.m",
+      "size_bytes": 1697
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/init/Wave_callback.m",
+      "size_bytes": 4654
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/init/Wave_init.m",
+      "size_bytes": 15893
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/mssSimulink.slx",
+      "size_bytes": 379249
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/mssSimulinkDemos/demoAUVdepthHeadingControl.slx",
+      "size_bytes": 51809
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/mssSimulinkDemos/demoCS2passiveObserverDP.slx",
+      "size_bytes": 50794
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/mssSimulinkDemos/demoDPThrusterModels.slx",
+      "size_bytes": 53940
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/mssSimulinkDemos/demoDSRVdepthControl.slx",
+      "size_bytes": 74183
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/mssSimulinkDemos/demoKalmanWavefilterAutop.slx",
+      "size_bytes": 50533
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/mssSimulinkDemos/demoMarinerPathFollowingCourseControl.slx",
+      "size_bytes": 49210
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/mssSimulinkDemos/demoNavalVesselMano.slx",
+      "size_bytes": 47854
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/mssSimulinkDemos/demoNPSAUV.slx",
+      "size_bytes": 51723
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/mssSimulinkDemos/demoOtterUSVHeadingControl.slx",
+      "size_bytes": 50172
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/mssSimulinkDemos/demoOtterUSVPathFollowingCourseControl.slx",
+      "size_bytes": 55155
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/mssSimulinkDemos/demoOtterUSVPathFollowingHeadingControl.slx",
+      "size_bytes": 59247
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/mssSimulinkDemos/demoPanamaxContainerShip.slx",
+      "size_bytes": 65912
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/mssSimulinkDemos/demoPassiveWavefilterAutopilot1.slx",
+      "size_bytes": 51741
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/mssSimulinkDemos/demoPassiveWavefilterAutopilot2.slx",
+      "size_bytes": 40398
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/mssSimulinkDemos/demoS175WindCurrentAutopilot.slx",
+      "size_bytes": 84288
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/mssSimulinkDemos/demoSemisubDPsystem.slx",
+      "size_bytes": 51271
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/mssSimulinkDemos/demoWaveElevation.slx",
+      "size_bytes": 30576
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/mssSimulinkDemos/demoWaypointGuidance.slx",
+      "size_bytes": 64499
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/mssWamitShipXTemplates/DP_ForceRAO.slx",
+      "size_bytes": 66039
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/mssWamitShipXTemplates/DP_MotionRAO.slx",
+      "size_bytes": 63738
+    },
+    {
+      "path": "reference/files/MSS/SIMULINK/mssWamitShipXTemplates/MAN_ForceRAO.slx",
+      "size_bytes": 61869
+    }
+  ],
+  "entrypoint": "reference/files/MSS/SIMULINK/mssSimulinkDemos/demoAUVdepthHeadingControl.slx",
+  "expected_score": 91.54042911849665,
+  "expected_score_basis": "reference_replay",
+  "expected_valid_scenarios": 6,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "native_nominal_dual_step",
+      "moderate_heading_boundary",
+      "moderate_depth_boundary",
+      "current_magnitude_boundary",
+      "current_direction_boundary",
+      "reduced_propulsive_authority"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 53499805,
+  "excluded_files": [
+    {
+      "path": "reference/files/MSS/documentation/Tutoiral on modelling and simulation of marine craft/Powerpoint/M1_intro.pptx",
+      "size_bytes": 4165477,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/MSS/documentation/Tutoiral on modelling and simulation of marine craft/Powerpoint/M10_HydroSW.pptx",
+      "size_bytes": 1736486,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/MSS/documentation/Tutoiral on modelling and simulation of marine craft/Powerpoint/M2_Hydrodynamics.ppt",
+      "size_bytes": 1134592,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/MSS/documentation/Tutoiral on modelling and simulation of marine craft/Powerpoint/M3_RB_dynamics.ppt",
+      "size_bytes": 2611200,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/MSS/documentation/Tutoiral on modelling and simulation of marine craft/Powerpoint/M4_maneuvering models.pptx",
+      "size_bytes": 11616420,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/MSS/documentation/Tutoiral on modelling and simulation of marine craft/Powerpoint/M5_disturbances.ppt",
+      "size_bytes": 4296192,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/MSS/documentation/Tutoiral on modelling and simulation of marine craft/Powerpoint/M6_FD_Seakeeping models.ppt",
+      "size_bytes": 1132032,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/MSS/documentation/Tutoiral on modelling and simulation of marine craft/Powerpoint/M7_time_domain_models_short.ppt",
+      "size_bytes": 1858048,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/MSS/documentation/Tutoiral on modelling and simulation of marine craft/Powerpoint/M8_man_in_seaway.ppt",
+      "size_bytes": 1003520,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/MSS/documentation/Tutoiral on modelling and simulation of marine craft/Powerpoint/M9_models_n_motion_control.pptx",
+      "size_bytes": 6531195,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    }
+  ]
+}

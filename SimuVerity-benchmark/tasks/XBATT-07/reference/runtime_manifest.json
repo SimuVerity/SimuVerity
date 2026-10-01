@@ -1,0 +1,20 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XBATT-07",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/XBATT07_reference_harness.slx",
+  "clean_replay_setup": {
+    "phase": "before_load",
+    "path": "tasks/XBATT-07/reference/clean_replay_setup/f90_xbatt07_reference_clean_replay_setup.m",
+    "entrypoint": "f90_xbatt07_reference_clean_replay_setup"
+  },
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 3,
+  "retained_bytes": 36601047,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ]
+}

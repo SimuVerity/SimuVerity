@@ -1,0 +1,36 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XAUTO-13",
+  "file_count": 3,
+  "files": [
+    {
+      "path": "reference/files/ext_xauto_pmsm_param_est_reference.slx",
+      "size_bytes": 35387
+    },
+    {
+      "path": "reference/files/LICENSE",
+      "size_bytes": 1087
+    },
+    {
+      "path": "reference/files/README.md",
+      "size_bytes": 1453
+    }
+  ],
+  "entrypoint": "reference/files/ext_xauto_pmsm_param_est_reference.slx",
+  "expected_score": 100.0,
+  "expected_valid_scenarios": 4,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal_low_init",
+      "high_resistance_mechanical",
+      "strong_cross_coupling_high_init",
+      "low_speed_q_rich_excitation"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 37927,
+  "excluded_files": []
+}

@@ -1,0 +1,394 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XAUTO-01",
+  "scenarios": [
+    {
+      "id": "heavy_low_grip",
+      "values": {
+        "initial_speed": 28.4,
+        "brake_demand": 0.96,
+        "left_friction": 0.55,
+        "right_friction": 0.36,
+        "vehicle_mass": 1740,
+        "brake_onset": 0.92,
+        "friction_drop": 0.58,
+        "friction_event_time": 2.55
+      }
+    },
+    {
+      "id": "reverse_split",
+      "values": {
+        "initial_speed": 26.2,
+        "brake_demand": 0.91,
+        "left_friction": 0.41,
+        "right_friction": 0.91,
+        "vehicle_mass": 1685,
+        "brake_onset": 0.74,
+        "friction_drop": 0.37,
+        "friction_event_time": 3.35
+      }
+    },
+    {
+      "id": "fast_high_grip",
+      "values": {
+        "initial_speed": 29.6,
+        "brake_demand": 0.77,
+        "left_friction": 0.97,
+        "right_friction": 0.79,
+        "vehicle_mass": 1490,
+        "brake_onset": 1.12,
+        "friction_drop": 0.61,
+        "friction_event_time": 2.82
+      }
+    },
+    {
+      "id": "joint_interior",
+      "values": {
+        "initial_speed": 20.7,
+        "brake_demand": 0.68,
+        "left_friction": 0.73,
+        "right_friction": 0.48,
+        "vehicle_mass": 1575,
+        "brake_onset": 1.01,
+        "friction_drop": 0.31,
+        "friction_event_time": 3.72
+      }
+    },
+    {
+      "id": "brake_probe_low",
+      "values": {
+        "initial_speed": 24,
+        "brake_demand": 0.6,
+        "left_friction": 0.95,
+        "right_friction": 0.95,
+        "vehicle_mass": 1600,
+        "brake_onset": 0.75,
+        "friction_drop": 0.2,
+        "friction_event_time": 4
+      }
+    },
+    {
+      "id": "brake_probe_high",
+      "values": {
+        "initial_speed": 24,
+        "brake_demand": 0.95,
+        "left_friction": 0.95,
+        "right_friction": 0.95,
+        "vehicle_mass": 1600,
+        "brake_onset": 0.75,
+        "friction_drop": 0.2,
+        "friction_event_time": 4
+      }
+    }
+  ],
+  "contract": {
+    "application_domain": "automotive vehicle dynamics and braking",
+    "physical_domains": [
+      "longitudinal and yaw rigid-body dynamics",
+      "wheel rotational dynamics",
+      "nonlinear tire-road contact"
+    ],
+    "modeling_paradigm": "causal four-wheel vehicle dynamics with independently actuated brakes",
+    "capability_types": [
+      "plant construction",
+      "nonlinear tire contact",
+      "closed-loop wheel-slip regulation",
+      "disturbance recovery"
+    ],
+    "difficulty": {
+      "physical_coupling": 2,
+      "nonlinear_or_switching": 2,
+      "dynamic_or_fault": 2,
+      "joint_operating_points": 2,
+      "multichannel_or_units": 1,
+      "functional_and_safety_constraints": 1,
+      "total": 10
+    },
+    "sim": {
+      "step": 0.002,
+      "stop": 9.5
+    },
+    "public_inputs": [
+      {
+        "name": "initial_speed",
+        "nominal": 24,
+        "min": 15,
+        "max": 30,
+        "unit": "m/s",
+        "meaning": "vehicle longitudinal speed at release"
+      },
+      {
+        "name": "brake_demand",
+        "nominal": 0.82,
+        "min": 0.55,
+        "max": 1,
+        "unit": "1",
+        "meaning": "normalized emergency-braking demand"
+      },
+      {
+        "name": "left_friction",
+        "nominal": 0.88,
+        "min": 0.35,
+        "max": 1,
+        "unit": "1",
+        "meaning": "left-side tire-road friction coefficient"
+      },
+      {
+        "name": "right_friction",
+        "nominal": 0.55,
+        "min": 0.3,
+        "max": 1,
+        "unit": "1",
+        "meaning": "right-side tire-road friction coefficient"
+      },
+      {
+        "name": "vehicle_mass",
+        "nominal": 1600,
+        "min": 1450,
+        "max": 1760,
+        "unit": "kg",
+        "meaning": "total vehicle mass"
+      },
+      {
+        "name": "brake_onset",
+        "nominal": 0.85,
+        "min": 0.65,
+        "max": 1.25,
+        "unit": "s",
+        "meaning": "time at which braking demand is applied"
+      },
+      {
+        "name": "friction_drop",
+        "nominal": 0.45,
+        "min": 0.2,
+        "max": 0.65,
+        "unit": "1",
+        "meaning": "temporary fractional reduction of right-side friction"
+      },
+      {
+        "name": "friction_event_time",
+        "nominal": 3,
+        "min": 2.2,
+        "max": 4,
+        "unit": "s",
+        "meaning": "start time of a one-second right-side friction loss"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "vehicle_state",
+        "channels": 5,
+        "order": "[longitudinal position, lateral position, yaw angle, longitudinal speed, yaw rate]",
+        "unit": "[m,m,rad,m/s,rad/s]",
+        "physical_source": "measured vehicle-chassis states"
+      },
+      {
+        "name": "wheel_state",
+        "channels": 8,
+        "order": "[FL, FR, RL, RR wheel speed; FL, FR, RL, RR longitudinal slip]",
+        "unit": "[rad/s,rad/s,rad/s,rad/s,1,1,1,1]",
+        "physical_source": "actual wheel rotational states and contact slip"
+      },
+      {
+        "name": "tire_contact",
+        "channels": 10,
+        "order": "[FL, FR, RL, RR longitudinal force; FL, FR, RL, RR normal force; effective left and right friction]",
+        "unit": "[N,N,N,N,N,N,N,N,1,1]",
+        "physical_source": "forces and friction at the four physical tire-road interfaces"
+      },
+      {
+        "name": "brake_actuation",
+        "channels": 5,
+        "order": "[FL, FR, RL, RR brake torque; applied demand]",
+        "unit": "[N*m,N*m,N*m,N*m,1]",
+        "physical_source": "actual bounded wheel-brake torques and applied demand"
+      }
+    ],
+    "prompt": "Build a four-wheel road-vehicle emergency-braking model with chassis longitudinal and yaw dynamics, four finite-inertia wheels, nonlinear tire-road contact, and independently actuated wheel brakes. Brake torques must act through the wheel and tire contact dynamics to decelerate the chassis; directly prescribing vehicle motion is not a valid implementation.\n\nRead initial_speed, brake_demand, left_friction, right_friction, vehicle_mass, brake_onset, friction_drop, and friction_event_time from base-workspace variables. Their nominal values are 24 m/s, 0.82, 0.88, 0.55, 1600 kg, 0.85 s, 0.45, and 3.0 s. They operate respectively over 15--30 m/s, 0.55--1.00, 0.35--1.00, 0.30--1.00, 1450--1760 kg, 0.65--1.25 s, 0.20--0.65, and 2.2--4.0 s. Right-side friction is reduced by friction_drop for one second beginning at friction_event_time.\n\nAssume a clean MATLAB session in which only the declared public inputs are provided. Use a 0.31 m effective tire radius and a 1.62 m track width. A reduced planar longitudinal-yaw chassis model is intended: no independent lateral-velocity state is required, and chassis translational velocity is aligned with the reported yaw direction. Across the declared range, the vehicle must suppress sustained wheel lock, brake efficiently on split-friction surfaces, limit lateral and yaw departure, remain dynamically bounded, and recover wheel regulation after the temporary friction loss. The regulation method is not prescribed.\n\nLog Timeseries vehicle_state, wheel_state, tire_contact, and brake_actuation. vehicle_state must contain [longitudinal position in m, lateral position in m, yaw angle in rad, longitudinal speed in m/s, yaw rate in rad/s]. wheel_state must contain [FL, FR, RL, RR wheel angular speed in rad/s, followed by the corresponding four longitudinal slip ratios]. tire_contact must contain [four longitudinal forces in N, four normal forces in N, effective left and right friction]. brake_actuation must contain the four actual wheel-brake torques in N*m followed by applied demand. Logged measurements must come from the causal vehicle, wheel, brake, and contact simulation rather than from commands or precomputed trajectories.\n\nWork directly in the required model file and keep the latest usable state saved at that path throughout the task.",
+    "groups": {
+      "G": "simulation, output contract, bounded chassis/wheel states and physically signed contact loads",
+      "A": "nominal braking effectiveness and useful non-locking wheel-slip regulation",
+      "Q": "wheel-lock avoidance, yaw/lateral stability and actuation quality",
+      "M": "pose/rate, wheel, yaw and longitudinal dynamics; public-radius slip, friction, brake-demand and normal-load consistency",
+      "R": "worst joint speed, mass and split-friction operating point",
+      "D": "reported friction loss cross-checked against actual force/slip/brake response and post-event regulation recovery",
+      "weights": {
+        "A": 0.2,
+        "Q": 0.1,
+        "M": 0.3,
+        "R": 0.2,
+        "D": 0.2
+      }
+    },
+    "reference_sources": [
+      {
+        "source_type": "screened mechanism source",
+        "source_url": "https://github.com/mathworks/Vehicle-Dynamics-14DOF-Simscape-Multibody",
+        "license": "MathWorks 3-clause product-restricted license; no model code copied",
+        "revision": "e0362ece4a12eb60a7bbb3a74b17f9dc88c7d58c",
+        "use": "mechanism and scale audit: four wheel inertias, nonlinear tires, split-mu road and independent braking"
+      },
+      {
+        "source_type": "original equations",
+        "source_url": "",
+        "license": "original implementation; project license applies",
+        "revision": "simuverity-101-v1",
+        "use": "self-contained longitudinal, yaw and wheel angular-momentum balances with friction-limited contact"
+      }
+    ]
+  },
+  "application_domain": "automotive vehicle dynamics and braking",
+  "physical_domains": [
+    "longitudinal and yaw rigid-body dynamics",
+    "wheel rotational dynamics",
+    "nonlinear tire-road contact"
+  ],
+  "modeling_paradigm": "causal four-wheel vehicle dynamics with independently actuated brakes",
+  "capability_types": [
+    "plant construction",
+    "nonlinear tire contact",
+    "closed-loop wheel-slip regulation",
+    "disturbance recovery"
+  ],
+  "difficulty": {
+    "physical_coupling": 2,
+    "nonlinear_or_switching": 2,
+    "dynamic_or_fault": 2,
+    "joint_operating_points": 2,
+    "multichannel_or_units": 1,
+    "functional_and_safety_constraints": 1,
+    "total": 10
+  },
+  "sim": {
+    "step": 0.002,
+    "stop": 9.5
+  },
+  "public_inputs": [
+    {
+      "name": "initial_speed",
+      "nominal": 24,
+      "min": 15,
+      "max": 30,
+      "unit": "m/s",
+      "meaning": "vehicle longitudinal speed at release"
+    },
+    {
+      "name": "brake_demand",
+      "nominal": 0.82,
+      "min": 0.55,
+      "max": 1,
+      "unit": "1",
+      "meaning": "normalized emergency-braking demand"
+    },
+    {
+      "name": "left_friction",
+      "nominal": 0.88,
+      "min": 0.35,
+      "max": 1,
+      "unit": "1",
+      "meaning": "left-side tire-road friction coefficient"
+    },
+    {
+      "name": "right_friction",
+      "nominal": 0.55,
+      "min": 0.3,
+      "max": 1,
+      "unit": "1",
+      "meaning": "right-side tire-road friction coefficient"
+    },
+    {
+      "name": "vehicle_mass",
+      "nominal": 1600,
+      "min": 1450,
+      "max": 1760,
+      "unit": "kg",
+      "meaning": "total vehicle mass"
+    },
+    {
+      "name": "brake_onset",
+      "nominal": 0.85,
+      "min": 0.65,
+      "max": 1.25,
+      "unit": "s",
+      "meaning": "time at which braking demand is applied"
+    },
+    {
+      "name": "friction_drop",
+      "nominal": 0.45,
+      "min": 0.2,
+      "max": 0.65,
+      "unit": "1",
+      "meaning": "temporary fractional reduction of right-side friction"
+    },
+    {
+      "name": "friction_event_time",
+      "nominal": 3,
+      "min": 2.2,
+      "max": 4,
+      "unit": "s",
+      "meaning": "start time of a one-second right-side friction loss"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "vehicle_state",
+      "channels": 5,
+      "order": "[longitudinal position, lateral position, yaw angle, longitudinal speed, yaw rate]",
+      "unit": "[m,m,rad,m/s,rad/s]",
+      "physical_source": "measured vehicle-chassis states"
+    },
+    {
+      "name": "wheel_state",
+      "channels": 8,
+      "order": "[FL, FR, RL, RR wheel speed; FL, FR, RL, RR longitudinal slip]",
+      "unit": "[rad/s,rad/s,rad/s,rad/s,1,1,1,1]",
+      "physical_source": "actual wheel rotational states and contact slip"
+    },
+    {
+      "name": "tire_contact",
+      "channels": 10,
+      "order": "[FL, FR, RL, RR longitudinal force; FL, FR, RL, RR normal force; effective left and right friction]",
+      "unit": "[N,N,N,N,N,N,N,N,1,1]",
+      "physical_source": "forces and friction at the four physical tire-road interfaces"
+    },
+    {
+      "name": "brake_actuation",
+      "channels": 5,
+      "order": "[FL, FR, RL, RR brake torque; applied demand]",
+      "unit": "[N*m,N*m,N*m,N*m,1]",
+      "physical_source": "actual bounded wheel-brake torques and applied demand"
+    }
+  ],
+  "prompt": "Build a four-wheel road-vehicle emergency-braking model with chassis longitudinal and yaw dynamics, four finite-inertia wheels, nonlinear tire-road contact, and independently actuated wheel brakes. Brake torques must act through the wheel and tire contact dynamics to decelerate the chassis; directly prescribing vehicle motion is not a valid implementation.\n\nRead initial_speed, brake_demand, left_friction, right_friction, vehicle_mass, brake_onset, friction_drop, and friction_event_time from base-workspace variables. Their nominal values are 24 m/s, 0.82, 0.88, 0.55, 1600 kg, 0.85 s, 0.45, and 3.0 s. They operate respectively over 15--30 m/s, 0.55--1.00, 0.35--1.00, 0.30--1.00, 1450--1760 kg, 0.65--1.25 s, 0.20--0.65, and 2.2--4.0 s. Right-side friction is reduced by friction_drop for one second beginning at friction_event_time.\n\nAssume a clean MATLAB session in which only the declared public inputs are provided. Use a 0.31 m effective tire radius and a 1.62 m track width. A reduced planar longitudinal-yaw chassis model is intended: no independent lateral-velocity state is required, and chassis translational velocity is aligned with the reported yaw direction. Across the declared range, the vehicle must suppress sustained wheel lock, brake efficiently on split-friction surfaces, limit lateral and yaw departure, remain dynamically bounded, and recover wheel regulation after the temporary friction loss. The regulation method is not prescribed.\n\nLog Timeseries vehicle_state, wheel_state, tire_contact, and brake_actuation. vehicle_state must contain [longitudinal position in m, lateral position in m, yaw angle in rad, longitudinal speed in m/s, yaw rate in rad/s]. wheel_state must contain [FL, FR, RL, RR wheel angular speed in rad/s, followed by the corresponding four longitudinal slip ratios]. tire_contact must contain [four longitudinal forces in N, four normal forces in N, effective left and right friction]. brake_actuation must contain the four actual wheel-brake torques in N*m followed by applied demand. Logged measurements must come from the causal vehicle, wheel, brake, and contact simulation rather than from commands or precomputed trajectories.\n\nWork directly in the required model file and keep the latest usable state saved at that path throughout the task.",
+  "groups": {
+    "G": "simulation, output contract, bounded chassis/wheel states and physically signed contact loads",
+    "A": "nominal braking effectiveness and useful non-locking wheel-slip regulation",
+    "Q": "wheel-lock avoidance, yaw/lateral stability and actuation quality",
+    "M": "pose/rate, wheel, yaw and longitudinal dynamics; public-radius slip, friction, brake-demand and normal-load consistency",
+    "R": "worst joint speed, mass and split-friction operating point",
+    "D": "reported friction loss cross-checked against actual force/slip/brake response and post-event regulation recovery",
+    "weights": {
+      "A": 0.2,
+      "Q": 0.1,
+      "M": 0.3,
+      "R": 0.2,
+      "D": 0.2
+    }
+  },
+  "reference_sources": [
+    {
+      "source_type": "screened mechanism source",
+      "source_url": "https://github.com/mathworks/Vehicle-Dynamics-14DOF-Simscape-Multibody",
+      "license": "MathWorks 3-clause product-restricted license; no model code copied",
+      "revision": "e0362ece4a12eb60a7bbb3a74b17f9dc88c7d58c",
+      "use": "mechanism and scale audit: four wheel inertias, nonlinear tires, split-mu road and independent braking"
+    },
+    {
+      "source_type": "original equations",
+      "source_url": "",
+      "license": "original implementation; project license applies",
+      "revision": "simuverity-101-v1",
+      "use": "self-contained longitudinal, yaw and wheel angular-momentum balances with friction-limited contact"
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XFLUID-04",
+  "collection": "XFLUID",
+  "reference": {
+    "identity_path": "tasks/XFLUID-04/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/XFLUID04_reference.slx",
+    "model_path": "tasks/XFLUID-04/reference/files/XFLUID04_reference.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XFLUID-04",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a closed-loop electrohydraulic scissor lift that raises, holds, and returns a payload platform using one double-acting hydraulic actuator.",
+    "engineering_objects": [
+      "Build a closed-loop electrohydraulic scissor lift that raises, holds, and returns a payload platform using one double-acting hydraulic actuator.",
+      "A finite pressure supply and return reservoir must feed a physically metered four-way valve.",
+      "A finite electromechanical actuator must move the valve element, the valve must route real fluid into and out of both cylinder chambers, and the cylinder must drive a scissor linkage carrying the platform."
+    ],
+    "physical_paths": [
+      "A finite pressure supply and return reservoir must feed a physically metered four-way valve.",
+      "Measured cylinder extension must close the positioning loop through unrestricted control logic to the real valve actuator on this same hydraulic power path.",
+      "Across the declared target, timing, and supply-pressure ranges, the controller must follow the full positioning cycle without sustained oscillation, keep cylinder and valve motion bounded, and preserve tracking through the pressure change.",
+      "Build a closed-loop electrohydraulic scissor lift that raises, holds, and returns a payload platform using one double-acting hydraulic actuator."
+    ],
+    "functional_paths": [
+      "Measured cylinder extension must close the positioning loop through unrestricted control logic to the real valve actuator on this same hydraulic power path.",
+      "Across the declared target, timing, and supply-pressure ranges, the controller must follow the full positioning cycle without sustained oscillation, keep cylinder and valve motion bounded, and preserve tracking through the pressure change."
+    ],
+    "information_paths": [
+      "lift_target_mm, motion_start_s, ramp_duration_s, target_hold_s, supply_pressure_bar, supply_pressure_step_fraction, pressure_step_offset_s -> F90-XFLUID-04 plant/control path -> actuator_extension, actuator_velocity, valve_spool_position"
+    ],
+    "modes_and_events": [
+      "Read lift_target_mm, motion_start_s, ramp_duration_s, target_hold_s, supply_pressure_bar, supply_pressure_step_fraction, and pressure_step_offset_s from MATLAB base-workspace variables.",
+      "During the hold, at pressure_step_offset_s after first reaching the target, change the supply pressure from supply_pressure_bar to supply_pressure_bar*(1+supply_pressure_step_fraction)."
+    ],
+    "interfaces": [
+      {
+        "name": "lift_target_mm",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "mm"
+        ],
+        "range_or_shape": "Read lift_target_mm, motion_start_s, ramp_duration_s, target_hold_s, supply_pressure_bar, supply_pressure_step_fraction, and pressure_step_offset_s from MATLAB base-workspace variables. Beginning at motion_start_s, command a linear raise from 50 mm to lift_target_mm over ramp_duration_s, hold that target for target_hold_s, then command a linear return to 50 mm over ramp_duration_s.",
+        "source": "tasks/XFLUID-04/public_spec.json"
+      },
+      {
+        "name": "motion_start_s",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read lift_target_mm, motion_start_s, ramp_duration_s, target_hold_s, supply_pressure_bar, supply_pressure_step_fraction, and pressure_step_offset_s from MATLAB base-workspace variables. Beginning at motion_start_s, command a linear raise from 50 mm to lift_target_mm over ramp_duration_s, hold that target for target_hold_s, then command a linear return to 50 mm over ramp_duration_s.",
+        "source": "tasks/XFLUID-04/public_spec.json"
+      },
+      {
+        "name": "ramp_duration_s",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read lift_target_mm, motion_start_s, ramp_duration_s, target_hold_s, supply_pressure_bar, supply_pressure_step_fraction, and pressure_step_offset_s from MATLAB base-workspace variables. Beginning at motion_start_s, command a linear raise from 50 mm to lift_target_mm over ramp_duration_s, hold that target for target_hold_s, then command a linear return to 50 mm over ramp_duration_s.",
+        "source": "tasks/XFLUID-04/public_spec.json"
+      },
+      {
+        "name": "target_hold_s",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read lift_target_mm, motion_start_s, ramp_duration_s, target_hold_s, supply_pressure_bar, supply_pressure_step_fraction, and pressure_step_offset_s from MATLAB base-workspace variables. Beginning at motion_start_s, command a linear raise from 50 mm to lift_target_mm over ramp_duration_s, hold that target for target_hold_s, then command a linear return to 50 mm over ramp_duration_s.",
+        "source": "tasks/XFLUID-04/public_spec.json"
+      },
+      {
+        "name": "supply_pressure_bar",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "bar"
+        ],
+        "range_or_shape": "Read lift_target_mm, motion_start_s, ramp_duration_s, target_hold_s, supply_pressure_bar, supply_pressure_step_fraction, and pressure_step_offset_s from MATLAB base-workspace variables. During the hold, at pressure_step_offset_s after first reaching the target, change the supply pressure from supply_pressure_bar to supply_pressure_bar*(1+supply_pressure_step_fraction).",
+        "source": "tasks/XFLUID-04/public_spec.json"
+      },
+      {
+        "name": "supply_pressure_step_fraction",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read lift_target_mm, motion_start_s, ramp_duration_s, target_hold_s, supply_pressure_bar, supply_pressure_step_fraction, and pressure_step_offset_s from MATLAB base-workspace variables. During the hold, at pressure_step_offset_s after first reaching the target, change the supply pressure from supply_pressure_bar to supply_pressure_bar*(1+supply_pressure_step_fraction).",
+        "source": "tasks/XFLUID-04/public_spec.json"
+      },
+      {
+        "name": "pressure_step_offset_s",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read lift_target_mm, motion_start_s, ramp_duration_s, target_hold_s, supply_pressure_bar, supply_pressure_step_fraction, and pressure_step_offset_s from MATLAB base-workspace variables. During the hold, at pressure_step_offset_s after first reaching the target, change the supply pressure from supply_pressure_bar to supply_pressure_bar*(1+supply_pressure_step_fraction).",
+        "source": "tasks/XFLUID-04/public_spec.json"
+      },
+      {
+        "name": "actuator_extension",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "mm"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries actuator_extension with one channel in millimetres, actuator_velocity with one channel in millimetres per second, and valve_spool_position with one channel in millimetres.",
+        "source": "tasks/XFLUID-04/public_spec.json"
+      },
+      {
+        "name": "actuator_velocity",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "mm/s"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries actuator_extension with one channel in millimetres, actuator_velocity with one channel in millimetres per second, and valve_spool_position with one channel in millimetres.",
+        "source": "tasks/XFLUID-04/public_spec.json"
+      },
+      {
+        "name": "valve_spool_position",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "mm"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries actuator_extension with one channel in millimetres, actuator_velocity with one channel in millimetres per second, and valve_spool_position with one channel in millimetres.",
+        "source": "tasks/XFLUID-04/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Across the declared target, timing, and supply-pressure ranges, the controller must follow the full positioning cycle without sustained oscillation, keep cylinder and valve motion bounded, and preserve tracking through the pressure change."
+    ],
+    "feedback_and_control_causality": [
+      "Build a closed-loop electrohydraulic scissor lift that raises, holds, and returns a payload platform using one double-acting hydraulic actuator.",
+      "A finite electromechanical actuator must move the valve element, the valve must route real fluid into and out of both cylinder chambers, and the cylinder must drive a scissor linkage carrying the platform.",
+      "Measured cylinder extension must close the positioning loop through unrestricted control logic to the real valve actuator on this same hydraulic power path."
+    ],
+    "signal_sources": [
+      "lift_target_mm is read from the public MATLAB base-workspace input contract.",
+      "motion_start_s is read from the public MATLAB base-workspace input contract.",
+      "ramp_duration_s is read from the public MATLAB base-workspace input contract.",
+      "target_hold_s is read from the public MATLAB base-workspace input contract.",
+      "supply_pressure_bar is read from the public MATLAB base-workspace input contract.",
+      "supply_pressure_step_fraction is read from the public MATLAB base-workspace input contract.",
+      "pressure_step_offset_s is read from the public MATLAB base-workspace input contract.",
+      "actuator_extension is produced by the implemented plant or controller and logged under the public output contract.",
+      "actuator_velocity is produced by the implemented plant or controller and logged under the public output contract.",
+      "valve_spool_position is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "lift_target_mm: Read lift_target_mm, motion_start_s, ramp_duration_s, target_hold_s, supply_pressure_bar, supply_pressure_step_fraction, and pressure_step_offset_s from MATLAB base-workspace variables. Beginning at motion_start_s, command a linear raise from 50 mm to lift_target_mm over ramp_duration_s, hold that target for target_hold_s, then command a linear return to 50 mm over ramp_duration_s.",
+      "motion_start_s: Read lift_target_mm, motion_start_s, ramp_duration_s, target_hold_s, supply_pressure_bar, supply_pressure_step_fraction, and pressure_step_offset_s from MATLAB base-workspace variables. Beginning at motion_start_s, command a linear raise from 50 mm to lift_target_mm over ramp_duration_s, hold that target for target_hold_s, then command a linear return to 50 mm over ramp_duration_s.",
+      "ramp_duration_s: Read lift_target_mm, motion_start_s, ramp_duration_s, target_hold_s, supply_pressure_bar, supply_pressure_step_fraction, and pressure_step_offset_s from MATLAB base-workspace variables. Beginning at motion_start_s, command a linear raise from 50 mm to lift_target_mm over ramp_duration_s, hold that target for target_hold_s, then command a linear return to 50 mm over ramp_duration_s.",
+      "target_hold_s: Read lift_target_mm, motion_start_s, ramp_duration_s, target_hold_s, supply_pressure_bar, supply_pressure_step_fraction, and pressure_step_offset_s from MATLAB base-workspace variables. Beginning at motion_start_s, command a linear raise from 50 mm to lift_target_mm over ramp_duration_s, hold that target for target_hold_s, then command a linear return to 50 mm over ramp_duration_s.",
+      "supply_pressure_bar: Read lift_target_mm, motion_start_s, ramp_duration_s, target_hold_s, supply_pressure_bar, supply_pressure_step_fraction, and pressure_step_offset_s from MATLAB base-workspace variables. During the hold, at pressure_step_offset_s after first reaching the target, change the supply pressure from supply_pressure_bar to supply_pressure_bar*(1+supply_pressure_step_fraction).",
+      "supply_pressure_step_fraction: Read lift_target_mm, motion_start_s, ramp_duration_s, target_hold_s, supply_pressure_bar, supply_pressure_step_fraction, and pressure_step_offset_s from MATLAB base-workspace variables. During the hold, at pressure_step_offset_s after first reaching the target, change the supply pressure from supply_pressure_bar to supply_pressure_bar*(1+supply_pressure_step_fraction).",
+      "pressure_step_offset_s: Read lift_target_mm, motion_start_s, ramp_duration_s, target_hold_s, supply_pressure_bar, supply_pressure_step_fraction, and pressure_step_offset_s from MATLAB base-workspace variables. During the hold, at pressure_step_offset_s after first reaching the target, change the supply pressure from supply_pressure_bar to supply_pressure_bar*(1+supply_pressure_step_fraction)."
+    ],
+    "disturbances": [
+      "Build a closed-loop electrohydraulic scissor lift that raises, holds, and returns a payload platform using one double-acting hydraulic actuator.",
+      "Read lift_target_mm, motion_start_s, ramp_duration_s, target_hold_s, supply_pressure_bar, supply_pressure_step_fraction, and pressure_step_offset_s from MATLAB base-workspace variables.",
+      "During the hold, at pressure_step_offset_s after first reaching the target, change the supply pressure from supply_pressure_bar to supply_pressure_bar*(1+supply_pressure_step_fraction)."
+    ],
+    "dynamic_processes": [
+      "Read lift_target_mm, motion_start_s, ramp_duration_s, target_hold_s, supply_pressure_bar, supply_pressure_step_fraction, and pressure_step_offset_s from MATLAB base-workspace variables.",
+      "During the hold, at pressure_step_offset_s after first reaching the target, change the supply pressure from supply_pressure_bar to supply_pressure_bar*(1+supply_pressure_step_fraction).",
+      "Across the declared target, timing, and supply-pressure ranges, the controller must follow the full positioning cycle without sustained oscillation, keep cylinder and valve motion bounded, and preserve tracking through the pressure change."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XFLUID-04: prescribing actuator_extension directly would bypass the system path described by: A finite pressure supply and return reservoir must feed a physically metered four-way valve.",
+      "F90-XFLUID-04: replaying a fixed actuator_extension trace would ignore causal variation in lift_target_mm."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XFLUID-04/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XFLUID-04/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XFLUID-04/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

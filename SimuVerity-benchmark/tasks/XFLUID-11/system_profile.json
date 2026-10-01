@@ -1,0 +1,131 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XFLUID-11",
+  "collection": "XFLUID",
+  "reference": {
+    "identity_path": "tasks/XFLUID-11/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/applications/Desalination/OSWEC_RO.slx",
+    "model_path": "tasks/XFLUID-11/reference/files/applications/Desalination/OSWEC_RO.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id EXT-XFLUID-WEC-DESAL",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a causal wave-powered reverse-osmosis desalination system.",
+    "engineering_objects": [
+      "Build a causal wave-powered reverse-osmosis desalination system.",
+      "Couple an oscillating wave-energy flap to a hydraulic cylinder and directional-valve circuit.",
+      "The pressurized seawater path must include energy storage/pressure smoothing, a reverse-osmosis membrane that separates permeate and brine, and a pressure-exchanger recovery path that feeds recovered brine energy back into the seawater circuit."
+    ],
+    "physical_paths": [
+      "Build a causal wave-powered reverse-osmosis desalination system.",
+      "Couple an oscillating wave-energy flap to a hydraulic cylinder and directional-valve circuit.",
+      "The pressurized seawater path must include energy storage/pressure smoothing, a reverse-osmosis membrane that separates permeate and brine, and a pressure-exchanger recovery path that feeds recovered brine energy back into the seawater circuit."
+    ],
+    "functional_paths": [
+      "The pressurized seawater path must include energy storage/pressure smoothing, a reverse-osmosis membrane that separates permeate and brine, and a pressure-exchanger recovery path that feeds recovered brine energy back into the seawater circuit.",
+      "desal_recovery_response has [pressure_exchanger_feed_flow_m3_s, total_ro_feed_flow_m3_s, accumulator_flow_m3_s] in [m^3/s, m^3/s, m^3/s]."
+    ],
+    "information_paths": [
+      "desal_command -> EXT-XFLUID-WEC-DESAL plant/control path -> desal_mechanical_response, desal_hydraulic_response, desal_recovery_response"
+    ],
+    "modes_and_events": [
+      "EXT-XFLUID-WEC-DESAL startup and continuous operation follow the current public task contract."
+    ],
+    "interfaces": [
+      {
+        "name": "desal_command",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m",
+          "s"
+        ],
+        "range_or_shape": "Read desal_command from the MATLAB base workspace as a scalar struct with exactly these public fields: wave_height_m, a real scalar from 1.8 to 3.6 m; and wave_period_s, a real scalar from 8.0 to 11.0 s.",
+        "source": "tasks/XFLUID-11/public_spec.json"
+      },
+      {
+        "name": "desal_mechanical_response",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s",
+          "N",
+          "W"
+        ],
+        "range_or_shape": "desal_mechanical_response has [pto_velocity_m_s, pto_force_n, mechanical_power_w] in [m/s, N, W].",
+        "source": "tasks/XFLUID-11/public_spec.json"
+      },
+      {
+        "name": "desal_hydraulic_response",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m^3/s",
+          "Pa"
+        ],
+        "range_or_shape": "desal_hydraulic_response has [saltwater_flow_m3_s, permeate_flow_m3_s, brine_flow_m3_s, feed_pressure_pa] in [m^3/s, m^3/s, m^3/s, Pa].",
+        "source": "tasks/XFLUID-11/public_spec.json"
+      },
+      {
+        "name": "desal_recovery_response",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m^3/s"
+        ],
+        "range_or_shape": "desal_recovery_response has [pressure_exchanger_feed_flow_m3_s, total_ro_feed_flow_m3_s, accumulator_flow_m3_s] in [m^3/s, m^3/s, m^3/s].",
+        "source": "tasks/XFLUID-11/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "EXT-XFLUID-WEC-DESAL uses the channel order and units declared for desal_mechanical_response, desal_hydraulic_response, desal_recovery_response."
+    ],
+    "feedback_and_control_causality": [
+      "Build a causal wave-powered reverse-osmosis desalination system."
+    ],
+    "signal_sources": [
+      "desal_command is read from the public MATLAB base-workspace input contract.",
+      "desal_mechanical_response is produced by the implemented plant or controller and logged under the public output contract.",
+      "desal_hydraulic_response is produced by the implemented plant or controller and logged under the public output contract.",
+      "desal_recovery_response is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "desal_command: Read desal_command from the MATLAB base workspace as a scalar struct with exactly these public fields: wave_height_m, a real scalar from 1.8 to 3.6 m; and wave_period_s, a real scalar from 8.0 to 11.0 s."
+    ],
+    "disturbances": [
+      "EXT-XFLUID-WEC-DESAL operating variation is supplied through desal_command."
+    ],
+    "dynamic_processes": [
+      "The pressurized seawater path must include energy storage/pressure smoothing, a reverse-osmosis membrane that separates permeate and brine, and a pressure-exchanger recovery path that feeds recovered brine energy back into the seawater circuit."
+    ],
+    "task_specific_shortcuts": [
+      "EXT-XFLUID-WEC-DESAL: prescribing desal_mechanical_response directly would bypass the system path described by: Build a causal wave-powered reverse-osmosis desalination system.",
+      "EXT-XFLUID-WEC-DESAL: replaying a fixed desal_mechanical_response trace would ignore causal variation in desal_command."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XFLUID-11/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XFLUID-11/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XFLUID-11/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

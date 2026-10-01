@@ -1,0 +1,167 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XMECH-03",
+  "collection": "XMECH",
+  "reference": {
+    "identity_path": "tasks/XMECH-03/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/Simscape-Dual-Clutch/Dual_Clutch_Trans.slx",
+    "model_path": "tasks/XMECH-03/reference/files/Simscape-Dual-Clutch/Dual_Clutch_Trans.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XMECH-03",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build an engine-driven road-vehicle model in Simulink and Simscape Driveline with a six-forward-speed dual-clutch transmission.",
+    "engineering_objects": [
+      "F90-XMECH-03 plant and controller described by the current public task contract",
+      "Measured output interfaces: speed_response, engine_speed, transmission_state, engine_torque_demand"
+    ],
+    "physical_paths": [
+      "The physical drivetrain must contain two distinct controllable friction-clutch power paths serving interleaved odd and even gear ratios, a common transmission output, a final drive, and a vehicle load.",
+      "Prescribed vehicle motion, direct replay of the requested speed as measured speed, a fixed-ratio or single-clutch drivetrain disguised as a dual-clutch transmission, and disconnected decorative drivetrain components are not valid."
+    ],
+    "functional_paths": [
+      "The physical drivetrain must contain two distinct controllable friction-clutch power paths serving interleaved odd and even gear ratios, a common transmission output, a final drive, and a vehicle load.",
+      "The vehicle speed must be controlled in closed loop to follow the requested speed profile.",
+      "The detailed controller, shift logic, and actuator implementation are not prescribed."
+    ],
+    "information_paths": [
+      "speed_command, vehicle_mass_kg, clutch_capacity_scale -> F90-XMECH-03 plant/control path -> speed_response, engine_speed, transmission_state, engine_torque_demand"
+    ],
+    "modes_and_events": [
+      "Build an engine-driven road-vehicle model in Simulink and Simscape Driveline with a six-forward-speed dual-clutch transmission."
+    ],
+    "interfaces": [
+      {
+        "name": "speed_command",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "km/h"
+        ],
+        "range_or_shape": "Read speed_command, vehicle_mass_kg, and clutch_capacity_scale from the MATLAB base workspace. speed_command is a complete Timeseries in km/h with values from 0 to 120 km/h. Simulate the complete interval carried by speed_command for every supported operating condition. Every logged signal must come from the same causal simulation and cover the full speed_command interval.",
+        "source": "tasks/XMECH-03/public_spec.json"
+      },
+      {
+        "name": "vehicle_mass_kg",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kg"
+        ],
+        "range_or_shape": "Read speed_command, vehicle_mass_kg, and clutch_capacity_scale from the MATLAB base workspace. vehicle_mass_kg has a nominal value of 1600 kg and must be supported from 1360 to 1840 kg.",
+        "source": "tasks/XMECH-03/public_spec.json"
+      },
+      {
+        "name": "clutch_capacity_scale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read speed_command, vehicle_mass_kg, and clutch_capacity_scale from the MATLAB base workspace. clutch_capacity_scale has a nominal value of 1.0 and must be supported from 0.85 to 1.0; it must change the physical torque capacity of both transmission clutches rather than only a reported value.",
+        "source": "tasks/XMECH-03/public_spec.json"
+      },
+      {
+        "name": "speed_response",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "km/h"
+        ],
+        "range_or_shape": "Record four complete Timeseries named speed_response, engine_speed, transmission_state, and engine_torque_demand. speed_response contains [requested speed, measured physical vehicle speed] in km/h.",
+        "source": "tasks/XMECH-03/public_spec.json"
+      },
+      {
+        "name": "engine_speed",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rpm"
+        ],
+        "range_or_shape": "Record four complete Timeseries named speed_response, engine_speed, transmission_state, and engine_torque_demand. engine_speed contains measured physical engine speed in rpm.",
+        "source": "tasks/XMECH-03/public_spec.json"
+      },
+      {
+        "name": "transmission_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1",
+          "Pa",
+          "rpm"
+        ],
+        "range_or_shape": "Record four complete Timeseries named speed_response, engine_speed, transmission_state, and engine_torque_demand. transmission_state contains [selected gear state, odd-clutch pressure in Pa, even-clutch pressure in Pa, odd-clutch slip in rpm, even-clutch slip in rpm].",
+        "source": "tasks/XMECH-03/public_spec.json"
+      },
+      {
+        "name": "engine_torque_demand",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N*m"
+        ],
+        "range_or_shape": "Record four complete Timeseries named speed_response, engine_speed, transmission_state, and engine_torque_demand. engine_torque_demand contains the demanded engine torque in N*m.",
+        "source": "tasks/XMECH-03/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "The physical drivetrain must contain two distinct controllable friction-clutch power paths serving interleaved odd and even gear ratios, a common transmission output, a final drive, and a vehicle load.",
+      "The vehicle speed must be controlled in closed loop to follow the requested speed profile.",
+      "The detailed controller, shift logic, and actuator implementation are not prescribed."
+    ],
+    "feedback_and_control_causality": [
+      "Both clutch paths must physically transmit torque, and automatic gear selection and torque transfer must use measured vehicle and drivetrain feedback.",
+      "The detailed controller, shift logic, and actuator implementation are not prescribed.",
+      "Every logged signal must come from the same causal simulation and cover the full speed_command interval."
+    ],
+    "signal_sources": [
+      "speed_command is read from the public MATLAB base-workspace input contract.",
+      "vehicle_mass_kg is read from the public MATLAB base-workspace input contract.",
+      "clutch_capacity_scale is read from the public MATLAB base-workspace input contract.",
+      "speed_response is produced by the implemented plant or controller and logged under the public output contract.",
+      "engine_speed is produced by the implemented plant or controller and logged under the public output contract.",
+      "transmission_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "engine_torque_demand is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "speed_command: Read speed_command, vehicle_mass_kg, and clutch_capacity_scale from the MATLAB base workspace. speed_command is a complete Timeseries in km/h with values from 0 to 120 km/h. Simulate the complete interval carried by speed_command for every supported operating condition. Every logged signal must come from the same causal simulation and cover the full speed_command interval.",
+      "vehicle_mass_kg: Read speed_command, vehicle_mass_kg, and clutch_capacity_scale from the MATLAB base workspace. vehicle_mass_kg has a nominal value of 1600 kg and must be supported from 1360 to 1840 kg.",
+      "clutch_capacity_scale: Read speed_command, vehicle_mass_kg, and clutch_capacity_scale from the MATLAB base workspace. clutch_capacity_scale has a nominal value of 1.0 and must be supported from 0.85 to 1.0; it must change the physical torque capacity of both transmission clutches rather than only a reported value."
+    ],
+    "disturbances": [
+      "The physical drivetrain must contain two distinct controllable friction-clutch power paths serving interleaved odd and even gear ratios, a common transmission output, a final drive, and a vehicle load."
+    ],
+    "dynamic_processes": [
+      "F90-XMECH-03 produces time-varying speed_response, engine_speed, transmission_state, engine_torque_demand over the declared run."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XMECH-03: prescribing speed_response directly would bypass the system path described by: The physical drivetrain must contain two distinct controllable friction-clutch power paths serving interleaved odd and even gear ratios, a common transmission output, a final drive, and a vehicle load.",
+      "F90-XMECH-03: replaying a fixed speed_response trace would ignore causal variation in speed_command."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XMECH-03/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XMECH-03/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XMECH-03/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

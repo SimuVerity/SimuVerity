@@ -1,0 +1,15 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XCOMM-02",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/mvdr_4x4/mvdr_4x4_partial_systolic.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 16,
+  "retained_bytes": 159751,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ]
+}

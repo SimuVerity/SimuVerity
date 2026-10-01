@@ -1,0 +1,194 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XROBO-03",
+  "scenarios": [
+    {
+      "id": "nominal",
+      "class": "nominal",
+      "initial_body_height_m": 0.75,
+      "initial_forward_velocity_mps": 0.0,
+      "initial_vertical_velocity_mps": 0.0,
+      "torso_mass_kg": 2.0,
+      "ground_friction_scale": 1.0,
+      "ground_stiffness_npm": 1000.0,
+      "ground_damping_nspm": 100.0,
+      "joint_torque_limit_nm": 10.0
+    },
+    {
+      "id": "low_friction_heavy",
+      "class": "joint_boundary",
+      "initial_body_height_m": 0.74,
+      "initial_forward_velocity_mps": 0.05,
+      "initial_vertical_velocity_mps": 0.0,
+      "torso_mass_kg": 2.35,
+      "ground_friction_scale": 0.7,
+      "ground_stiffness_npm": 850.0,
+      "ground_damping_nspm": 90.0,
+      "joint_torque_limit_nm": 9.0
+    },
+    {
+      "id": "compliant_downward_recovery",
+      "class": "recovery_boundary",
+      "initial_body_height_m": 0.72,
+      "initial_forward_velocity_mps": 0.0,
+      "initial_vertical_velocity_mps": -0.1,
+      "torso_mass_kg": 2.1,
+      "ground_friction_scale": 0.85,
+      "ground_stiffness_npm": 780.0,
+      "ground_damping_nspm": 80.0,
+      "joint_torque_limit_nm": 10.0
+    },
+    {
+      "id": "stiff_forward_start",
+      "class": "joint_boundary",
+      "initial_body_height_m": 0.78,
+      "initial_forward_velocity_mps": 0.12,
+      "initial_vertical_velocity_mps": 0.02,
+      "torso_mass_kg": 1.75,
+      "ground_friction_scale": 1.05,
+      "ground_stiffness_npm": 1350.0,
+      "ground_damping_nspm": 145.0,
+      "joint_torque_limit_nm": 9.5
+    },
+    {
+      "id": "friction_derated_pair",
+      "class": "paired_causal",
+      "initial_body_height_m": 0.75,
+      "initial_forward_velocity_mps": 0.0,
+      "initial_vertical_velocity_mps": 0.0,
+      "torso_mass_kg": 2.0,
+      "ground_friction_scale": 0.65,
+      "ground_stiffness_npm": 1000.0,
+      "ground_damping_nspm": 100.0,
+      "joint_torque_limit_nm": 10.0
+    },
+    {
+      "id": "payload_heavy_pair",
+      "class": "paired_causal",
+      "initial_body_height_m": 0.75,
+      "initial_forward_velocity_mps": 0.0,
+      "initial_vertical_velocity_mps": 0.0,
+      "torso_mass_kg": 2.4,
+      "ground_friction_scale": 1.0,
+      "ground_stiffness_npm": 1000.0,
+      "ground_damping_nspm": 100.0,
+      "joint_torque_limit_nm": 10.0
+    }
+  ],
+  "contract": {
+    "score_policy_id": "simuverity-101-v1:xrobo-03:scoring",
+    "scenario_sets": {
+      "nominal": [
+        "nominal"
+      ],
+      "range_and_boundary": [
+        "nominal",
+        "low_friction_heavy",
+        "compliant_downward_recovery",
+        "stiff_forward_start"
+      ],
+      "worst_case_reduction": [
+        "nominal",
+        "low_friction_heavy",
+        "compliant_downward_recovery",
+        "stiff_forward_start"
+      ],
+      "friction_pair": [
+        "nominal",
+        "friction_derated_pair"
+      ],
+      "payload_pair": [
+        "nominal",
+        "payload_heavy_pair"
+      ],
+      "recovery": [
+        "compliant_downward_recovery"
+      ]
+    },
+    "groups": {
+      "G": "exact task identity, R2025a load/update/compile, every scenario, complete finite outputs, and scenario application",
+      "A": "nominal forward locomotion and upright support",
+      "Q": "body attitude, height, lateral drift, joint motion, and control effort quality",
+      "M": "multibody/contact topology, body kinematic closure, action-to-torque closure, and four-foot participation",
+      "R": "worst joint-boundary and recovery behavior",
+      "D": "one-factor friction and payload causal ownership with performance retained under each paired scenario",
+      "weights": {
+        "A": 0.2,
+        "Q": 0.15,
+        "M": 0.3,
+        "R": 0.2,
+        "D": 0.15
+      }
+    },
+    "scoring_rules": {
+      "formula": "G * 100 * weighted arithmetic mean of A,Q,M,R,D, subject to causal caps",
+      "multi_scenario_reduction": "R uses the worst scenario in worst_case_reduction",
+      "gating": "G failure produces total score 0",
+      "causal_caps": [
+        "missing articulated multibody, contact, joint-actuation, or physical-sensor evidence",
+        "disconnected body kinematics or action-to-torque mapping",
+        "prescribed or replayed body motion",
+        "missing four-foot contact participation",
+        "ineffective one-factor friction or payload pairs"
+      ],
+      "authoritative_implementation": "scripts/formal90/tasks/f90_xrobo03/f90_xrobo03_structure_scoring.py"
+    }
+  },
+  "score_policy_id": "simuverity-101-v1:xrobo-03:scoring",
+  "scenario_sets": {
+    "nominal": [
+      "nominal"
+    ],
+    "range_and_boundary": [
+      "nominal",
+      "low_friction_heavy",
+      "compliant_downward_recovery",
+      "stiff_forward_start"
+    ],
+    "worst_case_reduction": [
+      "nominal",
+      "low_friction_heavy",
+      "compliant_downward_recovery",
+      "stiff_forward_start"
+    ],
+    "friction_pair": [
+      "nominal",
+      "friction_derated_pair"
+    ],
+    "payload_pair": [
+      "nominal",
+      "payload_heavy_pair"
+    ],
+    "recovery": [
+      "compliant_downward_recovery"
+    ]
+  },
+  "groups": {
+    "G": "exact task identity, R2025a load/update/compile, every scenario, complete finite outputs, and scenario application",
+    "A": "nominal forward locomotion and upright support",
+    "Q": "body attitude, height, lateral drift, joint motion, and control effort quality",
+    "M": "multibody/contact topology, body kinematic closure, action-to-torque closure, and four-foot participation",
+    "R": "worst joint-boundary and recovery behavior",
+    "D": "one-factor friction and payload causal ownership with performance retained under each paired scenario",
+    "weights": {
+      "A": 0.2,
+      "Q": 0.15,
+      "M": 0.3,
+      "R": 0.2,
+      "D": 0.15
+    }
+  },
+  "scoring_rules": {
+    "formula": "G * 100 * weighted arithmetic mean of A,Q,M,R,D, subject to causal caps",
+    "multi_scenario_reduction": "R uses the worst scenario in worst_case_reduction",
+    "gating": "G failure produces total score 0",
+    "causal_caps": [
+      "missing articulated multibody, contact, joint-actuation, or physical-sensor evidence",
+      "disconnected body kinematics or action-to-torque mapping",
+      "prescribed or replayed body motion",
+      "missing four-foot contact participation",
+      "ineffective one-factor friction or payload pairs"
+    ],
+    "authoritative_implementation": "scripts/formal90/tasks/f90_xrobo03/f90_xrobo03_structure_scoring.py"
+  }
+}

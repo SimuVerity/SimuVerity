@@ -1,0 +1,234 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+<title>Four-Bar Linkage Optimization</title>
+<meta name="generator" content="MATLAB 25.1">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2025-12-23">
+<meta name="DC.source" content="sm_four_bar_optim.m">
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="content">
+<h1>Four-Bar Linkage Optimization</h1>
+<!--introduction-->
+<p>This example shows a four-bar linkage modeled in Simscape Multibody that is optimized using MATLAB.</p>
+<p>Mechanical designers often wish to design a four-bar linkage that will enable an end effector to follow a certain path. The lengths of the links and the position of the end effector influence the trajectory of the end effector in a complex kinematic relationship. Optimization algorithms can be used to tune those lengths to achieve the desired motion.</p>
+<p>In this example, a parameter sweep is performed to see which trajectories are possible when varying a subset of the lengths. Then those lengths are tuned using MATLAB optimization algorithms until the resulting trajectory is within tolerances of the desired trajectory.</p>
+<!--/introduction-->
+<h2>Contents</h2>
+<div>
+<ul>
+<li>
+<a href="#1">Model</a>
+</li>
+<li>
+<a href="#3">Simulation Results from Simscape Logging</a>
+</li>
+<li>
+<a href="#5">Results from Parameter Sweep</a>
+</li>
+<li>
+<a href="#7">Results from Optimization</a>
+</li>
+</ul>
+</div>
+<h2 id="1">Model</h2>
+<img vspace="5" hspace="5" src="sm_four_bar_optim_01.png" alt=""> <p>
+<img vspace="5" hspace="5" src="sm_four_bar_optim_mechanics_explorer_IMAGE.png" alt=""> </p>
+<h2 id="3">Simulation Results from Simscape Logging</h2>
+<p>The plot below shows the path of a pointer on the end of a four-bar linkage. Varying the lengths of the bars will change the trajectory of this point.</p>
+<img vspace="5" hspace="5" src="sm_four_bar_optim_02.png" alt=""> <h2 id="5">Results from Parameter Sweep</h2>
+<p>Four-bar linkages can be grouped into various cases based on the lengths of their links. See <a href="http://en.wikipedia.org/wiki/File">http://en.wikipedia.org/wiki/File</a>:Linkage_four_bar_fixed.svg The resulting trajectories vary quite widely. We will limit the scope of our problem to a crank-rocker mechanism. This means:</p>
+<div>
+<ol>
+<li>Link a (driven link) is the shortest link (a &lt;= min(b,c,d))</li>
+<li>Link b (connecting link) is the longest link (b &gt;= max(a,c,d))</li>
+<li>Link a must be able to rotate 180 degrees (a+b &lt;= c+d)</li>
+</ol>
+</div>
+<img vspace="5" hspace="5" src="sm_four_bar_optim_03.png" alt=""> <h2 id="7">Results from Optimization</h2>
+<p>Adhering to the same conditions as in the parameter sweep, optimization algorithms are used to find the lengths of Bar A and Bar B that permit the point on the four-bar linkage to follow the desired trajectory. Note that the trajectories are translated so that the minimum x and y values of the trajectories are 0. This makes visual inspection of the curves slightly easier.</p>
+<pre class="codeoutput">
+
+Iter     Func-count       f(x)      MeshSize     Method
+    0           1       0.383738         0.215      
+    1           1       0.383738       0.05375     Refine Mesh
+    2           2     0.00661577        0.1075     Successful Poll
+    3           2     0.00661577       0.02687     Refine Mesh
+    4           5     0.00272638       0.05375     Successful Poll
+    5           9    0.000112722        0.1075     Successful Poll
+    6          11    0.000112722       0.02687     Refine Mesh
+    7          15     2.0582e-05       0.05375     Successful Poll
+    8          19     2.0582e-05       0.01344     Refine Mesh
+    9          23    1.67334e-06       0.02687     Successful Poll
+   10          27    1.67334e-06      0.006719     Refine Mesh
+   11          31    1.47731e-07       0.01344     Successful Poll
+   12          35    1.47731e-07      0.003359     Refine Mesh
+   13          39    1.47731e-07     0.0008398     Refine Mesh
+patternsearch stopped because the mesh size was less than options.MeshTolerance.
+Elapsed Time = 12.8109
+    Link      Initial        Final   
+    _____    __________    __________
+
+    {'a'}    {'0.1800'}    {'0.1195'}
+    {'b'}    {'0.2500'}    {'0.2651'}
+
+</pre>
+<img vspace="5" hspace="5" src="sm_four_bar_optim_04.png" alt=""> <img vspace="5" hspace="5" src="sm_four_bar_optim_05.png" alt=""> <img vspace="5" hspace="5" src="sm_four_bar_optim_06.png" alt=""> <p class="footer">Copyright 2017-2025 The MathWorks, Inc.<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2025a</a>
+<br>
+</p>
+</div>
+<!--
+##### SOURCE BEGIN #####
+%% Four-Bar Linkage Optimization
+%
+% This example shows a four-bar linkage modeled in Simscape Multibody that
+% is optimized using MATLAB. 
+%
+% Mechanical designers often wish to design a four-bar linkage that will
+% enable an end effector to follow a certain path.  The lengths of the
+% links and the position of the end effector influence the trajectory of
+% the end effector in a complex kinematic relationship.  Optimization
+% algorithms can be used to tune those lengths to achieve the desired
+% motion.
+%
+% In this example, a parameter sweep is performed to see which trajectories
+% are possible when varying a subset of the lengths.  Then those lengths
+% are tuned using MATLAB optimization algorithms until the resulting
+% trajectory is within tolerances of the desired trajectory.
+% 
+% Copyright 2017-2025 The MathWorks, Inc.
+
+
+%% Model
+
+open_system('sm_four_bar_optim')
+
+set_param(find_system('sm_four_bar_optim','MatchFilter',@Simulink.match.allVariants,'FindAll', 'on','type','annotation','Tag','ModelFeatures'),'Interpreter','off')
+
+%% 
+% <<sm_four_bar_optim_mechanics_explorer_IMAGE.png>>
+bdclose('sm_four_bar_optim')
+open_system('sm_four_bar_optim')
+
+
+%% Simulation Results from Simscape Logging
+%%
+%
+% The plot below shows the path of a pointer on the end of a four-bar
+% linkage.  Varying the lengths of the bars will change the trajectory of
+% this point.
+%
+
+
+sm_four_bar_optim_plot1path;
+
+%% Results from Parameter Sweep
+%%
+%
+% Four-bar linkages can be grouped into various cases based on the lengths
+% of their links.  See http://en.wikipedia.org/wiki/File:Linkage_four_bar_fixed.svg
+% The resulting trajectories vary quite widely.  We will limit the scope of
+% our problem to a crank-rocker mechanism.  This means:
+% 
+% # Link a (driven link) is the shortest link     (a <= min(b,c,d))
+% # Link b (connecting link) is the longest link  (b >= max(a,c,d))
+% # Link a must be able to rotate 180 degrees     (a+b <= c+d)
+%
+
+close(h1_sm_four_bar_optim)
+sm_four_bar_optim_param_sweep_run;
+
+%% Results from Optimization
+%%
+%
+% Adhering to the same conditions as in the parameter sweep, optimization
+% algorithms are used to find the lengths of Bar A and Bar B that permit
+% the point on the four-bar linkage to follow the desired trajectory.  Note
+% that the trajectories are translated so that the minimum x and y values
+% of the trajectories are 0.  This makes visual inspection of the curves
+% slightly easier.
+%
+
+close(h2_sm_four_bar_optim)
+sm_four_bar_optim_match_path;
+
+
+%%
+
+%clear all
+%close all
+%bdclose all
+
+##### SOURCE END #####
+-->
+</body>
+</html>

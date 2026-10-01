@@ -1,0 +1,435 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XMECH-04",
+  "scenarios": [
+    {
+      "id": "heavy_corner",
+      "values": {
+        "target_xyz_cm": [
+          45,
+          28,
+          48
+        ],
+        "wrist_target_deg": [
+          24,
+          -18,
+          28
+        ],
+        "move_time": 2.55,
+        "payload_mass": 2.15,
+        "torque_limit_scale": 0.76,
+        "disturbance_torque_nm": [
+          0,
+          -4.6,
+          3.5,
+          0,
+          -1.4,
+          1.1
+        ],
+        "disturbance_start": 1.47
+      }
+    },
+    {
+      "id": "heavy_corner_no_disturbance",
+      "values": {
+        "target_xyz_cm": [
+          45,
+          28,
+          48
+        ],
+        "wrist_target_deg": [
+          24,
+          -18,
+          28
+        ],
+        "move_time": 2.55,
+        "payload_mass": 2.15,
+        "torque_limit_scale": 0.76,
+        "disturbance_torque_nm": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "disturbance_start": 1.47
+      }
+    },
+    {
+      "id": "opposite_reach",
+      "values": {
+        "target_xyz_cm": [
+          48,
+          -24,
+          30
+        ],
+        "wrist_target_deg": [
+          -30,
+          18,
+          -24
+        ],
+        "move_time": 3.85,
+        "payload_mass": 1.65,
+        "torque_limit_scale": 0.84,
+        "disturbance_torque_nm": [
+          3.2,
+          0,
+          -2.8,
+          1.5,
+          0,
+          -1.2
+        ],
+        "disturbance_start": 2.73
+      }
+    },
+    {
+      "id": "long_reach_fast",
+      "values": {
+        "target_xyz_cm": [
+          61,
+          6,
+          28
+        ],
+        "wrist_target_deg": [
+          4,
+          22,
+          32
+        ],
+        "move_time": 2.45,
+        "payload_mass": 0.45,
+        "torque_limit_scale": 0.73,
+        "disturbance_torque_nm": [
+          -3.6,
+          3.8,
+          0,
+          -1.7,
+          1.3,
+          0
+        ],
+        "disturbance_start": 1.82
+      }
+    },
+    {
+      "id": "interior_loaded",
+      "values": {
+        "target_xyz_cm": [
+          51,
+          19,
+          52
+        ],
+        "wrist_target_deg": [
+          31,
+          -8,
+          -29
+        ],
+        "move_time": 3.55,
+        "payload_mass": 1.92,
+        "torque_limit_scale": 0.91,
+        "disturbance_torque_nm": [
+          1.7,
+          -3.4,
+          2.6,
+          0.8,
+          -1.1,
+          0.9
+        ],
+        "disturbance_start": 3.18
+      }
+    }
+  ],
+  "contract": {
+    "sim": {
+      "step": 0.002,
+      "stop": 6
+    },
+    "public_inputs": [
+      {
+        "name": "target_xyz_cm",
+        "nominal": [
+          55,
+          10,
+          35
+        ],
+        "min": [
+          38,
+          -28,
+          25
+        ],
+        "max": [
+          62,
+          32,
+          55
+        ],
+        "unit": "cm",
+        "meaning": "desired Cartesian position of the wrist centre"
+      },
+      {
+        "name": "wrist_target_deg",
+        "nominal": [
+          8,
+          -6,
+          12
+        ],
+        "min": [
+          -35,
+          -25,
+          -35
+        ],
+        "max": [
+          35,
+          25,
+          35
+        ],
+        "unit": "deg",
+        "meaning": "desired final posture of joints 4--6"
+      },
+      {
+        "name": "move_time",
+        "nominal": 3.2,
+        "min": 2.4,
+        "max": 4.2,
+        "unit": "s",
+        "meaning": "duration of the point-to-point move"
+      },
+      {
+        "name": "payload_mass",
+        "nominal": 1,
+        "min": 0.2,
+        "max": 2.2,
+        "unit": "kg",
+        "meaning": "payload rigidly carried by the terminal link"
+      },
+      {
+        "name": "torque_limit_scale",
+        "nominal": 1,
+        "min": 0.72,
+        "max": 1.15,
+        "unit": "1",
+        "meaning": "common scale on the declared six actuator torque limits"
+      },
+      {
+        "name": "disturbance_torque_nm",
+        "nominal": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "min": [
+          -4,
+          -5,
+          -4,
+          -2,
+          -2,
+          -1.5
+        ],
+        "max": [
+          4,
+          5,
+          4,
+          2,
+          2,
+          1.5
+        ],
+        "unit": "N*m",
+        "meaning": "temporary external joint-load torque vector"
+      },
+      {
+        "name": "disturbance_start",
+        "nominal": 2.15,
+        "min": 1.35,
+        "max": 3.65,
+        "unit": "s",
+        "meaning": "start time of the temporary joint-load disturbance"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "joint_state",
+        "channels": 12,
+        "order": "[q1..q6 in rad, dq1..dq6 in rad/s]",
+        "unit": "mixed",
+        "physical_source": "measured positions and velocities of the six physical revolute joints"
+      },
+      {
+        "name": "end_effector_pose",
+        "channels": 6,
+        "order": "[x,y,z in cm, yaw,pitch,roll in deg]",
+        "unit": "mixed",
+        "physical_source": "pose calculated from measured physical joint coordinates and the stated arm geometry"
+      },
+      {
+        "name": "joint_torque",
+        "channels": 6,
+        "order": "[tau1..tau6 in N*m]",
+        "unit": "mixed",
+        "physical_source": "bounded actuator torques commanded by the six closed-loop joint actuators"
+      }
+    ],
+    "prompt": "Build a six-revolute-joint serial robotic arm with finite link inertia and closed-loop joint actuation. The arm must solve the Cartesian positioning problem for a desired wrist-centre location and regulate all six joints while carrying a payload, respecting finite actuator torque limits, and recovering from a temporary external joint-load disturbance. Directly prescribing joint motion is not a valid implementation.\n\nUse link dimensions D1 = 10 cm, L2 = 50 cm, and L3 = 30 cm for the positioning chain. Read target_xyz_cm, wrist_target_deg, move_time, payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables. The target position operates over x = 38--62 cm, y = -28--32 cm, z = 25--55 cm; the three wrist targets operate over [-35,35], [-25,25], and [-35,35] deg; move_time is 2.4--4.2 s; payload_mass is 0.2--2.2 kg; torque_limit_scale is 0.72--1.15; disturbance_start is 1.35--3.65 s. The six disturbance-torque components operate respectively within +/-[4,5,4,2,2,1.5] N*m and act temporarily after disturbance_start.\n\nThe unscaled actuator torque limits for joints 1--6 are [80,70,60,22,18,14] N*m. Across the declared ranges, reach the requested wrist-centre position and wrist posture, keep the mechanism dynamically bounded, and settle after both the commanded move and the temporary disturbance.\n\nLog Timeseries joint_state, end_effector_pose, and joint_torque. joint_state must contain measured [q1..q6 in rad, dq1..dq6 in rad/s] from the physical joints. end_effector_pose must contain measured [x,y,z in cm, yaw,pitch,roll in deg] under one fixed right-handed base-frame and ZYX Euler convention. joint_torque must contain the bounded six actuator torques in N*m. Logged values must come from the causal closed-loop arm simulation, not copied commands or precomputed output trajectories.\n\nWork directly in the required model file and keep the latest usable state saved at that path throughout the task.",
+    "groups": {
+      "G": "load/update/simulate and complete Timeseries contract",
+      "A": "nominal Cartesian and wrist final accuracy",
+      "Q": "joint tracking quality, smoothness and actuator bounds",
+      "M": "six-joint torque-driven causal mechanism and inverse-kinematic consistency",
+      "R": "worst declared joint operating point across target, payload and saturation",
+      "D": "temporary load-disturbance response and post-event settling",
+      "weights": {
+        "A": 0.2,
+        "Q": 0.1,
+        "M": 0.3,
+        "R": 0.2,
+        "D": 0.2
+      }
+    }
+  },
+  "sim": {
+    "step": 0.002,
+    "stop": 6
+  },
+  "public_inputs": [
+    {
+      "name": "target_xyz_cm",
+      "nominal": [
+        55,
+        10,
+        35
+      ],
+      "min": [
+        38,
+        -28,
+        25
+      ],
+      "max": [
+        62,
+        32,
+        55
+      ],
+      "unit": "cm",
+      "meaning": "desired Cartesian position of the wrist centre"
+    },
+    {
+      "name": "wrist_target_deg",
+      "nominal": [
+        8,
+        -6,
+        12
+      ],
+      "min": [
+        -35,
+        -25,
+        -35
+      ],
+      "max": [
+        35,
+        25,
+        35
+      ],
+      "unit": "deg",
+      "meaning": "desired final posture of joints 4--6"
+    },
+    {
+      "name": "move_time",
+      "nominal": 3.2,
+      "min": 2.4,
+      "max": 4.2,
+      "unit": "s",
+      "meaning": "duration of the point-to-point move"
+    },
+    {
+      "name": "payload_mass",
+      "nominal": 1,
+      "min": 0.2,
+      "max": 2.2,
+      "unit": "kg",
+      "meaning": "payload rigidly carried by the terminal link"
+    },
+    {
+      "name": "torque_limit_scale",
+      "nominal": 1,
+      "min": 0.72,
+      "max": 1.15,
+      "unit": "1",
+      "meaning": "common scale on the declared six actuator torque limits"
+    },
+    {
+      "name": "disturbance_torque_nm",
+      "nominal": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "min": [
+        -4,
+        -5,
+        -4,
+        -2,
+        -2,
+        -1.5
+      ],
+      "max": [
+        4,
+        5,
+        4,
+        2,
+        2,
+        1.5
+      ],
+      "unit": "N*m",
+      "meaning": "temporary external joint-load torque vector"
+    },
+    {
+      "name": "disturbance_start",
+      "nominal": 2.15,
+      "min": 1.35,
+      "max": 3.65,
+      "unit": "s",
+      "meaning": "start time of the temporary joint-load disturbance"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "joint_state",
+      "channels": 12,
+      "order": "[q1..q6 in rad, dq1..dq6 in rad/s]",
+      "unit": "mixed",
+      "physical_source": "measured positions and velocities of the six physical revolute joints"
+    },
+    {
+      "name": "end_effector_pose",
+      "channels": 6,
+      "order": "[x,y,z in cm, yaw,pitch,roll in deg]",
+      "unit": "mixed",
+      "physical_source": "pose calculated from measured physical joint coordinates and the stated arm geometry"
+    },
+    {
+      "name": "joint_torque",
+      "channels": 6,
+      "order": "[tau1..tau6 in N*m]",
+      "unit": "mixed",
+      "physical_source": "bounded actuator torques commanded by the six closed-loop joint actuators"
+    }
+  ],
+  "prompt": "Build a six-revolute-joint serial robotic arm with finite link inertia and closed-loop joint actuation. The arm must solve the Cartesian positioning problem for a desired wrist-centre location and regulate all six joints while carrying a payload, respecting finite actuator torque limits, and recovering from a temporary external joint-load disturbance. Directly prescribing joint motion is not a valid implementation.\n\nUse link dimensions D1 = 10 cm, L2 = 50 cm, and L3 = 30 cm for the positioning chain. Read target_xyz_cm, wrist_target_deg, move_time, payload_mass, torque_limit_scale, disturbance_torque_nm, and disturbance_start from MATLAB base-workspace variables. The target position operates over x = 38--62 cm, y = -28--32 cm, z = 25--55 cm; the three wrist targets operate over [-35,35], [-25,25], and [-35,35] deg; move_time is 2.4--4.2 s; payload_mass is 0.2--2.2 kg; torque_limit_scale is 0.72--1.15; disturbance_start is 1.35--3.65 s. The six disturbance-torque components operate respectively within +/-[4,5,4,2,2,1.5] N*m and act temporarily after disturbance_start.\n\nThe unscaled actuator torque limits for joints 1--6 are [80,70,60,22,18,14] N*m. Across the declared ranges, reach the requested wrist-centre position and wrist posture, keep the mechanism dynamically bounded, and settle after both the commanded move and the temporary disturbance.\n\nLog Timeseries joint_state, end_effector_pose, and joint_torque. joint_state must contain measured [q1..q6 in rad, dq1..dq6 in rad/s] from the physical joints. end_effector_pose must contain measured [x,y,z in cm, yaw,pitch,roll in deg] under one fixed right-handed base-frame and ZYX Euler convention. joint_torque must contain the bounded six actuator torques in N*m. Logged values must come from the causal closed-loop arm simulation, not copied commands or precomputed output trajectories.\n\nWork directly in the required model file and keep the latest usable state saved at that path throughout the task.",
+  "groups": {
+    "G": "load/update/simulate and complete Timeseries contract",
+    "A": "nominal Cartesian and wrist final accuracy",
+    "Q": "joint tracking quality, smoothness and actuator bounds",
+    "M": "six-joint torque-driven causal mechanism and inverse-kinematic consistency",
+    "R": "worst declared joint operating point across target, payload and saturation",
+    "D": "temporary load-disturbance response and post-event settling",
+    "weights": {
+      "A": 0.2,
+      "Q": 0.1,
+      "M": 0.3,
+      "R": 0.2,
+      "D": 0.2
+    }
+  }
+}

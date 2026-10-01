@@ -1,0 +1,243 @@
+component implement
+    % Implement
+    %
+    % Represents an implement in a tractor. Implement draft force is the horizontal
+    % component of the force required to pull the implement. Draft force is 
+    % specified by an empirical relation as a function of field velocity. 
+    % User can also provide implement draft force as a custom function.<br/><br/>
+    % Connection H is the mechanical translational conserving port associated with
+    % the horizontal motion of the implement. The resulting traction
+    % motion developed by tractor body should be connected to this port.
+    % Connections ST, d are physical signal input ports for soil texture 
+    % and depth of tillage respectively. User should provide value of ST 
+    % equal to 1 for fine-textured soil or Clay-loam, 2 for medium-textured 
+    % soil or Silt-loam, and 3 for coarse-textured soil or Sand-loam.
+    % Connection VF is physical signal output port for vertical force exerted by
+    % implement on the tractor rear tires.
+    % <br/><br/>
+    % See <a href="matlab:edit ImplementBlockHelp.mlx">Live Script</a>
+    % for more information about the implement block.<br/>
+
+    % Copyright 2024 The MathWorks, Inc.
+
+    nodes
+        H = foundation.mechanical.translational.translational;
+    end
+
+    inputs(ExternalAccess=none)
+        texture_soil_input = {1, '1'}; % ST
+        % Soil texture SoilTexture.Fine;
+        %                                               1 - Fine (Clay-loam)
+        %                                               2 - Medium (Silt-loam)
+        %                                               3 - Coarse (Sand-loam)
+        depth_tillage = {10, 'cm'};    % d
+    end
+
+    outputs
+        VF = {0, 'N'};
+    end
+
+    parameters
+        parameterization = ForceComputation.Calculate; % Draft (horizontal) & vertical force computation
+        %                                                1 - Calculate
+        %                                                2 - UserInput
+    end
+
+    parameters(ExternalAccess=none)
+        type_implement = ImplementType.MoldboardPlow; % Implement type
+        %                                               1 - Subsoiler
+        %                                               2 - MoldboardPlow
+        %                                               3 - ChiselPlow
+        %                                               4 - SweepPlow
+        %                                               5 - FieldCultivator
+        width_implement = {1, 'm'};                   % Implement width
+        number_tools = {5, '1'};                      % Number of tools
+        rake_angle = {45, 'deg'};                     % Implement rake angle
+        velocity_vector = {[0, 1, 2], 'm/s'};         % Tractor velocity vector
+        draft_vector = {[0, 1000, 2000], 'N'};      % Draft force vector
+        VF_vector = {[0, 300, 600], 'N'};             % Vertical force vector
+    end
+
+    % Advanced parameters
+    parameters
+        velocity_thr = {0.001, 'm/s'};                % Velocity threshold
+        depth_min = {0.01, 'cm'};                     % Minimum valid depth
+    end
+
+    variables(Access = protected)
+        draft = {0, 'N'};                             % Implement draft force 
+    end
+
+    branches
+        draft : H.f -> *;
+    end
+
+    annotations
+        H  : Side = right;
+        VF : Side = bottom;
+        texture_soil_input : Side = left;
+        depth_tillage  : Side = left
+    end
+
+    if parameterization == 1
+        annotations
+            type_implement : ExternalAccess = modify;
+            depth_tillage : ExternalAccess = modify;
+            rake_angle : ExternalAccess = modify;
+            texture_soil_input: ExternalAccess = modify;
+        end
+
+        equations
+            assert(width_implement > 0)
+            assert(mod(number_tools,1) == 0)
+            assert(number_tools > 0)
+            assert(rake_angle > 0)
+            assert(rake_angle < 180)
+            assert(mod(texture_soil_input,1) == 0)
+            assert(texture_soil_input > 0)
+            assert(texture_soil_input < 4)
+            assert(velocity_thr>0)
+        end
+
+        intermediates
+            velocity = H.v;
+            texture_soil = texture_soil_input;
+            F_i = if eq(texture_soil,1), {1,'1'} ...
+                elseif eq(texture_soil,2), {0.7,'1'} ...
+                else {0.45,'1'} end;
+            delta = if eq(texture_soil,1), {6*pi/180,'rad'} ...
+                elseif eq(texture_soil,2), {10*pi/180,'rad'} ...
+                else {22*pi/180,'rad'} end; % Typical values of soil metal friction angle as per ASABE
+        end
+
+        if type_implement == 1 % Subsoiler - narrow point
+            parameters(ExternalAccess=none)
+                machine_parameter_A = {226, '1'}; %'N/cm/m' };
+                machine_parameter_B = {0, '1'}; %'N*s/cm/m^2' };
+                machine_parameter_C = {1.8, '1'}; %'N*s^2/cm/m^3' };
+            end
+        elseif type_implement == 2 % Moldboard plow
+            parameters(ExternalAccess=none)
+                machine_parameter_A = {652, '1'}; %'N/cm/m' };
+                machine_parameter_B = {0, '1'}; %'N*s/cm/m^2' };
+                machine_parameter_C = {5.1, '1'}; %'N*s^2/cm/m^3' };
+            end
+        elseif type_implement == 3 % Chisel plow - 5cm straight point
+            parameters(ExternalAccess=none)
+                machine_parameter_A = {91, '1'}; %'N/cm/m' };
+                machine_parameter_B = {5.4, '1'}; %'N*s/cm/m^2' };
+                machine_parameter_C = {0, '1'}; %'N*s^2/cm/m^3' };
+            end
+        elseif type_implement == 4 % Sweep plow for primary tillage
+            parameters(ExternalAccess=none)
+                machine_parameter_A = {390, '1'}; %'N/cm/m' };
+                machine_parameter_B = {19, '1'}; %'N*s/cm/m^2' };
+                machine_parameter_C = {0, '1'}; %'N*s^2/cm/m^3' };
+            end
+        elseif type_implement == 5 % Field cultivator for primary tillage
+            parameters(ExternalAccess=none)
+                machine_parameter_A = {46, '1'}; %'N/cm/m' };
+                machine_parameter_B = {2.8, '1'}; %'N*s/cm/m^2' };
+                machine_parameter_C = {0, '1'}; %'N*s^2/cm/m^3' };
+            end
+        end
+
+        if (type_implement == 2 || type_implement == 4) % Moldboard plow or Sweep plow
+            annotations
+                width_implement : ExternalAccess = modify;
+            end
+
+            intermediates(ExternalAccess=none)
+                velocity_use = velocity/{1,'m/s'};
+                velocity_abs = simscape.function.abs(velocity, {1, '1'})/{1,'m/s'};
+                velocity_thr_use = velocity_thr/{1,'m/s'};
+                width_implement_use = width_implement/{1,'m'};
+                depth_min_use = depth_min/{1,'cm'};
+                depth_tillage_cal = depth_tillage/{1,'cm'};
+                depth_tillage_use = simscape.function.blend(depth_min_use,...
+                    depth_tillage_cal,depth_min_use,1.5*depth_min_use,...
+                    depth_tillage_cal);
+                horizontal_force_use = tanh(velocity_use/(4*velocity_thr_use))*...
+                    (F_i*(machine_parameter_A + ...
+                    machine_parameter_B*(velocity_abs*3.6) + ...
+                    machine_parameter_C*(velocity_abs*3.6)^2))*width_implement_use*depth_tillage_use;
+            end
+
+        else                                            % Subsoiler or Chisel plow or Field cultivator
+            annotations
+                number_tools : ExternalAccess = modify;
+            end
+            
+            intermediates(ExternalAccess=none)
+                velocity_use = velocity/{1,'m/s'};
+                velocity_abs = simscape.function.abs(velocity, {1, '1'})/{1,'m/s'};
+                velocity_thr_use = velocity_thr/{1,'m/s'};
+                number_tools_use = number_tools; 
+                depth_min_use = depth_min/{1,'cm'};
+                depth_tillage_cal = depth_tillage/{1,'cm'};
+                depth_tillage_use = simscape.function.blend(depth_min_use,...
+                    depth_tillage_cal,depth_min_use,1.5*depth_min_use,...
+                    depth_tillage_cal);
+                horizontal_force_use = tanh(velocity_use/(4*velocity_thr_use))*...
+                    (F_i*(machine_parameter_A + ...
+                    machine_parameter_B*(velocity_abs*3.6) + ...
+                    machine_parameter_C*(velocity_abs*3.6)^2))*number_tools_use*depth_tillage_use;
+            end
+
+        end
+
+        intermediates
+            horizontal_force = horizontal_force_use*{1,'N'};
+            alpha = rake_angle;
+        end
+
+        equations
+            draft == horizontal_force;
+            VF == -horizontal_force*(cos(alpha + delta))/sin(alpha + delta);
+        end
+
+    elseif parameterization == 2
+        annotations
+            [draft_vector, VF_vector, velocity_vector] : ExternalAccess = modify;
+        end
+
+        equations
+            assert(numel(velocity_vector) >= 2)
+            assert(numel(draft_vector) == numel(velocity_vector))
+            assert(all(sign(draft_vector) ==  sign(velocity_vector)))
+            assert(numel(VF_vector) == numel(velocity_vector))
+            assert(all(diff(velocity_vector) > 0))
+            assert(velocity_thr>0)
+        end
+        
+        intermediates
+            velocity = H.v;
+        end
+
+        intermediates(ExternalAccess=none)
+            velocity_abs = simscape.function.abs(velocity, {1, '1'})/{1,'m/s'};
+            velocity_thr_use = velocity_thr/{1,'m/s'};
+            horizontal_force = tanh(velocity_abs/(4*velocity_thr_use))*...
+                tablelookup(velocity_vector,draft_vector,velocity,interpolation = linear, extrapolation = nearest);
+            vertical_force = tanh(velocity_abs/(4*velocity_thr_use))*...
+                tablelookup(velocity_vector,VF_vector,velocity,interpolation = linear, extrapolation = nearest);
+        end
+
+        equations
+            draft == horizontal_force;
+            VF == vertical_force;
+        end
+
+    end
+
+    annotations
+        UILayout = [UIGroup('Main', ...
+            parameterization, type_implement, width_implement, number_tools, ...
+            rake_angle, velocity_vector, draft_vector, VF_vector)
+        UIGroup('Advanced', ...
+            velocity_thr, depth_min)]
+    end
+    annotations
+        Icon = 'Implement.svg';
+    end
+end

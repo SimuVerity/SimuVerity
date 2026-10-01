@@ -1,0 +1,70 @@
+{
+  "schema": "simuverity.task.v1",
+  "release": "simuverity-101-v1",
+  "task_id": "XCOMM-08",
+  "ordinal": 42,
+  "collection": "XCOMM",
+  "runtime_alias": "XCOMM-08",
+  "required_model_file": "cand_XCOMM08.slx",
+  "evaluation_policy_id": "simuverity-101-v1:xcomm-08:scoring",
+  "candidate_closure": {
+    "public_input_names": [
+      "ChannelSNR_dB",
+      "SourceSeed",
+      "NoiseSeed"
+    ],
+    "nominal_provider": "simuverity_public_nominal_inputs"
+  },
+  "public_spec": "public_spec.json",
+  "official_scenarios": "official_scenarios.json",
+  "extractor": {
+    "kind": "matlab_function",
+    "path": "extractor/run.m",
+    "entrypoint": "run",
+    "implementation": "vendor/scripts/formal90/tasks/f90_xcomm08/f90_xcomm08_extract_candidate_evidence.m",
+    "closure_manifest": "extractor/manifest.json"
+  },
+  "scorer": {
+    "kind": "python_function",
+    "path": "scorer.py",
+    "entrypoint": "score",
+    "closure_manifest": "scorer/manifest.json",
+    "offline_only": true
+  },
+  "reference": {
+    "materialization": "local_importer",
+    "recipe": "reference/importer_recipe.json",
+    "entrypoint": "commdvbt.slx",
+    "expected_valid_scenarios": 6,
+    "score_tolerance": 1e-12,
+    "expected_score": 100.0,
+    "expected_score_basis": "reference_replay",
+    "scenario_contract": {
+      "expected_ids": [
+        "nominal",
+        "lower_snr",
+        "transition_snr",
+        "high_snr",
+        "alternate_seed_nominal",
+        "alternate_seed_boundary"
+      ],
+      "nominal_scenario_id": "nominal",
+      "nominal_materialization": "authoritative_scenario_set"
+    },
+    "score_tolerance_basis": "source_authority_numeric_precision",
+    "runtime_manifest": "reference/runtime_manifest.json"
+  },
+  "applicable_groups": [
+    "G",
+    "A",
+    "Q",
+    "M",
+    "R",
+    "D"
+  ],
+  "release_license_status": "MATHWORKS_LOCAL_IMPORT_NO_REDISTRIBUTION",
+  "system_profile": {
+    "path": "system_profile.json",
+    "schema": "simuverity.system-profile.v1"
+  }
+}

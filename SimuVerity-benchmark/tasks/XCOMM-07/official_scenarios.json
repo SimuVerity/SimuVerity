@@ -1,0 +1,150 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XCOMM-07",
+  "scenarios": [
+    {
+      "id": "bcc_nominal",
+      "mcs": 7,
+      "channel_coding": "BCC",
+      "snr_dB": 30,
+      "carrier_frequency_offset_Hz": 20000
+    },
+    {
+      "id": "bcc_low_snr",
+      "mcs": 7,
+      "channel_coding": "BCC",
+      "snr_dB": 18,
+      "carrier_frequency_offset_Hz": 20000
+    },
+    {
+      "id": "bcc_cfo_stress",
+      "mcs": 7,
+      "channel_coding": "BCC",
+      "snr_dB": 30,
+      "carrier_frequency_offset_Hz": 100000
+    },
+    {
+      "id": "ldpc_negative_cfo",
+      "mcs": 4,
+      "channel_coding": "LDPC",
+      "snr_dB": 25,
+      "carrier_frequency_offset_Hz": -60000
+    }
+  ],
+  "contract": {
+    "difficulty": {
+      "score": 12,
+      "maximum": 12,
+      "basis": [
+        "complete standards-based Tx-channel-Rx chain",
+        "multipath/noise/CFO",
+        "coarse and fine synchronization",
+        "OFDM channel estimation and equalization",
+        "BCC and LDPC recovery",
+        "8811-block fixed-point receiver hierarchy"
+      ]
+    },
+    "final_fresh_replay": {
+      "all_scenario_logs_exact": true,
+      "all_scenario_metrics_exact": true,
+      "raw_offline_score": 100.0
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85,
+      "preferred_reference_score": 90,
+      "normalize_threshold_to_100": false,
+      "groups": {
+        "A": {
+          "weight": 0.25,
+          "meaning": "true Tx/Rx BER, CFO-estimation and equalized-constellation accuracy"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "finite complete unit-consistent public outputs"
+        },
+        "M": {
+          "weight": 0.2,
+          "meaning": "connected waveform, synchronization, equalization, coding and decoding mechanisms"
+        },
+        "C": {
+          "weight": 0.2,
+          "meaning": "causal SNR, CFO and channel-coding effects"
+        },
+        "R": {
+          "weight": 0.15,
+          "meaning": "worst private scenario"
+        },
+        "D": {
+          "weight": 0.1,
+          "meaning": "packet acquisition and frequency-synchronization dynamics"
+        }
+      }
+    },
+    "runtime_cost_adjudication": {
+      "scenario_count": 4,
+      "actual_complete_simulation_seconds": 396.7913497,
+      "within_approximate_ten_minute_budget": true
+    },
+    "minimum_shortcut_sanity_contract": [
+      "missing_bit_recovery",
+      "fixed_outputs_across_scenarios",
+      "snr_without_effect",
+      "cfo_without_effect",
+      "coding_without_effect",
+      "copied_tx_bits_as_rx",
+      "disconnected_waveform_or_constellation"
+    ]
+  },
+  "difficulty": {
+    "score": 12,
+    "maximum": 12,
+    "basis": [
+      "complete standards-based Tx-channel-Rx chain",
+      "multipath/noise/CFO",
+      "coarse and fine synchronization",
+      "OFDM channel estimation and equalization",
+      "BCC and LDPC recovery",
+      "8811-block fixed-point receiver hierarchy"
+    ]
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85,
+    "preferred_reference_score": 90,
+    "normalize_threshold_to_100": false,
+    "groups": {
+      "A": {
+        "weight": 0.25,
+        "meaning": "true Tx/Rx BER, CFO-estimation and equalized-constellation accuracy"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "finite complete unit-consistent public outputs"
+      },
+      "M": {
+        "weight": 0.2,
+        "meaning": "connected waveform, synchronization, equalization, coding and decoding mechanisms"
+      },
+      "C": {
+        "weight": 0.2,
+        "meaning": "causal SNR, CFO and channel-coding effects"
+      },
+      "R": {
+        "weight": 0.15,
+        "meaning": "worst private scenario"
+      },
+      "D": {
+        "weight": 0.1,
+        "meaning": "packet acquisition and frequency-synchronization dynamics"
+      }
+    }
+  },
+  "minimum_shortcut_sanity_contract": [
+    "missing_bit_recovery",
+    "fixed_outputs_across_scenarios",
+    "snr_without_effect",
+    "cfo_without_effect",
+    "coding_without_effect",
+    "copied_tx_bits_as_rx",
+    "disconnected_waveform_or_constellation"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XTHERM-13",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/ResidentialBuildingTESandPVcell.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 344,
+  "retained_bytes": 3000801,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XCOMM-04",
+  "collection": "XCOMM",
+  "reference": {
+    "identity_path": "tasks/XCOMM-04/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "HDLDPDwithLMSCoeffExample.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XCOMM-04",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a Simulink model of a closed-loop adaptive digital-predistortion transmitter for a complex OFDM waveform driving a nonlinear RF power amplifier with memory.",
+    "engineering_objects": [
+      "Build a Simulink model of a closed-loop adaptive digital-predistortion transmitter for a complex OFDM waveform driving a nonlinear RF power amplifier with memory.",
+      "The transmitted waveform must pass through an adaptive predistorter and the power-amplifier path, and the measured amplifier output must be fed back to update the predistorter online.",
+      "PaNonlinearityScale is between 0.9 and 1.1 and scales the nonlinear and memory terms of the identified power-amplifier behavior around its nominal operating point."
+    ],
+    "physical_paths": [
+      "The transmitted waveform must pass through an adaptive predistorter and the power-amplifier path, and the measured amplifier output must be fed back to update the predistorter online.",
+      "The connected adaptive path should reduce aligned in-band waveform error and adjacent spectral regrowth while keeping its adaptive state bounded.",
+      "TxBaseband is the actual OFDM waveform entering the transmitter path; PredistortedDrive is the adaptive-predistorter output applied to the nonlinear power amplifier; PaOutput is the measured nonlinear-amplifier output; AdaptiveCoefficients is the online state used by that connected predistorter; and AdaptationError is the measured error that drives its online update.",
+      "Build a Simulink model of a closed-loop adaptive digital-predistortion transmitter for a complex OFDM waveform driving a nonlinear RF power amplifier with memory."
+    ],
+    "functional_paths": [
+      "Build a Simulink model of a closed-loop adaptive digital-predistortion transmitter for a complex OFDM waveform driving a nonlinear RF power amplifier with memory."
+    ],
+    "information_paths": [
+      "InputScale, PaNonlinearityScale -> F90-XCOMM-04 plant/control path -> TxBaseband, PredistortedDrive, PaOutput, AdaptiveCoefficients, AdaptationError"
+    ],
+    "modes_and_events": [
+      "Build a Simulink model of a closed-loop adaptive digital-predistortion transmitter for a complex OFDM waveform driving a nonlinear RF power amplifier with memory."
+    ],
+    "interfaces": [
+      {
+        "name": "InputScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read InputScale and PaNonlinearityScale from the MATLAB base workspace. InputScale is between 0.9 and 1.1 and scales the OFDM waveform entering the transmitter.",
+        "source": "tasks/XCOMM-04/public_spec.json"
+      },
+      {
+        "name": "PaNonlinearityScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read InputScale and PaNonlinearityScale from the MATLAB base workspace. PaNonlinearityScale is between 0.9 and 1.1 and scales the nonlinear and memory terms of the identified power-amplifier behavior around its nominal operating point.",
+        "source": "tasks/XCOMM-04/public_spec.json"
+      },
+      {
+        "name": "TxBaseband",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "normalized complex baseband amplitude"
+        ],
+        "range_or_shape": "Log complex MATLAB Timeseries named TxBaseband, PredistortedDrive, PaOutput, and AdaptationError, each in normalized complex baseband amplitude, and a real- or complex-vector MATLAB Timeseries named AdaptiveCoefficients in unitless coefficients. TxBaseband is the actual OFDM waveform entering the transmitter path; PredistortedDrive is the adaptive-predistorter output applied to the nonlinear power amplifier; PaOutput is the measured nonlinear-amplifier output; AdaptiveCoefficients is the online state used by that connected predistorter; and AdaptationError is the measured error that drives its online update.",
+        "source": "tasks/XCOMM-04/public_spec.json"
+      },
+      {
+        "name": "PredistortedDrive",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "normalized complex baseband amplitude"
+        ],
+        "range_or_shape": "Log complex MATLAB Timeseries named TxBaseband, PredistortedDrive, PaOutput, and AdaptationError, each in normalized complex baseband amplitude, and a real- or complex-vector MATLAB Timeseries named AdaptiveCoefficients in unitless coefficients. TxBaseband is the actual OFDM waveform entering the transmitter path; PredistortedDrive is the adaptive-predistorter output applied to the nonlinear power amplifier; PaOutput is the measured nonlinear-amplifier output; AdaptiveCoefficients is the online state used by that connected predistorter; and AdaptationError is the measured error that drives its online update.",
+        "source": "tasks/XCOMM-04/public_spec.json"
+      },
+      {
+        "name": "PaOutput",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "normalized complex baseband amplitude"
+        ],
+        "range_or_shape": "Log complex MATLAB Timeseries named TxBaseband, PredistortedDrive, PaOutput, and AdaptationError, each in normalized complex baseband amplitude, and a real- or complex-vector MATLAB Timeseries named AdaptiveCoefficients in unitless coefficients. TxBaseband is the actual OFDM waveform entering the transmitter path; PredistortedDrive is the adaptive-predistorter output applied to the nonlinear power amplifier; PaOutput is the measured nonlinear-amplifier output; AdaptiveCoefficients is the online state used by that connected predistorter; and AdaptationError is the measured error that drives its online update.",
+        "source": "tasks/XCOMM-04/public_spec.json"
+      },
+      {
+        "name": "AdaptiveCoefficients",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Log complex MATLAB Timeseries named TxBaseband, PredistortedDrive, PaOutput, and AdaptationError, each in normalized complex baseband amplitude, and a real- or complex-vector MATLAB Timeseries named AdaptiveCoefficients in unitless coefficients. TxBaseband is the actual OFDM waveform entering the transmitter path; PredistortedDrive is the adaptive-predistorter output applied to the nonlinear power amplifier; PaOutput is the measured nonlinear-amplifier output; AdaptiveCoefficients is the online state used by that connected predistorter; and AdaptationError is the measured error that drives its online update.",
+        "source": "tasks/XCOMM-04/public_spec.json"
+      },
+      {
+        "name": "AdaptationError",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "normalized complex baseband amplitude"
+        ],
+        "range_or_shape": "Log complex MATLAB Timeseries named TxBaseband, PredistortedDrive, PaOutput, and AdaptationError, each in normalized complex baseband amplitude, and a real- or complex-vector MATLAB Timeseries named AdaptiveCoefficients in unitless coefficients. TxBaseband is the actual OFDM waveform entering the transmitter path; PredistortedDrive is the adaptive-predistorter output applied to the nonlinear power amplifier; PaOutput is the measured nonlinear-amplifier output; AdaptiveCoefficients is the online state used by that connected predistorter; and AdaptationError is the measured error that drives its online update.",
+        "source": "tasks/XCOMM-04/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "PaNonlinearityScale is between 0.9 and 1.1 and scales the nonlinear and memory terms of the identified power-amplifier behavior around its nominal operating point."
+    ],
+    "feedback_and_control_causality": [
+      "Build a Simulink model of a closed-loop adaptive digital-predistortion transmitter for a complex OFDM waveform driving a nonlinear RF power amplifier with memory."
+    ],
+    "signal_sources": [
+      "InputScale is read from the public MATLAB base-workspace input contract.",
+      "PaNonlinearityScale is read from the public MATLAB base-workspace input contract.",
+      "TxBaseband is produced by the implemented plant or controller and logged under the public output contract.",
+      "PredistortedDrive is produced by the implemented plant or controller and logged under the public output contract.",
+      "PaOutput is produced by the implemented plant or controller and logged under the public output contract.",
+      "AdaptiveCoefficients is produced by the implemented plant or controller and logged under the public output contract.",
+      "AdaptationError is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "InputScale: Read InputScale and PaNonlinearityScale from the MATLAB base workspace. InputScale is between 0.9 and 1.1 and scales the OFDM waveform entering the transmitter.",
+      "PaNonlinearityScale: Read InputScale and PaNonlinearityScale from the MATLAB base workspace. PaNonlinearityScale is between 0.9 and 1.1 and scales the nonlinear and memory terms of the identified power-amplifier behavior around its nominal operating point."
+    ],
+    "disturbances": [
+      "F90-XCOMM-04 operating variation is supplied through InputScale, PaNonlinearityScale."
+    ],
+    "dynamic_processes": [
+      "F90-XCOMM-04 produces time-varying TxBaseband, PredistortedDrive, PaOutput, AdaptiveCoefficients, AdaptationError over the declared run."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XCOMM-04: prescribing TxBaseband directly would bypass the system path described by: The transmitted waveform must pass through an adaptive predistorter and the power-amplifier path, and the measured amplifier output must be fed back to update the predistorter online.",
+      "F90-XCOMM-04: replaying a fixed TxBaseband trace would ignore causal variation in InputScale."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XCOMM-04/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XCOMM-04/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XCOMM-04/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

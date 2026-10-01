@@ -1,0 +1,13 @@
+{
+  "schema": "simuverity.third-party-source.v1",
+  "task_id": "F90-XAUTO-10",
+  "repository": "https://github.com/VikingMotorsports/torque-vectoring",
+  "revision": "c1d789df67efc6923fad7e91ba2bcb574b535206",
+  "license_spdx": "BSD-3-Clause",
+  "license_path": "source/license",
+  "model_path": "source/simulink/torque_vectoring_sim.slx",
+  "saved_release": "R2022a",
+  "validated_release": "R2025a",
+  "core_source_modified": false,
+  "active_topology_boundary": "Only the active open-loop nonlinear handling plant is used; commented PI and lookup branches are excluded from control claims and scoring."
+}

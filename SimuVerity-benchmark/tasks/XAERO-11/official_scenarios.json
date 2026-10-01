@@ -1,0 +1,240 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XAERO-11",
+  "scenarios": [
+    {
+      "id": "nominal_slew",
+      "operation_mode": 1,
+      "initial_body_rate_rad_s": [
+        0,
+        0,
+        0
+      ],
+      "target_inertial_unit_vector": [
+        1,
+        0,
+        0
+      ],
+      "sensor_noise_scale": 1.0,
+      "disturbance_scale": 1.0
+    },
+    {
+      "id": "three_axis_detumble",
+      "operation_mode": 0,
+      "initial_body_rate_rad_s": [
+        0.035,
+        -0.025,
+        0.045
+      ],
+      "target_inertial_unit_vector": [
+        1,
+        0,
+        0
+      ],
+      "sensor_noise_scale": 1.0,
+      "disturbance_scale": 1.0
+    },
+    {
+      "id": "skew_rate_recovery",
+      "operation_mode": 0,
+      "initial_body_rate_rad_s": [
+        -0.05,
+        0.04,
+        -0.03
+      ],
+      "target_inertial_unit_vector": [
+        1,
+        0,
+        0
+      ],
+      "sensor_noise_scale": 1.0,
+      "disturbance_scale": 1.0
+    },
+    {
+      "id": "high_sensor_noise",
+      "operation_mode": 1,
+      "initial_body_rate_rad_s": [
+        0,
+        0,
+        0
+      ],
+      "target_inertial_unit_vector": [
+        0,
+        1,
+        0
+      ],
+      "sensor_noise_scale": 5.0,
+      "disturbance_scale": 1.0
+    },
+    {
+      "id": "high_disturbance",
+      "operation_mode": 1,
+      "initial_body_rate_rad_s": [
+        0,
+        0,
+        0
+      ],
+      "target_inertial_unit_vector": [
+        0,
+        0,
+        1
+      ],
+      "sensor_noise_scale": 1.0,
+      "disturbance_scale": 2.0
+    },
+    {
+      "id": "combined_stress",
+      "operation_mode": 1,
+      "initial_body_rate_rad_s": [
+        0.02,
+        -0.015,
+        0.03
+      ],
+      "target_inertial_unit_vector": [
+        0.5773502691896258,
+        0.5773502691896258,
+        0.5773502691896258
+      ],
+      "sensor_noise_scale": 3.0,
+      "disturbance_scale": 1.8
+    }
+  ],
+  "contract": {
+    "difficulty": {
+      "score": 9,
+      "maximum": 12,
+      "basis": [
+        "orbit and Sun/Earth ephemeris propagation",
+        "quaternion rigid-body dynamics",
+        "multi-source environmental disturbance torques",
+        "noisy attitude sensors and dynamic determination",
+        "detumbling and eigenaxis-slew modes",
+        "magnetorquer and pulsed-thruster allocation"
+      ]
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85,
+      "preferred_reference_score": 90,
+      "normalize_threshold_to_100": false,
+      "groups": {
+        "A": {
+          "weight": 0.25,
+          "meaning": "attitude, quaternion, estimator and detumbling accuracy"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "finite complete exact-width public logs"
+        },
+        "M": {
+          "weight": 0.2,
+          "meaning": "orbit, disturbance, sensing, estimation, dynamics and dual-actuator mechanisms"
+        },
+        "C": {
+          "weight": 0.2,
+          "meaning": "causal response to initial rate, sensor noise, disturbance severity and mode selection"
+        },
+        "R": {
+          "weight": 0.15,
+          "meaning": "worst private-scenario state and actuator bounds"
+        },
+        "D": {
+          "weight": 0.1,
+          "meaning": "dynamic attitude, actuation and recovery behavior"
+        }
+      },
+      "reference_raw_score": 98.138723333,
+      "reference_group_scores": {
+        "A": 100.0,
+        "Q": 100.0,
+        "M": 100.0,
+        "C": 100.0,
+        "R": 100.0,
+        "D": 81.387233328
+      },
+      "fresh_replay_pass": true
+    },
+    "runtime_logging_boundary": {
+      "evaluator_owned_in_memory_tap": "BFN_00_zfull_system/Disturbances/Sum1 output",
+      "purpose": "capture the true dynamic three-axis disturbance torque without modifying or saving the source model",
+      "source_model_saved": false
+    },
+    "minimum_shortcut_sanity_contract": [
+      "missing_attitude_state",
+      "missing_estimation_state",
+      "missing_actuator_state",
+      "missing_environment_state",
+      "fixed_outputs_across_scenarios",
+      "sensor_noise_without_effect",
+      "disturbance_scale_without_effect",
+      "disconnected_feedback_or_actuation"
+    ]
+  },
+  "difficulty": {
+    "score": 9,
+    "maximum": 12,
+    "basis": [
+      "orbit and Sun/Earth ephemeris propagation",
+      "quaternion rigid-body dynamics",
+      "multi-source environmental disturbance torques",
+      "noisy attitude sensors and dynamic determination",
+      "detumbling and eigenaxis-slew modes",
+      "magnetorquer and pulsed-thruster allocation"
+    ]
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85,
+    "preferred_reference_score": 90,
+    "normalize_threshold_to_100": false,
+    "groups": {
+      "A": {
+        "weight": 0.25,
+        "meaning": "attitude, quaternion, estimator and detumbling accuracy"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "finite complete exact-width public logs"
+      },
+      "M": {
+        "weight": 0.2,
+        "meaning": "orbit, disturbance, sensing, estimation, dynamics and dual-actuator mechanisms"
+      },
+      "C": {
+        "weight": 0.2,
+        "meaning": "causal response to initial rate, sensor noise, disturbance severity and mode selection"
+      },
+      "R": {
+        "weight": 0.15,
+        "meaning": "worst private-scenario state and actuator bounds"
+      },
+      "D": {
+        "weight": 0.1,
+        "meaning": "dynamic attitude, actuation and recovery behavior"
+      }
+    },
+    "reference_raw_score": 98.138723333,
+    "reference_group_scores": {
+      "A": 100.0,
+      "Q": 100.0,
+      "M": 100.0,
+      "C": 100.0,
+      "R": 100.0,
+      "D": 81.387233328
+    },
+    "fresh_replay_pass": true
+  },
+  "runtime_logging_boundary": {
+    "evaluator_owned_in_memory_tap": "BFN_00_zfull_system/Disturbances/Sum1 output",
+    "purpose": "capture the true dynamic three-axis disturbance torque without modifying or saving the source model",
+    "source_model_saved": false
+  },
+  "minimum_shortcut_sanity_contract": [
+    "missing_attitude_state",
+    "missing_estimation_state",
+    "missing_actuator_state",
+    "missing_environment_state",
+    "fixed_outputs_across_scenarios",
+    "sensor_noise_without_effect",
+    "disturbance_scale_without_effect",
+    "disconnected_feedback_or_actuation"
+  ]
+}

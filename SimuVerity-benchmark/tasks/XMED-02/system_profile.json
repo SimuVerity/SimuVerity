@@ -1,0 +1,189 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XMED-02",
+  "collection": "XMED",
+  "reference": {
+    "identity_path": "tasks/XMED-02/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/F90_XMED_02.slx",
+    "model_path": "tasks/XMED-02/reference/files/F90_XMED_02.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XMED-02",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a closed-loop ECMO-assisted cardiovascular circulation model using Simulink and Simscape physical networks.",
+    "engineering_objects": [
+      "F90-XMED-02 plant and controller described by the current public task contract",
+      "Measured output interfaces: pressure_state, flow_state, pump_command"
+    ],
+    "physical_paths": [
+      "A pulsatile heart must drive systemic and pulmonary resistance, inertance, and compliance paths, while a venous blood path must pass through an actively commanded pump and oxygenator before returning to the arterial circulation."
+    ],
+    "functional_paths": [
+      "Across the declared operating range, use physically measured aortic pressure as feedback to command the real ECMO pump so that beat-averaged aortic pressure follows the requested initial value and the requested step to the final value, while maintaining forward ECMO flow and physically consistent systemic and pulmonary circulation."
+    ],
+    "information_paths": [
+      "target_map_initial_mmHg, target_map_final_mmHg, target_step_time_s, systemic_resistance_scale, heart_rate_bpm, pump_speed_limit_rpm -> F90-XMED-02 plant/control path -> pressure_state, flow_state, pump_command"
+    ],
+    "modes_and_events": [
+      "Build a closed-loop ECMO-assisted cardiovascular circulation model using Simulink and Simscape physical networks.",
+      "Read the scalar base-workspace variables target_map_initial_mmHg, target_map_final_mmHg, target_step_time_s, systemic_resistance_scale, heart_rate_bpm, and pump_speed_limit_rpm.",
+      "every other parameter and initialization dependency must be self-contained in the saved model."
+    ],
+    "interfaces": [
+      {
+        "name": "target_map_initial_mmHg",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "mmHg"
+        ],
+        "range_or_shape": "Read the scalar base-workspace variables target_map_initial_mmHg, target_map_final_mmHg, target_step_time_s, systemic_resistance_scale, heart_rate_bpm, and pump_speed_limit_rpm.",
+        "source": "tasks/XMED-02/public_spec.json"
+      },
+      {
+        "name": "target_map_final_mmHg",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "mmHg"
+        ],
+        "range_or_shape": "Read the scalar base-workspace variables target_map_initial_mmHg, target_map_final_mmHg, target_step_time_s, systemic_resistance_scale, heart_rate_bpm, and pump_speed_limit_rpm.",
+        "source": "tasks/XMED-02/public_spec.json"
+      },
+      {
+        "name": "target_step_time_s",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read the scalar base-workspace variables target_map_initial_mmHg, target_map_final_mmHg, target_step_time_s, systemic_resistance_scale, heart_rate_bpm, and pump_speed_limit_rpm.",
+        "source": "tasks/XMED-02/public_spec.json"
+      },
+      {
+        "name": "systemic_resistance_scale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read the scalar base-workspace variables target_map_initial_mmHg, target_map_final_mmHg, target_step_time_s, systemic_resistance_scale, heart_rate_bpm, and pump_speed_limit_rpm.",
+        "source": "tasks/XMED-02/public_spec.json"
+      },
+      {
+        "name": "heart_rate_bpm",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "beats/min"
+        ],
+        "range_or_shape": "Read the scalar base-workspace variables target_map_initial_mmHg, target_map_final_mmHg, target_step_time_s, systemic_resistance_scale, heart_rate_bpm, and pump_speed_limit_rpm.",
+        "source": "tasks/XMED-02/public_spec.json"
+      },
+      {
+        "name": "pump_speed_limit_rpm",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "rpm"
+        ],
+        "range_or_shape": "Read the scalar base-workspace variables target_map_initial_mmHg, target_map_final_mmHg, target_step_time_s, systemic_resistance_scale, heart_rate_bpm, and pump_speed_limit_rpm.",
+        "source": "tasks/XMED-02/public_spec.json"
+      },
+      {
+        "name": "pressure_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "mmHg"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries pressure_state with three channels ordered as aortic pressure, central venous pressure, and pulmonary arterial pressure in mmHg; flow_state with three channels ordered as ECMO flow, systemic arterial flow, and pulmonary arterial flow in cm^3/s, positive in their physical forward directions; and pump_command with the commanded pump speed in rpm.",
+        "source": "tasks/XMED-02/public_spec.json"
+      },
+      {
+        "name": "flow_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "cm^3/s"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries pressure_state with three channels ordered as aortic pressure, central venous pressure, and pulmonary arterial pressure in mmHg; flow_state with three channels ordered as ECMO flow, systemic arterial flow, and pulmonary arterial flow in cm^3/s, positive in their physical forward directions; and pump_command with the commanded pump speed in rpm.",
+        "source": "tasks/XMED-02/public_spec.json"
+      },
+      {
+        "name": "pump_command",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rpm"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries pressure_state with three channels ordered as aortic pressure, central venous pressure, and pulmonary arterial pressure in mmHg; flow_state with three channels ordered as ECMO flow, systemic arterial flow, and pulmonary arterial flow in cm^3/s, positive in their physical forward directions; and pump_command with the commanded pump speed in rpm.",
+        "source": "tasks/XMED-02/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "flow_state with three channels ordered as ECMO flow, systemic arterial flow, and pulmonary arterial flow in cm^3/s, positive in their physical forward directions;",
+      "All pressure and flow channels must originate from the corresponding physical measurement locations, not from references or constructed answer waveforms."
+    ],
+    "feedback_and_control_causality": [
+      "Build a closed-loop ECMO-assisted cardiovascular circulation model using Simulink and Simscape physical networks.",
+      "Across the declared operating range, use physically measured aortic pressure as feedback to command the real ECMO pump so that beat-averaged aortic pressure follows the requested initial value and the requested step to the final value, while maintaining forward ECMO flow and physically consistent systemic and pulmonary circulation."
+    ],
+    "signal_sources": [
+      "target_map_initial_mmHg is read from the public MATLAB base-workspace input contract.",
+      "target_map_final_mmHg is read from the public MATLAB base-workspace input contract.",
+      "target_step_time_s is read from the public MATLAB base-workspace input contract.",
+      "systemic_resistance_scale is read from the public MATLAB base-workspace input contract.",
+      "heart_rate_bpm is read from the public MATLAB base-workspace input contract.",
+      "pump_speed_limit_rpm is read from the public MATLAB base-workspace input contract.",
+      "pressure_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "flow_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "pump_command is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "target_map_initial_mmHg: Read the scalar base-workspace variables target_map_initial_mmHg, target_map_final_mmHg, target_step_time_s, systemic_resistance_scale, heart_rate_bpm, and pump_speed_limit_rpm.",
+      "target_map_final_mmHg: Read the scalar base-workspace variables target_map_initial_mmHg, target_map_final_mmHg, target_step_time_s, systemic_resistance_scale, heart_rate_bpm, and pump_speed_limit_rpm.",
+      "target_step_time_s: Read the scalar base-workspace variables target_map_initial_mmHg, target_map_final_mmHg, target_step_time_s, systemic_resistance_scale, heart_rate_bpm, and pump_speed_limit_rpm.",
+      "systemic_resistance_scale: Read the scalar base-workspace variables target_map_initial_mmHg, target_map_final_mmHg, target_step_time_s, systemic_resistance_scale, heart_rate_bpm, and pump_speed_limit_rpm.",
+      "heart_rate_bpm: Read the scalar base-workspace variables target_map_initial_mmHg, target_map_final_mmHg, target_step_time_s, systemic_resistance_scale, heart_rate_bpm, and pump_speed_limit_rpm.",
+      "pump_speed_limit_rpm: Read the scalar base-workspace variables target_map_initial_mmHg, target_map_final_mmHg, target_step_time_s, systemic_resistance_scale, heart_rate_bpm, and pump_speed_limit_rpm."
+    ],
+    "disturbances": [
+      "Read the scalar base-workspace variables target_map_initial_mmHg, target_map_final_mmHg, target_step_time_s, systemic_resistance_scale, heart_rate_bpm, and pump_speed_limit_rpm.",
+      "Across the declared operating range, use physically measured aortic pressure as feedback to command the real ECMO pump so that beat-averaged aortic pressure follows the requested initial value and the requested step to the final value, while maintaining forward ECMO flow and physically consistent systemic and pulmonary circulation."
+    ],
+    "dynamic_processes": [
+      "Read the scalar base-workspace variables target_map_initial_mmHg, target_map_final_mmHg, target_step_time_s, systemic_resistance_scale, heart_rate_bpm, and pump_speed_limit_rpm.",
+      "Across the declared operating range, use physically measured aortic pressure as feedback to command the real ECMO pump so that beat-averaged aortic pressure follows the requested initial value and the requested step to the final value, while maintaining forward ECMO flow and physically consistent systemic and pulmonary circulation."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XMED-02: prescribing pressure_state directly would bypass the system path described by: A pulsatile heart must drive systemic and pulmonary resistance, inertance, and compliance paths, while a venous blood path must pass through an actively commanded pump and oxygenator before returning to the arterial circulation.",
+      "F90-XMED-02: replaying a fixed pressure_state trace would ignore causal variation in target_map_initial_mmHg."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XMED-02/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XMED-02/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XMED-02/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

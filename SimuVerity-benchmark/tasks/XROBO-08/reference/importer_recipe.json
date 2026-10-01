@@ -1,0 +1,74 @@
+{
+  "schema": "simuverity.matlab-local-importer-recipe.v1",
+  "task_id": "XROBO-08",
+  "release": "simuverity-101-v1",
+  "matlab_release": "R2025a",
+  "publisher": "The MathWorks, Inc.",
+  "redistributes_mathworks_files": false,
+  "destination": "%LOCALAPPDATA%/SimuVerity/assets/simuverity-101-v1/XROBO-08",
+  "discovery": {
+    "method": "mathworks_open_example_relative_root",
+    "example_id": "rl/TrainSACAgentForBallBalanceControlExample",
+    "source_root": {
+      "selection": "unique_relative_anchor_path",
+      "anchor_path": "rlKinovaBallBalance.slx"
+    },
+    "expected_files": [
+      {
+        "path": "kinovaBallBalanceAgent.mat",
+        "size_bytes": 283109
+      },
+      {
+        "path": "animatedPath.m",
+        "size_bytes": 1539
+      },
+      {
+        "path": "calcMOI.m",
+        "size_bytes": 385
+      },
+      {
+        "path": "cor2SpringDamperParams.m",
+        "size_bytes": 661
+      },
+      {
+        "path": "kinova_params.m",
+        "size_bytes": 3275
+      },
+      {
+        "path": "rlKinovaBallBalance.slx",
+        "size_bytes": 495252
+      }
+    ]
+  },
+  "transform": "transform.m",
+  "validation": {
+    "required": true,
+    "checks": [
+      "load",
+      "update",
+      "compile",
+      "simulate",
+      "all_official_scenarios",
+      "reference_score"
+    ],
+    "on_mismatch": "fail_closed"
+  },
+  "entrypoint": "main/rlKinovaBallBalance.slx",
+  "expected_valid_scenarios": 7,
+  "score_tolerance": 1e-12,
+  "expected_score": 92.2252271742819,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal_offset",
+      "opposite_quadrant",
+      "near_edge_recovery",
+      "initial_velocity_recovery",
+      "ball_mass_margin",
+      "contact_friction_margin",
+      "actuator_derating"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision"
+}

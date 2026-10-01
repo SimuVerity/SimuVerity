@@ -1,0 +1,197 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XTHERM-08",
+  "collection": "XTHERM",
+  "reference": {
+    "identity_path": "tasks/XTHERM-08/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "DataCenterCooling.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XTHERM-08",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a physically causal closed-loop liquid-cooling system for a data center.",
+    "engineering_objects": [
+      "Build a physically causal closed-loop liquid-cooling system for a data center.",
+      "The plant must contain a server heat source, a chilled-water loop, a separate condenser-water loop, a real water-to-water heat exchanger, a chiller path between the loops, and a cooling tower coupled to ambient temperature and relative humidity.",
+      "Separate physical pumps must circulate the two water loops."
+    ],
+    "physical_paths": [
+      "Build a physically causal closed-loop liquid-cooling system for a data center.",
+      "The plant must contain a server heat source, a chilled-water loop, a separate condenser-water loop, a real water-to-water heat exchanger, a chiller path between the loops, and a cooling tower coupled to ambient temperature and relative humidity.",
+      "Separate physical pumps must circulate the two water loops."
+    ],
+    "functional_paths": [
+      "The chiller must regulate its evaporator outlet to about 18 degC, the chilled-water pump must respond to server outlet temperature to keep it near its intended operating range around 28 degC, and the condenser-water pump must respond to the condenser-to-tower temperature difference around 6 degC.",
+      "Internal controller form and chiller implementation are not prescribed.",
+      "Log complete-run MATLAB Timeseries named thermal_state, flow_control_state, heat_power_state, and environment_state."
+    ],
+    "information_paths": [
+      "ServerLoadScale, AmbientTemperatureOffset_C, RelativeHumidityScale, ChilledWaterPumpCapacityScale, ChillerCapacityScale -> F90-XTHERM-08 plant/control path -> thermal_state, flow_control_state, heat_power_state, environment_state"
+    ],
+    "modes_and_events": [
+      "F90-XTHERM-08 startup and continuous operation follow the current public task contract."
+    ],
+    "interfaces": [
+      {
+        "name": "ServerLoadScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read ServerLoadScale, AmbientTemperatureOffset_C, RelativeHumidityScale, ChilledWaterPumpCapacityScale, and ChillerCapacityScale from the MATLAB base workspace.",
+        "source": "tasks/XTHERM-08/public_spec.json"
+      },
+      {
+        "name": "AmbientTemperatureOffset_C",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Read ServerLoadScale, AmbientTemperatureOffset_C, RelativeHumidityScale, ChilledWaterPumpCapacityScale, and ChillerCapacityScale from the MATLAB base workspace.",
+        "source": "tasks/XTHERM-08/public_spec.json"
+      },
+      {
+        "name": "RelativeHumidityScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read ServerLoadScale, AmbientTemperatureOffset_C, RelativeHumidityScale, ChilledWaterPumpCapacityScale, and ChillerCapacityScale from the MATLAB base workspace.",
+        "source": "tasks/XTHERM-08/public_spec.json"
+      },
+      {
+        "name": "ChilledWaterPumpCapacityScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read ServerLoadScale, AmbientTemperatureOffset_C, RelativeHumidityScale, ChilledWaterPumpCapacityScale, and ChillerCapacityScale from the MATLAB base workspace.",
+        "source": "tasks/XTHERM-08/public_spec.json"
+      },
+      {
+        "name": "ChillerCapacityScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read ServerLoadScale, AmbientTemperatureOffset_C, RelativeHumidityScale, ChilledWaterPumpCapacityScale, and ChillerCapacityScale from the MATLAB base workspace.",
+        "source": "tasks/XTHERM-08/public_spec.json"
+      },
+      {
+        "name": "thermal_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named thermal_state, flow_control_state, heat_power_state, and environment_state. thermal_state has 5 channels in this order: evaporator outlet, server outlet, heat-exchanger outlet, condenser outlet, and cooling-tower outlet temperature, all in degC.",
+        "source": "tasks/XTHERM-08/public_spec.json"
+      },
+      {
+        "name": "flow_control_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "g/s",
+          "kg/s",
+          "kg"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named thermal_state, flow_control_state, heat_power_state, and environment_state. flow_control_state has 5 channels [chilled-water and condenser-water mass flow (kg/s),chilled-pump command,condenser-pump command,chiller command].",
+        "source": "tasks/XTHERM-08/public_spec.json"
+      },
+      {
+        "name": "heat_power_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "W"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named thermal_state, flow_control_state, heat_power_state, and environment_state. heat_power_state has 9 channels [server heat,heat-exchanger transfer,evaporator heat,cooling-tower heat,compressor power,condenser-pump power,chilled-pump power,tower-fan power,total auxiliary power], all in W.",
+        "source": "tasks/XTHERM-08/public_spec.json"
+      },
+      {
+        "name": "environment_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "g/s",
+          "kg/s",
+          "degC",
+          "kg"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named thermal_state, flow_control_state, heat_power_state, and environment_state. environment_state has 3 channels [ambient temperature (degC),relative humidity,tower evaporation (kg/s)].",
+        "source": "tasks/XTHERM-08/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Internal controller form and chiller implementation are not prescribed.",
+      "thermal_state has 5 channels in this order: evaporator outlet, server outlet, heat-exchanger outlet, condenser outlet, and cooling-tower outlet temperature, all in degC."
+    ],
+    "feedback_and_control_causality": [
+      "Build a physically causal closed-loop liquid-cooling system for a data center.",
+      "The plant must contain a server heat source, a chilled-water loop, a separate condenser-water loop, a real water-to-water heat exchanger, a chiller path between the loops, and a cooling tower coupled to ambient temperature and relative humidity.",
+      "The chiller must regulate its evaporator outlet to about 18 degC, the chilled-water pump must respond to server outlet temperature to keep it near its intended operating range around 28 degC, and the condenser-water pump must respond to the condenser-to-tower temperature difference around 6 degC."
+    ],
+    "signal_sources": [
+      "ServerLoadScale is read from the public MATLAB base-workspace input contract.",
+      "AmbientTemperatureOffset_C is read from the public MATLAB base-workspace input contract.",
+      "RelativeHumidityScale is read from the public MATLAB base-workspace input contract.",
+      "ChilledWaterPumpCapacityScale is read from the public MATLAB base-workspace input contract.",
+      "ChillerCapacityScale is read from the public MATLAB base-workspace input contract.",
+      "thermal_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "flow_control_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "heat_power_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "environment_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "ServerLoadScale: Read ServerLoadScale, AmbientTemperatureOffset_C, RelativeHumidityScale, ChilledWaterPumpCapacityScale, and ChillerCapacityScale from the MATLAB base workspace.",
+      "AmbientTemperatureOffset_C: Read ServerLoadScale, AmbientTemperatureOffset_C, RelativeHumidityScale, ChilledWaterPumpCapacityScale, and ChillerCapacityScale from the MATLAB base workspace.",
+      "RelativeHumidityScale: Read ServerLoadScale, AmbientTemperatureOffset_C, RelativeHumidityScale, ChilledWaterPumpCapacityScale, and ChillerCapacityScale from the MATLAB base workspace.",
+      "ChilledWaterPumpCapacityScale: Read ServerLoadScale, AmbientTemperatureOffset_C, RelativeHumidityScale, ChilledWaterPumpCapacityScale, and ChillerCapacityScale from the MATLAB base workspace.",
+      "ChillerCapacityScale: Read ServerLoadScale, AmbientTemperatureOffset_C, RelativeHumidityScale, ChilledWaterPumpCapacityScale, and ChillerCapacityScale from the MATLAB base workspace."
+    ],
+    "disturbances": [
+      "Read ServerLoadScale, AmbientTemperatureOffset_C, RelativeHumidityScale, ChilledWaterPumpCapacityScale, and ChillerCapacityScale from the MATLAB base workspace.",
+      "Apply the load and weather inputs to the physical server and cooling-tower boundaries, and apply capacity scales to the corresponding real pump and chiller actuation paths.",
+      "The loops must follow variable server load and weather, remain within their thermal capacity, and recover after profile changes."
+    ],
+    "dynamic_processes": [
+      "The loops must follow variable server load and weather, remain within their thermal capacity, and recover after profile changes."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XTHERM-08: prescribing thermal_state directly would bypass the system path described by: Build a physically causal closed-loop liquid-cooling system for a data center.",
+      "F90-XTHERM-08: replaying a fixed thermal_state trace would ignore causal variation in ServerLoadScale."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XTHERM-08/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XTHERM-08/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XTHERM-08/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

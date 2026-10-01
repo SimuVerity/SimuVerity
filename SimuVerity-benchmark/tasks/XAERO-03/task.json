@@ -1,0 +1,80 @@
+{
+  "schema": "simuverity.task.v1",
+  "release": "simuverity-101-v1",
+  "task_id": "XAERO-03",
+  "ordinal": 11,
+  "collection": "XAERO",
+  "runtime_alias": "XAERO-03",
+  "required_model_file": "cand_XAERO03.slx",
+  "evaluation_policy_id": "simuverity-101-v1:xaero-03:scoring",
+  "candidate_closure": {
+    "public_input_names": [
+      "altitude_reference",
+      "airspeed_reference",
+      "heading_change",
+      "initial_altitude_offset",
+      "initial_airspeed_offset",
+      "command_time",
+      "gust_speed",
+      "gust_heading",
+      "gust_time"
+    ],
+    "nominal_provider": "simuverity_public_nominal_inputs"
+  },
+  "public_spec": "public_spec.json",
+  "official_scenarios": "official_scenarios.json",
+  "extractor": {
+    "kind": "matlab_function",
+    "path": "extractor/run.m",
+    "entrypoint": "run",
+    "implementation": "vendor/scripts/formal90/tasks/f90_xaero03/f90_xaero03_extract_candidate_evidence.m",
+    "closure_manifest": "extractor/manifest.json"
+  },
+  "scorer": {
+    "kind": "python_function",
+    "path": "scorer.py",
+    "entrypoint": "score",
+    "closure_manifest": "scorer/manifest.json",
+    "offline_only": true
+  },
+  "reference": {
+    "materialization": "bundled",
+    "path": "reference/files",
+    "manifest": "reference/manifest.json",
+    "entrypoint": "reference/files/XAERO03_reference.slx",
+    "expected_valid_scenarios": 9,
+    "score_tolerance": 1e-12,
+    "expected_score": 90.1877765233406,
+    "expected_score_basis": "reference_replay",
+    "scenario_contract": {
+      "expected_ids": [
+        "nominal",
+        "high_altitude_fast_right_turn",
+        "low_altitude_slow_left_turn",
+        "large_climb_transition",
+        "gust_pair_none",
+        "gust_pair_crosswind",
+        "heading_pair_left",
+        "heading_pair_right",
+        "joint_boundary"
+      ],
+      "nominal_scenario_id": "nominal",
+      "nominal_materialization": "extractor_appended_and_explicitly_published"
+    },
+    "score_tolerance_basis": "source_authority_numeric_precision",
+    "runtime_manifest": "reference/runtime_manifest.json"
+  },
+  "applicable_groups": [
+    "G",
+    "A",
+    "Q",
+    "M",
+    "R",
+    "D"
+  ],
+  "release_license_status": "INCLUDED_THIRD_PARTY_LICENSE",
+  "system_profile": {
+    "path": "system_profile.json",
+    "schema": "simuverity.system-profile.v1"
+  }
+}

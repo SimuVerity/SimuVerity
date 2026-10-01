@@ -1,0 +1,32 @@
+{
+  "schema": "simuverity.scorer-manifest.v1",
+  "task_id": "XFLUID-12",
+  "public_interface": "scorer.py:score",
+  "implementation": "scorer.py",
+  "source_modules": [
+    {
+      "module": "ext_scoring_common",
+      "path": "vendor/scripts/formal90/shared/ext_scoring_common.py"
+    },
+    {
+      "module": "ext_xfluid_wecsim_rm3_scoring_core",
+      "path": "vendor/scripts/formal90/tasks/ext_xfluid_wecsim_rm3/ext_xfluid_wecsim_rm3_scoring_core.py"
+    },
+    {
+      "module": "ext_xfluid_wecsim_rm3_group_scoring",
+      "path": "vendor/scripts/formal90/tasks/ext_xfluid_wecsim_rm3/ext_xfluid_wecsim_rm3_group_scoring.py"
+    },
+    {
+      "module": "ext_xfluid_wecsim_rm3_offline_scorer",
+      "path": "vendor/scripts/formal90/tasks/ext_xfluid_wecsim_rm3/ext_xfluid_wecsim_rm3_offline_scorer.py"
+    }
+  ],
+  "final_module": {
+    "module": "ext_xfluid_wecsim_rm3_offline_scorer",
+    "path": "vendor/scripts/formal90/tasks/ext_xfluid_wecsim_rm3/ext_xfluid_wecsim_rm3_offline_scorer.py"
+  },
+  "payload_files": [],
+  "public_bridge": {
+    "mode": "function"
+  }
+}

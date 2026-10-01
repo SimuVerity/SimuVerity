@@ -1,0 +1,90 @@
+{
+  "schema": "simuverity.matlab-local-importer-recipe.v1",
+  "task_id": "XCOMM-07",
+  "release": "simuverity-101-v1",
+  "matlab_release": "R2025a",
+  "publisher": "The MathWorks, Inc.",
+  "redistributes_mathworks_files": false,
+  "destination": "%LOCALAPPDATA%/SimuVerity/assets/simuverity-101-v1/XCOMM-07",
+  "discovery": {
+    "method": "matlab_example_or_installed_product_search",
+    "example_id": "whdl/WLANHDLReceiverExample",
+    "expected_source_filenames": [
+      "createBus.m",
+      "helperwlanGenerateWaveform.m",
+      "wlanFormatDetectFlowChart.png",
+      "wlanFormatDetectRef.m",
+      "wlanhdlMATLABRxReference.m",
+      "wlanhdlReceiver.slx",
+      "wlanhdlReceiverBlockDiagram.png",
+      "WLANHDLReceiverExample.m",
+      "wlanhdlRxParameters.m"
+    ],
+    "expected_files": [
+      {
+        "name": "createBus.m",
+        "size_bytes": 808
+      },
+      {
+        "name": "helperwlanGenerateWaveform.m",
+        "size_bytes": 3750
+      },
+      {
+        "name": "wlanFormatDetectFlowChart.png",
+        "size_bytes": 36605
+      },
+      {
+        "name": "wlanFormatDetectRef.m",
+        "size_bytes": 19186
+      },
+      {
+        "name": "wlanhdlMATLABRxReference.m",
+        "size_bytes": 11681
+      },
+      {
+        "name": "wlanhdlReceiver.slx",
+        "size_bytes": 1173932
+      },
+      {
+        "name": "wlanhdlReceiverBlockDiagram.png",
+        "size_bytes": 37397
+      },
+      {
+        "name": "WLANHDLReceiverExample.m",
+        "size_bytes": 20616
+      },
+      {
+        "name": "wlanhdlRxParameters.m",
+        "size_bytes": 11488
+      }
+    ]
+  },
+  "transform": "transform.m",
+  "validation": {
+    "required": true,
+    "checks": [
+      "load",
+      "update",
+      "compile",
+      "simulate",
+      "all_official_scenarios",
+      "reference_score"
+    ],
+    "on_mismatch": "fail_closed"
+  },
+  "entrypoint": "wlanhdlReceiver.slx",
+  "expected_valid_scenarios": 4,
+  "score_tolerance": 1e-12,
+  "expected_score": 100.0,
+  "scenario_contract": {
+    "expected_ids": [
+      "bcc_nominal",
+      "bcc_low_snr",
+      "bcc_cfo_stress",
+      "ldpc_negative_cfo"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision"
+}

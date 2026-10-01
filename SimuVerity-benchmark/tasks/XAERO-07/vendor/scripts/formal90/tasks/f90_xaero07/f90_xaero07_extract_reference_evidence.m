@@ -1,0 +1,249 @@
+function result = f90_xaero07_extract_reference_evidence(modelPath, outputRoot, officialScenarios, evaluatorAssetRoot)
+% Extract fixed XAERO-07 reference evidence from the public asset closure.
+
+modelPath = string(modelPath);
+outputRoot = string(outputRoot);
+srcDir=string(evaluatorAssetRoot);
+assert(isfolder(srcDir), "SimuVerity:XAERO07:MissingAssetRoot", ...
+    "Evaluator-owned reference asset root is absent: %s", srcDir);
+boundModel = fullfile(srcDir, "ssc_aircraft_elec.slx");
+assert(isfile(boundModel), "SimuVerity:XAERO07:MissingReferenceModel", ...
+    "Reference model is absent from the evaluator asset root.");
+assert(localFilePresence(modelPath) == localFilePresence(boundModel), ...
+    "SimuVerity:XAERO07:ReferenceAliasIdentity", ...
+    "The staged reference alias differs from the asset-root entrypoint.");
+contract = localOfficialScenarios(officialScenarios);
+cases = contract.scenarios;
+evidenceId = strtrim(string(getenv("SIMUVERITY_SCORING_RUN_ID")));
+assert(strlength(evidenceId) > 0, "SimuVerity:XAERO07:ScoringRunIdRequired", ...
+    "Reference extraction requires a fresh SimuVerity ScoringRunId.");
+currentPhase = "reference";
+assert(~isfolder(outputRoot), "SimuVerity:XAERO07:OutputExists", ...
+    "Fresh output root already exists: %s", outputRoot);
+mkdir(outputRoot);
+mkdir(fullfile(outputRoot, "scenario_data"));
+
+scratchRoot = string(tempname);
+assert(~isfolder(scratchRoot), "SimuVerity:XAERO07:ScratchExists", ...
+    "Fresh evaluator scratch path already exists: %s", scratchRoot);
+mkdir(scratchRoot);
+scratchCleanup = onCleanup(@() localRemoveTree(scratchRoot)); %#ok<NASGU>
+oldPath = path;
+pathCleanup = onCleanup(@() path(oldPath)); %#ok<NASGU>
+addpath(srcDir, fullfile(srcDir, "Scripts_Data"), fullfile(srcDir, "Libraries"));
+Simulink.fileGenControl("set", "CacheFolder", fullfile(scratchRoot, "cache"), ...
+    "CodeGenFolder", fullfile(scratchRoot, "codegen"), "createDir", true);
+
+model = "ssc_aircraft_elec";
+names = {"ssc_aircraft_elec.slx", "Libraries/ssc_aircraft_elec_lib.slx", ...
+    "Scripts_Data/ssc_aircraft_elec_configs.m", ...
+    "Scripts_Data/ssc_aircraft_elec_default_params.m", "LICENSE.md"};
+e = struct("schema", "simuverity.f90-xaero07-fixed-evidence.v1", ...
+    "task_id", "F90-XAERO-07", "scoring_run_id", evidenceId, ...
+    "current_phase", currentPhase, "matlab_release", version("-release"), ...
+    "source_identity", ...
+    "MathWorks-Simscape-Air-Taxi-25.1.4.0-c5714d9f7a53f149d3b32e11760dd4e7776bf0ef", ...
+    "source_tree_file_presence", ...
+    "present", ...
+    "source_file_count", 343, "core_source_modifications", 0, ...
+    "runtime_parameter_overrides_only", true, "open_plant_not_fcc_or_ndi", true, ...
+    "load_pass", false, "update_pass", false, "compile_pass", false, ...
+    "simulate_pass", false, "all_scenarios_valid", false, ...
+    "evidence_complete", false, "error_identifier", "", "error_message", "");
+e.source_file_presence = bindingFiles(srcDir, names);
+e.scenarios = struct([]);
+e.structure = struct("height_based_flight_cycle", true, ...
+    "finite_mass_aerodynamic_aircraft_load", true, ...
+    "thrust_and_shaft_load_conversion", true, ...
+    "controlled_motor_and_drive", true, "high_voltage_battery", true, ...
+    "dc_conversion_and_distribution", true, ...
+    "switched_lamp_heater_avionics_loads", true, ...
+    "open_plant_not_fcc_or_ndi", true);
+wall = tic;
+try
+    evalin("base", "run('" + replace(fullfile(srcDir, "Scripts_Data", ...
+        "ssc_aircraft_elec_configs.m"), "'", "''") + "')");
+    evalin("base", "run('" + replace(fullfile(srcDir, "Scripts_Data", ...
+        "ssc_aircraft_elec_default_params.m"), "'", "''") + "')");
+    timer = tic;
+    load_system(boundModel);
+    e.load_s = toc(timer);
+    e.load_pass = bdIsLoaded(model);
+    set_param(model, "LimitDataPoints", "off");
+    set_param(model + "/Aircraft", "checkbox_payload_mass", "off");
+    set_param(model + "/Flight Cycle", "popup_flight_cycle_type", 0);
+    set_param(model, "StopTime", "8000");
+    timer = tic;
+    set_param(model, "SimulationCommand", "update");
+    e.update_s = toc(timer);
+    e.update_pass = true;
+    timer = tic;
+    feval(model, [], [], [], "compile");
+    feval(model, [], [], [], "term");
+    e.compile_s = toc(timer);
+    e.compile_pass = true;
+    set_param(model, "FastRestart", "on");
+    for index = 1:numel(cases)
+        item = runCase(model, outputRoot, scratchRoot, cases(index));
+        if isempty(e.scenarios)
+            e.scenarios = item;
+        else
+            e.scenarios(end+1) = item; %#ok<AGROW>
+        end
+    end
+    set_param(model, "FastRestart", "off");
+    e.simulation_seconds = sum([e.scenarios.simulate_s]);
+    e.simulate_pass = all([e.scenarios.valid]);
+    e.all_scenarios_valid = e.simulate_pass && numel(e.scenarios) == 5;
+catch exception
+    e.error_identifier = exception.identifier;
+    e.error_message = getReport(exception, "extended", "hyperlinks", "off");
+    try, set_param(model, "FastRestart", "off"); catch, end
+end
+e.total_wall_clock_s = toc(wall);
+e.source_file_presence_after = bindingFiles(srcDir, names);
+e.runtime_model_unchanged = isequal(e.source_file_presence, e.source_file_presence_after);
+e.load_update_compile_simulate = e.load_pass && e.update_pass && ...
+    e.compile_pass && e.simulate_pass && e.all_scenarios_valid && ...
+    e.runtime_model_unchanged;
+e.evidence_complete = e.load_update_compile_simulate;
+try, if bdIsLoaded(model), close_system(model, 0); end, catch, end
+fid = fopen(fullfile(outputRoot, "evidence.json"), "w", "n", "UTF-8");
+assert(fid > 0, "SimuVerity:XAERO07:EvidenceWrite", "Cannot write evidence.json.");
+cleanupFile = onCleanup(@() fclose(fid)); %#ok<NASGU>
+fprintf(fid, "%s\n", jsonencode(e, PrettyPrint=true));
+result = e;
+end
+
+function contract = localOfficialScenarios(value)
+if isstruct(value)
+    contract = value;
+else
+    scenarioPath = string(value);
+    assert(isfile(scenarioPath), "SimuVerity:XAERO07:OfficialScenariosMissing", ...
+        "Official scenarios are absent: %s", scenarioPath);
+    contract = jsondecode(fileread(scenarioPath));
+end
+assert(string(contract.task_id) == "F90-XAERO-07" && ...
+    isfield(contract, "scenarios") && numel(contract.scenarios) == 5, ...
+    "SimuVerity:XAERO07:OfficialScenarioContract", ...
+    "The public official scenario contract is invalid.");
+required = ["id", "battery_capacity_Ah", "payload_mass_kg"];
+assert(all(isfield(contract.scenarios, required)), ...
+    "SimuVerity:XAERO07:OfficialScenarioFields", ...
+    "An official scenario is missing a required input field.");
+end
+
+function item = runCase(model, outputRoot, scratchRoot, config)
+in = Simulink.SimulationInput(model);
+in = in.setVariable("battery_capacity", double(config.battery_capacity_Ah));
+in = in.setVariable("payload_mass_workspace", double(config.payload_mass_kg));
+timer = tic;
+out = sim(in, "ShowProgress", "off");
+simSeconds = toc(timer);
+simlog = out.get("simlog_ssc_aircraft_elec");
+dist = double(out.get("Distance"));
+assert(size(dist,2) >= 2, "SimuVerity:XAERO07:DistanceShape");
+flightTime = dist(:,1);
+flightDistance = dist(:,end);
+tout = double(out.get("tout"));
+tout = tout(:);
+[batteryTime, charge] = series(simlog.Battery.charge, "A*hr");
+[~, voltage] = series(simlog.Battery.v, "V");
+[~, current] = series(simlog.Battery.i, "A");
+[motorTime, motorCurrent] = series( ...
+    simlog.Motor.Electrical_Power.Current_Sensor.I, "A");
+[loadTime, lampPower] = series( ...
+    simlog.Lamp.Electrical_Power.PS_Product.O, "W");
+[~, heaterPower] = series( ...
+    simlog.Heater.Electrical_Power.PS_Product.O, "W");
+[~, avionicsPower] = series( ...
+    simlog.Avionics.Electrical_Power.PS_Product.O, "W");
+data = struct("flight_time_s", flightTime, ...
+    "flight_distance_km", flightDistance, "battery_time_s", batteryTime, ...
+    "battery_state", [charge, voltage, current], "motor_time_s", motorTime, ...
+    "motor_current_A", motorCurrent, "load_time_s", loadTime, ...
+    "low_voltage_load_power_W", [lampPower, heaterPower, avionicsPower]);
+dataFile = fullfile(outputRoot, "scenario_data", string(config.id) + ".mat");
+save(dataFile, "data", "-v7.3");
+canonicalBinding = canonicalDataBinding(data, scratchRoot, string(config.id));
+allValues = [flightTime; flightDistance; batteryTime; charge; voltage; ...
+    current; motorTime; motorCurrent; loadTime; lampPower; heaterPower; avionicsPower];
+loads = [lampPower, heaterPower, avionicsPower];
+metrics = struct("flight_distance_km", flightDistance(end), ...
+    "flight_duration_s", tout(end), "battery_charge_initial_Ah", charge(1), ...
+    "battery_charge_final_Ah", charge(end), ...
+    "battery_charge_used_Ah", charge(1)-charge(end), ...
+    "battery_voltage_min_V", min(voltage), ...
+    "battery_voltage_max_V", max(voltage), ...
+    "battery_current_rms_A", rms(current, "omitnan"), ...
+    "battery_current_abs_max_A", max(abs(current)), ...
+    "motor_current_rms_A", rms(motorCurrent, "omitnan"), ...
+    "motor_current_abs_max_A", max(abs(motorCurrent)), ...
+    "load_power_mean_W", mean(loads,1,"omitnan"), ...
+    "load_power_max_W", max(loads,[],1), ...
+    "load_switching_present", all((max(loads,[],1)-min(loads,[],1))>1), ...
+    "all_finite", all(isfinite(allValues)));
+item = struct("id", string(config.id), "inputs", struct( ...
+    "battery_capacity_Ah", config.battery_capacity_Ah, ...
+    "payload_mass_kg", config.payload_mass_kg), ...
+    "simulate_s", simSeconds, ...
+    "data_file", "scenario_data/" + string(config.id) + ".mat", ...
+    "data_file_file_presence", file_presencefile(dataFile), ...
+    "canonical_data_file_presence", canonicalBinding, "logs", struct( ...
+    "flight_distance", struct("channels",1,"samples",numel(flightTime),"units",{{"km"}}), ...
+    "battery_state", struct("channels",3,"samples",numel(batteryTime),"units",{{"A*h","V","A"}}), ...
+    "motor_current", struct("channels",1,"samples",numel(motorTime),"units",{{"A"}}), ...
+    "low_voltage_load_power", struct("channels",3,"samples",numel(loadTime),"units",{{"W","W","W"}})), ...
+    "metrics", metrics, "valid", metrics.all_finite && ...
+    numel(flightTime)>=100 && numel(batteryTime)>=100 && ...
+    numel(motorTime)>=100 && numel(loadTime)>=100);
+end
+
+function [time, values] = series(node, unit)
+rawTime = node.series.time;
+time = double(rawTime(:));
+values = double(node.series.values(unit));
+values = values(:);
+end
+
+function binding = canonicalDataBinding(data, scratchRoot, id)
+pathValue = fullfile(scratchRoot, "canonical_" + id + ".bin");
+fid = fopen(pathValue, "w", "ieee-le");
+assert(fid > 0, "SimuVerity:XAERO07:CanonicalWrite", "Cannot write canonical data.");
+cleanup = onCleanup(@() fclose(fid)); %#ok<NASGU>
+fields = {"flight_time_s", "flight_distance_km", "battery_time_s", ...
+    "battery_state", "motor_time_s", "motor_current_A", "load_time_s", ...
+    "low_voltage_load_power_W"};
+for index = 1:numel(fields), writeArray(fid, data.(fields{index})); end
+clear cleanup;
+binding = file_presencefile(pathValue);
+end
+
+function writeArray(fid, value)
+shape = uint64(size(value));
+fwrite(fid, uint64(numel(shape)), "uint64");
+fwrite(fid, shape, "uint64");
+fwrite(fid, double(value(:)), "double");
+end
+
+function result = bindingFiles(srcDir, names)
+result = struct;
+for index = 1:numel(names)
+    result.(matlab.lang.makeValidName(names{index})) = ...
+        file_presencefile(fullfile(srcDir, names{index}));
+end
+end
+
+function binding = file_presencefile(pathValue)
+binding = localFilePresence(pathValue);
+end
+
+function binding = localFilePresence(pathValue)
+assert(isfile(pathValue), "SimuVerity:FileMissing", "Required file is missing: %s", pathValue);
+binding = "present";
+end
+
+function localRemoveTree(pathValue)
+if isfolder(pathValue), rmdir(pathValue, "s"); end
+end

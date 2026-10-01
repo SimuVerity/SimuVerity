@@ -1,0 +1,136 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XELEC-14",
+  "collection": "XELEC",
+  "reference": {
+    "identity_path": "tasks/XELEC-14/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/single_phase_to_3phase.mdl",
+    "model_path": "tasks/XELEC-14/reference/files/single_phase_to_3phase.mdl"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id D014",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a single-phase-input to three-phase-output power converter using Simscape Specialized Power Systems.",
+    "engineering_objects": [
+      "single-phase AC source",
+      "controllable three-phase inverter"
+    ],
+    "physical_paths": [
+      "A single-phase AC source must feed a rectifier, a smoothing DC link, and then a controllable three-phase inverter supplying a balanced load."
+    ],
+    "functional_paths": [
+      "A single-phase AC source must feed a rectifier, a smoothing DC link, and then a controllable three-phase inverter supplying a balanced load.",
+      "The inverter's three output phase voltages must be regulated in closed loop to produce balanced 50 Hz phase voltages with an RMS value of 222 V."
+    ],
+    "information_paths": [
+      "Vsrc_amp, P_load -> D014 plant/control path -> Vdc, Vabc, Iabc"
+    ],
+    "modes_and_events": [
+      "D014 startup and continuous operation follow the current public task contract."
+    ],
+    "interfaces": [
+      {
+        "name": "Vsrc_amp",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read Vsrc_amp and P_load from base-workspace variables. Vsrc_amp is the single-phase source peak amplitude, nominally 650 V.",
+        "source": "tasks/XELEC-14/public_spec.json"
+      },
+      {
+        "name": "P_load",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read Vsrc_amp and P_load from base-workspace variables. P_load is the balanced load's nominal active-power rating, nominally 2000 W.",
+        "source": "tasks/XELEC-14/public_spec.json"
+      },
+      {
+        "name": "Vdc",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "V"
+        ],
+        "range_or_shape": "Log Vdc, Vabc and Iabc as complete-run MATLAB Timeseries.",
+        "source": "tasks/XELEC-14/public_spec.json"
+      },
+      {
+        "name": "Vabc",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "V"
+        ],
+        "range_or_shape": "Log Vdc, Vabc and Iabc as complete-run MATLAB Timeseries. Vabc and Iabc must each contain all three physical phase voltages and currents measured at the inverter output.",
+        "source": "tasks/XELEC-14/public_spec.json"
+      },
+      {
+        "name": "Iabc",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "Log Vdc, Vabc and Iabc as complete-run MATLAB Timeseries. Vabc and Iabc must each contain all three physical phase voltages and currents measured at the inverter output.",
+        "source": "tasks/XELEC-14/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a single-phase-input to three-phase-output power converter using Simscape Specialized Power Systems.",
+      "A single-phase AC source must feed a rectifier, a smoothing DC link, and then a controllable three-phase inverter supplying a balanced load.",
+      "Vsrc_amp is the single-phase source peak amplitude, nominally 650 V."
+    ],
+    "feedback_and_control_causality": [
+      "The inverter's three output phase voltages must be regulated in closed loop to produce balanced 50 Hz phase voltages with an RMS value of 222 V."
+    ],
+    "signal_sources": [
+      "Vsrc_amp is read from the public MATLAB base-workspace input contract.",
+      "P_load is read from the public MATLAB base-workspace input contract.",
+      "Vdc is produced by the implemented plant or controller and logged under the public output contract.",
+      "Vabc is produced by the implemented plant or controller and logged under the public output contract.",
+      "Iabc is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "Vsrc_amp: Read Vsrc_amp and P_load from base-workspace variables. Vsrc_amp is the single-phase source peak amplitude, nominally 650 V.",
+      "P_load: Read Vsrc_amp and P_load from base-workspace variables. P_load is the balanced load's nominal active-power rating, nominally 2000 W."
+    ],
+    "disturbances": [
+      "A single-phase AC source must feed a rectifier, a smoothing DC link, and then a controllable three-phase inverter supplying a balanced load.",
+      "Read Vsrc_amp and P_load from base-workspace variables.",
+      "P_load is the balanced load's nominal active-power rating, nominally 2000 W."
+    ],
+    "dynamic_processes": [
+      "Log Vdc, Vabc and Iabc as complete-run MATLAB Timeseries."
+    ],
+    "task_specific_shortcuts": [
+      "D014: prescribing Vdc directly would bypass the system path described by: A single-phase AC source must feed a rectifier, a smoothing DC link, and then a controllable three-phase inverter supplying a balanced load.",
+      "D014: replaying a fixed Vdc trace would ignore causal variation in Vsrc_amp."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XELEC-14/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XELEC-14/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XELEC-14/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

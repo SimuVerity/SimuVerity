@@ -1,0 +1,35 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XAUTO-02",
+  "file_count": 1,
+  "files": [
+    {
+      "path": "reference/files/XAUTO02_reference.slx",
+      "size_bytes": 118525
+    }
+  ],
+  "entrypoint": "reference/files/XAUTO02_reference.slx",
+  "expected_score": 92.40235400220922,
+  "expected_score_basis": "reference_replay",
+  "expected_valid_scenarios": 10,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal",
+      "rough_fast_heavy",
+      "cross_phase_roll",
+      "slow_long_wave",
+      "target_probe_low",
+      "target_probe_high",
+      "road_probe_low",
+      "road_probe_high",
+      "fault_pair_none",
+      "fault_pair_loss"
+    ],
+    "nominal_scenario_id": "nominal",
+    "nominal_materialization": "extractor_appended_and_explicitly_published"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 118525,
+  "excluded_files": []
+}

@@ -1,0 +1,82 @@
+{
+  "schema": "simuverity.task.v1",
+  "release": "simuverity-101-v1",
+  "task_id": "XTHERM-03",
+  "ordinal": 80,
+  "collection": "XTHERM",
+  "runtime_alias": "XTHERM-03",
+  "required_model_file": "cand_XTHERM03.slx",
+  "evaluation_policy_id": "simuverity-101-v1:xtherm-03:scoring",
+  "candidate_closure": {
+    "public_input_names": [
+      "feed_temperature_C",
+      "recycle_brine_flow_ton_per_min",
+      "steam_feed_kg_per_min",
+      "top_brine_temperature_setpoint_C",
+      "distillate_flow_setpoint_ton_per_min",
+      "disturbance_start_s",
+      "feed_temperature_step_C",
+      "recycle_flow_step_ton_per_min"
+    ],
+    "nominal_provider": "simuverity_public_nominal_inputs"
+  },
+  "public_spec": "public_spec.json",
+  "official_scenarios": "official_scenarios.json",
+  "extractor": {
+    "kind": "matlab_function",
+    "path": "extractor/run.m",
+    "entrypoint": "run",
+    "implementation": "vendor/scripts/formal90/tasks/f90_xtherm03/f90_xtherm03_extract_candidate_evidence.m",
+    "closure_manifest": "extractor/manifest.json"
+  },
+  "scorer": {
+    "kind": "python_function",
+    "path": "scorer.py",
+    "entrypoint": "score",
+    "closure_manifest": "scorer/manifest.json",
+    "offline_only": true
+  },
+  "reference": {
+    "materialization": "bundled",
+    "path": "reference/files",
+    "manifest": "reference/manifest.json",
+    "entrypoint": "reference/files/source/MSFcascade.mdl",
+    "clean_replay_setup": {
+      "phase": "after_load_before_update",
+      "path": "tasks/XTHERM-03/reference/clean_replay_setup/f90_xtherm03_reference_clean_replay_setup.m",
+      "entrypoint": "f90_xtherm03_reference_clean_replay_setup"
+    },
+    "expected_valid_scenarios": 6,
+    "score_tolerance": 1e-12,
+    "expected_score": 92.2402175553616,
+    "expected_score_basis": "reference_replay",
+    "scenario_contract": {
+      "expected_ids": [
+        "nominal",
+        "cold_feed_step",
+        "hot_feed_step",
+        "low_recycle_step",
+        "high_recycle_step",
+        "combined_hot_low_recycle"
+      ],
+      "nominal_scenario_id": "nominal",
+      "nominal_materialization": "authoritative_scenario_set"
+    },
+    "score_tolerance_basis": "source_authority_numeric_precision",
+    "runtime_manifest": "reference/runtime_manifest.json"
+  },
+  "applicable_groups": [
+    "G",
+    "A",
+    "Q",
+    "M",
+    "C",
+    "R",
+    "D"
+  ],
+  "release_license_status": "INCLUDED_THIRD_PARTY_LICENSE",
+  "system_profile": {
+    "path": "system_profile.json",
+    "schema": "simuverity.system-profile.v1"
+  }
+}

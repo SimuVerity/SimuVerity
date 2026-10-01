@@ -1,0 +1,153 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XBATT-08",
+  "collection": "XBATT",
+  "reference": {
+    "identity_path": "tasks/XBATT-08/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "KineticEnergyRecovery.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XBATT-08",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a one-lap kinetic-energy-recovery model for a high-performance vehicle.",
+    "engineering_objects": [
+      "Build a one-lap kinetic-energy-recovery model for a high-performance vehicle.",
+      "The physical system must include longitudinal vehicle dynamics, a rear-axle motor-generator, a shared DC bus, a lithium-ion battery, and an ultracapacitor.",
+      "Braking must drive regenerative electrical power into the hybrid store, and acceleration assistance must return stored energy through the motor-generator."
+    ],
+    "physical_paths": [
+      "Braking must drive regenerative electrical power into the hybrid store, and acceleration assistance must return stored energy through the motor-generator.",
+      "Battery and ultracapacitor currents and powers must come from their physical energy paths, with signs that distinguish charging from discharging.",
+      "Hard-coded scenario traces, copied scalar inputs, disconnected storage branches, fabricated Timeseries, or strategy signals that do not affect the physical power path are not acceptable.",
+      "Build a one-lap kinetic-energy-recovery model for a high-performance vehicle."
+    ],
+    "functional_paths": [
+      "Build a one-lap kinetic-energy-recovery model for a high-performance vehicle."
+    ],
+    "information_paths": [
+      "kers_input -> F90-XBATT-08 plant/control path -> vehicle_speed, traction, storage_voltage, storage_current, storage_power"
+    ],
+    "modes_and_events": [
+      "Build a one-lap kinetic-energy-recovery model for a high-performance vehicle.",
+      "The strategy must alter actual motor torque and storage-current behavior, not only a displayed mode flag."
+    ],
+    "interfaces": [
+      {
+        "name": "kers_input",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read kers_input from the MATLAB base workspace and simulate for at most 100 s; the lap may stop when it is complete, but a valid lap must last between 80 and 100 s. kers_input is a MATLAB struct with these public fields: strategy_mode is an integer scalar, with 0 using available KERS assistance at all acceleration opportunities and 1 using it only at selected high-value opportunities; battery_mass_kg is a real scalar in 0.5--3.0 kg; ultracapacitor_mass_kg is a real scalar in 1.0--8.0 kg; and motor_generator_mass_kg is a real scalar in 3.0--6.0 kg.",
+        "source": "tasks/XBATT-08/public_spec.json"
+      },
+      {
+        "name": "vehicle_speed",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "km/h",
+          "km"
+        ],
+        "range_or_shape": "vehicle_speed has width 1: vehicle_speed_kph, in km/h.",
+        "source": "tasks/XBATT-08/public_spec.json"
+      },
+      {
+        "name": "traction",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N*m",
+          "rad/s",
+          "W"
+        ],
+        "range_or_shape": "traction has width 3 in this order: motor_torque_Nm in N*m, motor_speed_rad_s in rad/s, motor_mechanical_power_W in W.",
+        "source": "tasks/XBATT-08/public_spec.json"
+      },
+      {
+        "name": "storage_voltage",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "V"
+        ],
+        "range_or_shape": "storage_voltage has width 3 in this order: battery_voltage_V, ultracapacitor_voltage_V, dc_bus_voltage_V, all in V.",
+        "source": "tasks/XBATT-08/public_spec.json"
+      },
+      {
+        "name": "storage_current",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "storage_current has width 2 in this order: battery_current_A, ultracapacitor_current_A, both in A.",
+        "source": "tasks/XBATT-08/public_spec.json"
+      },
+      {
+        "name": "storage_power",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "W"
+        ],
+        "range_or_shape": "storage_power has width 2 in this order: battery_power_W, ultracapacitor_power_W, both in W.",
+        "source": "tasks/XBATT-08/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "The physical system must include longitudinal vehicle dynamics, a rear-axle motor-generator, a shared DC bus, a lithium-ion battery, and an ultracapacitor."
+    ],
+    "feedback_and_control_causality": [
+      "Use the three mass fields as real design inputs: storage energy/power capability, electrical response, motor torque capability, and total vehicle mass must respond causally to them."
+    ],
+    "signal_sources": [
+      "kers_input is read from the public MATLAB base-workspace input contract.",
+      "vehicle_speed is produced by the implemented plant or controller and logged under the public output contract.",
+      "traction is produced by the implemented plant or controller and logged under the public output contract.",
+      "storage_voltage is produced by the implemented plant or controller and logged under the public output contract.",
+      "storage_current is produced by the implemented plant or controller and logged under the public output contract.",
+      "storage_power is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "kers_input: Read kers_input from the MATLAB base workspace and simulate for at most 100 s; the lap may stop when it is complete, but a valid lap must last between 80 and 100 s. kers_input is a MATLAB struct with these public fields: strategy_mode is an integer scalar, with 0 using available KERS assistance at all acceleration opportunities and 1 using it only at selected high-value opportunities; battery_mass_kg is a real scalar in 0.5--3.0 kg; ultracapacitor_mass_kg is a real scalar in 1.0--8.0 kg; and motor_generator_mass_kg is a real scalar in 3.0--6.0 kg."
+    ],
+    "disturbances": [
+      "F90-XBATT-08 operating variation is supplied through kers_input."
+    ],
+    "dynamic_processes": [
+      "Build a one-lap kinetic-energy-recovery model for a high-performance vehicle.",
+      "The physical system must include longitudinal vehicle dynamics, a rear-axle motor-generator, a shared DC bus, a lithium-ion battery, and an ultracapacitor.",
+      "The battery should supply energy-oriented support while the ultracapacitor carries the higher transient power."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XBATT-08: prescribing vehicle_speed directly would bypass the system path described by: Braking must drive regenerative electrical power into the hybrid store, and acceleration assistance must return stored energy through the motor-generator.",
+      "F90-XBATT-08: replaying a fixed vehicle_speed trace would ignore causal variation in kers_input."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XBATT-08/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XBATT-08/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XBATT-08/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

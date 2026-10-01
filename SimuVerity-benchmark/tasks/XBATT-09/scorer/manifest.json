@@ -1,0 +1,37 @@
+{
+  "schema": "simuverity.scorer-manifest.v1",
+  "task_id": "XBATT-09",
+  "public_interface": "scorer.py:score",
+  "implementation": "scorer.py",
+  "source_modules": [
+    {
+      "module": "f90_xbatt09_scoring",
+      "path": "vendor/scripts/formal90/tasks/f90_xbatt09/f90_xbatt09_scoring.py"
+    },
+    {
+      "module": "f90_xbatt09_scoring_core",
+      "path": "vendor/scripts/formal90/tasks/f90_xbatt09/f90_xbatt09_scoring_core.py"
+    },
+    {
+      "module": "f90_xbatt0809_recovery_scoring",
+      "path": "vendor/scripts/unified/recovery/f90_xbatt0809_recovery_scoring.py"
+    }
+  ],
+  "final_module": {
+    "module": "f90_xbatt09_scoring",
+    "path": "vendor/scripts/formal90/tasks/f90_xbatt09/f90_xbatt09_scoring.py"
+  },
+  "payload_files": [
+    {
+      "role": "criteria_manifest",
+      "path": "vendor/scripts/formal90/tasks/f90_xbatt09/engineering_criteria.json"
+    },
+    {
+      "role": "criteria_payload",
+      "path": "vendor/scripts/formal90/tasks/f90_xbatt09/engineering_criteria_targets.json.gz"
+    }
+  ],
+  "public_bridge": {
+    "mode": "function"
+  }
+}

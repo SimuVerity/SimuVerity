@@ -1,0 +1,199 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XROBO-10",
+  "collection": "XROBO",
+  "reference": {
+    "identity_path": "tasks/XROBO-10/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "smart4iRobotDynamics.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XROBO-10",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a Simulink virtual-commissioning model of an automated assembly line with two stationary six-axis industrial-robot workcells, four independently scheduled mobile shuttles, incoming cups and balls, and an unloading station.",
+    "engineering_objects": [
+      "Each robot arm must generate joint motion, apply actuator torque to its manipulator dynamics, and use measured joint position and velocity in closed-loop tracking.",
+      "The line must recover the correct ball location within robot reach and complete the corresponding handoff without bypassing the robot dynamics or directly teleporting a completed product."
+    ],
+    "physical_paths": [
+      "Each robot arm must generate joint motion, apply actuator torque to its manipulator dynamics, and use measured joint position and velocity in closed-loop tracking.",
+      "The line must recover the correct ball location within robot reach and complete the corresponding handoff without bypassing the robot dynamics or directly teleporting a completed product."
+    ],
+    "functional_paths": [
+      "Each robot arm must generate joint motion, apply actuator torque to its manipulator dynamics, and use measured joint position and velocity in closed-loop tracking."
+    ],
+    "information_paths": [
+      "BallOffsetXY -> F90-XROBO-10 plant/control path -> robot1_joint_reference, robot1_joint_state, robot1_joint_torque, robot2_joint_reference, robot2_joint_state, robot2_joint_torque, line_supervisor, task_state, actor_transfer_state"
+    ],
+    "modes_and_events": [
+      "Build a Simulink virtual-commissioning model of an automated assembly line with two stationary six-axis industrial-robot workcells, four independently scheduled mobile shuttles, incoming cups and balls, and an unloading station.",
+      "A supervisory sequence must coordinate both robot completion states, the selected shuttle, object attachment and release, and unloading."
+    ],
+    "interfaces": [
+      {
+        "name": "BallOffsetXY",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read BallOffsetXY from the MATLAB base workspace as a 1-by-2 planar pickup-location offset in metres.",
+        "source": "tasks/XROBO-10/public_spec.json"
+      },
+      {
+        "name": "robot1_joint_reference",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad/s^2",
+          "rad/s",
+          "rad"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named robot1_joint_reference, robot1_joint_state, robot1_joint_torque, robot2_joint_reference, robot2_joint_state, robot2_joint_torque, line_supervisor, task_state, and actor_transfer_state. For each robot, joint_reference and joint_state have 18 channels in joint 1--6 order: six positions (rad), six velocities (rad/s), and six accelerations (rad/s^2); joint_torque has 6 channels in joint 1--6 order (N*m).",
+        "source": "tasks/XROBO-10/public_spec.json"
+      },
+      {
+        "name": "robot1_joint_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad/s^2",
+          "rad/s",
+          "rad"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named robot1_joint_reference, robot1_joint_state, robot1_joint_torque, robot2_joint_reference, robot2_joint_state, robot2_joint_torque, line_supervisor, task_state, and actor_transfer_state. For each robot, joint_reference and joint_state have 18 channels in joint 1--6 order: six positions (rad), six velocities (rad/s), and six accelerations (rad/s^2); joint_torque has 6 channels in joint 1--6 order (N*m).",
+        "source": "tasks/XROBO-10/public_spec.json"
+      },
+      {
+        "name": "robot1_joint_torque",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N*m"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named robot1_joint_reference, robot1_joint_state, robot1_joint_torque, robot2_joint_reference, robot2_joint_state, robot2_joint_torque, line_supervisor, task_state, and actor_transfer_state. For each robot, joint_reference and joint_state have 18 channels in joint 1--6 order: six positions (rad), six velocities (rad/s), and six accelerations (rad/s^2); joint_torque has 6 channels in joint 1--6 order (N*m).",
+        "source": "tasks/XROBO-10/public_spec.json"
+      },
+      {
+        "name": "robot2_joint_reference",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad/s^2",
+          "rad/s",
+          "rad"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named robot1_joint_reference, robot1_joint_state, robot1_joint_torque, robot2_joint_reference, robot2_joint_state, robot2_joint_torque, line_supervisor, task_state, and actor_transfer_state. For each robot, joint_reference and joint_state have 18 channels in joint 1--6 order: six positions (rad), six velocities (rad/s), and six accelerations (rad/s^2); joint_torque has 6 channels in joint 1--6 order (N*m).",
+        "source": "tasks/XROBO-10/public_spec.json"
+      },
+      {
+        "name": "robot2_joint_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad/s^2",
+          "rad/s",
+          "rad"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named robot1_joint_reference, robot1_joint_state, robot1_joint_torque, robot2_joint_reference, robot2_joint_state, robot2_joint_torque, line_supervisor, task_state, and actor_transfer_state. For each robot, joint_reference and joint_state have 18 channels in joint 1--6 order: six positions (rad), six velocities (rad/s), and six accelerations (rad/s^2); joint_torque has 6 channels in joint 1--6 order (N*m).",
+        "source": "tasks/XROBO-10/public_spec.json"
+      },
+      {
+        "name": "robot2_joint_torque",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N*m"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named robot1_joint_reference, robot1_joint_state, robot1_joint_torque, robot2_joint_reference, robot2_joint_state, robot2_joint_torque, line_supervisor, task_state, and actor_transfer_state. For each robot, joint_reference and joint_state have 18 channels in joint 1--6 order: six positions (rad), six velocities (rad/s), and six accelerations (rad/s^2); joint_torque has 6 channels in joint 1--6 order (N*m).",
+        "source": "tasks/XROBO-10/public_spec.json"
+      },
+      {
+        "name": "line_supervisor",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named robot1_joint_reference, robot1_joint_state, robot1_joint_torque, robot2_joint_reference, robot2_joint_state, robot2_joint_torque, line_supervisor, task_state, and actor_transfer_state. line_supervisor has 19 channels in this order: shuttle 1--4 x,y,yaw groups; robot1 go and shuttle id; robot2 go and shuttle id; ball instance id; cup-destroy stage 1; and cup-destroy stage 2.",
+        "source": "tasks/XROBO-10/public_spec.json"
+      },
+      {
+        "name": "task_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named robot1_joint_reference, robot1_joint_state, robot1_joint_torque, robot2_joint_reference, robot2_joint_state, robot2_joint_torque, line_supervisor, task_state, and actor_transfer_state. task_state has 2 channels [robot1 task state,robot2 task state].",
+        "source": "tasks/XROBO-10/public_spec.json"
+      },
+      {
+        "name": "actor_transfer_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named robot1_joint_reference, robot1_joint_state, robot1_joint_torque, robot2_joint_reference, robot2_joint_state, robot2_joint_torque, line_supervisor, task_state, and actor_transfer_state. actor_transfer_state has 5 channels [cup attached to robot1,cup attached to shuttle,ball attached to robot2,ball inserted into cup,completed product unloaded].",
+        "source": "tasks/XROBO-10/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a Simulink virtual-commissioning model of an automated assembly line with two stationary six-axis industrial-robot workcells, four independently scheduled mobile shuttles, incoming cups and balls, and an unloading station.",
+      "A supervisory sequence must coordinate both robot completion states, the selected shuttle, object attachment and release, and unloading.",
+      "For each robot, joint_reference and joint_state have 18 channels in joint 1--6 order: six positions (rad), six velocities (rad/s), and six accelerations (rad/s^2);"
+    ],
+    "feedback_and_control_causality": [
+      "Each robot arm must generate joint motion, apply actuator torque to its manipulator dynamics, and use measured joint position and velocity in closed-loop tracking."
+    ],
+    "signal_sources": [
+      "BallOffsetXY is read from the public MATLAB base-workspace input contract.",
+      "robot1_joint_reference is produced by the implemented plant or controller and logged under the public output contract.",
+      "robot1_joint_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "robot1_joint_torque is produced by the implemented plant or controller and logged under the public output contract.",
+      "robot2_joint_reference is produced by the implemented plant or controller and logged under the public output contract.",
+      "robot2_joint_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "robot2_joint_torque is produced by the implemented plant or controller and logged under the public output contract.",
+      "line_supervisor is produced by the implemented plant or controller and logged under the public output contract.",
+      "task_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "actor_transfer_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "BallOffsetXY: Read BallOffsetXY from the MATLAB base workspace as a 1-by-2 planar pickup-location offset in metres."
+    ],
+    "disturbances": [
+      "Build a Simulink virtual-commissioning model of an automated assembly line with two stationary six-axis industrial-robot workcells, four independently scheduled mobile shuttles, incoming cups and balls, and an unloading station.",
+      "The shuttle must then deliver the completed product for unloading before it is reused.",
+      "A supervisory sequence must coordinate both robot completion states, the selected shuttle, object attachment and release, and unloading."
+    ],
+    "dynamic_processes": [
+      "Each robot arm must generate joint motion, apply actuator torque to its manipulator dynamics, and use measured joint position and velocity in closed-loop tracking.",
+      "A supervisory sequence must coordinate both robot completion states, the selected shuttle, object attachment and release, and unloading.",
+      "The line must recover the correct ball location within robot reach and complete the corresponding handoff without bypassing the robot dynamics or directly teleporting a completed product."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XROBO-10: prescribing robot1_joint_reference directly would bypass the system path described by: Each robot arm must generate joint motion, apply actuator torque to its manipulator dynamics, and use measured joint position and velocity in closed-loop tracking.",
+      "F90-XROBO-10: replaying a fixed robot1_joint_reference trace would ignore causal variation in BallOffsetXY."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XROBO-10/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XROBO-10/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XROBO-10/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

@@ -1,0 +1,8 @@
+% Shutdown script for custom project
+% Copyright 2019-2026 The MathWorks, Inc.
+
+%% Code for cleaning Simscape custom library at shutdown
+% Change to folder with package directory
+curr_proj = simulinkproject;
+cd(curr_proj.RootFolder)
+

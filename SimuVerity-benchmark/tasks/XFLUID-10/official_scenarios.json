@@ -1,0 +1,146 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XFLUID-10",
+  "scenarios": [
+    {
+      "id": "nominal",
+      "class": "nominal_four_cylinder_injection",
+      "EngineSpeed_rad_s": 100.0,
+      "FuelControl_m": 0.002
+    },
+    {
+      "id": "low_speed",
+      "class": "lower_speed_boundary",
+      "EngineSpeed_rad_s": 80.0,
+      "FuelControl_m": 0.002
+    },
+    {
+      "id": "high_speed",
+      "class": "upper_speed_boundary",
+      "EngineSpeed_rad_s": 120.0,
+      "FuelControl_m": 0.002
+    },
+    {
+      "id": "low_fuel",
+      "class": "lower_metering_boundary",
+      "EngineSpeed_rad_s": 100.0,
+      "FuelControl_m": 0.0015
+    },
+    {
+      "id": "high_fuel",
+      "class": "upper_metering_boundary",
+      "EngineSpeed_rad_s": 100.0,
+      "FuelControl_m": 0.0025
+    },
+    {
+      "id": "low_speed_low_fuel",
+      "class": "combined_lower_boundary",
+      "EngineSpeed_rad_s": 80.0,
+      "FuelControl_m": 0.0015
+    },
+    {
+      "id": "high_speed_high_fuel",
+      "class": "combined_upper_boundary",
+      "EngineSpeed_rad_s": 120.0,
+      "FuelControl_m": 0.0025
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "start_s": 0.0,
+      "stop_s": 0.25,
+      "simulation_mode": "normal",
+      "retain_complete_run": true,
+      "evaluation_adapter": "Expose the existing common camshaft-speed and fuel-control constants in memory, add non-invasive logging taps, and extract native Simscape states; never save the pinned source model."
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "preferred_reference_score": 90.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.2,
+          "meaning": "nominal four-injector delivery, firing order, active plungers and active needles"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "cylinder-to-cylinder balance, pulse separation, pressure and motion quality"
+        },
+        "M": {
+          "weight": 0.3,
+          "meaning": "physical lift-pump, four-plunger, delivery-valve and injector causality with metering response"
+        },
+        "R": {
+          "weight": 0.2,
+          "meaning": "100 percent worst private-scenario injection validity and four-cylinder consistency"
+        },
+        "D": {
+          "weight": 0.2,
+          "meaning": "post-start cycle repeatability, pulse-timing stability and boundary-speed adaptation"
+        }
+      },
+      "within_group": "weighted_arithmetic_mean",
+      "across_groups": "weighted_geometric_mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum"
+    },
+    "minimum_shortcut_sanity_contract": [
+      "missing_required_output",
+      "fewer_than_four_physical_injection_pumps_or_injectors",
+      "duplicated_or_prescribed_injector_flow_traces",
+      "incorrect_or_fixed_firing_order",
+      "fuel_control_not_connected_to_real_spill_metering",
+      "camshaft_not_driving_all_four_plungers",
+      "private_inputs_ignored_or_nominal_replayed",
+      "lift_pump_or_high_pressure_delivery_path_bypassed"
+    ]
+  },
+  "simulation": {
+    "start_s": 0.0,
+    "stop_s": 0.25,
+    "simulation_mode": "normal",
+    "retain_complete_run": true,
+    "evaluation_adapter": "Expose the existing common camshaft-speed and fuel-control constants in memory, add non-invasive logging taps, and extract native Simscape states; never save the pinned source model."
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "preferred_reference_score": 90.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.2,
+        "meaning": "nominal four-injector delivery, firing order, active plungers and active needles"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "cylinder-to-cylinder balance, pulse separation, pressure and motion quality"
+      },
+      "M": {
+        "weight": 0.3,
+        "meaning": "physical lift-pump, four-plunger, delivery-valve and injector causality with metering response"
+      },
+      "R": {
+        "weight": 0.2,
+        "meaning": "100 percent worst private-scenario injection validity and four-cylinder consistency"
+      },
+      "D": {
+        "weight": 0.2,
+        "meaning": "post-start cycle repeatability, pulse-timing stability and boundary-speed adaptation"
+      }
+    },
+    "within_group": "weighted_arithmetic_mean",
+    "across_groups": "weighted_geometric_mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum"
+  },
+  "minimum_shortcut_sanity_contract": [
+    "missing_required_output",
+    "fewer_than_four_physical_injection_pumps_or_injectors",
+    "duplicated_or_prescribed_injector_flow_traces",
+    "incorrect_or_fixed_firing_order",
+    "fuel_control_not_connected_to_real_spill_metering",
+    "camshaft_not_driving_all_four_plungers",
+    "private_inputs_ignored_or_nominal_replayed",
+    "lift_pump_or_high_pressure_delivery_path_bypassed"
+  ]
+}

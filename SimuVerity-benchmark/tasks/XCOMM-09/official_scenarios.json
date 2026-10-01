@@ -1,0 +1,192 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XCOMM-09",
+  "scenarios": [
+    {
+      "id": "nominal_mcs12_direct",
+      "class": "nominal_two_stream_model_d",
+      "mcs_index": 12,
+      "snr_db": 27,
+      "spatial_mapping": "Direct",
+      "delay_profile": "Model-D",
+      "payload_seed": 0,
+      "channel_seed": 78,
+      "noise_seed": 67,
+      "packet_transactions": 64
+    },
+    {
+      "id": "snr_margin_mcs12",
+      "class": "controlled_noise_margin",
+      "mcs_index": 12,
+      "snr_db": 23,
+      "spatial_mapping": "Direct",
+      "delay_profile": "Model-D",
+      "payload_seed": 0,
+      "channel_seed": 78,
+      "noise_seed": 67,
+      "packet_transactions": 64
+    },
+    {
+      "id": "high_mcs14",
+      "class": "higher_modulation_and_coding_boundary",
+      "mcs_index": 14,
+      "snr_db": 30,
+      "spatial_mapping": "Direct",
+      "delay_profile": "Model-D",
+      "payload_seed": 0,
+      "channel_seed": 78,
+      "noise_seed": 67,
+      "packet_transactions": 64
+    },
+    {
+      "id": "alternate_payload_channel_noise",
+      "class": "independent_realization_generalization",
+      "mcs_index": 12,
+      "snr_db": 27,
+      "spatial_mapping": "Direct",
+      "delay_profile": "Model-D",
+      "payload_seed": 123,
+      "channel_seed": 178,
+      "noise_seed": 167,
+      "packet_transactions": 64
+    },
+    {
+      "id": "fourier_spatial_mapping",
+      "class": "supported_spatial_mapping_boundary",
+      "mcs_index": 12,
+      "snr_db": 27,
+      "spatial_mapping": "Fourier",
+      "delay_profile": "Model-D",
+      "payload_seed": 0,
+      "channel_seed": 78,
+      "noise_seed": 67,
+      "packet_transactions": 64
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "native_packet_transactions": 200,
+      "private_packet_transactions": 64,
+      "retain_complete_run": true
+    },
+    "paired_scenarios": {
+      "snr_response": [
+        "nominal_mcs12_direct",
+        "snr_margin_mcs12"
+      ],
+      "seed_response": [
+        "nominal_mcs12_direct",
+        "alternate_payload_channel_noise"
+      ],
+      "spatial_mapping_response": [
+        "nominal_mcs12_direct",
+        "fourier_spatial_mapping"
+      ]
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85,
+      "preferred_reference_score": 90,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.2,
+          "meaning": "nominal packet recovery, PER and equalized two-stream quality"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "packet denominator, evidence integrity and estimator quality"
+        },
+        "M": {
+          "weight": 0.3,
+          "meaning": "causal TGn/AWGN traversal, acquisition, HT-LTF MIMO estimation and two-stream recovery"
+        },
+        "R": {
+          "weight": 0.2,
+          "meaning": "worst required MCS, SNR, mapping or seed condition"
+        },
+        "D": {
+          "weight": 0.2,
+          "meaning": "controlled SNR, seed and spatial-mapping response"
+        }
+      },
+      "within_group": "weighted_arithmetic_mean",
+      "across_groups": "weighted_geometric_mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum",
+      "policy_id": "simuverity-101-v1:xcomm-09:scoring",
+      "final_fresh_replay_raw_score": 92.03607158931231
+    },
+    "minimum_shortcut_sanity_contract": [
+      "missing_tgn_awgn_receiver_path",
+      "direct_transmitter_to_decoder_or_per_bypass",
+      "constant_or_copied_per",
+      "stored_payload_or_replayed_psdu",
+      "siso_receiver_duplicated_across_two_streams",
+      "perfect_true_channel_leakage",
+      "fixed_mcs_or_spatial_mapping",
+      "empty_nonfinite_or_truncated_packet_evidence"
+    ]
+  },
+  "simulation": {
+    "native_packet_transactions": 200,
+    "private_packet_transactions": 64,
+    "retain_complete_run": true
+  },
+  "paired_scenarios": {
+    "snr_response": [
+      "nominal_mcs12_direct",
+      "snr_margin_mcs12"
+    ],
+    "seed_response": [
+      "nominal_mcs12_direct",
+      "alternate_payload_channel_noise"
+    ],
+    "spatial_mapping_response": [
+      "nominal_mcs12_direct",
+      "fourier_spatial_mapping"
+    ]
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85,
+    "preferred_reference_score": 90,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.2,
+        "meaning": "nominal packet recovery, PER and equalized two-stream quality"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "packet denominator, evidence integrity and estimator quality"
+      },
+      "M": {
+        "weight": 0.3,
+        "meaning": "causal TGn/AWGN traversal, acquisition, HT-LTF MIMO estimation and two-stream recovery"
+      },
+      "R": {
+        "weight": 0.2,
+        "meaning": "worst required MCS, SNR, mapping or seed condition"
+      },
+      "D": {
+        "weight": 0.2,
+        "meaning": "controlled SNR, seed and spatial-mapping response"
+      }
+    },
+    "within_group": "weighted_arithmetic_mean",
+    "across_groups": "weighted_geometric_mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum",
+    "policy_id": "simuverity-101-v1:xcomm-09:scoring",
+    "final_fresh_replay_raw_score": 92.03607158931231
+  },
+  "minimum_shortcut_sanity_contract": [
+    "missing_tgn_awgn_receiver_path",
+    "direct_transmitter_to_decoder_or_per_bypass",
+    "constant_or_copied_per",
+    "stored_payload_or_replayed_psdu",
+    "siso_receiver_duplicated_across_two_streams",
+    "perfect_true_channel_leakage",
+    "fixed_mcs_or_spatial_mapping",
+    "empty_nonfinite_or_truncated_packet_evidence"
+  ]
+}

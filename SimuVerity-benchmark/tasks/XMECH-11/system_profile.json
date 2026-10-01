@@ -1,0 +1,164 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XMECH-11",
+  "collection": "XMECH",
+  "reference": {
+    "identity_path": "tasks/XMECH-11/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/Models/Vehicle/sm_wheel_loader.slx",
+    "model_path": "tasks/XMECH-11/reference/files/Models/Vehicle/sm_wheel_loader.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id EXT-XMECH-WHEELLOADER-COORD-01",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a causal, closed-loop articulated wheel-loader model that executes coordinated forward/reverse Y-cycle manoeuvres while lifting, tilting and steering a loaded bucket.",
+    "engineering_objects": [
+      "The plant must include four driven wheels with ground contact, an articulated chassis, lift and tilt linkage dynamics, pressure-limited hydraulic pumps/valves/cylinders, an engine-driven power-split continuously variable transmission, physical clutch or mode dynamics, and hydraulic regenerative braking with an accumulator.",
+      "Vehicle motion, linkage load, hydraulic pressure/flow and powertrain energy flow must remain physically coupled."
+    ],
+    "physical_paths": [
+      "Simulate from 0 s through wheel_loader_command.Time(end).",
+      "The plant must include four driven wheels with ground contact, an articulated chassis, lift and tilt linkage dynamics, pressure-limited hydraulic pumps/valves/cylinders, an engine-driven power-split continuously variable transmission, physical clutch or mode dynamics, and hydraulic regenerative braking with an accumulator.",
+      "Vehicle motion, linkage load, hydraulic pressure/flow and powertrain energy flow must remain physically coupled."
+    ],
+    "functional_paths": [
+      "Build a causal, closed-loop articulated wheel-loader model that executes coordinated forward/reverse Y-cycle manoeuvres while lifting, tilting and steering a loaded bucket.",
+      "Read wheel_loader_command from the MATLAB base workspace as a four-channel Timeseries ordered [vehicle speed command, lift valve command, tilt valve command, steering command] with units [%, normalized, normalized, degree]."
+    ],
+    "information_paths": [
+      "wheel_loader_command, wheel_loader_environment -> EXT-XMECH-WHEELLOADER-COORD-01 plant/control path -> wheel_loader_motion_response, wheel_loader_hydraulic_response, wheel_loader_powertrain_response, wheel_loader_clutch_response"
+    ],
+    "modes_and_events": [
+      "Build a causal, closed-loop articulated wheel-loader model that executes coordinated forward/reverse Y-cycle manoeuvres while lifting, tilting and steering a loaded bucket.",
+      "The plant must include four driven wheels with ground contact, an articulated chassis, lift and tilt linkage dynamics, pressure-limited hydraulic pumps/valves/cylinders, an engine-driven power-split continuously variable transmission, physical clutch or mode dynamics, and hydraulic regenerative braking with an accumulator."
+    ],
+    "interfaces": [
+      {
+        "name": "wheel_loader_command",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "%",
+          "normalized",
+          "degree"
+        ],
+        "range_or_shape": "Read wheel_loader_command from the MATLAB base workspace as a four-channel Timeseries ordered [vehicle speed command, lift valve command, tilt valve command, steering command] with units [%, normalized, normalized, degree]. Simulate from 0 s through wheel_loader_command.Time(end).",
+        "source": "tasks/XMECH-11/public_spec.json"
+      },
+      {
+        "name": "wheel_loader_environment",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "normalized",
+          "MPa"
+        ],
+        "range_or_shape": "Read wheel_loader_environment as a scalar struct with fields payload_scale in [0.85,1.20], tire_mu_static in [0.42,0.70], tire_mu_dynamic in [0.34,0.60], implement_pump_scale in [0.82,1.05], and hrb_precharge_pressure_MPa in [9.5,13.0].",
+        "source": "tasks/XMECH-11/public_spec.json"
+      },
+      {
+        "name": "wheel_loader_motion_response",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "km/h",
+          "m",
+          "degree"
+        ],
+        "range_or_shape": "wheel_loader_motion_response has exactly 10 channels [vehicle_speed_kph, x_m, y_m, articulation_deg, wheel_FL_kph, wheel_FR_kph, wheel_RL_kph, wheel_RR_kph, lift_position_m, tilt_position_m] in [km/h, m, m, degree, km/h, km/h, km/h, km/h, m, m].",
+        "source": "tasks/XMECH-11/public_spec.json"
+      },
+      {
+        "name": "wheel_loader_hydraulic_response",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N",
+          "bar",
+          "kg/s"
+        ],
+        "range_or_shape": "wheel_loader_hydraulic_response has exactly 9 channels [lift_force_N, tilt_force_N, lift_A_bar, lift_B_bar, tilt_A_bar, tilt_B_bar, lift_flow_kgps, tilt_flow_kgps, implement_pump_dp_bar] in [N, N, bar, bar, bar, bar, kg/s, kg/s, bar].",
+        "source": "tasks/XMECH-11/public_spec.json"
+      },
+      {
+        "name": "wheel_loader_powertrain_response",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N*m",
+          "kW",
+          "MPa",
+          "cm^3/rev"
+        ],
+        "range_or_shape": "wheel_loader_powertrain_response has exactly 8 channels [engine_torque_Nm, cvt_input_power_kW, hydrostatic_input_power_kW, hydrostatic_output_power_kW, cvt_output_power_kW, hrb_power_kW, accumulator_pressure_MPa, hydro_pump_displacement_cm3_rev] in [N*m, kW, kW, kW, kW, kW, MPa, cm^3/rev].",
+        "source": "tasks/XMECH-11/public_spec.json"
+      },
+      {
+        "name": "wheel_loader_clutch_response",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "normalized"
+        ],
+        "range_or_shape": "wheel_loader_clutch_response has exactly 7 normalized channels [K1,K2,K3,K4,Kb,Kv,Kr].",
+        "source": "tasks/XMECH-11/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a causal, closed-loop articulated wheel-loader model that executes coordinated forward/reverse Y-cycle manoeuvres while lifting, tilting and steering a loaded bucket.",
+      "Read wheel_loader_command from the MATLAB base workspace as a four-channel Timeseries ordered [vehicle speed command, lift valve command, tilt valve command, steering command] with units [%, normalized, normalized, degree]."
+    ],
+    "feedback_and_control_causality": [
+      "Build a causal, closed-loop articulated wheel-loader model that executes coordinated forward/reverse Y-cycle manoeuvres while lifting, tilting and steering a loaded bucket.",
+      "The plant must include four driven wheels with ground contact, an articulated chassis, lift and tilt linkage dynamics, pressure-limited hydraulic pumps/valves/cylinders, an engine-driven power-split continuously variable transmission, physical clutch or mode dynamics, and hydraulic regenerative braking with an accumulator."
+    ],
+    "signal_sources": [
+      "wheel_loader_command is read from the public MATLAB base-workspace input contract.",
+      "wheel_loader_environment is read from the public MATLAB base-workspace input contract.",
+      "wheel_loader_motion_response is produced by the implemented plant or controller and logged under the public output contract.",
+      "wheel_loader_hydraulic_response is produced by the implemented plant or controller and logged under the public output contract.",
+      "wheel_loader_powertrain_response is produced by the implemented plant or controller and logged under the public output contract.",
+      "wheel_loader_clutch_response is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "wheel_loader_command: Read wheel_loader_command from the MATLAB base workspace as a four-channel Timeseries ordered [vehicle speed command, lift valve command, tilt valve command, steering command] with units [%, normalized, normalized, degree]. Simulate from 0 s through wheel_loader_command.Time(end).",
+      "wheel_loader_environment: Read wheel_loader_environment as a scalar struct with fields payload_scale in [0.85,1.20], tire_mu_static in [0.42,0.70], tire_mu_dynamic in [0.34,0.60], implement_pump_scale in [0.82,1.05], and hrb_precharge_pressure_MPa in [9.5,13.0]."
+    ],
+    "disturbances": [
+      "Build a causal, closed-loop articulated wheel-loader model that executes coordinated forward/reverse Y-cycle manoeuvres while lifting, tilting and steering a loaded bucket.",
+      "Vehicle motion, linkage load, hydraulic pressure/flow and powertrain energy flow must remain physically coupled.",
+      "Read wheel_loader_command from the MATLAB base workspace as a four-channel Timeseries ordered [vehicle speed command, lift valve command, tilt valve command, steering command] with units [%, normalized, normalized, degree]."
+    ],
+    "dynamic_processes": [
+      "The plant must include four driven wheels with ground contact, an articulated chassis, lift and tilt linkage dynamics, pressure-limited hydraulic pumps/valves/cylinders, an engine-driven power-split continuously variable transmission, physical clutch or mode dynamics, and hydraulic regenerative braking with an accumulator."
+    ],
+    "task_specific_shortcuts": [
+      "EXT-XMECH-WHEELLOADER-COORD-01: prescribing wheel_loader_motion_response directly would bypass the system path described by: Simulate from 0 s through wheel_loader_command.Time(end).",
+      "EXT-XMECH-WHEELLOADER-COORD-01: replaying a fixed wheel_loader_motion_response trace would ignore causal variation in wheel_loader_command."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XMECH-11/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XMECH-11/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XMECH-11/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

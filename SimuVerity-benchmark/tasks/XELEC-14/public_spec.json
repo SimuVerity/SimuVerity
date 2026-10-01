@@ -1,0 +1,8 @@
+{
+  "schema": "simuverity.public-spec.v1",
+  "task_id": "XELEC-14",
+  "collection": "XELEC",
+  "runtime_alias": "XELEC-14",
+  "candidate_filename": "cand_XELEC14.slx",
+  "prompt": "Build a single-phase-input to three-phase-output power converter using Simscape Specialized Power Systems. A single-phase AC source must feed a rectifier, a smoothing DC link, and then a controllable three-phase inverter supplying a balanced load. Read Vsrc_amp and P_load from base-workspace variables. Vsrc_amp is the single-phase source peak amplitude, nominally 650 V. P_load is the balanced load's nominal active-power rating, nominally 2000 W. Both variables must operate over a +/-10% range around their nominal values. The inverter's three output phase voltages must be regulated in closed loop to produce balanced 50 Hz phase voltages with an RMS value of 222 V. Log Vdc, Vabc and Iabc as complete-run MATLAB Timeseries. Vabc and Iabc must each contain all three physical phase voltages and currents measured at the inverter output.\n\nSubmission filename contract: create, edit, and save the final self-contained Simulink model as cand_XELEC14.slx in the assigned submission directory; keep the latest usable state at that exact path throughout the run."
+}

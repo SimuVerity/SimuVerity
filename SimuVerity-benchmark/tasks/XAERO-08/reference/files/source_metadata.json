@@ -1,0 +1,10 @@
+{
+  "schema": "simuverity.third-party-source.v1",
+  "task_id": "F90-XAERO-08",
+  "repository": "https://github.com/Naimish240/rocket-lander",
+  "revision": "869fe62ab15fc76c77ca4502efcdc8414570ba88",
+  "license_spdx": "Apache-2.0",
+  "selected_model": "simulink_stuff/Rocket.slx",
+  "initializer": "simulink_stuff/Parameters.m",
+  "core_modified": false
+}

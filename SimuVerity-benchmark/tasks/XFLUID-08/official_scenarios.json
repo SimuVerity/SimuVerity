@@ -1,0 +1,132 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XFLUID-08",
+  "scenarios": [
+    {
+      "id": "native_profile_1_nominal_inventory",
+      "native_profile": "Scenario_1",
+      "wing_initial_volume_m3": 10.0,
+      "center_initial_volume_m3": 5.0
+    },
+    {
+      "id": "native_profile_2_nominal_inventory",
+      "native_profile": "Scenario_2",
+      "wing_initial_volume_m3": 10.0,
+      "center_initial_volume_m3": 5.0
+    },
+    {
+      "id": "native_profile_3_nominal_inventory",
+      "native_profile": "Scenario_3",
+      "wing_initial_volume_m3": 10.0,
+      "center_initial_volume_m3": 5.0
+    },
+    {
+      "id": "native_profile_2_low_inventory",
+      "native_profile": "Scenario_2",
+      "wing_initial_volume_m3": 8.0,
+      "center_initial_volume_m3": 4.0
+    },
+    {
+      "id": "native_profile_3_high_inventory",
+      "native_profile": "Scenario_3",
+      "wing_initial_volume_m3": 11.5,
+      "center_initial_volume_m3": 8.0
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "stop_time_s": 3000.0,
+      "cold_start": true,
+      "native_profile_file": "reference/AircraftFuelSupplySystemWithThreeTanks.mat",
+      "evaluation_adapter": "Select one existing Signal Editor profile, expose existing initial-volume variables, and read native Simscape/logged evidence without saving the source model."
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "preferred_reference_target_raw": 90.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.2,
+          "meaning": "nominal bounded fuel delivery and speed regulation"
+        },
+        "Q": {
+          "weight": 0.15,
+          "meaning": "hydraulic, inventory, and energy quality"
+        },
+        "M": {
+          "weight": 0.3,
+          "meaning": "closed-loop pump and physical fuel-path causality"
+        },
+        "R": {
+          "weight": 0.2,
+          "meaning": "worst-case retention across private profiles and inventories"
+        },
+        "D": {
+          "weight": 0.15,
+          "meaning": "fault-transition and pump-speed recovery"
+        }
+      },
+      "within_group": "weighted_arithmetic_mean",
+      "across_groups": "weighted_geometric_mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum",
+      "policy_id": "simuverity-101-v1:xfluid-08:scoring"
+    },
+    "shortcut_sanity_contract": [
+      "qualification_or_required_output_missing",
+      "physical_transfer_path_missing",
+      "pump_speed_feedback_missing",
+      "command_copied_to_measured_speed",
+      "constant_or_prerecorded_tank_inventory",
+      "private_profiles_ignored",
+      "nonphysical_zero_power_or_mass_balance"
+    ]
+  },
+  "simulation": {
+    "stop_time_s": 3000.0,
+    "cold_start": true,
+    "native_profile_file": "reference/AircraftFuelSupplySystemWithThreeTanks.mat",
+    "evaluation_adapter": "Select one existing Signal Editor profile, expose existing initial-volume variables, and read native Simscape/logged evidence without saving the source model."
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "preferred_reference_target_raw": 90.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.2,
+        "meaning": "nominal bounded fuel delivery and speed regulation"
+      },
+      "Q": {
+        "weight": 0.15,
+        "meaning": "hydraulic, inventory, and energy quality"
+      },
+      "M": {
+        "weight": 0.3,
+        "meaning": "closed-loop pump and physical fuel-path causality"
+      },
+      "R": {
+        "weight": 0.2,
+        "meaning": "worst-case retention across private profiles and inventories"
+      },
+      "D": {
+        "weight": 0.15,
+        "meaning": "fault-transition and pump-speed recovery"
+      }
+    },
+    "within_group": "weighted_arithmetic_mean",
+    "across_groups": "weighted_geometric_mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum",
+    "policy_id": "simuverity-101-v1:xfluid-08:scoring"
+  },
+  "shortcut_sanity_contract": [
+    "qualification_or_required_output_missing",
+    "physical_transfer_path_missing",
+    "pump_speed_feedback_missing",
+    "command_copied_to_measured_speed",
+    "constant_or_prerecorded_tank_inventory",
+    "private_profiles_ignored",
+    "nonphysical_zero_power_or_mass_balance"
+  ]
+}

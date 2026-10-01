@@ -1,0 +1,121 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XAUTO-12",
+  "collection": "XAUTO",
+  "reference": {
+    "identity_path": "tasks/XAUTO-12/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/ext_xauto_multiagent_cbf_vo_reference.slx",
+    "model_path": "tasks/XAUTO-12/reference/files/ext_xauto_multiagent_cbf_vo_reference.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id EXT-XAUTO-MULTIAGENT-CBF-VO",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a decentralized closed-loop collision-avoidance simulation for exactly eight car-like vehicles.",
+    "engineering_objects": [
+      "Apply bounded steering-tangent and longitudinal-acceleration commands to integrated car-like dynamics.",
+      "State channels must come from the integrated vehicle dynamics and control channels must be the commands actually applied to those dynamics."
+    ],
+    "physical_paths": [
+      "Hard-coded private paths, replayed outputs, copied goal positions presented as vehicle state, fabricated logs, independent uncoupled agents, or safety signals disconnected from applied steering and acceleration are not acceptable.",
+      "Apply bounded steering-tangent and longitudinal-acceleration commands to integrated car-like dynamics.",
+      "State channels must come from the integrated vehicle dynamics and control channels must be the commands actually applied to those dynamics."
+    ],
+    "functional_paths": [
+      "Combine goal-seeking control with online safety filtering based on relative position and velocity, finite vehicle radius, and collision-cone or velocity-obstacle reasoning.",
+      "Apply bounded steering-tangent and longitudinal-acceleration commands to integrated car-like dynamics.",
+      "Passive vehicles must retain their initial velocity, accept zero control, and remain visible to every active safety filter."
+    ],
+    "information_paths": [
+      "multiagent_mission -> EXT-XAUTO-MULTIAGENT-CBF-VO plant/control path -> agent_state, agent_control"
+    ],
+    "modes_and_events": [
+      "EXT-XAUTO-MULTIAGENT-CBF-VO startup and continuous operation follow the current public task contract."
+    ],
+    "interfaces": [
+      {
+        "name": "multiagent_mission",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read multiagent_mission from the MATLAB base workspace. Both logs must begin at 0 s, remain finite, and reach multiagent_mission.duration_s.",
+        "source": "tasks/XAUTO-12/public_spec.json"
+      },
+      {
+        "name": "agent_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m",
+          "m/s",
+          "rad",
+          "1"
+        ],
+        "range_or_shape": "Log two complete-run Timeseries named agent_state and agent_control. agent_state has exactly 40 channels in this order: [agent1_x_m, agent1_y_m, agent1_speed_mps, agent1_heading_rad, agent1_goal_reached, agent2_x_m, agent2_y_m, agent2_speed_mps, agent2_heading_rad, agent2_goal_reached, agent3_x_m, agent3_y_m, agent3_speed_mps, agent3_heading_rad, agent3_goal_reached, agent4_x_m, agent4_y_m, agent4_speed_mps, agent4_heading_rad, agent4_goal_reached, agent5_x_m, agent5_y_m, agent5_speed_mps, agent5_heading_rad, agent5_goal_reached, agent6_x_m, agent6_y_m, agent6_speed_mps, agent6_heading_rad, agent6_goal_reached, agent7_x_m, agent7_y_m, agent7_speed_mps, agent7_heading_rad, agent7_goal_reached, agent8_x_m, agent8_y_m, agent8_speed_mps, agent8_heading_rad, agent8_goal_reached], with the per-agent unit pattern [m, m, m/s, rad, 1].",
+        "source": "tasks/XAUTO-12/public_spec.json"
+      },
+      {
+        "name": "agent_control",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1",
+          "m/s^2"
+        ],
+        "range_or_shape": "Log two complete-run Timeseries named agent_state and agent_control. agent_control has exactly 32 channels in this order: [agent1_steering_tangent, agent1_acceleration_mps2, agent1_solver_cost, agent1_solver_exit_flag, agent2_steering_tangent, agent2_acceleration_mps2, agent2_solver_cost, agent2_solver_exit_flag, agent3_steering_tangent, agent3_acceleration_mps2, agent3_solver_cost, agent3_solver_exit_flag, agent4_steering_tangent, agent4_acceleration_mps2, agent4_solver_cost, agent4_solver_exit_flag, agent5_steering_tangent, agent5_acceleration_mps2, agent5_solver_cost, agent5_solver_exit_flag, agent6_steering_tangent, agent6_acceleration_mps2, agent6_solver_cost, agent6_solver_exit_flag, agent7_steering_tangent, agent7_acceleration_mps2, agent7_solver_cost, agent7_solver_exit_flag, agent8_steering_tangent, agent8_acceleration_mps2, agent8_solver_cost, agent8_solver_exit_flag], with the per-agent unit pattern [1, m/s^2, 1, 1].",
+        "source": "tasks/XAUTO-12/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "The same controller must handle symmetric crossings, offset starts, unequal approach speeds, and a moving passive obstacle."
+    ],
+    "feedback_and_control_causality": [
+      "Build a decentralized closed-loop collision-avoidance simulation for exactly eight car-like vehicles.",
+      "The same controller must handle symmetric crossings, offset starts, unequal approach speeds, and a moving passive obstacle.",
+      "Vehicle centres must remain separated by their combined radii, solver failures must be exposed, and active vehicles must make causal progress toward their goals."
+    ],
+    "signal_sources": [
+      "multiagent_mission is read from the public MATLAB base-workspace input contract.",
+      "agent_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "agent_control is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "multiagent_mission: Read multiagent_mission from the MATLAB base workspace. Both logs must begin at 0 s, remain finite, and reach multiagent_mission.duration_s."
+    ],
+    "disturbances": [
+      "EXT-XAUTO-MULTIAGENT-CBF-VO operating variation is supplied through multiagent_mission."
+    ],
+    "dynamic_processes": [
+      "Apply bounded steering-tangent and longitudinal-acceleration commands to integrated car-like dynamics.",
+      "State channels must come from the integrated vehicle dynamics and control channels must be the commands actually applied to those dynamics."
+    ],
+    "task_specific_shortcuts": [
+      "EXT-XAUTO-MULTIAGENT-CBF-VO: prescribing agent_state directly would bypass the system path described by: Hard-coded private paths, replayed outputs, copied goal positions presented as vehicle state, fabricated logs, independent uncoupled agents, or safety signals disconnected from applied steering and acceleration are not acceptable.",
+      "EXT-XAUTO-MULTIAGENT-CBF-VO: replaying a fixed agent_state trace would ignore causal variation in multiagent_mission."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XAUTO-12/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XAUTO-12/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XAUTO-12/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

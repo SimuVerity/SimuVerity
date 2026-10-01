@@ -1,0 +1,80 @@
+{
+  "schema": "simuverity.task.v1",
+  "release": "simuverity-101-v1",
+  "task_id": "XMED-10",
+  "ordinal": 68,
+  "collection": "XMED",
+  "runtime_alias": "XMED-10",
+  "required_model_file": "cand_XMED10.slx",
+  "evaluation_policy_id": "simuverity-101-v1:xmed-10:scoring",
+  "candidate_closure": {
+    "public_input_names": [
+      "patient_age_years",
+      "patient_height_cm",
+      "patient_weight_kg",
+      "patient_sex_binary",
+      "bis_target",
+      "simulation_time_s"
+    ],
+    "nominal_provider": "simuverity_public_nominal_inputs"
+  },
+  "public_spec": "public_spec.json",
+  "official_scenarios": "official_scenarios.json",
+  "extractor": {
+    "kind": "matlab_function",
+    "path": "extractor/run.m",
+    "entrypoint": "run",
+    "implementation": "vendor/scripts/formal90/tasks/f90_xmed10/f90_xmed10_extract_candidate_evidence.m",
+    "closure_manifest": "extractor/manifest.json"
+  },
+  "scorer": {
+    "kind": "python_function",
+    "path": "scorer.py",
+    "entrypoint": "score",
+    "closure_manifest": "scorer/manifest.json",
+    "offline_only": true
+  },
+  "reference": {
+    "materialization": "bundled",
+    "path": "reference/files",
+    "manifest": "reference/manifest.json",
+    "entrypoint": "reference/files/source/docs/source/matlab/simulink_examples/closed_loop_simulation/sim_closedloop.slx",
+    "expected_valid_scenarios": 6,
+    "score_tolerance": 1e-12,
+    "expected_score": 96.00592623156302,
+    "expected_score_basis": "reference_replay",
+    "scenario_contract": {
+      "expected_ids": [
+        "nominal_adult_target50",
+        "young_adult_target50",
+        "older_adult_target50",
+        "low_body_mass_target50",
+        "high_body_mass_target50",
+        "nominal_adult_target44"
+      ],
+      "nominal_scenario_id": null,
+      "nominal_materialization": "authoritative_scenario_set"
+    },
+    "score_tolerance_basis": "source_authority_numeric_precision",
+    "runtime_manifest": "reference/runtime_manifest.json",
+    "clean_replay_setup": {
+      "phase": "before_load",
+      "path": "tasks/XMED-10/reference/clean_replay_setup/f90_xmed10_reference_clean_replay_setup.m",
+      "entrypoint": "f90_xmed10_reference_clean_replay_setup"
+    }
+  },
+  "applicable_groups": [
+    "G",
+    "A",
+    "Q",
+    "M",
+    "C",
+    "R",
+    "D"
+  ],
+  "release_license_status": "INCLUDED_THIRD_PARTY_LICENSE",
+  "system_profile": {
+    "path": "system_profile.json",
+    "schema": "simuverity.system-profile.v1"
+  }
+}

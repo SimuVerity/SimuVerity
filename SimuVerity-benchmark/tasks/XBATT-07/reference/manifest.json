@@ -1,0 +1,38 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XBATT-07",
+  "file_count": 3,
+  "files": [
+    {
+      "path": "reference/files/BatteryManagementSystem.mlproj",
+      "size_bytes": 36460214
+    },
+    {
+      "path": "reference/files/license.txt",
+      "size_bytes": 1496
+    },
+    {
+      "path": "reference/files/XBATT07_reference_harness.slx",
+      "size_bytes": 139337
+    }
+  ],
+  "entrypoint": "reference/files/XBATT07_reference_harness.slx",
+  "expected_score": 100.0,
+  "expected_valid_scenarios": 6,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal_standby",
+      "drive_precharge_ready",
+      "drive_precharge_incomplete",
+      "charge_precharge_ready",
+      "voltage_temperature_derating",
+      "overvoltage_overtemperature_fault"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 36601047,
+  "excluded_files": []
+}

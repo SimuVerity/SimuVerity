@@ -1,0 +1,138 @@
+{
+  "schema": "simuverity.f90-xmech08-structure-policy.v1",
+  "formal_task_id": "F90-XMECH-08",
+  "display_name_is_trusted_identity": false,
+  "candidate_mask_type_is_trusted_identity": false,
+  "trusted_instance_block_types": [
+    "Reference",
+    "SimscapeMultibodyBlock",
+    "SubSystem"
+  ],
+  "accepted_link_status": [
+    "resolved",
+    "implicit"
+  ],
+  "trusted_product_libraries": {
+    "sm_lib": {
+      "relative_path": "toolbox/physmod/sm/sli/m/sm_lib.slx"
+    },
+    "nesl_utility": {
+      "relative_path": "toolbox/physmod/simscape/engine/library/m/nesl_utility.slx"
+    }
+  },
+  "resolved_product_library_must_be_under_matlabroot": true,
+  "runtime_source_type_required": false,
+  "trusted_identity_key": "exact resolved product ReferenceBlock/SourceBlock path",
+  "role_identities": {
+    "revolute_joint": [
+      {
+        "source_block": "sm_lib/Joints/Revolute Joint",
+        "source_type": "Revolute Joint"
+      }
+    ],
+    "rigid_transform": [
+      {
+        "source_block": "sm_lib/Frames and Transforms/Rigid Transform",
+        "source_type": "Rigid Transform"
+      }
+    ],
+    "world_frame": [
+      {
+        "source_block": "sm_lib/Frames and Transforms/World Frame",
+        "source_type": "World Frame"
+      }
+    ],
+    "body_element": [
+      {
+        "source_block": "sm_lib/Body Elements/Inertia",
+        "source_type": "Inertia"
+      },
+      {
+        "source_block": "sm_lib/Body Elements/Brick Solid",
+        "source_type": "Brick Solid"
+      },
+      {
+        "source_block": "sm_lib/Body Elements/Cylindrical Solid",
+        "source_type": "Cylindrical Solid"
+      },
+      {
+        "source_block": "sm_lib/Body Elements/Ellipsoidal Solid",
+        "source_type": "Ellipsoidal Solid"
+      },
+      {
+        "source_block": "sm_lib/Body Elements/Extruded Solid",
+        "source_type": "Extruded Solid"
+      },
+      {
+        "source_block": "sm_lib/Body Elements/File Solid",
+        "source_type": "File Solid"
+      },
+      {
+        "source_block": "sm_lib/Body Elements/Revolved Solid",
+        "source_type": "Revolved Solid"
+      },
+      {
+        "source_block": "sm_lib/Body Elements/Spherical Solid",
+        "source_type": "Spherical Solid"
+      },
+      {
+        "source_block": "sm_lib/Body Elements/Flexible Bodies/Reduced Order Flexible Solid",
+        "source_type": "Reduced Order Flexible Solid"
+      },
+      {
+        "source_block": "sm_lib/Body Elements/Flexible Bodies/Beams/General Flexible Beam",
+        "source_type": "General Flexible Beam"
+      },
+      {
+        "source_block": "sm_lib/Body Elements/Flexible Bodies/Plates and Shells/General Flexible Plate",
+        "source_type": "General Flexible Plate"
+      }
+    ],
+    "transform_sensor": [
+      {
+        "source_block": "sm_lib/Frames and Transforms/Transform Sensor",
+        "source_type": "Transform Sensor"
+      }
+    ],
+    "simulink_to_ps_converter": [
+      {
+        "source_block": "nesl_utility/Simulink-PS Converter",
+        "source_type": "Simulink-PS Converter"
+      }
+    ],
+    "ps_to_simulink_converter": [
+      {
+        "source_block": "nesl_utility/PS-Simulink Converter",
+        "source_type": "PS-Simulink Converter"
+      }
+    ]
+  },
+  "minimum_connected_domain_ports": {
+    "revolute_joint": 2,
+    "rigid_transform": 2,
+    "world_frame": 1,
+    "body_element": 1,
+    "transform_sensor": 2,
+    "simulink_to_ps_converter": 0,
+    "ps_to_simulink_converter": 0
+  },
+  "connection_port_metadata_api": "simscape.connectionPortProperties",
+  "conserving_interface_types": [
+    "Domain",
+    "CompositeDomain",
+    "ConnectionBus"
+  ],
+  "physical_input_interface_type": "Input",
+  "physical_output_interface_type": "Output",
+  "line_family_relations": [
+    "LineParent",
+    "LineChildren"
+  ],
+  "physical_graph_representation": "bipartite trusted-block to conserving-net",
+  "four_bar_requirements": {
+    "minimum_loop_revolute_joint_count": 4,
+    "minimum_loop_world_frame_count": 1,
+    "minimum_loop_rigid_transform_count": 4,
+    "minimum_loop_body_attachment_count": 3
+  }
+}

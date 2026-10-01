@@ -1,0 +1,12 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XAUTO-07",
+  "materialization": "local_importer",
+  "entrypoint": "IPMSMAxleDriveEV_SimuVerityReference.slx",
+  "recipe": "reference/importer_recipe.json",
+  "transform": "reference/transform.m",
+  "retained_file_count": 0,
+  "retained_bytes": 0,
+  "excluded_files": [],
+  "expected_source_file_count": 5
+}

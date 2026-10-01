@@ -1,0 +1,167 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XMECH-05",
+  "collection": "XMECH",
+  "reference": {
+    "identity_path": "tasks/XMECH-05/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "Forklift.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XMECH-05",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a three-dimensional physical multibody forklift that performs a complete warehouse handling mission: approach and pick up a rigid payload, lift and tilt it with physical mast and fork mechanisms, drive over a transverse rounded floor obstacle, transport the payload, and place it on an elevated rack.",
+    "engineering_objects": [
+      "Build a three-dimensional physical multibody forklift that performs a complete warehouse handling mission: approach and pick up a rigid payload, lift and tilt it with physical mast and fork mechanisms, drive over a transverse rounded floor obstacle, transport the payload, and place it on an elevated rack.",
+      "The vehicle must include a rigid chassis, four independently contacting wheels, a steerable running gear, physical lift and tilt actuation, fork-payload contact, and a freely moving payload.",
+      "Motion and payload handling must arise from the connected physical mechanism and contact forces rather than prescribed vehicle or payload coordinates."
+    ],
+    "physical_paths": [
+      "Motion and payload handling must arise from the connected physical mechanism and contact forces rather than prescribed vehicle or payload coordinates.",
+      "The complete pickup, obstacle-traversal, transport, and placement sequence must remain physically stable throughout these ranges and finish within 60 seconds.",
+      "Build a three-dimensional physical multibody forklift that performs a complete warehouse handling mission: approach and pick up a rigid payload, lift and tilt it with physical mast and fork mechanisms, drive over a transverse rounded floor obstacle, transport the payload, and place it on an elevated rack.",
+      "The vehicle must include a rigid chassis, four independently contacting wheels, a steerable running gear, physical lift and tilt actuation, fork-payload contact, and a freely moving payload."
+    ],
+    "functional_paths": [
+      "The vehicle must include a rigid chassis, four independently contacting wheels, a steerable running gear, physical lift and tilt actuation, fork-payload contact, and a freely moving payload."
+    ],
+    "information_paths": [
+      "PayloadMass_kg, WheelFrictionScale, BumpRadius_m -> F90-XMECH-05 plant/control path -> vehicle_pose, payload_pose, actuator_state, wheel_contact"
+    ],
+    "modes_and_events": [
+      "F90-XMECH-05 startup and continuous operation follow the current public task contract."
+    ],
+    "interfaces": [
+      {
+        "name": "PayloadMass_kg",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kg"
+        ],
+        "range_or_shape": "Read PayloadMass_kg, WheelFrictionScale, and BumpRadius_m from MATLAB base-workspace variables. Support PayloadMass_kg from 63 to 77 kg, WheelFrictionScale from 0.90 to 1.10, and BumpRadius_m from 0.90 to 1.10 m.",
+        "source": "tasks/XMECH-05/public_spec.json"
+      },
+      {
+        "name": "WheelFrictionScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read PayloadMass_kg, WheelFrictionScale, and BumpRadius_m from MATLAB base-workspace variables. Support PayloadMass_kg from 63 to 77 kg, WheelFrictionScale from 0.90 to 1.10, and BumpRadius_m from 0.90 to 1.10 m.",
+        "source": "tasks/XMECH-05/public_spec.json"
+      },
+      {
+        "name": "BumpRadius_m",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read PayloadMass_kg, WheelFrictionScale, and BumpRadius_m from MATLAB base-workspace variables. Support PayloadMass_kg from 63 to 77 kg, WheelFrictionScale from 0.90 to 1.10, and BumpRadius_m from 0.90 to 1.10 m.",
+        "source": "tasks/XMECH-05/public_spec.json"
+      },
+      {
+        "name": "vehicle_pose",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m",
+          "1"
+        ],
+        "range_or_shape": "Log Timeseries named vehicle_pose, payload_pose, actuator_state, and wheel_contact. vehicle_pose and payload_pose each have width 7 in this order: world-frame [x, y, z in metres, qw, qx, qy, qz], where the quaternion is unitless.",
+        "source": "tasks/XMECH-05/public_spec.json"
+      },
+      {
+        "name": "payload_pose",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m",
+          "1"
+        ],
+        "range_or_shape": "Log Timeseries named vehicle_pose, payload_pose, actuator_state, and wheel_contact. vehicle_pose and payload_pose each have width 7 in this order: world-frame [x, y, z in metres, qw, qx, qy, qz], where the quaternion is unitless.",
+        "source": "tasks/XMECH-05/public_spec.json"
+      },
+      {
+        "name": "actuator_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Log Timeseries named vehicle_pose, payload_pose, actuator_state, and wheel_contact. actuator_state has width 3 in this order: [lift extension, tilt-cylinder extension, fork extension], all in metres.",
+        "source": "tasks/XMECH-05/public_spec.json"
+      },
+      {
+        "name": "wheel_contact",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N"
+        ],
+        "range_or_shape": "Log Timeseries named vehicle_pose, payload_pose, actuator_state, and wheel_contact. wheel_contact has width 8 in this order: [normal LF, normal LR, normal RF, normal RR, friction LF, friction LR, friction RF, friction RR], all in newtons.",
+        "source": "tasks/XMECH-05/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a three-dimensional physical multibody forklift that performs a complete warehouse handling mission: approach and pick up a rigid payload, lift and tilt it with physical mast and fork mechanisms, drive over a transverse rounded floor obstacle, transport the payload, and place it on an elevated rack.",
+      "Motion and payload handling must arise from the connected physical mechanism and contact forces rather than prescribed vehicle or payload coordinates."
+    ],
+    "feedback_and_control_causality": [
+      "Log Timeseries named vehicle_pose, payload_pose, actuator_state, and wheel_contact."
+    ],
+    "signal_sources": [
+      "PayloadMass_kg is read from the public MATLAB base-workspace input contract.",
+      "WheelFrictionScale is read from the public MATLAB base-workspace input contract.",
+      "BumpRadius_m is read from the public MATLAB base-workspace input contract.",
+      "vehicle_pose is produced by the implemented plant or controller and logged under the public output contract.",
+      "payload_pose is produced by the implemented plant or controller and logged under the public output contract.",
+      "actuator_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "wheel_contact is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "PayloadMass_kg: Read PayloadMass_kg, WheelFrictionScale, and BumpRadius_m from MATLAB base-workspace variables. Support PayloadMass_kg from 63 to 77 kg, WheelFrictionScale from 0.90 to 1.10, and BumpRadius_m from 0.90 to 1.10 m.",
+      "WheelFrictionScale: Read PayloadMass_kg, WheelFrictionScale, and BumpRadius_m from MATLAB base-workspace variables. Support PayloadMass_kg from 63 to 77 kg, WheelFrictionScale from 0.90 to 1.10, and BumpRadius_m from 0.90 to 1.10 m.",
+      "BumpRadius_m: Read PayloadMass_kg, WheelFrictionScale, and BumpRadius_m from MATLAB base-workspace variables. Support PayloadMass_kg from 63 to 77 kg, WheelFrictionScale from 0.90 to 1.10, and BumpRadius_m from 0.90 to 1.10 m."
+    ],
+    "disturbances": [
+      "Build a three-dimensional physical multibody forklift that performs a complete warehouse handling mission: approach and pick up a rigid payload, lift and tilt it with physical mast and fork mechanisms, drive over a transverse rounded floor obstacle, transport the payload, and place it on an elevated rack.",
+      "The vehicle must include a rigid chassis, four independently contacting wheels, a steerable running gear, physical lift and tilt actuation, fork-payload contact, and a freely moving payload.",
+      "Motion and payload handling must arise from the connected physical mechanism and contact forces rather than prescribed vehicle or payload coordinates."
+    ],
+    "dynamic_processes": [
+      "F90-XMECH-05 produces time-varying vehicle_pose, payload_pose, actuator_state, wheel_contact over the declared run."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XMECH-05: prescribing vehicle_pose directly would bypass the system path described by: Motion and payload handling must arise from the connected physical mechanism and contact forces rather than prescribed vehicle or payload coordinates.",
+      "F90-XMECH-05: replaying a fixed vehicle_pose trace would ignore causal variation in PayloadMass_kg."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XMECH-05/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XMECH-05/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XMECH-05/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

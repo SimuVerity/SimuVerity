@@ -1,0 +1,448 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XAERO-04",
+  "scenarios": [
+    {
+      "id": "hover_nominal",
+      "class": "nominal_hover",
+      "MissionKind": 1,
+      "InitialFlightMode": 0,
+      "MissionProfile": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          -20,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          20,
+          0,
+          -20,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          20,
+          20,
+          -20,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "PayloadScale": 1.0,
+      "EnableWind": false,
+      "SimulationDuration_s": 45
+    },
+    {
+      "id": "hover_payload_boundary",
+      "class": "payload_boundary",
+      "MissionKind": 1,
+      "InitialFlightMode": 0,
+      "MissionProfile": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          -20,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          20,
+          0,
+          -20,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          20,
+          20,
+          -20,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "PayloadScale": 1.1,
+      "EnableWind": false,
+      "SimulationDuration_s": 45
+    },
+    {
+      "id": "transition_wind",
+      "class": "wind_disturbance",
+      "MissionKind": 2,
+      "InitialFlightMode": 0,
+      "MissionProfile": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          -20,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          20,
+          0,
+          -20,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          0,
+          0,
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          100,
+          0,
+          -20,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          100,
+          200,
+          -50,
+          50,
+          -1,
+          3,
+          0
+        ]
+      ],
+      "PayloadScale": 1.0,
+      "EnableWind": true,
+      "SimulationDuration_s": 35
+    },
+    {
+      "id": "forward_transition",
+      "class": "dynamic_transition",
+      "MissionKind": 2,
+      "InitialFlightMode": 0,
+      "MissionProfile": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          -20,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          20,
+          0,
+          -20,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          0,
+          0,
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          100,
+          0,
+          -20,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          100,
+          200,
+          -50,
+          50,
+          -1,
+          3,
+          0
+        ]
+      ],
+      "PayloadScale": 1.0,
+      "EnableWind": false,
+      "SimulationDuration_s": 35
+    },
+    {
+      "id": "transition_payload_wind",
+      "class": "combined_service_condition",
+      "MissionKind": 2,
+      "InitialFlightMode": 0,
+      "MissionProfile": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          -20,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          20,
+          0,
+          -20,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          0,
+          0,
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          100,
+          0,
+          -20,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          100,
+          200,
+          -50,
+          50,
+          -1,
+          3,
+          0
+        ]
+      ],
+      "PayloadScale": 1.08,
+      "EnableWind": true,
+      "SimulationDuration_s": 35
+    },
+    {
+      "id": "fixed_wing_turn",
+      "class": "fixed_wing_boundary",
+      "MissionKind": 3,
+      "InitialFlightMode": 2,
+      "MissionProfile": [
+        [
+          2,
+          250,
+          0,
+          -20,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          150,
+          -50,
+          -20,
+          0,
+          2.3561944902,
+          0,
+          0
+        ],
+        [
+          2,
+          50,
+          -100,
+          -40,
+          0,
+          1.5707963268,
+          0,
+          0
+        ],
+        [
+          3,
+          150,
+          -150,
+          -40,
+          50,
+          -1,
+          3,
+          0
+        ]
+      ],
+      "PayloadScale": 1.0,
+      "EnableWind": false,
+      "SimulationDuration_s": 60
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "start_s": 0,
+      "simulation_mode": "normal",
+      "one_persistent_matlab_session": true,
+      "wall_watchdog_s": 1800
+    },
+    "groups": {
+      "G": "load, update, compile, six valid complete-run scenarios, direct source integrity and connected mission-control-actuator-6DOF evidence",
+      "A": "nominal path, altitude and speed attainment with bounded attitude and rate",
+      "Q": "trajectory smoothness, finite states, actuator continuity and limited saturation",
+      "M": "connected tiltrotor mechanisms plus causal response to mission, payload, wind and flight-mode changes",
+      "R": "100 percent worst-case operability across all private scenarios",
+      "D": "takeoff, disturbance recovery, forward-transition airspeed/tilt continuity and fixed-wing turn dynamics"
+    },
+    "weights": {
+      "A": 0.2,
+      "Q": 0.15,
+      "M": 0.3,
+      "R": 0.2,
+      "D": 0.15
+    },
+    "aggregation": {
+      "within_group": "weighted arithmetic mean of dedicated normalized indicators",
+      "critical_multiscenario_performance": "minimum",
+      "total": "G * 100 * A^0.20 * Q^0.15 * M^0.30 * R^0.20 * D^0.15"
+    },
+    "shortcut_minimum": [
+      "missing or disconnected required output",
+      "position command copied into the measured trajectory",
+      "constant or duplicated actuator channels",
+      "nominal output replayed for every private mission",
+      "wind and payload inputs ignored",
+      "missing connected mission, feedback, actuator, aerodynamic or 6DOF plant mechanism"
+    ],
+    "scoring_policy": {
+      "policy_id": "simuverity-101-v1:xaero-04:scoring"
+    }
+  },
+  "simulation": {
+    "start_s": 0,
+    "simulation_mode": "normal",
+    "one_persistent_matlab_session": true,
+    "wall_watchdog_s": 1800
+  },
+  "groups": {
+    "G": "load, update, compile, six valid complete-run scenarios, direct source integrity and connected mission-control-actuator-6DOF evidence",
+    "A": "nominal path, altitude and speed attainment with bounded attitude and rate",
+    "Q": "trajectory smoothness, finite states, actuator continuity and limited saturation",
+    "M": "connected tiltrotor mechanisms plus causal response to mission, payload, wind and flight-mode changes",
+    "R": "100 percent worst-case operability across all private scenarios",
+    "D": "takeoff, disturbance recovery, forward-transition airspeed/tilt continuity and fixed-wing turn dynamics"
+  },
+  "weights": {
+    "A": 0.2,
+    "Q": 0.15,
+    "M": 0.3,
+    "R": 0.2,
+    "D": 0.15
+  },
+  "aggregation": {
+    "within_group": "weighted arithmetic mean of dedicated normalized indicators",
+    "critical_multiscenario_performance": "minimum",
+    "total": "G * 100 * A^0.20 * Q^0.15 * M^0.30 * R^0.20 * D^0.15"
+  },
+  "shortcut_minimum": [
+    "missing or disconnected required output",
+    "position command copied into the measured trajectory",
+    "constant or duplicated actuator channels",
+    "nominal output replayed for every private mission",
+    "wind and payload inputs ignored",
+    "missing connected mission, feedback, actuator, aerodynamic or 6DOF plant mechanism"
+  ],
+  "scoring_policy": {
+    "policy_id": "simuverity-101-v1:xaero-04:scoring"
+  }
+}

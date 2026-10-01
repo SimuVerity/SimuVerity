@@ -1,0 +1,244 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XCOMM-01",
+  "collection": "XCOMM",
+  "reference": {
+    "identity_path": "tasks/XCOMM-01/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/XCOMM01_reference.slx",
+    "model_path": "tasks/XCOMM-01/reference/files/XCOMM01_reference.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id P9-XCOMM01",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build an end-to-end coherent two-target FMCW radar model containing chirp generation, target propagation and echoes, a dechirped complex-baseband receiver, and range-Doppler detection.",
+    "engineering_objects": [
+      "P9-XCOMM01 plant and controller described by the current public task contract",
+      "Measured output interfaces: beat_signal, detections, receiver_status"
+    ],
+    "physical_paths": [
+      "Across the declared range, detect both targets, estimate their ranges and signed radial velocities, remain ordered by range, suppress clutter and false alarms, and maintain or reacquire reliable detections through the temporary interferer."
+    ],
+    "functional_paths": [
+      "Across the declared range, detect both targets, estimate their ranges and signed radial velocities, remain ordered by range, suppress clutter and false alarms, and maintain or reacquire reliable detections through the temporary interferer.",
+      "detections must contain [near-target range in m, near-target radial velocity in m/s, near confidence, far-target range in m, far-target radial velocity in m/s, far confidence], ordered by estimated range.",
+      "receiver_status must contain [receiver lock, false-alarm indicator, interference-present estimate]."
+    ],
+    "information_paths": [
+      "target1_range, target1_velocity, target1_rcs, target2_range, target2_velocity, target2_rcs, snr_db, clutter_ratio, interference_ratio, interference_time, interference_duration -> P9-XCOMM01 plant/control path -> beat_signal, detections, receiver_status"
+    ],
+    "modes_and_events": [
+      "Build an end-to-end coherent two-target FMCW radar model containing chirp generation, target propagation and echoes, a dechirped complex-baseband receiver, and range-Doppler detection."
+    ],
+    "interfaces": [
+      {
+        "name": "target1_range",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read target1_range, target1_velocity, target1_rcs, target2_range, target2_velocity, target2_rcs, snr_db, clutter_ratio, interference_ratio, interference_time, and interference_duration from base-workspace variables.",
+        "source": "tasks/XCOMM-01/public_spec.json"
+      },
+      {
+        "name": "target1_velocity",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Read target1_range, target1_velocity, target1_rcs, target2_range, target2_velocity, target2_rcs, snr_db, clutter_ratio, interference_ratio, interference_time, and interference_duration from base-workspace variables.",
+        "source": "tasks/XCOMM-01/public_spec.json"
+      },
+      {
+        "name": "target1_rcs",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m^2"
+        ],
+        "range_or_shape": "Read target1_range, target1_velocity, target1_rcs, target2_range, target2_velocity, target2_rcs, snr_db, clutter_ratio, interference_ratio, interference_time, and interference_duration from base-workspace variables.",
+        "source": "tasks/XCOMM-01/public_spec.json"
+      },
+      {
+        "name": "target2_range",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read target1_range, target1_velocity, target1_rcs, target2_range, target2_velocity, target2_rcs, snr_db, clutter_ratio, interference_ratio, interference_time, and interference_duration from base-workspace variables.",
+        "source": "tasks/XCOMM-01/public_spec.json"
+      },
+      {
+        "name": "target2_velocity",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Read target1_range, target1_velocity, target1_rcs, target2_range, target2_velocity, target2_rcs, snr_db, clutter_ratio, interference_ratio, interference_time, and interference_duration from base-workspace variables.",
+        "source": "tasks/XCOMM-01/public_spec.json"
+      },
+      {
+        "name": "target2_rcs",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m^2"
+        ],
+        "range_or_shape": "Read target1_range, target1_velocity, target1_rcs, target2_range, target2_velocity, target2_rcs, snr_db, clutter_ratio, interference_ratio, interference_time, and interference_duration from base-workspace variables.",
+        "source": "tasks/XCOMM-01/public_spec.json"
+      },
+      {
+        "name": "snr_db",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "dB"
+        ],
+        "range_or_shape": "Read target1_range, target1_velocity, target1_rcs, target2_range, target2_velocity, target2_rcs, snr_db, clutter_ratio, interference_ratio, interference_time, and interference_duration from base-workspace variables.",
+        "source": "tasks/XCOMM-01/public_spec.json"
+      },
+      {
+        "name": "clutter_ratio",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read target1_range, target1_velocity, target1_rcs, target2_range, target2_velocity, target2_rcs, snr_db, clutter_ratio, interference_ratio, interference_time, and interference_duration from base-workspace variables.",
+        "source": "tasks/XCOMM-01/public_spec.json"
+      },
+      {
+        "name": "interference_ratio",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read target1_range, target1_velocity, target1_rcs, target2_range, target2_velocity, target2_rcs, snr_db, clutter_ratio, interference_ratio, interference_time, and interference_duration from base-workspace variables.",
+        "source": "tasks/XCOMM-01/public_spec.json"
+      },
+      {
+        "name": "interference_time",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read target1_range, target1_velocity, target1_rcs, target2_range, target2_velocity, target2_rcs, snr_db, clutter_ratio, interference_ratio, interference_time, and interference_duration from base-workspace variables.",
+        "source": "tasks/XCOMM-01/public_spec.json"
+      },
+      {
+        "name": "interference_duration",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read target1_range, target1_velocity, target1_rcs, target2_range, target2_velocity, target2_rcs, snr_db, clutter_ratio, interference_ratio, interference_time, and interference_duration from base-workspace variables.",
+        "source": "tasks/XCOMM-01/public_spec.json"
+      },
+      {
+        "name": "beat_signal",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[1,1]"
+        ],
+        "range_or_shape": "Log Timeseries beat_signal, detections, and receiver_status. beat_signal must contain the physically measured dechirped I and Q channels after propagation and receiver impairments.",
+        "source": "tasks/XCOMM-01/public_spec.json"
+      },
+      {
+        "name": "detections",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[m,m/s,1,m,m/s,1]"
+        ],
+        "range_or_shape": "The received path must include additive noise, stationary clutter, and a finite-duration in-band interferer; directly routing target parameters to the reported detections without a received-waveform path is not a valid implementation. Across the declared range, detect both targets, estimate their ranges and signed radial velocities, remain ordered by range, suppress clutter and false alarms, and maintain or reacquire reliable detections through the temporary interferer. Log Timeseries beat_signal, detections, and receiver_status. detections must contain [near-target range in m, near-target radial velocity in m/s, near confidence, far-target range in m, far-target radial velocity in m/s, far confidence], ordered by estimated range.",
+        "source": "tasks/XCOMM-01/public_spec.json"
+      },
+      {
+        "name": "receiver_status",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[1,1,boolean]"
+        ],
+        "range_or_shape": "Log Timeseries beat_signal, detections, and receiver_status. receiver_status must contain [receiver lock, false-alarm indicator, interference-present estimate].",
+        "source": "tasks/XCOMM-01/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "The signed radial-velocity convention is positive for a receding target.",
+      "Across the declared range, detect both targets, estimate their ranges and signed radial velocities, remain ordered by range, suppress clutter and false alarms, and maintain or reacquire reliable detections through the temporary interferer.",
+      "detections must contain [near-target range in m, near-target radial velocity in m/s, near confidence, far-target range in m, far-target radial velocity in m/s, far confidence], ordered by estimated range."
+    ],
+    "feedback_and_control_causality": [
+      "All outputs must originate from the same causal radar transmit-channel-receive chain rather than from precomputed answer waveforms."
+    ],
+    "signal_sources": [
+      "target1_range is read from the public MATLAB base-workspace input contract.",
+      "target1_velocity is read from the public MATLAB base-workspace input contract.",
+      "target1_rcs is read from the public MATLAB base-workspace input contract.",
+      "target2_range is read from the public MATLAB base-workspace input contract.",
+      "target2_velocity is read from the public MATLAB base-workspace input contract.",
+      "target2_rcs is read from the public MATLAB base-workspace input contract.",
+      "snr_db is read from the public MATLAB base-workspace input contract.",
+      "clutter_ratio is read from the public MATLAB base-workspace input contract.",
+      "interference_ratio is read from the public MATLAB base-workspace input contract.",
+      "interference_time is read from the public MATLAB base-workspace input contract.",
+      "interference_duration is read from the public MATLAB base-workspace input contract.",
+      "beat_signal is produced by the implemented plant or controller and logged under the public output contract.",
+      "detections is produced by the implemented plant or controller and logged under the public output contract.",
+      "receiver_status is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "target1_range: Read target1_range, target1_velocity, target1_rcs, target2_range, target2_velocity, target2_rcs, snr_db, clutter_ratio, interference_ratio, interference_time, and interference_duration from base-workspace variables.",
+      "target1_velocity: Read target1_range, target1_velocity, target1_rcs, target2_range, target2_velocity, target2_rcs, snr_db, clutter_ratio, interference_ratio, interference_time, and interference_duration from base-workspace variables.",
+      "target1_rcs: Read target1_range, target1_velocity, target1_rcs, target2_range, target2_velocity, target2_rcs, snr_db, clutter_ratio, interference_ratio, interference_time, and interference_duration from base-workspace variables.",
+      "target2_range: Read target1_range, target1_velocity, target1_rcs, target2_range, target2_velocity, target2_rcs, snr_db, clutter_ratio, interference_ratio, interference_time, and interference_duration from base-workspace variables.",
+      "target2_velocity: Read target1_range, target1_velocity, target1_rcs, target2_range, target2_velocity, target2_rcs, snr_db, clutter_ratio, interference_ratio, interference_time, and interference_duration from base-workspace variables.",
+      "target2_rcs: Read target1_range, target1_velocity, target1_rcs, target2_range, target2_velocity, target2_rcs, snr_db, clutter_ratio, interference_ratio, interference_time, and interference_duration from base-workspace variables.",
+      "snr_db: Read target1_range, target1_velocity, target1_rcs, target2_range, target2_velocity, target2_rcs, snr_db, clutter_ratio, interference_ratio, interference_time, and interference_duration from base-workspace variables.",
+      "clutter_ratio: Read target1_range, target1_velocity, target1_rcs, target2_range, target2_velocity, target2_rcs, snr_db, clutter_ratio, interference_ratio, interference_time, and interference_duration from base-workspace variables."
+    ],
+    "disturbances": [
+      "The received path must include additive noise, stationary clutter, and a finite-duration in-band interferer;"
+    ],
+    "dynamic_processes": [
+      "P9-XCOMM01 produces time-varying beat_signal, detections, receiver_status over the declared run."
+    ],
+    "task_specific_shortcuts": [
+      "P9-XCOMM01: prescribing beat_signal directly would bypass the system path described by: Across the declared range, detect both targets, estimate their ranges and signed radial velocities, remain ordered by range, suppress clutter and false alarms, and maintain or reacquire reliable detections through the temporary interferer.",
+      "P9-XCOMM01: replaying a fixed beat_signal trace would ignore causal variation in target1_range."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XCOMM-01/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XCOMM-01/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XCOMM-01/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

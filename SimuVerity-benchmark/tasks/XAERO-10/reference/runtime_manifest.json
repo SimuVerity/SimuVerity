@@ -1,0 +1,23 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XAERO-10",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/source/2018_Simulink/comparison_noise_nonoise.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 12,
+  "retained_bytes": 575413,
+  "excluded_files": [
+    {
+      "path": "reference/files/source/Codes and Simulink.zip",
+      "size_bytes": 8867032,
+      "category": "duplicate_source_archive",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    }
+  ],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XBATT-10",
+  "file_count": 10,
+  "files": [
+    {
+      "path": "reference/files/LICENSE",
+      "size_bytes": 1064
+    },
+    {
+      "path": "reference/files/MATLAB Pre-defined Files/automation_NEDC.m",
+      "size_bytes": 3167
+    },
+    {
+      "path": "reference/files/MATLAB Pre-defined Files/automation_REAL.m",
+      "size_bytes": 1180
+    },
+    {
+      "path": "reference/files/MATLAB Pre-defined Files/automation_WLTP.m",
+      "size_bytes": 3168
+    },
+    {
+      "path": "reference/files/MATLAB Pre-defined Files/User Defined Drive Cycle Profile/speed.mat",
+      "size_bytes": 1690
+    },
+    {
+      "path": "reference/files/MATLAB Pre-defined Files/User Defined Drive Cycle Profile/time.mat",
+      "size_bytes": 3103
+    },
+    {
+      "path": "reference/files/README.md",
+      "size_bytes": 5281
+    },
+    {
+      "path": "reference/files/Simulink Vehicle Model/EV_Truck_Model.slx",
+      "size_bytes": 606049
+    },
+    {
+      "path": "reference/files/Simulink Vehicle Model/Templete/TempleteNEDC.mldatx",
+      "size_bytes": 5474
+    },
+    {
+      "path": "reference/files/Simulink Vehicle Model/Templete/TempleteWLTP.mldatx",
+      "size_bytes": 5475
+    }
+  ],
+  "entrypoint": "reference/files/Simulink Vehicle Model/EV_Truck_Model.slx",
+  "expected_score": 100.0,
+  "expected_valid_scenarios": 6,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "baseline",
+      "heavy_mass",
+      "low_soc",
+      "low_power_heavy",
+      "high_power_heavy",
+      "regen_off"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 635651,
+  "excluded_files": []
+}

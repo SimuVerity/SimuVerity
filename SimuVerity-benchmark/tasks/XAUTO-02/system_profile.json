@@ -1,0 +1,227 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XAUTO-02",
+  "collection": "XAUTO",
+  "reference": {
+    "identity_path": "tasks/XAUTO-02/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/XAUTO02_reference.slx",
+    "model_path": "tasks/XAUTO-02/reference/files/XAUTO02_reference.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XAUTO-02",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a four-wheel vehicle model that traverses spatially uneven terrain while regulating forward speed in closed loop.",
+    "engineering_objects": [
+      "Vehicle",
+      "meas"
+    ],
+    "physical_paths": [
+      "The control law is not prescribed, but it must use measured vehicle or wheel behavior to regulate speed through actual wheel torque and must react to the temporary actuator loss."
+    ],
+    "functional_paths": [
+      "Build a four-wheel vehicle model that traverses spatially uneven terrain while regulating forward speed in closed loop.",
+      "Use a 0.34 m effective tire radius, a 1.60 m track width, and a 3.00 m wheelbase.",
+      "The two wheels on one side encounter the same spatial track with the rear axle delayed by the wheelbase;"
+    ],
+    "information_paths": [
+      "speed_reference, initial_speed, vehicle_mass, road_amplitude, road_wavelength, left_right_phase, drive_loss_fraction, drive_loss_time -> F90-XAUTO-02 plant/control path -> body_state, axle_state, wheel_contact, actuation"
+    ],
+    "modes_and_events": [
+      "Build a four-wheel vehicle model that traverses spatially uneven terrain while regulating forward speed in closed loop.",
+      "The model should keep the vehicle bounded, retain useful tire contact, limit wheel slip and body attitude, and recover speed regulation over the declared joint range."
+    ],
+    "interfaces": [
+      {
+        "name": "speed_reference",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Read speed_reference, initial_speed, vehicle_mass, road_amplitude, road_wavelength, left_right_phase, drive_loss_fraction, and drive_loss_time from base-workspace variables.",
+        "source": "tasks/XAUTO-02/public_spec.json"
+      },
+      {
+        "name": "initial_speed",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Read speed_reference, initial_speed, vehicle_mass, road_amplitude, road_wavelength, left_right_phase, drive_loss_fraction, and drive_loss_time from base-workspace variables.",
+        "source": "tasks/XAUTO-02/public_spec.json"
+      },
+      {
+        "name": "vehicle_mass",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kg"
+        ],
+        "range_or_shape": "Read speed_reference, initial_speed, vehicle_mass, road_amplitude, road_wavelength, left_right_phase, drive_loss_fraction, and drive_loss_time from base-workspace variables.",
+        "source": "tasks/XAUTO-02/public_spec.json"
+      },
+      {
+        "name": "road_amplitude",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read speed_reference, initial_speed, vehicle_mass, road_amplitude, road_wavelength, left_right_phase, drive_loss_fraction, and drive_loss_time from base-workspace variables.",
+        "source": "tasks/XAUTO-02/public_spec.json"
+      },
+      {
+        "name": "road_wavelength",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read speed_reference, initial_speed, vehicle_mass, road_amplitude, road_wavelength, left_right_phase, drive_loss_fraction, and drive_loss_time from base-workspace variables.",
+        "source": "tasks/XAUTO-02/public_spec.json"
+      },
+      {
+        "name": "left_right_phase",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "rad"
+        ],
+        "range_or_shape": "Read speed_reference, initial_speed, vehicle_mass, road_amplitude, road_wavelength, left_right_phase, drive_loss_fraction, and drive_loss_time from base-workspace variables. The two wheels on one side encounter the same spatial track with the rear axle delayed by the wheelbase; left_right_phase offsets the right track.",
+        "source": "tasks/XAUTO-02/public_spec.json"
+      },
+      {
+        "name": "drive_loss_fraction",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read speed_reference, initial_speed, vehicle_mass, road_amplitude, road_wavelength, left_right_phase, drive_loss_fraction, and drive_loss_time from base-workspace variables. The right-side delivered wheel torque is reduced by drive_loss_fraction for 1.20 s beginning at drive_loss_time.",
+        "source": "tasks/XAUTO-02/public_spec.json"
+      },
+      {
+        "name": "drive_loss_time",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read speed_reference, initial_speed, vehicle_mass, road_amplitude, road_wavelength, left_right_phase, drive_loss_fraction, and drive_loss_time from base-workspace variables. The right-side delivered wheel torque is reduced by drive_loss_fraction for 1.20 s beginning at drive_loss_time.",
+        "source": "tasks/XAUTO-02/public_spec.json"
+      },
+      {
+        "name": "body_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[m,m/s,m,m/s,rad,rad/s,rad,rad/s,m/s^2,m/s^2]"
+        ],
+        "range_or_shape": "Log four complete-run MATLAB Timeseries named body_state, axle_state, wheel_contact, and actuation. body_state has 10 channels in this order: x (m), vx (m/s), body heave (m), heave rate (m/s), pitch (rad), pitch rate (rad/s), roll (rad), roll rate (rad/s), longitudinal acceleration (m/s^2), and vertical acceleration (m/s^2).",
+        "source": "tasks/XAUTO-02/public_spec.json"
+      },
+      {
+        "name": "axle_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[m,m/s,rad,rad/s,m,m/s,rad,rad/s]"
+        ],
+        "range_or_shape": "Log four complete-run MATLAB Timeseries named body_state, axle_state, wheel_contact, and actuation. axle_state has 8 channels in this order: front heave (m), front heave rate (m/s), front roll (rad), front roll rate (rad/s), rear heave (m), rear heave rate (m/s), rear roll (rad), and rear roll rate (rad/s).",
+        "source": "tasks/XAUTO-02/public_spec.json"
+      },
+      {
+        "name": "wheel_contact",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[rad/s x4,1 x4,N x4,N x4,m x4,m x4]"
+        ],
+        "range_or_shape": "Log four complete-run MATLAB Timeseries named body_state, axle_state, wheel_contact, and actuation. wheel_contact has 24 channels: four wheel angular speeds (rad/s), four longitudinal slip ratios (1), four tire normal forces (N), four tire longitudinal forces (N), four local road heights (m), and four tire vertical deflections (m), using FL, FR, RL, RR order within every group.",
+        "source": "tasks/XAUTO-02/public_spec.json"
+      },
+      {
+        "name": "actuation",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[N*m x4,N*m x4,m/s,1]"
+        ],
+        "range_or_shape": "Log four complete-run MATLAB Timeseries named body_state, axle_state, wheel_contact, and actuation. actuation has 10 channels: four requested wheel torques (N*m), four delivered wheel torques (N*m), measured speed error (m/s), and the physical right-side loss indicator (1).",
+        "source": "tasks/XAUTO-02/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "The minimum physical topology is a finite-mass vehicle body with longitudinal, heave, pitch, and roll motion;",
+      "front and rear unsprung axles with independent heave and roll;",
+      "Read speed_reference, initial_speed, vehicle_mass, road_amplitude, road_wavelength, left_right_phase, drive_loss_fraction, and drive_loss_time from base-workspace variables."
+    ],
+    "feedback_and_control_causality": [
+      "Build a four-wheel vehicle model that traverses spatially uneven terrain while regulating forward speed in closed loop.",
+      "and four wheel-torque actuators.",
+      "The body, axle, wheel, suspension, and tire states must evolve causally from forces and moments."
+    ],
+    "signal_sources": [
+      "speed_reference is read from the public MATLAB base-workspace input contract.",
+      "initial_speed is read from the public MATLAB base-workspace input contract.",
+      "vehicle_mass is read from the public MATLAB base-workspace input contract.",
+      "road_amplitude is read from the public MATLAB base-workspace input contract.",
+      "road_wavelength is read from the public MATLAB base-workspace input contract.",
+      "left_right_phase is read from the public MATLAB base-workspace input contract.",
+      "drive_loss_fraction is read from the public MATLAB base-workspace input contract.",
+      "drive_loss_time is read from the public MATLAB base-workspace input contract.",
+      "body_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "axle_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "wheel_contact is produced by the implemented plant or controller and logged under the public output contract.",
+      "actuation is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "speed_reference: Read speed_reference, initial_speed, vehicle_mass, road_amplitude, road_wavelength, left_right_phase, drive_loss_fraction, and drive_loss_time from base-workspace variables.",
+      "initial_speed: Read speed_reference, initial_speed, vehicle_mass, road_amplitude, road_wavelength, left_right_phase, drive_loss_fraction, and drive_loss_time from base-workspace variables.",
+      "vehicle_mass: Read speed_reference, initial_speed, vehicle_mass, road_amplitude, road_wavelength, left_right_phase, drive_loss_fraction, and drive_loss_time from base-workspace variables.",
+      "road_amplitude: Read speed_reference, initial_speed, vehicle_mass, road_amplitude, road_wavelength, left_right_phase, drive_loss_fraction, and drive_loss_time from base-workspace variables.",
+      "road_wavelength: Read speed_reference, initial_speed, vehicle_mass, road_amplitude, road_wavelength, left_right_phase, drive_loss_fraction, and drive_loss_time from base-workspace variables.",
+      "left_right_phase: Read speed_reference, initial_speed, vehicle_mass, road_amplitude, road_wavelength, left_right_phase, drive_loss_fraction, and drive_loss_time from base-workspace variables. The two wheels on one side encounter the same spatial track with the rear axle delayed by the wheelbase; left_right_phase offsets the right track.",
+      "drive_loss_fraction: Read speed_reference, initial_speed, vehicle_mass, road_amplitude, road_wavelength, left_right_phase, drive_loss_fraction, and drive_loss_time from base-workspace variables. The right-side delivered wheel torque is reduced by drive_loss_fraction for 1.20 s beginning at drive_loss_time.",
+      "drive_loss_time: Read speed_reference, initial_speed, vehicle_mass, road_amplitude, road_wavelength, left_right_phase, drive_loss_fraction, and drive_loss_time from base-workspace variables. The right-side delivered wheel torque is reduced by drive_loss_fraction for 1.20 s beginning at drive_loss_time."
+    ],
+    "disturbances": [
+      "F90-XAUTO-02 operating variation is supplied through speed_reference, initial_speed, vehicle_mass, road_amplitude, road_wavelength, left_right_phase, drive_loss_fraction, drive_loss_time."
+    ],
+    "dynamic_processes": [
+      "Use a 0.34 m effective tire radius, a 1.60 m track width, and a 3.00 m wheelbase.",
+      "The two wheels on one side encounter the same spatial track with the rear axle delayed by the wheelbase;",
+      "left_right_phase offsets the right track."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XAUTO-02: prescribing body_state directly would bypass the system path described by: The control law is not prescribed, but it must use measured vehicle or wheel behavior to regulate speed through actual wheel torque and must react to the temporary actuator loss.",
+      "F90-XAUTO-02: replaying a fixed body_state trace would ignore causal variation in speed_reference."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XAUTO-02/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XAUTO-02/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XAUTO-02/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

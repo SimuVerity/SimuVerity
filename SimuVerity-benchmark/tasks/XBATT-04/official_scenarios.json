@@ -1,0 +1,164 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XBATT-04",
+  "scenarios": [
+    {
+      "id": "nominal",
+      "Vmax": 4.2,
+      "Vmin": 2.5,
+      "Ic": 1.6666666667,
+      "Id": -5.0,
+      "ambient_temperature_K": 298.0,
+      "initial_temperature_K": 298.0,
+      "number_of_cycles": 50
+    },
+    {
+      "id": "cold_charge",
+      "Vmax": 4.2,
+      "Vmin": 2.5,
+      "Ic": 1.6666666667,
+      "Id": -5.0,
+      "ambient_temperature_K": 283.0,
+      "initial_temperature_K": 283.0,
+      "number_of_cycles": 50
+    },
+    {
+      "id": "warm_cycle",
+      "Vmax": 4.2,
+      "Vmin": 2.5,
+      "Ic": 1.6666666667,
+      "Id": -5.0,
+      "ambient_temperature_K": 313.0,
+      "initial_temperature_K": 313.0,
+      "number_of_cycles": 50
+    },
+    {
+      "id": "higher_charge_rate",
+      "Vmax": 4.2,
+      "Vmin": 2.5,
+      "Ic": 2.5,
+      "Id": -5.0,
+      "ambient_temperature_K": 298.0,
+      "initial_temperature_K": 298.0,
+      "number_of_cycles": 50
+    },
+    {
+      "id": "lower_upper_cutoff",
+      "Vmax": 4.1,
+      "Vmin": 2.5,
+      "Ic": 1.6666666667,
+      "Id": -5.0,
+      "ambient_temperature_K": 298.0,
+      "initial_temperature_K": 298.0,
+      "number_of_cycles": 50
+    },
+    {
+      "id": "raised_lower_cutoff",
+      "Vmax": 4.2,
+      "Vmin": 2.7,
+      "Ic": 1.6666666667,
+      "Id": -5.0,
+      "ambient_temperature_K": 298.0,
+      "initial_temperature_K": 298.0,
+      "number_of_cycles": 50
+    },
+    {
+      "id": "moderate_cold_rate",
+      "Vmax": 4.15,
+      "Vmin": 2.5,
+      "Ic": 2.0,
+      "Id": -5.0,
+      "ambient_temperature_K": 288.0,
+      "initial_temperature_K": 288.0,
+      "number_of_cycles": 50
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "stop_time": "50E6",
+      "simscape_use_operating_points": "off",
+      "clear_saved_operating_point": true
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.2,
+          "meaning": "nominal CCCV-CC cycling accuracy"
+        },
+        "Q": {
+          "weight": 0.2,
+          "meaning": "electrochemical, thermal and ageing consistency"
+        },
+        "M": {
+          "weight": 0.3,
+          "meaning": "physical mechanism and input causality"
+        },
+        "R": {
+          "weight": 0.2,
+          "meaning": "worst private-scenario robustness"
+        },
+        "D": {
+          "weight": 0.1,
+          "meaning": "phase transitions and repeated-cycle completion"
+        }
+      },
+      "within_group": "weighted_arithmetic_mean",
+      "across_groups": "weighted_geometric_mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum"
+    },
+    "shortcut_sanity_contract": [
+      "fixed_current_without_cccv_taper",
+      "prescribed_voltage_or_soc_trace",
+      "copied_soh_without_sei_and_plating_identity",
+      "nonageing_equivalent_circuit",
+      "disconnected_thermal_state",
+      "private_inputs_change_only_reported_logs"
+    ]
+  },
+  "simulation": {
+    "stop_time": "50E6",
+    "simscape_use_operating_points": "off",
+    "clear_saved_operating_point": true
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.2,
+        "meaning": "nominal CCCV-CC cycling accuracy"
+      },
+      "Q": {
+        "weight": 0.2,
+        "meaning": "electrochemical, thermal and ageing consistency"
+      },
+      "M": {
+        "weight": 0.3,
+        "meaning": "physical mechanism and input causality"
+      },
+      "R": {
+        "weight": 0.2,
+        "meaning": "worst private-scenario robustness"
+      },
+      "D": {
+        "weight": 0.1,
+        "meaning": "phase transitions and repeated-cycle completion"
+      }
+    },
+    "within_group": "weighted_arithmetic_mean",
+    "across_groups": "weighted_geometric_mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum"
+  },
+  "shortcut_sanity_contract": [
+    "fixed_current_without_cccv_taper",
+    "prescribed_voltage_or_soc_trace",
+    "copied_soh_without_sei_and_plating_identity",
+    "nonageing_equivalent_circuit",
+    "disconnected_thermal_state",
+    "private_inputs_change_only_reported_logs"
+  ]
+}

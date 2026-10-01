@@ -1,0 +1,11 @@
+numpydoc==1.8.0
+nbsphinx==0.9.7 
+furo==2024.8.6 
+pandas==2.2.3
+numpy==2.2.5
+matplotlib==3.10.1 
+bokeh==3.2.0
+vitaldb==1.4.11
+pyswarm==0.6
+casadi==3.7.0
+myst-parser==4.0.1

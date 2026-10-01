@@ -1,0 +1,40 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XELEC-22",
+  "file_count": 2,
+  "files": [
+    {
+      "path": "reference/files/license.txt",
+      "size_bytes": 1315
+    },
+    {
+      "path": "reference/files/Universal_ELC_for_MicroHydoPlant.slx",
+      "size_bytes": 332091
+    }
+  ],
+  "entrypoint": "reference/files/Universal_ELC_for_MicroHydoPlant.slx",
+  "expected_score": 95.55386909718732,
+  "expected_valid_scenarios": 4,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "light_load",
+      "heavy_load",
+      "private_light_load",
+      "private_heavy_load"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 333406,
+  "excluded_files": [
+    {
+      "path": "reference/files/Universal_ELC_for_MicroHydoPlant.slx.r2016b",
+      "size_bytes": 47699,
+      "category": "obsolete_model_backup",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    }
+  ]
+}

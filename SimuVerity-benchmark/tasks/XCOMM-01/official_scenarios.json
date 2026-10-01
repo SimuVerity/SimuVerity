@@ -1,0 +1,476 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XCOMM-01",
+  "scenarios": [
+    {
+      "id": "low_snr_strong_clutter",
+      "values": {
+        "target1_range": 71,
+        "target1_velocity": -17.5,
+        "target1_rcs": 7.2,
+        "target2_range": 119,
+        "target2_velocity": 15.5,
+        "target2_rcs": 4.2,
+        "snr_db": 8.8,
+        "clutter_ratio": 0.33,
+        "interference_ratio": 0.39,
+        "interference_time": 0.044,
+        "interference_duration": 0.024
+      }
+    },
+    {
+      "id": "close_strong_near_weak_far",
+      "values": {
+        "target1_range": 37.5,
+        "target1_velocity": -5.3,
+        "target1_rcs": 18.5,
+        "target2_range": 84,
+        "target2_velocity": 4.2,
+        "target2_rcs": 3.4,
+        "snr_db": 12.5,
+        "clutter_ratio": 0.27,
+        "interference_ratio": 0.47,
+        "interference_time": 0.066,
+        "interference_duration": 0.015
+      }
+    },
+    {
+      "id": "joint_interior",
+      "values": {
+        "target1_range": 63,
+        "target1_velocity": -14.2,
+        "target1_rcs": 9.4,
+        "target2_range": 108,
+        "target2_velocity": 12.6,
+        "target2_rcs": 9.7,
+        "snr_db": 14.1,
+        "clutter_ratio": 0.21,
+        "interference_ratio": 0.31,
+        "interference_time": 0.052,
+        "interference_duration": 0.021
+      }
+    },
+    {
+      "id": "high_doppler_long_range",
+      "values": {
+        "target1_range": 68.5,
+        "target1_velocity": -19.2,
+        "target1_rcs": 14.3,
+        "target2_range": 123,
+        "target2_velocity": 17.2,
+        "target2_rcs": 12.6,
+        "snr_db": 20.5,
+        "clutter_ratio": 0.11,
+        "interference_ratio": 0.18,
+        "interference_time": 0.061,
+        "interference_duration": 0.025
+      }
+    },
+    {
+      "id": "snr_probe_low",
+      "values": {
+        "snr_db": 8.5
+      }
+    },
+    {
+      "id": "snr_probe_high",
+      "values": {
+        "snr_db": 23.5
+      }
+    },
+    {
+      "id": "clutter_probe_low",
+      "values": {
+        "clutter_ratio": 0.06
+      }
+    },
+    {
+      "id": "clutter_probe_high",
+      "values": {
+        "clutter_ratio": 0.34
+      }
+    },
+    {
+      "id": "interference_probe_low",
+      "values": {
+        "interference_ratio": 0.06
+      }
+    },
+    {
+      "id": "interference_probe_high",
+      "values": {
+        "interference_ratio": 0.48
+      }
+    },
+    {
+      "id": "rcs_target1_low",
+      "values": {
+        "target1_rcs": 6.5
+      }
+    },
+    {
+      "id": "rcs_target1_high",
+      "values": {
+        "target1_rcs": 19.5
+      }
+    },
+    {
+      "id": "rcs_target2_low",
+      "values": {
+        "target2_rcs": 3.2
+      }
+    },
+    {
+      "id": "rcs_target2_high",
+      "values": {
+        "target2_rcs": 13.5
+      }
+    }
+  ],
+  "contract": {
+    "application_domain": "radar and RF sensing",
+    "physical_domains": [
+      "RF waveform generation",
+      "propagation and target echo",
+      "noise, clutter and interference",
+      "coherent digital detection"
+    ],
+    "modeling_paradigm": "sampled complex-baseband end-to-end sensing chain with frame-level detection state",
+    "capability_types": [
+      "waveform and channel construction",
+      "coherent synchronization",
+      "multi-target estimation",
+      "interference recovery"
+    ],
+    "difficulty": {
+      "physical_coupling": 2,
+      "nonlinear_or_switching": 1,
+      "dynamic_or_fault": 2,
+      "joint_operating_points": 2,
+      "multichannel_or_units": 2,
+      "functional_and_safety_constraints": 1,
+      "total": 10
+    },
+    "sim": {
+      "step": 1e-05,
+      "stop": 0.16
+    },
+    "public_inputs": [
+      {
+        "name": "target1_range",
+        "nominal": 52,
+        "min": 35,
+        "max": 75,
+        "unit": "m",
+        "meaning": "range of the nearer target"
+      },
+      {
+        "name": "target1_velocity",
+        "nominal": -11,
+        "min": -20,
+        "max": -4,
+        "unit": "m/s",
+        "meaning": "signed radial velocity of the nearer target; positive is receding"
+      },
+      {
+        "name": "target1_rcs",
+        "nominal": 12,
+        "min": 6,
+        "max": 20,
+        "unit": "m^2",
+        "meaning": "radar cross section of the nearer target"
+      },
+      {
+        "name": "target2_range",
+        "nominal": 94,
+        "min": 80,
+        "max": 125,
+        "unit": "m",
+        "meaning": "range of the farther target"
+      },
+      {
+        "name": "target2_velocity",
+        "nominal": 9,
+        "min": 3,
+        "max": 18,
+        "unit": "m/s",
+        "meaning": "signed radial velocity of the farther target; positive is receding"
+      },
+      {
+        "name": "target2_rcs",
+        "nominal": 7,
+        "min": 3,
+        "max": 14,
+        "unit": "m^2",
+        "meaning": "radar cross section of the farther target"
+      },
+      {
+        "name": "snr_db",
+        "nominal": 16,
+        "min": 8,
+        "max": 24,
+        "unit": "dB",
+        "meaning": "received target signal-to-additive-noise ratio"
+      },
+      {
+        "name": "clutter_ratio",
+        "nominal": 0.18,
+        "min": 0.05,
+        "max": 0.35,
+        "unit": "1",
+        "meaning": "stationary-clutter amplitude relative to combined target amplitude"
+      },
+      {
+        "name": "interference_ratio",
+        "nominal": 0.22,
+        "min": 0.05,
+        "max": 0.5,
+        "unit": "1",
+        "meaning": "temporary in-band interferer amplitude relative to combined target amplitude"
+      },
+      {
+        "name": "interference_time",
+        "nominal": 0.055,
+        "min": 0.04,
+        "max": 0.07,
+        "unit": "s",
+        "meaning": "start time of the temporary interferer"
+      },
+      {
+        "name": "interference_duration",
+        "nominal": 0.018,
+        "min": 0.012,
+        "max": 0.026,
+        "unit": "s",
+        "meaning": "duration of the temporary interferer"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "beat_signal",
+        "channels": 2,
+        "order": "[dechirped I,dechirped Q]",
+        "unit": "[1,1]",
+        "physical_source": "complex baseband physically measured after propagation, coherent mixing, clutter, interference and receiver noise"
+      },
+      {
+        "name": "detections",
+        "channels": 6,
+        "order": "[near range,near radial velocity,near confidence,far range,far radial velocity,far confidence]",
+        "unit": "[m,m/s,1,m,m/s,1]",
+        "physical_source": "estimates produced by the coherent receiver, ordered by range; confidence may be binary or continuous in [0,1]"
+      },
+      {
+        "name": "receiver_status",
+        "channels": 3,
+        "order": "[receiver lock,false-alarm indicator,interference-present estimate]",
+        "unit": "[1,1,boolean]",
+        "physical_source": "receiver state derived from the received signal; lock and false-alarm indications may be binary or continuous in [0,1]"
+      }
+    ],
+    "prompt": "Build an end-to-end coherent two-target FMCW radar model containing chirp generation, target propagation and echoes, a dechirped complex-baseband receiver, and range-Doppler detection. The received path must include additive noise, stationary clutter, and a finite-duration in-band interferer; directly routing target parameters to the reported detections without a received-waveform path is not a valid implementation.\n\nRead target1_range, target1_velocity, target1_rcs, target2_range, target2_velocity, target2_rcs, snr_db, clutter_ratio, interference_ratio, interference_time, and interference_duration from base-workspace variables. Their nominal values are 52 m, -11 m/s, 12 m^2, 94 m, 9 m/s, 7 m^2, 16 dB, 0.18, 0.22, 0.055 s, and 0.018 s. They operate respectively over 35--75 m, -20 to -4 m/s, 6--20 m^2, 80--125 m, 3--18 m/s, 3--14 m^2, 8--24 dB, 0.05--0.35, 0.05--0.50, 0.040--0.070 s, and 0.012--0.026 s. The signed radial-velocity convention is positive for a receding target.\n\nAssume a clean MATLAB session in which only the declared public inputs are provided. Use an alternating up/down triangular FMCW waveform with a 77 GHz carrier, 3.5e10 Hz/s slope magnitude, 4 ms duration per up or down chirp, and 100 kHz complex-baseband sample rate. Across the declared range, detect both targets, estimate their ranges and signed radial velocities, remain ordered by range, suppress clutter and false alarms, and maintain or reacquire reliable detections through the temporary interferer.\n\nLog Timeseries beat_signal, detections, and receiver_status. beat_signal must contain the physically measured dechirped I and Q channels after propagation and receiver impairments. detections must contain [near-target range in m, near-target radial velocity in m/s, near confidence, far-target range in m, far-target radial velocity in m/s, far confidence], ordered by estimated range. receiver_status must contain [receiver lock, false-alarm indicator, interference-present estimate]. Confidence, receiver-lock and false-alarm outputs may use binary or continuous values in [0,1], but must change when their underlying evidence changes and remain directionally consistent with received target evidence and actual detection quality. All outputs must originate from the same causal radar transmit-channel-receive chain rather than from precomputed answer waveforms.\n\nWork directly in the required model file and keep the latest usable state saved at that path throughout the task.",
+    "groups": {
+      "G": "simulation, multichannel contract, finite bounded detections and non-degenerate complex beat signal",
+      "A": "nominal two-target range and signed-velocity accuracy",
+      "Q": "received impairment energy plus strategy-neutral non-degeneracy and directional consistency of confidence, lock and false-alarm reports with independent I/Q and detection evidence",
+      "M": "parity-resolved I/Q-derived range/velocity, reported detections, signal-derived status, and isolated RCS/SNR/clutter input-response consistency",
+      "R": "worst joint range, Doppler, RCS, SNR, clutter and interference operating point",
+      "D": "true interference energy scaling, signal-derived status alignment and receiver reacquisition",
+      "weights": {
+        "A": 0.2,
+        "Q": 0.1,
+        "M": 0.3,
+        "R": 0.2,
+        "D": 0.2
+      }
+    },
+    "reference_sources": [
+      {
+        "source_type": "original equations",
+        "source_url": "",
+        "license": "original implementation; project license applies",
+        "revision": "simuverity-101-v1",
+        "use": "triangular FMCW beat equations, coherent target superposition, received-I/Q spectral estimation and signal-derived interference state"
+      },
+      {
+        "source_type": "screened mechanism source",
+        "source_url": "https://www.mathworks.com/matlabcentral/fileexchange/46252-modeling-and-simulating-radar-systems-using-matlab-and-simulink",
+        "license": "redistributable BSD-style File Exchange license; no model code copied",
+        "revision": "1.3.0.1",
+        "use": "architecture and mechanism audit only: waveform generation, RF receive front end, propagation and detection algorithms"
+      }
+    ]
+  },
+  "application_domain": "radar and RF sensing",
+  "physical_domains": [
+    "RF waveform generation",
+    "propagation and target echo",
+    "noise, clutter and interference",
+    "coherent digital detection"
+  ],
+  "modeling_paradigm": "sampled complex-baseband end-to-end sensing chain with frame-level detection state",
+  "capability_types": [
+    "waveform and channel construction",
+    "coherent synchronization",
+    "multi-target estimation",
+    "interference recovery"
+  ],
+  "difficulty": {
+    "physical_coupling": 2,
+    "nonlinear_or_switching": 1,
+    "dynamic_or_fault": 2,
+    "joint_operating_points": 2,
+    "multichannel_or_units": 2,
+    "functional_and_safety_constraints": 1,
+    "total": 10
+  },
+  "sim": {
+    "step": 1e-05,
+    "stop": 0.16
+  },
+  "public_inputs": [
+    {
+      "name": "target1_range",
+      "nominal": 52,
+      "min": 35,
+      "max": 75,
+      "unit": "m",
+      "meaning": "range of the nearer target"
+    },
+    {
+      "name": "target1_velocity",
+      "nominal": -11,
+      "min": -20,
+      "max": -4,
+      "unit": "m/s",
+      "meaning": "signed radial velocity of the nearer target; positive is receding"
+    },
+    {
+      "name": "target1_rcs",
+      "nominal": 12,
+      "min": 6,
+      "max": 20,
+      "unit": "m^2",
+      "meaning": "radar cross section of the nearer target"
+    },
+    {
+      "name": "target2_range",
+      "nominal": 94,
+      "min": 80,
+      "max": 125,
+      "unit": "m",
+      "meaning": "range of the farther target"
+    },
+    {
+      "name": "target2_velocity",
+      "nominal": 9,
+      "min": 3,
+      "max": 18,
+      "unit": "m/s",
+      "meaning": "signed radial velocity of the farther target; positive is receding"
+    },
+    {
+      "name": "target2_rcs",
+      "nominal": 7,
+      "min": 3,
+      "max": 14,
+      "unit": "m^2",
+      "meaning": "radar cross section of the farther target"
+    },
+    {
+      "name": "snr_db",
+      "nominal": 16,
+      "min": 8,
+      "max": 24,
+      "unit": "dB",
+      "meaning": "received target signal-to-additive-noise ratio"
+    },
+    {
+      "name": "clutter_ratio",
+      "nominal": 0.18,
+      "min": 0.05,
+      "max": 0.35,
+      "unit": "1",
+      "meaning": "stationary-clutter amplitude relative to combined target amplitude"
+    },
+    {
+      "name": "interference_ratio",
+      "nominal": 0.22,
+      "min": 0.05,
+      "max": 0.5,
+      "unit": "1",
+      "meaning": "temporary in-band interferer amplitude relative to combined target amplitude"
+    },
+    {
+      "name": "interference_time",
+      "nominal": 0.055,
+      "min": 0.04,
+      "max": 0.07,
+      "unit": "s",
+      "meaning": "start time of the temporary interferer"
+    },
+    {
+      "name": "interference_duration",
+      "nominal": 0.018,
+      "min": 0.012,
+      "max": 0.026,
+      "unit": "s",
+      "meaning": "duration of the temporary interferer"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "beat_signal",
+      "channels": 2,
+      "order": "[dechirped I,dechirped Q]",
+      "unit": "[1,1]",
+      "physical_source": "complex baseband physically measured after propagation, coherent mixing, clutter, interference and receiver noise"
+    },
+    {
+      "name": "detections",
+      "channels": 6,
+      "order": "[near range,near radial velocity,near confidence,far range,far radial velocity,far confidence]",
+      "unit": "[m,m/s,1,m,m/s,1]",
+      "physical_source": "estimates produced by the coherent receiver, ordered by range; confidence may be binary or continuous in [0,1]"
+    },
+    {
+      "name": "receiver_status",
+      "channels": 3,
+      "order": "[receiver lock,false-alarm indicator,interference-present estimate]",
+      "unit": "[1,1,boolean]",
+      "physical_source": "receiver state derived from the received signal; lock and false-alarm indications may be binary or continuous in [0,1]"
+    }
+  ],
+  "prompt": "Build an end-to-end coherent two-target FMCW radar model containing chirp generation, target propagation and echoes, a dechirped complex-baseband receiver, and range-Doppler detection. The received path must include additive noise, stationary clutter, and a finite-duration in-band interferer; directly routing target parameters to the reported detections without a received-waveform path is not a valid implementation.\n\nRead target1_range, target1_velocity, target1_rcs, target2_range, target2_velocity, target2_rcs, snr_db, clutter_ratio, interference_ratio, interference_time, and interference_duration from base-workspace variables. Their nominal values are 52 m, -11 m/s, 12 m^2, 94 m, 9 m/s, 7 m^2, 16 dB, 0.18, 0.22, 0.055 s, and 0.018 s. They operate respectively over 35--75 m, -20 to -4 m/s, 6--20 m^2, 80--125 m, 3--18 m/s, 3--14 m^2, 8--24 dB, 0.05--0.35, 0.05--0.50, 0.040--0.070 s, and 0.012--0.026 s. The signed radial-velocity convention is positive for a receding target.\n\nAssume a clean MATLAB session in which only the declared public inputs are provided. Use an alternating up/down triangular FMCW waveform with a 77 GHz carrier, 3.5e10 Hz/s slope magnitude, 4 ms duration per up or down chirp, and 100 kHz complex-baseband sample rate. Across the declared range, detect both targets, estimate their ranges and signed radial velocities, remain ordered by range, suppress clutter and false alarms, and maintain or reacquire reliable detections through the temporary interferer.\n\nLog Timeseries beat_signal, detections, and receiver_status. beat_signal must contain the physically measured dechirped I and Q channels after propagation and receiver impairments. detections must contain [near-target range in m, near-target radial velocity in m/s, near confidence, far-target range in m, far-target radial velocity in m/s, far confidence], ordered by estimated range. receiver_status must contain [receiver lock, false-alarm indicator, interference-present estimate]. Confidence, receiver-lock and false-alarm outputs may use binary or continuous values in [0,1], but must change when their underlying evidence changes and remain directionally consistent with received target evidence and actual detection quality. All outputs must originate from the same causal radar transmit-channel-receive chain rather than from precomputed answer waveforms.\n\nWork directly in the required model file and keep the latest usable state saved at that path throughout the task.",
+  "groups": {
+    "G": "simulation, multichannel contract, finite bounded detections and non-degenerate complex beat signal",
+    "A": "nominal two-target range and signed-velocity accuracy",
+    "Q": "received impairment energy plus strategy-neutral non-degeneracy and directional consistency of confidence, lock and false-alarm reports with independent I/Q and detection evidence",
+    "M": "parity-resolved I/Q-derived range/velocity, reported detections, signal-derived status, and isolated RCS/SNR/clutter input-response consistency",
+    "R": "worst joint range, Doppler, RCS, SNR, clutter and interference operating point",
+    "D": "true interference energy scaling, signal-derived status alignment and receiver reacquisition",
+    "weights": {
+      "A": 0.2,
+      "Q": 0.1,
+      "M": 0.3,
+      "R": 0.2,
+      "D": 0.2
+    }
+  },
+  "reference_sources": [
+    {
+      "source_type": "original equations",
+      "source_url": "",
+      "license": "original implementation; project license applies",
+      "revision": "simuverity-101-v1",
+      "use": "triangular FMCW beat equations, coherent target superposition, received-I/Q spectral estimation and signal-derived interference state"
+    },
+    {
+      "source_type": "screened mechanism source",
+      "source_url": "https://www.mathworks.com/matlabcentral/fileexchange/46252-modeling-and-simulating-radar-systems-using-matlab-and-simulink",
+      "license": "redistributable BSD-style File Exchange license; no model code copied",
+      "revision": "1.3.0.1",
+      "use": "architecture and mechanism audit only: waveform generation, RF receive front end, propagation and detection algorithms"
+    }
+  ]
+}

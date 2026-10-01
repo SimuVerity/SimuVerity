@@ -1,0 +1,122 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XAUTO-11",
+  "collection": "XAUTO",
+  "reference": {
+    "identity_path": "tasks/XAUTO-11/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "rct_suspension_reference.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XAUTO-11",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a 2 s closed-loop active-suspension quarter-car model in Simulink.",
+    "engineering_objects": [
+      "The mechanical plant must include a sprung body mass, an unsprung wheel mass, a suspension spring and damper between them, tyre compliance to the moving road, and an active force actuator acting between the body and wheel.",
+      "The applied actuator force must feed the same mechanical path that produces body acceleration and suspension deflection;",
+      "Use its sprung mass, suspension stiffness, suspension damping, road peak, and road angular frequency in the connected plant and disturbance path."
+    ],
+    "physical_paths": [
+      "The applied actuator force must feed the same mechanical path that produces body acceleration and suspension deflection; prescribed output histories, disconnected control paths, or replayed trajectories are not valid.",
+      "Use its sprung mass, suspension stiffness, suspension damping, road peak, and road angular frequency in the connected plant and disturbance path.",
+      "Changes in sprung mass, suspension parameters, and road magnitude or frequency must materially affect the connected dynamic response.",
+      "The mechanical plant must include a sprung body mass, an unsprung wheel mass, a suspension spring and damper between them, tyre compliance to the moving road, and an active force actuator acting between the body and wheel."
+    ],
+    "functional_paths": [
+      "A feedback controller must use measured suspension and body motion to command the actuator.",
+      "prescribed output histories, disconnected control paths, or replayed trajectories are not valid.",
+      "The closed loop must remain finite and stable across the complete published ranges while balancing passenger comfort, tyre/suspension travel, and active control effort."
+    ],
+    "information_paths": [
+      "xauto11_input -> F90-XAUTO-11 plant/control path -> suspension_state, active_control_state"
+    ],
+    "modes_and_events": [
+      "Build a 2 s closed-loop active-suspension quarter-car model in Simulink."
+    ],
+    "interfaces": [
+      {
+        "name": "xauto11_input",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read xauto11_input from the MATLAB base workspace. The xauto11_input struct contains finite real scalar fields sprung_mass_kg in [100, 300] kg, suspension_stiffness_n_per_m in [12800, 19200] N/m, suspension_damping_n_s_per_m in [700, 1300] N*s/m, road_peak_m in [0.04, 0.07] m, and road_angular_frequency_rad_per_s in [8*pi, 12*pi] rad/s.",
+        "source": "tasks/XAUTO-11/public_spec.json"
+      },
+      {
+        "name": "suspension_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m",
+          "m/s^2"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named suspension_state and active_control_state. suspension_state has width 5 in this order: road displacement, body displacement, wheel displacement, and suspension deflection (m), followed by body acceleration (m/s^2). suspension_state must contain the actual connected road, body, wheel, suspension-deflection, and body-acceleration signals.",
+        "source": "tasks/XAUTO-11/public_spec.json"
+      },
+      {
+        "name": "active_control_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1",
+          "N"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named suspension_state and active_control_state. active_control_state has width 2 in this order: the controller's dimensionless normalized command and the applied active force (N). active_control_state must contain the controller's dimensionless normalized command and the physical force in newtons actually applied to the mechanical plant after actuator dynamics and force scaling.",
+        "source": "tasks/XAUTO-11/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "A feedback controller must use measured suspension and body motion to command the actuator.",
+      "active_control_state must contain the controller's dimensionless normalized command and the physical force in newtons actually applied to the mechanical plant after actuator dynamics and force scaling."
+    ],
+    "feedback_and_control_causality": [
+      "Build a 2 s closed-loop active-suspension quarter-car model in Simulink.",
+      "The mechanical plant must include a sprung body mass, an unsprung wheel mass, a suspension spring and damper between them, tyre compliance to the moving road, and an active force actuator acting between the body and wheel.",
+      "A feedback controller must use measured suspension and body motion to command the actuator."
+    ],
+    "signal_sources": [
+      "xauto11_input is read from the public MATLAB base-workspace input contract.",
+      "suspension_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "active_control_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "xauto11_input: Read xauto11_input from the MATLAB base workspace. The xauto11_input struct contains finite real scalar fields sprung_mass_kg in [100, 300] kg, suspension_stiffness_n_per_m in [12800, 19200] N/m, suspension_damping_n_s_per_m in [700, 1300] N*s/m, road_peak_m in [0.04, 0.07] m, and road_angular_frequency_rad_per_s in [8*pi, 12*pi] rad/s."
+    ],
+    "disturbances": [
+      "Use its sprung mass, suspension stiffness, suspension damping, road peak, and road angular frequency in the connected plant and disturbance path."
+    ],
+    "dynamic_processes": [
+      "Changes in sprung mass, suspension parameters, and road magnitude or frequency must materially affect the connected dynamic response.",
+      "active_control_state must contain the controller's dimensionless normalized command and the physical force in newtons actually applied to the mechanical plant after actuator dynamics and force scaling."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XAUTO-11: prescribing suspension_state directly would bypass the system path described by: The applied actuator force must feed the same mechanical path that produces body acceleration and suspension deflection; prescribed output histories, disconnected control paths, or replayed trajectories are not valid.",
+      "F90-XAUTO-11: replaying a fixed suspension_state trace would ignore causal variation in xauto11_input."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XAUTO-11/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XAUTO-11/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XAUTO-11/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

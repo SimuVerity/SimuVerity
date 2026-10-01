@@ -1,0 +1,23 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XELEC-22",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/Universal_ELC_for_MicroHydoPlant.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 2,
+  "retained_bytes": 333406,
+  "excluded_files": [
+    {
+      "path": "reference/files/Universal_ELC_for_MicroHydoPlant.slx.r2016b",
+      "size_bytes": 47699,
+      "category": "obsolete_model_backup",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    }
+  ],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ]
+}

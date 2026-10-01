@@ -1,0 +1,168 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XAUTO-09",
+  "scenarios": [
+    {
+      "id": "nominal_target_discrimination",
+      "source_scenario": "ACC_01_ISO_TargetDiscriminationTest",
+      "traffic_scenario": "straight_target",
+      "driver_set_velocity_mps": 30.0,
+      "time_gap_s": 1.5,
+      "default_spacing_m": 10.0
+    },
+    {
+      "id": "lower_driver_set_speed",
+      "source_scenario": "ACC_01_ISO_TargetDiscriminationTest",
+      "traffic_scenario": "straight_target",
+      "driver_set_velocity_mps": 24.0,
+      "time_gap_s": 1.5,
+      "default_spacing_m": 10.0
+    },
+    {
+      "id": "longer_time_gap",
+      "source_scenario": "ACC_01_ISO_TargetDiscriminationTest",
+      "traffic_scenario": "straight_target",
+      "driver_set_velocity_mps": 30.0,
+      "time_gap_s": 2.2,
+      "default_spacing_m": 10.0
+    },
+    {
+      "id": "stop_and_go",
+      "source_scenario": "ACC_04_StopnGo",
+      "traffic_scenario": "stop_and_go",
+      "driver_set_velocity_mps": 27.0,
+      "time_gap_s": 1.5,
+      "default_spacing_m": 10.0
+    },
+    {
+      "id": "curved_cut_in_out",
+      "source_scenario": "LFACC_04_Curve_CutInOut",
+      "traffic_scenario": "curved_cut_in_out",
+      "driver_set_velocity_mps": 21.5,
+      "time_gap_s": 1.5,
+      "default_spacing_m": 10.0
+    }
+  ],
+  "contract": {
+    "difficulty": {
+      "score": 12,
+      "maximum": 12,
+      "basis": [
+        "synthetic radar and vision detections",
+        "multi-object fusion and lead selection",
+        "detected-lane center estimation",
+        "coupled longitudinal and lateral MPC",
+        "closed-loop finite-mass vehicle dynamics",
+        "five multiaxis traffic and setpoint scenarios"
+      ]
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85,
+      "preferred_reference_score": 90,
+      "normalize_threshold_to_100": false,
+      "groups": {
+        "A": {
+          "weight": 0.25,
+          "meaning": "speed, spacing, lateral and yaw performance from true closed-loop outputs"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "finite complete unit-consistent logs and plausible command quality"
+        },
+        "M": {
+          "weight": 0.2,
+          "meaning": "connected sensor-fusion, lane-estimation, coupled MPC and vehicle mechanisms"
+        },
+        "C": {
+          "weight": 0.2,
+          "meaning": "causal response to driver-set velocity, time gap and traffic/lane changes"
+        },
+        "R": {
+          "weight": 0.15,
+          "meaning": "worst private scenario validity, stability and collision outcome"
+        },
+        "D": {
+          "weight": 0.1,
+          "meaning": "stop-and-go and curved cut-in/cut-out transient response"
+        }
+      }
+    },
+    "runtime_gate": {
+      "five_scenario_simulation_seconds": 89.9587511,
+      "within_approximate_ten_minute_budget": true,
+      "effective_axis_count": 4
+    },
+    "final_fresh_replay": {
+      "all_scenario_logs_exact": true,
+      "all_scenario_metrics_exact": true,
+      "raw_offline_score": 100.0,
+      "G": 1
+    },
+    "minimum_shortcut_sanity_contract": [
+      "missing_fusion_outputs",
+      "missing_lane_outputs",
+      "fixed_outputs_across_scenarios",
+      "driver_set_velocity_without_effect",
+      "time_gap_without_effect",
+      "traffic_scenario_without_effect",
+      "disconnected_commands_or_vehicle"
+    ]
+  },
+  "difficulty": {
+    "score": 12,
+    "maximum": 12,
+    "basis": [
+      "synthetic radar and vision detections",
+      "multi-object fusion and lead selection",
+      "detected-lane center estimation",
+      "coupled longitudinal and lateral MPC",
+      "closed-loop finite-mass vehicle dynamics",
+      "five multiaxis traffic and setpoint scenarios"
+    ]
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85,
+    "preferred_reference_score": 90,
+    "normalize_threshold_to_100": false,
+    "groups": {
+      "A": {
+        "weight": 0.25,
+        "meaning": "speed, spacing, lateral and yaw performance from true closed-loop outputs"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "finite complete unit-consistent logs and plausible command quality"
+      },
+      "M": {
+        "weight": 0.2,
+        "meaning": "connected sensor-fusion, lane-estimation, coupled MPC and vehicle mechanisms"
+      },
+      "C": {
+        "weight": 0.2,
+        "meaning": "causal response to driver-set velocity, time gap and traffic/lane changes"
+      },
+      "R": {
+        "weight": 0.15,
+        "meaning": "worst private scenario validity, stability and collision outcome"
+      },
+      "D": {
+        "weight": 0.1,
+        "meaning": "stop-and-go and curved cut-in/cut-out transient response"
+      }
+    }
+  },
+  "runtime_gate": {
+    "five_scenario_simulation_seconds": 89.9587511,
+    "within_approximate_ten_minute_budget": true,
+    "effective_axis_count": 4
+  },
+  "minimum_shortcut_sanity_contract": [
+    "missing_fusion_outputs",
+    "missing_lane_outputs",
+    "fixed_outputs_across_scenarios",
+    "driver_set_velocity_without_effect",
+    "time_gap_without_effect",
+    "traffic_scenario_without_effect",
+    "disconnected_commands_or_vehicle"
+  ]
+}

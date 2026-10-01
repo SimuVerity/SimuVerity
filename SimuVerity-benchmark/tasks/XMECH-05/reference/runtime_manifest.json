@@ -1,0 +1,17 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XMECH-05",
+  "materialization": "local_importer",
+  "entrypoint": "Forklift.slx",
+  "recipe": "reference/importer_recipe.json",
+  "transform": "reference/transform.m",
+  "retained_file_count": 0,
+  "retained_bytes": 0,
+  "excluded_files": [],
+  "clean_replay_setup": {
+    "phase": "before_load",
+    "path": "tasks/XMECH-05/reference/clean_replay_setup/f90_xmech05_reference_clean_replay_setup.m",
+    "entrypoint": "f90_xmech05_reference_clean_replay_setup"
+  },
+  "expected_source_file_count": 35
+}

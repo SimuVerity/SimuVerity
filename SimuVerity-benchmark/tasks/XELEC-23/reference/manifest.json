@@ -1,0 +1,34 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XELEC-23",
+  "file_count": 3,
+  "files": [
+    {
+      "path": "reference/files/APFv2_alpha.mdl",
+      "size_bytes": 306446
+    },
+    {
+      "path": "reference/files/APFv2_alpha.mdl.r2010a",
+      "size_bytes": 229837
+    },
+    {
+      "path": "reference/files/license.txt",
+      "size_bytes": 1311
+    }
+  ],
+  "entrypoint": "reference/files/APFv2_alpha.mdl",
+  "expected_score": 96.565831,
+  "expected_valid_scenarios": 2,
+  "score_tolerance": 5e-07,
+  "scenario_contract": {
+    "expected_ids": [
+      "light_load",
+      "heavy_load"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 537594,
+  "excluded_files": []
+}

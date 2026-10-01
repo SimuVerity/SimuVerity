@@ -1,0 +1,223 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XTHERM-06",
+  "collection": "XTHERM",
+  "reference": {
+    "identity_path": "tasks/XTHERM-06/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/bev_motor_cooling.slx",
+    "model_path": "tasks/XTHERM-06/reference/files/bev_motor_cooling.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XTHERM-06",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a multi-domain Simscape battery-electric vehicle that completes a closed-loop passing maneuver.",
+    "engineering_objects": [
+      "The physical system must include an 800 V DC traction source, a lossy motor-drive with thermal dynamics, a mechanical driveline and longitudinal road load, and a liquid-cooling loop that transfers heat from the motor casing to the ambient.",
+      "The cooling path must be physically connected to the motor casing and must contain finite thermal storage, forced coolant flow, and heat rejection to the ambient.",
+      "Disabling cooling or reducing coolant flow must produce a physically plausible thermal response rather than a prescribed waveform."
+    ],
+    "physical_paths": [
+      "Regulate vehicle speed in closed loop through cruising at 100 km/h, following an 80 km/h lead vehicle, accelerating to 160 km/h to pass, and returning to 100 km/h.",
+      "The cooling path must be physically connected to the motor casing and must contain finite thermal storage, forced coolant flow, and heat rejection to the ambient.",
+      "The closed-loop speed controller must act through the traction path rather than copying the speed command to the measured output.",
+      "The physical system must include an 800 V DC traction source, a lossy motor-drive with thermal dynamics, a mechanical driveline and longitudinal road load, and a liquid-cooling loop that transfers heat from the motor casing to the ambient."
+    ],
+    "functional_paths": [
+      "Regulate vehicle speed in closed loop through cruising at 100 km/h, following an 80 km/h lead vehicle, accelerating to 160 km/h to pass, and returning to 100 km/h.",
+      "The controller design is unrestricted.",
+      "no motor-temperature feedback controller is prescribed."
+    ],
+    "information_paths": [
+      "Cooling_Enable, AmbientTemp_C, CoolantMassFlow_kgps -> F90-XTHERM-06 plant/control path -> speed_reference, vehicle_speed, motor_torque_request, motor_torque_actual, motor_temperature, casing_temperature, coolant_inlet_temperature, coolant_outlet_temperature, coolant_mass_flow"
+    ],
+    "modes_and_events": [
+      "F90-XTHERM-06 startup and continuous operation follow the current public task contract."
+    ],
+    "interfaces": [
+      {
+        "name": "Cooling_Enable",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "logical"
+        ],
+        "range_or_shape": "Read Cooling_Enable, AmbientTemp_C, and CoolantMassFlow_kgps from MATLAB base-workspace variables. Support Cooling_Enable values 0 and 1, AmbientTemp_C from 35 to 55 degC, and CoolantMassFlow_kgps from 1 to 2 kg/s.",
+        "source": "tasks/XTHERM-06/public_spec.json"
+      },
+      {
+        "name": "AmbientTemp_C",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Read Cooling_Enable, AmbientTemp_C, and CoolantMassFlow_kgps from MATLAB base-workspace variables. Support Cooling_Enable values 0 and 1, AmbientTemp_C from 35 to 55 degC, and CoolantMassFlow_kgps from 1 to 2 kg/s.",
+        "source": "tasks/XTHERM-06/public_spec.json"
+      },
+      {
+        "name": "CoolantMassFlow_kgps",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kg/s"
+        ],
+        "range_or_shape": "Read Cooling_Enable, AmbientTemp_C, and CoolantMassFlow_kgps from MATLAB base-workspace variables. Support Cooling_Enable values 0 and 1, AmbientTemp_C from 35 to 55 degC, and CoolantMassFlow_kgps from 1 to 2 kg/s.",
+        "source": "tasks/XTHERM-06/public_spec.json"
+      },
+      {
+        "name": "speed_reference",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Log complete-maneuver Timeseries named speed_reference, vehicle_speed, motor_torque_request, motor_torque_actual, motor_temperature, casing_temperature, coolant_inlet_temperature, coolant_outlet_temperature, and coolant_mass_flow.",
+        "source": "tasks/XTHERM-06/public_spec.json"
+      },
+      {
+        "name": "vehicle_speed",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Log complete-maneuver Timeseries named speed_reference, vehicle_speed, motor_torque_request, motor_torque_actual, motor_temperature, casing_temperature, coolant_inlet_temperature, coolant_outlet_temperature, and coolant_mass_flow.",
+        "source": "tasks/XTHERM-06/public_spec.json"
+      },
+      {
+        "name": "motor_torque_request",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N*m"
+        ],
+        "range_or_shape": "Log complete-maneuver Timeseries named speed_reference, vehicle_speed, motor_torque_request, motor_torque_actual, motor_temperature, casing_temperature, coolant_inlet_temperature, coolant_outlet_temperature, and coolant_mass_flow.",
+        "source": "tasks/XTHERM-06/public_spec.json"
+      },
+      {
+        "name": "motor_torque_actual",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N*m"
+        ],
+        "range_or_shape": "Log complete-maneuver Timeseries named speed_reference, vehicle_speed, motor_torque_request, motor_torque_actual, motor_temperature, casing_temperature, coolant_inlet_temperature, coolant_outlet_temperature, and coolant_mass_flow.",
+        "source": "tasks/XTHERM-06/public_spec.json"
+      },
+      {
+        "name": "motor_temperature",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Log complete-maneuver Timeseries named speed_reference, vehicle_speed, motor_torque_request, motor_torque_actual, motor_temperature, casing_temperature, coolant_inlet_temperature, coolant_outlet_temperature, and coolant_mass_flow.",
+        "source": "tasks/XTHERM-06/public_spec.json"
+      },
+      {
+        "name": "casing_temperature",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Log complete-maneuver Timeseries named speed_reference, vehicle_speed, motor_torque_request, motor_torque_actual, motor_temperature, casing_temperature, coolant_inlet_temperature, coolant_outlet_temperature, and coolant_mass_flow.",
+        "source": "tasks/XTHERM-06/public_spec.json"
+      },
+      {
+        "name": "coolant_inlet_temperature",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Log complete-maneuver Timeseries named speed_reference, vehicle_speed, motor_torque_request, motor_torque_actual, motor_temperature, casing_temperature, coolant_inlet_temperature, coolant_outlet_temperature, and coolant_mass_flow.",
+        "source": "tasks/XTHERM-06/public_spec.json"
+      },
+      {
+        "name": "coolant_outlet_temperature",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Log complete-maneuver Timeseries named speed_reference, vehicle_speed, motor_torque_request, motor_torque_actual, motor_temperature, casing_temperature, coolant_inlet_temperature, coolant_outlet_temperature, and coolant_mass_flow.",
+        "source": "tasks/XTHERM-06/public_spec.json"
+      },
+      {
+        "name": "coolant_mass_flow",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "kg/s"
+        ],
+        "range_or_shape": "Log complete-maneuver Timeseries named speed_reference, vehicle_speed, motor_torque_request, motor_torque_actual, motor_temperature, casing_temperature, coolant_inlet_temperature, coolant_outlet_temperature, and coolant_mass_flow.",
+        "source": "tasks/XTHERM-06/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "The physical system must include an 800 V DC traction source, a lossy motor-drive with thermal dynamics, a mechanical driveline and longitudinal road load, and a liquid-cooling loop that transfers heat from the motor casing to the ambient.",
+      "The controller design is unrestricted.",
+      "no motor-temperature feedback controller is prescribed."
+    ],
+    "feedback_and_control_causality": [
+      "Build a multi-domain Simscape battery-electric vehicle that completes a closed-loop passing maneuver.",
+      "Regulate vehicle speed in closed loop through cruising at 100 km/h, following an 80 km/h lead vehicle, accelerating to 160 km/h to pass, and returning to 100 km/h.",
+      "The controller design is unrestricted."
+    ],
+    "signal_sources": [
+      "Cooling_Enable is read from the public MATLAB base-workspace input contract.",
+      "AmbientTemp_C is read from the public MATLAB base-workspace input contract.",
+      "CoolantMassFlow_kgps is read from the public MATLAB base-workspace input contract.",
+      "speed_reference is produced by the implemented plant or controller and logged under the public output contract.",
+      "vehicle_speed is produced by the implemented plant or controller and logged under the public output contract.",
+      "motor_torque_request is produced by the implemented plant or controller and logged under the public output contract.",
+      "motor_torque_actual is produced by the implemented plant or controller and logged under the public output contract.",
+      "motor_temperature is produced by the implemented plant or controller and logged under the public output contract.",
+      "casing_temperature is produced by the implemented plant or controller and logged under the public output contract.",
+      "coolant_inlet_temperature is produced by the implemented plant or controller and logged under the public output contract.",
+      "coolant_outlet_temperature is produced by the implemented plant or controller and logged under the public output contract.",
+      "coolant_mass_flow is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "Cooling_Enable: Read Cooling_Enable, AmbientTemp_C, and CoolantMassFlow_kgps from MATLAB base-workspace variables. Support Cooling_Enable values 0 and 1, AmbientTemp_C from 35 to 55 degC, and CoolantMassFlow_kgps from 1 to 2 kg/s.",
+      "AmbientTemp_C: Read Cooling_Enable, AmbientTemp_C, and CoolantMassFlow_kgps from MATLAB base-workspace variables. Support Cooling_Enable values 0 and 1, AmbientTemp_C from 35 to 55 degC, and CoolantMassFlow_kgps from 1 to 2 kg/s.",
+      "CoolantMassFlow_kgps: Read Cooling_Enable, AmbientTemp_C, and CoolantMassFlow_kgps from MATLAB base-workspace variables. Support Cooling_Enable values 0 and 1, AmbientTemp_C from 35 to 55 degC, and CoolantMassFlow_kgps from 1 to 2 kg/s."
+    ],
+    "disturbances": [
+      "The physical system must include an 800 V DC traction source, a lossy motor-drive with thermal dynamics, a mechanical driveline and longitudinal road load, and a liquid-cooling loop that transfers heat from the motor casing to the ambient."
+    ],
+    "dynamic_processes": [
+      "The physical system must include an 800 V DC traction source, a lossy motor-drive with thermal dynamics, a mechanical driveline and longitudinal road load, and a liquid-cooling loop that transfers heat from the motor casing to the ambient."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XTHERM-06: prescribing speed_reference directly would bypass the system path described by: Regulate vehicle speed in closed loop through cruising at 100 km/h, following an 80 km/h lead vehicle, accelerating to 160 km/h to pass, and returning to 100 km/h.",
+      "F90-XTHERM-06: replaying a fixed speed_reference trace would ignore causal variation in Cooling_Enable."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XTHERM-06/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XTHERM-06/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XTHERM-06/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

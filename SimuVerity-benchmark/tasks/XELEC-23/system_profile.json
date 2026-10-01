@@ -1,0 +1,148 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XELEC-23",
+  "collection": "XELEC",
+  "reference": {
+    "identity_path": "tasks/XELEC-23/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/APFv2_alpha.mdl",
+    "model_path": "tasks/XELEC-23/reference/files/APFv2_alpha.mdl"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id D023",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a three-phase shunt active power filter for a 50 Hz source feeding a nonlinear load.",
+    "engineering_objects": [
+      "PCC"
+    ],
+    "physical_paths": [
+      "The source and nonlinear load must connect at a common PCC, and a controllable three-phase converter with a split DC link must connect in shunt at that PCC.",
+      "At nominal conditions and throughout this envelope, the physical source current must be substantially less distorted than the nonlinear-load current, the measured currents must satisfy current balance at the PCC, the total DC-link voltage must remain about 1.16 kV, and the two DC-link halves must remain balanced."
+    ],
+    "functional_paths": [
+      "The source and nonlinear load must connect at a common PCC, and a controllable three-phase converter with a split DC link must connect in shunt at that PCC.",
+      "The current compensation and split DC-link regulation must establish promptly after startup."
+    ],
+    "information_paths": [
+      "R_nl -> D023 plant/control path -> Vac, Vdc, Iload, Isource, Icomp"
+    ],
+    "modes_and_events": [
+      "The current compensation and split DC-link regulation must establish promptly after startup."
+    ],
+    "interfaces": [
+      {
+        "name": "R_nl",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read R_nl from a base-workspace variable; its nominal value is 4 ohm and its operating envelope is +/-10%.",
+        "source": "tasks/XELEC-23/public_spec.json"
+      },
+      {
+        "name": "Vac",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "V"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries Vac, Vdc, Iload, Isource and Icomp. Vdc must contain exactly the two positive rail-to-neutral half-link voltages, while Vac and all current outputs must contain exactly the three physical phases.",
+        "source": "tasks/XELEC-23/public_spec.json"
+      },
+      {
+        "name": "Vdc",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "V"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries Vac, Vdc, Iload, Isource and Icomp. Vdc must contain exactly the two positive rail-to-neutral half-link voltages, while Vac and all current outputs must contain exactly the three physical phases.",
+        "source": "tasks/XELEC-23/public_spec.json"
+      },
+      {
+        "name": "Iload",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries Vac, Vdc, Iload, Isource and Icomp. Define positive current from grid to PCC for Isource, from PCC to load for Iload, and from the filter converter to PCC for Icomp, so Isource + Icomp - Iload must remain approximately zero.",
+        "source": "tasks/XELEC-23/public_spec.json"
+      },
+      {
+        "name": "Isource",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries Vac, Vdc, Iload, Isource and Icomp. Define positive current from grid to PCC for Isource, from PCC to load for Iload, and from the filter converter to PCC for Icomp, so Isource + Icomp - Iload must remain approximately zero.",
+        "source": "tasks/XELEC-23/public_spec.json"
+      },
+      {
+        "name": "Icomp",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries Vac, Vdc, Iload, Isource and Icomp. Define positive current from grid to PCC for Isource, from PCC to load for Iload, and from the filter converter to PCC for Icomp, so Isource + Icomp - Iload must remain approximately zero.",
+        "source": "tasks/XELEC-23/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a three-phase shunt active power filter for a 50 Hz source feeding a nonlinear load.",
+      "The source and nonlinear load must connect at a common PCC, and a controllable three-phase converter with a split DC link must connect in shunt at that PCC.",
+      "Vdc must contain exactly the two positive rail-to-neutral half-link voltages, while Vac and all current outputs must contain exactly the three physical phases."
+    ],
+    "feedback_and_control_causality": [
+      "The current compensation and split DC-link regulation must establish promptly after startup."
+    ],
+    "signal_sources": [
+      "R_nl is read from the public MATLAB base-workspace input contract.",
+      "Vac is produced by the implemented plant or controller and logged under the public output contract.",
+      "Vdc is produced by the implemented plant or controller and logged under the public output contract.",
+      "Iload is produced by the implemented plant or controller and logged under the public output contract.",
+      "Isource is produced by the implemented plant or controller and logged under the public output contract.",
+      "Icomp is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "R_nl: Read R_nl from a base-workspace variable; its nominal value is 4 ohm and its operating envelope is +/-10%."
+    ],
+    "disturbances": [
+      "Build a three-phase shunt active power filter for a 50 Hz source feeding a nonlinear load.",
+      "The source and nonlinear load must connect at a common PCC, and a controllable three-phase converter with a split DC link must connect in shunt at that PCC.",
+      "At nominal conditions and throughout this envelope, the physical source current must be substantially less distorted than the nonlinear-load current, the measured currents must satisfy current balance at the PCC, the total DC-link voltage must remain about 1.16 kV, and the two DC-link halves must remain balanced."
+    ],
+    "dynamic_processes": [
+      "The current compensation and split DC-link regulation must establish promptly after startup."
+    ],
+    "task_specific_shortcuts": [
+      "D023: prescribing Vac directly would bypass the system path described by: The source and nonlinear load must connect at a common PCC, and a controllable three-phase converter with a split DC link must connect in shunt at that PCC.",
+      "D023: replaying a fixed Vac trace would ignore causal variation in R_nl."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XELEC-23/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XELEC-23/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XELEC-23/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

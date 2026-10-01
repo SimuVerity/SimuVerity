@@ -1,0 +1,11 @@
+{
+  "task_id": "EXT-XMECH-WHEELLOADER-COORD-01",
+  "checks": {
+    "constant_outputs_mechanism_zero": true,
+    "environment_ignored_control_zero": true,
+    "missing_hydraulics_mechanism_zero": true,
+    "missing_powertrain_mechanism_zero": true,
+    "single_channel_partial_not_gate_failure": true
+  },
+  "pass": true
+}

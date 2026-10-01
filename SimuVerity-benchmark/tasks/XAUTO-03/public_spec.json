@@ -1,0 +1,8 @@
+{
+  "schema": "simuverity.public-spec.v1",
+  "task_id": "XAUTO-03",
+  "collection": "XAUTO",
+  "runtime_alias": "XAUTO-03",
+  "candidate_filename": "cand_XAUTO03.slx",
+  "prompt": "Build a conventional 12 V automotive electrical system in Simscape. A variable-speed alternator, a lead-acid battery, and multiple resistive accessory loads must share one DC electrical bus. The alternator regulation must use the measured bus voltage in a closed loop so that the battery and accessory supply remain usable while engine speed and accessory demand vary. The model shall accept an engine-speed profile and an accessory-load profile from the MATLAB base workspace.\n\nUse the exact MATLAB base-workspace fields engine_speed_rpm and accessory_load_profile; both are time-varying profiles, with engine_speed_rpm carrying engine speed and accessory_load_profile carrying aggregate accessory demand. Log V_batt, V_alt, V_loads, and I_loads as full-duration Timeseries measured at the actual battery, alternator, and load interfaces. The solution must demonstrate a real electrical power path from alternator and battery to the loads, rather than prescribed output signals.\n\nSubmission filename contract: create, edit, and save the final self-contained Simulink model as cand_XAUTO03.slx in the assigned submission directory; keep the latest usable state at that exact path throughout the run."
+}

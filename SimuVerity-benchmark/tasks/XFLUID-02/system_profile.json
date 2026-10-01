@@ -1,0 +1,271 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XFLUID-02",
+  "collection": "XFLUID",
+  "reference": {
+    "identity_path": "tasks/XFLUID-02/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/Simscape-Triplex-Pump/XFLUID02_reference.slx",
+    "model_path": "tasks/XFLUID-02/reference/files/Simscape-Triplex-Pump/XFLUID02_reference.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XFLUID-02",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a physically causal triplex positive-displacement pump driven through a closed-loop shaft-speed actuator.",
+    "engineering_objects": [
+      "F90-XFLUID-02 plant and controller described by the current public task contract",
+      "Measured output interfaces: shaft_speed, shaft_torque, inlet_pressure, inlet_flow, outlet_pressure, outlet_flow, plunger1_flow, plunger2_flow, plunger3_flow"
+    ],
+    "physical_paths": [
+      "Build a physically causal triplex positive-displacement pump driven through a closed-loop shaft-speed actuator."
+    ],
+    "functional_paths": [
+      "Across the declared range, regulate the measured shaft speed to its commanded value, sustain positive delivered flow against the outlet pressure, retain bounded pressure and flow pulsation, and recover after the speed-command change."
+    ],
+    "information_paths": [
+      "pump_speed_rpm, output_pressure_bar, speed_step_fraction, speed_step_time, seal_leak_fraction, inlet_area_factor, fault_cylinder -> F90-XFLUID-02 plant/control path -> shaft_speed, shaft_torque, inlet_pressure, inlet_flow, outlet_pressure, outlet_flow, plunger1_flow, plunger2_flow, plunger3_flow"
+    ],
+    "modes_and_events": [
+      "A prescribed output waveform, prescribed plunger motion, lookup-only surrogate, or diagnostic-only model is not a valid implementation.",
+      "Read pump_speed_rpm, output_pressure_bar, speed_step_fraction, speed_step_time, seal_leak_fraction, inlet_area_factor, and fault_cylinder from MATLAB base-workspace variables.",
+      "pump_speed_rpm operates over 760--1120 rpm, output_pressure_bar over 4.5--9.5 bar, speed_step_fraction over -0.15--0.15, and speed_step_time over 0.55--0.95 s."
+    ],
+    "interfaces": [
+      {
+        "name": "pump_speed_rpm",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "rpm"
+        ],
+        "range_or_shape": "Read pump_speed_rpm, output_pressure_bar, speed_step_fraction, speed_step_time, seal_leak_fraction, inlet_area_factor, and fault_cylinder from MATLAB base-workspace variables. pump_speed_rpm operates over 760--1120 rpm, output_pressure_bar over 4.5--9.5 bar, speed_step_fraction over -0.15--0.15, and speed_step_time over 0.55--0.95 s.",
+        "source": "tasks/XFLUID-02/public_spec.json"
+      },
+      {
+        "name": "output_pressure_bar",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "bar"
+        ],
+        "range_or_shape": "Read pump_speed_rpm, output_pressure_bar, speed_step_fraction, speed_step_time, seal_leak_fraction, inlet_area_factor, and fault_cylinder from MATLAB base-workspace variables. pump_speed_rpm operates over 760--1120 rpm, output_pressure_bar over 4.5--9.5 bar, speed_step_fraction over -0.15--0.15, and speed_step_time over 0.55--0.95 s.",
+        "source": "tasks/XFLUID-02/public_spec.json"
+      },
+      {
+        "name": "speed_step_fraction",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read pump_speed_rpm, output_pressure_bar, speed_step_fraction, speed_step_time, seal_leak_fraction, inlet_area_factor, and fault_cylinder from MATLAB base-workspace variables. pump_speed_rpm operates over 760--1120 rpm, output_pressure_bar over 4.5--9.5 bar, speed_step_fraction over -0.15--0.15, and speed_step_time over 0.55--0.95 s.",
+        "source": "tasks/XFLUID-02/public_spec.json"
+      },
+      {
+        "name": "speed_step_time",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read pump_speed_rpm, output_pressure_bar, speed_step_fraction, speed_step_time, seal_leak_fraction, inlet_area_factor, and fault_cylinder from MATLAB base-workspace variables. pump_speed_rpm operates over 760--1120 rpm, output_pressure_bar over 4.5--9.5 bar, speed_step_fraction over -0.15--0.15, and speed_step_time over 0.55--0.95 s.",
+        "source": "tasks/XFLUID-02/public_spec.json"
+      },
+      {
+        "name": "seal_leak_fraction",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read pump_speed_rpm, output_pressure_bar, speed_step_fraction, speed_step_time, seal_leak_fraction, inlet_area_factor, and fault_cylinder from MATLAB base-workspace variables. seal_leak_fraction operates over 0--0.06 of one inlet-check-valve maximum area, inlet_area_factor over 0.35--1.0, and fault_cylinder selects cylinder 1, 2, or 3.",
+        "source": "tasks/XFLUID-02/public_spec.json"
+      },
+      {
+        "name": "inlet_area_factor",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read pump_speed_rpm, output_pressure_bar, speed_step_fraction, speed_step_time, seal_leak_fraction, inlet_area_factor, and fault_cylinder from MATLAB base-workspace variables. seal_leak_fraction operates over 0--0.06 of one inlet-check-valve maximum area, inlet_area_factor over 0.35--1.0, and fault_cylinder selects cylinder 1, 2, or 3.",
+        "source": "tasks/XFLUID-02/public_spec.json"
+      },
+      {
+        "name": "fault_cylinder",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "index"
+        ],
+        "range_or_shape": "Read pump_speed_rpm, output_pressure_bar, speed_step_fraction, speed_step_time, seal_leak_fraction, inlet_area_factor, and fault_cylinder from MATLAB base-workspace variables. seal_leak_fraction operates over 0--0.06 of one inlet-check-valve maximum area, inlet_area_factor over 0.35--1.0, and fault_cylinder selects cylinder 1, 2, or 3.",
+        "source": "tasks/XFLUID-02/public_spec.json"
+      },
+      {
+        "name": "shaft_speed",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rpm"
+        ],
+        "range_or_shape": "Log complete-run one-channel MATLAB Timeseries named shaft_speed (rpm), shaft_torque (N*m), inlet_pressure (bar), inlet_flow (L/min), outlet_pressure (bar), outlet_flow (L/min), plunger1_flow (L/min), plunger2_flow (L/min), and plunger3_flow (L/min).",
+        "source": "tasks/XFLUID-02/public_spec.json"
+      },
+      {
+        "name": "shaft_torque",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N*m"
+        ],
+        "range_or_shape": "Log complete-run one-channel MATLAB Timeseries named shaft_speed (rpm), shaft_torque (N*m), inlet_pressure (bar), inlet_flow (L/min), outlet_pressure (bar), outlet_flow (L/min), plunger1_flow (L/min), plunger2_flow (L/min), and plunger3_flow (L/min).",
+        "source": "tasks/XFLUID-02/public_spec.json"
+      },
+      {
+        "name": "inlet_pressure",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "bar"
+        ],
+        "range_or_shape": "Log complete-run one-channel MATLAB Timeseries named shaft_speed (rpm), shaft_torque (N*m), inlet_pressure (bar), inlet_flow (L/min), outlet_pressure (bar), outlet_flow (L/min), plunger1_flow (L/min), plunger2_flow (L/min), and plunger3_flow (L/min).",
+        "source": "tasks/XFLUID-02/public_spec.json"
+      },
+      {
+        "name": "inlet_flow",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "L/min"
+        ],
+        "range_or_shape": "Log complete-run one-channel MATLAB Timeseries named shaft_speed (rpm), shaft_torque (N*m), inlet_pressure (bar), inlet_flow (L/min), outlet_pressure (bar), outlet_flow (L/min), plunger1_flow (L/min), plunger2_flow (L/min), and plunger3_flow (L/min).",
+        "source": "tasks/XFLUID-02/public_spec.json"
+      },
+      {
+        "name": "outlet_pressure",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "bar"
+        ],
+        "range_or_shape": "Log complete-run one-channel MATLAB Timeseries named shaft_speed (rpm), shaft_torque (N*m), inlet_pressure (bar), inlet_flow (L/min), outlet_pressure (bar), outlet_flow (L/min), plunger1_flow (L/min), plunger2_flow (L/min), and plunger3_flow (L/min).",
+        "source": "tasks/XFLUID-02/public_spec.json"
+      },
+      {
+        "name": "outlet_flow",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "L/min"
+        ],
+        "range_or_shape": "Log complete-run one-channel MATLAB Timeseries named shaft_speed (rpm), shaft_torque (N*m), inlet_pressure (bar), inlet_flow (L/min), outlet_pressure (bar), outlet_flow (L/min), plunger1_flow (L/min), plunger2_flow (L/min), and plunger3_flow (L/min).",
+        "source": "tasks/XFLUID-02/public_spec.json"
+      },
+      {
+        "name": "plunger1_flow",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "L/min"
+        ],
+        "range_or_shape": "Log complete-run one-channel MATLAB Timeseries named shaft_speed (rpm), shaft_torque (N*m), inlet_pressure (bar), inlet_flow (L/min), outlet_pressure (bar), outlet_flow (L/min), plunger1_flow (L/min), plunger2_flow (L/min), and plunger3_flow (L/min).",
+        "source": "tasks/XFLUID-02/public_spec.json"
+      },
+      {
+        "name": "plunger2_flow",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "L/min"
+        ],
+        "range_or_shape": "Log complete-run one-channel MATLAB Timeseries named shaft_speed (rpm), shaft_torque (N*m), inlet_pressure (bar), inlet_flow (L/min), outlet_pressure (bar), outlet_flow (L/min), plunger1_flow (L/min), plunger2_flow (L/min), and plunger3_flow (L/min).",
+        "source": "tasks/XFLUID-02/public_spec.json"
+      },
+      {
+        "name": "plunger3_flow",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "L/min"
+        ],
+        "range_or_shape": "Log complete-run one-channel MATLAB Timeseries named shaft_speed (rpm), shaft_torque (N*m), inlet_pressure (bar), inlet_flow (L/min), outlet_pressure (bar), outlet_flow (L/min), plunger1_flow (L/min), plunger2_flow (L/min), and plunger3_flow (L/min).",
+        "source": "tasks/XFLUID-02/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a physically causal triplex positive-displacement pump driven through a closed-loop shaft-speed actuator.",
+      "The pump must contain three crank-driven plungers phased 120 degrees apart, separate inlet and outlet check valves for every cylinder, finite fluid compliance and hydraulic manifolds.",
+      "Across the declared range, regulate the measured shaft speed to its commanded value, sustain positive delivered flow against the outlet pressure, retain bounded pressure and flow pulsation, and recover after the speed-command change."
+    ],
+    "feedback_and_control_causality": [
+      "Build a physically causal triplex positive-displacement pump driven through a closed-loop shaft-speed actuator.",
+      "Across the declared range, regulate the measured shaft speed to its commanded value, sustain positive delivered flow against the outlet pressure, retain bounded pressure and flow pulsation, and recover after the speed-command change.",
+      "Every value must be measured from the causal pump, shaft, manifold, or check-valve paths."
+    ],
+    "signal_sources": [
+      "pump_speed_rpm is read from the public MATLAB base-workspace input contract.",
+      "output_pressure_bar is read from the public MATLAB base-workspace input contract.",
+      "speed_step_fraction is read from the public MATLAB base-workspace input contract.",
+      "speed_step_time is read from the public MATLAB base-workspace input contract.",
+      "seal_leak_fraction is read from the public MATLAB base-workspace input contract.",
+      "inlet_area_factor is read from the public MATLAB base-workspace input contract.",
+      "fault_cylinder is read from the public MATLAB base-workspace input contract.",
+      "shaft_speed is produced by the implemented plant or controller and logged under the public output contract.",
+      "shaft_torque is produced by the implemented plant or controller and logged under the public output contract.",
+      "inlet_pressure is produced by the implemented plant or controller and logged under the public output contract.",
+      "inlet_flow is produced by the implemented plant or controller and logged under the public output contract.",
+      "outlet_pressure is produced by the implemented plant or controller and logged under the public output contract.",
+      "outlet_flow is produced by the implemented plant or controller and logged under the public output contract.",
+      "plunger1_flow is produced by the implemented plant or controller and logged under the public output contract.",
+      "plunger2_flow is produced by the implemented plant or controller and logged under the public output contract.",
+      "plunger3_flow is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "pump_speed_rpm: Read pump_speed_rpm, output_pressure_bar, speed_step_fraction, speed_step_time, seal_leak_fraction, inlet_area_factor, and fault_cylinder from MATLAB base-workspace variables. pump_speed_rpm operates over 760--1120 rpm, output_pressure_bar over 4.5--9.5 bar, speed_step_fraction over -0.15--0.15, and speed_step_time over 0.55--0.95 s.",
+      "output_pressure_bar: Read pump_speed_rpm, output_pressure_bar, speed_step_fraction, speed_step_time, seal_leak_fraction, inlet_area_factor, and fault_cylinder from MATLAB base-workspace variables. pump_speed_rpm operates over 760--1120 rpm, output_pressure_bar over 4.5--9.5 bar, speed_step_fraction over -0.15--0.15, and speed_step_time over 0.55--0.95 s.",
+      "speed_step_fraction: Read pump_speed_rpm, output_pressure_bar, speed_step_fraction, speed_step_time, seal_leak_fraction, inlet_area_factor, and fault_cylinder from MATLAB base-workspace variables. pump_speed_rpm operates over 760--1120 rpm, output_pressure_bar over 4.5--9.5 bar, speed_step_fraction over -0.15--0.15, and speed_step_time over 0.55--0.95 s.",
+      "speed_step_time: Read pump_speed_rpm, output_pressure_bar, speed_step_fraction, speed_step_time, seal_leak_fraction, inlet_area_factor, and fault_cylinder from MATLAB base-workspace variables. pump_speed_rpm operates over 760--1120 rpm, output_pressure_bar over 4.5--9.5 bar, speed_step_fraction over -0.15--0.15, and speed_step_time over 0.55--0.95 s.",
+      "seal_leak_fraction: Read pump_speed_rpm, output_pressure_bar, speed_step_fraction, speed_step_time, seal_leak_fraction, inlet_area_factor, and fault_cylinder from MATLAB base-workspace variables. seal_leak_fraction operates over 0--0.06 of one inlet-check-valve maximum area, inlet_area_factor over 0.35--1.0, and fault_cylinder selects cylinder 1, 2, or 3.",
+      "inlet_area_factor: Read pump_speed_rpm, output_pressure_bar, speed_step_fraction, speed_step_time, seal_leak_fraction, inlet_area_factor, and fault_cylinder from MATLAB base-workspace variables. seal_leak_fraction operates over 0--0.06 of one inlet-check-valve maximum area, inlet_area_factor over 0.35--1.0, and fault_cylinder selects cylinder 1, 2, or 3.",
+      "fault_cylinder: Read pump_speed_rpm, output_pressure_bar, speed_step_fraction, speed_step_time, seal_leak_fraction, inlet_area_factor, and fault_cylinder from MATLAB base-workspace variables. seal_leak_fraction operates over 0--0.06 of one inlet-check-valve maximum area, inlet_area_factor over 0.35--1.0, and fault_cylinder selects cylinder 1, 2, or 3."
+    ],
+    "disturbances": [
+      "Read pump_speed_rpm, output_pressure_bar, speed_step_fraction, speed_step_time, seal_leak_fraction, inlet_area_factor, and fault_cylinder from MATLAB base-workspace variables.",
+      "pump_speed_rpm operates over 760--1120 rpm, output_pressure_bar over 4.5--9.5 bar, speed_step_fraction over -0.15--0.15, and speed_step_time over 0.55--0.95 s.",
+      "seal_leak_fraction operates over 0--0.06 of one inlet-check-valve maximum area, inlet_area_factor over 0.35--1.0, and fault_cylinder selects cylinder 1, 2, or 3."
+    ],
+    "dynamic_processes": [
+      "Read pump_speed_rpm, output_pressure_bar, speed_step_fraction, speed_step_time, seal_leak_fraction, inlet_area_factor, and fault_cylinder from MATLAB base-workspace variables.",
+      "pump_speed_rpm operates over 760--1120 rpm, output_pressure_bar over 4.5--9.5 bar, speed_step_fraction over -0.15--0.15, and speed_step_time over 0.55--0.95 s.",
+      "Across the declared range, regulate the measured shaft speed to its commanded value, sustain positive delivered flow against the outlet pressure, retain bounded pressure and flow pulsation, and recover after the speed-command change."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XFLUID-02: prescribing shaft_speed directly would bypass the system path described by: Build a physically causal triplex positive-displacement pump driven through a closed-loop shaft-speed actuator.",
+      "F90-XFLUID-02: replaying a fixed shaft_speed trace would ignore causal variation in pump_speed_rpm."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XFLUID-02/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XFLUID-02/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XFLUID-02/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

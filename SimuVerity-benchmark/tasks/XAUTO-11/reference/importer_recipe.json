@@ -1,0 +1,61 @@
+{
+  "schema": "simuverity.matlab-local-importer-recipe.v1",
+  "task_id": "XAUTO-11",
+  "release": "simuverity-101-v1",
+  "matlab_release": "R2025a",
+  "publisher": "The MathWorks, Inc.",
+  "redistributes_mathworks_files": false,
+  "destination": "%LOCALAPPDATA%/SimuVerity/assets/simuverity-101-v1/XAUTO-11",
+  "discovery": {
+    "method": "matlab_example_or_installed_product_search",
+    "example_id": "control/ControlSystemTuner_ActiveSuspensionQuarterCarExample",
+    "expected_source_filenames": [
+      "ControlSystemTuner_ActiveSuspensionQuarterCarExample.m",
+      "SessionFileForActiveSuspensionQuarterCar.mat",
+      "rct_suspension.slx"
+    ],
+    "expected_files": [
+      {
+        "name": "ControlSystemTuner_ActiveSuspensionQuarterCarExample.m",
+        "size_bytes": 7425
+      },
+      {
+        "name": "SessionFileForActiveSuspensionQuarterCar.mat",
+        "size_bytes": 7534
+      },
+      {
+        "name": "rct_suspension.slx",
+        "size_bytes": 63423
+      }
+    ]
+  },
+  "transform": "transform.m",
+  "validation": {
+    "required": true,
+    "checks": [
+      "load",
+      "update",
+      "compile",
+      "simulate",
+      "all_official_scenarios",
+      "reference_score"
+    ],
+    "on_mismatch": "fail_closed"
+  },
+  "entrypoint": "rct_suspension_reference.slx",
+  "expected_valid_scenarios": 5,
+  "score_tolerance": 1e-12,
+  "expected_score": 99.294385978,
+  "scenario_contract": {
+    "expected_ids": [
+      "light_body",
+      "intermediate_body",
+      "nominal_body",
+      "soft_low_damping",
+      "rougher_faster_road"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision"
+}

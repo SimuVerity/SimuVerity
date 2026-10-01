@@ -1,0 +1,711 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XBATT-06",
+  "file_count": 138,
+  "files": [
+    {
+      "path": "reference/files/src/2022-07-29 10-38-55_f1_3_figure_edit.png",
+      "size_bytes": 983487
+    },
+    {
+      "path": "reference/files/src/20220810_accidentVsModel.fig",
+      "size_bytes": 760272
+    },
+    {
+      "path": "reference/files/src/20220810_accidentVsModel.png",
+      "size_bytes": 104750
+    },
+    {
+      "path": "reference/files/src/20220810_accidentVsModel_zoom.png",
+      "size_bytes": 89950
+    },
+    {
+      "path": "reference/files/src/20230919_data.mat",
+      "size_bytes": 10287974
+    },
+    {
+      "path": "reference/files/src/20230919_data_fit.mat",
+      "size_bytes": 5990922
+    },
+    {
+      "path": "reference/files/src/20230919_data_modelparams.mat",
+      "size_bytes": 219065
+    },
+    {
+      "path": "reference/files/src/20230919_data_modelparams_RUL.mat",
+      "size_bytes": 219065
+    },
+    {
+      "path": "reference/files/src/20230919_data_performance.mat",
+      "size_bytes": 462
+    },
+    {
+      "path": "reference/files/src/20230919_data_RUL.mat",
+      "size_bytes": 1496249
+    },
+    {
+      "path": "reference/files/src/20230919_ISE.csv",
+      "size_bytes": 236
+    },
+    {
+      "path": "reference/files/src/20230919_paramfitdata.csv",
+      "size_bytes": 420
+    },
+    {
+      "path": "reference/files/src/20230919_pdc.png",
+      "size_bytes": 119888
+    },
+    {
+      "path": "reference/files/src/auxillary/fminsearchbnd.m",
+      "size_bytes": 8113
+    },
+    {
+      "path": "reference/files/src/auxillary/getVoc.m",
+      "size_bytes": 1322
+    },
+    {
+      "path": "reference/files/src/auxillary/grabit.m",
+      "size_bytes": 90913
+    },
+    {
+      "path": "reference/files/src/auxillary/plot_data.m",
+      "size_bytes": 450
+    },
+    {
+      "path": "reference/files/src/auxillary/plot_rawdata.m",
+      "size_bytes": 413
+    },
+    {
+      "path": "reference/files/src/BatteryEstim3RC_PTBS_EQ_RUL_v1.slx",
+      "size_bytes": 55392
+    },
+    {
+      "path": "reference/files/src/BatteryEstim3RC_PTBS_EQ_v1.slx",
+      "size_bytes": 54051
+    },
+    {
+      "path": "reference/files/src/BatteryEstim3RC_PTBS_v1.slx",
+      "size_bytes": 42028
+    },
+    {
+      "path": "reference/files/src/behaviorMatchingCostFunction.m",
+      "size_bytes": 1776
+    },
+    {
+      "path": "reference/files/src/capturebatjulypulse_corrections.mat",
+      "size_bytes": 699048
+    },
+    {
+      "path": "reference/files/src/CBM_testscript_importdata.m",
+      "size_bytes": 632
+    },
+    {
+      "path": "reference/files/src/chenRinconMoraModel.slx",
+      "size_bytes": 54853
+    },
+    {
+      "path": "reference/files/src/chenRinconMoraModel_optimization.m",
+      "size_bytes": 4656
+    },
+    {
+      "path": "reference/files/src/chenRinconMoraModel_paramEstimation.slx",
+      "size_bytes": 54535
+    },
+    {
+      "path": "reference/files/src/chenRinconMoraModel_simulate.m",
+      "size_bytes": 7581
+    },
+    {
+      "path": "reference/files/src/chenRinconMoraModel_simulate_expdata.m",
+      "size_bytes": 7385
+    },
+    {
+      "path": "reference/files/src/CRM_model.slx",
+      "size_bytes": 62968
+    },
+    {
+      "path": "reference/files/src/CRM_paramEstimation.slx",
+      "size_bytes": 55025
+    },
+    {
+      "path": "reference/files/src/CRM_paramEstimation_spesession.mat",
+      "size_bytes": 252069
+    },
+    {
+      "path": "reference/files/src/crm_paramfit.m",
+      "size_bytes": 1394
+    },
+    {
+      "path": "reference/files/src/CRM_test2.mat",
+      "size_bytes": 3917152
+    },
+    {
+      "path": "reference/files/src/cutData.m",
+      "size_bytes": 891
+    },
+    {
+      "path": "reference/files/src/data/2022-07-29 10-38-55_f1.mat",
+      "size_bytes": 452292
+    },
+    {
+      "path": "reference/files/src/data/2022-07-29 10-38-55_f1.png",
+      "size_bytes": 86866
+    },
+    {
+      "path": "reference/files/src/data/2022-07-29 10-38-55_f1.svg",
+      "size_bytes": 1296027
+    },
+    {
+      "path": "reference/files/src/data/2022-07-29 10-38-55_f1_2.png",
+      "size_bytes": 91581
+    },
+    {
+      "path": "reference/files/src/data/2022-07-29 10-38-55_f1_2.svg",
+      "size_bytes": 1237768
+    },
+    {
+      "path": "reference/files/src/data/2022-07-29 10-38-55_f1_3.png",
+      "size_bytes": 99580
+    },
+    {
+      "path": "reference/files/src/data/2022-07-29 10-38-55_f1_3.svg",
+      "size_bytes": 245422
+    },
+    {
+      "path": "reference/files/src/data/2022-07-29 10-38-55_f1_3_figure.png",
+      "size_bytes": 110599
+    },
+    {
+      "path": "reference/files/src/data/2022-07-29 10-38-55_f2.mat",
+      "size_bytes": 452292
+    },
+    {
+      "path": "reference/files/src/data/2022-07-29 10-38-55_f2.png",
+      "size_bytes": 133746
+    },
+    {
+      "path": "reference/files/src/data/2022-07-29 10-38-55_f2_2.png",
+      "size_bytes": 131116
+    },
+    {
+      "path": "reference/files/src/data/2022-07-29 10-38-55_f2_3.png",
+      "size_bytes": 121777
+    },
+    {
+      "path": "reference/files/src/data/2022-08-04 10-58-30_f1.mat",
+      "size_bytes": 112207
+    },
+    {
+      "path": "reference/files/src/data/2022-08-04 10-58-30_f1.png",
+      "size_bytes": 92825
+    },
+    {
+      "path": "reference/files/src/data/2022-08-04 10-58-30_f1_2.png",
+      "size_bytes": 90159
+    },
+    {
+      "path": "reference/files/src/data/2022-08-04 10-58-30_f1_3.png",
+      "size_bytes": 80767
+    },
+    {
+      "path": "reference/files/src/data/2022-08-04 10-58-30_f2.mat",
+      "size_bytes": 135435
+    },
+    {
+      "path": "reference/files/src/data/2022-08-04 10-58-30_f2.png",
+      "size_bytes": 102454
+    },
+    {
+      "path": "reference/files/src/data/2022-08-04 10-58-30_f2_2.png",
+      "size_bytes": 99041
+    },
+    {
+      "path": "reference/files/src/data/2022-08-04 10-58-30_f2_3.png",
+      "size_bytes": 96067
+    },
+    {
+      "path": "reference/files/src/data/2022-08-08 10-44-35_f1.mat",
+      "size_bytes": 485215
+    },
+    {
+      "path": "reference/files/src/data/2022-08-08 10-44-35_f1.png",
+      "size_bytes": 94033
+    },
+    {
+      "path": "reference/files/src/data/2022-08-08 10-44-35_f1_2.png",
+      "size_bytes": 90512
+    },
+    {
+      "path": "reference/files/src/data/2022-08-08 10-44-35_f1_3.png",
+      "size_bytes": 93631
+    },
+    {
+      "path": "reference/files/src/data/2022-08-10 09-40-57_f1.mat",
+      "size_bytes": 689300
+    },
+    {
+      "path": "reference/files/src/data/2022-08-10 09-40-57_f1.png",
+      "size_bytes": 105225
+    },
+    {
+      "path": "reference/files/src/data/2022-08-10 09-40-57_f1_2.png",
+      "size_bytes": 101176
+    },
+    {
+      "path": "reference/files/src/data/2022-08-10 09-40-57_f1_3.png",
+      "size_bytes": 103179
+    },
+    {
+      "path": "reference/files/src/data/2022-09-26 11-49-08_f1.mat",
+      "size_bytes": 131235
+    },
+    {
+      "path": "reference/files/src/data/2022-09-26 11-49-08_f1.png",
+      "size_bytes": 103278
+    },
+    {
+      "path": "reference/files/src/data/2022-09-26 11-49-08_f1_2.png",
+      "size_bytes": 96720
+    },
+    {
+      "path": "reference/files/src/data/2022-09-26 11-49-08_f1_3.png",
+      "size_bytes": 99589
+    },
+    {
+      "path": "reference/files/src/data/2022-10-21 13-31-20_f1.mat",
+      "size_bytes": 381033
+    },
+    {
+      "path": "reference/files/src/data/2022-10-21 13-31-20_f1.png",
+      "size_bytes": 103044
+    },
+    {
+      "path": "reference/files/src/data/2022-10-21 13-31-20_f1_2.png",
+      "size_bytes": 99920
+    },
+    {
+      "path": "reference/files/src/data/2022-10-21 13-31-20_f1_3.png",
+      "size_bytes": 95611
+    },
+    {
+      "path": "reference/files/src/data/data_test1.csv",
+      "size_bytes": 1279219
+    },
+    {
+      "path": "reference/files/src/data/data_test1.mat",
+      "size_bytes": 645473
+    },
+    {
+      "path": "reference/files/src/data/landingcost.png",
+      "size_bytes": 46954
+    },
+    {
+      "path": "reference/files/src/data/landingcost.svg",
+      "size_bytes": 49348
+    },
+    {
+      "path": "reference/files/src/data/simpleScript4.m",
+      "size_bytes": 1901
+    },
+    {
+      "path": "reference/files/src/data/simpleScriptVariables.mat",
+      "size_bytes": 650217
+    },
+    {
+      "path": "reference/files/src/data_cut/cdata_test1.mat",
+      "size_bytes": 1381907
+    },
+    {
+      "path": "reference/files/src/data_cut/data_20220810.mat",
+      "size_bytes": 234869
+    },
+    {
+      "path": "reference/files/src/data_raw/constantJump_batter_1.txt",
+      "size_bytes": 2124641
+    },
+    {
+      "path": "reference/files/src/data_raw/constantJump_batter_2.txt",
+      "size_bytes": 1805092
+    },
+    {
+      "path": "reference/files/src/data_raw/tattu_voc_curve_v0.mat",
+      "size_bytes": 1568
+    },
+    {
+      "path": "reference/files/src/data_raw/test1.txt",
+      "size_bytes": 665388
+    },
+    {
+      "path": "reference/files/src/image_1.fig",
+      "size_bytes": 422790
+    },
+    {
+      "path": "reference/files/src/image_1.png",
+      "size_bytes": 68305
+    },
+    {
+      "path": "reference/files/src/image_2.fig",
+      "size_bytes": 122921
+    },
+    {
+      "path": "reference/files/src/image_2.png",
+      "size_bytes": 58883
+    },
+    {
+      "path": "reference/files/src/image_3.fig",
+      "size_bytes": 143745
+    },
+    {
+      "path": "reference/files/src/image_3.png",
+      "size_bytes": 60526
+    },
+    {
+      "path": "reference/files/src/image_4.fig",
+      "size_bytes": 452331
+    },
+    {
+      "path": "reference/files/src/image_4.png",
+      "size_bytes": 69594
+    },
+    {
+      "path": "reference/files/src/image_5.fig",
+      "size_bytes": 637368
+    },
+    {
+      "path": "reference/files/src/image_5.png",
+      "size_bytes": 66014
+    },
+    {
+      "path": "reference/files/src/image_5_cropped.png",
+      "size_bytes": 202220
+    },
+    {
+      "path": "reference/files/src/image_5_cropped1.png",
+      "size_bytes": 191523
+    },
+    {
+      "path": "reference/files/src/image_5_cropped2.png",
+      "size_bytes": 125656
+    },
+    {
+      "path": "reference/files/src/image_5_edit.png",
+      "size_bytes": 1492840
+    },
+    {
+      "path": "reference/files/src/image_6.fig",
+      "size_bytes": 143315
+    },
+    {
+      "path": "reference/files/src/image_6.png",
+      "size_bytes": 65372
+    },
+    {
+      "path": "reference/files/src/image_7.fig",
+      "size_bytes": 362632
+    },
+    {
+      "path": "reference/files/src/image_7.png",
+      "size_bytes": 67758
+    },
+    {
+      "path": "reference/files/src/images/batterytestsetup.jpg",
+      "size_bytes": 7164404
+    },
+    {
+      "path": "reference/files/src/images/batterytestsetup_reduced.jpg",
+      "size_bytes": 391508
+    },
+    {
+      "path": "reference/files/src/images/diagram_model.png",
+      "size_bytes": 171024
+    },
+    {
+      "path": "reference/files/src/images/diagram_testcircuit.png",
+      "size_bytes": 143698
+    },
+    {
+      "path": "reference/files/src/images/maturnity_gray_1.svg",
+      "size_bytes": 1155440
+    },
+    {
+      "path": "reference/files/src/images/model_and_exp_data.png",
+      "size_bytes": 188950
+    },
+    {
+      "path": "reference/files/src/images/model_and_exp_data_zoom.png",
+      "size_bytes": 80265
+    },
+    {
+      "path": "reference/files/src/images/model_exp_image.png",
+      "size_bytes": 320775
+    },
+    {
+      "path": "reference/files/src/images/model_exp_image.svg",
+      "size_bytes": 367158
+    },
+    {
+      "path": "reference/files/src/images/output_postopt_fitting.fig",
+      "size_bytes": 399323
+    },
+    {
+      "path": "reference/files/src/images/output_postopt_fitting.png",
+      "size_bytes": 80026
+    },
+    {
+      "path": "reference/files/src/images/output_postopt_fitting_sequence1_fulltest.png",
+      "size_bytes": 93142
+    },
+    {
+      "path": "reference/files/src/images/output_preopt_chenrinconmoraParams_vocFit.png",
+      "size_bytes": 58478
+    },
+    {
+      "path": "reference/files/src/images/rul_expdata.fig",
+      "size_bytes": 270105
+    },
+    {
+      "path": "reference/files/src/images/rul_expdata.png",
+      "size_bytes": 101380
+    },
+    {
+      "path": "reference/files/src/images/voc_cogbatmot.PNG",
+      "size_bytes": 89446
+    },
+    {
+      "path": "reference/files/src/images/voc_curvefit.png",
+      "size_bytes": 39776
+    },
+    {
+      "path": "reference/files/src/images/Voltage Vs. Current Vs. Battery Internal Resistance.png",
+      "size_bytes": 169380
+    },
+    {
+      "path": "reference/files/src/images/Voltage Vs. Current Vs. Battery Internal Resistance.svg",
+      "size_bytes": 486945
+    },
+    {
+      "path": "reference/files/src/images/voltageAndCurrent_exp.png",
+      "size_bytes": 42266
+    },
+    {
+      "path": "reference/files/src/LICENSE",
+      "size_bytes": 1073
+    },
+    {
+      "path": "reference/files/src/paramfit.png",
+      "size_bytes": 89279
+    },
+    {
+      "path": "reference/files/src/paramfit_v2.png",
+      "size_bytes": 235409
+    },
+    {
+      "path": "reference/files/src/psObj_correction.m",
+      "size_bytes": 2382
+    },
+    {
+      "path": "reference/files/src/README.md",
+      "size_bytes": 206
+    },
+    {
+      "path": "reference/files/src/RULimage_1.fig",
+      "size_bytes": 324724
+    },
+    {
+      "path": "reference/files/src/RULimage_1.png",
+      "size_bytes": 62629
+    },
+    {
+      "path": "reference/files/src/test.txt",
+      "size_bytes": 0
+    },
+    {
+      "path": "reference/files/src/test2_paramFit.m",
+      "size_bytes": 1779
+    },
+    {
+      "path": "reference/files/src/test2_pulseDischarge_data.mat",
+      "size_bytes": 429592
+    },
+    {
+      "path": "reference/files/src/test_experimentalData.m",
+      "size_bytes": 8707
+    },
+    {
+      "path": "reference/files/src/test_experimentalDataRUL.m",
+      "size_bytes": 6732
+    },
+    {
+      "path": "reference/files/src/ukf.m",
+      "size_bytes": 4289
+    },
+    {
+      "path": "reference/files/src/ukf_preprocess.m",
+      "size_bytes": 1450
+    },
+    {
+      "path": "reference/files/src/unused/CDM_testscript_transferFunctionApproach.m",
+      "size_bytes": 1007
+    },
+    {
+      "path": "reference/files/src/unused/CRM_model_simulinkVersion.slx",
+      "size_bytes": 29456
+    },
+    {
+      "path": "reference/files/src/voc.mat",
+      "size_bytes": 132973
+    }
+  ],
+  "entrypoint": "reference/files/src/BatteryEstim3RC_PTBS_EQ_RUL_v1.slx",
+  "expected_score": 100.0,
+  "expected_valid_scenarios": 5,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal_long_flight",
+      "cold_short_high_pulse",
+      "hot_high_rms_flight",
+      "moderate_profile_high_forecast",
+      "aged_capacity_long_flight"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 60571655,
+  "excluded_files": [
+    {
+      "path": "reference/files/src/20230718_pdc_1.txt",
+      "size_bytes": 12507924,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/20230718_pdc_1_corrected.txt",
+      "size_bytes": 12507730,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/20230718_sim_1.txt",
+      "size_bytes": 12307103,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/20230718_sim_1_corrected.txt",
+      "size_bytes": 12306982,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/20230919_batteryTest.txt",
+      "size_bytes": 75773515,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/capturebatjulypulse.txt",
+      "size_bytes": 35780679,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/capture_20230815_1.txt",
+      "size_bytes": 31868983,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/data/2022-07-29 10-38-55.tlog.mat",
+      "size_bytes": 52758856,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/data/2022-08-04 10-58-30.tlog.mat",
+      "size_bytes": 45765584,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/data/2022-08-08 10-44-35.tlog.mat",
+      "size_bytes": 84529376,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/data/2022-08-10 09-40-57.tlog.mat",
+      "size_bytes": 80643184,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/data/2022-09-26 11-49-08.tlog.mat",
+      "size_bytes": 27516488,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/data/2022-10-21 13-31-20.tlog.mat",
+      "size_bytes": 54346872,
+      "category": "historical_measurement_log",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/iccma_matlab_script.m",
+      "size_bytes": 1713,
+      "category": "offline_log_preprocessing_helper",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/test2_DischargePulseEstimation.m",
+      "size_bytes": 11416,
+      "category": "offline_log_preprocessing_helper",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/preprocess_20220810_MP.m",
+      "size_bytes": 889,
+      "category": "offline_log_preprocessing_helper",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/data/simpleScript.m",
+      "size_bytes": 5068,
+      "category": "offline_log_preprocessing_helper",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/data/simpleScript2.m",
+      "size_bytes": 829,
+      "category": "offline_log_preprocessing_helper",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/src/data/simpleScript3.m",
+      "size_bytes": 7465,
+      "category": "offline_log_preprocessing_helper",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    }
+  ]
+}

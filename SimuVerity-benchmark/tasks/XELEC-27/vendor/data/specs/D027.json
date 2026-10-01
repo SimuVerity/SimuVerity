@@ -1,0 +1,568 @@
+{
+  "id": "D027",
+  "schema_version": "1.0",
+  "scoring": "layered-continuous",
+  "domain": "inverter",
+  "title": "D027: Three-phase three-level inverter with closed-loop current control",
+  "routing": "behavior+structure+scenarios",
+  "prompt": "Build a three-phase three-level neutral-point-clamped inverter using Simscape Specialized Power Systems. A split 600 V DC bus must feed a physically connected three-leg NPC power stage with clamping paths and a balanced three-phase load. Read Iref_amp from a base-workspace variable; it is the peak amplitude of the balanced three-phase current command, nominally 5 A with an operating envelope of 4 to 6 A. Closed-loop current regulation must use physically measured output current so the measured balanced 50 Hz currents track the command throughout this envelope. The closed-loop current regulation must establish promptly after startup. The measured bridge-side line voltages must remain a 50 Hz multilevel three-phase set near 1200 V peak-to-peak. Log physical Timeseries Vout and Iabc, each containing exactly the three measured phases in consistent phase order.",
+  "sim": {
+    "solver": [],
+    "stop": 0.3,
+    "max_step": []
+  },
+  "steady_state_policy": {
+    "require_steady": true,
+    "steady_stat": "rms",
+    "steady_fraction": 0.2,
+    "steady_cycle_hz": 50,
+    "steady_cycles": 2,
+    "steady_rel_range_max": 0.1,
+    "steady_rel_drift_max": 0.1,
+    "steady_all_channels": true
+  },
+  "input_contract": {
+    "Iref_amp": {
+      "default": 5,
+      "required": true,
+      "required_block_any": [
+        ".*"
+      ],
+      "required_parameter_any": [
+        ".*"
+      ],
+      "min_bindings": 1
+    }
+  },
+  "outputs": [
+    {
+      "name": "Vout",
+      "role": "core",
+      "datatype": "timeseries",
+      "min_channels": 3,
+      "max_channels": 3,
+      "time_coverage": 0.95,
+      "min_samples": 16,
+      "provenance": {
+        "required_any_upstream": [
+          "voltage measurement",
+          "three-phase vi measurement"
+        ],
+        "forbidden_upstream": [
+          "constant",
+          "sine wave",
+          "signal builder"
+        ],
+        "max_trace_depth": 48,
+        "require_independent_channels": true,
+        "require_distinct_channel_origins": true,
+        "max_abs_channel_corr": 0.95
+      }
+    },
+    {
+      "name": "Iabc",
+      "role": "core",
+      "datatype": "timeseries",
+      "min_channels": 3,
+      "max_channels": 3,
+      "time_coverage": 0.95,
+      "min_samples": 16,
+      "provenance": {
+        "required_any_upstream": [
+          "current measurement",
+          "three-phase vi measurement",
+          "multimeter"
+        ],
+        "forbidden_upstream": [
+          "constant",
+          "sine wave",
+          "signal builder"
+        ],
+        "max_trace_depth": 48,
+        "require_independent_channels": true,
+        "require_distinct_channel_origins": true,
+        "max_abs_channel_corr": 0.95
+      }
+    }
+  ],
+  "behavioral": [
+    {
+      "id": "vout_pp_nom",
+      "signal": "Vout",
+      "metric": "pp",
+      "scenario": "nominal",
+      "group": "nominal",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 1200,
+      "tol_pass": 120,
+      "tol_zero": 420,
+      "curve_p": 1,
+      "weight": 1
+    },
+    {
+      "id": "vout_freq_nom",
+      "signal": "Vout",
+      "metric": "fund_freq",
+      "scenario": "nominal",
+      "group": "nominal",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 50,
+      "tol_pass": 1,
+      "tol_zero": 5,
+      "curve_p": 1,
+      "weight": 0.8,
+      "fundamental_hz": 50
+    },
+    {
+      "id": "vout_levels_nom",
+      "signal": "Vout",
+      "metric": "level_count",
+      "scenario": "nominal",
+      "group": "nominal",
+      "criticality": "must",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 5,
+      "tol_pass": 0.75,
+      "tol_zero": 2.5,
+      "curve_p": 1,
+      "weight": 1,
+      "min_plateau_coverage": 0.7,
+      "min_level_separation_frac": 0.06,
+      "level_tolerance_frac": 0.03
+    },
+    {
+      "id": "vout_plateau_nom",
+      "signal": "Vout",
+      "metric": "plateau_coverage",
+      "scenario": "nominal",
+      "group": "nominal",
+      "criticality": "must",
+      "basis": "analytical",
+      "sided": "upper",
+      "target": 0.75,
+      "tol_pass": 0.1,
+      "tol_zero": 0.4,
+      "curve_p": 1,
+      "weight": 0.7,
+      "min_level_separation_frac": 0.06,
+      "level_tolerance_frac": 0.03
+    },
+    {
+      "id": "iabc_rms_nom",
+      "signal": "Iabc",
+      "metric": "rms",
+      "scenario": "nominal",
+      "group": "nominal",
+      "criticality": "must",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 3.5355339059327373,
+      "tol_pass": 0.4,
+      "tol_zero": 1.5,
+      "curve_p": 1,
+      "weight": 1
+    },
+    {
+      "id": "iabc_freq_nom",
+      "signal": "Iabc",
+      "metric": "fund_freq",
+      "scenario": "nominal",
+      "group": "nominal",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 50,
+      "tol_pass": 1,
+      "tol_zero": 5,
+      "curve_p": 1,
+      "weight": 0.7,
+      "fundamental_hz": 50
+    },
+    {
+      "id": "iabc_balance_nom",
+      "signal": "Iabc",
+      "metric": "imbalance",
+      "scenario": "nominal",
+      "group": "nominal",
+      "criticality": "must",
+      "basis": "analytical",
+      "sided": "lower",
+      "target": 0.02,
+      "tol_pass": 0.06,
+      "tol_zero": 0.25,
+      "curve_p": 1,
+      "weight": 0.8
+    },
+    {
+      "id": "vout_mean_nom",
+      "signal": "Vout",
+      "metric": "mean",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "quality",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 30,
+      "tol_zero": 120,
+      "curve_p": 1,
+      "weight": 0.4
+    },
+    {
+      "id": "iabc_thd_nom",
+      "signal": "Iabc",
+      "metric": "thd",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "quality",
+      "basis": "expert",
+      "sided": "lower",
+      "target": 0.04,
+      "tol_pass": 0.06,
+      "tol_zero": 0.24,
+      "curve_p": 1,
+      "weight": 0.9,
+      "fundamental_hz": 50
+    },
+    {
+      "id": "iabc_duplicate_guard",
+      "signal": "Iabc",
+      "metric": "channel_duplicate_corr",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "quality",
+      "basis": "analytical",
+      "sided": "lower",
+      "target": 0.55,
+      "tol_pass": 0.12,
+      "tol_zero": 0.42,
+      "curve_p": 1,
+      "weight": 0.7
+    },
+    {
+      "id": "iabc_phase_sequence_nom",
+      "signal": "Iabc",
+      "metric": "phase_sequence_index",
+      "scenario": "nominal",
+      "group": "nominal",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "upper",
+      "target": 0.8,
+      "tol_pass": 0.1,
+      "tol_zero": 0.5,
+      "curve_p": 1,
+      "weight": 0.8,
+      "fundamental_hz": 50
+    },
+    {
+      "id": "iabc_rms_reference_up",
+      "signal": "Iabc",
+      "metric": "rms",
+      "scenario": "reference_up",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 4.242640687119285,
+      "tol_pass": 0.5,
+      "tol_zero": 1.7,
+      "curve_p": 1,
+      "weight": 1
+    },
+    {
+      "id": "iabc_freq_reference_up",
+      "signal": "Iabc",
+      "metric": "fund_freq",
+      "scenario": "reference_up",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 50,
+      "tol_pass": 1.5,
+      "tol_zero": 6,
+      "curve_p": 1,
+      "weight": 0.8,
+      "fundamental_hz": 50
+    },
+    {
+      "id": "iabc_balance_reference_up",
+      "signal": "Iabc",
+      "metric": "imbalance",
+      "scenario": "reference_up",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "analytical",
+      "sided": "lower",
+      "target": 0.025,
+      "tol_pass": 0.07,
+      "tol_zero": 0.28,
+      "curve_p": 1,
+      "weight": 0.8
+    },
+    {
+      "id": "vout_pp_reference_up",
+      "signal": "Vout",
+      "metric": "pp",
+      "scenario": "reference_up",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 1200,
+      "tol_pass": 150,
+      "tol_zero": 480,
+      "curve_p": 1,
+      "weight": 0.8
+    },
+    {
+      "id": "vout_levels_reference_up",
+      "signal": "Vout",
+      "metric": "level_count",
+      "scenario": "reference_up",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 5,
+      "tol_pass": 0.75,
+      "tol_zero": 2.5,
+      "curve_p": 1,
+      "weight": 0.8,
+      "min_plateau_coverage": 0.65,
+      "min_level_separation_frac": 0.06,
+      "level_tolerance_frac": 0.03
+    },
+    {
+      "id": "iabc_rms_reference_down",
+      "signal": "Iabc",
+      "metric": "rms",
+      "scenario": "reference_down",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 2.82842712474619,
+      "tol_pass": 0.5,
+      "tol_zero": 1.7,
+      "curve_p": 1,
+      "weight": 1
+    },
+    {
+      "id": "iabc_freq_reference_down",
+      "signal": "Iabc",
+      "metric": "fund_freq",
+      "scenario": "reference_down",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 50,
+      "tol_pass": 1.5,
+      "tol_zero": 6,
+      "curve_p": 1,
+      "weight": 0.8,
+      "fundamental_hz": 50
+    },
+    {
+      "id": "iabc_balance_reference_down",
+      "signal": "Iabc",
+      "metric": "imbalance",
+      "scenario": "reference_down",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "analytical",
+      "sided": "lower",
+      "target": 0.025,
+      "tol_pass": 0.07,
+      "tol_zero": 0.28,
+      "curve_p": 1,
+      "weight": 0.8
+    },
+    {
+      "id": "vout_pp_reference_down",
+      "signal": "Vout",
+      "metric": "pp",
+      "scenario": "reference_down",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 1200,
+      "tol_pass": 150,
+      "tol_zero": 480,
+      "curve_p": 1,
+      "weight": 0.8
+    },
+    {
+      "id": "vout_levels_reference_down",
+      "signal": "Vout",
+      "metric": "level_count",
+      "scenario": "reference_down",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 5,
+      "tol_pass": 0.75,
+      "tol_zero": 2.5,
+      "curve_p": 1,
+      "weight": 0.8,
+      "min_plateau_coverage": 0.65,
+      "min_level_separation_frac": 0.06,
+      "level_tolerance_frac": 0.03
+    }
+  ],
+  "structural": {
+    "recognizers": [
+      {
+        "id": "three_level_switch_population",
+        "prim": "d027_npc_switch_population",
+        "args": [],
+        "mandatory": true,
+        "weight": 1,
+        "k": 12
+      },
+      {
+        "id": "npc_clamping_diodes",
+        "prim": "d027_npc_clamping_diodes",
+        "args": [],
+        "mandatory": true,
+        "weight": 1,
+        "k": 6
+      },
+      {
+        "id": "three_phase_power_stage",
+        "prim": "three_phase_bridge",
+        "args": [],
+        "mandatory": true,
+        "weight": 1
+      },
+      {
+        "id": "source_switch_load_route",
+        "prim": "physical_path",
+        "args": [],
+        "mandatory": true,
+        "weight": 1,
+        "source": [
+          "dc voltage source|split dc|dc source"
+        ],
+        "via": [
+          "three[- ]level|npc|igbt|mosfet|gto|ideal switch"
+        ],
+        "target": [
+          "three[- ]phase.*load|series rlc branch|parallel rlc load"
+        ],
+        "require_via_cut": true
+      }
+    ]
+  },
+  "golden_tap": {
+    "Vout": {
+      "by": "block_output",
+      "path": "three_phase_three_level_currrent_control_using_space_vector_fix2/__v4_truth_Vout3",
+      "port": 1
+    },
+    "Iabc": {
+      "by": "block_output",
+      "path": "three_phase_three_level_currrent_control_using_space_vector_fix2/Mux1",
+      "port": 1
+    }
+  },
+  "scenarios": [
+    {
+      "id": "reference_up",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "Iref_amp": 6
+      },
+      "golden_set_param": [
+        {
+          "path": "three_phase_three_level_currrent_control_using_space_vector_fix2/Ia_ref",
+          "parameter": "Amplitude",
+          "value": 6
+        },
+        {
+          "path": "three_phase_three_level_currrent_control_using_space_vector_fix2/Ib_ref",
+          "parameter": "Amplitude",
+          "value": 6
+        },
+        {
+          "path": "three_phase_three_level_currrent_control_using_space_vector_fix2/Ic_ref",
+          "parameter": "Amplitude",
+          "value": 6
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "larger_reference_raises_current",
+          "nominal_band": "iabc_rms_nom",
+          "scenario_band": "iabc_rms_reference_up",
+          "relation": "increase_frac_min",
+          "threshold": 0.1
+        }
+      ],
+      "public_envelope": "Iref_amp 4..6 A"
+    },
+    {
+      "id": "reference_down",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "Iref_amp": 4
+      },
+      "golden_set_param": [
+        {
+          "path": "three_phase_three_level_currrent_control_using_space_vector_fix2/Ia_ref",
+          "parameter": "Amplitude",
+          "value": 4
+        },
+        {
+          "path": "three_phase_three_level_currrent_control_using_space_vector_fix2/Ib_ref",
+          "parameter": "Amplitude",
+          "value": 4
+        },
+        {
+          "path": "three_phase_three_level_currrent_control_using_space_vector_fix2/Ic_ref",
+          "parameter": "Amplitude",
+          "value": 4
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "smaller_reference_lowers_current",
+          "nominal_band": "iabc_rms_nom",
+          "scenario_band": "iabc_rms_reference_down",
+          "relation": "decrease_frac_min",
+          "threshold": 0.1
+        }
+      ],
+      "public_envelope": "Iref_amp 4..6 A"
+    }
+  ],
+  "release": {
+    "status": "candidate-qualified",
+    "quarantined": false,
+    "release_ready": false,
+    "notes": "Reference and measured-current paths both causally reach the same vector-state selector; strict name-only SVPWM heuristic was not used.",
+    "blockers": [
+      "Task-specific adversarial regression and an independent legal implementation or expert review remain required."
+    ]
+  },
+  "task_specific_checks": [
+    {
+      "id": "D027.active_current_feedback_ownership",
+      "semantic_kind": "structure",
+      "scenario": "nominal",
+      "layer": "qualification",
+      "mandatory": true
+    }
+  ]
+}

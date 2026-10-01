@@ -1,0 +1,268 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XCOMM-02",
+  "collection": "XCOMM",
+  "reference": {
+    "identity_path": "tasks/XCOMM-02/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/mvdr_4x4/mvdr_4x4_partial_systolic.slx",
+    "model_path": "tasks/XCOMM-02/reference/files/mvdr_4x4/mvdr_4x4_partial_systolic.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XCOMM-02",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a 4-by-4 fixed-point, HDL-compatible streaming minimum-variance distortionless-response adaptive beamformer in Simulink.",
+    "engineering_objects": [
+      "F90-XCOMM-02 plant and controller described by the current public task contract",
+      "Measured output interfaces: BeamformedOutput, OutputValid, WeightVector, WeightValid, CovarianceMatrix, CovarianceValid, LoadedCovarianceMatrix, LoadedCovarianceValid, SolveVector, SolveValid, NormalizationState, NormalizationValid"
+    ],
+    "physical_paths": [
+      "The covariance, solve, normalization, weight, and beam-output operations must form one causally connected streaming path driven by the measured four-channel input; controller architecture, matrix-solution architecture, pipelining, and latency are otherwise unrestricted.",
+      "ArrayData is an N-by-4 complex normalized-baseband array ordered element_1 through element_4, with row k presented at integer model-time tick k-1.",
+      "Treat the supplied array samples as signed 16-bit fixed-point input data and preserve a fixed-point, HDL-compatible implementation through the adaptive beamforming path."
+    ],
+    "functional_paths": [
+      "The model must estimate the sample covariance matrix, defined as one over 4096 times the outer-product sum over each 4096 valid array samples, apply the supplied positive diagonal loading, obtain and normalize a four-element adaptive weight vector for the supplied steering vector, and use those weights to form a single complex beamformed stream.",
+      "controller architecture, matrix-solution architecture, pipelining, and latency are otherwise unrestricted.",
+      "Read ArrayData, InputValid, SteeringVector, and DiagonalLoading from the MATLAB base workspace."
+    ],
+    "information_paths": [
+      "ArrayData, InputValid, SteeringVector, DiagonalLoading -> F90-XCOMM-02 plant/control path -> BeamformedOutput, OutputValid, WeightVector, WeightValid, CovarianceMatrix, CovarianceValid, LoadedCovarianceMatrix, LoadedCovarianceValid, SolveVector, SolveValid, NormalizationState, NormalizationValid"
+    ],
+    "modes_and_events": [
+      "The model must estimate the sample covariance matrix, defined as one over 4096 times the outer-product sum over each 4096 valid array samples, apply the supplied positive diagonal loading, obtain and normalize a four-element adaptive weight vector for the supplied steering vector, and use those weights to form a single complex beamformed stream.",
+      "ArrayData is an N-by-4 complex normalized-baseband array ordered element_1 through element_4, with row k presented at integer model-time tick k-1."
+    ],
+    "interfaces": [
+      {
+        "name": "ArrayData",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "normalized complex baseband amplitude"
+        ],
+        "range_or_shape": "Read ArrayData, InputValid, SteeringVector, and DiagonalLoading from the MATLAB base workspace. ArrayData is an N-by-4 complex normalized-baseband array ordered element_1 through element_4, with row k presented at integer model-time tick k-1.",
+        "source": "tasks/XCOMM-02/public_spec.json"
+      },
+      {
+        "name": "InputValid",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read ArrayData, InputValid, SteeringVector, and DiagonalLoading from the MATLAB base workspace. InputValid provides one logical flag per row and can contain invalid gaps; invalid rows must not enter covariance accumulation, adaptation counts, or valid output claims.",
+        "source": "tasks/XCOMM-02/public_spec.json"
+      },
+      {
+        "name": "SteeringVector",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read ArrayData, InputValid, SteeringVector, and DiagonalLoading from the MATLAB base workspace. SteeringVector is a complex 4-by-1 column vector.",
+        "source": "tasks/XCOMM-02/public_spec.json"
+      },
+      {
+        "name": "DiagonalLoading",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read ArrayData, InputValid, SteeringVector, and DiagonalLoading from the MATLAB base workspace. DiagonalLoading is a real scalar from 0.002 to 0.015.",
+        "source": "tasks/XCOMM-02/public_spec.json"
+      },
+      {
+        "name": "BeamformedOutput",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "normalized complex baseband amplitude"
+        ],
+        "range_or_shape": "Log MATLAB Timeseries named BeamformedOutput, OutputValid, WeightVector, WeightValid, CovarianceMatrix, CovarianceValid, LoadedCovarianceMatrix, LoadedCovarianceValid, SolveVector, SolveValid, NormalizationState, and NormalizationValid. BeamformedOutput is one complex normalized-baseband channel paired with the one-channel logical OutputValid.",
+        "source": "tasks/XCOMM-02/public_spec.json"
+      },
+      {
+        "name": "OutputValid",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Log MATLAB Timeseries named BeamformedOutput, OutputValid, WeightVector, WeightValid, CovarianceMatrix, CovarianceValid, LoadedCovarianceMatrix, LoadedCovarianceValid, SolveVector, SolveValid, NormalizationState, and NormalizationValid. BeamformedOutput is one complex normalized-baseband channel paired with the one-channel logical OutputValid.",
+        "source": "tasks/XCOMM-02/public_spec.json"
+      },
+      {
+        "name": "WeightVector",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Log MATLAB Timeseries named BeamformedOutput, OutputValid, WeightVector, WeightValid, CovarianceMatrix, CovarianceValid, LoadedCovarianceMatrix, LoadedCovarianceValid, SolveVector, SolveValid, NormalizationState, and NormalizationValid. WeightVector has 4 complex unitless channels [w1,w2,w3,w4] paired with WeightValid.",
+        "source": "tasks/XCOMM-02/public_spec.json"
+      },
+      {
+        "name": "WeightValid",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Log MATLAB Timeseries named BeamformedOutput, OutputValid, WeightVector, WeightValid, CovarianceMatrix, CovarianceValid, LoadedCovarianceMatrix, LoadedCovarianceValid, SolveVector, SolveValid, NormalizationState, and NormalizationValid. WeightVector has 4 complex unitless channels [w1,w2,w3,w4] paired with WeightValid.",
+        "source": "tasks/XCOMM-02/public_spec.json"
+      },
+      {
+        "name": "CovarianceMatrix",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "normalized amplitude squared"
+        ],
+        "range_or_shape": "Log MATLAB Timeseries named BeamformedOutput, OutputValid, WeightVector, WeightValid, CovarianceMatrix, CovarianceValid, LoadedCovarianceMatrix, LoadedCovarianceValid, SolveVector, SolveValid, NormalizationState, and NormalizationValid. CovarianceMatrix has 16 complex normalized-amplitude-squared channels in column-major order [R11,R21,R31,R41,R12,R22,R32,R42,R13,R23,R33,R43,R14,R24,R34,R44] paired with CovarianceValid. LoadedCovarianceMatrix uses the same 16-channel column-major order with RL entries and is paired with LoadedCovarianceValid.",
+        "source": "tasks/XCOMM-02/public_spec.json"
+      },
+      {
+        "name": "CovarianceValid",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Log MATLAB Timeseries named BeamformedOutput, OutputValid, WeightVector, WeightValid, CovarianceMatrix, CovarianceValid, LoadedCovarianceMatrix, LoadedCovarianceValid, SolveVector, SolveValid, NormalizationState, and NormalizationValid. CovarianceMatrix has 16 complex normalized-amplitude-squared channels in column-major order [R11,R21,R31,R41,R12,R22,R32,R42,R13,R23,R33,R43,R14,R24,R34,R44] paired with CovarianceValid. LoadedCovarianceMatrix uses the same 16-channel column-major order with RL entries and is paired with LoadedCovarianceValid.",
+        "source": "tasks/XCOMM-02/public_spec.json"
+      },
+      {
+        "name": "LoadedCovarianceMatrix",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "normalized amplitude squared"
+        ],
+        "range_or_shape": "Log MATLAB Timeseries named BeamformedOutput, OutputValid, WeightVector, WeightValid, CovarianceMatrix, CovarianceValid, LoadedCovarianceMatrix, LoadedCovarianceValid, SolveVector, SolveValid, NormalizationState, and NormalizationValid. LoadedCovarianceMatrix uses the same 16-channel column-major order with RL entries and is paired with LoadedCovarianceValid.",
+        "source": "tasks/XCOMM-02/public_spec.json"
+      },
+      {
+        "name": "LoadedCovarianceValid",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Log MATLAB Timeseries named BeamformedOutput, OutputValid, WeightVector, WeightValid, CovarianceMatrix, CovarianceValid, LoadedCovarianceMatrix, LoadedCovarianceValid, SolveVector, SolveValid, NormalizationState, and NormalizationValid. LoadedCovarianceMatrix uses the same 16-channel column-major order with RL entries and is paired with LoadedCovarianceValid.",
+        "source": "tasks/XCOMM-02/public_spec.json"
+      },
+      {
+        "name": "SolveVector",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Log MATLAB Timeseries named BeamformedOutput, OutputValid, WeightVector, WeightValid, CovarianceMatrix, CovarianceValid, LoadedCovarianceMatrix, LoadedCovarianceValid, SolveVector, SolveValid, NormalizationState, and NormalizationValid. SolveVector has 4 complex unitless channels [u1,u2,u3,u4] paired with SolveValid.",
+        "source": "tasks/XCOMM-02/public_spec.json"
+      },
+      {
+        "name": "SolveValid",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Log MATLAB Timeseries named BeamformedOutput, OutputValid, WeightVector, WeightValid, CovarianceMatrix, CovarianceValid, LoadedCovarianceMatrix, LoadedCovarianceValid, SolveVector, SolveValid, NormalizationState, and NormalizationValid. SolveVector has 4 complex unitless channels [u1,u2,u3,u4] paired with SolveValid.",
+        "source": "tasks/XCOMM-02/public_spec.json"
+      },
+      {
+        "name": "NormalizationState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Log MATLAB Timeseries named BeamformedOutput, OutputValid, WeightVector, WeightValid, CovarianceMatrix, CovarianceValid, LoadedCovarianceMatrix, LoadedCovarianceValid, SolveVector, SolveValid, NormalizationState, and NormalizationValid. NormalizationState has 2 real unitless channels [steering inner product, reciprocal] paired with NormalizationValid.",
+        "source": "tasks/XCOMM-02/public_spec.json"
+      },
+      {
+        "name": "NormalizationValid",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Log MATLAB Timeseries named BeamformedOutput, OutputValid, WeightVector, WeightValid, CovarianceMatrix, CovarianceValid, LoadedCovarianceMatrix, LoadedCovarianceValid, SolveVector, SolveValid, NormalizationState, and NormalizationValid. NormalizationState has 2 real unitless channels [steering inner product, reciprocal] paired with NormalizationValid.",
+        "source": "tasks/XCOMM-02/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "The model must estimate the sample covariance matrix, defined as one over 4096 times the outer-product sum over each 4096 valid array samples, apply the supplied positive diagonal loading, obtain and normalize a four-element adaptive weight vector for the supplied steering vector, and use those weights to form a single complex beamformed stream.",
+      "controller architecture, matrix-solution architecture, pipelining, and latency are otherwise unrestricted.",
+      "ArrayData is an N-by-4 complex normalized-baseband array ordered element_1 through element_4, with row k presented at integer model-time tick k-1."
+    ],
+    "feedback_and_control_causality": [
+      "The covariance, solve, normalization, weight, and beam-output operations must form one causally connected streaming path driven by the measured four-channel input;",
+      "controller architecture, matrix-solution architecture, pipelining, and latency are otherwise unrestricted."
+    ],
+    "signal_sources": [
+      "ArrayData is read from the public MATLAB base-workspace input contract.",
+      "InputValid is read from the public MATLAB base-workspace input contract.",
+      "SteeringVector is read from the public MATLAB base-workspace input contract.",
+      "DiagonalLoading is read from the public MATLAB base-workspace input contract.",
+      "BeamformedOutput is produced by the implemented plant or controller and logged under the public output contract.",
+      "OutputValid is produced by the implemented plant or controller and logged under the public output contract.",
+      "WeightVector is produced by the implemented plant or controller and logged under the public output contract.",
+      "WeightValid is produced by the implemented plant or controller and logged under the public output contract.",
+      "CovarianceMatrix is produced by the implemented plant or controller and logged under the public output contract.",
+      "CovarianceValid is produced by the implemented plant or controller and logged under the public output contract.",
+      "LoadedCovarianceMatrix is produced by the implemented plant or controller and logged under the public output contract.",
+      "LoadedCovarianceValid is produced by the implemented plant or controller and logged under the public output contract.",
+      "SolveVector is produced by the implemented plant or controller and logged under the public output contract.",
+      "SolveValid is produced by the implemented plant or controller and logged under the public output contract.",
+      "NormalizationState is produced by the implemented plant or controller and logged under the public output contract.",
+      "NormalizationValid is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "ArrayData: Read ArrayData, InputValid, SteeringVector, and DiagonalLoading from the MATLAB base workspace. ArrayData is an N-by-4 complex normalized-baseband array ordered element_1 through element_4, with row k presented at integer model-time tick k-1.",
+      "InputValid: Read ArrayData, InputValid, SteeringVector, and DiagonalLoading from the MATLAB base workspace. InputValid provides one logical flag per row and can contain invalid gaps; invalid rows must not enter covariance accumulation, adaptation counts, or valid output claims.",
+      "SteeringVector: Read ArrayData, InputValid, SteeringVector, and DiagonalLoading from the MATLAB base workspace. SteeringVector is a complex 4-by-1 column vector.",
+      "DiagonalLoading: Read ArrayData, InputValid, SteeringVector, and DiagonalLoading from the MATLAB base workspace. DiagonalLoading is a real scalar from 0.002 to 0.015."
+    ],
+    "disturbances": [
+      "The model must estimate the sample covariance matrix, defined as one over 4096 times the outer-product sum over each 4096 valid array samples, apply the supplied positive diagonal loading, obtain and normalize a four-element adaptive weight vector for the supplied steering vector, and use those weights to form a single complex beamformed stream.",
+      "Read ArrayData, InputValid, SteeringVector, and DiagonalLoading from the MATLAB base workspace.",
+      "DiagonalLoading is a real scalar from 0.002 to 0.015."
+    ],
+    "dynamic_processes": [
+      "F90-XCOMM-02 produces time-varying BeamformedOutput, OutputValid, WeightVector, WeightValid, CovarianceMatrix, CovarianceValid, LoadedCovarianceMatrix, LoadedCovarianceValid, SolveVector, SolveValid, NormalizationState, NormalizationValid over the declared run."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XCOMM-02: prescribing BeamformedOutput directly would bypass the system path described by: The covariance, solve, normalization, weight, and beam-output operations must form one causally connected streaming path driven by the measured four-channel input; controller architecture, matrix-solution architecture, pipelining, and latency are otherwise unrestricted.",
+      "F90-XCOMM-02: replaying a fixed BeamformedOutput trace would ignore causal variation in ArrayData."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XCOMM-02/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XCOMM-02/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XCOMM-02/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

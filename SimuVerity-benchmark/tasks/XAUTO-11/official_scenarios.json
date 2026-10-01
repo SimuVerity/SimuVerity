@@ -1,0 +1,164 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XAUTO-11",
+  "scenarios": [
+    {
+      "id": "light_body",
+      "sprung_mass_kg": 100,
+      "suspension_stiffness_n_per_m": 16000,
+      "suspension_damping_n_s_per_m": 1000,
+      "road_peak_m": 0.05,
+      "road_angular_frequency_rad_per_s": 25.132741228718345
+    },
+    {
+      "id": "intermediate_body",
+      "sprung_mass_kg": 200,
+      "suspension_stiffness_n_per_m": 16000,
+      "suspension_damping_n_s_per_m": 1000,
+      "road_peak_m": 0.05,
+      "road_angular_frequency_rad_per_s": 25.132741228718345
+    },
+    {
+      "id": "nominal_body",
+      "sprung_mass_kg": 300,
+      "suspension_stiffness_n_per_m": 16000,
+      "suspension_damping_n_s_per_m": 1000,
+      "road_peak_m": 0.05,
+      "road_angular_frequency_rad_per_s": 25.132741228718345
+    },
+    {
+      "id": "soft_low_damping",
+      "sprung_mass_kg": 300,
+      "suspension_stiffness_n_per_m": 12800,
+      "suspension_damping_n_s_per_m": 700,
+      "road_peak_m": 0.05,
+      "road_angular_frequency_rad_per_s": 25.132741228718345
+    },
+    {
+      "id": "rougher_faster_road",
+      "sprung_mass_kg": 200,
+      "suspension_stiffness_n_per_m": 16000,
+      "suspension_damping_n_s_per_m": 1000,
+      "road_peak_m": 0.07,
+      "road_angular_frequency_rad_per_s": 37.69911184307752
+    }
+  ],
+  "contract": {
+    "difficulty": {
+      "score": 9,
+      "maximum": 12,
+      "basis": [
+        "closed-loop Simscape quarter-car plant with sprung and unsprung masses, tyre compliance, passive suspension, active actuator dynamics, and feedback control",
+        "dynamic mechanical coupling, dynamic actuator, robust feedback, and parameter-varying operation",
+        "five private conditions spanning two independent source-native axes and a comfort-handling-effort tradeoff",
+        "seven published time-series channels including the actual applied-force path"
+      ]
+    },
+    "simulation": {
+      "duration_seconds": 2.0,
+      "evidence_grid_step_seconds": 0.005
+    },
+    "diagnostics": {
+      "passive_nominal_causal_comparison": true
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85,
+      "preferred_reference_score": 90,
+      "normalize_or_rescale": false,
+      "groups": {
+        "A": {
+          "weight": 0.23,
+          "meaning": "comfort, suspension-deflection, body/wheel travel, and force accuracy across all private conditions"
+        },
+        "Q": {
+          "weight": 0.12,
+          "meaning": "finite complete logs, exact public widths, units, and full 2 s coverage"
+        },
+        "M": {
+          "weight": 0.2,
+          "meaning": "connected sprung/unsprung, passive suspension, tyre, actuator, and road mechanisms"
+        },
+        "C": {
+          "weight": 0.18,
+          "meaning": "causal active-force response and feedback effects across road and plant interventions"
+        },
+        "R": {
+          "weight": 0.15,
+          "meaning": "worst-condition comfort, travel, and effort robustness"
+        },
+        "D": {
+          "weight": 0.12,
+          "meaning": "bump transient and post-disturbance recovery"
+        }
+      },
+      "within_group": "task-specific weighted arithmetic aggregation with explicit worst-condition retention",
+      "across_groups": "weighted geometric mean; absent critical mechanism groups may be zero"
+    },
+    "minimum_shortcut_sanity_contract": [
+      "missing required output",
+      "same output replayed across all private conditions",
+      "zero or disconnected applied-force path",
+      "road input copied directly to body or wheel outputs",
+      "constant state histories",
+      "truncated run"
+    ]
+  },
+  "difficulty": {
+    "score": 9,
+    "maximum": 12,
+    "basis": [
+      "closed-loop Simscape quarter-car plant with sprung and unsprung masses, tyre compliance, passive suspension, active actuator dynamics, and feedback control",
+      "dynamic mechanical coupling, dynamic actuator, robust feedback, and parameter-varying operation",
+      "five private conditions spanning two independent source-native axes and a comfort-handling-effort tradeoff",
+      "seven published time-series channels including the actual applied-force path"
+    ]
+  },
+  "simulation": {
+    "duration_seconds": 2.0,
+    "evidence_grid_step_seconds": 0.005
+  },
+  "diagnostics": {
+    "passive_nominal_causal_comparison": true
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85,
+    "preferred_reference_score": 90,
+    "normalize_or_rescale": false,
+    "groups": {
+      "A": {
+        "weight": 0.23,
+        "meaning": "comfort, suspension-deflection, body/wheel travel, and force accuracy across all private conditions"
+      },
+      "Q": {
+        "weight": 0.12,
+        "meaning": "finite complete logs, exact public widths, units, and full 2 s coverage"
+      },
+      "M": {
+        "weight": 0.2,
+        "meaning": "connected sprung/unsprung, passive suspension, tyre, actuator, and road mechanisms"
+      },
+      "C": {
+        "weight": 0.18,
+        "meaning": "causal active-force response and feedback effects across road and plant interventions"
+      },
+      "R": {
+        "weight": 0.15,
+        "meaning": "worst-condition comfort, travel, and effort robustness"
+      },
+      "D": {
+        "weight": 0.12,
+        "meaning": "bump transient and post-disturbance recovery"
+      }
+    },
+    "within_group": "task-specific weighted arithmetic aggregation with explicit worst-condition retention",
+    "across_groups": "weighted geometric mean; absent critical mechanism groups may be zero"
+  },
+  "minimum_shortcut_sanity_contract": [
+    "missing required output",
+    "same output replayed across all private conditions",
+    "zero or disconnected applied-force path",
+    "road input copied directly to body or wheel outputs",
+    "constant state histories",
+    "truncated run"
+  ]
+}

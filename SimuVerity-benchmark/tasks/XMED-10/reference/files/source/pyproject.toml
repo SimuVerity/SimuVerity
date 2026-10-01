@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "python_anesthesia_simulator"
+version = "2.0.0"
+authors = [
+  {name="Bob Aubouin--Pairault, Michele Schiavo, Erhan Yumuk"},
+  {email="bob.aubouin@tutanota.com"},
+]
+description = """Anesthesia simulator: modellize the effect of drugs (Propofol, Remifentanil, Norepinephrine, Atracurium) \
+                 during general anesthesia. Specially build for control design."""
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies=[
+    "numpy>=2.2.5",
+    "scipy==1.16.0",
+    "matplotlib>=3.10.1 ",
+    "casadi>=3.7.0",
+    "pandas>=2.2.3"
+]
+
+license = { text = "GNU General Public License v3 (GPLv3)" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/AnesthesiaSimulation/Python_Anesthesia_Simulator"
+"Bug Tracker" = "https://github.com/AnesthesiaSimulation/Python_Anesthesia_Simulator/issues"
+
+[project.optional-dependencies]
+test = [
+    "pytest==8.3.5",
+    "pytest-cov==6.1.1",
+]
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+]
+

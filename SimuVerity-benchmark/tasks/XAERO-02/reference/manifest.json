@@ -1,0 +1,3654 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XAERO-02",
+  "source_archive_redistributed": false,
+  "entrypoint": "reference/files/Plane/models/AirplaneSimModel_LindiPlane.slx",
+  "file_count": 907,
+  "files": [
+    {
+      "path": "reference/files/common_functions/addPathLadacExamples.m",
+      "size_bytes": 374
+    },
+    {
+      "path": "reference/files/common_functions/centerOfGravity.m",
+      "size_bytes": 876
+    },
+    {
+      "path": "reference/files/common_functions/controlEffectiveness2G1G2.m",
+      "size_bytes": 1981
+    },
+    {
+      "path": "reference/files/common_functions/getWetWing.m",
+      "size_bytes": 1241
+    },
+    {
+      "path": "reference/files/common_functions/indi_cntrl_gain_loiter_cascaded_example.m",
+      "size_bytes": 1596
+    },
+    {
+      "path": "reference/files/common_functions/indiCntrlEffectiveness.m",
+      "size_bytes": 3110
+    },
+    {
+      "path": "reference/files/common_functions/indiCntrlGainLoiterCascaded.m",
+      "size_bytes": 3714
+    },
+    {
+      "path": "reference/files/common_functions/indiCopterCntrlEffect.m",
+      "size_bytes": 2643
+    },
+    {
+      "path": "reference/files/common_functions/loadInitialConditionsParams.m",
+      "size_bytes": 320
+    },
+    {
+      "path": "reference/files/common_functions/momentOfInertia.m",
+      "size_bytes": 1353
+    },
+    {
+      "path": "reference/files/common_functions/tailsitterTrimHorizontal.m",
+      "size_bytes": 4150
+    },
+    {
+      "path": "reference/files/common_functions/trimSteady.m",
+      "size_bytes": 5006
+    },
+    {
+      "path": "reference/files/LICENSE",
+      "size_bytes": 35149
+    },
+    {
+      "path": "reference/files/modules/ladac-examples-data/LADAC_params/Funray/actuatorsPt2_params_Funray.m",
+      "size_bytes": 667
+    },
+    {
+      "path": "reference/files/modules/ladac-examples-data/LADAC_params/Funray/airplane_params_Funray.m",
+      "size_bytes": 2796
+    },
+    {
+      "path": "reference/files/modules/ladac-examples-data/LADAC_params/Funray/airplaneAeroSimple_params_Funray.m",
+      "size_bytes": 1904
+    },
+    {
+      "path": "reference/files/modules/ladac-examples-data/LADAC_params/Funray/battery_params_Funray.m",
+      "size_bytes": 318
+    },
+    {
+      "path": "reference/files/modules/ladac-examples-data/LADAC_params/Funray/motorBldc_params_Funray.m",
+      "size_bytes": 517
+    },
+    {
+      "path": "reference/files/modules/ladac-examples-data/LADAC_params/Funray/propMap_params_Funray.m",
+      "size_bytes": 516
+    },
+    {
+      "path": "reference/files/modules/ladac-examples-data/LADAC_params/Funray/simpleFuselage_params_Funray.m",
+      "size_bytes": 724
+    },
+    {
+      "path": "reference/files/modules/ladac-examples-data/LADAC_params/Funray/simpleWing_params_FunrayHtp.m",
+      "size_bytes": 2204
+    },
+    {
+      "path": "reference/files/modules/ladac-examples-data/LADAC_params/Funray/simpleWing_params_FunrayMainWing.m",
+      "size_bytes": 2199
+    },
+    {
+      "path": "reference/files/modules/ladac-examples-data/LADAC_params/Funray/simpleWing_params_FunrayVtp.m",
+      "size_bytes": 2200
+    },
+    {
+      "path": "reference/files/modules/ladac-examples-data/LADAC_params/Funray/wing_params_FunrayHtp.m",
+      "size_bytes": 2284
+    },
+    {
+      "path": "reference/files/modules/ladac-examples-data/LADAC_params/Funray/wing_params_FunrayMain.m",
+      "size_bytes": 2378
+    },
+    {
+      "path": "reference/files/modules/ladac-examples-data/LADAC_params/Funray/wing_params_FunrayMainDistFlaps.m",
+      "size_bytes": 2436
+    },
+    {
+      "path": "reference/files/modules/ladac-examples-data/LADAC_params/Funray/wing_params_FunrayVtp.m",
+      "size_bytes": 2264
+    },
+    {
+      "path": "reference/files/modules/ladac-examples-data/LADAC_params/shared/control_allocation_wls_params_quadcopter.m",
+      "size_bytes": 920
+    },
+    {
+      "path": "reference/files/modules/ladac-examples-data/LADAC_params/shared/params_envir.m",
+      "size_bytes": 621
+    },
+    {
+      "path": "reference/files/modules/ladac-examples-data/LADAC_params/shared/params_ground_copter.m",
+      "size_bytes": 798
+    },
+    {
+      "path": "reference/files/modules/ladac-examples-data/LADAC_params/shared/params_initial_conditions_hover.m",
+      "size_bytes": 636
+    },
+    {
+      "path": "reference/files/modules/ladac-examples-data/LICENSE",
+      "size_bytes": 35149
+    },
+    {
+      "path": "reference/files/modules/ladac/.gitignore",
+      "size_bytes": 4127
+    },
+    {
+      "path": "reference/files/modules/ladac/.gitmodules",
+      "size_bytes": 193
+    },
+    {
+      "path": "reference/files/modules/ladac/actuators/actuators_lib.slx",
+      "size_bytes": 48894
+    },
+    {
+      "path": "reference/files/modules/ladac/actuators/actuators_lib_example.slx",
+      "size_bytes": 23553
+    },
+    {
+      "path": "reference/files/modules/ladac/actuators/actuatorsUnitTest.m",
+      "size_bytes": 547
+    },
+    {
+      "path": "reference/files/modules/ladac/actuators/cmd2PWM.m",
+      "size_bytes": 924
+    },
+    {
+      "path": "reference/files/modules/ladac/actuators/default_params/actuators_pt2_params_default.m",
+      "size_bytes": 635
+    },
+    {
+      "path": "reference/files/modules/ladac/actuators/mapActuatorToControlSurface.m",
+      "size_bytes": 644
+    },
+    {
+      "path": "reference/files/modules/ladac/actuators/motor_bldc/motor_bldc_params_default.m",
+      "size_bytes": 460
+    },
+    {
+      "path": "reference/files/modules/ladac/actuators/motor_bldc/motorStaticSpeed.m",
+      "size_bytes": 1347
+    },
+    {
+      "path": "reference/files/modules/ladac/actuators/motor_bldc/motorStaticSpeed2u.m",
+      "size_bytes": 1463
+    },
+    {
+      "path": "reference/files/modules/ladac/actuators/motor_bldc/motorStaticSpeedDeriv.m",
+      "size_bytes": 489
+    },
+    {
+      "path": "reference/files/modules/ladac/actuators/pwm2cmd.m",
+      "size_bytes": 945
+    },
+    {
+      "path": "reference/files/modules/ladac/actuators/README.md",
+      "size_bytes": 372
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/aerodynamics_lib.slx",
+      "size_bytes": 38607
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_05_15_alpha/airfoilAnalytic0515_params_empty.m",
+      "size_bytes": 948
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_05_15_alpha/airfoilAnalytic0515_params_F15.m",
+      "size_bytes": 2516
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_05_15_alpha/airfoilAnalytic0515Al_example.m",
+      "size_bytes": 2217
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_05_15_alpha/airfoilAnalytic0515AlCd.m",
+      "size_bytes": 1089
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_05_15_alpha/airfoilAnalytic0515AlCdNorm.m",
+      "size_bytes": 979
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_05_15_alpha/airfoilAnalytic0515AlCl.m",
+      "size_bytes": 1250
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_05_15_alpha/airfoilAnalytic0515AlCm.m",
+      "size_bytes": 1105
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_05_15_alpha/airfoilAnalytic0515AlFit.m",
+      "size_bytes": 9089
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_05_15_alpha/airfoilAnalytic0515AlPerformance_example.m",
+      "size_bytes": 1750
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_05_15_alpha/airfoilAnalytic0515Cd0.m",
+      "size_bytes": 344
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_05_15_alpha/airfoilAnalytic0515ClAlphaMax.m",
+      "size_bytes": 1621
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_05_15_alpha/airfoilAnalytic0515ClMax.m",
+      "size_bytes": 2554
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_05_15_alpha/airfoilAnalytic0515De.m",
+      "size_bytes": 1322
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_05_15_alpha/airfoilAnalytic0515DeFit.m",
+      "size_bytes": 3829
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_05_15_alpha/airfoilAnalytic0515LoadParams.m",
+      "size_bytes": 1048
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_05_15_alpha/airfoilAnalytic0515Ma.m",
+      "size_bytes": 1353
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_05_15_alpha/airfoilAnalytic0515NeuN_example.m",
+      "size_bytes": 3704
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_05_15_alpha/airfoilAnalytic0515NeunFit.m",
+      "size_bytes": 3775
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_05_15_alpha/airfoilAnalytic0515Plot_example.m",
+      "size_bytes": 3040
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_05_15_alpha/airfoilAnalytic0515UnitTest.m",
+      "size_bytes": 1141
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_05_15_alpha/netSettings_fcl.m",
+      "size_bytes": 9057
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_05_15_alpha/netSettings_fcm.m",
+      "size_bytes": 9057
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_05_15_alpha/netSettings_fdc.m",
+      "size_bytes": 9055
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_05_15_alpha/README.md",
+      "size_bytes": 1889
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_90_90_al/airfoilAnalytic9090_example.m",
+      "size_bytes": 2111
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_90_90_al/airfoilAnalytic9090AlCd.m",
+      "size_bytes": 1147
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_90_90_al/airfoilAnalytic9090AlCdNorm.m",
+      "size_bytes": 738
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_90_90_al/airfoilAnalytic9090AlCl.m",
+      "size_bytes": 825
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_90_90_al/airfoilAnalytic9090AlFit.m",
+      "size_bytes": 4522
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_90_90_al/airfoilAnalytic9090UnitTest.m",
+      "size_bytes": 1137
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_90_90_al/README.md",
+      "size_bytes": 803
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_BL_alpha/airfoilAnalyticBlAl_example.m",
+      "size_bytes": 1271
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_BL_alpha/airfoilAnalyticBlAlCn.m",
+      "size_bytes": 1282
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_BL_alpha/airfoilAnalyticBlAlFit.m",
+      "size_bytes": 4360
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_BL_alpha/airfoilAnalyticBlAlUnitTest.m",
+      "size_bytes": 1137
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_BL_alpha/airfoilAnalyticBlClAlphaMax.m",
+      "size_bytes": 1190
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_BL_alpha/airfoilAnalyticBlCm.m",
+      "size_bytes": 978
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_BL_alpha/airfoilAnalyticBlCm0.m",
+      "size_bytes": 819
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_BL_alpha/airfoilAnalyticBlXac.m",
+      "size_bytes": 807
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_BL_alpha/README.md",
+      "size_bytes": 755
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_simple/airfoilAnalyticSimple_example.m",
+      "size_bytes": 1126
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_simple/airfoilAnalyticSimple_params_default.m",
+      "size_bytes": 915
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_simple/airfoilAnalyticSimpleCd.m",
+      "size_bytes": 750
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_simple/airfoilAnalyticSimpleCl.m",
+      "size_bytes": 933
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_simple/airfoilAnalyticSimpleCm.m",
+      "size_bytes": 793
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_simple/airfoilAnalyticSimpleCreate.m",
+      "size_bytes": 762
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_simple/airfoilAnalyticSimpleInit.m",
+      "size_bytes": 972
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_simple/airfoilAnalyticSimpleLoadParams.m",
+      "size_bytes": 1009
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_simple/airfoilAnalyticSimpleUnitTest.m",
+      "size_bytes": 1147
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/analytic_simple/README.md",
+      "size_bytes": 589
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/analytic/README.md",
+      "size_bytes": 2035
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/dynamic_stall/airfoilDynStall.m",
+      "size_bytes": 6338
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/dynamic_stall/airfoilDynStallClFs.m",
+      "size_bytes": 1501
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/dynamic_stall/airfoilDynStallFst.m",
+      "size_bytes": 1230
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/dynamic_stall/example_airfoilDynStall.m",
+      "size_bytes": 2780
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/dynamic_stall/example_sim_airfoilDynStall.slx",
+      "size_bytes": 38343
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/dynamic_stall/README.md",
+      "size_bytes": 2270
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/flap/airfoilFlapDeltaQs.m",
+      "size_bytes": 1246
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/flap/airfoilFlapEffectiveness.m",
+      "size_bytes": 1507
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/flap/airfoilFlapMoment.m",
+      "size_bytes": 1363
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/flap/airfoilFlapPitch.m",
+      "size_bytes": 1408
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/flap/airfoilFlapUnst_example.m",
+      "size_bytes": 2321
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/flap/airfoilFlapUnstLift.m",
+      "size_bytes": 1828
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/flap/airfoilFlapUnstPitch.m",
+      "size_bytes": 1623
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/flap/airfoilFlapWagner.m",
+      "size_bytes": 1653
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/flap/README.md",
+      "size_bytes": 1317
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/micro_tab/airfoilMicroTab_params_empty.m",
+      "size_bytes": 1042
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/micro_tab/airfoilMicroTab_params_F15_90.m",
+      "size_bytes": 1508
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/micro_tab/airfoilMicroTabDeltaCoeff.m",
+      "size_bytes": 1820
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/micro_tab/airfoilMicroTabLoadParams.m",
+      "size_bytes": 1087
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/micro_tab/airfoilMicroTabStateDeriv.m",
+      "size_bytes": 1439
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/README.md",
+      "size_bytes": 1354
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/airfoilLoadXfoilData.m",
+      "size_bytes": 3571
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/B737/B737_1_0.dat",
+      "size_bytes": 2884
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/B737/B737_2_0.dat",
+      "size_bytes": 2884
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/B737/B737_2_10.dat",
+      "size_bytes": 2881
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/B737/B737_2_20.dat",
+      "size_bytes": 2877
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/B737/B737_2_30.dat",
+      "size_bytes": 2874
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/B737/B737_2_40.dat",
+      "size_bytes": 2849
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/B737/B737_2_50.dat",
+      "size_bytes": 2868
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/B737/B737_3_-10.dat",
+      "size_bytes": 2775
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/B737/B737_3_-20.dat",
+      "size_bytes": 2770
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/B737/B737_3_-30.dat",
+      "size_bytes": 2774
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/B737/B737_3_0.dat",
+      "size_bytes": 2884
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/B737/B737_3_10.dat",
+      "size_bytes": 2880
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/B737/B737_3_20.dat",
+      "size_bytes": 2877
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/B737/B737_3_30.dat",
+      "size_bytes": 2873
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/B737_new/B737_300_aileron.mat",
+      "size_bytes": 10019
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/B737_new/B737_300_clean.mat",
+      "size_bytes": 2304
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/B737_new/B737_300_flap.mat",
+      "size_bytes": 9160
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/dat-file-format.txt",
+      "size_bytes": 1004
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/F15_bl.mat",
+      "size_bytes": 6184
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/flat_plate.m",
+      "size_bytes": 1762
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/flat_plate_flap_02.mat",
+      "size_bytes": 3360
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/NACA0015.m",
+      "size_bytes": 2161
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/NACA0015_airfoil.m",
+      "size_bytes": 966
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/NACA_0010_flap_01933.mat",
+      "size_bytes": 77164
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/README.md",
+      "size_bytes": 3217
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/xf-e335-il-1000000.txt",
+      "size_bytes": 7114
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/xf-fx78pk188-il-1000000.txt",
+      "size_bytes": 10494
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/xf-goe508-il-1000000.txt",
+      "size_bytes": 9064
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/xf-gs1-il-1000000.txt",
+      "size_bytes": 9584
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/xf-mh200-il-1000000-n5.txt",
+      "size_bytes": 8414
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/xf-n63412-il-1000000.txt",
+      "size_bytes": 8479
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/xf-naca0015-il-1000000-n5.txt",
+      "size_bytes": 10494
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/section_database/xf-naca66210-il-1000000.txt",
+      "size_bytes": 5684
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/unsteady/README.md",
+      "size_bytes": 1430
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/unsteady/unstAirfoilAero.m",
+      "size_bytes": 4172
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/unsteady/unstAirfoilAero_example.m",
+      "size_bytes": 3679
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/unsteady/unstAirfoilAero_example_drag.m",
+      "size_bytes": 1297
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/unsteady/unstAirfoilAero_sim_example_drag.slx",
+      "size_bytes": 28391
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/unsteady/unstAirfoilAeroCd.m",
+      "size_bytes": 1319
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/unsteady/unstAirfoilAeroCdNoFlutter.m",
+      "size_bytes": 960
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/unsteady/unstAirfoilAeroFast.m",
+      "size_bytes": 4856
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/unsteady/unstAirfoilAeroSplit.m",
+      "size_bytes": 2738
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/airfoil/unsteady/unstAirfoilWagner.m",
+      "size_bytes": 1988
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/common_functions/biot_savart.m",
+      "size_bytes": 4517
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/common_functions/biotSavart.m",
+      "size_bytes": 2169
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/common_functions/coeffs2ForcesMoments.m",
+      "size_bytes": 1655
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/common_functions/flight_performance/aerodynamicsAirplaneConstantE.m",
+      "size_bytes": 3672
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/common_functions/flight_performance/aerodynamicsAirplaneSimplePolar.m",
+      "size_bytes": 3333
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/common_functions/flight_performance/aerodynamicsMulticopter.m",
+      "size_bytes": 3812
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/common_functions/forceCoeffs2MomentCoeffs.m",
+      "size_bytes": 884
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/common_functions/fuselageWingInducedAlpha.m",
+      "size_bytes": 1788
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/common_functions/loadLoggedData.m",
+      "size_bytes": 6581
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/common_functions/wingFuselageInducedVel.m",
+      "size_bytes": 3513
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselage_example.m",
+      "size_bytes": 1936
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselage_lib.slx",
+      "size_bytes": 35564
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselage_lib_example.slx",
+      "size_bytes": 24551
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselage_lib_example_init.m",
+      "size_bytes": 748
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselage_params_default.m",
+      "size_bytes": 901
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselageAeroelasticityInit.m",
+      "size_bytes": 1637
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselageAssignToStructure.m",
+      "size_bytes": 3560
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselageBodyStateInit.m",
+      "size_bytes": 843
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselageCreate.m",
+      "size_bytes": 2617
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselageCreateWithCpacs.m",
+      "size_bytes": 3726
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselageExternalInit.m",
+      "size_bytes": 1044
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselageGeometryInit.m",
+      "size_bytes": 1334
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselageInit.m",
+      "size_bytes": 1845
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselageLocalCoeffInit.m",
+      "size_bytes": 844
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselageLocalInflowInit.m",
+      "size_bytes": 991
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselageParamsInit.m",
+      "size_bytes": 1240
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselagePlotEigenmode.m",
+      "size_bytes": 1477
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselagePlotGeometry.m",
+      "size_bytes": 2195
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselageSetAeroelasticity.m",
+      "size_bytes": 7058
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselageSetAeroState.m",
+      "size_bytes": 3448
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselageSetBodyState.m",
+      "size_bytes": 1157
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselageSetExternal.m",
+      "size_bytes": 1040
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselageSetGeometry.m",
+      "size_bytes": 2182
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselageSetGeometryFromCpacs.m",
+      "size_bytes": 3173
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselageSetGeometryState.m",
+      "size_bytes": 2522
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselageSetGeometryWidthVisc.m",
+      "size_bytes": 3692
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselageSetLocalInflow.m",
+      "size_bytes": 1973
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselageSetParams.m",
+      "size_bytes": 1031
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselageSetState.m",
+      "size_bytes": 3504
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselageSetUnstAeroState.m",
+      "size_bytes": 1018
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselageStateInit.m",
+      "size_bytes": 2159
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/fuselageUnitTest.m",
+      "size_bytes": 1150
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/fuselage/README.md",
+      "size_bytes": 2552
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/README.md",
+      "size_bytes": 1981
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/rotorcraft/blade_element_method/bem_example.m",
+      "size_bytes": 8762
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/rotorcraft/blade_element_method/bemQuasiStaticThrustFromTheta.m",
+      "size_bytes": 1988
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/rotorcraft/blade_element_method/bemResponseAndControlDerivatives.m",
+      "size_bytes": 4670
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/rotorcraft/blade_element_method/bemResponseAndControlDerivativesNumPertub.m",
+      "size_bytes": 2407
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/rotorcraft/blade_element_method/bemThetaFromDesiredThrustAndInflow.m",
+      "size_bytes": 1246
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/rotorcraft/blade_element_method/bemThetaFromDesiredThrustCoefficentAndInflow.m",
+      "size_bytes": 924
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/rotorcraft/blade_element_method/bemThrustFromInflowParameters.m",
+      "size_bytes": 1740
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/rotorcraft/induced_velocity/inducedVelocity.m",
+      "size_bytes": 2532
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/rotorcraft/induced_velocity/inducedVelocityBaselineModel.m",
+      "size_bytes": 3431
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/rotorcraft/induced_velocity/inducedVelocityMomentumTheory.m",
+      "size_bytes": 2501
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/rotorcraft/induced_velocity/inducedVelocityUnitTest.m",
+      "size_bytes": 2066
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/rotorcraft/induced_velocity/inducedVelocityVortexRingState.m",
+      "size_bytes": 7386
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/rotorcraft/induced_velocity/inducedVelocityWithUnits.m",
+      "size_bytes": 3437
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/rotorcraft/induced_velocity/inducedVelocityWithUnitsAngleOfAttack.m",
+      "size_bytes": 3273
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/rotorcraft/readme.md",
+      "size_bytes": 3261
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/rotorcraft/rotorcraft_lib.slx",
+      "size_bytes": 58293
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_fuselage/fuselageBall.m",
+      "size_bytes": 483
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_fuselage/README.md",
+      "size_bytes": 2333
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_fuselage/simpleFuselage_lib.slx",
+      "size_bytes": 31435
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_fuselage/simpleFuselage_lib_example.slx",
+      "size_bytes": 22543
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_fuselage/simpleFuselage_lib_example_init.m",
+      "size_bytes": 527
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_fuselage/simpleFuselage_params_default.m",
+      "size_bytes": 739
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_fuselage/simpleFuselageCd.m",
+      "size_bytes": 2051
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_fuselage/simpleFuselageCl.m",
+      "size_bytes": 2105
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_fuselage/simpleFuselageCm.m",
+      "size_bytes": 1980
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_fuselage/simpleFuselageCn.m",
+      "size_bytes": 1975
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_fuselage/simpleFuselageCq.m",
+      "size_bytes": 2145
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_fuselage/simpleFuselageCreate.m",
+      "size_bytes": 837
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_fuselage/simpleFuselageCreateFromCPACS.m",
+      "size_bytes": 2286
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_fuselage/simpleFuselageInit.m",
+      "size_bytes": 1559
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_fuselage/simpleFuselageLoadParams.m",
+      "size_bytes": 1127
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_fuselage/simpleFuselageUnitTest.m",
+      "size_bytes": 1104
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_wing/README.md",
+      "size_bytes": 3869
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_wing/simple_wing_lib.slx",
+      "size_bytes": 47827
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_wing/simpleWing_params_default.m",
+      "size_bytes": 2567
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_wing/simpleWingCreate.m",
+      "size_bytes": 4948
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_wing/simpleWingGetCd.m",
+      "size_bytes": 4388
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_wing/simpleWingGetCl.m",
+      "size_bytes": 5411
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_wing/simpleWingGetCmCamber.m",
+      "size_bytes": 1551
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_wing/simpleWingGetDerivs.m",
+      "size_bytes": 6387
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_wing/simpleWingGetEffFlapAng.m",
+      "size_bytes": 3271
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_wing/simpleWingGetFlapMoments.m",
+      "size_bytes": 1927
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_wing/simpleWingGetInflow.m",
+      "size_bytes": 3940
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_wing/simpleWingGetNeutralPoint.m",
+      "size_bytes": 2144
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_wing/simpleWingGetPitchDamping.m",
+      "size_bytes": 977
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_wing/simpleWingLoadParams.m",
+      "size_bytes": 2312
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_wing/simpleWingLocal2GlobalMomentCoeffs.m",
+      "size_bytes": 1844
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_wing/simpleWingPlotGeometry.m",
+      "size_bytes": 2029
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_wing/simpleWingRun.m",
+      "size_bytes": 5209
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_wing/simpleWingSetDragCurve.m",
+      "size_bytes": 3380
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_wing/simpleWingSetFlapEffectiveness.m",
+      "size_bytes": 1246
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_wing/simpleWingSetInducedDragFactor.m",
+      "size_bytes": 432
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_wing/simpleWingSetLiftCurve.m",
+      "size_bytes": 3129
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_wing/simpleWingSetLiftCurveSlope.m",
+      "size_bytes": 460
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_wing/simpleWingSetNeutralPoint.m",
+      "size_bytes": 1608
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_wing/simpleWingSetRollRateRed.m",
+      "size_bytes": 981
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/simple_wing/simpleWingSetYawRateRed.m",
+      "size_bytes": 1005
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/aeroelasticity/aeroelasticity_lib.slx",
+      "size_bytes": 29221
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/aeroelasticity/wingAeroelasticityGetGravityLoading.m",
+      "size_bytes": 2084
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/aeroelasticity/wingAssignToStructure.m",
+      "size_bytes": 3090
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/aeroelasticity/wingCreateAeroelasticity.m",
+      "size_bytes": 1345
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/aeroelasticity/wingSetAeroelasticity.m",
+      "size_bytes": 11162
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/airfoil/wingAirfoilMapCreateEmpty.m",
+      "size_bytes": 989
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/airfoil/wingAirfoilMapDerivCoeff.m",
+      "size_bytes": 2726
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/airfoil/wingAirfoilMapInterpCoeff.m",
+      "size_bytes": 3011
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/airfoil/wingAirfoilMapLoadSection.m",
+      "size_bytes": 1136
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/airfoil/wingAirfoilMapSetSim.m",
+      "size_bytes": 3648
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/custom/wingCustomActuator.m",
+      "size_bytes": 274
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/custom/wingCustomActuatorSetup.m",
+      "size_bytes": 50
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/external/wingCreateExternal.m",
+      "size_bytes": 602
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/geometry/wingGetDimlessIndVel.m",
+      "size_bytes": 5290
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/geometry/wingGetDimLessSpanwiseLengthVector.m",
+      "size_bytes": 1773
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/geometry/wingGetNormalVectorFromGeometry.m",
+      "size_bytes": 2812
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/geometry/wingGetPositionMatrix.m",
+      "size_bytes": 888
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/geometry/wingGetSegmentSpan.m",
+      "size_bytes": 474
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/geometry/wingGetSpatialVectorAlongBoundSegment.m",
+      "size_bytes": 1027
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/geometry/wingInitGeometry.m",
+      "size_bytes": 1560
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/geometry/wingSetGeometry.m",
+      "size_bytes": 15902
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/geometry/wingSetGeometryCoord.m",
+      "size_bytes": 6665
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/geometry/wingSetPosition.m",
+      "size_bytes": 1392
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/interim_results/wingGetAicMach.m",
+      "size_bytes": 2286
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/interim_results/wingSetInterimResults.m",
+      "size_bytes": 3542
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/interim_results/wingUpdateMach.m",
+      "size_bytes": 106
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/parameters/wingGetParamsFromCPACS.m",
+      "size_bytes": 7159
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/parameters/wingSetParams.m",
+      "size_bytes": 1720
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/README.md",
+      "size_bytes": 6396
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/settings_database/elliptical_wing/visualize_elliptical_wing.m",
+      "size_bytes": 1473
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/settings_database/wing_parametric.m",
+      "size_bytes": 2610
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/settings_database/wing_params_Arkbird_map.m",
+      "size_bytes": 1837
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/settings_database/wing_params_Arkbird_simple.m",
+      "size_bytes": 1861
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/settings_database/wing_params_B737_300.m",
+      "size_bytes": 1959
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/settings_database/wing_params_default.m",
+      "size_bytes": 2364
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/state/aero/wingSetCirculationDlm.m",
+      "size_bytes": 6347
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/state/aero/wingSetCirculationUnsteady.m",
+      "size_bytes": 11984
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/state/aero/wingSetGlobalCoeff.m",
+      "size_bytes": 1297
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/state/aero/wingSetGlobalForce.m",
+      "size_bytes": 1336
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/state/aero/wingSetLocalCoeff.m",
+      "size_bytes": 6120
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/state/aero/wingSetLocalForce.m",
+      "size_bytes": 1733
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/state/aero/wingSetLocalInflow.m",
+      "size_bytes": 2429
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/state/wingCreateState.m",
+      "size_bytes": 6271
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/state/wingSetActuators.m",
+      "size_bytes": 2101
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/state/wingSetAeroState.m",
+      "size_bytes": 2483
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/state/wingSetBodyState.m",
+      "size_bytes": 1401
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/state/wingSetGeometryState.m",
+      "size_bytes": 1055
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/state/wingSetState.m",
+      "size_bytes": 7139
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/state/wingSetUnstAeroState.m",
+      "size_bytes": 8911
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/state/wingStateGetUnstAeroTrimOp.m",
+      "size_bytes": 3924
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/verification/wing_verify_downwash.m",
+      "size_bytes": 3665
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/verification/wing_verify_sweep.m",
+      "size_bytes": 2545
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/verification/wing_verify_theory.m",
+      "size_bytes": 6754
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/vlm_wing_lib.slx",
+      "size_bytes": 45781
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/vlmVoring.m",
+      "size_bytes": 295
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/vlmVoringsLlt.m",
+      "size_bytes": 1830
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/vlmVortxl.m",
+      "size_bytes": 392
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/wake/wingCreateWake.m",
+      "size_bytes": 305
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/wingCreate.m",
+      "size_bytes": 8971
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/wingCreateWithCPACS.m",
+      "size_bytes": 8303
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/wingGet3dPolar.m",
+      "size_bytes": 934
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/wingGetBendingMoment.m",
+      "size_bytes": 997
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/wingGetDerivs.m",
+      "size_bytes": 8277
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/wingGetDownwash.m",
+      "size_bytes": 2344
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/wingGetDownwashDerivs.m",
+      "size_bytes": 2301
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/wingGetStructureLoad.m",
+      "size_bytes": 1060
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/wingLoadParameters.m",
+      "size_bytes": 684
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/wingPlotEigenmode.m",
+      "size_bytes": 946
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/wingPlotGeometry.m",
+      "size_bytes": 7836
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/vlm_wing/wingSetCustomActuatorPath.m",
+      "size_bytes": 1936
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/wing_downwash/downwashUnstAnalytic.m",
+      "size_bytes": 1537
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/wing_downwash/downwashUnstFromVlmWings.m",
+      "size_bytes": 4317
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/wing_downwash/downwashUnstSchedule.m",
+      "size_bytes": 803
+    },
+    {
+      "path": "reference/files/modules/ladac/aerodynamics/wing_downwash/wing_downwash_lib.slx",
+      "size_bytes": 30770
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/aircraft_lib.slx",
+      "size_bytes": 22762
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/aircraftAddBody.m",
+      "size_bytes": 1010
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/airplanes/airplanes_lib.slx",
+      "size_bytes": 23821
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/airplanes/complete/airplanes_complete_lib.slx",
+      "size_bytes": 21315
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/airplanes/complete/conventional_airplane_single_engine/airplane_params_default.m",
+      "size_bytes": 2050
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/airplanes/complete/conventional_airplane_single_engine/conventional_airplane_single_engine_lib.slx",
+      "size_bytes": 50604
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/airplanes/complete/conventional_airplane_single_engine/conventionalAirplaneLoadParams.m",
+      "size_bytes": 542
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/airplanes/subsystems/airplane_subsystems_lib.slx",
+      "size_bytes": 21662
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/airplanes/subsystems/conventional_airplane_aerodynamics/conventional_airplane_aerodynamics_lib.slx",
+      "size_bytes": 52009
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/airplanes/subsystems/conventional_airplane_aerodynamics/conventionalAirplaneAero_params_default.m",
+      "size_bytes": 1409
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/airplanes/subsystems/conventional_airplane_aerodynamics/conventionalAirplaneAeroLoadParams.m",
+      "size_bytes": 728
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/evtols/evtols_complete/evtols_complete_lib.slx",
+      "size_bytes": 21868
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/evtols/evtols_complete/tailsitter/tailsitter_lib.slx",
+      "size_bytes": 64700
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/evtols/evtols_complete/tailsitter/tailsitter_params_default.m",
+      "size_bytes": 3230
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/evtols/evtols_complete/tailsitter/tailsitterLoadParams.m",
+      "size_bytes": 528
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/evtols/evtols_complete/tandem_tiltwing/tandem_tiltwing_lib.slx",
+      "size_bytes": 47772
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/evtols/evtols_complete/tandem_tiltwing/tandem_tiltwing_params_default.m",
+      "size_bytes": 3158
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/evtols/evtols_complete/tandem_tiltwing/tandemTiltwingLoadParams.m",
+      "size_bytes": 544
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/evtols/evtols_lib.slx",
+      "size_bytes": 21674
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/multicopters/complete/multicopters_complete_lib.slx",
+      "size_bytes": 20780
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/multicopters/complete/quadcopter/copter_params_default.m",
+      "size_bytes": 2478
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/multicopters/complete/quadcopter/copterLoadParams.m",
+      "size_bytes": 1852
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/multicopters/complete/quadcopter/quadcopter_lib.slx",
+      "size_bytes": 30928
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/multicopters/complete/quadcopter/quadcopterBlockInit.m",
+      "size_bytes": 982
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/multicopters/multicopters_lib.slx",
+      "size_bytes": 23896
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/multicopters/subsystems/multicopter_aerodynamics_simple/multicopter_aerodynamics_simple_lib.slx",
+      "size_bytes": 28293
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/multicopters/subsystems/multicopters_subsystems_lib.slx",
+      "size_bytes": 24787
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/multicopters/subsystems/quadcopter_propulsion/quadcopter_propulsion_lib.slx",
+      "size_bytes": 26923
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/README.md",
+      "size_bytes": 670
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/suspended_payload/README.md",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/suspended_payload/susp_payload_mass_params_default.m",
+      "size_bytes": 350
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/suspended_payload/susp_payload_params_default.m",
+      "size_bytes": 340
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/suspended_payload/suspended_payload_lib.slx",
+      "size_bytes": 56161
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/suspended_payload/suspPayloadGetFrequencies.m",
+      "size_bytes": 6543
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/suspended_payload/suspPayloadLoadMassParams.m",
+      "size_bytes": 730
+    },
+    {
+      "path": "reference/files/modules/ladac/aircraft/suspended_payload/suspPayloadLoadParams.m",
+      "size_bytes": 552
+    },
+    {
+      "path": "reference/files/modules/ladac/check_ladac.m",
+      "size_bytes": 488
+    },
+    {
+      "path": "reference/files/modules/ladac/control/angles/angles_lib.slx",
+      "size_bytes": 34029
+    },
+    {
+      "path": "reference/files/modules/ladac/control/angles/errorAngle.m",
+      "size_bytes": 820
+    },
+    {
+      "path": "reference/files/modules/ladac/control/angles/wrapAngle.m",
+      "size_bytes": 746
+    },
+    {
+      "path": "reference/files/modules/ladac/control/autopilots/autopilots_lib.slx",
+      "size_bytes": 22647
+    },
+    {
+      "path": "reference/files/modules/ladac/control/autopilots/LindiCopter/lindiCopter_lib.slx",
+      "size_bytes": 80028
+    },
+    {
+      "path": "reference/files/modules/ladac/control/autopilots/LindiCopter/lindiCopter_params_default.m",
+      "size_bytes": 970
+    },
+    {
+      "path": "reference/files/modules/ladac/control/autopilots/LindiCopter/lindiCopter_params_notune_default.m",
+      "size_bytes": 315
+    },
+    {
+      "path": "reference/files/modules/ladac/control/autopilots/LindiCopter/lindiCopterAutoCreate.m",
+      "size_bytes": 14856
+    },
+    {
+      "path": "reference/files/modules/ladac/control/autopilots/LindiCopter/lindiCopterStateLogic.m",
+      "size_bytes": 2189
+    },
+    {
+      "path": "reference/files/modules/ladac/control/autopilots/LindiCopter/lindiCopterStateLogicBus.m",
+      "size_bytes": 208
+    },
+    {
+      "path": "reference/files/modules/ladac/control/autopilots/LindiCopter/README.md",
+      "size_bytes": 4683
+    },
+    {
+      "path": "reference/files/modules/ladac/control/autopilots/LindiPlane/lindiPlane_lib.slx",
+      "size_bytes": 195648
+    },
+    {
+      "path": "reference/files/modules/ladac/control/autopilots/LindiPlane/lindiPlaneAutoCreate.m",
+      "size_bytes": 13765
+    },
+    {
+      "path": "reference/files/modules/ladac/control/autopilots/LindiPlane/README.md",
+      "size_bytes": 4542
+    },
+    {
+      "path": "reference/files/modules/ladac/control/autopilots/README.md",
+      "size_bytes": 325
+    },
+    {
+      "path": "reference/files/modules/ladac/control/control_allocation/ca_lib.slx",
+      "size_bytes": 46919
+    },
+    {
+      "path": "reference/files/modules/ladac/control/control_allocation/caIndiCopterBlockInit.m",
+      "size_bytes": 630
+    },
+    {
+      "path": "reference/files/modules/ladac/control/control_allocation/caIndiWls.m",
+      "size_bytes": 3657
+    },
+    {
+      "path": "reference/files/modules/ladac/control/control_allocation/caIndiWlsBlockInit.m",
+      "size_bytes": 1233
+    },
+    {
+      "path": "reference/files/modules/ladac/control/control_allocation/caIndiWlsHlcBlockInit.m",
+      "size_bytes": 733
+    },
+    {
+      "path": "reference/files/modules/ladac/control/control_allocation/caWls_params_default.m",
+      "size_bytes": 920
+    },
+    {
+      "path": "reference/files/modules/ladac/control/control_allocation/caWlsCopterUpset.m",
+      "size_bytes": 732
+    },
+    {
+      "path": "reference/files/modules/ladac/control/control_lib.slx",
+      "size_bytes": 29583
+    },
+    {
+      "path": "reference/files/modules/ladac/control/controller_modules/altitude_control/cntrlAltIndi_lib.slx",
+      "size_bytes": 28701
+    },
+    {
+      "path": "reference/files/modules/ladac/control/controller_modules/attitude_control/cntrlAttiRedIndi_lib.slx",
+      "size_bytes": 44077
+    },
+    {
+      "path": "reference/files/modules/ladac/control/controller_modules/attitude_control/cntrlAttiRedIndi_params_default.m",
+      "size_bytes": 1063
+    },
+    {
+      "path": "reference/files/modules/ladac/control/controller_modules/attitude_quaternion_control/quatAttitudeController_lib.slx",
+      "size_bytes": 39044
+    },
+    {
+      "path": "reference/files/modules/ladac/control/controller_modules/attitude_quaternion_control/quatAttitudeControllerFullStateFastApprox.m",
+      "size_bytes": 2963
+    },
+    {
+      "path": "reference/files/modules/ladac/control/controller_modules/attitude_quaternion_control/quatAttitudeControllerFullStateFastApproxOmega.m",
+      "size_bytes": 2820
+    },
+    {
+      "path": "reference/files/modules/ladac/control/controller_modules/attitude_quaternion_control/quatAttitudeFilter.m",
+      "size_bytes": 2070
+    },
+    {
+      "path": "reference/files/modules/ladac/control/controller_modules/blockInitToggleEnable.m",
+      "size_bytes": 1977
+    },
+    {
+      "path": "reference/files/modules/ladac/control/controller_modules/cntrlBlockInit.m",
+      "size_bytes": 1686
+    },
+    {
+      "path": "reference/files/modules/ladac/control/controller_modules/controller_modules_lib.slx",
+      "size_bytes": 23674
+    },
+    {
+      "path": "reference/files/modules/ladac/control/controller_modules/pos_cntrl/cntrlPosNdi_lib.slx",
+      "size_bytes": 38849
+    },
+    {
+      "path": "reference/files/modules/ladac/control/controller_modules/pos_cntrl/cntrlPosNdi_params_default.m",
+      "size_bytes": 1000
+    },
+    {
+      "path": "reference/files/modules/ladac/control/filters/filters_lib.slx",
+      "size_bytes": 46535
+    },
+    {
+      "path": "reference/files/modules/ladac/control/filters/leanVectorNormDeriv.m",
+      "size_bytes": 445
+    },
+    {
+      "path": "reference/files/modules/ladac/control/filters/leanVectorNormDeriv2.m",
+      "size_bytes": 1081
+    },
+    {
+      "path": "reference/files/modules/ladac/control/filters/NotchFilter.m",
+      "size_bytes": 4111
+    },
+    {
+      "path": "reference/files/modules/ladac/control/filters/pt1BlockInit.m",
+      "size_bytes": 2329
+    },
+    {
+      "path": "reference/files/modules/ladac/control/filters/pt2BlockInit.m",
+      "size_bytes": 3535
+    },
+    {
+      "path": "reference/files/modules/ladac/control/filters/pt2LeanVectorBlockInit.m",
+      "size_bytes": 4163
+    },
+    {
+      "path": "reference/files/modules/ladac/control/filters/T2Filter.m",
+      "size_bytes": 4941
+    },
+    {
+      "path": "reference/files/modules/ladac/control/flight_modes/altitude_hold/fmCopterAltHoldIndi_lib.slx",
+      "size_bytes": 31847
+    },
+    {
+      "path": "reference/files/modules/ladac/control/flight_modes/altitude_hold/fmCopterAltHoldIndi_params_default.m",
+      "size_bytes": 908
+    },
+    {
+      "path": "reference/files/modules/ladac/control/flight_modes/attitude/fmCopterAttiIndi_params_default.m",
+      "size_bytes": 824
+    },
+    {
+      "path": "reference/files/modules/ladac/control/flight_modes/attitude/fmCopterAttiRedIndi_lib.slx",
+      "size_bytes": 54249
+    },
+    {
+      "path": "reference/files/modules/ladac/control/flight_modes/attitude/fmPlaneAttiIndi_lib.slx",
+      "size_bytes": 35451
+    },
+    {
+      "path": "reference/files/modules/ladac/control/flight_modes/flight_modes_lib.slx",
+      "size_bytes": 22774
+    },
+    {
+      "path": "reference/files/modules/ladac/control/flight_modes/loiter/fmCopterLoiterIndi_lib.slx",
+      "size_bytes": 33334
+    },
+    {
+      "path": "reference/files/modules/ladac/control/flight_modes/loiter/fmCopterLoiterIndi_params_default.m",
+      "size_bytes": 1002
+    },
+    {
+      "path": "reference/files/modules/ladac/control/INDI/indi_lib.slx",
+      "size_bytes": 77301
+    },
+    {
+      "path": "reference/files/modules/ladac/control/INDI/indiCeBody_params_default.m",
+      "size_bytes": 541
+    },
+    {
+      "path": "reference/files/modules/ladac/control/INDI/indiCeFlapFix.m",
+      "size_bytes": 1080
+    },
+    {
+      "path": "reference/files/modules/ladac/control/INDI/indiCeProp_params_default.m",
+      "size_bytes": 867
+    },
+    {
+      "path": "reference/files/modules/ladac/control/INDI/indiCePropAffineCntrl.m",
+      "size_bytes": 202
+    },
+    {
+      "path": "reference/files/modules/ladac/control/INDI/indiCePropFix.m",
+      "size_bytes": 2251
+    },
+    {
+      "path": "reference/files/modules/ladac/control/INDI/indiCePropVar.m",
+      "size_bytes": 1856
+    },
+    {
+      "path": "reference/files/modules/ladac/control/INDI/indiCopterAcc2AttiSmeur.m",
+      "size_bytes": 3049
+    },
+    {
+      "path": "reference/files/modules/ladac/control/INDI/indiCopterAcc2LeanVector.m",
+      "size_bytes": 2570
+    },
+    {
+      "path": "reference/files/modules/ladac/control/INDI/indiCopterLeanVectorUpset.m",
+      "size_bytes": 2122
+    },
+    {
+      "path": "reference/files/modules/ladac/control/INDI/indiPlaneAcc2LeanQR.m",
+      "size_bytes": 3815
+    },
+    {
+      "path": "reference/files/modules/ladac/control/INDI/indiPlaneAcc2PhiQR.m",
+      "size_bytes": 4588
+    },
+    {
+      "path": "reference/files/modules/ladac/control/INDI/indiSensFilt_params_default.m",
+      "size_bytes": 447
+    },
+    {
+      "path": "reference/files/modules/ladac/control/joystick/joystick_example.slx",
+      "size_bytes": 33018
+    },
+    {
+      "path": "reference/files/modules/ladac/control/joystick/joystick_lib.slx",
+      "size_bytes": 27952
+    },
+    {
+      "path": "reference/files/modules/ladac/control/joystick/joystick_setup.slx",
+      "size_bytes": 33705
+    },
+    {
+      "path": "reference/files/modules/ladac/control/joystick/joystickCalibrate.m",
+      "size_bytes": 14633
+    },
+    {
+      "path": "reference/files/modules/ladac/control/joystick/joystickCh2Rpyt.m",
+      "size_bytes": 3753
+    },
+    {
+      "path": "reference/files/modules/ladac/control/joystick/joystickLoadParams.m",
+      "size_bytes": 1837
+    },
+    {
+      "path": "reference/files/modules/ladac/control/joystick/params/joystick_params_Horus_X12.m",
+      "size_bytes": 897
+    },
+    {
+      "path": "reference/files/modules/ladac/control/joystick/params/joystick_params_Taranis_X9D.m",
+      "size_bytes": 1029
+    },
+    {
+      "path": "reference/files/modules/ladac/control/joystick/params/joystick_params_Taranis_X_Lite.m",
+      "size_bytes": 1234
+    },
+    {
+      "path": "reference/files/modules/ladac/control/joystick/params/joystick_params_Xbox_360.m",
+      "size_bytes": 1051
+    },
+    {
+      "path": "reference/files/modules/ladac/control/joystick/README.md",
+      "size_bytes": 3561
+    },
+    {
+      "path": "reference/files/modules/ladac/control/linear_systems/expm2.m",
+      "size_bytes": 1366
+    },
+    {
+      "path": "reference/files/modules/ladac/control/linear_systems/inv2.m",
+      "size_bytes": 598
+    },
+    {
+      "path": "reference/files/modules/ladac/control/linear_systems/linear_systems_lib.slx",
+      "size_bytes": 28520
+    },
+    {
+      "path": "reference/files/modules/ladac/control/linear_systems/lqrY.m",
+      "size_bytes": 3331
+    },
+    {
+      "path": "reference/files/modules/ladac/control/linear_systems/pdt2.m",
+      "size_bytes": 1337
+    },
+    {
+      "path": "reference/files/modules/ladac/control/linear_systems/pt1.m",
+      "size_bytes": 899
+    },
+    {
+      "path": "reference/files/modules/ladac/control/linear_systems/ssCanonControl.m",
+      "size_bytes": 1518
+    },
+    {
+      "path": "reference/files/modules/ladac/control/linear_systems/ssControllability.m",
+      "size_bytes": 1253
+    },
+    {
+      "path": "reference/files/modules/ladac/control/linear_systems/ssOutput.m",
+      "size_bytes": 1050
+    },
+    {
+      "path": "reference/files/modules/ladac/control/linear_systems/ssPlace.m",
+      "size_bytes": 1711
+    },
+    {
+      "path": "reference/files/modules/ladac/control/linear_systems/ssPlaceY.m",
+      "size_bytes": 2387
+    },
+    {
+      "path": "reference/files/modules/ladac/control/linear_systems/tf2ssOcf.m",
+      "size_bytes": 1428
+    },
+    {
+      "path": "reference/files/modules/ladac/control/linear_systems/tustin2.m",
+      "size_bytes": 1104
+    },
+    {
+      "path": "reference/files/modules/ladac/control/NDI/multicopter/eulerAngles_dAcc.m",
+      "size_bytes": 2223
+    },
+    {
+      "path": "reference/files/modules/ladac/control/NDI/multicopter/getEulerAnglesFromAccelerationVectorAndHeading.m",
+      "size_bytes": 1803
+    },
+    {
+      "path": "reference/files/modules/ladac/control/NDI/multicopter/multicopterNDI_lib.slx",
+      "size_bytes": 50741
+    },
+    {
+      "path": "reference/files/modules/ladac/control/NDI/multicopter/ndiCopterAcc2LeanVector.m",
+      "size_bytes": 1930
+    },
+    {
+      "path": "reference/files/modules/ladac/control/NDI/multicopter/ndiCopterAcc2quatRed.m",
+      "size_bytes": 1616
+    },
+    {
+      "path": "reference/files/modules/ladac/control/NDI/ndi_lib.slx",
+      "size_bytes": 26839
+    },
+    {
+      "path": "reference/files/modules/ladac/control/NDI/ndiFeedbackGainLqr.m",
+      "size_bytes": 4734
+    },
+    {
+      "path": "reference/files/modules/ladac/control/NDI/ndiFeedbackGainPlace.m",
+      "size_bytes": 4751
+    },
+    {
+      "path": "reference/files/modules/ladac/control/NDI/ndiOpenLoopSs.m",
+      "size_bytes": 2692
+    },
+    {
+      "path": "reference/files/modules/ladac/control/NDI/ndiPlotClosedLoopErrorDynamics.m",
+      "size_bytes": 3747
+    },
+    {
+      "path": "reference/files/modules/ladac/control/NDI/ndiPrintBlocksFromSs.m",
+      "size_bytes": 2858
+    },
+    {
+      "path": "reference/files/modules/ladac/control/NDI/README.md",
+      "size_bytes": 4555
+    },
+    {
+      "path": "reference/files/modules/ladac/control/PLAN/createBusObjMFile.m",
+      "size_bytes": 2570
+    },
+    {
+      "path": "reference/files/modules/ladac/control/PLAN/createIntegratorOutBus.m",
+      "size_bytes": 8927
+    },
+    {
+      "path": "reference/files/modules/ladac/control/PLAN/createRateLimiter.m",
+      "size_bytes": 7435
+    },
+    {
+      "path": "reference/files/modules/ladac/control/PLAN/createRateLimiterWOSat.m",
+      "size_bytes": 7059
+    },
+    {
+      "path": "reference/files/modules/ladac/control/PLAN/createSaturation.m",
+      "size_bytes": 4393
+    },
+    {
+      "path": "reference/files/modules/ladac/control/PLAN/functions/addBottomSize.m",
+      "size_bytes": 493
+    },
+    {
+      "path": "reference/files/modules/ladac/control/PLAN/functions/createStructFromBusObj.m",
+      "size_bytes": 938
+    },
+    {
+      "path": "reference/files/modules/ladac/control/PLAN/functions/getBusSignalSizes.m",
+      "size_bytes": 1052
+    },
+    {
+      "path": "reference/files/modules/ladac/control/PLAN/functions/getHorizPosOf.m",
+      "size_bytes": 804
+    },
+    {
+      "path": "reference/files/modules/ladac/control/PLAN/functions/getPosOf.m",
+      "size_bytes": 828
+    },
+    {
+      "path": "reference/files/modules/ladac/control/PLAN/functions/getPosOfCoord.m",
+      "size_bytes": 729
+    },
+    {
+      "path": "reference/files/modules/ladac/control/PLAN/functions/maxPosBlk.m",
+      "size_bytes": 684
+    },
+    {
+      "path": "reference/files/modules/ladac/control/PLAN/getBusObjFromSelection.m",
+      "size_bytes": 1981
+    },
+    {
+      "path": "reference/files/modules/ladac/control/PLAN/linerator.m",
+      "size_bytes": 11350
+    },
+    {
+      "path": "reference/files/modules/ladac/control/PLAN/modredEmb.m",
+      "size_bytes": 2049
+    },
+    {
+      "path": "reference/files/modules/ladac/control/PLAN/modredEmb2.m",
+      "size_bytes": 2014
+    },
+    {
+      "path": "reference/files/modules/ladac/control/PLAN/plan_lib.slx",
+      "size_bytes": 40505
+    },
+    {
+      "path": "reference/files/modules/ladac/control/PLAN/planAnalysis.m",
+      "size_bytes": 3920
+    },
+    {
+      "path": "reference/files/modules/ladac/control/PLAN/planPertubator.m",
+      "size_bytes": 6624
+    },
+    {
+      "path": "reference/files/modules/ladac/control/PLAN/rateLimiterReplacer.m",
+      "size_bytes": 3762
+    },
+    {
+      "path": "reference/files/modules/ladac/control/PLAN/rateLimiterReplacerWOSat.m",
+      "size_bytes": 3772
+    },
+    {
+      "path": "reference/files/modules/ladac/control/PLAN/README.md",
+      "size_bytes": 5017
+    },
+    {
+      "path": "reference/files/modules/ladac/control/PLAN/saturate.m",
+      "size_bytes": 1311
+    },
+    {
+      "path": "reference/files/modules/ladac/control/PLAN/saturationReplacer.m",
+      "size_bytes": 2583
+    },
+    {
+      "path": "reference/files/modules/ladac/control/PLAN/transformStateSpace.m",
+      "size_bytes": 637
+    },
+    {
+      "path": "reference/files/modules/ladac/control/README.md",
+      "size_bytes": 2241
+    },
+    {
+      "path": "reference/files/modules/ladac/control/stick/stick_lib.slx",
+      "size_bytes": 31456
+    },
+    {
+      "path": "reference/files/modules/ladac/control/stick/stickRP2LeanCmd.m",
+      "size_bytes": 2395
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/README.md",
+      "size_bytes": 2067
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/section/trajSectionGetAcc.m",
+      "size_bytes": 1330
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/section/trajSectionGetArcLength.m",
+      "size_bytes": 1954
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/section/trajSectionGetDerivatives.m",
+      "size_bytes": 1921
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/section/trajSectionGetFrenetSerret.m",
+      "size_bytes": 2222
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/section/trajSectionGetFrenetSerretWithAcceleration.m",
+      "size_bytes": 2752
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/section/trajSectionGetFrenetSerretWithGravity.m",
+      "size_bytes": 1845
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/section/trajSectionGetLoadFactor.m",
+      "size_bytes": 1016
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/section/trajSectionGetPos.m",
+      "size_bytes": 1397
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/section/trajSectionGetVel.m",
+      "size_bytes": 1734
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/section/trajSectionInit.m",
+      "size_bytes": 1678
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/spline_functions/polyInterpolation.m",
+      "size_bytes": 6077
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/spline_functions/polyInterpolationA.m",
+      "size_bytes": 4154
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/spline_functions/polyInterpolationAx.m",
+      "size_bytes": 6023
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/spline_functions/polyInterpolationb.m",
+      "size_bytes": 3812
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/spline_functions/polyInterpolationCore.m",
+      "size_bytes": 2178
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/spline_functions/polyInterpolationIterative.m",
+      "size_bytes": 3451
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/spline_functions/trajFromCubicSpline.m",
+      "size_bytes": 1825
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/Tools/derivation_analyticMatchingExpressions.m",
+      "size_bytes": 1855
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/Tools/evaluation_arcLengthIntegration.m",
+      "size_bytes": 828
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/Tools/evaluationGetMatchFunctions.m",
+      "size_bytes": 3505
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/traj_lib.slx",
+      "size_bytes": 52525
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/traj_params_default.m",
+      "size_bytes": 472
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/trajFromWaypoints.m",
+      "size_bytes": 2355
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/trajFromWaypointsIterative.m",
+      "size_bytes": 8301
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/trajGetError.m",
+      "size_bytes": 1804
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/trajGetMatch.m",
+      "size_bytes": 10995
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/trajGetMatchEnhanced.m",
+      "size_bytes": 4706
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/trajGetMatchOrder5.m",
+      "size_bytes": 5453
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/trajGetSection.m",
+      "size_bytes": 1036
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/trajInit.m",
+      "size_bytes": 1945
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/trajPlot.m",
+      "size_bytes": 2716
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/trajSetArcLength.m",
+      "size_bytes": 1965
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/trajSetMatch.m",
+      "size_bytes": 1240
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/trajSetSection.m",
+      "size_bytes": 1521
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/trajSweepAlong.m",
+      "size_bytes": 5661
+    },
+    {
+      "path": "reference/files/modules/ladac/control/trajectory/trajValidateWaypoints.m",
+      "size_bytes": 1303
+    },
+    {
+      "path": "reference/files/modules/ladac/control/wpnav/README.md",
+      "size_bytes": 987
+    },
+    {
+      "path": "reference/files/modules/ladac/control/wpnav/wpnav_example.m",
+      "size_bytes": 997
+    },
+    {
+      "path": "reference/files/modules/ladac/control/wpnav/wpnav_lib.slx",
+      "size_bytes": 39882
+    },
+    {
+      "path": "reference/files/modules/ladac/control/wpnav/wpnavCircSeg.m",
+      "size_bytes": 2387
+    },
+    {
+      "path": "reference/files/modules/ladac/control/wpnav/wpnavCircSegGetAcc.m",
+      "size_bytes": 1276
+    },
+    {
+      "path": "reference/files/modules/ladac/control/wpnav/wpnavCircSegGetPos.m",
+      "size_bytes": 950
+    },
+    {
+      "path": "reference/files/modules/ladac/control/wpnav/wpnavCircSegGetVel.m",
+      "size_bytes": 1249
+    },
+    {
+      "path": "reference/files/modules/ladac/control/wpnav/wpnavLineGetPos.m",
+      "size_bytes": 1022
+    },
+    {
+      "path": "reference/files/modules/ladac/control/wpnav/wpnavLineGetVel.m",
+      "size_bytes": 1051
+    },
+    {
+      "path": "reference/files/modules/ladac/control/wpnav/wpnavMatch.m",
+      "size_bytes": 4931
+    },
+    {
+      "path": "reference/files/modules/ladac/control/wpnav/wpnavMatchCircSeg.m",
+      "size_bytes": 2160
+    },
+    {
+      "path": "reference/files/modules/ladac/control/wpnav/wpnavMatchLine.m",
+      "size_bytes": 1617
+    },
+    {
+      "path": "reference/files/modules/ladac/control/wpnav/wpnavPlot.m",
+      "size_bytes": 2830
+    },
+    {
+      "path": "reference/files/modules/ladac/environment/atmosphere/airKinematicViscosity.m",
+      "size_bytes": 830
+    },
+    {
+      "path": "reference/files/modules/ladac/environment/atmosphere/atmosphere_lib.slx",
+      "size_bytes": 42940
+    },
+    {
+      "path": "reference/files/modules/ladac/environment/atmosphere/drydenPowerSpectralDensity.m",
+      "size_bytes": 1495
+    },
+    {
+      "path": "reference/files/modules/ladac/environment/atmosphere/drydenTf.m",
+      "size_bytes": 1192
+    },
+    {
+      "path": "reference/files/modules/ladac/environment/atmosphere/isAtmosphere.m",
+      "size_bytes": 1796
+    },
+    {
+      "path": "reference/files/modules/ladac/environment/atmosphere/oneMinusCosGustFg.m",
+      "size_bytes": 1043
+    },
+    {
+      "path": "reference/files/modules/ladac/environment/atmosphere/oneMinusCosGustFg0.m",
+      "size_bytes": 1370
+    },
+    {
+      "path": "reference/files/modules/ladac/environment/atmosphere/oneMinusCosGustUds.m",
+      "size_bytes": 1122
+    },
+    {
+      "path": "reference/files/modules/ladac/environment/atmosphere/oneMinusCosGustUref.m",
+      "size_bytes": 1226
+    },
+    {
+      "path": "reference/files/modules/ladac/environment/atmosphere/plotTurbulenceIntensityVsAltitude.m",
+      "size_bytes": 884
+    },
+    {
+      "path": "reference/files/modules/ladac/environment/atmosphere/plotTurbulenceScaleLengthVsAltitude.m",
+      "size_bytes": 753
+    },
+    {
+      "path": "reference/files/modules/ladac/environment/atmosphere/turbulenceIntensityRMS.m",
+      "size_bytes": 2862
+    },
+    {
+      "path": "reference/files/modules/ladac/environment/atmosphere/turbulenceScaleLength.m",
+      "size_bytes": 1425
+    },
+    {
+      "path": "reference/files/modules/ladac/environment/atmosphere/vonKarman1D.m",
+      "size_bytes": 2345
+    },
+    {
+      "path": "reference/files/modules/ladac/environment/atmosphere/vonKarman2D.m",
+      "size_bytes": 3441
+    },
+    {
+      "path": "reference/files/modules/ladac/environment/atmosphere/vonKarman2DInitBlock.m",
+      "size_bytes": 2759
+    },
+    {
+      "path": "reference/files/modules/ladac/environment/envir_params_default.m",
+      "size_bytes": 621
+    },
+    {
+      "path": "reference/files/modules/ladac/environment/envirLoadParams.m",
+      "size_bytes": 564
+    },
+    {
+      "path": "reference/files/modules/ladac/environment/environment_lib.slx",
+      "size_bytes": 21335
+    },
+    {
+      "path": "reference/files/modules/ladac/environment/ground/frictionModel.m",
+      "size_bytes": 1928
+    },
+    {
+      "path": "reference/files/modules/ladac/environment/ground/ground_lib.slx",
+      "size_bytes": 40719
+    },
+    {
+      "path": "reference/files/modules/ladac/environment/ground/groundLoadParams.m",
+      "size_bytes": 434
+    },
+    {
+      "path": "reference/files/modules/ladac/environment/ground/groundNormalForce.m",
+      "size_bytes": 2191
+    },
+    {
+      "path": "reference/files/modules/ladac/environment/ground/params_ground_default.m",
+      "size_bytes": 800
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/equations_of_motion_lib.slx",
+      "size_bytes": 21337
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/flexible_body_simple/flexibleBody_lib.slx",
+      "size_bytes": 32471
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/flexible_body_simple/flexibleBodyKineticsSimple.m",
+      "size_bytes": 4103
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/flexible_body_simple/README.md",
+      "size_bytes": 2162
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/README.md",
+      "size_bytes": 512
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/rigid_body/README.md",
+      "size_bytes": 2288
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/rigid_body/rigidBody_lib.slx",
+      "size_bytes": 35980
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/rigid_body/rigidBody_lib_example.slx",
+      "size_bytes": 26375
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/rigid_body/rigidBodyBlockInit.m",
+      "size_bytes": 953
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/rigid_body/rigidBodyCreate.m",
+      "size_bytes": 413
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/rigid_body/rigidBodyKinematicsQuat.m",
+      "size_bytes": 2590
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/rigid_body/rigidBodyKinetics.m",
+      "size_bytes": 2587
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/rigid_body/rigidBodyUnitTest.m",
+      "size_bytes": 775
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/README.md",
+      "size_bytes": 1559
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structure_params_default.m",
+      "size_bytes": 2065
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structureCreate.m",
+      "size_bytes": 4516
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structureCreateFromNastran.m",
+      "size_bytes": 1920
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structureGetAcc.m",
+      "size_bytes": 1341
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structureGetBendingMomentTrafoAt.m",
+      "size_bytes": 1916
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structureGetCg.m",
+      "size_bytes": 1993
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structureGetCutLoadTrafoAt.m",
+      "size_bytes": 7346
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structureGetGravityLoadVector.m",
+      "size_bytes": 1590
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structureGetLoadFromWing.m",
+      "size_bytes": 489
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structureGetLoadVectorFromNodeLoad.m",
+      "size_bytes": 1250
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structureGetNodeCg.m",
+      "size_bytes": 1486
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structureGetNodeIdxFromWingTipToRoot.m",
+      "size_bytes": 3333
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structureGetNodeInertia.m",
+      "size_bytes": 1051
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structureGetNodeInertiaRef.m",
+      "size_bytes": 1475
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structureGetNodeMass.m",
+      "size_bytes": 925
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structureGetNodesConnections.m",
+      "size_bytes": 1689
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structureGetReduced.m",
+      "size_bytes": 2438
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structureGetRefPointTrafo.m",
+      "size_bytes": 3397
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structureGetTotalInertia.m",
+      "size_bytes": 1317
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structureGetTotalMass.m",
+      "size_bytes": 769
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structurePlot.m",
+      "size_bytes": 2879
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structurePlotEigenmode.m",
+      "size_bytes": 1821
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structureScale.m",
+      "size_bytes": 2304
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structureSetDamp.m",
+      "size_bytes": 1431
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structureSetNodeCg.m",
+      "size_bytes": 2083
+    },
+    {
+      "path": "reference/files/modules/ladac/equations_of_motion/structure/structureSetNodeInertia.m",
+      "size_bytes": 1053
+    },
+    {
+      "path": "reference/files/modules/ladac/flight_parameters/aeroAngles.m",
+      "size_bytes": 1310
+    },
+    {
+      "path": "reference/files/modules/ladac/flight_parameters/aeroAnglesDeriv.m",
+      "size_bytes": 1895
+    },
+    {
+      "path": "reference/files/modules/ladac/flight_parameters/aeroAnglesMod.m",
+      "size_bytes": 2088
+    },
+    {
+      "path": "reference/files/modules/ladac/flight_parameters/eulerDeriv2FromOmega.m",
+      "size_bytes": 2492
+    },
+    {
+      "path": "reference/files/modules/ladac/flight_parameters/eulerDerivFromOmega.m",
+      "size_bytes": 1495
+    },
+    {
+      "path": "reference/files/modules/ladac/flight_parameters/flight_parameters_lib.slx",
+      "size_bytes": 74988
+    },
+    {
+      "path": "reference/files/modules/ladac/flight_parameters/flightPathAngle.m",
+      "size_bytes": 146
+    },
+    {
+      "path": "reference/files/modules/ladac/flight_parameters/flightPathAzimuth.m",
+      "size_bytes": 1293
+    },
+    {
+      "path": "reference/files/modules/ladac/flight_parameters/flightPathBankAngle.m",
+      "size_bytes": 1684
+    },
+    {
+      "path": "reference/files/modules/ladac/flight_parameters/flightPathDerivative.m",
+      "size_bytes": 2946
+    },
+    {
+      "path": "reference/files/modules/ladac/flight_parameters/groundSpeed.m",
+      "size_bytes": 1014
+    },
+    {
+      "path": "reference/files/modules/ladac/flight_parameters/machNumber.m",
+      "size_bytes": 492
+    },
+    {
+      "path": "reference/files/modules/ladac/flight_parameters/omegaDerivFromEuler.m",
+      "size_bytes": 2226
+    },
+    {
+      "path": "reference/files/modules/ladac/flight_parameters/omegaFromEuler.m",
+      "size_bytes": 1482
+    },
+    {
+      "path": "reference/files/modules/ladac/flight_parameters/reynoldsNumber.m",
+      "size_bytes": 630
+    },
+    {
+      "path": "reference/files/modules/ladac/ladac_lib.slx",
+      "size_bytes": 26486
+    },
+    {
+      "path": "reference/files/modules/ladac/ladacUnitTest.m",
+      "size_bytes": 1114
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/3DScope/install_3dscope.m",
+      "size_bytes": 2572
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/3DScope/license.txt",
+      "size_bytes": 1522
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/3DScope/lorenz3d.slx",
+      "size_bytes": 27528
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/3DScope/m3dscope_new.slx",
+      "size_bytes": 24202
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/3DScope/m3dscope_old.slx",
+      "size_bytes": 23610
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/3DScope/readme.txt",
+      "size_bytes": 3713
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/3DScope/sfun3d.m",
+      "size_bytes": 8421
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/3DScope/sfunxyz.p",
+      "size_bytes": 1863
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/3DScope/sfunxyz3d.mat",
+      "size_bytes": 32224
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/hobbysplines/hobbysplines.m",
+      "size_bytes": 6815
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/.gitignore",
+      "size_bytes": 597
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/interpolation/example_interpnLinFast.m",
+      "size_bytes": 571
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/interpolation/grid2Coordinates.m",
+      "size_bytes": 1735
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/interpolation/interpnLinFast.m",
+      "size_bytes": 4480
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/LICENSE",
+      "size_bytes": 35149
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/operations/acosReal.m",
+      "size_bytes": 947
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/operations/asinReal.m",
+      "size_bytes": 951
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/operations/crossFast.m",
+      "size_bytes": 857
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/operations/crossSkew.m",
+      "size_bytes": 951
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/operations/divideFinite.m",
+      "size_bytes": 923
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/operations/matrixMultiplyNd.m",
+      "size_bytes": 1836
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/operations/operationsUnitTest.m",
+      "size_bytes": 1944
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/operations/powerFast.m",
+      "size_bytes": 72
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/operations/sqrtReal.m",
+      "size_bytes": 844
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/block_init/blockInitRenameInport.m",
+      "size_bytes": 1299
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/block_init/blockInitReplaceBlock.m",
+      "size_bytes": 1639
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/block_init/blockInitToggleInport.m",
+      "size_bytes": 1070
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/block_init/blockInitToggleOutport.m",
+      "size_bytes": 1087
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/buses/bus2array.m",
+      "size_bytes": 1117
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/buses/clearAllBuses.m",
+      "size_bytes": 596
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/buses/createExampleStruct.m",
+      "size_bytes": 333
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/buses/double2struct.m",
+      "size_bytes": 1245
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/buses/struct2bus.m",
+      "size_bytes": 3886
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/buses/struct2bus_sim_test.slx",
+      "size_bytes": 18561
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/buses/struct2busUnitTest.m",
+      "size_bytes": 1596
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/buses/struct2double.m",
+      "size_bytes": 1080
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/buses/struct2slbus.m",
+      "size_bytes": 1367
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/mask_expression_handling/findBlocksUsingPar.m",
+      "size_bytes": 4262
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/mask_expression_handling/isExprWithVar.m",
+      "size_bytes": 1846
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/mask_expression_handling/maskExprHandling.m",
+      "size_bytes": 13722
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/mask_expression_handling/maskExprHandling_example/init_maskExprHandling_example.m",
+      "size_bytes": 715
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/mask_expression_handling/maskExprHandling_example/maskExprHandling_example.slx",
+      "size_bytes": 28831
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/mask_expression_handling/maskExprHandling_example/maskExprHandling_example_lib.slx",
+      "size_bytes": 41187
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/mask_expression_handling/maskExprHandlingAdd2Block.m",
+      "size_bytes": 18803
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/mask_expression_handling/maskRemoveAllNestedDialogElements.m",
+      "size_bytes": 4761
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/mask_expression_handling/README.md",
+      "size_bytes": 5442
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/utilities/bdIsRoot.m",
+      "size_bytes": 946
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/utilities/checkModelReqs.m",
+      "size_bytes": 4655
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/utilities/getfullnameWithoutLinebreak.m",
+      "size_bytes": 968
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/utilities/getLink2bdroot.m",
+      "size_bytes": 1014
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/simulink/utilities/getLink2Block.m",
+      "size_bytes": 954
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/superCellArray/cell2scellArr.m",
+      "size_bytes": 1969
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/superCellArray/getScellArrAt.m",
+      "size_bytes": 2200
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/superCellArray/initScellArr.m",
+      "size_bytes": 2608
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/superCellArray/scellArr2cell.m",
+      "size_bytes": 1096
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/superCellArray/scellArrayDimLngth.m",
+      "size_bytes": 607
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/superCellArray/scellArrCheckT.m",
+      "size_bytes": 801
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/superCellArray/scellArrMaxDim.m",
+      "size_bytes": 716
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/superCellArray/scellArrNumArrays.m",
+      "size_bytes": 663
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/superCellArray/scellArrT.m",
+      "size_bytes": 2402
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/superCellArray/scellDimT.m",
+      "size_bytes": 1591
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/superCellArray/setScellArrAt.m",
+      "size_bytes": 2553
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/templates/template_model.slx",
+      "size_bytes": 17456
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/templates/templateFunction.m",
+      "size_bytes": 1220
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/test_framework/clc_clear.m",
+      "size_bytes": 675
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/test_framework/existInBaseWorkspace.m",
+      "size_bytes": 1056
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/test_framework/open_model.m",
+      "size_bytes": 1432
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/test_framework/validateLibraryLinks.m",
+      "size_bytes": 2136
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/test_framework/validateModelBuild.m",
+      "size_bytes": 1485
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/utilities/bold.m",
+      "size_bytes": 842
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/utilities/boldWithFrame.m",
+      "size_bytes": 850
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/utilities/getfieldNested.m",
+      "size_bytes": 968
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/utilities/getFileFromPath.m",
+      "size_bytes": 572
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/utilities/getLink2File.m",
+      "size_bytes": 1021
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/utilities/getLink2URL.m",
+      "size_bytes": 927
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/utilities/getUserChoice.m",
+      "size_bytes": 1286
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/utilities/getUserConfirmation.m",
+      "size_bytes": 995
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/utilities/getUserSelection.m",
+      "size_bytes": 1551
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/utilities/printData.m",
+      "size_bytes": 3717
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/utilities/structDouble2Single.m",
+      "size_bytes": 523
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/m-utils/utilities/unpackStruct.m",
+      "size_bytes": 3171
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/MatlabInputRelease/LICENSE",
+      "size_bytes": 11357
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/MatlabInputRelease/matlab/HebiJoystick.m",
+      "size_bytes": 6369
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/MatlabInputRelease/matlab/HebiKeyboard.m",
+      "size_bytes": 4425
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/MatlabInputRelease/matlab/lib/jinput-dx8.dll",
+      "size_bytes": 61952
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/MatlabInputRelease/matlab/lib/jinput-dx8_64.dll",
+      "size_bytes": 65024
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/MatlabInputRelease/matlab/lib/jinput-raw.dll",
+      "size_bytes": 59392
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/MatlabInputRelease/matlab/lib/jinput-raw_64.dll",
+      "size_bytes": 62464
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/MatlabInputRelease/matlab/lib/jinput-wintab.dll",
+      "size_bytes": 56832
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/MatlabInputRelease/matlab/lib/libjinput-linux.so",
+      "size_bytes": 13656
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/MatlabInputRelease/matlab/lib/libjinput-linux64.so",
+      "size_bytes": 14488
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/MatlabInputRelease/matlab/lib/libjinput-osx.jnilib",
+      "size_bytes": 65944
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/MatlabInputRelease/matlab/matlab-input-1.2.jar",
+      "size_bytes": 248612
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/MatlabInputRelease/README.md",
+      "size_bytes": 666
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/MatlabInputRelease/simulink/hebijoyinput.m",
+      "size_bytes": 4083
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/MatlabInputRelease/simulink/matlabinput_lib.slx",
+      "size_bytes": 25120
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/MatlabInputRelease/simulink/slblocks.m",
+      "size_bytes": 416
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/qcat/license.txt",
+      "size_bytes": 1313
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/qcat/README.md",
+      "size_bytes": 501
+    },
+    {
+      "path": "reference/files/modules/ladac/libraries/qcat/wls_alloc.m",
+      "size_bytes": 4158
+    },
+    {
+      "path": "reference/files/modules/ladac/LICENSE",
+      "size_bytes": 35149
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/battery/battery_example.m",
+      "size_bytes": 1115
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/battery/battery_lib.slx",
+      "size_bytes": 32315
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/battery/battery_lipo_database.mat",
+      "size_bytes": 3239
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/battery/battery_params_default.m",
+      "size_bytes": 410
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/battery/batteryAverageLiPoCurve.m",
+      "size_bytes": 5227
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/battery/batteryCreate.m",
+      "size_bytes": 1909
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/battery/batteryParamsFromCurve.m",
+      "size_bytes": 2631
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/battery/batteryPlotDischargeCurve.m",
+      "size_bytes": 692
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/battery/batteryUnitTest.m",
+      "size_bytes": 437
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/battery/batteryVoltage.m",
+      "size_bytes": 1534
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/battery/README.md",
+      "size_bytes": 1548
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/propeller_map-based/DATA_APC.mat",
+      "size_bytes": 4840809
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/propeller_map-based/propellerOp.m",
+      "size_bytes": 3375
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/propeller_map-based/propMap_example.m",
+      "size_bytes": 1178
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/propeller_map-based/propMap_params_default.m",
+      "size_bytes": 514
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/propeller_map-based/propMapAvoidExtrap.m",
+      "size_bytes": 2236
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/propeller_map-based/propMapFitCreate.m",
+      "size_bytes": 5212
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/propeller_map-based/propMapFitGetFactors.m",
+      "size_bytes": 1010
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/propeller_map-based/propMapFitGetZ.m",
+      "size_bytes": 2612
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/propeller_map-based/propMapFitGetZDeriv.m",
+      "size_bytes": 3365
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/propeller_map-based/propMapFitPlot.m",
+      "size_bytes": 2043
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/propeller_map-based/propMapGetBoarders.m",
+      "size_bytes": 1550
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/propeller_map-based/propMapGetNameList.m",
+      "size_bytes": 700
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/propeller_map-based/propMapGridCreate.m",
+      "size_bytes": 5831
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/propeller_map-based/propMapGridPlot.m",
+      "size_bytes": 1435
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/propeller_map-based/propMapLoadParams.m",
+      "size_bytes": 476
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/propeller_map-based/propMapMatch.m",
+      "size_bytes": 2512
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/propeller_map-based/propMapScatterCreate.m",
+      "size_bytes": 2091
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/propeller_map-based/propMapScatterPlot.m",
+      "size_bytes": 1603
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/propeller_map-based/README.md",
+      "size_bytes": 870
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/propulsion_lib.slx",
+      "size_bytes": 39726
+    },
+    {
+      "path": "reference/files/modules/ladac/propulsion/README.md",
+      "size_bytes": 505
+    },
+    {
+      "path": "reference/files/modules/ladac/README.md",
+      "size_bytes": 6150
+    },
+    {
+      "path": "reference/files/modules/ladac/sensors/accelerometer/accelerometer.m",
+      "size_bytes": 2119
+    },
+    {
+      "path": "reference/files/modules/ladac/sensors/rangefinders/rangefinders_example.slx",
+      "size_bytes": 34260
+    },
+    {
+      "path": "reference/files/modules/ladac/sensors/rangefinders/rangefinders_lib.slx",
+      "size_bytes": 30609
+    },
+    {
+      "path": "reference/files/modules/ladac/sensors/sensors_lib.slx",
+      "size_bytes": 28169
+    },
+    {
+      "path": "reference/files/modules/ladac/slblocks.m",
+      "size_bytes": 348
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/algorithms/integralSimpson.m",
+      "size_bytes": 1355
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/algorithms/ladacLsqr.m",
+      "size_bytes": 3610
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/algorithms/ladacLsqrInit.m",
+      "size_bytes": 3495
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/algorithms/ladacLsqrIterate.m",
+      "size_bytes": 4873
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/algorithms/polyVal.m",
+      "size_bytes": 1089
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/axes_transformation_lib.slx",
+      "size_bytes": 68594
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/axisAngle.m",
+      "size_bytes": 1125
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/dcm2Euler.m",
+      "size_bytes": 1199
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/dcm2Lean.m",
+      "size_bytes": 1508
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/dcm2LeanVector.m",
+      "size_bytes": 822
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/dcm2Quat.m",
+      "size_bytes": 2593
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/dcm2QuatCont.m",
+      "size_bytes": 1216
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/dcmBaFromAeroAngles.m",
+      "size_bytes": 1880
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/dcmBaFromAeroAnglesMod.m",
+      "size_bytes": 2464
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/dcmBkFromAngles.m",
+      "size_bytes": 2148
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/dcmDerivFromOmega.m",
+      "size_bytes": 1152
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/dcmDerivFromQuat.m",
+      "size_bytes": 1894
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/dcmKgFromAngles.m",
+      "size_bytes": 1420
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/euler2Dcm.m",
+      "size_bytes": 1697
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/euler2Lean.m",
+      "size_bytes": 592
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/euler2Quat.m",
+      "size_bytes": 1678
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/forceMomentTransform.m",
+      "size_bytes": 1787
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/forcesFromSubsystem.m",
+      "size_bytes": 1240
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/leanAngles2leanVector.m",
+      "size_bytes": 1101
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/leanVector2LeanAngles.m",
+      "size_bytes": 1180
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/leanVectorDeriv2Omega.m",
+      "size_bytes": 1336
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/leanVectorDerivTrafo.m",
+      "size_bytes": 2260
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/ned2Lla.m",
+      "size_bytes": 681
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/quat2Dcm.m",
+      "size_bytes": 1573
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/quat2Euler.m",
+      "size_bytes": 1801
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/velocityAndRateTransform.m",
+      "size_bytes": 1283
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/axes_transformation/velocityFromRot.m",
+      "size_bytes": 1620
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ArduCopter_TemplateController.slx",
+      "size_bytes": 53580
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ardupilot_custom_controller_lib.slx",
+      "size_bytes": 38065
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ArduPilot_parameter/apPar_TypeDef.m",
+      "size_bytes": 550
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ArduPilot_parameter/apParAddTunability2Model.m",
+      "size_bytes": 4261
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ArduPilot_parameter/apParGenerateQGCParFile.m",
+      "size_bytes": 4295
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ArduPilot_parameter/apParProcessCodeExport.m",
+      "size_bytes": 8415
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ArduPilot_parameter/config/apPar_copter_params_default.m",
+      "size_bytes": 921
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ArduPilot_parameter/config/apPar_modelReqs_default.m",
+      "size_bytes": 1658
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ArduPilot_parameter/config/apPar_params_dependent.m",
+      "size_bytes": 3321
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ArduPilot_parameter/config/apPar_plane_params_default.m",
+      "size_bytes": 921
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ArduPilot_parameter/private/apPar_generateAdditionalFiles.m",
+      "size_bytes": 6749
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ArduPilot_parameter/private/apPar_generateParFileHeader.m",
+      "size_bytes": 924
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ArduPilot_parameter/private/apPar_getGroups.m",
+      "size_bytes": 1390
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ArduPilot_parameter/private/apPar_getStructsFromHeaderFile.m",
+      "size_bytes": 5476
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ArduPilot_parameter/private/apPar_modifyCodeExportFiles.m",
+      "size_bytes": 4551
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ArduPilot_parameter/private/apPar_processTunableVars.m",
+      "size_bytes": 5986
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ArduPilot_parameter/private/apPar_shortenFieldpaths.m",
+      "size_bytes": 6713
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ArduPilot_parameter/private/apPar_writeModelAPParamFile.m",
+      "size_bytes": 8359
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ArduPilot_parameter/private/apPar_writeQGCParFile.m",
+      "size_bytes": 3164
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ArduPilot_parameter/private/apPar_writeStructOverrideFile.m",
+      "size_bytes": 1627
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ArduPilot_parameter/README.md",
+      "size_bytes": 11135
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ardupilot_plane_servo_functions.txt",
+      "size_bytes": 1715
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ardupilotCreateInputBuses.m",
+      "size_bytes": 3556
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ardupilotCreateLogBus.m",
+      "size_bytes": 1572
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ardupilotCreateLogSignalNames.m",
+      "size_bytes": 2648
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ardupilotInitLogMuxer.m",
+      "size_bytes": 6847
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ardupilotPlaneActuatorMuxerBlockInit.m",
+      "size_bytes": 3018
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/ArduPlane_TemplateController.slx",
+      "size_bytes": 64323
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_custom_controller/README.md",
+      "size_bytes": 9737
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_SITL/ardupilot_sitl_example.slx",
+      "size_bytes": 32943
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_SITL/ardupilot_sitl_example_init.m",
+      "size_bytes": 1067
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_SITL/ardupilot_sitl_lib.slx",
+      "size_bytes": 52850
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_SITL/ardupilotJson.m",
+      "size_bytes": 2669
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_SITL/ardupilotJsonBlockInit.m",
+      "size_bytes": 1474
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_SITL/ardupilotSimSpeedAnalysis.m",
+      "size_bytes": 687
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/ArduPilot_SITL/README.md",
+      "size_bytes": 10701
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/FlexiFlightVis/flexiFlightVis_lib.slx",
+      "size_bytes": 26900
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/FlexiFlightVis/flexiFlightVis_lib_example.slx",
+      "size_bytes": 22163
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/FlexiFlightVis/flexiFlightVis_lib_example_init.m",
+      "size_bytes": 1221
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/FlexiFlightVis/flexiFlightVisBlockInit.m",
+      "size_bytes": 3988
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/FlexiFlightVis/flexiFlightVisProtocol.m",
+      "size_bytes": 624
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/FlexiFlightVis/README.md",
+      "size_bytes": 1303
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/FlightGear_visualization/flightgear_visualization_lib.slx",
+      "size_bytes": 85353
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/FlightGear_visualization/FlightGearInterface_Example.slx",
+      "size_bytes": 22672
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/FlightGear_visualization/flightgearQuadcopterBlockInit.m",
+      "size_bytes": 1056
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/FlightGear_visualization/flightgearRcvBlockInit.m",
+      "size_bytes": 6318
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/FlightGear_visualization/flightgearRefPos_params_default.m",
+      "size_bytes": 247
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/interfaces_external_programs_lib.slx",
+      "size_bytes": 23545
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/README.md",
+      "size_bytes": 1231
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/TiGL_CPACS/addPathTiGL.m",
+      "size_bytes": 5272
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/TiGL_CPACS/tiglOpenCPACSConfigurationTry.m",
+      "size_bytes": 1271
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/TiGL_CPACS/tixiOpenDocumentTry.m",
+      "size_bytes": 1228
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/tornado_interface/README.md",
+      "size_bytes": 954
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/tornado_interface/tornado_interface_example.m",
+      "size_bytes": 690
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/tornado_interface/tornadoCreateGeo.m",
+      "size_bytes": 5951
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/interfaces_external_programs/tornado_interface/tornadoCreateState.m",
+      "size_bytes": 1364
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/loadParams.m",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/quaternions/quat_lib.slx",
+      "size_bytes": 116871
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/quaternions/quatConj.m",
+      "size_bytes": 852
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/quaternions/quatDerivative.m",
+      "size_bytes": 1908
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/quaternions/quatDistance.m",
+      "size_bytes": 2012
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/quaternions/quatDivide.m",
+      "size_bytes": 1518
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/quaternions/quatExp.m",
+      "size_bytes": 924
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/quaternions/quatIntegration.m",
+      "size_bytes": 2001
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/quaternions/quatInv.m",
+      "size_bytes": 882
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/quaternions/quatLog.m",
+      "size_bytes": 920
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/quaternions/quatLogDivide.m",
+      "size_bytes": 2305
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/quaternions/quatMultiply.m",
+      "size_bytes": 1480
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/quaternions/quatNorm.m",
+      "size_bytes": 828
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/quaternions/quatNormalize.m",
+      "size_bytes": 863
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/quaternions/quatPower.m",
+      "size_bytes": 944
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/quaternions/quatReduced.m",
+      "size_bytes": 1472
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/quaternions/quatReducedDist.m",
+      "size_bytes": 1689
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/quaternions/quatSlerp.m",
+      "size_bytes": 1213
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/quaternions/quatUnitTest.m",
+      "size_bytes": 5152
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/quaternions/README.md",
+      "size_bytes": 1173
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/README.md",
+      "size_bytes": 918
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/unit_conversions/deg2rad.m",
+      "size_bytes": 387
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/unit_conversions/ft2m.m",
+      "size_bytes": 379
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/unit_conversions/m2ft.m",
+      "size_bytes": 379
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/unit_conversions/rad2deg.m",
+      "size_bytes": 387
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/unit_conversions/unit_conversions_lib.slx",
+      "size_bytes": 27594
+    },
+    {
+      "path": "reference/files/modules/ladac/utilities/utilities_lib.slx",
+      "size_bytes": 23784
+    },
+    {
+      "path": "reference/files/Plane/addPathPlane.m",
+      "size_bytes": 407
+    },
+    {
+      "path": "reference/files/Plane/EasyGlider/addPathEasyGlider.m",
+      "size_bytes": 319
+    },
+    {
+      "path": "reference/files/Plane/EasyGlider/EasyGlider_ManualMode.slx",
+      "size_bytes": 64014
+    },
+    {
+      "path": "reference/files/Plane/EasyGlider/EasyGlider_UnitTest.m",
+      "size_bytes": 1481
+    },
+    {
+      "path": "reference/files/Plane/EasyGlider/eval_linearization.m",
+      "size_bytes": 1062
+    },
+    {
+      "path": "reference/files/Plane/EasyGlider/init_EasyGlider.m",
+      "size_bytes": 739
+    },
+    {
+      "path": "reference/files/Plane/EasyGlider/init_EasyGlider_SITL.m",
+      "size_bytes": 625
+    },
+    {
+      "path": "reference/files/Plane/EasyGlider/init_EasyGlider_SITL_gazebo.m",
+      "size_bytes": 680
+    },
+    {
+      "path": "reference/files/Plane/Funray/addPathFunray.m",
+      "size_bytes": 315
+    },
+    {
+      "path": "reference/files/Plane/Funray/ArduPlane_LindiPlane.slx",
+      "size_bytes": 91461
+    },
+    {
+      "path": "reference/files/Plane/Funray/Funray_momentOfInertia.m",
+      "size_bytes": 5228
+    },
+    {
+      "path": "reference/files/Plane/Funray/init_Funray_LindiPlane.m",
+      "size_bytes": 1320
+    },
+    {
+      "path": "reference/files/Plane/Funray/init_Funray_LindiPlane_AP_codegen.m",
+      "size_bytes": 901
+    },
+    {
+      "path": "reference/files/Plane/Funray/init_Funray_SITL.m",
+      "size_bytes": 589
+    },
+    {
+      "path": "reference/files/Plane/Funray/momentOfInertiaPlot.m",
+      "size_bytes": 1485
+    },
+    {
+      "path": "reference/files/Plane/models/AirplaneSimModel.slx",
+      "size_bytes": 47259
+    },
+    {
+      "path": "reference/files/Plane/models/AirplaneSimModel_LindiPlane.slx",
+      "size_bytes": 68988
+    },
+    {
+      "path": "reference/files/Plane/models/AirplaneSimModel_SITL.slx",
+      "size_bytes": 53407
+    },
+    {
+      "path": "reference/files/Plane/models/AirplaneSimModel_SITL_gazebo.slx",
+      "size_bytes": 49420
+    }
+  ],
+  "expected_score": 100.0,
+  "expected_valid_scenarios": 5,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "baseline",
+      "wide_waypoints",
+      "compact_waypoints",
+      "crosswind_positive",
+      "crosswind_negative_low_speed"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 11703342,
+  "excluded_files": []
+}

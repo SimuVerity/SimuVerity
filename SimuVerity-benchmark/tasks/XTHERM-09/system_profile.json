@@ -1,0 +1,301 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XTHERM-09",
+  "collection": "XTHERM",
+  "reference": {
+    "identity_path": "tasks/XTHERM-09/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "AircraftEnvironmentalControlSystem.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XTHERM-09",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a Simscape aircraft environmental-control system for a ground-to-cruise-to-ground mission.",
+    "engineering_objects": [
+      "The physical moist-air path must take hot pressurized engine bleed air through ozone removal and an air-cycle cooling and dehumidification plant with heat exchangers, compressor and turbine, then deliver conditioned air to a finite cabin volume.",
+      "Include a hot-air trim or bypass path and a physical cabin outflow path.",
+      "Cabin relative humidity and ozone concentration must arise from the physical moist-air and trace-gas paths;"
+    ],
+    "physical_paths": [
+      "The physical moist-air path must take hot pressurized engine bleed air through ozone removal and an air-cycle cooling and dehumidification plant with heat exchangers, compressor and turbine, then deliver conditioned air to a finite cabin volume.",
+      "The cabin measurements must close the temperature and pressure loops through physical valves and the air-cycle plant.",
+      "Include a hot-air trim or bypass path and a physical cabin outflow path.",
+      "Cabin relative humidity and ozone concentration must arise from the physical moist-air and trace-gas paths;"
+    ],
+    "functional_paths": [
+      "Build a Simscape aircraft environmental-control system for a ground-to-cruise-to-ground mission.",
+      "Regulate cabin temperature near 22 degC and maintain cabin pressure at or above 80 kPa during low-pressure cruise.",
+      "The controller design is unrestricted."
+    ],
+    "information_paths": [
+      "PassengerCount, EquipmentHeat_W, BleedPressure_kPa, BleedTemperature_degC, OzoneRemovalFraction -> F90-XTHERM-09 plant/control path -> cabin_pressure, atmospheric_pressure, cabin_temperature, atmospheric_temperature, cabin_relative_humidity, atmospheric_relative_humidity, cabin_ozone_ppm, atmospheric_ozone_ppm, acm_mass_flow, turbine_outlet_temperature, flow_valve_area, bypass_valve_area, trim_valve_area, outflow_valve_area"
+    ],
+    "modes_and_events": [
+      "F90-XTHERM-09 startup and continuous operation follow the current public task contract."
+    ],
+    "interfaces": [
+      {
+        "name": "PassengerCount",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read PassengerCount, EquipmentHeat_W, BleedPressure_kPa, BleedTemperature_degC and OzoneRemovalFraction from MATLAB base-workspace variables.",
+        "source": "tasks/XTHERM-09/public_spec.json"
+      },
+      {
+        "name": "EquipmentHeat_W",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "W"
+        ],
+        "range_or_shape": "Read PassengerCount, EquipmentHeat_W, BleedPressure_kPa, BleedTemperature_degC and OzoneRemovalFraction from MATLAB base-workspace variables.",
+        "source": "tasks/XTHERM-09/public_spec.json"
+      },
+      {
+        "name": "BleedPressure_kPa",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kPa"
+        ],
+        "range_or_shape": "Read PassengerCount, EquipmentHeat_W, BleedPressure_kPa, BleedTemperature_degC and OzoneRemovalFraction from MATLAB base-workspace variables.",
+        "source": "tasks/XTHERM-09/public_spec.json"
+      },
+      {
+        "name": "BleedTemperature_degC",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Read PassengerCount, EquipmentHeat_W, BleedPressure_kPa, BleedTemperature_degC and OzoneRemovalFraction from MATLAB base-workspace variables.",
+        "source": "tasks/XTHERM-09/public_spec.json"
+      },
+      {
+        "name": "OzoneRemovalFraction",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read PassengerCount, EquipmentHeat_W, BleedPressure_kPa, BleedTemperature_degC and OzoneRemovalFraction from MATLAB base-workspace variables.",
+        "source": "tasks/XTHERM-09/public_spec.json"
+      },
+      {
+        "name": "cabin_pressure",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "kPa"
+        ],
+        "range_or_shape": "Log complete-mission scalar (one-channel) Timeseries in this exact list: cabin_pressure and atmospheric_pressure in kPa; cabin_temperature, atmospheric_temperature, and turbine_outlet_temperature in degC; cabin_relative_humidity and atmospheric_relative_humidity as unitless fractions; cabin_ozone_ppm and atmospheric_ozone_ppm in ppm; acm_mass_flow in kg/s; and flow_valve_area, bypass_valve_area, trim_valve_area, and outflow_valve_area in m^2.",
+        "source": "tasks/XTHERM-09/public_spec.json"
+      },
+      {
+        "name": "atmospheric_pressure",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "kPa"
+        ],
+        "range_or_shape": "Log complete-mission scalar (one-channel) Timeseries in this exact list: cabin_pressure and atmospheric_pressure in kPa; cabin_temperature, atmospheric_temperature, and turbine_outlet_temperature in degC; cabin_relative_humidity and atmospheric_relative_humidity as unitless fractions; cabin_ozone_ppm and atmospheric_ozone_ppm in ppm; acm_mass_flow in kg/s; and flow_valve_area, bypass_valve_area, trim_valve_area, and outflow_valve_area in m^2.",
+        "source": "tasks/XTHERM-09/public_spec.json"
+      },
+      {
+        "name": "cabin_temperature",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Log complete-mission scalar (one-channel) Timeseries in this exact list: cabin_pressure and atmospheric_pressure in kPa; cabin_temperature, atmospheric_temperature, and turbine_outlet_temperature in degC; cabin_relative_humidity and atmospheric_relative_humidity as unitless fractions; cabin_ozone_ppm and atmospheric_ozone_ppm in ppm; acm_mass_flow in kg/s; and flow_valve_area, bypass_valve_area, trim_valve_area, and outflow_valve_area in m^2.",
+        "source": "tasks/XTHERM-09/public_spec.json"
+      },
+      {
+        "name": "atmospheric_temperature",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Log complete-mission scalar (one-channel) Timeseries in this exact list: cabin_pressure and atmospheric_pressure in kPa; cabin_temperature, atmospheric_temperature, and turbine_outlet_temperature in degC; cabin_relative_humidity and atmospheric_relative_humidity as unitless fractions; cabin_ozone_ppm and atmospheric_ozone_ppm in ppm; acm_mass_flow in kg/s; and flow_valve_area, bypass_valve_area, trim_valve_area, and outflow_valve_area in m^2.",
+        "source": "tasks/XTHERM-09/public_spec.json"
+      },
+      {
+        "name": "cabin_relative_humidity",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Log complete-mission scalar (one-channel) Timeseries in this exact list: cabin_pressure and atmospheric_pressure in kPa; cabin_temperature, atmospheric_temperature, and turbine_outlet_temperature in degC; cabin_relative_humidity and atmospheric_relative_humidity as unitless fractions; cabin_ozone_ppm and atmospheric_ozone_ppm in ppm; acm_mass_flow in kg/s; and flow_valve_area, bypass_valve_area, trim_valve_area, and outflow_valve_area in m^2.",
+        "source": "tasks/XTHERM-09/public_spec.json"
+      },
+      {
+        "name": "atmospheric_relative_humidity",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Log complete-mission scalar (one-channel) Timeseries in this exact list: cabin_pressure and atmospheric_pressure in kPa; cabin_temperature, atmospheric_temperature, and turbine_outlet_temperature in degC; cabin_relative_humidity and atmospheric_relative_humidity as unitless fractions; cabin_ozone_ppm and atmospheric_ozone_ppm in ppm; acm_mass_flow in kg/s; and flow_valve_area, bypass_valve_area, trim_valve_area, and outflow_valve_area in m^2.",
+        "source": "tasks/XTHERM-09/public_spec.json"
+      },
+      {
+        "name": "cabin_ozone_ppm",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "ppm"
+        ],
+        "range_or_shape": "Log complete-mission scalar (one-channel) Timeseries in this exact list: cabin_pressure and atmospheric_pressure in kPa; cabin_temperature, atmospheric_temperature, and turbine_outlet_temperature in degC; cabin_relative_humidity and atmospheric_relative_humidity as unitless fractions; cabin_ozone_ppm and atmospheric_ozone_ppm in ppm; acm_mass_flow in kg/s; and flow_valve_area, bypass_valve_area, trim_valve_area, and outflow_valve_area in m^2.",
+        "source": "tasks/XTHERM-09/public_spec.json"
+      },
+      {
+        "name": "atmospheric_ozone_ppm",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "ppm"
+        ],
+        "range_or_shape": "Log complete-mission scalar (one-channel) Timeseries in this exact list: cabin_pressure and atmospheric_pressure in kPa; cabin_temperature, atmospheric_temperature, and turbine_outlet_temperature in degC; cabin_relative_humidity and atmospheric_relative_humidity as unitless fractions; cabin_ozone_ppm and atmospheric_ozone_ppm in ppm; acm_mass_flow in kg/s; and flow_valve_area, bypass_valve_area, trim_valve_area, and outflow_valve_area in m^2.",
+        "source": "tasks/XTHERM-09/public_spec.json"
+      },
+      {
+        "name": "acm_mass_flow",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "kg/s"
+        ],
+        "range_or_shape": "Log complete-mission scalar (one-channel) Timeseries in this exact list: cabin_pressure and atmospheric_pressure in kPa; cabin_temperature, atmospheric_temperature, and turbine_outlet_temperature in degC; cabin_relative_humidity and atmospheric_relative_humidity as unitless fractions; cabin_ozone_ppm and atmospheric_ozone_ppm in ppm; acm_mass_flow in kg/s; and flow_valve_area, bypass_valve_area, trim_valve_area, and outflow_valve_area in m^2.",
+        "source": "tasks/XTHERM-09/public_spec.json"
+      },
+      {
+        "name": "turbine_outlet_temperature",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Log complete-mission scalar (one-channel) Timeseries in this exact list: cabin_pressure and atmospheric_pressure in kPa; cabin_temperature, atmospheric_temperature, and turbine_outlet_temperature in degC; cabin_relative_humidity and atmospheric_relative_humidity as unitless fractions; cabin_ozone_ppm and atmospheric_ozone_ppm in ppm; acm_mass_flow in kg/s; and flow_valve_area, bypass_valve_area, trim_valve_area, and outflow_valve_area in m^2.",
+        "source": "tasks/XTHERM-09/public_spec.json"
+      },
+      {
+        "name": "flow_valve_area",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m^2"
+        ],
+        "range_or_shape": "Log complete-mission scalar (one-channel) Timeseries in this exact list: cabin_pressure and atmospheric_pressure in kPa; cabin_temperature, atmospheric_temperature, and turbine_outlet_temperature in degC; cabin_relative_humidity and atmospheric_relative_humidity as unitless fractions; cabin_ozone_ppm and atmospheric_ozone_ppm in ppm; acm_mass_flow in kg/s; and flow_valve_area, bypass_valve_area, trim_valve_area, and outflow_valve_area in m^2.",
+        "source": "tasks/XTHERM-09/public_spec.json"
+      },
+      {
+        "name": "bypass_valve_area",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m^2"
+        ],
+        "range_or_shape": "Log complete-mission scalar (one-channel) Timeseries in this exact list: cabin_pressure and atmospheric_pressure in kPa; cabin_temperature, atmospheric_temperature, and turbine_outlet_temperature in degC; cabin_relative_humidity and atmospheric_relative_humidity as unitless fractions; cabin_ozone_ppm and atmospheric_ozone_ppm in ppm; acm_mass_flow in kg/s; and flow_valve_area, bypass_valve_area, trim_valve_area, and outflow_valve_area in m^2.",
+        "source": "tasks/XTHERM-09/public_spec.json"
+      },
+      {
+        "name": "trim_valve_area",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m^2"
+        ],
+        "range_or_shape": "Log complete-mission scalar (one-channel) Timeseries in this exact list: cabin_pressure and atmospheric_pressure in kPa; cabin_temperature, atmospheric_temperature, and turbine_outlet_temperature in degC; cabin_relative_humidity and atmospheric_relative_humidity as unitless fractions; cabin_ozone_ppm and atmospheric_ozone_ppm in ppm; acm_mass_flow in kg/s; and flow_valve_area, bypass_valve_area, trim_valve_area, and outflow_valve_area in m^2.",
+        "source": "tasks/XTHERM-09/public_spec.json"
+      },
+      {
+        "name": "outflow_valve_area",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m^2"
+        ],
+        "range_or_shape": "Log complete-mission scalar (one-channel) Timeseries in this exact list: cabin_pressure and atmospheric_pressure in kPa; cabin_temperature, atmospheric_temperature, and turbine_outlet_temperature in degC; cabin_relative_humidity and atmospheric_relative_humidity as unitless fractions; cabin_ozone_ppm and atmospheric_ozone_ppm in ppm; acm_mass_flow in kg/s; and flow_valve_area, bypass_valve_area, trim_valve_area, and outflow_valve_area in m^2.",
+        "source": "tasks/XTHERM-09/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "The controller design is unrestricted.",
+      "Do not copy setpoints or replay prescribed waveforms as measured outputs."
+    ],
+    "feedback_and_control_causality": [
+      "The physical moist-air path must take hot pressurized engine bleed air through ozone removal and an air-cycle cooling and dehumidification plant with heat exchangers, compressor and turbine, then deliver conditioned air to a finite cabin volume.",
+      "Regulate cabin temperature near 22 degC and maintain cabin pressure at or above 80 kPa during low-pressure cruise.",
+      "The controller design is unrestricted."
+    ],
+    "signal_sources": [
+      "PassengerCount is read from the public MATLAB base-workspace input contract.",
+      "EquipmentHeat_W is read from the public MATLAB base-workspace input contract.",
+      "BleedPressure_kPa is read from the public MATLAB base-workspace input contract.",
+      "BleedTemperature_degC is read from the public MATLAB base-workspace input contract.",
+      "OzoneRemovalFraction is read from the public MATLAB base-workspace input contract.",
+      "cabin_pressure is produced by the implemented plant or controller and logged under the public output contract.",
+      "atmospheric_pressure is produced by the implemented plant or controller and logged under the public output contract.",
+      "cabin_temperature is produced by the implemented plant or controller and logged under the public output contract.",
+      "atmospheric_temperature is produced by the implemented plant or controller and logged under the public output contract.",
+      "cabin_relative_humidity is produced by the implemented plant or controller and logged under the public output contract.",
+      "atmospheric_relative_humidity is produced by the implemented plant or controller and logged under the public output contract.",
+      "cabin_ozone_ppm is produced by the implemented plant or controller and logged under the public output contract.",
+      "atmospheric_ozone_ppm is produced by the implemented plant or controller and logged under the public output contract.",
+      "acm_mass_flow is produced by the implemented plant or controller and logged under the public output contract.",
+      "turbine_outlet_temperature is produced by the implemented plant or controller and logged under the public output contract.",
+      "flow_valve_area is produced by the implemented plant or controller and logged under the public output contract.",
+      "bypass_valve_area is produced by the implemented plant or controller and logged under the public output contract.",
+      "trim_valve_area is produced by the implemented plant or controller and logged under the public output contract.",
+      "outflow_valve_area is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "PassengerCount: Read PassengerCount, EquipmentHeat_W, BleedPressure_kPa, BleedTemperature_degC and OzoneRemovalFraction from MATLAB base-workspace variables.",
+      "EquipmentHeat_W: Read PassengerCount, EquipmentHeat_W, BleedPressure_kPa, BleedTemperature_degC and OzoneRemovalFraction from MATLAB base-workspace variables.",
+      "BleedPressure_kPa: Read PassengerCount, EquipmentHeat_W, BleedPressure_kPa, BleedTemperature_degC and OzoneRemovalFraction from MATLAB base-workspace variables.",
+      "BleedTemperature_degC: Read PassengerCount, EquipmentHeat_W, BleedPressure_kPa, BleedTemperature_degC and OzoneRemovalFraction from MATLAB base-workspace variables.",
+      "OzoneRemovalFraction: Read PassengerCount, EquipmentHeat_W, BleedPressure_kPa, BleedTemperature_degC and OzoneRemovalFraction from MATLAB base-workspace variables."
+    ],
+    "disturbances": [
+      "Build a Simscape aircraft environmental-control system for a ground-to-cruise-to-ground mission."
+    ],
+    "dynamic_processes": [
+      "F90-XTHERM-09 produces time-varying cabin_pressure, atmospheric_pressure, cabin_temperature, atmospheric_temperature, cabin_relative_humidity, atmospheric_relative_humidity, cabin_ozone_ppm, atmospheric_ozone_ppm, acm_mass_flow, turbine_outlet_temperature, flow_valve_area, bypass_valve_area, trim_valve_area, outflow_valve_area over the declared run."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XTHERM-09: prescribing cabin_pressure directly would bypass the system path described by: The physical moist-air path must take hot pressurized engine bleed air through ozone removal and an air-cycle cooling and dehumidification plant with heat exchangers, compressor and turbine, then deliver conditioned air to a finite cabin volume.",
+      "F90-XTHERM-09: replaying a fixed cabin_pressure trace would ignore causal variation in PassengerCount."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XTHERM-09/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XTHERM-09/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XTHERM-09/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

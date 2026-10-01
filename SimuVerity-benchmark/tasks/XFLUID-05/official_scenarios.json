@@ -1,0 +1,146 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XFLUID-05",
+  "scenarios": [
+    {
+      "id": "nominal_six_loads",
+      "class": "nominal_load_sensing_and_pressure_limit",
+      "PumpSpeed_rpm": 2500.0,
+      "FlowDemandScale": 1.0,
+      "LoadOpeningScale": 1.0
+    },
+    {
+      "id": "low_speed",
+      "class": "lower_speed_boundary",
+      "PumpSpeed_rpm": 2200.0,
+      "FlowDemandScale": 0.9,
+      "LoadOpeningScale": 1.0
+    },
+    {
+      "id": "low_speed_rated_demand",
+      "class": "capacity_boundary",
+      "PumpSpeed_rpm": 2200.0,
+      "FlowDemandScale": 1.0,
+      "LoadOpeningScale": 1.0
+    },
+    {
+      "id": "reduced_flow_demand",
+      "class": "flow_setpoint_boundary",
+      "PumpSpeed_rpm": 2500.0,
+      "FlowDemandScale": 0.9,
+      "LoadOpeningScale": 1.0
+    },
+    {
+      "id": "open_load",
+      "class": "lower_pressure_load_boundary",
+      "PumpSpeed_rpm": 2500.0,
+      "FlowDemandScale": 1.0,
+      "LoadOpeningScale": 1.15
+    },
+    {
+      "id": "restrictive_load",
+      "class": "pressure_limiting_boundary",
+      "PumpSpeed_rpm": 2500.0,
+      "FlowDemandScale": 1.0,
+      "LoadOpeningScale": 0.85
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "start_s": 0.0,
+      "stop_s": 1.5,
+      "simulation_mode": "normal",
+      "retain_complete_run": true,
+      "evaluation_adapter": "Expose only the existing pump-speed constant, flow-control-orifice mask setting, and load opening sequence; add non-invasive signal taps and use native Simscape evidence; never save the source model."
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "preferred_reference_score": 90.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.2,
+          "meaning": "nominal rated flow, pressure limiting, yoke control and complete five-piston operation"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "bounded pressure, flow ripple, yoke/spool travel and five-piston phase quality"
+        },
+        "M": {
+          "weight": 0.3,
+          "meaning": "physical five-piston pump and pressure-to-pilot-to-yoke closed-loop causality"
+        },
+        "R": {
+          "weight": 0.2,
+          "meaning": "100 percent worst private-scenario flow retention and pressure containment"
+        },
+        "D": {
+          "weight": 0.2,
+          "meaning": "settling after load transitions, yoke adaptation and entry/exit from pressure limiting"
+        }
+      },
+      "within_group": "weighted_arithmetic_mean",
+      "across_groups": "weighted_geometric_mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum"
+    },
+    "minimum_shortcut_sanity_contract": [
+      "missing_required_output",
+      "fewer_than_five_physical_pistons",
+      "duplicated_piston_traces_without_phase_offsets",
+      "pressure_feedback_disconnected_from_yoke_actuation",
+      "prescribed_flow_or_yoke_trajectory",
+      "pressure_limit_removed_or_bypassed",
+      "private_inputs_ignored_or_nominal_replayed",
+      "load_orifice_not_in_the_real_pump_flow_path"
+    ]
+  },
+  "simulation": {
+    "start_s": 0.0,
+    "stop_s": 1.5,
+    "simulation_mode": "normal",
+    "retain_complete_run": true,
+    "evaluation_adapter": "Expose only the existing pump-speed constant, flow-control-orifice mask setting, and load opening sequence; add non-invasive signal taps and use native Simscape evidence; never save the source model."
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "preferred_reference_score": 90.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.2,
+        "meaning": "nominal rated flow, pressure limiting, yoke control and complete five-piston operation"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "bounded pressure, flow ripple, yoke/spool travel and five-piston phase quality"
+      },
+      "M": {
+        "weight": 0.3,
+        "meaning": "physical five-piston pump and pressure-to-pilot-to-yoke closed-loop causality"
+      },
+      "R": {
+        "weight": 0.2,
+        "meaning": "100 percent worst private-scenario flow retention and pressure containment"
+      },
+      "D": {
+        "weight": 0.2,
+        "meaning": "settling after load transitions, yoke adaptation and entry/exit from pressure limiting"
+      }
+    },
+    "within_group": "weighted_arithmetic_mean",
+    "across_groups": "weighted_geometric_mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum"
+  },
+  "minimum_shortcut_sanity_contract": [
+    "missing_required_output",
+    "fewer_than_five_physical_pistons",
+    "duplicated_piston_traces_without_phase_offsets",
+    "pressure_feedback_disconnected_from_yoke_actuation",
+    "prescribed_flow_or_yoke_trajectory",
+    "pressure_limit_removed_or_bypassed",
+    "private_inputs_ignored_or_nominal_replayed",
+    "load_orifice_not_in_the_real_pump_flow_path"
+  ]
+}

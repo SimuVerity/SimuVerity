@@ -1,0 +1,15 @@
+	function PP = PRESS(TB)
+
+	A=3.2437814;
+	B=5.86826E-3;
+	C=1.1702379E-8;
+	D=2.1878462E-3;
+	TC=647.27;
+	PC=218.167;
+
+	DTB=TC-TB;
+	DEN=(A+B*DTB+C*DTB^3)/(1+D*DTB)*DTB/TB;
+	PP=PC/10^DEN;
+
+
+

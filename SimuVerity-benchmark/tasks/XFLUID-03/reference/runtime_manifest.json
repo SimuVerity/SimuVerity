@@ -1,0 +1,15 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XFLUID-03",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/Tractor-Simscape/Model/TractorEnergyComputation.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 424,
+  "retained_bytes": 3243484,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ]
+}

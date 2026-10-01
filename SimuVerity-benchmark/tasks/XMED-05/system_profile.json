@@ -1,0 +1,128 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XMED-05",
+  "collection": "XMED",
+  "reference": {
+    "identity_path": "tasks/XMED-05/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/PACER_v0.2.0/models/CLSfixed.slx",
+    "model_path": "tasks/XMED-05/reference/files/PACER_v0.2.0/models/CLSfixed.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XMED-05",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a closed-loop dual-chamber cardiac electrophysiology and DDD pacemaker model in Simulink and Stateflow.",
+    "engineering_objects": [
+      "The heart plant must include autonomous atrial excitation, atrioventricular conduction, ventricular excitation and refractory dynamics, and atrial and ventricular intracardiac electrogram generation.",
+      "The sensing paths must drive DDD timing logic, while atrial and ventricular pacing stimuli must be physically reinjected into the heart model so that they alter subsequent cardiac activation and electrograms."
+    ],
+    "physical_paths": [
+      "Every logged event and electrogram must come from the connected sensing, DDD control, pacing-actuation, conduction and cardiac-response paths that determine the simulated rhythm.",
+      "The heart plant must include autonomous atrial excitation, atrioventricular conduction, ventricular excitation and refractory dynamics, and atrial and ventricular intracardiac electrogram generation.",
+      "The sensing paths must drive DDD timing logic, while atrial and ventricular pacing stimuli must be physically reinjected into the heart model so that they alter subsequent cardiac activation and electrograms."
+    ],
+    "functional_paths": [
+      "The controller must preserve intrinsic activity when appropriate, provide lower-rate and atrioventricular support when needed, respect refractory and upper-rate behavior, and avoid sustained missed beats or inappropriate rapid pacing during ectopic and re-entry stress.",
+      "PacingEvents has 8 channels in this order: atrial event detected by the sensing path, ventricular event detected by the sensing path, atrial pacing command, ventricular pacing command, atrial sensed event accepted by the DDD controller, ventricular sensed event accepted by the DDD controller, atrial pacing stimulus delivered to the heart, and ventricular pacing stimulus delivered to the heart.",
+      "Every logged event and electrogram must come from the connected sensing, DDD control, pacing-actuation, conduction and cardiac-response paths that determine the simulated rhythm."
+    ],
+    "information_paths": [
+      "RhythmCondition, SimulationDuration_ms -> F90-XMED-05 plant/control path -> CardiacEGM, PacingEvents"
+    ],
+    "modes_and_events": [
+      "Build a closed-loop dual-chamber cardiac electrophysiology and DDD pacemaker model in Simulink and Stateflow.",
+      "The sensing paths must drive DDD timing logic, while atrial and ventricular pacing stimuli must be physically reinjected into the heart model so that they alter subsequent cardiac activation and electrograms.",
+      "Log complete-run MATLAB Timeseries named CardiacEGM and PacingEvents."
+    ],
+    "interfaces": [
+      {
+        "name": "RhythmCondition",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read RhythmCondition and SimulationDuration_ms from the MATLAB base workspace and support every condition in the public input contract. RhythmCondition is a scalar integer: 0 normal sinus rhythm with borderline atrioventricular delay, 1 sinus bradycardia, 2 atrioventricular conduction block, 3 combined bradycardia, atrioventricular block, ectopy and slow ventricular conduction, 4 premature ventricular activity with retrograde-conduction stress, or 5 extra ventricular activity with re-entry stress.",
+        "source": "tasks/XMED-05/public_spec.json"
+      },
+      {
+        "name": "SimulationDuration_ms",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "ms"
+        ],
+        "range_or_shape": "Read RhythmCondition and SimulationDuration_ms from the MATLAB base workspace and support every condition in the public input contract. SimulationDuration_ms is a real scalar in [6000, 10000] ms.",
+        "source": "tasks/XMED-05/public_spec.json"
+      },
+      {
+        "name": "CardiacEGM",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named CardiacEGM and PacingEvents. CardiacEGM has 2 channels in this order: atrial intracardiac electrogram and ventricular intracardiac electrogram.",
+        "source": "tasks/XMED-05/public_spec.json"
+      },
+      {
+        "name": "PacingEvents",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named CardiacEGM and PacingEvents. PacingEvents has 8 channels in this order: atrial event detected by the sensing path, ventricular event detected by the sensing path, atrial pacing command, ventricular pacing command, atrial sensed event accepted by the DDD controller, ventricular sensed event accepted by the DDD controller, atrial pacing stimulus delivered to the heart, and ventricular pacing stimulus delivered to the heart.",
+        "source": "tasks/XMED-05/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "The controller must preserve intrinsic activity when appropriate, provide lower-rate and atrioventricular support when needed, respect refractory and upper-rate behavior, and avoid sustained missed beats or inappropriate rapid pacing during ectopic and re-entry stress.",
+      "CardiacEGM has 2 channels in this order: atrial intracardiac electrogram and ventricular intracardiac electrogram.",
+      "PacingEvents has 8 channels in this order: atrial event detected by the sensing path, ventricular event detected by the sensing path, atrial pacing command, ventricular pacing command, atrial sensed event accepted by the DDD controller, ventricular sensed event accepted by the DDD controller, atrial pacing stimulus delivered to the heart, and ventricular pacing stimulus delivered to the heart."
+    ],
+    "feedback_and_control_causality": [
+      "Build a closed-loop dual-chamber cardiac electrophysiology and DDD pacemaker model in Simulink and Stateflow.",
+      "The heart plant must include autonomous atrial excitation, atrioventricular conduction, ventricular excitation and refractory dynamics, and atrial and ventricular intracardiac electrogram generation.",
+      "The controller must preserve intrinsic activity when appropriate, provide lower-rate and atrioventricular support when needed, respect refractory and upper-rate behavior, and avoid sustained missed beats or inappropriate rapid pacing during ectopic and re-entry stress."
+    ],
+    "signal_sources": [
+      "RhythmCondition is read from the public MATLAB base-workspace input contract.",
+      "SimulationDuration_ms is read from the public MATLAB base-workspace input contract.",
+      "CardiacEGM is produced by the implemented plant or controller and logged under the public output contract.",
+      "PacingEvents is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "RhythmCondition: Read RhythmCondition and SimulationDuration_ms from the MATLAB base workspace and support every condition in the public input contract. RhythmCondition is a scalar integer: 0 normal sinus rhythm with borderline atrioventricular delay, 1 sinus bradycardia, 2 atrioventricular conduction block, 3 combined bradycardia, atrioventricular block, ectopy and slow ventricular conduction, 4 premature ventricular activity with retrograde-conduction stress, or 5 extra ventricular activity with re-entry stress.",
+      "SimulationDuration_ms: Read RhythmCondition and SimulationDuration_ms from the MATLAB base workspace and support every condition in the public input contract. SimulationDuration_ms is a real scalar in [6000, 10000] ms."
+    ],
+    "disturbances": [
+      "F90-XMED-05 operating variation is supplied through RhythmCondition, SimulationDuration_ms."
+    ],
+    "dynamic_processes": [
+      "The heart plant must include autonomous atrial excitation, atrioventricular conduction, ventricular excitation and refractory dynamics, and atrial and ventricular intracardiac electrogram generation."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XMED-05: prescribing CardiacEGM directly would bypass the system path described by: Every logged event and electrogram must come from the connected sensing, DDD control, pacing-actuation, conduction and cardiac-response paths that determine the simulated rhythm.",
+      "F90-XMED-05: replaying a fixed CardiacEGM trace would ignore causal variation in RhythmCondition."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XMED-05/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XMED-05/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XMED-05/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

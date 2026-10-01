@@ -1,0 +1,770 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+<title>Connectivity Data Structure for Cooling Plate Flow Networks</title>
+<meta name="generator" content="MATLAB 25.1">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2026-02-11">
+<meta name="DC.source" content="HelpConnectivityData.m">
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="content">
+<h1>Connectivity Data Structure for Cooling Plate Flow Networks</h1>
+<!--introduction-->
+<p>This documentation describes the ConnectivityData structure used to represent the topology (components and their connections) and the geometry (positions, diameters, and optional centerlines) of a battery cooling plate flow network. You can use ConnectivityData to generate a Simscape&trade; model of the flow network or to drive analysis and design tools.</p>
+<p>The structure supports common component types&mdash;straight pipes, bends, sources, and sinks&mdash;and a consistent way to define which ports are connected between components.</p>
+<!--/introduction-->
+<h2>Contents</h2>
+<div>
+<ul>
+<li>
+<a href="#1">Syntax</a>
+</li>
+<li>
+<a href="#2">Description</a>
+</li>
+<li>
+<a href="#3">Component Types</a>
+</li>
+<li>
+<a href="#4">Ports and Connectivity</a>
+</li>
+<li>
+<a href="#5">Geometry and Physical Parameters</a>
+</li>
+<li>
+<a href="#6">Field Reference</a>
+</li>
+<li>
+<a href="#7">Minimal Example</a>
+</li>
+<li>
+<a href="#8">Creating a ConnectivityData from Scratch (Step-by-Step)</a>
+</li>
+<li>
+<a href="#9">Creating a ConnectivityData Using Interactive Design Tool</a>
+</li>
+<li>
+<a href="#10">Notes and Best Practices</a>
+</li>
+<li>
+<a href="#11">See Also</a>
+</li>
+</ul>
+</div>
+<h2 id="1">Syntax</h2>
+<pre class="language-matlab">ConnectivityData(k).Component                         = &lt;string&gt;
+ConnectivityData(k).Connectivity.portAName            = &lt;string&gt;
+ConnectivityData(k).Connectivity.portBName            = &lt;string&gt;
+ConnectivityData(k).Connectivity.portHName            = &lt;string&gt;
+ConnectivityData(k).Connectivity.portAConnectedComponent = &lt;string&gt;
+ConnectivityData(k).Connectivity.portBConnectedComponent = &lt;string&gt;
+ConnectivityData(k).Connectivity.portAConnectedPort   = &lt;string&gt;
+ConnectivityData(k).Connectivity.portBConnectedPort   = &lt;string&gt;
+ConnectivityData(k).Connectivity.portHConnected       = <span class="string">"yes"</span>|<span class="string">"no"</span>
+ConnectivityData(k).Parameters.position               = simscape.Value([x1 y1 x2 y2],<span class="string">"m"</span>)
+ConnectivityData(k).Parameters.diameter               = simscape.Value(d,<span class="string">"m"</span>)
+<span class="comment">% Optional for bends and curved segments:</span>
+ConnectivityData(k).Parameters.centerlinePts          = simscape.Value([x y; <span class="keyword">...</span><span class="comment">],"m")</span>
+</pre>
+<h2 id="2">Description</h2>
+<p>A ConnectivityData array is an ordered list of component definitions. Each element k describes one component:</p>
+<div>
+<ul>
+<li>Its type and name ('Component'),</li>
+<li>How its ports connect to other components ('Connectivity' substructure),</li>
+<li>Its geometry and physical sizing parameters ('Parameters' substructure).</li>
+</ul>
+</div>
+<p>The structure is independent of solver or block specifics, making it easy to generate Simscape models programmatically from the same data.</p>
+<p>In a typical parallel-channel design, horizontal pipes carry the coolant left-to-right across the plate, vertical pipes or bends interconnect channels, and the Source/Sink provide inlet and outlet boundary conditions.</p>
+<h2 id="3">Component Types</h2>
+<p>The following component types are commonly used:</p>
+<div>
+<ul>
+<li>PipeN &mdash; Straight pipe segment (N is any unique identifier).</li>
+<li>BendN &mdash; Curved pipe segment connecting two orthogonal directions.</li>
+<li>Source &mdash; Inlet boundary component (e.g., reservoir or pump outlet).</li>
+<li>Sink &mdash; Outlet boundary component (e.g., reservoir or pump inlet).</li>
+</ul>
+</div>
+<p>
+<b>Naming:</b> Component must be a unique string for each element in the array. References in connectivity fields must match these names exactly.</p>
+<h2 id="4">Ports and Connectivity</h2>
+<p>Each component defines up to three ports:</p>
+<div>
+<ul>
+<li>A and B &mdash; Fluid ports (required for Pipes and Bends).</li>
+<li>H &mdash; Thermal/heat port (optional, set connectivity via <b>portHConnected</b> ).</li>
+</ul>
+</div>
+<p>The 'Connectivity' substructure declares port names and the peer connections. Port name strings are typically:</p>
+<div>
+<ul>
+<li>
+<b>Connectivity.portAName</b> = <tt>"A"</tt>
+</li>
+<li>
+<b>Connectivity.portBName</b> = <tt>"B"</tt>
+</li>
+<li>
+<b>Connectivity.portHName</b> = <tt>"H"</tt>
+</li>
+</ul>
+</div>
+<p>For fluid connections, specify the <b>peer component name</b> and the <b>peer port name</b>:</p>
+<div>
+<ul>
+<li>
+<b>Connectivity.portAConnectedComponent</b> &mdash; Name of the component connected to this component's A port.</li>
+<li>
+<b>Connectivity.portAConnectedPort</b> &mdash; Peer port name (commonly "A" or "B" on the peer component).</li>
+<li>
+<b>Connectivity.portBConnectedComponent</b> &mdash; Name of the component connected to this component's B port.</li>
+<li>
+<b>Connectivity.portBConnectedPort</b> &mdash; Peer port name on the peer component.</li>
+</ul>
+</div>
+<p>For thermal/heat port connectivity:</p>
+<div>
+<ul>
+<li>
+<b>Connectivity.portHConnected</b> &mdash; <tt>"yes"</tt> to include and connect the heat port in the generated model, <tt>"no"</tt> to omit.</li>
+</ul>
+</div>
+<p>
+<b>Notes:</b> * Use consistent port name capitalization. By convention, fluid ports are "A" and "B". If your block library uses different names, keep them consistent across all components. * Connections are <b>logical</b> declarations; downstream tooling will create lines between the referenced ports when building the Simscape model.</p>
+<h2 id="5">Geometry and Physical Parameters</h2>
+<p>Geometry lives under the 'Parameters' substructure.</p>
+<div>
+<ul>
+<li>
+<b>Parameters.position</b> &mdash; A 4-element vector wrapped in simscape.Value that defines the start and end coordinates of the component centerline:</li>
+</ul>
+</div>
+<pre>   * [x1 y1 x2 y2] in meters ("m").
+   * For a straight pipe: a single straight segment from (x1,y1) to
+     (x2,y2).
+   * For a bend: still specify the two end points; use
+     *Parameters.centerlinePts* to define the arc between them.</pre>
+<div>
+<ul>
+<li>
+<b>Parameters.diameter</b> &mdash; Inner hydraulic diameter of the pipe or bend, provided as a scalar simscape.Value(d,"m").</li>
+</ul>
+</div>
+<p>
+<b>Optional (bends or curved segments):</b>
+</p>
+<div>
+<ul>
+<li>
+<b>Parameters.centerlinePts</b> &mdash; An N-by-2 array of centerline points [x y] (meters), wrapped in simscape.Value(...,"m"). This overrides the implicit straight segment between (x1,y1) and (x2,y2) and is used to define curved geometry (e.g., elbows). You can generate these points using a helper (e.g., generateBendPts).</li>
+</ul>
+</div>
+<p>
+<b>Units:</b> All geometric quantities must be simscape.Value(...,"m") so the Simscape model can perform unit-consistent calculations.</p>
+<h2 id="6">Field Reference</h2>
+<p>
+<b>Top-level:</b> * *ConnectivityData(k).Component* &mdash; (string) Unique component name.</p>
+<p>
+<b>Connectivity:</b>
+</p>
+<div>
+<ul>
+<li>
+<b>Connectivity.portAName</b> &mdash; (string) Local fluid port A name, typically <tt>"A"</tt> .</li>
+<li>
+<b>Connectivity.portBName</b> &mdash; (string) Local fluid port B name, typically <tt>"B"</tt> .</li>
+<li>
+<b>Connectivity.portHName</b> &mdash; (string) Local heat port name, typically <tt>"H"</tt> .</li>
+<li>
+<b>Connectivity.portAConnectedComponent</b> &mdash; (string) Peer component name connected to local A.</li>
+<li>
+<b>Connectivity.portAConnectedPort</b> &mdash; (string) Peer port name on the peer component.</li>
+<li>
+<b>Connectivity.portBConnectedComponent</b> &mdash; (string) Peer component name connected to local B.</li>
+<li>
+<b>Connectivity.portBConnectedPort</b> &mdash; (string) Peer port name on the peer component.</li>
+<li>
+<b>Connectivity.portHConnected</b> &mdash; ( <tt>"yes"</tt> | |"no"| ) Whether the heat port is present and connected.</li>
+</ul>
+</div>
+<p>
+<b>Parameters:</b>
+</p>
+<div>
+<ul>
+<li>
+<b>Parameters.position</b> &mdash; (simscape.Value) [x1 y1 x2 y2] in meters.</li>
+<li>
+<b>Parameters.diameter</b> &mdash; (simscape.Value) Scalar inner diameter in meters.</li>
+<li>
+<b>Parameters.centerlinePts</b> &mdash; (simscape.Value) Optional [x y] points in meters for curved geometry.</li>
+</ul>
+</div>
+<h2 id="7">Minimal Example</h2>
+<p>The following example illustrates the smallest valid definitions for common components.</p>
+<p>
+<b>Straight vertical pipe (along Y-axis) at X = 0 m level</b>
+</p>
+<pre class="language-matlab">ConnectivityData(1).Component = <span class="string">"Pipe1"</span>;
+ConnectivityData(1).Connectivity.portAName = <span class="string">"A"</span>;
+ConnectivityData(1).Connectivity.portBName = <span class="string">"B"</span>;
+ConnectivityData(1).Connectivity.portHName = <span class="string">"H"</span>;
+ConnectivityData(1).Connectivity.portHConnected = <span class="string">"yes"</span>;
+ConnectivityData(1).Connectivity.portAConnectedComponent = <span class="string">"Source"</span>;
+ConnectivityData(1).Connectivity.portAConnectedPort = <span class="string">"A"</span>;
+ConnectivityData(1).Connectivity.portBConnectedComponent = <span class="string">"Bend1"</span>;
+ConnectivityData(1).Connectivity.portBConnectedPort = <span class="string">"A"</span>;
+ConnectivityData(1).Parameters.position = simscape.Value([0 0 0 0.1980],<span class="string">"m"</span>);
+ConnectivityData(1).Parameters.diameter = simscape.Value(0.002,<span class="string">"m"</span>);
+</pre>
+<p>
+<b>Straight vertical pipe (along Y-axis) at X = 0.05 m level</b>
+</p>
+<pre class="language-matlab">ConnectivityData(2).Component = <span class="string">"Pipe2"</span>;
+ConnectivityData(2).Connectivity.portAName = <span class="string">"A"</span>;
+ConnectivityData(2).Connectivity.portBName = <span class="string">"B"</span>;
+ConnectivityData(2).Connectivity.portHName = <span class="string">"H"</span>;
+ConnectivityData(2).Connectivity.portHConnected = <span class="string">"yes"</span>;
+ConnectivityData(2).Connectivity.portAConnectedComponent = <span class="string">"Bend2"</span>;
+ConnectivityData(2).Connectivity.portAConnectedPort = <span class="string">"A"</span>;
+ConnectivityData(2).Connectivity.portBConnectedComponent = <span class="string">"Sink"</span>;
+ConnectivityData(2).Connectivity.portBConnectedPort = <span class="string">"A"</span>;
+ConnectivityData(2).Parameters.position = simscape.Value([0.0500 0.0020 0.0500 0.2000],<span class="string">"m"</span>);
+ConnectivityData(2).Parameters.diameter = simscape.Value(0.002,<span class="string">"m"</span>);
+</pre>
+<p>
+<b>Straight horizontal pipe (along X-axis) from Source (inlet) to Bend2</b>
+</p>
+<pre class="language-matlab">ConnectivityData(3).Component = <span class="string">"Pipe3"</span>;
+ConnectivityData(3).Connectivity.portAName = <span class="string">"A"</span>;
+ConnectivityData(3).Connectivity.portBName = <span class="string">"B"</span>;
+ConnectivityData(3).Connectivity.portHName = <span class="string">"H"</span>;
+ConnectivityData(3).Connectivity.portHConnected = <span class="string">"yes"</span>;
+ConnectivityData(3).Connectivity.portAConnectedComponent = <span class="string">"Source"</span>;
+ConnectivityData(3).Connectivity.portAConnectedPort = <span class="string">"A"</span>;
+ConnectivityData(3).Connectivity.portBConnectedComponent = <span class="string">"Bend2"</span>;
+ConnectivityData(3).Connectivity.portBConnectedPort = <span class="string">"A"</span>;
+ConnectivityData(3).Parameters.position = simscape.Value([ 0 0 0.0480 0],<span class="string">"m"</span>);
+ConnectivityData(3).Parameters.diameter = simscape.Value(0.002,<span class="string">"m"</span>);
+</pre>
+<p>
+<b>Straight horizontal pipe (along X-axis) from Bend1 to Sink (outlet)</b>
+</p>
+<pre class="language-matlab">ConnectivityData(4).Component = <span class="string">"Pipe4"</span>;
+ConnectivityData(4).Connectivity.portAName = <span class="string">"A"</span>;
+ConnectivityData(4).Connectivity.portBName = <span class="string">"B"</span>;
+ConnectivityData(4).Connectivity.portHName = <span class="string">"H"</span>;
+ConnectivityData(4).Connectivity.portHConnected = <span class="string">"yes"</span>;
+ConnectivityData(4).Connectivity.portAConnectedComponent = <span class="string">"Bend1"</span>;
+ConnectivityData(4).Connectivity.portAConnectedPort = <span class="string">"A"</span>;
+ConnectivityData(4).Connectivity.portBConnectedComponent = <span class="string">"Sink"</span>;
+ConnectivityData(4).Connectivity.portBConnectedPort = <span class="string">"A"</span>;
+ConnectivityData(4).Parameters.position = simscape.Value([0.0020 0.2000 0.0500 0.2000],<span class="string">"m"</span>);
+ConnectivityData(4).Parameters.diameter = simscape.Value(0.002,<span class="string">"m"</span>);
+</pre>
+<p>
+<b>Clockwise bend connecting Pipe1 and Pipe4</b>
+</p>
+<pre class="language-matlab">ConnectivityData(5).Component = <span class="string">"Bend1"</span>;
+ConnectivityData(5).Connectivity.portAName = <span class="string">"A"</span>;
+ConnectivityData(5).Connectivity.portBName = <span class="string">"B"</span>;
+ConnectivityData(5).Connectivity.portHName = <span class="string">"H"</span>;
+ConnectivityData(5).Connectivity.portHConnected = <span class="string">"yes"</span>;
+ConnectivityData(5).Connectivity.portAConnectedComponent = <span class="string">"Pipe1"</span>;
+ConnectivityData(5).Connectivity.portAConnectedPort = <span class="string">"A"</span>;
+ConnectivityData(5).Connectivity.portBConnectedComponent = <span class="string">"Pipe4"</span>;
+ConnectivityData(5).Connectivity.portBConnectedPort = <span class="string">"A"</span>;
+ConnectivityData(5).Parameters.position = simscape.Value([0 0.1980 0.0020 0.2000],<span class="string">"m"</span>);
+<span class="comment">% Generate centerline points (helper function not shown):</span>
+bend1Pts = generateBendPts([0 0.1980],[0.0020 0.2000],0.002,<span class="string">"CW"</span>);
+ConnectivityData(5).Parameters.centerlinePts = simscape.Value(bend1Pts,<span class="string">"m"</span>);
+ConnectivityData(5).Parameters.diameter = simscape.Value(0.002,<span class="string">"m"</span>);
+</pre>
+<p>
+<b>Counter-clockwise bend connecting Pipe3 and Pipe2</b>
+</p>
+<pre class="language-matlab">ConnectivityData(6).Component = <span class="string">"Bend2"</span>;
+ConnectivityData(6).Connectivity.portAName = <span class="string">"A"</span>;
+ConnectivityData(6).Connectivity.portBName = <span class="string">"B"</span>;
+ConnectivityData(6).Connectivity.portHName = <span class="string">"H"</span>;
+ConnectivityData(6).Connectivity.portHConnected = <span class="string">"yes"</span>;
+ConnectivityData(6).Connectivity.portAConnectedComponent = <span class="string">"Pipe3"</span>;
+ConnectivityData(6).Connectivity.portAConnectedPort = <span class="string">"A"</span>;
+ConnectivityData(6).Connectivity.portBConnectedComponent = <span class="string">"Pipe2"</span>;
+ConnectivityData(6).Connectivity.portBConnectedPort = <span class="string">"A"</span>;
+ConnectivityData(6).Parameters.position = simscape.Value([0.0480 0 0.0500 0.0020],<span class="string">"m"</span>);
+<span class="comment">% Generate centerline points (helper function not shown):</span>
+bend2Pts = generateBendPts([0.0480 0],[0.0500 0.0020],0.002,<span class="string">"CCW"</span>);
+ConnectivityData(6).Parameters.centerlinePts = simscape.Value(bend2Pts,<span class="string">"m"</span>);
+ConnectivityData(6).Parameters.diameter = simscape.Value(0.002,<span class="string">"m"</span>);
+</pre>
+<h2 id="8">Creating a ConnectivityData from Scratch (Step-by-Step)</h2>
+<p>1. <b>Plan your topology</b> (paper sketch or CAD): list every segment (pipes, bends) and the inlet/outlet components (Source, Sink).</p>
+<p>2. <b>Assign unique names</b> to all components. Example: "Pipe1"..."PipeN", "Bend1"..."BendM", "Source", "Sink".</p>
+<p>3. <b>Define geometry</b> for each component: * For straight pipes, set Parameters.position = simscape.Value([x1 y1 x2 y2],"m"). * For bends, set position to the endpoints and provide Parameters.centerlinePts = simscape.Value([x y; ...],"m"). * Choose `Parameters.diameter = simscape.Value(d,"m")` consistently across segments unless you intentionally vary it.</p>
+<p>4. <b>*Declare ports</b><b> (`A`, `B`, and optionally `H`) and **connectivity</b>*: * For each component, fill `portAConnectedComponent` and `portAConnectedPort` with the peer component name and port. * Likewise for `B`. Ensure graph consistency (every connection appears once on each side, unless connecting to a boundary component). * Set `portHConnected = "yes"` if you intend to model heat transfer.</p>
+<p>5. <b>*Validate connectivity</b>*: * Every referenced component must exist in `ConnectivityData`. * Port names must match on both connected sides (e.g., A&harr;B). * No dangling fluid ports unless deliberately used for boundaries.</p>
+<p>6.(Optional) Generate bends automatically**: * Use a helper such as `generateBendPts(startXY, endXY, radius, sense)` to create smooth centerline arcs; wrap the result with `simscape.Value(...,"m")`.</p>
+<p>7. <b>*Apply global defaults</b>*: * It is common to assign a uniform diameter across all components:</p>
+<pre>     for k = 1:numel(ConnectivityData)
+       ConnectivityData(k).Parameters.diameter = simscape.Value(0.002,"m");
+     end</pre>
+<h2 id="9">Creating a ConnectivityData Using Interactive Design Tool</h2>
+<p>To create a connectivity data structure interactively, use the design tool provided with the project. This tool enables you to configure a cooling plate flow network without manually defining each component and connection. The tool streamlines the design process and allows rapid evaluation of design alternatives compared to manual creation of the ConnectivityData structure.</p>
+<p>
+<b>Syntax</b>
+</p>
+<pre class="language-matlab">ConnectivityData = designCoolingPlateFlowNetwork
+</pre>
+<p>
+<b>Description</b>
+</p>
+<p>The function `designCoolingPlateFlowNetwork` launches an interactive figure-based tool that guides you through the steps of designing a cooling plate flow network. The tool supports multiple design types and channel configurations, and automatically generates a valid ConnectivityData structure based on your selections.</p>
+<p>
+<b>How to Launch</b>
+</p>
+<p>To launch the tool, ensure that the project is loaded, then enter the following command at the MATLAB&reg; command prompt:</p>
+<pre class="language-matlab">ConnectivityData = designCoolingPlateFlowNetwork;
+</pre>
+<p>The tool opens in a figure window with panels for selecting design type, channel configuration, and geometry parameters. To know more, see <a href="matlab:web('HelpDesignCoolingPlateFlowNetwork.html','-new')">Design a Battery Cooling Plate Flow Network</a>.</p>
+<p>
+<img vspace="5" hspace="5" src="DesignCoolingFlowNetwork.png" alt=""> </p>
+<h2 id="10">Notes and Best Practices</h2>
+<div>
+<ul>
+<li>
+<b>*Units:</b>* Always use `simscape.Value` with `"m"` for geometry to maintain unit consistency.</li>
+<li>
+<b>*Orientation:</b>* The coordinate system is user-defined. Typical usage sets X to the right and Y upward (or as per your plate layout). Keep it consistent across the design.</li>
+<li>
+<b>*Heat Port (`H`):</b>* If the associated Simscape components include a thermal port, set `portHConnected = "yes"` to enable connections to the thermal network; otherwise set `"no"`.</li>
+<li>
+<b>*Component Names:</b>* Use simple, unique names and avoid spaces to ease programmatic processing.</li>
+<li>
+<b>*Curved Geometry:</b>* Prefer centerline point sets for bends to avoid ambiguity in curvature and to improve geometric fidelity.</li>
+</ul>
+</div>
+<h2 id="11">See Also</h2>
+<p>
+<a href="matlab:web('HelpDesignCoolingPlateFlowNetwork.html','-new')">Design a Battery Cooling Plate Flow Network</a>.</p>
+<p class="footer">Copyright 2026 The MathWorks, Inc.<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2025a</a>
+<br>
+</p>
+</div>
+<!--
+##### SOURCE BEGIN #####
+%% Connectivity Data Structure for Cooling Plate Flow Networks
+%
+% This documentation describes the ConnectivityData structure used to
+% represent the topology (components and their connections) and the
+% geometry (positions, diameters, and optional centerlines) of a battery
+% cooling plate flow network. You can use ConnectivityData to generate a
+% Simscape(TM) model of the flow network or to drive analysis and design
+% tools.
+%
+% The structure supports common component types—straight pipes, bends,
+% sources, and sinks—and a consistent way to define which ports are
+% connected between components.
+
+% Copyright 2026 The MathWorks, Inc.
+
+%% Syntax
+%
+%   ConnectivityData(k).Component                         = <string>
+%   ConnectivityData(k).Connectivity.portAName            = <string>
+%   ConnectivityData(k).Connectivity.portBName            = <string>
+%   ConnectivityData(k).Connectivity.portHName            = <string>
+%   ConnectivityData(k).Connectivity.portAConnectedComponent = <string>
+%   ConnectivityData(k).Connectivity.portBConnectedComponent = <string>
+%   ConnectivityData(k).Connectivity.portAConnectedPort   = <string>
+%   ConnectivityData(k).Connectivity.portBConnectedPort   = <string>
+%   ConnectivityData(k).Connectivity.portHConnected       = "yes"|"no"
+%   ConnectivityData(k).Parameters.position               = simscape.Value([x1 y1 x2 y2],"m")
+%   ConnectivityData(k).Parameters.diameter               = simscape.Value(d,"m")
+%   % Optional for bends and curved segments:
+%   ConnectivityData(k).Parameters.centerlinePts          = simscape.Value([x y; ...],"m")
+%
+%% Description
+%
+% A ConnectivityData array is an ordered list of component definitions.
+% Each element k describes one component:
+%
+% * Its type and name ('Component'),
+% * How its ports connect to other components ('Connectivity' substructure),
+% * Its geometry and physical sizing parameters ('Parameters' substructure).
+%
+% The structure is independent of solver or block specifics, making it easy
+% to generate Simscape models programmatically from the same data.
+%
+% In a typical parallel-channel design, horizontal pipes carry the coolant
+% left-to-right across the plate, vertical pipes or bends interconnect
+% channels, and the Source/Sink provide inlet and outlet boundary
+% conditions.
+%
+%% Component Types
+%
+% The following component types are commonly used:
+%
+% * PipeN — Straight pipe segment (N is any unique identifier).
+% * BendN — Curved pipe segment connecting two orthogonal directions.
+% * Source — Inlet boundary component (e.g., reservoir or pump outlet).
+% * Sink — Outlet boundary component (e.g., reservoir or pump inlet).
+%
+% *Naming:* Component must be a unique string for each element in the
+% array. References in connectivity fields must match these names exactly.
+%
+%% Ports and Connectivity
+%
+% Each component defines up to three ports:
+%
+% * A and B — Fluid ports (required for Pipes and Bends).
+% * H — Thermal/heat port (optional, set connectivity via *portHConnected* ).
+%
+% The 'Connectivity' substructure declares port names and the peer
+% connections. Port name strings are typically:
+%
+% * *Connectivity.portAName* = |"A"| 
+% * *Connectivity.portBName* = |"B"| 
+% * *Connectivity.portHName* = |"H"| 
+%
+% For fluid connections, specify the *peer component name* and the *peer
+% port name*:
+%
+% * *Connectivity.portAConnectedComponent* — Name of the component
+%   connected to this component's A port.
+% * *Connectivity.portAConnectedPort* — Peer port name (commonly "A" or
+%   "B" on the peer component).
+% * *Connectivity.portBConnectedComponent* — Name of the component
+%   connected to this component's B port.
+% * *Connectivity.portBConnectedPort* — Peer port name on the peer
+%   component.
+%
+% For thermal/heat port connectivity:
+%
+% * *Connectivity.portHConnected* — |"yes"| to include and connect the heat
+%   port in the generated model, |"no"| to omit.
+%
+% *Notes:*
+% * Use consistent port name capitalization. By convention, fluid ports are
+%   "A" and "B". If your block library uses different names, keep them
+%   consistent across all components.
+% * Connections are *logical* declarations; downstream tooling will create
+%   lines between the referenced ports when building the Simscape model.
+%
+%% Geometry and Physical Parameters
+%
+% Geometry lives under the 'Parameters' substructure.
+%
+% * *Parameters.position* — A 4-element vector wrapped in simscape.Value
+%   that defines the start and end coordinates of the component centerline:
+%
+%     * [x1 y1 x2 y2] in meters ("m").
+%     * For a straight pipe: a single straight segment from (x1,y1) to
+%       (x2,y2).
+%     * For a bend: still specify the two end points; use
+%       *Parameters.centerlinePts* to define the arc between them.
+%
+% * *Parameters.diameter* — Inner hydraulic diameter of the pipe or bend,
+%   provided as a scalar simscape.Value(d,"m").
+%
+% *Optional (bends or curved segments):*
+%
+% * *Parameters.centerlinePts* — An N-by-2 array of centerline points
+%   [x y] (meters), wrapped in simscape.Value(...,"m"). This overrides
+%   the implicit straight segment between (x1,y1) and (x2,y2) and is
+%   used to define curved geometry (e.g., elbows). You can generate these
+%   points using a helper (e.g., generateBendPts).
+%
+% *Units:* All geometric quantities must be simscape.Value(...,"m") so the
+% Simscape model can perform unit-consistent calculations.
+%
+%% Field Reference
+%
+% *Top-level:*
+% * *ConnectivityData(k).Component* — (string) Unique component name.
+%
+% *Connectivity:*
+%
+% * *Connectivity.portAName* — (string) Local fluid port A name, typically |"A"| .
+% * *Connectivity.portBName* — (string) Local fluid port B name, typically |"B"| .
+% * *Connectivity.portHName* — (string) Local heat port name, typically |"H"| .
+% * *Connectivity.portAConnectedComponent* — (string) Peer component name connected to local A.
+% * *Connectivity.portAConnectedPort* — (string) Peer port name on the peer component.
+% * *Connectivity.portBConnectedComponent* — (string) Peer component name connected to local B.
+% * *Connectivity.portBConnectedPort* — (string) Peer port name on the peer component.
+% * *Connectivity.portHConnected* — ( |"yes"| | |"no"| ) Whether the heat port is present and connected.
+%
+% *Parameters:*
+%
+% * *Parameters.position* — (simscape.Value) [x1 y1 x2 y2] in meters.
+% * *Parameters.diameter* — (simscape.Value) Scalar inner diameter in meters.
+% * *Parameters.centerlinePts* — (simscape.Value) Optional [x y] points in meters for curved geometry.
+%
+%% Minimal Example
+%
+% The following example illustrates the smallest valid definitions for
+% common components.
+%
+% *Straight vertical pipe (along Y-axis) at X = 0 m level*
+%
+%   ConnectivityData(1).Component = "Pipe1";
+%   ConnectivityData(1).Connectivity.portAName = "A";
+%   ConnectivityData(1).Connectivity.portBName = "B";
+%   ConnectivityData(1).Connectivity.portHName = "H";
+%   ConnectivityData(1).Connectivity.portHConnected = "yes";
+%   ConnectivityData(1).Connectivity.portAConnectedComponent = "Source";
+%   ConnectivityData(1).Connectivity.portAConnectedPort = "A";
+%   ConnectivityData(1).Connectivity.portBConnectedComponent = "Bend1";
+%   ConnectivityData(1).Connectivity.portBConnectedPort = "A";
+%   ConnectivityData(1).Parameters.position = simscape.Value([0 0 0 0.1980],"m");
+%   ConnectivityData(1).Parameters.diameter = simscape.Value(0.002,"m");
+%
+% *Straight vertical pipe (along Y-axis) at X = 0.05 m level*
+%
+%   ConnectivityData(2).Component = "Pipe2";
+%   ConnectivityData(2).Connectivity.portAName = "A";
+%   ConnectivityData(2).Connectivity.portBName = "B";
+%   ConnectivityData(2).Connectivity.portHName = "H";
+%   ConnectivityData(2).Connectivity.portHConnected = "yes";
+%   ConnectivityData(2).Connectivity.portAConnectedComponent = "Bend2";
+%   ConnectivityData(2).Connectivity.portAConnectedPort = "A";
+%   ConnectivityData(2).Connectivity.portBConnectedComponent = "Sink";
+%   ConnectivityData(2).Connectivity.portBConnectedPort = "A";
+%   ConnectivityData(2).Parameters.position = simscape.Value([0.0500 0.0020 0.0500 0.2000],"m");
+%   ConnectivityData(2).Parameters.diameter = simscape.Value(0.002,"m");
+%
+% *Straight horizontal pipe (along X-axis) from Source (inlet) to Bend2*
+%
+%   ConnectivityData(3).Component = "Pipe3";
+%   ConnectivityData(3).Connectivity.portAName = "A";
+%   ConnectivityData(3).Connectivity.portBName = "B";
+%   ConnectivityData(3).Connectivity.portHName = "H";
+%   ConnectivityData(3).Connectivity.portHConnected = "yes";
+%   ConnectivityData(3).Connectivity.portAConnectedComponent = "Source";
+%   ConnectivityData(3).Connectivity.portAConnectedPort = "A";
+%   ConnectivityData(3).Connectivity.portBConnectedComponent = "Bend2";
+%   ConnectivityData(3).Connectivity.portBConnectedPort = "A";
+%   ConnectivityData(3).Parameters.position = simscape.Value([ 0 0 0.0480 0],"m");
+%   ConnectivityData(3).Parameters.diameter = simscape.Value(0.002,"m");
+%
+% *Straight horizontal pipe (along X-axis) from Bend1 to Sink (outlet)*
+%
+%   ConnectivityData(4).Component = "Pipe4";
+%   ConnectivityData(4).Connectivity.portAName = "A";
+%   ConnectivityData(4).Connectivity.portBName = "B";
+%   ConnectivityData(4).Connectivity.portHName = "H";
+%   ConnectivityData(4).Connectivity.portHConnected = "yes";
+%   ConnectivityData(4).Connectivity.portAConnectedComponent = "Bend1";
+%   ConnectivityData(4).Connectivity.portAConnectedPort = "A";
+%   ConnectivityData(4).Connectivity.portBConnectedComponent = "Sink";
+%   ConnectivityData(4).Connectivity.portBConnectedPort = "A";
+%   ConnectivityData(4).Parameters.position = simscape.Value([0.0020 0.2000 0.0500 0.2000],"m");
+%   ConnectivityData(4).Parameters.diameter = simscape.Value(0.002,"m");
+%
+% *Clockwise bend connecting Pipe1 and Pipe4*
+%
+%   ConnectivityData(5).Component = "Bend1";
+%   ConnectivityData(5).Connectivity.portAName = "A";
+%   ConnectivityData(5).Connectivity.portBName = "B";
+%   ConnectivityData(5).Connectivity.portHName = "H";
+%   ConnectivityData(5).Connectivity.portHConnected = "yes";
+%   ConnectivityData(5).Connectivity.portAConnectedComponent = "Pipe1";
+%   ConnectivityData(5).Connectivity.portAConnectedPort = "A";
+%   ConnectivityData(5).Connectivity.portBConnectedComponent = "Pipe4";
+%   ConnectivityData(5).Connectivity.portBConnectedPort = "A";
+%   ConnectivityData(5).Parameters.position = simscape.Value([0 0.1980 0.0020 0.2000],"m");
+%   % Generate centerline points (helper function not shown):
+%   bend1Pts = generateBendPts([0 0.1980],[0.0020 0.2000],0.002,"CW");
+%   ConnectivityData(5).Parameters.centerlinePts = simscape.Value(bend1Pts,"m");
+%   ConnectivityData(5).Parameters.diameter = simscape.Value(0.002,"m");
+%
+% *Counter-clockwise bend connecting Pipe3 and Pipe2*
+%
+%   ConnectivityData(6).Component = "Bend2";
+%   ConnectivityData(6).Connectivity.portAName = "A";
+%   ConnectivityData(6).Connectivity.portBName = "B";
+%   ConnectivityData(6).Connectivity.portHName = "H";
+%   ConnectivityData(6).Connectivity.portHConnected = "yes";
+%   ConnectivityData(6).Connectivity.portAConnectedComponent = "Pipe3";
+%   ConnectivityData(6).Connectivity.portAConnectedPort = "A";
+%   ConnectivityData(6).Connectivity.portBConnectedComponent = "Pipe2";
+%   ConnectivityData(6).Connectivity.portBConnectedPort = "A";
+%   ConnectivityData(6).Parameters.position = simscape.Value([0.0480 0 0.0500 0.0020],"m");
+%   % Generate centerline points (helper function not shown):
+%   bend2Pts = generateBendPts([0.0480 0],[0.0500 0.0020],0.002,"CCW");
+%   ConnectivityData(6).Parameters.centerlinePts = simscape.Value(bend2Pts,"m");
+%   ConnectivityData(6).Parameters.diameter = simscape.Value(0.002,"m");
+%
+%% Creating a ConnectivityData from Scratch (Step-by-Step)
+%
+% 1. *Plan your topology* (paper sketch or CAD): list every segment
+%    (pipes, bends) and the inlet/outlet components (Source, Sink).
+%
+% 2. *Assign unique names* to all components. Example: "Pipe1"..."PipeN",
+%    "Bend1"..."BendM", "Source", "Sink".
+%
+% 3. *Define geometry* for each component:
+%    * For straight pipes, set Parameters.position = simscape.Value([x1 y1 x2 y2],"m").
+%    * For bends, set position to the endpoints and provide
+%      Parameters.centerlinePts = simscape.Value([x y; ...],"m").
+%    * Choose `Parameters.diameter = simscape.Value(d,"m")` consistently across segments
+%      unless you intentionally vary it.
+%
+% 4. **Declare ports** (`A`, `B`, and optionally `H`) and **connectivity**:
+%    * For each component, fill `portAConnectedComponent` and `portAConnectedPort`
+%      with the peer component name and port.
+%    * Likewise for `B`. Ensure graph consistency (every connection appears
+%      once on each side, unless connecting to a boundary component).
+%    * Set `portHConnected = "yes"` if you intend to model heat transfer.
+%
+% 5. **Validate connectivity**:
+%    * Every referenced component must exist in `ConnectivityData`.
+%    * Port names must match on both connected sides (e.g., A↔B).
+%    * No dangling fluid ports unless deliberately used for boundaries.
+%
+% 6. **(Optional) Generate bends automatically**:
+%    * Use a helper such as `generateBendPts(startXY, endXY, radius, sense)`
+%      to create smooth centerline arcs; wrap the result with
+%      `simscape.Value(...,"m")`.
+%
+% 7. **Apply global defaults**:
+%    * It is common to assign a uniform diameter across all components:
+%
+%       for k = 1:numel(ConnectivityData)
+%         ConnectivityData(k).Parameters.diameter = simscape.Value(0.002,"m");
+%       end
+%
+
+%% Creating a ConnectivityData Using Interactive Design Tool
+%
+% To create a connectivity data structure interactively, use the design
+% tool provided with the project. This tool enables you to configure a
+% cooling plate flow network without manually defining each component and
+% connection. The tool streamlines the design process and allows rapid evaluation of
+% design alternatives compared to manual creation of the ConnectivityData
+% structure.
+%
+% *Syntax*
+%
+%   ConnectivityData = designCoolingPlateFlowNetwork
+%
+% *Description*
+%
+% The function `designCoolingPlateFlowNetwork` launches an interactive
+% figure-based tool that guides you through the steps of designing a
+% cooling plate flow network. The tool supports multiple design types and
+% channel configurations, and automatically generates a valid
+% ConnectivityData structure based on your selections.
+%
+% *How to Launch*
+%
+% To launch the tool, ensure that the project is loaded, then enter the
+% following command at the MATLAB® command prompt:
+%
+%   ConnectivityData = designCoolingPlateFlowNetwork;
+%
+% The tool opens in a figure window with panels for selecting design type,
+% channel configuration, and geometry parameters. To know more, see
+% <matlab:web('HelpDesignCoolingPlateFlowNetwork.html','-new') Design a 
+% Battery Cooling Plate Flow Network>.
+%
+%
+% <<DesignCoolingFlowNetwork.png>>
+%
+
+%% Notes and Best Practices
+%
+% * **Units:** Always use `simscape.Value` with `"m"` for geometry to
+%   maintain unit consistency.
+% * **Orientation:** The coordinate system is user-defined. Typical usage
+%   sets X to the right and Y upward (or as per your plate layout). Keep it
+%   consistent across the design.
+% * **Heat Port (`H`):** If the associated Simscape components include a
+%   thermal port, set `portHConnected = "yes"` to enable connections to the
+%   thermal network; otherwise set `"no"`.
+% * **Component Names:** Use simple, unique names and avoid spaces to ease
+%   programmatic processing.
+% * **Curved Geometry:** Prefer centerline point sets for bends to avoid
+%   ambiguity in curvature and to improve geometric fidelity.
+%
+
+%% See Also
+%
+% <matlab:web('HelpDesignCoolingPlateFlowNetwork.html','-new') Design a 
+% Battery Cooling Plate Flow Network>.
+%
+##### SOURCE END #####
+-->
+</body>
+</html>

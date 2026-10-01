@@ -1,0 +1,40 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XELEC-08",
+  "file_count": 3,
+  "files": [
+    {
+      "path": "reference/files/license.txt",
+      "size_bytes": 1313
+    },
+    {
+      "path": "reference/files/statom_3_phase.mdl",
+      "size_bytes": 221305
+    },
+    {
+      "path": "reference/files/statom_3_phase.mdl.r2010a",
+      "size_bytes": 179157
+    }
+  ],
+  "entrypoint": "reference/files/statom_3_phase.mdl",
+  "expected_score": 92.039638,
+  "expected_valid_scenarios": 8,
+  "score_tolerance": 5e-07,
+  "scenario_contract": {
+    "expected_ids": [
+      "source_up",
+      "source_down",
+      "p_load_up",
+      "p_load_down",
+      "q_load_up",
+      "q_load_down",
+      "joint_low_source_high_load",
+      "joint_high_source_low_load"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 401775,
+  "excluded_files": []
+}

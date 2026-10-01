@@ -1,0 +1,150 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XAERO-08",
+  "scenarios": [
+    {
+      "id": "nominal",
+      "mass_flow_kg_per_s": 132.0,
+      "payload_mass_kg": 5000.0,
+      "gravity_turn_angle_rad": 0.1
+    },
+    {
+      "id": "lower_mass_flow",
+      "mass_flow_kg_per_s": 120.0,
+      "payload_mass_kg": 5000.0,
+      "gravity_turn_angle_rad": 0.1
+    },
+    {
+      "id": "higher_mass_flow",
+      "mass_flow_kg_per_s": 145.0,
+      "payload_mass_kg": 5000.0,
+      "gravity_turn_angle_rad": 0.1
+    },
+    {
+      "id": "heavy_payload",
+      "mass_flow_kg_per_s": 132.0,
+      "payload_mass_kg": 6500.0,
+      "gravity_turn_angle_rad": 0.1
+    },
+    {
+      "id": "stronger_gravity_turn",
+      "mass_flow_kg_per_s": 132.0,
+      "payload_mass_kg": 5000.0,
+      "gravity_turn_angle_rad": 0.15
+    }
+  ],
+  "contract": {
+    "difficulty": {
+      "score": 9,
+      "maximum": 12,
+      "basis": [
+        "coupled thrust scheduling, propellant depletion, variable-mass flight, nonlinear atmospheric drag, gravity/curvature trajectory, and pitch guidance dynamics",
+        "nonlinear dynamics, dynamic actuation, flight-mode transition, and multi-domain propulsion/aerodynamic coupling",
+        "three independently effective intervention axes: mass flow, payload mass, and gravity-turn angle",
+        "five private conditions spanning powered ascent, post-burn dynamics, terminal behavior, sensitivity, and robustness"
+      ]
+    },
+    "simulation": {
+      "maximum_duration_seconds": 350.0,
+      "evidence_phase_points": 501
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85,
+      "preferred_reference_score": 90,
+      "normalize_or_rescale": false,
+      "groups": {
+        "A": {
+          "weight": 0.25,
+          "meaning": "altitude, downrange, speed, flight-path, and pitch trajectory accuracy"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "finite complete logs with exact public widths, order, units, and terminal-time coverage"
+        },
+        "M": {
+          "weight": 0.22,
+          "meaning": "thrust scheduling, propellant depletion, variable-mass, drag, and gravity-coupled mechanism fidelity"
+        },
+        "C": {
+          "weight": 0.18,
+          "meaning": "mass-flow, payload, gravity-turn, and commanded-versus-actual pitch causal fidelity"
+        },
+        "R": {
+          "weight": 0.13,
+          "meaning": "worst private-condition behavior and numerical robustness"
+        },
+        "D": {
+          "weight": 0.12,
+          "meaning": "ascent, burn transition, descent/terminal, and final-state dynamic fidelity"
+        }
+      },
+      "within_group": "task-specific arithmetic aggregation with explicit worst-condition retention",
+      "across_groups": "weighted geometric mean; absent critical mechanism groups may be zero"
+    },
+    "minimum_shortcut_sanity_contract": [
+      "missing required output",
+      "one scenario replayed for every intervention",
+      "zero trajectory",
+      "constant or zero propulsion state",
+      "command values copied as physical outputs",
+      "gravity-turn response ignored",
+      "truncated run"
+    ]
+  },
+  "difficulty": {
+    "score": 9,
+    "maximum": 12,
+    "basis": [
+      "coupled thrust scheduling, propellant depletion, variable-mass flight, nonlinear atmospheric drag, gravity/curvature trajectory, and pitch guidance dynamics",
+      "nonlinear dynamics, dynamic actuation, flight-mode transition, and multi-domain propulsion/aerodynamic coupling",
+      "three independently effective intervention axes: mass flow, payload mass, and gravity-turn angle",
+      "five private conditions spanning powered ascent, post-burn dynamics, terminal behavior, sensitivity, and robustness"
+    ]
+  },
+  "simulation": {
+    "maximum_duration_seconds": 350.0,
+    "evidence_phase_points": 501
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85,
+    "preferred_reference_score": 90,
+    "normalize_or_rescale": false,
+    "groups": {
+      "A": {
+        "weight": 0.25,
+        "meaning": "altitude, downrange, speed, flight-path, and pitch trajectory accuracy"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "finite complete logs with exact public widths, order, units, and terminal-time coverage"
+      },
+      "M": {
+        "weight": 0.22,
+        "meaning": "thrust scheduling, propellant depletion, variable-mass, drag, and gravity-coupled mechanism fidelity"
+      },
+      "C": {
+        "weight": 0.18,
+        "meaning": "mass-flow, payload, gravity-turn, and commanded-versus-actual pitch causal fidelity"
+      },
+      "R": {
+        "weight": 0.13,
+        "meaning": "worst private-condition behavior and numerical robustness"
+      },
+      "D": {
+        "weight": 0.12,
+        "meaning": "ascent, burn transition, descent/terminal, and final-state dynamic fidelity"
+      }
+    },
+    "within_group": "task-specific arithmetic aggregation with explicit worst-condition retention",
+    "across_groups": "weighted geometric mean; absent critical mechanism groups may be zero"
+  },
+  "minimum_shortcut_sanity_contract": [
+    "missing required output",
+    "one scenario replayed for every intervention",
+    "zero trajectory",
+    "constant or zero propulsion state",
+    "command values copied as physical outputs",
+    "gravity-turn response ignored",
+    "truncated run"
+  ]
+}

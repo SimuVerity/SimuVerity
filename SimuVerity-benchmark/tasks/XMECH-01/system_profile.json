@@ -1,0 +1,218 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XMECH-01",
+  "collection": "XMECH",
+  "reference": {
+    "identity_path": "tasks/XMECH-01/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/XMECH01_reference.slx",
+    "model_path": "tasks/XMECH-01/reference/files/XMECH01_reference.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id P9-XMECH01",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a differential tracked ground vehicle with a rigid chassis, two independently driven tracks, finite track inertia, and nonlinear frictional contact with the terrain.",
+    "engineering_objects": [
+      "P9-XMECH01 plant and controller described by the current public task contract",
+      "Measured output interfaces: vehicle_motion, track_state, terrain_contact, drive_actuation"
+    ],
+    "physical_paths": [
+      "Drive forces must reach the chassis through the two track-terrain contact paths; directly prescribing chassis motion is not a valid implementation.",
+      "Across the declared range, regulate actual left and right track motion, produce the corresponding forward and differential-steering response through physical contact forces, remain dynamically bounded, and recover after the temporary traction loss."
+    ],
+    "functional_paths": [
+      "Build a differential tracked ground vehicle with a rigid chassis, two independently driven tracks, finite track inertia, and nonlinear frictional contact with the terrain.",
+      "Drive forces must reach the chassis through the two track-terrain contact paths;",
+      "Read left_track_command, right_track_command, payload_mass, terrain_friction, grade_angle, left_traction_loss, and traction_event_time from base-workspace variables."
+    ],
+    "information_paths": [
+      "left_track_command, right_track_command, payload_mass, terrain_friction, grade_angle, left_traction_loss, traction_event_time -> P9-XMECH01 plant/control path -> vehicle_motion, track_state, terrain_contact, drive_actuation"
+    ],
+    "modes_and_events": [
+      "Read left_track_command, right_track_command, payload_mass, terrain_friction, grade_angle, left_traction_loss, and traction_event_time from base-workspace variables.",
+      "The left-track friction coefficient is reduced by left_traction_loss for 1.2 s beginning at traction_event_time;",
+      "A reduced planar longitudinal-yaw chassis model is intended: no independent lateral-velocity state is required, and chassis translational velocity is aligned with the reported yaw direction."
+    ],
+    "interfaces": [
+      {
+        "name": "left_track_command",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Read left_track_command, right_track_command, payload_mass, terrain_friction, grade_angle, left_traction_loss, and traction_event_time from base-workspace variables.",
+        "source": "tasks/XMECH-01/public_spec.json"
+      },
+      {
+        "name": "right_track_command",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Read left_track_command, right_track_command, payload_mass, terrain_friction, grade_angle, left_traction_loss, and traction_event_time from base-workspace variables.",
+        "source": "tasks/XMECH-01/public_spec.json"
+      },
+      {
+        "name": "payload_mass",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kg"
+        ],
+        "range_or_shape": "Read left_track_command, right_track_command, payload_mass, terrain_friction, grade_angle, left_traction_loss, and traction_event_time from base-workspace variables.",
+        "source": "tasks/XMECH-01/public_spec.json"
+      },
+      {
+        "name": "terrain_friction",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read left_track_command, right_track_command, payload_mass, terrain_friction, grade_angle, left_traction_loss, and traction_event_time from base-workspace variables.",
+        "source": "tasks/XMECH-01/public_spec.json"
+      },
+      {
+        "name": "grade_angle",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "deg"
+        ],
+        "range_or_shape": "Read left_track_command, right_track_command, payload_mass, terrain_friction, grade_angle, left_traction_loss, and traction_event_time from base-workspace variables.",
+        "source": "tasks/XMECH-01/public_spec.json"
+      },
+      {
+        "name": "left_traction_loss",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read left_track_command, right_track_command, payload_mass, terrain_friction, grade_angle, left_traction_loss, and traction_event_time from base-workspace variables. The left-track friction coefficient is reduced by left_traction_loss for 1.2 s beginning at traction_event_time; zero means no traction reduction.",
+        "source": "tasks/XMECH-01/public_spec.json"
+      },
+      {
+        "name": "traction_event_time",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read left_track_command, right_track_command, payload_mass, terrain_friction, grade_angle, left_traction_loss, and traction_event_time from base-workspace variables. The left-track friction coefficient is reduced by left_traction_loss for 1.2 s beginning at traction_event_time; zero means no traction reduction.",
+        "source": "tasks/XMECH-01/public_spec.json"
+      },
+      {
+        "name": "vehicle_motion",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[m,m,rad,m/s,rad/s]"
+        ],
+        "range_or_shape": "Log Timeseries vehicle_motion, track_state, terrain_contact, and drive_actuation. vehicle_motion must contain [x position in m, y position in m, yaw angle in rad, chassis forward speed in m/s, yaw rate in rad/s].",
+        "source": "tasks/XMECH-01/public_spec.json"
+      },
+      {
+        "name": "track_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[m/s,m/s,1,1]"
+        ],
+        "range_or_shape": "Log Timeseries vehicle_motion, track_state, terrain_contact, and drive_actuation. track_state must contain [actual left and right track surface speeds in m/s, left and right contact slip ratios].",
+        "source": "tasks/XMECH-01/public_spec.json"
+      },
+      {
+        "name": "terrain_contact",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[N,N,N,N]"
+        ],
+        "range_or_shape": "Log Timeseries vehicle_motion, track_state, terrain_contact, and drive_actuation. terrain_contact must contain [left and right longitudinal interface forces in N, left and right positive normal-load magnitudes in N].",
+        "source": "tasks/XMECH-01/public_spec.json"
+      },
+      {
+        "name": "drive_actuation",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[N,N]"
+        ],
+        "range_or_shape": "Log Timeseries vehicle_motion, track_state, terrain_contact, and drive_actuation. drive_actuation must contain the actual bounded left and right generalized drive forces in N under one fixed global actuator sign convention.",
+        "source": "tasks/XMECH-01/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "A reduced planar longitudinal-yaw chassis model is intended: no independent lateral-velocity state is required, and chassis translational velocity is aligned with the reported yaw direction.",
+      "vehicle_motion must contain [x position in m, y position in m, yaw angle in rad, chassis forward speed in m/s, yaw rate in rad/s].",
+      "terrain_contact must contain [left and right longitudinal interface forces in N, left and right positive normal-load magnitudes in N]."
+    ],
+    "feedback_and_control_causality": [
+      "Across the declared range, regulate actual left and right track motion, produce the corresponding forward and differential-steering response through physical contact forces, remain dynamically bounded, and recover after the temporary traction loss.",
+      "drive_actuation must contain the actual bounded left and right generalized drive forces in N under one fixed global actuator sign convention.",
+      "The logged quantities must come from the causal driven vehicle and contact simulation rather than from commands or precomputed trajectories."
+    ],
+    "signal_sources": [
+      "left_track_command is read from the public MATLAB base-workspace input contract.",
+      "right_track_command is read from the public MATLAB base-workspace input contract.",
+      "payload_mass is read from the public MATLAB base-workspace input contract.",
+      "terrain_friction is read from the public MATLAB base-workspace input contract.",
+      "grade_angle is read from the public MATLAB base-workspace input contract.",
+      "left_traction_loss is read from the public MATLAB base-workspace input contract.",
+      "traction_event_time is read from the public MATLAB base-workspace input contract.",
+      "vehicle_motion is produced by the implemented plant or controller and logged under the public output contract.",
+      "track_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "terrain_contact is produced by the implemented plant or controller and logged under the public output contract.",
+      "drive_actuation is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "left_track_command: Read left_track_command, right_track_command, payload_mass, terrain_friction, grade_angle, left_traction_loss, and traction_event_time from base-workspace variables.",
+      "right_track_command: Read left_track_command, right_track_command, payload_mass, terrain_friction, grade_angle, left_traction_loss, and traction_event_time from base-workspace variables.",
+      "payload_mass: Read left_track_command, right_track_command, payload_mass, terrain_friction, grade_angle, left_traction_loss, and traction_event_time from base-workspace variables.",
+      "terrain_friction: Read left_track_command, right_track_command, payload_mass, terrain_friction, grade_angle, left_traction_loss, and traction_event_time from base-workspace variables.",
+      "grade_angle: Read left_track_command, right_track_command, payload_mass, terrain_friction, grade_angle, left_traction_loss, and traction_event_time from base-workspace variables.",
+      "left_traction_loss: Read left_track_command, right_track_command, payload_mass, terrain_friction, grade_angle, left_traction_loss, and traction_event_time from base-workspace variables. The left-track friction coefficient is reduced by left_traction_loss for 1.2 s beginning at traction_event_time; zero means no traction reduction.",
+      "traction_event_time: Read left_track_command, right_track_command, payload_mass, terrain_friction, grade_angle, left_traction_loss, and traction_event_time from base-workspace variables. The left-track friction coefficient is reduced by left_traction_loss for 1.2 s beginning at traction_event_time; zero means no traction reduction."
+    ],
+    "disturbances": [
+      "Read left_track_command, right_track_command, payload_mass, terrain_friction, grade_angle, left_traction_loss, and traction_event_time from base-workspace variables.",
+      "terrain_contact must contain [left and right longitudinal interface forces in N, left and right positive normal-load magnitudes in N]."
+    ],
+    "dynamic_processes": [
+      "Build a differential tracked ground vehicle with a rigid chassis, two independently driven tracks, finite track inertia, and nonlinear frictional contact with the terrain.",
+      "Drive forces must reach the chassis through the two track-terrain contact paths;",
+      "Read left_track_command, right_track_command, payload_mass, terrain_friction, grade_angle, left_traction_loss, and traction_event_time from base-workspace variables."
+    ],
+    "task_specific_shortcuts": [
+      "P9-XMECH01: prescribing vehicle_motion directly would bypass the system path described by: Drive forces must reach the chassis through the two track-terrain contact paths; directly prescribing chassis motion is not a valid implementation.",
+      "P9-XMECH01: replaying a fixed vehicle_motion trace would ignore causal variation in left_track_command."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XMECH-01/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XMECH-01/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XMECH-01/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

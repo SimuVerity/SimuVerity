@@ -1,0 +1,236 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XTHERM-12",
+  "scenarios": [
+    {
+      "id": "hot_pull_down",
+      "ambient_temperature_degC": 40.0,
+      "relative_humidity": 0.65,
+      "cabin_setpoint_degC": 22.0,
+      "occupant_count": 5,
+      "ac_enable": 1,
+      "recirculation_enable": 1
+    },
+    {
+      "id": "hot_relaxed",
+      "ambient_temperature_degC": 40.0,
+      "relative_humidity": 0.65,
+      "cabin_setpoint_degC": 30.0,
+      "occupant_count": 5,
+      "ac_enable": 1,
+      "recirculation_enable": 1
+    },
+    {
+      "id": "hot_fresh_air",
+      "ambient_temperature_degC": 40.0,
+      "relative_humidity": 0.65,
+      "cabin_setpoint_degC": 22.0,
+      "occupant_count": 5,
+      "ac_enable": 1,
+      "recirculation_enable": 0
+    },
+    {
+      "id": "hot_ac_off",
+      "ambient_temperature_degC": 40.0,
+      "relative_humidity": 0.65,
+      "cabin_setpoint_degC": 22.0,
+      "occupant_count": 5,
+      "ac_enable": 0,
+      "recirculation_enable": 1
+    },
+    {
+      "id": "low_occupancy",
+      "ambient_temperature_degC": 35.0,
+      "relative_humidity": 0.5,
+      "cabin_setpoint_degC": 24.0,
+      "occupant_count": 1,
+      "ac_enable": 1,
+      "recirculation_enable": 1
+    },
+    {
+      "id": "high_occupancy",
+      "ambient_temperature_degC": 35.0,
+      "relative_humidity": 0.5,
+      "cabin_setpoint_degC": 24.0,
+      "occupant_count": 5,
+      "ac_enable": 1,
+      "recirculation_enable": 1
+    }
+  ],
+  "contract": {
+    "difficulty": {
+      "score": 12,
+      "maximum": 12,
+      "basis": [
+        "coupled vehicle, e-drive, battery, cabin, coolant and refrigerant dynamics",
+        "five coordinated thermal actuators and multiple measured temperatures",
+        "connected vapor-compression and dual-coolant heat-transfer paths",
+        "six private operating regimes with four isolated causal interventions",
+        "simultaneous drive-cycle tracking, comfort control and component protection"
+      ]
+    },
+    "simulation": {
+      "start_time_s": 0.0,
+      "stop_time_s": 30.0,
+      "evidence_output_step_s": 0.1,
+      "environment_pressure_MPa": 0.101325,
+      "environment_co2_fraction": 0.0004,
+      "drive_profile": "speed_ref_kph = min(1.62*time_s, 50.0)",
+      "fixed_initial_conditions": {
+        "cabin_air_temperature_degC": 40.0,
+        "battery_pack_temperature_degC": 25.0,
+        "liquid_coolant_temperature_degC": 25.0,
+        "battery_cooling_plate_temperature_degC": 25.0
+      }
+    },
+    "causal_pairs": [
+      {
+        "intervention": "cabin_setpoint_degC",
+        "baseline": "hot_pull_down",
+        "changed": "hot_relaxed",
+        "other_public_fields_equal": true
+      },
+      {
+        "intervention": "ac_enable",
+        "baseline": "hot_pull_down",
+        "changed": "hot_ac_off",
+        "other_public_fields_equal": true
+      },
+      {
+        "intervention": "recirculation_enable",
+        "baseline": "hot_pull_down",
+        "changed": "hot_fresh_air",
+        "other_public_fields_equal": true
+      },
+      {
+        "intervention": "occupant_count",
+        "baseline": "low_occupancy",
+        "changed": "high_occupancy",
+        "other_public_fields_equal": true
+      }
+    ],
+    "score_policy": {
+      "raw_threshold": 90.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G=1 only for valid lifecycle stages, six successful private simulations and recorded evidence; missing public outputs do not by themselves change G",
+      "applicable_groups": [
+        "A",
+        "Q",
+        "M",
+        "C",
+        "R",
+        "D"
+      ],
+      "group_weights": {
+        "A": 0.2,
+        "Q": 0.1,
+        "M": 0.22,
+        "C": 0.24,
+        "R": 0.14,
+        "D": 0.1
+      },
+      "within_group": "task-local weighted arithmetic means with explicit bottlenecks for interface completeness, mechanism availability and each isolated causal intervention",
+      "across_groups": "strict weighted geometric mean",
+      "strict_zero_rule": "any applicable group at zero makes the total exactly zero",
+      "epsilon_floor": false,
+      "post_total_cap": false,
+      "evaluation_policy_id": "simuverity-101-v1:xtherm-12:scoring"
+    },
+    "partial_output_policy": "A missing or malformed public log zeros only metrics that require that log; other computable metrics and G remain intact. No channel reconstruction is allowed.",
+    "shortcut_sanity_contract": [
+      "constant_output_rejected",
+      "cross_scenario_replay_rejected",
+      "speed_or_temperature_command_copy_rejected",
+      "missing_heat_flow_path_rejected",
+      "missing_applied_actuator_path_rejected",
+      "all_four_isolated_causal_pairs_required"
+    ]
+  },
+  "difficulty": {
+    "score": 12,
+    "maximum": 12,
+    "basis": [
+      "coupled vehicle, e-drive, battery, cabin, coolant and refrigerant dynamics",
+      "five coordinated thermal actuators and multiple measured temperatures",
+      "connected vapor-compression and dual-coolant heat-transfer paths",
+      "six private operating regimes with four isolated causal interventions",
+      "simultaneous drive-cycle tracking, comfort control and component protection"
+    ]
+  },
+  "simulation": {
+    "start_time_s": 0.0,
+    "stop_time_s": 30.0,
+    "evidence_output_step_s": 0.1,
+    "environment_pressure_MPa": 0.101325,
+    "environment_co2_fraction": 0.0004,
+    "drive_profile": "speed_ref_kph = min(1.62*time_s, 50.0)",
+    "fixed_initial_conditions": {
+      "cabin_air_temperature_degC": 40.0,
+      "battery_pack_temperature_degC": 25.0,
+      "liquid_coolant_temperature_degC": 25.0,
+      "battery_cooling_plate_temperature_degC": 25.0
+    }
+  },
+  "causal_pairs": [
+    {
+      "intervention": "cabin_setpoint_degC",
+      "baseline": "hot_pull_down",
+      "changed": "hot_relaxed",
+      "other_public_fields_equal": true
+    },
+    {
+      "intervention": "ac_enable",
+      "baseline": "hot_pull_down",
+      "changed": "hot_ac_off",
+      "other_public_fields_equal": true
+    },
+    {
+      "intervention": "recirculation_enable",
+      "baseline": "hot_pull_down",
+      "changed": "hot_fresh_air",
+      "other_public_fields_equal": true
+    },
+    {
+      "intervention": "occupant_count",
+      "baseline": "low_occupancy",
+      "changed": "high_occupancy",
+      "other_public_fields_equal": true
+    }
+  ],
+  "score_policy": {
+    "raw_threshold": 90.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G=1 only for valid lifecycle stages, six successful private simulations and recorded evidence; missing public outputs do not by themselves change G",
+    "applicable_groups": [
+      "A",
+      "Q",
+      "M",
+      "C",
+      "R",
+      "D"
+    ],
+    "group_weights": {
+      "A": 0.2,
+      "Q": 0.1,
+      "M": 0.22,
+      "C": 0.24,
+      "R": 0.14,
+      "D": 0.1
+    },
+    "within_group": "task-local weighted arithmetic means with explicit bottlenecks for interface completeness, mechanism availability and each isolated causal intervention",
+    "across_groups": "strict weighted geometric mean",
+    "strict_zero_rule": "any applicable group at zero makes the total exactly zero",
+    "epsilon_floor": false,
+    "post_total_cap": false,
+    "evaluation_policy_id": "simuverity-101-v1:xtherm-12:scoring"
+  },
+  "partial_output_policy": "A missing or malformed public log zeros only metrics that require that log; other computable metrics and G remain intact. No channel reconstruction is allowed.",
+  "shortcut_sanity_contract": [
+    "constant_output_rejected",
+    "cross_scenario_replay_rejected",
+    "speed_or_temperature_command_copy_rejected",
+    "missing_heat_flow_path_rejected",
+    "missing_applied_actuator_path_rejected",
+    "all_four_isolated_causal_pairs_required"
+  ]
+}

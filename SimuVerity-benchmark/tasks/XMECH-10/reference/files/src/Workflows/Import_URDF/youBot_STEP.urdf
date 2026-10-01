@@ -1,0 +1,388 @@
+<!-- Copyright 2012-2016 The MathWorks, Inc. -->
+
+<robot name = "youBot_STEP">
+
+<material name = "black_base">
+	<color rgba = "0.2000  0.2000  0.2000  1" />
+</material>
+
+<material name = "orange_arm">
+	<color rgba = "0.9882  0.5686  0.2039  1" />
+</material>
+
+<material name = "gray_gripper">
+	<color rgba = "0.3020  0.3020  0.3020  1" />
+</material>
+
+<material name = "purple_pin">
+	<color rgba = "0.7921  0.8196  0.9333  1" />
+</material>
+
+<link name = "Base">
+	<inertial>
+		<origin xyz = "-3.8100e-006     3.1238e-003    34.4093e-003" rpy = "0 0 0" />
+		<mass value = "1.2566" />
+		<inertia ixx = "2.8802e-003" iyy = "2.5812e-003" izz ="4.3260e-003" iyz = "19.5560e-006" ixz = "-92.0000e-009" ixy = "-620.0000e-009" />
+	</inertial>
+	
+	<visual>
+		<geometry>
+			<mesh filename = "Base.step" />
+		</geometry>
+		<material name = "black_base" />
+	</visual>
+</link>
+
+<link name = "Pivot">
+	<inertial>
+		<origin xyz = "-5.7421e-003    5.0346e-003   3.5228e-02" rpy = "0 0 0" />
+		<mass value = "1.2752" />
+		<inertia ixx = "2.9336e-003" iyy = "2.3005e-003" izz ="2.8320e-003" iyz = "-524.4910e-006" ixz = "279.8510e-006" ixy = "163.8620e-006" />
+	</inertial>
+
+	<visual>
+        <origin xyz = "1.124e-006    -5.7767e-003   -7.2001e-002" rpy = "0 0 0" />
+		<geometry>
+			<mesh filename = "Pivot.step" />
+		</geometry>
+		<material name = "orange_arm" />
+	</visual>
+</link>
+
+
+<link name = "Pivot Black Inlay">
+	<inertial>
+		<origin xyz = "0.0000e-000    0.0000e-000    0.0000e-000" rpy = "0 0 0" />
+		<mass value = "2.0002e-004" />
+		<inertia ixx = "61.0000e-009" iyy = "30.0000e-009" izz ="30.0000e-009" iyz = "0.0000e+000" ixz = "0.0000e+000" ixy = "0.0000e+000" />
+	</inertial>
+
+	<visual>
+        <origin xyz = "37.1551e-003    -38.7767e-003   -147.2008e-003" rpy = "0 0 0" />
+		<geometry>
+			<mesh filename = "Pivot Black Inlay.step" />
+		</geometry>
+		<material name = "black_base" />
+	</visual>
+</link>
+
+<link name = "Bicep">
+	<inertial>
+		<origin xyz = "2.1935e-002    2.8033e-003    7.0566e-02" rpy = "0 0 0" />
+		<mass value = "1.2049" />
+		<inertia ixx = "3.9977e-003" iyy = "3.9635e-003" izz ="839.3030e-006" iyz = "17.5930e-006" ixz = "-24.8390e-006" ixy = "-10.4030e-006" />
+	</inertial>
+
+	<visual>
+        <origin xyz = "-9.0023e-003    -3.8777e-002   -1.4700e-001" rpy = "0 0 0" />
+		<geometry>
+			<mesh filename = "Bicep.step" />
+		</geometry>
+		<material name = "orange_arm" />
+	</visual>
+</link>
+
+<link name = "Forearm">
+	<inertial>
+		<origin xyz = "-3.5004e-02   -3.6266e-006    6.0320e-002" rpy = "0 0 0" />
+		<mass value = "837.2991e-003" />
+		<inertia ixx = "2.2534e-003" iyy = "2.2425e-003" izz ="434.7170e-006" iyz = "16.0000e-009" ixz = "182.8700e-006" ixy = "-136.0000e-009" />
+	</inertial>
+
+	<visual>
+        <origin xyz = "-1.0301e-002    -3.8777e-002   -3.0200e-001" rpy = "0 0 0" />
+		<geometry>
+			<mesh filename = "Forearm.step" />
+		</geometry>
+		<material name = "orange_arm" />
+	</visual>
+</link>
+<link name = "Forearm Black Inlay">
+	<inertial>
+		<origin xyz = "0.0000e-000    0.0000e-000    0.0000e-000" rpy = "0 0 0" />
+		<mass value = "969.6402e-006" />
+		<inertia ixx = "203.0000e-009" iyy = "102.0000e-009" izz ="102.0000e-009" iyz = "0.0000e+000" ixz = "0.0000e+000" ixy = "0.0000e+000" />
+	</inertial>
+
+	<visual>
+        <origin xyz = "34.9180e-003    -38.7767e-003   -302.3023e-003" rpy = "0 0 0" />
+		<geometry>
+			<mesh filename = "Forearm Black Inlay.step" />
+		</geometry>
+		<material name = "black_base" />
+	</visual>
+</link>
+
+
+<link name = "Wrist">
+	<inertial>
+		<origin xyz = "2.0608e-002   -7.0188e-006    3.6089e-002" rpy = "0 0 0" />
+		<mass value = "775.8430e-003" />
+		<inertia ixx = "849.9340e-006" iyy = "1.2027e-003" izz ="738.9950e-006" iyz = "-8.0000e-009" ixz = "213.1130e-006" ixy = "400.0000e-009" />
+	</inertial>
+
+	<visual>
+        <origin xyz = "8.5989e-003    -3.8777e-002   -4.3700e-001" rpy = "0 0 0" />
+		<geometry>
+			<mesh filename = "Wrist.step" />
+		</geometry>
+		<material name = "orange_arm" />
+	</visual>
+</link>
+
+<link name = "Gripper_Pivot">
+	<inertial>
+		<origin xyz = "3.4197e-004   1.8068e-005   1.5202e-002" rpy = "0 0 0" />
+		<mass value = "268.9439e-003" />
+		<inertia ixx = "115.3890e-006" iyy = "216.1300e-006" izz ="278.9730e-006" iyz = "0.0000e-009" ixz = "50.0000e-009" ixy = "264.0000e-009" />
+	</inertial>
+
+	<visual>
+        <origin xyz = "-4.0112e-004   -3.8777e-002   -5.1750e-001" rpy = "0 0 0" />
+		<geometry>
+			<mesh filename = "Gripper Pivot.step" />
+		</geometry>
+		<material name = "gray_gripper" />
+	</visual>
+</link>
+
+<link name = "Gripper_Housing_A">
+	<inertial>
+		<origin xyz = "2.5601e-002   3.9235e-002   5.8098e-001" rpy = "0 0 0" />
+		<mass value = "40.3154e-003" />
+		<inertia ixx = "20.5600e-006" iyy = "18.4440e-006" izz ="16.5670e-006" iyz = "660.0000e-009" ixz = "3.5260e-006" ixy = "107.0000e-009" />
+	</inertial>
+
+	<visual>
+        <origin xyz = "-9.6978e-010   -8.1612e-010   -5.8872e-011" rpy = "0 0 0" />
+		<geometry>
+			<mesh filename = "Gripper Housing A.step" />
+		</geometry>
+		<material name = "gray_gripper" />
+	</visual>
+</link>
+<link name = "Gripper_Housing_B">
+	<inertial>
+		<origin xyz = "-2.4326e-002   3.8212e-002   5.8098e-001" rpy = "0 0 0" />
+		<mass value = "40.3154e-003" />
+		<inertia ixx = "20.5600e-006" iyy = "18.4440e-006" izz ="16.5670e-006" iyz = "660.0000e-009" ixz = "3.5260e-006" ixy = "107.0000e-009" />
+	</inertial>
+
+	<visual>
+        <origin xyz = "-9.6978e-010   -8.1612e-010   -5.8872e-011" rpy = "0 0 0" />
+		<geometry>
+			<mesh filename = "Gripper Housing B.step" />
+		</geometry>
+		<material name = "gray_gripper" />
+	</visual>
+</link>
+
+<link name = "Pin Housing A2">
+	<inertial>
+		<origin xyz = "2.3308e-002   2.4724e-002   5.6936e-001" rpy = "0 0 0" />
+		<mass value = "1.2621e-003" />
+		<inertia ixx = "4.0000e-009" iyy = "293.0000e-009" izz ="293.0000e-009" iyz = "000.0000e-009" ixz = "000.0000e-009" ixy = "000.0000e-009" />
+	</inertial>
+
+	<visual>
+        <origin xyz = "-9.6978e-010   -8.1612e-010   -5.8872e-011" rpy = "0 0 0" />
+		<geometry>
+			<mesh filename = "Pin Housing A2.step" />
+		</geometry>
+		<material name = "purple_pin" />
+	</visual>
+</link>
+
+<link name = "Pin Housing A1">
+	<inertial>
+		<origin xyz = "1.5705e-002   5.0724e-002   5.9486e-001" rpy = "0 0 0" />
+		<mass value = "1.1529e-003" />
+		<inertia ixx = "4.0000e-009" iyy = "216.0000e-009" izz ="216.0000e-009" iyz = "000.0000e-009" ixz = "000.0000e-009" ixy = "000.0000e-009" />
+	</inertial>
+
+	<visual>
+        <origin xyz = "-9.6978e-010   -8.1612e-010   -5.8872e-011" rpy = "0 0 0" />
+		<geometry>
+			<mesh filename = "Pin Housing A1.step" />
+		</geometry>
+		<material name = "purple_pin" />
+	</visual>
+</link>
+
+<link name = "Pin Housing B1">
+	<inertial>
+		<origin xyz = "-1.4430e-002   2.6724e-002   5.9486e-001" rpy = "0 0 0" />
+		<mass value = "1.1529e-003" />
+		<inertia ixx = "4.0000e-009" iyy = "216.0000e-009" izz ="216.0000e-009" iyz = "000.0000e-009" ixz = "000.0000e-009" ixy = "000.0000e-009" />
+	</inertial>
+
+	<visual>
+        <origin xyz = "-9.6978e-010   -8.1612e-010   -5.8872e-011" rpy = "0 0 0" />
+		<geometry>
+			<mesh filename = "Pin Housing B1.step" />
+		</geometry>
+		<material name = "purple_pin" />
+	</visual>
+</link>
+
+<link name = "Pin Housing B2">
+	<inertial>
+		<origin xyz = "-2.2033e-002   5.2724e-002   5.6936e-001" rpy = "0 0 0" />
+		<mass value = "1.2621e-003" />
+		<inertia ixx = "4.0000e-009" iyy = "293.0000e-009" izz ="293.0000e-009" iyz = "000.0000e-009" ixz = "000.0000e-009" ixy = "000.0000e-009" />
+	</inertial>
+
+	<visual>
+        <origin xyz = "-9.6978e-010   -8.1612e-010   -5.8872e-011" rpy = "0 0 0" />
+		<geometry>
+			<mesh filename = "Pin Housing B2.step" />
+		</geometry>
+		<material name = "purple_pin" />
+	</visual>
+</link>
+
+<link name = "Gripper Components">
+	<inertial>
+		<origin xyz = "-1.2777e-003   3.8752e-002   5.7320e-001" rpy = "0 0 0" />
+		<mass value = "48.2850e-003" />
+		<inertia ixx = "1.387e-005" iyy = "4.491e-005" izz ="3.3773e-005" iyz = "1.655e-008" ixz = "6.345e-007" ixy = "3.681e-008" />
+	</inertial>
+
+	<visual>
+        <origin xyz = "-1.2777e-003   3.8752e-002   5.7320e-001" rpy = "0 0 0" />
+        <geometry>
+			<sphere radius = "0.005"  />
+		</geometry>
+		<material name = "gray_gripper" />
+	</visual>
+</link>
+
+<link name = "Finger A">
+	<inertial>
+		<origin xyz = "1.5352e-002   3.1076e-005   1.1052e-002" rpy = "0 0 0" />
+		<mass value = "23.2853e-003" />
+		<inertia ixx = "7.0900e-006" iyy = "8.4340e-006" izz ="2.0360e-006" iyz = "2.0000e-009" ixz = "1.1230e-006" ixy = "1.0000e-009" />
+	</inertial>
+
+	<visual>
+        <origin xyz = "3.3730e-004   -3.8724e-002   -6.0116e-001" rpy = "0 0 0" />
+		<geometry>
+			<mesh filename = "Finger A.step" />
+		</geometry>
+		<material name = "gray_gripper" />
+	</visual>
+</link>
+
+<link name = "Finger B">
+	<inertial>
+		<origin xyz = "-1.5352e-002   3.1076e-005   1.1052e-002" rpy = "0 0 0" />
+		<mass value = "23.2853e-003" />
+		<inertia ixx = "7.0900e-006" iyy = "8.4340e-006" izz ="2.0360e-006" iyz = "2.0000e-009" ixz = "1.1230e-006" ixy = "1.0000e-009" />
+	</inertial>
+
+	<visual>
+        <origin xyz = "3.3730e-004   -3.8724e-002   -6.0116e-001" rpy = "0 0 0" />
+		<geometry>
+			<mesh filename = "Finger B.step" />
+		</geometry>
+		<material name = "gray_gripper" />
+	</visual>
+</link>
+
+<joint name = "RevoluteBasePivot" type = "continuous">
+	<origin xyz = "1.124e-006    5.7767e-003   7.2001e-002" rpy = "0 0 0" />
+	<axis xyz = "0 0 -1" />
+	<dynamics damping = "0" />
+	<parent link = "Base" />
+	<child link = "Pivot" />
+</joint>
+<joint name = "FixedPivotInlay" type = "fixed">
+	<origin xyz = "-3.7156e-002   3.3000e-002   7.5200e-002" rpy = "0 0 0" />
+	<parent link = "Pivot" />
+	<child link = "Pivot Black Inlay" />
+</joint>
+<joint name = "RevolutePivotBicep" type = "continuous">
+	<origin xyz = "9.0000e-003   3.3000e-002   7.5000e-002" rpy = "0 0 0" />
+	<axis xyz = "-1 0 0" />
+	<dynamics damping = "0" />
+	<parent link = "Pivot" />
+	<child link = "Bicep" />
+</joint>
+<joint name = "RevoluteBicepForearm" type = "continuous">
+    <origin xyz = "1.3000e-003, +1.734700e-17   1.5500e-001" rpy = "0 0 0" />
+	<axis xyz = "-1 0 0" />
+	<dynamics damping = "0" />
+	<parent link = "Bicep" />
+	<child link = "Forearm" />
+</joint>
+<joint name = "FixedForearmInlay" type = "fixed">
+	<origin xyz = "-4.4900e-002   5.537e-008   3.0153e-004" rpy = "0 0 0" />
+	<parent link = "Forearm" />
+	<child link = "Forearm Black Inlay" />
+</joint>
+<joint name = "RevoluteForearmWrist" type = "continuous">
+	<origin xyz = "-1.8900e-002   2.4286e-017   1.3500e-001" rpy = "0 0 0" />
+	<axis xyz = "-1 0 0" />
+	<dynamics damping = "0" />
+	<parent link = "Forearm" />
+	<child link = "Wrist" />
+</joint>
+<joint name = "RevoluteWristGripperPivot" type = "continuous">
+	<origin xyz = "9.0000e-003   1.1300e-007   8.0500e-002" rpy = "0 0 0" />
+	<axis xyz = "0 0 -1" />
+	<dynamics damping = "0" />
+	<parent link = "Wrist" />
+	<child link = "Gripper_Pivot" />
+</joint>
+<joint name = "FixedGripperPivotHousingA" type = "fixed">
+	<origin xyz = "-4.0113e-004   -3.8777e-002   -5.1750e-001" rpy = "0 0 0" />
+	<parent link = "Gripper_Pivot" />
+	<child link = "Gripper_Housing_A" />
+</joint>
+<joint name = "FixedGripperPivotHousingB" type = "fixed">
+	<origin xyz = "-4.0113e-004   -3.8777e-002   -5.1750e-001" rpy = "0 0 0" />
+	<parent link = "Gripper_Pivot" />
+	<child link = "Gripper_Housing_B" />
+</joint>
+<joint name = "FixedGripperPivotPinHousingA2" type = "fixed">
+	<origin xyz = "-4.0113e-004   -3.8777e-002   -5.1750e-001" rpy = "0 0 0" />
+	<parent link = "Gripper_Pivot" />
+	<child link = "Pin Housing A2" />
+</joint>
+<joint name = "FixedGripperPivotPinHousingA1" type = "fixed">
+	<origin xyz = "-4.0113e-004   -3.8777e-002   -5.1750e-001" rpy = "0 0 0" />
+	<parent link = "Gripper_Pivot" />
+	<child link = "Pin Housing A1" />
+</joint>
+<joint name = "FixedGripperPivotPinHousingB1" type = "fixed">
+	<origin xyz = "-4.0113e-004   -3.8777e-002   -5.1750e-001" rpy = "0 0 0" />
+	<parent link = "Gripper_Pivot" />
+	<child link = "Pin Housing B1" />
+</joint>
+<joint name = "FixedGripperPivotPinHousingB2" type = "fixed">
+	<origin xyz = "-4.0113e-004   -3.8777e-002   -5.1750e-001" rpy = "0 0 0" />
+	<parent link = "Gripper_Pivot" />
+	<child link = "Pin Housing B2" />
+</joint>
+<joint name = "FixedGripperPivotGripperComponents" type = "fixed">
+	<origin xyz = "-4.0113e-004   -3.8777e-002   -5.1750e-001" rpy = "0 0 0" />
+	<parent link = "Gripper_Pivot" />
+	<child link = "Gripper Components" />
+</joint>
+<joint name = "PrismaticFingerA" type = "prismatic">
+	<origin xyz = "3.3730e-004   3.8724e-002   6.0116e-001" rpy = "0 0 0" />
+	<axis xyz = "1 0 0" />
+	<dynamics damping = "0" />
+    <limit effort="1" lower="0" upper="0.0115" velocity="0.1"/>
+	<parent link = "Gripper_Housing_A" />
+	<child link = "Finger A" />
+</joint>
+<joint name = "PrismaticFingerB" type = "prismatic">
+	<origin xyz = "3.3730e-004   3.8724e-002   6.0116e-001" rpy = "0 0 0" />
+	<axis xyz = "-1 0 0" />
+	<dynamics damping = "0" />
+    <limit effort="1" lower="0" upper="0.0115" velocity="0.1"/>
+	<parent link = "Gripper_Housing_B" />
+	<child link = "Finger B" />
+</joint>
+</robot>

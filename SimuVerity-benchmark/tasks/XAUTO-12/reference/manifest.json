@@ -1,0 +1,120 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XAUTO-12",
+  "file_count": 24,
+  "files": [
+    {
+      "path": "reference/files/ext_xauto_multiagent_cbf_vo_reference.slx",
+      "size_bytes": 331057
+    },
+    {
+      "path": "reference/files/source/car_dynamics/generate_functions.m",
+      "size_bytes": 3841
+    },
+    {
+      "path": "reference/files/source/car_dynamics/generated_functions/dh_scbf_dt_fun.m",
+      "size_bytes": 1244
+    },
+    {
+      "path": "reference/files/source/car_dynamics/generated_functions/dh_vo_dt_fun.m",
+      "size_bytes": 1169
+    },
+    {
+      "path": "reference/files/source/car_dynamics/generated_functions/grad_h_scbf_fun.m",
+      "size_bytes": 1191
+    },
+    {
+      "path": "reference/files/source/car_dynamics/generated_functions/grad_h_vo_fun.m",
+      "size_bytes": 1112
+    },
+    {
+      "path": "reference/files/source/car_dynamics/generated_functions/h_scbf_fun.m",
+      "size_bytes": 643
+    },
+    {
+      "path": "reference/files/source/car_dynamics/generated_functions/h_scbf_ineq_fun.m",
+      "size_bytes": 1296
+    },
+    {
+      "path": "reference/files/source/car_dynamics/generated_functions/h_vo_fun.m",
+      "size_bytes": 663
+    },
+    {
+      "path": "reference/files/source/car_dynamics/generated_functions/h_vo_inequality_fun.m",
+      "size_bytes": 1250
+    },
+    {
+      "path": "reference/files/source/car_dynamics/h_cbf_car.m",
+      "size_bytes": 14364
+    },
+    {
+      "path": "reference/files/source/car_dynamics/run_scenario.m",
+      "size_bytes": 2194
+    },
+    {
+      "path": "reference/files/source/car_dynamics/scenarios/eightCars.slx",
+      "size_bytes": 331057
+    },
+    {
+      "path": "reference/files/source/car_dynamics/scenarios/fourCars.slx",
+      "size_bytes": 217233
+    },
+    {
+      "path": "reference/files/source/car_dynamics/scenarios/scenario_setup.m",
+      "size_bytes": 1030
+    },
+    {
+      "path": "reference/files/source/car_dynamics/scenarios/twoCars.slx",
+      "size_bytes": 159953
+    },
+    {
+      "path": "reference/files/source/car_dynamics/setup_functions/actorInitialization.m",
+      "size_bytes": 687
+    },
+    {
+      "path": "reference/files/source/car_dynamics/setup_functions/carsDistributedInCircle.m",
+      "size_bytes": 524
+    },
+    {
+      "path": "reference/files/source/car_dynamics/setup_functions/getActorConfig.m",
+      "size_bytes": 330
+    },
+    {
+      "path": "reference/files/source/car_dynamics/sim_config.m",
+      "size_bytes": 1571
+    },
+    {
+      "path": "reference/files/source/car_dynamics/tools/str_to_number.m",
+      "size_bytes": 1215
+    },
+    {
+      "path": "reference/files/source/car_dynamics/tools/timeToCollisionVconstBall.m",
+      "size_bytes": 402
+    },
+    {
+      "path": "reference/files/source/LICENSE",
+      "size_bytes": 1116
+    },
+    {
+      "path": "reference/files/source/README.md",
+      "size_bytes": 2973
+    }
+  ],
+  "entrypoint": "reference/files/ext_xauto_multiagent_cbf_vo_reference.slx",
+  "expected_score": 91.441163,
+  "expected_valid_scenarios": 4,
+  "score_tolerance": 5e-07,
+  "scenario_contract": {
+    "expected_ids": [
+      "symmetric_circle_swap",
+      "narrow_two_sided_crossing",
+      "offset_asymmetric_exchange",
+      "moving_passive_obstacle"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 1078115,
+  "excluded_files": []
+}

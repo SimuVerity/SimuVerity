@@ -1,0 +1,234 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XMED-10",
+  "collection": "XMED",
+  "reference": {
+    "identity_path": "tasks/XMED-10/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/source/docs/source/matlab/simulink_examples/closed_loop_simulation/sim_closedloop.slx",
+    "model_path": "tasks/XMED-10/reference/files/source/docs/source/matlab/simulink_examples/closed_loop_simulation/sim_closedloop.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XMED-10",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a closed-loop anesthesia delivery model in Simulink.",
+    "engineering_objects": [
+      "F90-XMED-10 plant and controller described by the current public task contract",
+      "Measured output interfaces: bis_response, loss_of_consciousness_probability, cardiac_output_L_min, mean_arterial_pressure_mmHg, tolerance_of_laryngoscopy_probability, propofol_infusion_mg_s, remifentanil_infusion_ug_s"
+    ],
+    "physical_paths": [
+      "It must support BIS targets from 42 through 55.",
+      "Time must be monotonic and cover 0 through simulation_time_s without truncation."
+    ],
+    "functional_paths": [
+      "A feedback controller must regulate BIS toward bis_target by commanding nonnegative, bounded propofol and remifentanil infusion rates.",
+      "The controller must respond to the simulated patient state rather than replaying a stored infusion schedule."
+    ],
+    "information_paths": [
+      "patient_age_years, patient_height_cm, patient_weight_kg, patient_sex_binary, bis_target, simulation_time_s -> F90-XMED-10 plant/control path -> bis_response, loss_of_consciousness_probability, cardiac_output_L_min, mean_arterial_pressure_mmHg, tolerance_of_laryngoscopy_probability, propofol_infusion_mg_s, remifentanil_infusion_ug_s"
+    ],
+    "modes_and_events": [
+      "Build a closed-loop anesthesia delivery model in Simulink.",
+      "The patient model must include dynamic pharmacokinetic and pharmacodynamic behavior for propofol and remifentanil, their coupled effect on depth of anesthesia, and clinically meaningful hemodynamic responses.",
+      "The model must operate for patients from 18 to 80 years old, 150 to 200 cm tall, and 45 to 120 kg, with patient_sex_binary equal to 0 for female or 1 for male."
+    ],
+    "interfaces": [
+      {
+        "name": "patient_age_years",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "year"
+        ],
+        "range_or_shape": "Use patient_age_years, patient_height_cm, patient_weight_kg, patient_sex_binary, bis_target, and simulation_time_s as workspace inputs.",
+        "source": "tasks/XMED-10/public_spec.json"
+      },
+      {
+        "name": "patient_height_cm",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "cm"
+        ],
+        "range_or_shape": "Use patient_age_years, patient_height_cm, patient_weight_kg, patient_sex_binary, bis_target, and simulation_time_s as workspace inputs.",
+        "source": "tasks/XMED-10/public_spec.json"
+      },
+      {
+        "name": "patient_weight_kg",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kg"
+        ],
+        "range_or_shape": "Use patient_age_years, patient_height_cm, patient_weight_kg, patient_sex_binary, bis_target, and simulation_time_s as workspace inputs.",
+        "source": "tasks/XMED-10/public_spec.json"
+      },
+      {
+        "name": "patient_sex_binary",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Use patient_age_years, patient_height_cm, patient_weight_kg, patient_sex_binary, bis_target, and simulation_time_s as workspace inputs. The model must operate for patients from 18 to 80 years old, 150 to 200 cm tall, and 45 to 120 kg, with patient_sex_binary equal to 0 for female or 1 for male.",
+        "source": "tasks/XMED-10/public_spec.json"
+      },
+      {
+        "name": "bis_target",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "BIS index"
+        ],
+        "range_or_shape": "Use patient_age_years, patient_height_cm, patient_weight_kg, patient_sex_binary, bis_target, and simulation_time_s as workspace inputs. A feedback controller must regulate BIS toward bis_target by commanding nonnegative, bounded propofol and remifentanil infusion rates.",
+        "source": "tasks/XMED-10/public_spec.json"
+      },
+      {
+        "name": "simulation_time_s",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Use patient_age_years, patient_height_cm, patient_weight_kg, patient_sex_binary, bis_target, and simulation_time_s as workspace inputs. Time must be monotonic and cover 0 through simulation_time_s without truncation.",
+        "source": "tasks/XMED-10/public_spec.json"
+      },
+      {
+        "name": "bis_response",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "BIS index"
+        ],
+        "range_or_shape": "Log complete-run scalar Timeseries named bis_response, loss_of_consciousness_probability, cardiac_output_L_min, mean_arterial_pressure_mmHg, tolerance_of_laryngoscopy_probability, propofol_infusion_mg_s, and remifentanil_infusion_ug_s.",
+        "source": "tasks/XMED-10/public_spec.json"
+      },
+      {
+        "name": "loss_of_consciousness_probability",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "0 to 1"
+        ],
+        "range_or_shape": "Log complete-run scalar Timeseries named bis_response, loss_of_consciousness_probability, cardiac_output_L_min, mean_arterial_pressure_mmHg, tolerance_of_laryngoscopy_probability, propofol_infusion_mg_s, and remifentanil_infusion_ug_s.",
+        "source": "tasks/XMED-10/public_spec.json"
+      },
+      {
+        "name": "cardiac_output_L_min",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "L/min"
+        ],
+        "range_or_shape": "Log complete-run scalar Timeseries named bis_response, loss_of_consciousness_probability, cardiac_output_L_min, mean_arterial_pressure_mmHg, tolerance_of_laryngoscopy_probability, propofol_infusion_mg_s, and remifentanil_infusion_ug_s.",
+        "source": "tasks/XMED-10/public_spec.json"
+      },
+      {
+        "name": "mean_arterial_pressure_mmHg",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "mmHg"
+        ],
+        "range_or_shape": "Log complete-run scalar Timeseries named bis_response, loss_of_consciousness_probability, cardiac_output_L_min, mean_arterial_pressure_mmHg, tolerance_of_laryngoscopy_probability, propofol_infusion_mg_s, and remifentanil_infusion_ug_s.",
+        "source": "tasks/XMED-10/public_spec.json"
+      },
+      {
+        "name": "tolerance_of_laryngoscopy_probability",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "0 to 1"
+        ],
+        "range_or_shape": "Log complete-run scalar Timeseries named bis_response, loss_of_consciousness_probability, cardiac_output_L_min, mean_arterial_pressure_mmHg, tolerance_of_laryngoscopy_probability, propofol_infusion_mg_s, and remifentanil_infusion_ug_s.",
+        "source": "tasks/XMED-10/public_spec.json"
+      },
+      {
+        "name": "propofol_infusion_mg_s",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "mg/s"
+        ],
+        "range_or_shape": "Log complete-run scalar Timeseries named bis_response, loss_of_consciousness_probability, cardiac_output_L_min, mean_arterial_pressure_mmHg, tolerance_of_laryngoscopy_probability, propofol_infusion_mg_s, and remifentanil_infusion_ug_s.",
+        "source": "tasks/XMED-10/public_spec.json"
+      },
+      {
+        "name": "remifentanil_infusion_ug_s",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "ug/s"
+        ],
+        "range_or_shape": "Log complete-run scalar Timeseries named bis_response, loss_of_consciousness_probability, cardiac_output_L_min, mean_arterial_pressure_mmHg, tolerance_of_laryngoscopy_probability, propofol_infusion_mg_s, and remifentanil_infusion_ug_s.",
+        "source": "tasks/XMED-10/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "A feedback controller must regulate BIS toward bis_target by commanding nonnegative, bounded propofol and remifentanil infusion rates.",
+      "The controller must respond to the simulated patient state rather than replaying a stored infusion schedule."
+    ],
+    "feedback_and_control_causality": [
+      "Build a closed-loop anesthesia delivery model in Simulink.",
+      "A feedback controller must regulate BIS toward bis_target by commanding nonnegative, bounded propofol and remifentanil infusion rates.",
+      "The controller must respond to the simulated patient state rather than replaying a stored infusion schedule."
+    ],
+    "signal_sources": [
+      "patient_age_years is read from the public MATLAB base-workspace input contract.",
+      "patient_height_cm is read from the public MATLAB base-workspace input contract.",
+      "patient_weight_kg is read from the public MATLAB base-workspace input contract.",
+      "patient_sex_binary is read from the public MATLAB base-workspace input contract.",
+      "bis_target is read from the public MATLAB base-workspace input contract.",
+      "simulation_time_s is read from the public MATLAB base-workspace input contract.",
+      "bis_response is produced by the implemented plant or controller and logged under the public output contract.",
+      "loss_of_consciousness_probability is produced by the implemented plant or controller and logged under the public output contract.",
+      "cardiac_output_L_min is produced by the implemented plant or controller and logged under the public output contract.",
+      "mean_arterial_pressure_mmHg is produced by the implemented plant or controller and logged under the public output contract.",
+      "tolerance_of_laryngoscopy_probability is produced by the implemented plant or controller and logged under the public output contract.",
+      "propofol_infusion_mg_s is produced by the implemented plant or controller and logged under the public output contract.",
+      "remifentanil_infusion_ug_s is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "patient_age_years: Use patient_age_years, patient_height_cm, patient_weight_kg, patient_sex_binary, bis_target, and simulation_time_s as workspace inputs.",
+      "patient_height_cm: Use patient_age_years, patient_height_cm, patient_weight_kg, patient_sex_binary, bis_target, and simulation_time_s as workspace inputs.",
+      "patient_weight_kg: Use patient_age_years, patient_height_cm, patient_weight_kg, patient_sex_binary, bis_target, and simulation_time_s as workspace inputs.",
+      "patient_sex_binary: Use patient_age_years, patient_height_cm, patient_weight_kg, patient_sex_binary, bis_target, and simulation_time_s as workspace inputs. The model must operate for patients from 18 to 80 years old, 150 to 200 cm tall, and 45 to 120 kg, with patient_sex_binary equal to 0 for female or 1 for male.",
+      "bis_target: Use patient_age_years, patient_height_cm, patient_weight_kg, patient_sex_binary, bis_target, and simulation_time_s as workspace inputs. A feedback controller must regulate BIS toward bis_target by commanding nonnegative, bounded propofol and remifentanil infusion rates.",
+      "simulation_time_s: Use patient_age_years, patient_height_cm, patient_weight_kg, patient_sex_binary, bis_target, and simulation_time_s as workspace inputs. Time must be monotonic and cover 0 through simulation_time_s without truncation."
+    ],
+    "disturbances": [
+      "F90-XMED-10 operating variation is supplied through patient_age_years, patient_height_cm, patient_weight_kg, patient_sex_binary, bis_target, simulation_time_s."
+    ],
+    "dynamic_processes": [
+      "The patient model must include dynamic pharmacokinetic and pharmacodynamic behavior for propofol and remifentanil, their coupled effect on depth of anesthesia, and clinically meaningful hemodynamic responses.",
+      "For all public and private conditions, retain the induction transient and the complete 900 s response.",
+      "The physiological logs must come from the same dynamic patient state driven by the logged infusion commands."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XMED-10: prescribing bis_response directly would bypass the system path described by: It must support BIS targets from 42 through 55.",
+      "F90-XMED-10: replaying a fixed bis_response trace would ignore causal variation in patient_age_years."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XMED-10/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XMED-10/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XMED-10/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

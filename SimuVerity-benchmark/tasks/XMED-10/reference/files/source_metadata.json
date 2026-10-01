@@ -1,0 +1,15 @@
+{
+  "schema": "simuverity.third-party-source.v1",
+  "task_id": "F90-XMED-10",
+  "repository": "https://github.com/AnesthesiaSimulation/Python_Anesthesia_Simulator",
+  "revision": "4afc03ad2997f725205c202e0d0634ff0664e5c7",
+  "license_spdx": "GPL-3.0-only",
+  "license_file": "source/LICENSE",
+  "source_tree_file_count": 101,
+  "entry_model": "source/docs/source/matlab/simulink_examples/closed_loop_simulation/sim_closedloop.slx",
+  "python_wrapper": "source/docs/source/matlab/simulink_examples/closed_loop_simulation/callPython.m",
+  "dependencies": "requirements.txt",
+  "third_party": true,
+  "official_fallback": false,
+  "core_source_modified": false
+}

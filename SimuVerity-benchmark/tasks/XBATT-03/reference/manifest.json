@@ -1,0 +1,1509 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XBATT-03",
+  "file_count": 371,
+  "files": [
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/.gitattributes",
+      "size_bytes": 483
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/.gitignore",
+      "size_bytes": 489
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Images/cabinCycleIMAGE.png",
+      "size_bytes": 174591
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Images/Compressor.png",
+      "size_bytes": 17997
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Images/coolantCycleIMAGE.png",
+      "size_bytes": 183586
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Images/multipleSensitvityIMAGE.png",
+      "size_bytes": 65605
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Images/OptimizationResultsIMAGE.png",
+      "size_bytes": 137593
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Images/P1.png",
+      "size_bytes": 25035
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Images/P2.png",
+      "size_bytes": 26057
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Images/refrigerantCycleIMAGE.png",
+      "size_bytes": 174645
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Images/singleSensitvity1IMAGE.png",
+      "size_bytes": 47415
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Images/singleSensitvity2IMAGE.png",
+      "size_bytes": 20274
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Images/singleSensitvity3IMAGE.png",
+      "size_bytes": 20457
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/LICENSE.md",
+      "size_bytes": 1506
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Models/BEV_Thermal_Management.slx",
+      "size_bytes": 547749
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/OptimizingBatteryElectricVehicles.prj",
+      "size_bytes": 177
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Overview/BEV_Thermal_Management_Overview.m",
+      "size_bytes": 12813
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Overview/html/BEV_Thermal_Management_Overview.html",
+      "size_bytes": 31424
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Overview/html/BEV_Thermal_Management_Overview.png",
+      "size_bytes": 1162
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Overview/html/BEV_Thermal_Management_Overview_01.png",
+      "size_bytes": 72621
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Overview/html/BEV_Thermal_Management_Overview_02.png",
+      "size_bytes": 59375
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Overview/html/BEV_Thermal_Management_Overview_03.png",
+      "size_bytes": 54460
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Overview/html/BEV_Thermal_Management_Overview_04.png",
+      "size_bytes": 48887
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Overview/html/BEV_Thermal_Management_Overview_05.png",
+      "size_bytes": 93240
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Overview/html/BEV_Thermal_Management_Overview_06.png",
+      "size_bytes": 46000
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Overview/html/BEV_Thermal_Management_Overview_07.png",
+      "size_bytes": 67237
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Overview/html/BEV_Thermal_Management_Overview_08.png",
+      "size_bytes": 33041
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Overview/html/BEV_Thermal_Management_Overview_09.png",
+      "size_bytes": 46657
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Overview/html/BEV_Thermal_Management_Overview_10.png",
+      "size_bytes": 39358
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Overview/html/BEV_Thermal_Management_Overview_11.png",
+      "size_bytes": 12744
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Overview/html/BEV_Thermal_Management_Overview_12.png",
+      "size_bytes": 16394
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Overview/html/BEV_Thermal_Management_Overview_13.png",
+      "size_bytes": 20042
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Overview/html/BEV_Thermal_Management_Overview_web.m",
+      "size_bytes": 43
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/README.md",
+      "size_bytes": 16964
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/FyaTa5jAbbNpTXx8meWki5KFjkId.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/FyaTa5jAbbNpTXx8meWki5KFjkIp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/r5D6aiXBFTeBuY134jId7iLCZNod.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/-Rce9Lxzt4v7MmBOh-k5NnO_YJM/r5D6aiXBFTeBuY134jId7iLCZNop.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/6TKnt4uqUzuW4P0537DSixRNzkM/9OG78i6UqW0hAMco0cgoTRPv3B8d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/6TKnt4uqUzuW4P0537DSixRNzkM/9OG78i6UqW0hAMco0cgoTRPv3B8p.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/6TKnt4uqUzuW4P0537DSixRNzkM/K0OwPxH_Z3xNw9eiPKPbiBV8Fmod.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/6TKnt4uqUzuW4P0537DSixRNzkM/K0OwPxH_Z3xNw9eiPKPbiBV8Fmop.xml",
+      "size_bytes": 103
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/6TKnt4uqUzuW4P0537DSixRNzkM/tNUkqvFHx_TVhysbLdfir49hfuMd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/6TKnt4uqUzuW4P0537DSixRNzkM/tNUkqvFHx_TVhysbLdfir49hfuMp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/6TKnt4uqUzuW4P0537DSixRNzkM/Twqqn9lYgnni0AY3bigQmfpODi8d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/6TKnt4uqUzuW4P0537DSixRNzkM/Twqqn9lYgnni0AY3bigQmfpODi8p.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/6Wh6FoV7C4IYWEtDS6TiCF34Fnk/AO9qoJ_HIHuuYxI2YBJ585y_WOcd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/6Wh6FoV7C4IYWEtDS6TiCF34Fnk/AO9qoJ_HIHuuYxI2YBJ585y_WOcp.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/6Wh6FoV7C4IYWEtDS6TiCF34Fnk/G2bXxMSdc8GBruweqCvyOZRmuSEd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/6Wh6FoV7C4IYWEtDS6TiCF34Fnk/G2bXxMSdc8GBruweqCvyOZRmuSEp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/6Wh6FoV7C4IYWEtDS6TiCF34Fnk/lIcmG1QNstZx9UEtrwSt0BLU5qod.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/6Wh6FoV7C4IYWEtDS6TiCF34Fnk/lIcmG1QNstZx9UEtrwSt0BLU5qop.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/6Wh6FoV7C4IYWEtDS6TiCF34Fnk/lQ2u3Mv1KCIZNWhb1Odcqhv01qUd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/6Wh6FoV7C4IYWEtDS6TiCF34Fnk/lQ2u3Mv1KCIZNWhb1Odcqhv01qUp.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/6Wh6FoV7C4IYWEtDS6TiCF34Fnk/mvgGolICbidRWLx-AuyqK5CwHQcd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/6Wh6FoV7C4IYWEtDS6TiCF34Fnk/mvgGolICbidRWLx-AuyqK5CwHQcp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/6Wh6FoV7C4IYWEtDS6TiCF34Fnk/ShfGPvJZF9Cwz2Qp__HNkTd3ua0d.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/6Wh6FoV7C4IYWEtDS6TiCF34Fnk/ShfGPvJZF9Cwz2Qp__HNkTd3ua0p.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/6Wh6FoV7C4IYWEtDS6TiCF34Fnk/wgTq_b8p-8_Riw1cETpkZIkH_MAd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/6Wh6FoV7C4IYWEtDS6TiCF34Fnk/wgTq_b8p-8_Riw1cETpkZIkH_MAp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/9OG78i6UqW0hAMco0cgoTRPv3B8/1Wi7N6MEfE_trPt42OaIcksUuscd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/9OG78i6UqW0hAMco0cgoTRPv3B8/1Wi7N6MEfE_trPt42OaIcksUuscp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/9OG78i6UqW0hAMco0cgoTRPv3B8/aUzUPIKziq4HzeAaUaGUl1zKVjId.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/9OG78i6UqW0hAMco0cgoTRPv3B8/aUzUPIKziq4HzeAaUaGUl1zKVjIp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/9OG78i6UqW0hAMco0cgoTRPv3B8/etSGm1vVpG9uQqYeAJ1G0v7fY3Ud.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/9OG78i6UqW0hAMco0cgoTRPv3B8/etSGm1vVpG9uQqYeAJ1G0v7fY3Up.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/9OG78i6UqW0hAMco0cgoTRPv3B8/rWNNQ4uYctKwJtRgBUvQQdJvlJod.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/9OG78i6UqW0hAMco0cgoTRPv3B8/rWNNQ4uYctKwJtRgBUvQQdJvlJop.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/_QNcE9STfjvdhYxknpd3lkV24Y8/AYv7uRn9VxAwgWiu5F6xDPxWO68d.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/_QNcE9STfjvdhYxknpd3lkV24Y8/AYv7uRn9VxAwgWiu5F6xDPxWO68p.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/_QNcE9STfjvdhYxknpd3lkV24Y8/eu63yj_beg4ugUHU5PiuQzxr1p8d.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/_QNcE9STfjvdhYxknpd3lkV24Y8/eu63yj_beg4ugUHU5PiuQzxr1p8p.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/_QNcE9STfjvdhYxknpd3lkV24Y8/kICj0YHDeWBPAL3HC5r-6KOXN4Md.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/_QNcE9STfjvdhYxknpd3lkV24Y8/kICj0YHDeWBPAL3HC5r-6KOXN4Mp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/_QNcE9STfjvdhYxknpd3lkV24Y8/nhnL_UVFH-3cSfHgHiGhosITP1wd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/_QNcE9STfjvdhYxknpd3lkV24Y8/nhnL_UVFH-3cSfHgHiGhosITP1wp.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/_QNcE9STfjvdhYxknpd3lkV24Y8/npc11vgX7Velh3v7Uy1AiluvprId.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/_QNcE9STfjvdhYxknpd3lkV24Y8/npc11vgX7Velh3v7Uy1AiluvprIp.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/_QNcE9STfjvdhYxknpd3lkV24Y8/U8kSFyTn-CTpVhb7oeuouz0mQAkd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/_QNcE9STfjvdhYxknpd3lkV24Y8/U8kSFyTn-CTpVhb7oeuouz0mQAkp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/_QNcE9STfjvdhYxknpd3lkV24Y8/VFTgKkZr--FOeL7WP7lH9krSmWUd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/_QNcE9STfjvdhYxknpd3lkV24Y8/VFTgKkZr--FOeL7WP7lH9krSmWUp.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/_QNcE9STfjvdhYxknpd3lkV24Y8/xwIZdUhPmlge6g6fOiHVc1wWeNcd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/_QNcE9STfjvdhYxknpd3lkV24Y8/xwIZdUhPmlge6g6fOiHVc1wWeNcp.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/_QNcE9STfjvdhYxknpd3lkV24Y8/Zmx4srxIH9uBcOTgZiY9MtSQa_Id.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/_QNcE9STfjvdhYxknpd3lkV24Y8/Zmx4srxIH9uBcOTgZiY9MtSQa_Ip.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/AO9qoJ_HIHuuYxI2YBJ585y_WOc/KQKowUX3m6fBZT_qz8zso5i6TOMd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/AO9qoJ_HIHuuYxI2YBJ585y_WOc/KQKowUX3m6fBZT_qz8zso5i6TOMp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/AO9qoJ_HIHuuYxI2YBJ585y_WOc/nUZ73SSAYr2-DkSlqtSnKZTghAwd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/AO9qoJ_HIHuuYxI2YBJ585y_WOc/nUZ73SSAYr2-DkSlqtSnKZTghAwp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/-abwU-zJzgV01NI8oR1Orbmcuewd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/-abwU-zJzgV01NI8oR1Orbmcuewp.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/aLwBnDrRR9Jx_iJO2UB0wzKaTpwd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/aLwBnDrRR9Jx_iJO2UB0wzKaTpwp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/b_4BrGJnCxDbXQFF22iKMil4Uqsd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/b_4BrGJnCxDbXQFF22iKMil4Uqsp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/D66OV02Pj-sdy-msljpzLbgJkOQd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/D66OV02Pj-sdy-msljpzLbgJkOQp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/fepRYz-vy_Dy-8lk_RXIvpfd2xod.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/fepRYz-vy_Dy-8lk_RXIvpfd2xop.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/H_fpswpx-69v60_HXUpQiWupUbgd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/H_fpswpx-69v60_HXUpQiWupUbgp.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/mDvJTmTOhcCH0SHT_MD4O7yWsRod.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/mDvJTmTOhcCH0SHT_MD4O7yWsRop.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/SounDD8UmFOx8SGlctHxxPwAHB4d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/SounDD8UmFOx8SGlctHxxPwAHB4p.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Ujs1l4m4Rs8CKXnt06mNFlIE7Rsd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Ujs1l4m4Rs8CKXnt06mNFlIE7Rsp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Ur1esh7xN9L6aqDUKBE31DKE1Qod.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Ur1esh7xN9L6aqDUKBE31DKE1Qop.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/vnFnwA1YtCqj85kPgEpm0HEgBScd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/vnFnwA1YtCqj85kPgEpm0HEgBScp.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/VU6PLE1UVlHdBVKn3mgrLvdz2g4d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/VU6PLE1UVlHdBVKn3mgrLvdz2g4p.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/0uxy7Jw-Ok-uBcD9LvJu5Brznnod.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/0uxy7Jw-Ok-uBcD9LvJu5Brznnop.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/2DswnXnMBaanvcwYJNeQhUhyK6cd.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/2DswnXnMBaanvcwYJNeQhUhyK6cp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/5mqM-cTgGrdL-dSys_0Cq_K01mYd.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/5mqM-cTgGrdL-dSys_0Cq_K01mYp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/aRf3LmsuRC4uJIifTven6RMKB54d.xml",
+      "size_bytes": 105
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/aRf3LmsuRC4uJIifTven6RMKB54p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/AU72g4RKAYrNttsFljxKjqeuF0kd.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/AU72g4RKAYrNttsFljxKjqeuF0kp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/dvHvx2NSagtWIbvAcNgoM0sHhuUd.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/dvHvx2NSagtWIbvAcNgoM0sHhuUp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/fwohCPTfPXvERWaC4H_2V-SoHjYd.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/fwohCPTfPXvERWaC4H_2V-SoHjYp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/IVr3G1WHY5Vg7rgBWW0vW7Y0Xugd.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/IVr3G1WHY5Vg7rgBWW0vW7Y0Xugp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/IWWyzG5zSG6LrfG8Ub0Y-diRylQd.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/IWWyzG5zSG6LrfG8Ub0Y-diRylQp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/noUMWt9nPF4-2aUDfDfenUHlMbUd.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/noUMWt9nPF4-2aUDfDfenUHlMbUp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/otXgouLCF9S6rqPv3lotXLIOHAQd.xml",
+      "size_bytes": 115
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/otXgouLCF9S6rqPv3lotXLIOHAQp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/rMr2voe1SUWyZcvzDPjEWp3A4ZAd.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/rMr2voe1SUWyZcvzDPjEWp3A4ZAp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/rvqEdgc2Yuk3c6eYUYKFdjt6QvAd.xml",
+      "size_bytes": 103
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/rvqEdgc2Yuk3c6eYUYKFdjt6QvAp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/uqy1yXF_kT4p92wgKYFaKezxmyod.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/uqy1yXF_kT4p92wgKYFaKezxmyop.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/uRQAD9lHMgfGr7nM3O9RZ_fgXV4d.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/uRQAD9lHMgfGr7nM3O9RZ_fgXV4p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Egt_Qqs73OLnsLNGiSvoy8esw-E/PknWqyy_9Z2Jrtuhr4Sv4bjUQYsp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsd.xml",
+      "size_bytes": 115
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/G2bXxMSdc8GBruweqCvyOZRmuSE/-KdGRrK243Vk1bKAc1Ef_X_n7Zwd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/G2bXxMSdc8GBruweqCvyOZRmuSE/-KdGRrK243Vk1bKAc1Ef_X_n7Zwp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/G2bXxMSdc8GBruweqCvyOZRmuSE/2eRS2wuudXjG2gmZ4VcqAiSE9tMd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/G2bXxMSdc8GBruweqCvyOZRmuSE/2eRS2wuudXjG2gmZ4VcqAiSE9tMp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/G2bXxMSdc8GBruweqCvyOZRmuSE/It5Invp4TMXDLLt2JWtBR-QPy-gd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/G2bXxMSdc8GBruweqCvyOZRmuSE/It5Invp4TMXDLLt2JWtBR-QPy-gp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/G2bXxMSdc8GBruweqCvyOZRmuSE/m6sesO5OBE85t4ZlcLP3hFTeDOkd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/G2bXxMSdc8GBruweqCvyOZRmuSE/m6sesO5OBE85t4ZlcLP3hFTeDOkp.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/G2bXxMSdc8GBruweqCvyOZRmuSE/OZ5AERCO247QGz7gh1to2Kjuzycd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/G2bXxMSdc8GBruweqCvyOZRmuSE/OZ5AERCO247QGz7gh1to2Kjuzycp.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/G2bXxMSdc8GBruweqCvyOZRmuSE/uaivL2Q5BmT86YtqB8AqDlo_Z-kd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/G2bXxMSdc8GBruweqCvyOZRmuSE/uaivL2Q5BmT86YtqB8AqDlo_Z-kp.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/G2bXxMSdc8GBruweqCvyOZRmuSE/Y4DvvSI9pJlJWLWa3GUQwJe9HTkd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/G2bXxMSdc8GBruweqCvyOZRmuSE/Y4DvvSI9pJlJWLWa3GUQwJe9HTkp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/BtfG8r7mCR7QzG38BZPlgq2SsA4d.xml",
+      "size_bytes": 194
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/BtfG8r7mCR7QzG38BZPlgq2SsA4p.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/iR5pPpcWiycEue63Jis3LBk26hod.xml",
+      "size_bytes": 191
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/iR5pPpcWiycEue63Jis3LBk26hop.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/wsJy2HDCfNJCc72hYQ9Jc2C2SzMd.xml",
+      "size_bytes": 254
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/wsJy2HDCfNJCc72hYQ9Jc2C2SzMp.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/kICj0YHDeWBPAL3HC5r-6KOXN4M/4EB_BvK_NMPyaaz3qev2h2Lri-Id.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/kICj0YHDeWBPAL3HC5r-6KOXN4M/4EB_BvK_NMPyaaz3qev2h2Lri-Ip.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/kICj0YHDeWBPAL3HC5r-6KOXN4M/4gQSOz3aSbKAhQCIC96bLZUJCpYd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/kICj0YHDeWBPAL3HC5r-6KOXN4M/4gQSOz3aSbKAhQCIC96bLZUJCpYp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/kICj0YHDeWBPAL3HC5r-6KOXN4M/_hozOX2Q70DwydWIomRKlSP96-Id.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/kICj0YHDeWBPAL3HC5r-6KOXN4M/_hozOX2Q70DwydWIomRKlSP96-Ip.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/kICj0YHDeWBPAL3HC5r-6KOXN4M/juO112hwY3odc4fe3q2gjyLbpeYd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/kICj0YHDeWBPAL3HC5r-6KOXN4M/juO112hwY3odc4fe3q2gjyLbpeYp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/AVJ0aRIDhu6qPcAI-Czr65IBRNQd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/AVJ0aRIDhu6qPcAI-Czr65IBRNQp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/But4BexXYOo9qs9dUFvZqUCZlY4d.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/But4BexXYOo9qs9dUFvZqUCZlY4p.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/WS7L7U3R0F3ft4esx_Z4zRwM4vQd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/WS7L7U3R0F3ft4esx_Z4zRwM4vQp.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/lIcmG1QNstZx9UEtrwSt0BLU5qo/bBnNk16H7_k_Ehul0ajzFNAstmsd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/lIcmG1QNstZx9UEtrwSt0BLU5qo/bBnNk16H7_k_Ehul0ajzFNAstmsp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/lIcmG1QNstZx9UEtrwSt0BLU5qo/Cz3qO8oTGz-RuQlaT-CuEQ13nbkd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/lIcmG1QNstZx9UEtrwSt0BLU5qo/Cz3qO8oTGz-RuQlaT-CuEQ13nbkp.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/lIcmG1QNstZx9UEtrwSt0BLU5qo/emBoOMi3d28CYqX5VXEFd5Oq0sEd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/lIcmG1QNstZx9UEtrwSt0BLU5qo/emBoOMi3d28CYqX5VXEFd5Oq0sEp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/lIcmG1QNstZx9UEtrwSt0BLU5qo/i3AB4ngTeq1DPEcfMfXApsfD7UMd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/lIcmG1QNstZx9UEtrwSt0BLU5qo/i3AB4ngTeq1DPEcfMfXApsfD7UMp.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/lIcmG1QNstZx9UEtrwSt0BLU5qo/kP7WxqGDX53Amb28jTJ-TMjXsjgd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/lIcmG1QNstZx9UEtrwSt0BLU5qo/kP7WxqGDX53Amb28jTJ-TMjXsjgp.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/lIcmG1QNstZx9UEtrwSt0BLU5qo/lLoOJ2hnWjLC-7cZrWPFs5xyE5Md.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/lIcmG1QNstZx9UEtrwSt0BLU5qo/lLoOJ2hnWjLC-7cZrWPFs5xyE5Mp.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/lIcmG1QNstZx9UEtrwSt0BLU5qo/qFmr5Wb2WDWUVZ7DffjKMRNbGBId.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/lIcmG1QNstZx9UEtrwSt0BLU5qo/qFmr5Wb2WDWUVZ7DffjKMRNbGBIp.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/lIcmG1QNstZx9UEtrwSt0BLU5qo/S3g4kAnljvQJGSnPtSQLw7h8B2Id.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/lIcmG1QNstZx9UEtrwSt0BLU5qo/S3g4kAnljvQJGSnPtSQLw7h8B2Ip.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4d.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4p.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZod.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZop.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencd.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencp.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8d.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8p.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4d.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4p.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Id.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Ip.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkd.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/ZUjB0ROa9UJn0ncmkwkP85Tqkgod.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/ZUjB0ROa9UJn0ncmkwkP85Tqkgop.xml",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/npc11vgX7Velh3v7Uy1AiluvprI/kYDew7JVaF66WZ7jrM-gsyceZ9gd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/npc11vgX7Velh3v7Uy1AiluvprI/kYDew7JVaF66WZ7jrM-gsyceZ9gp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/npc11vgX7Velh3v7Uy1AiluvprI/NOL_PCYQiWdTTAueSzmN7YDdFpAd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/npc11vgX7Velh3v7Uy1AiluvprI/NOL_PCYQiWdTTAueSzmN7YDdFpAp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/6TKnt4uqUzuW4P0537DSixRNzkMd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/6TKnt4uqUzuW4P0537DSixRNzkMp.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/R8pNiXCTZKcnpAvoKrhnUbF5em0d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/R8pNiXCTZKcnpAvoKrhnUbF5em0p.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/y3pIxeAZrmnsmUWA3VrtIokR004d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/y3pIxeAZrmnsmUWA3VrtIokR004p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/PknWqyy_9Z2Jrtuhr4Sv4bjUQYs/NBsN6Pu55h1BWT_ciu30ov5ty0cd.xml",
+      "size_bytes": 72
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/PknWqyy_9Z2Jrtuhr4Sv4bjUQYs/NBsN6Pu55h1BWT_ciu30ov5ty0cp.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Project.xml",
+      "size_bytes": 74
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/-Rce9Lxzt4v7MmBOh-k5NnO_YJMd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/-Rce9Lxzt4v7MmBOh-k5NnO_YJMp.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/BT5hWoz-UTefONdqForZyI91O8Yd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/BT5hWoz-UTefONdqForZyI91O8Yp.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQp.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/ojME0DLi1acAi9d0fF737hnpvFQd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/ojME0DLi1acAi9d0fF737hnpvFQp.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/qD-kr16wmwlzR-nIg1IG_vvRrWkd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/qD-kr16wmwlzR-nIg1IG_vvRrWkp.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/QMJD9OLFzxcTTbPOoh-ahQ4zTRUd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/QMJD9OLFzxcTTbPOoh-ahQ4zTRUp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/qZzfNzcYlPNG4tag-34m4zeP9pkd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/qZzfNzcYlPNG4tag-34m4zeP9pkp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/R0IsxKENiOKovWZXASFjrmpbBCYd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/R0IsxKENiOKovWZXASFjrmpbBCYp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/rh0jHbNfmojECiiHH7BQHmZTsWkd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/rh0jHbNfmojECiiHH7BQHmZTsWkp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/TMK4UzWHdRLhy_w-CHt9y11Q8XAd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/TMK4UzWHdRLhy_w-CHt9y11Q8XAp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/6Wh6FoV7C4IYWEtDS6TiCF34Fnkd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/6Wh6FoV7C4IYWEtDS6TiCF34Fnkp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/_QNcE9STfjvdhYxknpd3lkV24Y8d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/_QNcE9STfjvdhYxknpd3lkV24Y8p.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/d6vJEerjwidIEdtbtRp_n6XbzEUd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/d6vJEerjwidIEdtbtRp_n6XbzEUp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/R8pNiXCTZKcnpAvoKrhnUbF5em0/4nESEts07S11wAVqz6y3stfsZ_Ed.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/R8pNiXCTZKcnpAvoKrhnUbF5em0/4nESEts07S11wAVqz6y3stfsZ_Ep.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/R8pNiXCTZKcnpAvoKrhnUbF5em0/IiD-JIFbdvdeuBT4PjR7ovH5kkMd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/R8pNiXCTZKcnpAvoKrhnUbF5em0/IiD-JIFbdvdeuBT4PjR7ovH5kkMp.xml",
+      "size_bytes": 88
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/R8pNiXCTZKcnpAvoKrhnUbF5em0/OtO_9k0eLUQOIzt3EA-7ooHrtQQd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/R8pNiXCTZKcnpAvoKrhnUbF5em0/OtO_9k0eLUQOIzt3EA-7ooHrtQQp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/R8pNiXCTZKcnpAvoKrhnUbF5em0/P1Jsvqcim1mxyprFoqz91Ei3vP0d.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/R8pNiXCTZKcnpAvoKrhnUbF5em0/P1Jsvqcim1mxyprFoqz91Ei3vP0p.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/root/EEtUlUb-dLAdf0KpMVivaUlztwAp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/root/fjRQtWiSIy7hIlj-Kmk87M7s21kp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQd.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/root/KAXfQgCar2Yb8zOxgvf9hdmLP1Ep.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/root/qaw0eS1zuuY1ar9TdPn1GMfrjbQp.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/root/Tpa2TdYQyLNeWJn7EF8wbNd7gFUp.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/root/WZRuNzqc-Db7NcQAZO8Y-R8U9ccp.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/rootp.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Tpa2TdYQyLNeWJn7EF8wbNd7gFU/Egt_Qqs73OLnsLNGiSvoy8esw-Ed.xml",
+      "size_bytes": 62
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Tpa2TdYQyLNeWJn7EF8wbNd7gFU/Egt_Qqs73OLnsLNGiSvoy8esw-Ep.xml",
+      "size_bytes": 116
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Twqqn9lYgnni0AY3bigQmfpODi8/afMMeORkEzmgr6hcBF0Chi3OoLYd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Twqqn9lYgnni0AY3bigQmfpODi8/afMMeORkEzmgr6hcBF0Chi3OoLYp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Twqqn9lYgnni0AY3bigQmfpODi8/bVyAl_2tZtB_ZK5Nw6qK_FozeQ4d.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Twqqn9lYgnni0AY3bigQmfpODi8/bVyAl_2tZtB_ZK5Nw6qK_FozeQ4p.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Twqqn9lYgnni0AY3bigQmfpODi8/d_EbGIrGHGN_MJ6DD_d-i1dFZC4d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Twqqn9lYgnni0AY3bigQmfpODi8/d_EbGIrGHGN_MJ6DD_d-i1dFZC4p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Twqqn9lYgnni0AY3bigQmfpODi8/E_NjGnvMW31vgvp1ql68Q6zc0pgd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Twqqn9lYgnni0AY3bigQmfpODi8/E_NjGnvMW31vgvp1ql68Q6zc0pgp.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Twqqn9lYgnni0AY3bigQmfpODi8/g43sXC206Y-5D6Nt8SqelVCNJ2Yd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Twqqn9lYgnni0AY3bigQmfpODi8/g43sXC206Y-5D6Nt8SqelVCNJ2Yp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Twqqn9lYgnni0AY3bigQmfpODi8/LF5UdPAYti7m1upY-megGkLuViQd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Twqqn9lYgnni0AY3bigQmfpODi8/LF5UdPAYti7m1upY-megGkLuViQp.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Twqqn9lYgnni0AY3bigQmfpODi8/M3iabscxBH4ugdG7aHHR6tkHbucd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Twqqn9lYgnni0AY3bigQmfpODi8/M3iabscxBH4ugdG7aHHR6tkHbucp.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Twqqn9lYgnni0AY3bigQmfpODi8/vO2ZKSSjwcvGnFe1KcJAmjGT9UQd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Twqqn9lYgnni0AY3bigQmfpODi8/vO2ZKSSjwcvGnFe1KcJAmjGT9UQp.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Twqqn9lYgnni0AY3bigQmfpODi8/XKVZMJ0V7AQaMvA7znd8vRI71cQd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Twqqn9lYgnni0AY3bigQmfpODi8/XKVZMJ0V7AQaMvA7znd8vRI71cQp.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Twqqn9lYgnni0AY3bigQmfpODi8/YKsG5QGWjgEOMxekyAetJBjr2IEd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/Twqqn9lYgnni0AY3bigQmfpODi8/YKsG5QGWjgEOMxekyAetJBjr2IEp.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/2us7u2uAvtG0zZQ4L8TQQCkXVPMd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/2us7u2uAvtG0zZQ4L8TQQCkXVPMp.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/_xTlkqU7UI7pU8O7Kv4UsDUjkkcd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/_xTlkqU7UI7pU8O7Kv4UsDUjkkcp.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/aGIkmrxTuM0uQygLa5Mhs7_YWm8d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/aGIkmrxTuM0uQygLa5Mhs7_YWm8p.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/b6Is0QMQ2WlvlkpLzlIJtwSUQekd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/b6Is0QMQ2WlvlkpLzlIJtwSUQekp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/EdpVV7vhyOuBHnOxcb9F_oWJ3YAd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/EdpVV7vhyOuBHnOxcb9F_oWJ3YAp.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/EzlHeULiKO__MMHfhtPT2u_ugswd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/EzlHeULiKO__MMHfhtPT2u_ugswp.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/fMw4KBI12zYXgn5bkvHIVYPesqwd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/fMw4KBI12zYXgn5bkvHIVYPesqwp.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/IgwVUXkqpa7EnY_s6bYlIMdI7nEd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/IgwVUXkqpa7EnY_s6bYlIMdI7nEp.xml",
+      "size_bytes": 106
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/lYQEyPDOdTNcBsotZKYYqmvtpE0d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/lYQEyPDOdTNcBsotZKYYqmvtpE0p.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/mCWrM0ODEcRtxv9Bu2-0uutPkzod.xml",
+      "size_bytes": 147
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/mCWrM0ODEcRtxv9Bu2-0uutPkzop.xml",
+      "size_bytes": 107
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/o32MbtlwjwieCCcWCRNif6bvY6gd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/o32MbtlwjwieCCcWCRNif6bvY6gp.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/ObeHRpgFiNhgnKPaM9f4__52vVsd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/ObeHRpgFiNhgnKPaM9f4__52vVsp.xml",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/oin2StvRuEkiyKmoVGPoqP0SLysd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/oin2StvRuEkiyKmoVGPoqP0SLysp.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/T-fXcUi_6K0xQONrUjgfYe8kXXYd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/T-fXcUi_6K0xQONrUjgfYe8kXXYp.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/U17l2EFt0RU_mJ8eX-dXuA2OlpEd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/U17l2EFt0RU_mJ8eX-dXuA2OlpEp.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/ujtGBOh0y8i_oRE0zfAnFdspkKUd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/ujtGBOh0y8i_oRE0zfAnFdspkKUp.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/XR-Wf6E37N-bCD7X2RHEIT7yXEMd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/XR-Wf6E37N-bCD7X2RHEIT7yXEMp.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/66WgGCcF5RIH9MCEgPmgjZK9k3Ud.xml",
+      "size_bytes": 74
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/66WgGCcF5RIH9MCEgPmgjZK9k3Up.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/AtMjXDrOSm8YDv3_4UFXiyrWqNEd.xml",
+      "size_bytes": 74
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/AtMjXDrOSm8YDv3_4UFXiyrWqNEp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Scripts_Data/Data/BEV_Thermal_Management_param.m",
+      "size_bytes": 37785
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Scripts_Data/Data/driveCycleParam.m",
+      "size_bytes": 2373
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Scripts_Data/Data/setScenario.m",
+      "size_bytes": 4206
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Scripts_Data/Scripts/Plots/adjustMargins.m",
+      "size_bytes": 1230
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Scripts_Data/Scripts/Plots/plotBarGraph.m",
+      "size_bytes": 2483
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Scripts_Data/Scripts/Plots/plotDriveChargeCycle.m",
+      "size_bytes": 1716
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Scripts_Data/Scripts/Plots/plotEnergySankey.m",
+      "size_bytes": 10347
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Scripts_Data/Scripts/Plots/plotEnergySankey.rights",
+      "size_bytes": 1536
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Scripts_Data/Scripts/Plots/plotHVACEnergy.m",
+      "size_bytes": 2392
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Scripts_Data/Scripts/Plots/plotTimeData.m",
+      "size_bytes": 2566
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Scripts_Data/Scripts/Plots/plotTornado.m",
+      "size_bytes": 3148
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Scripts_Data/Scripts/Plots/plotVehicleEnergy.m",
+      "size_bytes": 3296
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Scripts_Data/Scripts/Postprocessing/calcHeatEnergy.m",
+      "size_bytes": 2216
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Scripts_Data/Scripts/Postprocessing/calcHVACEnergy.m",
+      "size_bytes": 2789
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Scripts_Data/Scripts/Postprocessing/calcVehicleEnergy.m",
+      "size_bytes": 7638
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Scripts_Data/Scripts/startup_BEV_Thermal_Management.m",
+      "size_bytes": 301
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/SECURITY.md",
+      "size_bytes": 394
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Workflows/Optimization/Helper Fcn/setChillerDiameterSDO.m",
+      "size_bytes": 2131
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Workflows/Optimization/Helper Fcn/setCondenserLengthSDO.m",
+      "size_bytes": 2899
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Workflows/Optimization/Helper Fcn/setEvaporatorLengthSDO.m",
+      "size_bytes": 2975
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Workflows/Optimization/postproOptim.m",
+      "size_bytes": 6989
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Workflows/Optimization/simBaselineConfiguration.m",
+      "size_bytes": 4554
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Workflows/Optimization/surrOptBEV.m",
+      "size_bytes": 2667
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Workflows/Optimization/surrOptBEVParallel.m",
+      "size_bytes": 5852
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Workflows/Optimization/surrOptObjFcn.m",
+      "size_bytes": 5164
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Workflows/Optimization/surrOptObjFcnParallel.m",
+      "size_bytes": 5054
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Workflows/Sensitivity/Component Sensitivities/sensitivityChiller.m",
+      "size_bytes": 3868
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Workflows/Sensitivity/Component Sensitivities/sensitivityCondenser.m",
+      "size_bytes": 4512
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Workflows/Sensitivity/Component Sensitivities/sensitivityEvaporator.m",
+      "size_bytes": 3659
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Workflows/Sensitivity/Component Sensitivities/sensitivityHeater.m",
+      "size_bytes": 3818
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Workflows/Sensitivity/Component Sensitivities/sensitivityPlate.m",
+      "size_bytes": 4107
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Workflows/Sensitivity/Component Sensitivities/sensitivityTransmission.m",
+      "size_bytes": 2655
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Workflows/Sensitivity/Helper Fcn/checkModel.m",
+      "size_bytes": 939
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Workflows/Sensitivity/Helper Fcn/checkTempReq.m",
+      "size_bytes": 1453
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Workflows/Sensitivity/Helper Fcn/setChillerDiameter.m",
+      "size_bytes": 2483
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Workflows/Sensitivity/Helper Fcn/setCondenserLength.m",
+      "size_bytes": 3436
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Workflows/Sensitivity/Helper Fcn/setEvaporatorLength.m",
+      "size_bytes": 3506
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Workflows/Sensitivity/Helper Fcn/setSDOParamSpace.m",
+      "size_bytes": 2239
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Workflows/Sensitivity/Helper Fcn/setSimInputObj.m",
+      "size_bytes": 3226
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Workflows/Sensitivity/postproSensitivity.m",
+      "size_bytes": 3690
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Workflows/Sensitivity/postSimFcnEV.m",
+      "size_bytes": 859
+    },
+    {
+      "path": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Workflows/Sensitivity/sensitivityGlobal.m",
+      "size_bytes": 4788
+    }
+  ],
+  "entrypoint": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Models/BEV_Thermal_Management.slx",
+  "expected_score": 90.21191310743109,
+  "expected_valid_scenarios": 5,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "summer_city_nominal",
+      "summer_city_high_solar",
+      "winter_highway_nominal",
+      "winter_highway_low_soc",
+      "summer_city_heavy_duty"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 2316675,
+  "excluded_files": []
+}

@@ -1,0 +1,205 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XTHERM-04",
+  "collection": "XTHERM",
+  "reference": {
+    "identity_path": "tasks/XTHERM-04/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "ReversibleHeatPump.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XTHERM-04",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a physically causal reversible residential heat-pump system using a two-phase refrigerant loop with a variable-capacity compressor, indoor and outdoor heat exchangers, an electronic expansion valve, a four-way reversing valve, an accumulator, circulation fans, and a moist-air house thermal load.",
+    "engineering_objects": [
+      "Build a physically causal reversible residential heat-pump system using a two-phase refrigerant loop with a variable-capacity compressor, indoor and outdoor heat exchangers, an electronic expansion valve, a four-way reversing valve, an accumulator, circulation fans, and a moist-air house thermal load.",
+      "The same plant must provide heating in cold ambient conditions and cooling in hot ambient conditions.",
+      "Temperature errors and operating-condition changes must propagate through controller commands, compressor and valve actuation, refrigerant pressure and mass flow, heat-exchanger heat flow, electrical power, and house temperature."
+    ],
+    "physical_paths": [
+      "Temperature errors and operating-condition changes must propagate through controller commands, compressor and valve actuation, refrigerant pressure and mass flow, heat-exchanger heat flow, electrical power, and house temperature.",
+      "Build a physically causal reversible residential heat-pump system using a two-phase refrigerant loop with a variable-capacity compressor, indoor and outdoor heat exchangers, an electronic expansion valve, a four-way reversing valve, an accumulator, circulation fans, and a moist-air house thermal load.",
+      "The same plant must provide heating in cold ambient conditions and cooling in hot ambient conditions."
+    ],
+    "functional_paths": [
+      "Regulate the measured house-air temperature in closed loop to T_set, select heating or cooling as conditions require, reverse the refrigerant path consistently with the selected mode, and protect the refrigerant loop from unsafe pressure operation.",
+      "Temperature errors and operating-condition changes must propagate through controller commands, compressor and valve actuation, refrigerant pressure and mass flow, heat-exchanger heat flow, electrical power, and house temperature.",
+      "Log five MATLAB Timeseries named thermal_state, hvac_control, heat_flow_state, power_cop_state, and refrigerant_state for the complete simulation interval."
+    ],
+    "information_paths": [
+      "T_house_init, T_set, T_ambient_cold, T_ambient_hot, internal_heat_gain_scale -> F90-XTHERM-04 plant/control path -> thermal_state, hvac_control, heat_flow_state, power_cop_state, refrigerant_state"
+    ],
+    "modes_and_events": [
+      "Regulate the measured house-air temperature in closed loop to T_set, select heating or cooling as conditions require, reverse the refrigerant path consistently with the selected mode, and protect the refrigerant loop from unsafe pressure operation.",
+      "hvac_control has 4 channels [heating/cooling mode,reversing-valve command,compressor-capacity command,expansion-valve command].",
+      "refrigerant_state has 6 channels [indoor and outdoor heat-exchanger pressure (MPa),indoor and outdoor saturation temperature (degC),compressor and expansion-valve mass flow (kg/s)]."
+    ],
+    "interfaces": [
+      {
+        "name": "T_house_init",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Read T_house_init, T_set, T_ambient_cold, T_ambient_hot, and internal_heat_gain_scale from the MATLAB base workspace. T_house_init is a real scalar in [14, 28] degC; T_set is a real scalar in [19, 23] degC; T_ambient_cold is a real scalar in [-15, 5] degC; T_ambient_hot is a real scalar in [30, 40] degC; and internal_heat_gain_scale is a real scalar in [0.8, 1.5] (unitless).",
+        "source": "tasks/XTHERM-04/public_spec.json"
+      },
+      {
+        "name": "T_set",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Read T_house_init, T_set, T_ambient_cold, T_ambient_hot, and internal_heat_gain_scale from the MATLAB base workspace. T_house_init is a real scalar in [14, 28] degC; T_set is a real scalar in [19, 23] degC; T_ambient_cold is a real scalar in [-15, 5] degC; T_ambient_hot is a real scalar in [30, 40] degC; and internal_heat_gain_scale is a real scalar in [0.8, 1.5] (unitless). Regulate the measured house-air temperature in closed loop to T_set, select heating or cooling as conditions require, reverse the refrigerant path consistently with the selected mode, and protect the refrigerant loop from unsafe pressure operation.",
+        "source": "tasks/XTHERM-04/public_spec.json"
+      },
+      {
+        "name": "T_ambient_cold",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Read T_house_init, T_set, T_ambient_cold, T_ambient_hot, and internal_heat_gain_scale from the MATLAB base workspace. T_house_init is a real scalar in [14, 28] degC; T_set is a real scalar in [19, 23] degC; T_ambient_cold is a real scalar in [-15, 5] degC; T_ambient_hot is a real scalar in [30, 40] degC; and internal_heat_gain_scale is a real scalar in [0.8, 1.5] (unitless).",
+        "source": "tasks/XTHERM-04/public_spec.json"
+      },
+      {
+        "name": "T_ambient_hot",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Read T_house_init, T_set, T_ambient_cold, T_ambient_hot, and internal_heat_gain_scale from the MATLAB base workspace. T_house_init is a real scalar in [14, 28] degC; T_set is a real scalar in [19, 23] degC; T_ambient_cold is a real scalar in [-15, 5] degC; T_ambient_hot is a real scalar in [30, 40] degC; and internal_heat_gain_scale is a real scalar in [0.8, 1.5] (unitless).",
+        "source": "tasks/XTHERM-04/public_spec.json"
+      },
+      {
+        "name": "internal_heat_gain_scale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read T_house_init, T_set, T_ambient_cold, T_ambient_hot, and internal_heat_gain_scale from the MATLAB base workspace. T_house_init is a real scalar in [14, 28] degC; T_set is a real scalar in [19, 23] degC; T_ambient_cold is a real scalar in [-15, 5] degC; T_ambient_hot is a real scalar in [30, 40] degC; and internal_heat_gain_scale is a real scalar in [0.8, 1.5] (unitless).",
+        "source": "tasks/XTHERM-04/public_spec.json"
+      },
+      {
+        "name": "thermal_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "Log five MATLAB Timeseries named thermal_state, hvac_control, heat_flow_state, power_cop_state, and refrigerant_state for the complete simulation interval. thermal_state has 3 channels [temperature setpoint, house-air temperature, ambient temperature], all in degC.",
+        "source": "tasks/XTHERM-04/public_spec.json"
+      },
+      {
+        "name": "hvac_control",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Log five MATLAB Timeseries named thermal_state, hvac_control, heat_flow_state, power_cop_state, and refrigerant_state for the complete simulation interval. hvac_control has 4 channels [heating/cooling mode,reversing-valve command,compressor-capacity command,expansion-valve command].",
+        "source": "tasks/XTHERM-04/public_spec.json"
+      },
+      {
+        "name": "heat_flow_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "kW"
+        ],
+        "range_or_shape": "Log five MATLAB Timeseries named thermal_state, hvac_control, heat_flow_state, power_cop_state, and refrigerant_state for the complete simulation interval. heat_flow_state has 3 channels [outdoor-heat-exchanger,indoor-heat-exchanger,house-envelope heat flow], all in kW.",
+        "source": "tasks/XTHERM-04/public_spec.json"
+      },
+      {
+        "name": "power_cop_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "kW"
+        ],
+        "range_or_shape": "Log five MATLAB Timeseries named thermal_state, hvac_control, heat_flow_state, power_cop_state, and refrigerant_state for the complete simulation interval. power_cop_state has 5 channels [compressor,indoor-fan,outdoor-fan,total electrical power (kW),instantaneous COP].",
+        "source": "tasks/XTHERM-04/public_spec.json"
+      },
+      {
+        "name": "refrigerant_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "g/s",
+          "kg/s",
+          "MPa",
+          "degC",
+          "kg"
+        ],
+        "range_or_shape": "Log five MATLAB Timeseries named thermal_state, hvac_control, heat_flow_state, power_cop_state, and refrigerant_state for the complete simulation interval. refrigerant_state has 6 channels [indoor and outdoor heat-exchanger pressure (MPa),indoor and outdoor saturation temperature (degC),compressor and expansion-valve mass flow (kg/s)].",
+        "source": "tasks/XTHERM-04/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a physically causal reversible residential heat-pump system using a two-phase refrigerant loop with a variable-capacity compressor, indoor and outdoor heat exchangers, an electronic expansion valve, a four-way reversing valve, an accumulator, circulation fans, and a moist-air house thermal load.",
+      "Temperature errors and operating-condition changes must propagate through controller commands, compressor and valve actuation, refrigerant pressure and mass flow, heat-exchanger heat flow, electrical power, and house temperature."
+    ],
+    "feedback_and_control_causality": [
+      "Build a physically causal reversible residential heat-pump system using a two-phase refrigerant loop with a variable-capacity compressor, indoor and outdoor heat exchangers, an electronic expansion valve, a four-way reversing valve, an accumulator, circulation fans, and a moist-air house thermal load.",
+      "The same plant must provide heating in cold ambient conditions and cooling in hot ambient conditions.",
+      "Regulate the measured house-air temperature in closed loop to T_set, select heating or cooling as conditions require, reverse the refrigerant path consistently with the selected mode, and protect the refrigerant loop from unsafe pressure operation."
+    ],
+    "signal_sources": [
+      "T_house_init is read from the public MATLAB base-workspace input contract.",
+      "T_set is read from the public MATLAB base-workspace input contract.",
+      "T_ambient_cold is read from the public MATLAB base-workspace input contract.",
+      "T_ambient_hot is read from the public MATLAB base-workspace input contract.",
+      "internal_heat_gain_scale is read from the public MATLAB base-workspace input contract.",
+      "thermal_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "hvac_control is produced by the implemented plant or controller and logged under the public output contract.",
+      "heat_flow_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "power_cop_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "refrigerant_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "T_house_init: Read T_house_init, T_set, T_ambient_cold, T_ambient_hot, and internal_heat_gain_scale from the MATLAB base workspace. T_house_init is a real scalar in [14, 28] degC; T_set is a real scalar in [19, 23] degC; T_ambient_cold is a real scalar in [-15, 5] degC; T_ambient_hot is a real scalar in [30, 40] degC; and internal_heat_gain_scale is a real scalar in [0.8, 1.5] (unitless).",
+      "T_set: Read T_house_init, T_set, T_ambient_cold, T_ambient_hot, and internal_heat_gain_scale from the MATLAB base workspace. T_house_init is a real scalar in [14, 28] degC; T_set is a real scalar in [19, 23] degC; T_ambient_cold is a real scalar in [-15, 5] degC; T_ambient_hot is a real scalar in [30, 40] degC; and internal_heat_gain_scale is a real scalar in [0.8, 1.5] (unitless). Regulate the measured house-air temperature in closed loop to T_set, select heating or cooling as conditions require, reverse the refrigerant path consistently with the selected mode, and protect the refrigerant loop from unsafe pressure operation.",
+      "T_ambient_cold: Read T_house_init, T_set, T_ambient_cold, T_ambient_hot, and internal_heat_gain_scale from the MATLAB base workspace. T_house_init is a real scalar in [14, 28] degC; T_set is a real scalar in [19, 23] degC; T_ambient_cold is a real scalar in [-15, 5] degC; T_ambient_hot is a real scalar in [30, 40] degC; and internal_heat_gain_scale is a real scalar in [0.8, 1.5] (unitless).",
+      "T_ambient_hot: Read T_house_init, T_set, T_ambient_cold, T_ambient_hot, and internal_heat_gain_scale from the MATLAB base workspace. T_house_init is a real scalar in [14, 28] degC; T_set is a real scalar in [19, 23] degC; T_ambient_cold is a real scalar in [-15, 5] degC; T_ambient_hot is a real scalar in [30, 40] degC; and internal_heat_gain_scale is a real scalar in [0.8, 1.5] (unitless).",
+      "internal_heat_gain_scale: Read T_house_init, T_set, T_ambient_cold, T_ambient_hot, and internal_heat_gain_scale from the MATLAB base workspace. T_house_init is a real scalar in [14, 28] degC; T_set is a real scalar in [19, 23] degC; T_ambient_cold is a real scalar in [-15, 5] degC; T_ambient_hot is a real scalar in [30, 40] degC; and internal_heat_gain_scale is a real scalar in [0.8, 1.5] (unitless)."
+    ],
+    "disturbances": [
+      "Build a physically causal reversible residential heat-pump system using a two-phase refrigerant loop with a variable-capacity compressor, indoor and outdoor heat exchangers, an electronic expansion valve, a four-way reversing valve, an accumulator, circulation fans, and a moist-air house thermal load."
+    ],
+    "dynamic_processes": [
+      "F90-XTHERM-04 produces time-varying thermal_state, hvac_control, heat_flow_state, power_cop_state, refrigerant_state over the declared run."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XTHERM-04: prescribing thermal_state directly would bypass the system path described by: Temperature errors and operating-condition changes must propagate through controller commands, compressor and valve actuation, refrigerant pressure and mass flow, heat-exchanger heat flow, electrical power, and house temperature.",
+      "F90-XTHERM-04: replaying a fixed thermal_state trace would ignore causal variation in T_house_init."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XTHERM-04/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XTHERM-04/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XTHERM-04/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

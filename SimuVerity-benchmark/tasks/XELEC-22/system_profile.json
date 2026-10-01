@@ -1,0 +1,171 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XELEC-22",
+  "collection": "XELEC",
+  "reference": {
+    "identity_path": "tasks/XELEC-22/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/Universal_ELC_for_MicroHydoPlant.slx",
+    "model_path": "tasks/XELEC-22/reference/files/Universal_ELC_for_MicroHydoPlant.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id D022",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build an electronic load controller for a three-phase 50 Hz micro-hydro generator.",
+    "engineering_objects": [
+      "D022 plant and controller described by the current public task contract",
+      "Measured output interfaces: Vdc, Vabc, Iabc, Psource, Pload, Pdump, Speed"
+    ],
+    "physical_paths": [
+      "The generator must feed a common PCC with separate user-load and converter-controlled ballast-load branches connected in parallel."
+    ],
+    "functional_paths": [
+      "Build an electronic load controller for a three-phase 50 Hz micro-hydro generator.",
+      "The generator must feed a common PCC with separate user-load and converter-controlled ballast-load branches connected in parallel.",
+      "Regulate ballast absorption in closed loop so generator active power remains approximately constant as user load changes."
+    ],
+    "information_paths": [
+      "R_user -> D022 plant/control path -> Vdc, Vabc, Iabc, Psource, Pload, Pdump, Speed"
+    ],
+    "modes_and_events": [
+      "D022 startup and continuous operation follow the current public task contract."
+    ],
+    "interfaces": [
+      {
+        "name": "R_user",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read R_user from a base-workspace variable; its nominal value is 10 ohm and its operating range is +/-10%.",
+        "source": "tasks/XELEC-22/public_spec.json"
+      },
+      {
+        "name": "Vdc",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "V"
+        ],
+        "range_or_shape": "Log complete-run physical MATLAB Timeseries Vdc, Vabc, Iabc, Psource, Pload, Pdump and Speed.",
+        "source": "tasks/XELEC-22/public_spec.json"
+      },
+      {
+        "name": "Vabc",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "V"
+        ],
+        "range_or_shape": "Log complete-run physical MATLAB Timeseries Vdc, Vabc, Iabc, Psource, Pload, Pdump and Speed. Vabc and Iabc must contain all three measured PCC phases; the power signals must measure their respective branches; Speed must be physical generator speed.",
+        "source": "tasks/XELEC-22/public_spec.json"
+      },
+      {
+        "name": "Iabc",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "Log complete-run physical MATLAB Timeseries Vdc, Vabc, Iabc, Psource, Pload, Pdump and Speed. Vabc and Iabc must contain all three measured PCC phases; the power signals must measure their respective branches; Speed must be physical generator speed.",
+        "source": "tasks/XELEC-22/public_spec.json"
+      },
+      {
+        "name": "Psource",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "W"
+        ],
+        "range_or_shape": "Psource is positive from generator into PCC, Pload from PCC into user load, and Pdump from ballast branch toward PCC. Log complete-run physical MATLAB Timeseries Vdc, Vabc, Iabc, Psource, Pload, Pdump and Speed.",
+        "source": "tasks/XELEC-22/public_spec.json"
+      },
+      {
+        "name": "Pload",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "W"
+        ],
+        "range_or_shape": "Psource is positive from generator into PCC, Pload from PCC into user load, and Pdump from ballast branch toward PCC. Log complete-run physical MATLAB Timeseries Vdc, Vabc, Iabc, Psource, Pload, Pdump and Speed.",
+        "source": "tasks/XELEC-22/public_spec.json"
+      },
+      {
+        "name": "Pdump",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "W"
+        ],
+        "range_or_shape": "Psource is positive from generator into PCC, Pload from PCC into user load, and Pdump from ballast branch toward PCC. Log complete-run physical MATLAB Timeseries Vdc, Vabc, Iabc, Psource, Pload, Pdump and Speed.",
+        "source": "tasks/XELEC-22/public_spec.json"
+      },
+      {
+        "name": "Speed",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Log complete-run physical MATLAB Timeseries Vdc, Vabc, Iabc, Psource, Pload, Pdump and Speed. Vabc and Iabc must contain all three measured PCC phases; the power signals must measure their respective branches; Speed must be physical generator speed.",
+        "source": "tasks/XELEC-22/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build an electronic load controller for a three-phase 50 Hz micro-hydro generator.",
+      "The generator must feed a common PCC with separate user-load and converter-controlled ballast-load branches connected in parallel.",
+      "Psource is positive from generator into PCC, Pload from PCC into user load, and Pdump from ballast branch toward PCC."
+    ],
+    "feedback_and_control_causality": [
+      "Build an electronic load controller for a three-phase 50 Hz micro-hydro generator.",
+      "Regulate ballast absorption in closed loop so generator active power remains approximately constant as user load changes.",
+      "The regulated states and generator active power must settle promptly across the stated load range."
+    ],
+    "signal_sources": [
+      "R_user is read from the public MATLAB base-workspace input contract.",
+      "Vdc is produced by the implemented plant or controller and logged under the public output contract.",
+      "Vabc is produced by the implemented plant or controller and logged under the public output contract.",
+      "Iabc is produced by the implemented plant or controller and logged under the public output contract.",
+      "Psource is produced by the implemented plant or controller and logged under the public output contract.",
+      "Pload is produced by the implemented plant or controller and logged under the public output contract.",
+      "Pdump is produced by the implemented plant or controller and logged under the public output contract.",
+      "Speed is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "R_user: Read R_user from a base-workspace variable; its nominal value is 10 ohm and its operating range is +/-10%."
+    ],
+    "disturbances": [
+      "Build an electronic load controller for a three-phase 50 Hz micro-hydro generator.",
+      "The generator must feed a common PCC with separate user-load and converter-controlled ballast-load branches connected in parallel.",
+      "Regulate ballast absorption in closed loop so generator active power remains approximately constant as user load changes."
+    ],
+    "dynamic_processes": [
+      "The regulated states and generator active power must settle promptly across the stated load range."
+    ],
+    "task_specific_shortcuts": [
+      "D022: prescribing Vdc directly would bypass the system path described by: The generator must feed a common PCC with separate user-load and converter-controlled ballast-load branches connected in parallel.",
+      "D022: replaying a fixed Vdc trace would ignore causal variation in R_user."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XELEC-22/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XELEC-22/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XELEC-22/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

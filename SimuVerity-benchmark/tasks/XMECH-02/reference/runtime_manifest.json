@@ -1,0 +1,20 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XMECH-02",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/Simscape-Wind-Turbine/Wind_Turbine.slx",
+  "clean_replay_setup": {
+    "phase": "before_load",
+    "path": "tasks/XMECH-02/reference/clean_replay_setup/f90_xmech02_reference_clean_replay_setup.m",
+    "entrypoint": "f90_xmech02_reference_clean_replay_setup"
+  },
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 1327,
+  "retained_bytes": 11625883,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ]
+}

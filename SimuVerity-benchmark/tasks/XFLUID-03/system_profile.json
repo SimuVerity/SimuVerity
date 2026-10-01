@@ -1,0 +1,169 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XFLUID-03",
+  "collection": "XFLUID",
+  "reference": {
+    "identity_path": "tasks/XFLUID-03/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/Tractor-Simscape/Model/TractorEnergyComputation.slx",
+    "model_path": "tasks/XFLUID-03/reference/files/Tractor-Simscape/Model/TractorEnergyComputation.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XFLUID-03",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a physically causal tractor model for steady tillage with a hydrostatic continuously variable transmission.",
+    "engineering_objects": [
+      "Build a physically causal tractor model for steady tillage with a hydrostatic continuously variable transmission.",
+      "The model must include an engine or governed prime mover, a variable-displacement hydraulic pump, a closed hydraulic loop with pressure protection and charge-flow support, hydraulic motors driving both the front and rear axles, a finite-mass tractor body, four tire--soil contacts, and an implement that applies a physical tillage load to the tractor.",
+      "Hydraulic pressure and flow must transmit power from the engine through the pump and motors to the driven wheels;"
+    ],
+    "physical_paths": [
+      "Hydraulic pressure and flow must transmit power from the engine through the pump and motors to the driven wheels; prescribed vehicle motion, replayed output trajectories, or mechanically disconnected hydraulic signals are not valid.",
+      "Build a physically causal tractor model for steady tillage with a hydrostatic continuously variable transmission.",
+      "The model must include an engine or governed prime mover, a variable-displacement hydraulic pump, a closed hydraulic loop with pressure protection and charge-flow support, hydraulic motors driving both the front and rear axles, a finite-mass tractor body, four tire--soil contacts, and an implement that applies a physical tillage load to the tractor.",
+      "Hydraulic pressure and flow must transmit power from the engine through the pump and motors to the driven wheels;"
+    ],
+    "functional_paths": [
+      "The form of the driver command or speed-regulation implementation is not prescribed."
+    ],
+    "information_paths": [
+      "engine_speed_rpm, pump_displacement_cm3_rev, implement_depth_cm, soil_cohesion_kpa -> F90-XFLUID-03 plant/control path -> tractor_state, hydraulic_state, drivetrain_effort"
+    ],
+    "modes_and_events": [
+      "Build a physically causal tractor model for steady tillage with a hydrostatic continuously variable transmission.",
+      "The model must include an engine or governed prime mover, a variable-displacement hydraulic pump, a closed hydraulic loop with pressure protection and charge-flow support, hydraulic motors driving both the front and rear axles, a finite-mass tractor body, four tire--soil contacts, and an implement that applies a physical tillage load to the tractor.",
+      "Across the declared range, the tractor must move forward stably, both axles must receive physically consistent drive effort, pressures and flows must remain finite and bounded by the protection network, and changes in pump displacement, implement depth, and soil properties must causally affect drivetrain effort and vehicle motion."
+    ],
+    "interfaces": [
+      {
+        "name": "engine_speed_rpm",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "rpm"
+        ],
+        "range_or_shape": "Read engine_speed_rpm, pump_displacement_cm3_rev, implement_depth_cm, and soil_cohesion_kpa from MATLAB base-workspace variables.",
+        "source": "tasks/XFLUID-03/public_spec.json"
+      },
+      {
+        "name": "pump_displacement_cm3_rev",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "cm^3/rev"
+        ],
+        "range_or_shape": "Read engine_speed_rpm, pump_displacement_cm3_rev, implement_depth_cm, and soil_cohesion_kpa from MATLAB base-workspace variables.",
+        "source": "tasks/XFLUID-03/public_spec.json"
+      },
+      {
+        "name": "implement_depth_cm",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "cm"
+        ],
+        "range_or_shape": "Read engine_speed_rpm, pump_displacement_cm3_rev, implement_depth_cm, and soil_cohesion_kpa from MATLAB base-workspace variables.",
+        "source": "tasks/XFLUID-03/public_spec.json"
+      },
+      {
+        "name": "soil_cohesion_kpa",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kPa"
+        ],
+        "range_or_shape": "Read engine_speed_rpm, pump_displacement_cm3_rev, implement_depth_cm, and soil_cohesion_kpa from MATLAB base-workspace variables.",
+        "source": "tasks/XFLUID-03/public_spec.json"
+      },
+      {
+        "name": "tractor_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Log three Timeseries named tractor_state, hydraulic_state, and drivetrain_effort for the complete simulation interval. tractor_state contains [engine speed, tractor speed, implement depth, pump displacement] in the units listed above.",
+        "source": "tasks/XFLUID-03/public_spec.json"
+      },
+      {
+        "name": "hydraulic_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N*m",
+          "m^3",
+          "rpm",
+          "bar"
+        ],
+        "range_or_shape": "Log three Timeseries named tractor_state, hydraulic_state, and drivetrain_effort for the complete simulation interval. hydraulic_state contains [main-pump torque, main-pump flow, loop high pressure, front-motor speed, rear-motor speed] in [N*m, m^3/s, bar, rpm, rpm].",
+        "source": "tasks/XFLUID-03/public_spec.json"
+      },
+      {
+        "name": "drivetrain_effort",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N*m",
+          "m^3"
+        ],
+        "range_or_shape": "Log three Timeseries named tractor_state, hydraulic_state, and drivetrain_effort for the complete simulation interval. drivetrain_effort contains [front-motor torque, rear-motor torque, front-motor flow, rear-motor flow] in [N*m, N*m, m^3/s, m^3/s].",
+        "source": "tasks/XFLUID-03/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "F90-XFLUID-03 uses the channel order and units declared for tractor_state, hydraulic_state, drivetrain_effort."
+    ],
+    "feedback_and_control_causality": [
+      "Build a physically causal tractor model for steady tillage with a hydrostatic continuously variable transmission.",
+      "The form of the driver command or speed-regulation implementation is not prescribed.",
+      "Across the declared range, the tractor must move forward stably, both axles must receive physically consistent drive effort, pressures and flows must remain finite and bounded by the protection network, and changes in pump displacement, implement depth, and soil properties must causally affect drivetrain effort and vehicle motion."
+    ],
+    "signal_sources": [
+      "engine_speed_rpm is read from the public MATLAB base-workspace input contract.",
+      "pump_displacement_cm3_rev is read from the public MATLAB base-workspace input contract.",
+      "implement_depth_cm is read from the public MATLAB base-workspace input contract.",
+      "soil_cohesion_kpa is read from the public MATLAB base-workspace input contract.",
+      "tractor_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "hydraulic_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "drivetrain_effort is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "engine_speed_rpm: Read engine_speed_rpm, pump_displacement_cm3_rev, implement_depth_cm, and soil_cohesion_kpa from MATLAB base-workspace variables.",
+      "pump_displacement_cm3_rev: Read engine_speed_rpm, pump_displacement_cm3_rev, implement_depth_cm, and soil_cohesion_kpa from MATLAB base-workspace variables.",
+      "implement_depth_cm: Read engine_speed_rpm, pump_displacement_cm3_rev, implement_depth_cm, and soil_cohesion_kpa from MATLAB base-workspace variables.",
+      "soil_cohesion_kpa: Read engine_speed_rpm, pump_displacement_cm3_rev, implement_depth_cm, and soil_cohesion_kpa from MATLAB base-workspace variables."
+    ],
+    "disturbances": [
+      "The model must include an engine or governed prime mover, a variable-displacement hydraulic pump, a closed hydraulic loop with pressure protection and charge-flow support, hydraulic motors driving both the front and rear axles, a finite-mass tractor body, four tire--soil contacts, and an implement that applies a physical tillage load to the tractor."
+    ],
+    "dynamic_processes": [
+      "Ramp the prime mover from rest and allow the coupled hydraulic and vehicle dynamics to evolve from a cold start."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XFLUID-03: prescribing tractor_state directly would bypass the system path described by: Hydraulic pressure and flow must transmit power from the engine through the pump and motors to the driven wheels; prescribed vehicle motion, replayed output trajectories, or mechanically disconnected hydraulic signals are not valid.",
+      "F90-XFLUID-03: replaying a fixed tractor_state trace would ignore causal variation in engine_speed_rpm."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XFLUID-03/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XFLUID-03/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XFLUID-03/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

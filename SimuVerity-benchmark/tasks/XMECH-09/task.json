@@ -1,0 +1,69 @@
+{
+  "schema": "simuverity.task.v1",
+  "release": "simuverity-101-v1",
+  "task_id": "XMECH-09",
+  "ordinal": 59,
+  "collection": "XMECH",
+  "runtime_alias": "XMECH-09",
+  "required_model_file": "cand_XMECH09.slx",
+  "evaluation_policy_id": "simuverity-101-v1:xmech-09:scoring",
+  "candidate_closure": {
+    "public_input_names": [
+      "trajectory_scale",
+      "joint_reference_bias_deg"
+    ],
+    "nominal_provider": "simuverity_public_nominal_inputs"
+  },
+  "public_spec": "public_spec.json",
+  "official_scenarios": "official_scenarios.json",
+  "extractor": {
+    "kind": "matlab_function",
+    "path": "extractor/run.m",
+    "entrypoint": "run",
+    "implementation": "vendor/scripts/formal90/tasks/f90_xmech09/f90_xmech09_extract_candidate_evidence.m",
+    "closure_manifest": "extractor/manifest.json"
+  },
+  "scorer": {
+    "kind": "python_function",
+    "path": "scorer.py",
+    "entrypoint": "score",
+    "closure_manifest": "scorer/manifest.json",
+    "offline_only": true
+  },
+  "reference": {
+    "materialization": "local_importer",
+    "recipe": "reference/importer_recipe.json",
+    "entrypoint": "Backhoe.slx",
+    "expected_valid_scenarios": 6,
+    "score_tolerance": 1e-12,
+    "expected_score": 93.7596653684186,
+    "expected_score_basis": "reference_replay",
+    "scenario_contract": {
+      "expected_ids": [
+        "nominal",
+        "low_excursion",
+        "high_excursion",
+        "bucket_upper_bias",
+        "base_support_bias",
+        "coordinated_mixed"
+      ],
+      "nominal_scenario_id": "nominal",
+      "nominal_materialization": "authoritative_scenario_set"
+    },
+    "score_tolerance_basis": "source_authority_numeric_precision",
+    "runtime_manifest": "reference/runtime_manifest.json"
+  },
+  "applicable_groups": [
+    "G",
+    "A",
+    "Q",
+    "M",
+    "R",
+    "D"
+  ],
+  "release_license_status": "MATHWORKS_LOCAL_IMPORT_NO_REDISTRIBUTION",
+  "system_profile": {
+    "path": "system_profile.json",
+    "schema": "simuverity.system-profile.v1"
+  }
+}

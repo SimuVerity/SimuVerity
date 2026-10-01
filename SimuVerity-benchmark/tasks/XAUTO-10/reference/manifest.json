@@ -1,0 +1,358 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XAUTO-10",
+  "file_count": 83,
+  "files": [
+    {
+      "path": "reference/files/source/.github/workflows/pid.yml",
+      "size_bytes": 388
+    },
+    {
+      "path": "reference/files/source/.github/workflows/simulation.yml",
+      "size_bytes": 995
+    },
+    {
+      "path": "reference/files/source/.gitignore",
+      "size_bytes": 430
+    },
+    {
+      "path": "reference/files/source/license",
+      "size_bytes": 1505
+    },
+    {
+      "path": "reference/files/source/microcontroller/.cproject",
+      "size_bytes": 28092
+    },
+    {
+      "path": "reference/files/source/microcontroller/.gitignore",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/source/microcontroller/.mxproject",
+      "size_bytes": 11472
+    },
+    {
+      "path": "reference/files/source/microcontroller/.project",
+      "size_bytes": 1189
+    },
+    {
+      "path": "reference/files/source/microcontroller/Core/Inc/calc.h",
+      "size_bytes": 639
+    },
+    {
+      "path": "reference/files/source/microcontroller/Core/Inc/comm.h",
+      "size_bytes": 973
+    },
+    {
+      "path": "reference/files/source/microcontroller/Core/Inc/frequency.h",
+      "size_bytes": 449
+    },
+    {
+      "path": "reference/files/source/microcontroller/Core/Inc/lut.h",
+      "size_bytes": 1024
+    },
+    {
+      "path": "reference/files/source/microcontroller/Core/Inc/main.h",
+      "size_bytes": 1934
+    },
+    {
+      "path": "reference/files/source/microcontroller/Core/Inc/pedcon.h",
+      "size_bytes": 284
+    },
+    {
+      "path": "reference/files/source/microcontroller/Core/Inc/retarget.h",
+      "size_bytes": 410
+    },
+    {
+      "path": "reference/files/source/microcontroller/Core/Inc/sdlog.h",
+      "size_bytes": 1098
+    },
+    {
+      "path": "reference/files/source/microcontroller/Core/Inc/stm32f4xx_hal_conf.h",
+      "size_bytes": 19535
+    },
+    {
+      "path": "reference/files/source/microcontroller/Core/Inc/stm32f4xx_it.h",
+      "size_bytes": 2005
+    },
+    {
+      "path": "reference/files/source/microcontroller/Core/Inc/table.dat",
+      "size_bytes": 7689
+    },
+    {
+      "path": "reference/files/source/microcontroller/Core/Src/calc.c",
+      "size_bytes": 1228
+    },
+    {
+      "path": "reference/files/source/microcontroller/Core/Src/comm.c",
+      "size_bytes": 2372
+    },
+    {
+      "path": "reference/files/source/microcontroller/Core/Src/frequency.c",
+      "size_bytes": 397
+    },
+    {
+      "path": "reference/files/source/microcontroller/Core/Src/lut.c",
+      "size_bytes": 3193
+    },
+    {
+      "path": "reference/files/source/microcontroller/Core/Src/main.c",
+      "size_bytes": 28376
+    },
+    {
+      "path": "reference/files/source/microcontroller/Core/Src/pedcon.c",
+      "size_bytes": 1474
+    },
+    {
+      "path": "reference/files/source/microcontroller/Core/Src/retarget.c",
+      "size_bytes": 1345
+    },
+    {
+      "path": "reference/files/source/microcontroller/Core/Src/sdlog.c",
+      "size_bytes": 10399
+    },
+    {
+      "path": "reference/files/source/microcontroller/Core/Src/stm32f4xx_hal_msp.c",
+      "size_bytes": 16364
+    },
+    {
+      "path": "reference/files/source/microcontroller/Core/Src/stm32f4xx_it.c",
+      "size_bytes": 6912
+    },
+    {
+      "path": "reference/files/source/microcontroller/Core/Src/syscalls.c",
+      "size_bytes": 2847
+    },
+    {
+      "path": "reference/files/source/microcontroller/Core/Src/sysmem.c",
+      "size_bytes": 2726
+    },
+    {
+      "path": "reference/files/source/microcontroller/Core/Src/system_stm32f4xx.c",
+      "size_bytes": 26842
+    },
+    {
+      "path": "reference/files/source/microcontroller/Core/Startup/startup_stm32f446retx.s",
+      "size_bytes": 24397
+    },
+    {
+      "path": "reference/files/source/microcontroller/FATFS/App/fatfs.c",
+      "size_bytes": 1471
+    },
+    {
+      "path": "reference/files/source/microcontroller/FATFS/App/fatfs.h",
+      "size_bytes": 1364
+    },
+    {
+      "path": "reference/files/source/microcontroller/FATFS/Target/ffconf.h",
+      "size_bytes": 11915
+    },
+    {
+      "path": "reference/files/source/microcontroller/FATFS/Target/user_diskio.c",
+      "size_bytes": 4817
+    },
+    {
+      "path": "reference/files/source/microcontroller/FATFS/Target/user_diskio.h",
+      "size_bytes": 1394
+    },
+    {
+      "path": "reference/files/source/microcontroller/microcontroller Debug.launch",
+      "size_bytes": 8432
+    },
+    {
+      "path": "reference/files/source/microcontroller/microcontroller.ioc",
+      "size_bytes": 8968
+    },
+    {
+      "path": "reference/files/source/microcontroller/Middlewares/Third_Party/FatFs/src/diskio.c",
+      "size_bytes": 4167
+    },
+    {
+      "path": "reference/files/source/microcontroller/Middlewares/Third_Party/FatFs/src/diskio.h",
+      "size_bytes": 2569
+    },
+    {
+      "path": "reference/files/source/microcontroller/Middlewares/Third_Party/FatFs/src/ff.c",
+      "size_bytes": 205709
+    },
+    {
+      "path": "reference/files/source/microcontroller/Middlewares/Third_Party/FatFs/src/ff.h",
+      "size_bytes": 13380
+    },
+    {
+      "path": "reference/files/source/microcontroller/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c",
+      "size_bytes": 3770
+    },
+    {
+      "path": "reference/files/source/microcontroller/Middlewares/Third_Party/FatFs/src/ff_gen_drv.h",
+      "size_bytes": 2785
+    },
+    {
+      "path": "reference/files/source/microcontroller/Middlewares/Third_Party/FatFs/src/integer.h",
+      "size_bytes": 817
+    },
+    {
+      "path": "reference/files/source/microcontroller/Middlewares/Third_Party/FatFs/src/option/syscall.c",
+      "size_bytes": 5044
+    },
+    {
+      "path": "reference/files/source/microcontroller/README.md",
+      "size_bytes": 2434
+    },
+    {
+      "path": "reference/files/source/microcontroller/STM32F446RETX_FLASH.ld",
+      "size_bytes": 4737
+    },
+    {
+      "path": "reference/files/source/microcontroller/STM32F446RETX_RAM.ld",
+      "size_bytes": 4730
+    },
+    {
+      "path": "reference/files/source/pid/.gitignore",
+      "size_bytes": 414
+    },
+    {
+      "path": "reference/files/source/pid/.vscode/launch.json",
+      "size_bytes": 431
+    },
+    {
+      "path": "reference/files/source/pid/Cargo.toml",
+      "size_bytes": 224
+    },
+    {
+      "path": "reference/files/source/pid/README.md",
+      "size_bytes": 2789
+    },
+    {
+      "path": "reference/files/source/pid/src/calc.rs",
+      "size_bytes": 6408
+    },
+    {
+      "path": "reference/files/source/pid/src/export.rs",
+      "size_bytes": 1173
+    },
+    {
+      "path": "reference/files/source/pid/src/graph.rs",
+      "size_bytes": 6002
+    },
+    {
+      "path": "reference/files/source/pid/src/lib.rs",
+      "size_bytes": 45
+    },
+    {
+      "path": "reference/files/source/pid/src/main.rs",
+      "size_bytes": 1940
+    },
+    {
+      "path": "reference/files/source/pid/tests/test_calc.rs",
+      "size_bytes": 2823
+    },
+    {
+      "path": "reference/files/source/pid/tests/test_export.rs",
+      "size_bytes": 549
+    },
+    {
+      "path": "reference/files/source/pid/tests/test_graph.rs",
+      "size_bytes": 629
+    },
+    {
+      "path": "reference/files/source/README.md",
+      "size_bytes": 948
+    },
+    {
+      "path": "reference/files/source/simulation/.gitignore",
+      "size_bytes": 1799
+    },
+    {
+      "path": "reference/files/source/simulation/.idea/.gitignore",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/source/simulation/.idea/inspectionProfiles/profiles_settings.xml",
+      "size_bytes": 174
+    },
+    {
+      "path": "reference/files/source/simulation/.idea/misc.xml",
+      "size_bytes": 185
+    },
+    {
+      "path": "reference/files/source/simulation/.idea/modules.xml",
+      "size_bytes": 284
+    },
+    {
+      "path": "reference/files/source/simulation/.idea/torque-vectoring.iml",
+      "size_bytes": 317
+    },
+    {
+      "path": "reference/files/source/simulation/.idea/vcs.xml",
+      "size_bytes": 167
+    },
+    {
+      "path": "reference/files/source/simulation/.vscode/settings.json",
+      "size_bytes": 143
+    },
+    {
+      "path": "reference/files/source/simulation/graph.py",
+      "size_bytes": 1666
+    },
+    {
+      "path": "reference/files/source/simulation/lut.dat",
+      "size_bytes": 4321
+    },
+    {
+      "path": "reference/files/source/simulation/make_lut.py",
+      "size_bytes": 2879
+    },
+    {
+      "path": "reference/files/source/simulation/myfile",
+      "size_bytes": 7687
+    },
+    {
+      "path": "reference/files/source/simulation/README.md",
+      "size_bytes": 3933
+    },
+    {
+      "path": "reference/files/source/simulation/simulation.py",
+      "size_bytes": 13314
+    },
+    {
+      "path": "reference/files/source/simulation/table1",
+      "size_bytes": 7689
+    },
+    {
+      "path": "reference/files/source/simulation/test_simulation.py",
+      "size_bytes": 2517
+    },
+    {
+      "path": "reference/files/source/simulink/README.md",
+      "size_bytes": 2138
+    },
+    {
+      "path": "reference/files/source/simulink/torque_vectoring_sim.slx",
+      "size_bytes": 110421
+    },
+    {
+      "path": "reference/files/source_metadata.json",
+      "size_bytes": 608
+    }
+  ],
+  "entrypoint": "reference/files/source/simulink/torque_vectoring_sim.slx",
+  "expected_score": 100.0,
+  "expected_valid_scenarios": 6,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "straight_low_symmetric",
+      "straight_high_symmetric",
+      "moderate_left_steer",
+      "larger_left_steer",
+      "small_left_torque_bias",
+      "small_right_torque_bias"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 682246,
+  "excluded_files": []
+}

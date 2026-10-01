@@ -1,0 +1,33 @@
+{
+  "schema": "simuverity.scorer-manifest.v1",
+  "task_id": "XAERO-09",
+  "public_interface": "scorer.py:score",
+  "implementation": "scorer.py",
+  "source_modules": [
+    {
+      "module": "f90_xaero09_scoring_core",
+      "path": "vendor/scripts/formal90/tasks/f90_xaero09/f90_xaero09_scoring_core.py"
+    },
+    {
+      "module": "f90_xaero09_scoring",
+      "path": "vendor/scripts/formal90/tasks/f90_xaero09/f90_xaero09_scoring.py"
+    }
+  ],
+  "final_module": {
+    "module": "f90_xaero09_scoring",
+    "path": "vendor/scripts/formal90/tasks/f90_xaero09/f90_xaero09_scoring.py"
+  },
+  "payload_files": [
+    {
+      "role": "engineering_criteria",
+      "path": "vendor/scripts/formal90/tasks/f90_xaero09/f90_xaero09_engineering_criteria.json"
+    },
+    {
+      "role": "engineering_criteria",
+      "path": "vendor/scripts/formal90/tasks/f90_xaero09/f90_xaero09_engineering_criteria_targets.json.gz"
+    }
+  ],
+  "public_bridge": {
+    "mode": "function"
+  }
+}

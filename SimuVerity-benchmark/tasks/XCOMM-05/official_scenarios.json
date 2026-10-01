@@ -1,0 +1,121 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XCOMM-05",
+  "scenarios": [
+    {
+      "id": "nominal_qshb",
+      "ChannelSNR_dB": 3.0,
+      "ChannelCoherenceSymbols": 1000,
+      "PhaseGridPointsPerAxis": 9,
+      "BeamformingAlgorithm": "QSHB",
+      "seed": 5101
+    },
+    {
+      "id": "nominal_hbps",
+      "ChannelSNR_dB": 3.0,
+      "ChannelCoherenceSymbols": 1000,
+      "PhaseGridPointsPerAxis": 9,
+      "BeamformingAlgorithm": "HBPS",
+      "seed": 5102
+    },
+    {
+      "id": "low_snr",
+      "ChannelSNR_dB": 0.0,
+      "ChannelCoherenceSymbols": 1000,
+      "PhaseGridPointsPerAxis": 9,
+      "BeamformingAlgorithm": "QSHB",
+      "seed": 5103
+    },
+    {
+      "id": "fast_channel",
+      "ChannelSNR_dB": 3.0,
+      "ChannelCoherenceSymbols": 500,
+      "PhaseGridPointsPerAxis": 9,
+      "BeamformingAlgorithm": "QSHB",
+      "seed": 5104
+    },
+    {
+      "id": "coarse_grid",
+      "ChannelSNR_dB": 3.0,
+      "ChannelCoherenceSymbols": 1000,
+      "PhaseGridPointsPerAxis": 5,
+      "BeamformingAlgorithm": "HBPS",
+      "seed": 5105
+    },
+    {
+      "id": "moderate_combined",
+      "ChannelSNR_dB": 1.5,
+      "ChannelCoherenceSymbols": 750,
+      "PhaseGridPointsPerAxis": 7,
+      "BeamformingAlgorithm": "QSHB",
+      "seed": 5106
+    }
+  ],
+  "contract": {
+    "final_reference_score": 98.15898509374144,
+    "simulation": {
+      "start_s": 0,
+      "stop_s": 10,
+      "one_persistent_matlab_session": true
+    },
+    "groups": {
+      "G": "runnable complete two-stream link and valid evidence contract",
+      "A": "two-stream recovery accuracy",
+      "Q": "RF-chain dimensions and phase-only analog-weight quality",
+      "M": "connected channel-dependent hybrid precoding/combining mechanism and processing-block cadence",
+      "R": "worst required private operating condition",
+      "D": "windowed stream stability and recovery across processing-block updates"
+    },
+    "weights": {
+      "A": 0.2,
+      "Q": 0.1,
+      "M": 0.15,
+      "R": 0.35,
+      "D": 0.2
+    },
+    "aggregation": {
+      "within_group": "weighted arithmetic mean",
+      "critical_multi_scenario": "100 percent minimum",
+      "total": "G * 100 * A^0.20 * Q^0.10 * M^0.15 * R^0.35 * D^0.20"
+    },
+    "shortcut_minimum": [
+      "copied or prerecorded received symbols",
+      "one-stream-only implementation",
+      "weights unrelated to the available channel matrix",
+      "full-digital bypass without four-chain analog stages",
+      "private SNR, coherence, phase-grid, or algorithm inputs ignored"
+    ]
+  },
+  "simulation": {
+    "start_s": 0,
+    "stop_s": 10,
+    "one_persistent_matlab_session": true
+  },
+  "groups": {
+    "G": "runnable complete two-stream link and valid evidence contract",
+    "A": "two-stream recovery accuracy",
+    "Q": "RF-chain dimensions and phase-only analog-weight quality",
+    "M": "connected channel-dependent hybrid precoding/combining mechanism and processing-block cadence",
+    "R": "worst required private operating condition",
+    "D": "windowed stream stability and recovery across processing-block updates"
+  },
+  "weights": {
+    "A": 0.2,
+    "Q": 0.1,
+    "M": 0.15,
+    "R": 0.35,
+    "D": 0.2
+  },
+  "aggregation": {
+    "within_group": "weighted arithmetic mean",
+    "critical_multi_scenario": "100 percent minimum",
+    "total": "G * 100 * A^0.20 * Q^0.10 * M^0.15 * R^0.35 * D^0.20"
+  },
+  "shortcut_minimum": [
+    "copied or prerecorded received symbols",
+    "one-stream-only implementation",
+    "weights unrelated to the available channel matrix",
+    "full-digital bypass without four-chain analog stages",
+    "private SNR, coherence, phase-grid, or algorithm inputs ignored"
+  ]
+}

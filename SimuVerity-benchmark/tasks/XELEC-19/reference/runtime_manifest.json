@@ -1,0 +1,23 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XELEC-19",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/MLI17.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 2,
+  "retained_bytes": 632312,
+  "excluded_files": [
+    {
+      "path": "reference/files/MLI17.slx.r2012b",
+      "size_bytes": 69048,
+      "category": "obsolete_model_backup",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    }
+  ],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "simuverity.scorer-manifest.v1",
+  "task_id": "XAUTO-01",
+  "public_interface": "scorer.py:score",
+  "implementation": "scorer.py",
+  "source_modules": [
+    {
+      "module": "formal90_offline_common",
+      "path": "vendor/scripts/formal90/formal90_offline_common.py"
+    },
+    {
+      "module": "f90_xauto01_offline_scorer",
+      "path": "vendor/scripts/formal90/tasks/f90_xauto01/f90_xauto01_offline_scorer.py"
+    }
+  ],
+  "final_module": {
+    "module": "f90_xauto01_offline_scorer",
+    "path": "vendor/scripts/formal90/tasks/f90_xauto01/f90_xauto01_offline_scorer.py"
+  },
+  "payload_files": [],
+  "public_bridge": {
+    "mode": "function"
+  }
+}

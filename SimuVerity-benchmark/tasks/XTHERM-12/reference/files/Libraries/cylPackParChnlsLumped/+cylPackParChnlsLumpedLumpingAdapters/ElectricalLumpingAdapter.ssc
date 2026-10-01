@@ -1,0 +1,28 @@
+component ElectricalLumpingAdapter
+    % Copyright 2022 The MathWorks, Inc.
+    
+    parameters
+        CellsInParallel = {1,'1'};  % Number of cells in parallel
+        CellsInSeries = {1,'1'};    % Number of cells in series
+    end
+
+    variables(Access=private)
+        CurrentLumped = {0,'A'};          % Current at lumped node
+        CurrentCell = {0,'A'};            % Current at cell node
+    end
+
+    branches
+        CurrentLumped : * -> LumpedNode.i;
+        CurrentCell : CellNode.i -> LumpedNode.i;
+    end
+
+    nodes(ExternalAccess=none)
+        LumpedNode = foundation.electrical.electrical;  % l:left
+        CellNode = foundation.electrical.electrical;    % c:right
+    end
+
+    equations
+        CellNode.v == LumpedNode.v /CellsInSeries;
+        CurrentLumped == CurrentCell * (CellsInParallel-1);
+    end
+end

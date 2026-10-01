@@ -1,0 +1,42 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XMED-09",
+  "file_count": 4,
+  "files": [
+    {
+      "path": "reference/files/source/CVS_LVAD_2021a.slx",
+      "size_bytes": 242333
+    },
+    {
+      "path": "reference/files/source/LICENSE",
+      "size_bytes": 26019
+    },
+    {
+      "path": "reference/files/source/README.md",
+      "size_bytes": 566
+    },
+    {
+      "path": "reference/files/source/SimMDL_Parameters.m",
+      "size_bytes": 6493
+    }
+  ],
+  "entrypoint": "reference/files/source/CVS_LVAD_2021a.slx",
+  "expected_score": 96.44478259369967,
+  "expected_valid_scenarios": 6,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal_impaired_sliding",
+      "healthy_assisted",
+      "impaired_unassisted",
+      "pid_assist",
+      "baroreflex_disabled",
+      "fixed_resistance_elastance"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 275411,
+  "excluded_files": []
+}

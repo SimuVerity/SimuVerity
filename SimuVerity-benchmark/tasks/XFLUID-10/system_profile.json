@@ -1,0 +1,146 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XFLUID-10",
+  "collection": "XFLUID",
+  "reference": {
+    "identity_path": "tasks/XFLUID-10/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "DieselEngineInLineInjectionSystem.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XFLUID-10",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a physically causal four-cylinder in-line diesel fuel-injection system in Simscape Fluids.",
+    "engineering_objects": [
+      "Build a physically causal four-cylinder in-line diesel fuel-injection system in Simscape Fluids.",
+      "FuelControl_m is a common mechanical metering command for the four pumping elements: changing it must alter delivered fuel through the physical pumping and spill paths rather than rescaling recorded signals.",
+      "All channels must come from the same physical simulation;"
+    ],
+    "physical_paths": [
+      "Feed all four elements from the lift-pump circuit, connect each element through its own high-pressure delivery path to a spring-loaded needle injector, and return spill and injector discharge flow to a common reservoir.",
+      "FuelControl_m is a common mechanical metering command for the four pumping elements: changing it must alter delivered fuel through the physical pumping and spill paths rather than rescaling recorded signals.",
+      "Build a physically causal four-cylinder in-line diesel fuel-injection system in Simscape Fluids.",
+      "All channels must come from the same physical simulation;"
+    ],
+    "functional_paths": [
+      "Read EngineSpeed_rad_s and FuelControl_m from the MATLAB base workspace and support their declared ranges.",
+      "FuelControl_m is a common mechanical metering command for the four pumping elements: changing it must alter delivered fuel through the physical pumping and spill paths rather than rescaling recorded signals."
+    ],
+    "information_paths": [
+      "EngineSpeed_rad_s, FuelControl_m -> F90-XFLUID-10 plant/control path -> injection_delivery, pump_kinematics, injector_state"
+    ],
+    "modes_and_events": [
+      "F90-XFLUID-10 startup and continuous operation follow the current public task contract."
+    ],
+    "interfaces": [
+      {
+        "name": "EngineSpeed_rad_s",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "rad/s"
+        ],
+        "range_or_shape": "Read EngineSpeed_rad_s and FuelControl_m from the MATLAB base workspace and support their declared ranges. EngineSpeed_rad_s is a real scalar in [80, 120] rad/s for the common camshaft, and FuelControl_m is a real scalar in [0.0015, 0.0025] m for the common fuel-metering displacement command.",
+        "source": "tasks/XFLUID-10/public_spec.json"
+      },
+      {
+        "name": "FuelControl_m",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read EngineSpeed_rad_s and FuelControl_m from the MATLAB base workspace and support their declared ranges. EngineSpeed_rad_s is a real scalar in [80, 120] rad/s for the common camshaft, and FuelControl_m is a real scalar in [0.0015, 0.0025] m for the common fuel-metering displacement command. FuelControl_m is a common mechanical metering command for the four pumping elements: changing it must alter delivered fuel through the physical pumping and spill paths rather than rescaling recorded signals.",
+        "source": "tasks/XFLUID-10/public_spec.json"
+      },
+      {
+        "name": "injection_delivery",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m^3",
+          "m"
+        ],
+        "range_or_shape": "Log complete-interval MATLAB Timeseries named injection_delivery, pump_kinematics, and injector_state. injection_delivery has 4 channels in injector 1--4 order, each the injector volume flow in m^3/s.",
+        "source": "tasks/XFLUID-10/public_spec.json"
+      },
+      {
+        "name": "pump_kinematics",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s",
+          "m"
+        ],
+        "range_or_shape": "Log complete-interval MATLAB Timeseries named injection_delivery, pump_kinematics, and injector_state. pump_kinematics has 8 channels: plunger 1--4 position (m), followed by plunger 1--4 velocity (m/s).",
+        "source": "tasks/XFLUID-10/public_spec.json"
+      },
+      {
+        "name": "injector_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "Pa",
+          "m"
+        ],
+        "range_or_shape": "Log complete-interval MATLAB Timeseries named injection_delivery, pump_kinematics, and injector_state. injector_state has 8 channels: needle 1--4 lift (m), followed by injector 1--4 chamber pressure (Pa).",
+        "source": "tasks/XFLUID-10/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "A common rotating camshaft must drive one low-pressure lift pump and four separately phased positive-displacement injection-pump elements.",
+      "The four cylinders must inject in the firing order 1-3-4-2.",
+      "injection_delivery has 4 channels in injector 1--4 order, each the injector volume flow in m^3/s."
+    ],
+    "feedback_and_control_causality": [
+      "Build a physically causal four-cylinder in-line diesel fuel-injection system in Simscape Fluids.",
+      "The lift pump, plungers, delivery valves, compressible fuel paths, and injector needles must causally participate in those pulses."
+    ],
+    "signal_sources": [
+      "EngineSpeed_rad_s is read from the public MATLAB base-workspace input contract.",
+      "FuelControl_m is read from the public MATLAB base-workspace input contract.",
+      "injection_delivery is produced by the implemented plant or controller and logged under the public output contract.",
+      "pump_kinematics is produced by the implemented plant or controller and logged under the public output contract.",
+      "injector_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "EngineSpeed_rad_s: Read EngineSpeed_rad_s and FuelControl_m from the MATLAB base workspace and support their declared ranges. EngineSpeed_rad_s is a real scalar in [80, 120] rad/s for the common camshaft, and FuelControl_m is a real scalar in [0.0015, 0.0025] m for the common fuel-metering displacement command.",
+      "FuelControl_m: Read EngineSpeed_rad_s and FuelControl_m from the MATLAB base workspace and support their declared ranges. EngineSpeed_rad_s is a real scalar in [80, 120] rad/s for the common camshaft, and FuelControl_m is a real scalar in [0.0015, 0.0025] m for the common fuel-metering displacement command. FuelControl_m is a common mechanical metering command for the four pumping elements: changing it must alter delivered fuel through the physical pumping and spill paths rather than rescaling recorded signals."
+    ],
+    "disturbances": [
+      "Feed all four elements from the lift-pump circuit, connect each element through its own high-pressure delivery path to a spring-loaded needle injector, and return spill and injector discharge flow to a common reservoir."
+    ],
+    "dynamic_processes": [
+      "F90-XFLUID-10 produces time-varying injection_delivery, pump_kinematics, injector_state over the declared run."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XFLUID-10: prescribing injection_delivery directly would bypass the system path described by: Feed all four elements from the lift-pump circuit, connect each element through its own high-pressure delivery path to a spring-loaded needle injector, and return spill and injector discharge flow to a common reservoir.",
+      "F90-XFLUID-10: replaying a fixed injection_delivery trace would ignore causal variation in EngineSpeed_rad_s."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XFLUID-10/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XFLUID-10/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XFLUID-10/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

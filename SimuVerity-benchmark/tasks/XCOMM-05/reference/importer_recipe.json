@@ -1,0 +1,73 @@
+{
+  "schema": "simuverity.matlab-local-importer-recipe.v1",
+  "task_id": "XCOMM-05",
+  "release": "simuverity-101-v1",
+  "matlab_release": "R2025a",
+  "publisher": "The MathWorks, Inc.",
+  "redistributes_mathworks_files": false,
+  "destination": "%LOCALAPPDATA%/SimuVerity/assets/simuverity-101-v1/XCOMM-05",
+  "discovery": {
+    "method": "matlab_example_or_installed_product_search",
+    "example_id": "phased/SLHybridBeamformingExample",
+    "expected_source_filenames": [
+      "SLHybridBeamformingExample.m",
+      "helperslexHybridBeamformingParam.m",
+      "hybridbfdiagram.png",
+      "hybridbfweights.png",
+      "slexHybridBeamforming.slx"
+    ],
+    "expected_files": [
+      {
+        "name": "SLHybridBeamformingExample.m",
+        "size_bytes": 8214
+      },
+      {
+        "name": "helperslexHybridBeamformingParam.m",
+        "size_bytes": 2291
+      },
+      {
+        "name": "hybridbfdiagram.png",
+        "size_bytes": 172139
+      },
+      {
+        "name": "hybridbfweights.png",
+        "size_bytes": 54747
+      },
+      {
+        "name": "slexHybridBeamforming.slx",
+        "size_bytes": 90114
+      }
+    ]
+  },
+  "transform": "transform.m",
+  "validation": {
+    "required": true,
+    "checks": [
+      "load",
+      "update",
+      "compile",
+      "simulate",
+      "all_official_scenarios",
+      "reference_score"
+    ],
+    "on_mismatch": "fail_closed"
+  },
+  "entrypoint": "slexHybridBeamforming.slx",
+  "expected_valid_scenarios": 6,
+  "score_tolerance": 1e-12,
+  "expected_score": 96.64137736344314,
+  "expected_score_basis": "reference_replay",
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal_qshb",
+      "nominal_hbps",
+      "low_snr",
+      "fast_channel",
+      "coarse_grid",
+      "moderate_combined"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision"
+}

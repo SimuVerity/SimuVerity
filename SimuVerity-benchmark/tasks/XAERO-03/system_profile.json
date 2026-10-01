@@ -1,0 +1,241 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XAERO-03",
+  "collection": "XAERO",
+  "reference": {
+    "identity_path": "tasks/XAERO-03/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/XAERO03_reference.slx",
+    "model_path": "tasks/XAERO-03/reference/files/XAERO03_reference.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XAERO-03",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a nonlinear single-engine fighter-aircraft simulation with twelve-state six-degree-of-freedom rigid-body dynamics.",
+    "engineering_objects": [
+      "F90-XAERO-03 plant and controller described by the current public task contract",
+      "Measured output interfaces: flight_state, air_data, actuation, force_moment"
+    ],
+    "physical_paths": [
+      "Build a nonlinear single-engine fighter-aircraft simulation with twelve-state six-degree-of-freedom rigid-body dynamics."
+    ],
+    "functional_paths": [
+      "nonlinear aerodynamic force and moment dependence on angle of attack, sideslip, body rates and actual control surfaces;",
+      "and a feedback controller.",
+      "its internal coordinates and control design are not prescribed, but forces and moments must vary causally with dynamic pressure, angle of attack, sideslip, rates and actual surface deflections."
+    ],
+    "information_paths": [
+      "altitude_reference, airspeed_reference, heading_change, initial_altitude_offset, initial_airspeed_offset, command_time, gust_speed, gust_heading, gust_time -> F90-XAERO-03 plant/control path -> flight_state, air_data, actuation, force_moment"
+    ],
+    "modes_and_events": [
+      "Read altitude_reference, airspeed_reference, heading_change, initial_altitude_offset, initial_airspeed_offset, command_time, gust_speed, gust_heading, and gust_time from base-workspace variables.",
+      "gust_heading is clockwise from north and defines an actual horizontal air-mass velocity in the north-east-down frame.",
+      "Apply that velocity for 1.5 s beginning at gust_time."
+    ],
+    "interfaces": [
+      {
+        "name": "altitude_reference",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read altitude_reference, airspeed_reference, heading_change, initial_altitude_offset, initial_airspeed_offset, command_time, gust_speed, gust_heading, and gust_time from base-workspace variables.",
+        "source": "tasks/XAERO-03/public_spec.json"
+      },
+      {
+        "name": "airspeed_reference",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Read altitude_reference, airspeed_reference, heading_change, initial_altitude_offset, initial_airspeed_offset, command_time, gust_speed, gust_heading, and gust_time from base-workspace variables.",
+        "source": "tasks/XAERO-03/public_spec.json"
+      },
+      {
+        "name": "heading_change",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "rad"
+        ],
+        "range_or_shape": "Read altitude_reference, airspeed_reference, heading_change, initial_altitude_offset, initial_airspeed_offset, command_time, gust_speed, gust_heading, and gust_time from base-workspace variables. Apply heading_change at command_time.",
+        "source": "tasks/XAERO-03/public_spec.json"
+      },
+      {
+        "name": "initial_altitude_offset",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read altitude_reference, airspeed_reference, heading_change, initial_altitude_offset, initial_airspeed_offset, command_time, gust_speed, gust_heading, and gust_time from base-workspace variables.",
+        "source": "tasks/XAERO-03/public_spec.json"
+      },
+      {
+        "name": "initial_airspeed_offset",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Read altitude_reference, airspeed_reference, heading_change, initial_altitude_offset, initial_airspeed_offset, command_time, gust_speed, gust_heading, and gust_time from base-workspace variables.",
+        "source": "tasks/XAERO-03/public_spec.json"
+      },
+      {
+        "name": "command_time",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read altitude_reference, airspeed_reference, heading_change, initial_altitude_offset, initial_airspeed_offset, command_time, gust_speed, gust_heading, and gust_time from base-workspace variables. Apply heading_change at command_time.",
+        "source": "tasks/XAERO-03/public_spec.json"
+      },
+      {
+        "name": "gust_speed",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Read altitude_reference, airspeed_reference, heading_change, initial_altitude_offset, initial_airspeed_offset, command_time, gust_speed, gust_heading, and gust_time from base-workspace variables.",
+        "source": "tasks/XAERO-03/public_spec.json"
+      },
+      {
+        "name": "gust_heading",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "deg"
+        ],
+        "range_or_shape": "Read altitude_reference, airspeed_reference, heading_change, initial_altitude_offset, initial_airspeed_offset, command_time, gust_speed, gust_heading, and gust_time from base-workspace variables. gust_heading is clockwise from north and defines an actual horizontal air-mass velocity in the north-east-down frame.",
+        "source": "tasks/XAERO-03/public_spec.json"
+      },
+      {
+        "name": "gust_time",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read altitude_reference, airspeed_reference, heading_change, initial_altitude_offset, initial_airspeed_offset, command_time, gust_speed, gust_heading, and gust_time from base-workspace variables. Apply that velocity for 1.5 s beginning at gust_time.",
+        "source": "tasks/XAERO-03/public_spec.json"
+      },
+      {
+        "name": "flight_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[m,m,m,m/s x3,m/s,rad,rad,rad,rad,rad,rad/s x3]"
+        ],
+        "range_or_shape": "Log four complete-run MATLAB Timeseries named flight_state, air_data, actuation, and force_moment. flight_state has 15 channels in this order: north, east, altitude (m); north, east, and down inertial velocity (m/s); true airspeed (m/s); angle of attack, sideslip, roll, pitch, and yaw (rad); and body p, q, and r (rad/s).",
+        "source": "tasks/XAERO-03/public_spec.json"
+      },
+      {
+        "name": "air_data",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[kg/m^3,Pa,1,m/s x3]"
+        ],
+        "range_or_shape": "Compute relative air velocity as ground velocity minus this gust vector before transforming it into body axes; air_data must log this same applied NED vector. Log four complete-run MATLAB Timeseries named flight_state, air_data, actuation, and force_moment. air_data has 6 channels in this order: air density (kg/m^3), dynamic pressure (Pa), Mach number (1), and applied gust north, east, and down (m/s).",
+        "source": "tasks/XAERO-03/public_spec.json"
+      },
+      {
+        "name": "actuation",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[N,rad x4,N,rad x4]"
+        ],
+        "range_or_shape": "Log four complete-run MATLAB Timeseries named flight_state, air_data, actuation, and force_moment. actuation has 10 channels in this order: commanded thrust (N), commanded elevator, aileron, rudder, and leading-edge flap (rad), followed by the corresponding five actual actuator outputs in the same units.",
+        "source": "tasks/XAERO-03/public_spec.json"
+      },
+      {
+        "name": "force_moment",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[N x3,N*m x3,N x3,N*m x3]"
+        ],
+        "range_or_shape": "Log four complete-run MATLAB Timeseries named flight_state, air_data, actuation, and force_moment. force_moment has 12 channels in this order: aerodynamic body force xyz (N), aerodynamic body moment xyz (N*m), total body force xyz including thrust and gravity (N), and total body moment xyz (N*m).",
+        "source": "tasks/XAERO-03/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Use a north-east-down inertial frame, report altitude as minus inertial down position, and use standard body axes x forward, y right, z down.",
+      "Attitude is the 3-2-1 yaw-pitch-roll orientation from body to inertial coordinates;",
+      "and a feedback controller."
+    ],
+    "feedback_and_control_causality": [
+      "five finite-response actuators;",
+      "and a feedback controller.",
+      "its internal coordinates and control design are not prescribed, but forces and moments must vary causally with dynamic pressure, angle of attack, sideslip, rates and actual surface deflections."
+    ],
+    "signal_sources": [
+      "altitude_reference is read from the public MATLAB base-workspace input contract.",
+      "airspeed_reference is read from the public MATLAB base-workspace input contract.",
+      "heading_change is read from the public MATLAB base-workspace input contract.",
+      "initial_altitude_offset is read from the public MATLAB base-workspace input contract.",
+      "initial_airspeed_offset is read from the public MATLAB base-workspace input contract.",
+      "command_time is read from the public MATLAB base-workspace input contract.",
+      "gust_speed is read from the public MATLAB base-workspace input contract.",
+      "gust_heading is read from the public MATLAB base-workspace input contract.",
+      "gust_time is read from the public MATLAB base-workspace input contract.",
+      "flight_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "air_data is produced by the implemented plant or controller and logged under the public output contract.",
+      "actuation is produced by the implemented plant or controller and logged under the public output contract.",
+      "force_moment is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "altitude_reference: Read altitude_reference, airspeed_reference, heading_change, initial_altitude_offset, initial_airspeed_offset, command_time, gust_speed, gust_heading, and gust_time from base-workspace variables.",
+      "airspeed_reference: Read altitude_reference, airspeed_reference, heading_change, initial_altitude_offset, initial_airspeed_offset, command_time, gust_speed, gust_heading, and gust_time from base-workspace variables.",
+      "heading_change: Read altitude_reference, airspeed_reference, heading_change, initial_altitude_offset, initial_airspeed_offset, command_time, gust_speed, gust_heading, and gust_time from base-workspace variables. Apply heading_change at command_time.",
+      "initial_altitude_offset: Read altitude_reference, airspeed_reference, heading_change, initial_altitude_offset, initial_airspeed_offset, command_time, gust_speed, gust_heading, and gust_time from base-workspace variables.",
+      "initial_airspeed_offset: Read altitude_reference, airspeed_reference, heading_change, initial_altitude_offset, initial_airspeed_offset, command_time, gust_speed, gust_heading, and gust_time from base-workspace variables.",
+      "command_time: Read altitude_reference, airspeed_reference, heading_change, initial_altitude_offset, initial_airspeed_offset, command_time, gust_speed, gust_heading, and gust_time from base-workspace variables. Apply heading_change at command_time.",
+      "gust_speed: Read altitude_reference, airspeed_reference, heading_change, initial_altitude_offset, initial_airspeed_offset, command_time, gust_speed, gust_heading, and gust_time from base-workspace variables.",
+      "gust_heading: Read altitude_reference, airspeed_reference, heading_change, initial_altitude_offset, initial_airspeed_offset, command_time, gust_speed, gust_heading, and gust_time from base-workspace variables. gust_heading is clockwise from north and defines an actual horizontal air-mass velocity in the north-east-down frame."
+    ],
+    "disturbances": [
+      "relative-wind air-data calculation;",
+      "Read altitude_reference, airspeed_reference, heading_change, initial_altitude_offset, initial_airspeed_offset, command_time, gust_speed, gust_heading, and gust_time from base-workspace variables.",
+      "gust_heading is clockwise from north and defines an actual horizontal air-mass velocity in the north-east-down frame."
+    ],
+    "dynamic_processes": [
+      "Build a nonlinear single-engine fighter-aircraft simulation with twelve-state six-degree-of-freedom rigid-body dynamics.",
+      "nonlinear aerodynamic force and moment dependence on angle of attack, sideslip, body rates and actual control surfaces;",
+      "The gust must enter the relative-wind aerodynamics rather than only a log."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XAERO-03: prescribing flight_state directly would bypass the system path described by: Build a nonlinear single-engine fighter-aircraft simulation with twelve-state six-degree-of-freedom rigid-body dynamics.",
+      "F90-XAERO-03: replaying a fixed flight_state trace would ignore causal variation in altitude_reference."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XAERO-03/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XAERO-03/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XAERO-03/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

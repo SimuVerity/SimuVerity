@@ -1,0 +1,113 @@
+{
+  "schema": "simuverity.matlab-local-importer-recipe.v1",
+  "task_id": "XAUTO-09",
+  "release": "simuverity-101-v1",
+  "matlab_release": "R2025a",
+  "publisher": "The MathWorks, Inc.",
+  "redistributes_mathworks_files": false,
+  "destination": "%LOCALAPPDATA%/SimuVerity/assets/simuverity-101-v1/XAUTO-09",
+  "discovery": {
+    "method": "mathworks_open_example_relative_root",
+    "example_id": "autonomous_control/LaneFollowingControlWithSensorFusionAndLaneDetectionExample",
+    "source_root": {
+      "selection": "unique_relative_anchor_path",
+      "anchor_path": "LFRefMdl.slx"
+    },
+    "expected_files": [
+      {
+        "path": "ACC_01_ISO_TargetDiscriminationTest.m",
+        "size_bytes": 1406
+      },
+      {
+        "path": "ACC_02_ISO_AutoRetargetTest.m",
+        "size_bytes": 1446
+      },
+      {
+        "path": "ACC_03_ISO_CurveTest.m",
+        "size_bytes": 3124
+      },
+      {
+        "path": "ACC_04_StopnGo.m",
+        "size_bytes": 3297
+      },
+      {
+        "path": "createLaneSensorBuses.m",
+        "size_bytes": 4341
+      },
+      {
+        "path": "helperLFCleanUp.m",
+        "size_bytes": 1756
+      },
+      {
+        "path": "helperLFSetUp.m",
+        "size_bytes": 6483
+      },
+      {
+        "path": "LaneFollowingControlWithSensorFusionAndLaneDetectionExample.m",
+        "size_bytes": 14788
+      },
+      {
+        "path": "LaneFollowingTestBenchExample.slx",
+        "size_bytes": 91646
+      },
+      {
+        "path": "LFACC_01_DoubleCurve_DecelTarget.m",
+        "size_bytes": 2661
+      },
+      {
+        "path": "LFACC_02_DoubleCurve_AutoRetarget.m",
+        "size_bytes": 3219
+      },
+      {
+        "path": "LFACC_03_DoubleCurve_StopnGo.m",
+        "size_bytes": 11609
+      },
+      {
+        "path": "LFACC_04_Curve_CutInOut.m",
+        "size_bytes": 6025
+      },
+      {
+        "path": "LFACC_05_Curve_CutInOut_TooClose.m",
+        "size_bytes": 5513
+      },
+      {
+        "path": "LFRefMdl.slx",
+        "size_bytes": 70737
+      },
+      {
+        "path": "plotLFResults.m",
+        "size_bytes": 3609
+      }
+    ]
+  },
+  "transform": "transform.m",
+  "validation": {
+    "required": true,
+    "checks": [
+      "load",
+      "update",
+      "compile",
+      "simulate",
+      "all_official_scenarios",
+      "reference_score"
+    ],
+    "on_mismatch": "fail_closed"
+  },
+  "entrypoint": "LFRefMdl.slx",
+  "expected_valid_scenarios": 5,
+  "score_tolerance": 1e-12,
+  "expected_score": 92.930168737,
+  "expected_score_basis": "reference_replay",
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal_target_discrimination",
+      "lower_driver_set_speed",
+      "longer_time_gap",
+      "stop_and_go",
+      "curved_cut_in_out"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision"
+}

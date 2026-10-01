@@ -1,0 +1,372 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simuverity.org/schemas/task.schema.json",
+  "title": "SimuVerity public task",
+  "type": "object",
+  "required": [
+    "schema",
+    "task_id",
+    "collection",
+    "release",
+    "public_spec",
+    "system_profile",
+    "official_scenarios",
+    "extractor",
+    "scorer",
+    "evaluation_policy_id",
+    "required_model_file",
+    "candidate_closure",
+    "reference"
+  ],
+  "properties": {
+    "schema": {
+      "const": "simuverity.task.v1"
+    },
+    "release": {
+      "const": "simuverity-101-v1"
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^X[A-Z]+-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+    },
+    "collection": {
+      "enum": [
+        "XELEC",
+        "XAERO",
+        "XAUTO",
+        "XBATT",
+        "XCOMM",
+        "XFLUID",
+        "XMECH",
+        "XMED",
+        "XROBO",
+        "XTHERM"
+      ]
+    },
+    "public_spec": {
+      "$ref": "#/$defs/pathBinding"
+    },
+    "system_profile": {
+      "type": "object",
+      "required": [
+        "path",
+        "schema"
+      ],
+      "properties": {
+        "path": {
+          "const": "system_profile.json"
+        },
+        "schema": {
+          "const": "simuverity.system-profile.v1"
+        }
+      },
+      "additionalProperties": false
+    },
+    "official_scenarios": {
+      "$ref": "#/$defs/pathBinding"
+    },
+    "extractor": {
+      "type": "object",
+      "required": [
+        "kind",
+        "path",
+        "entrypoint"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "matlab",
+            "python",
+            "matlab_function",
+            "python_function"
+          ]
+        },
+        "path": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "entrypoint": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sidecars": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "role",
+              "kind",
+              "path",
+              "arguments",
+              "output",
+              "schema"
+            ],
+            "properties": {
+              "role": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_]{0,63}$"
+              },
+              "kind": {
+                "const": "python"
+              },
+              "path": {
+                "$ref": "#/$defs/relativePath"
+              },
+              "arguments": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "output": {
+                "type": "string",
+                "pattern": "^[^/\\\\]+\\.json$"
+              },
+              "schema": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "scorer": {
+      "type": "object",
+      "required": [
+        "kind",
+        "path",
+        "entrypoint"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "python",
+            "python_function"
+          ]
+        },
+        "path": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "entrypoint": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "evaluation_policy_id": {
+      "type": "string",
+      "pattern": "^simuverity-101-v1:[a-z0-9-]+:scoring$"
+    },
+    "required_model_file": {
+      "type": "string",
+      "pattern": "^[^/\\\\]+\\.(slx|mdl)$"
+    },
+    "candidate_closure": {
+      "type": "object",
+      "required": [
+        "public_input_names",
+        "nominal_provider"
+      ],
+      "properties": {
+        "public_input_names": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "nominal_provider": {
+          "const": "simuverity_public_nominal_inputs"
+        },
+        "stop_time_s": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "reference": {
+      "type": "object",
+      "required": [
+        "materialization",
+        "entrypoint",
+        "expected_score",
+        "expected_valid_scenarios",
+        "score_tolerance"
+      ],
+      "properties": {
+        "materialization": {
+          "enum": [
+            "bundled",
+            "importer",
+            "local_importer"
+          ]
+        },
+        "path": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "manifest": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "recipe": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "entrypoint": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "clean_replay_setup": {
+          "type": "object",
+          "required": [
+            "phase",
+            "path",
+            "entrypoint"
+          ],
+          "properties": {
+            "phase": {
+              "enum": [
+                "before_load",
+                "after_load_before_update"
+              ]
+            },
+            "path": {
+              "$ref": "#/$defs/relativePath"
+            },
+            "entrypoint": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "expected_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "expected_valid_scenarios": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "score_tolerance": {
+          "type": "number",
+          "minimum": 0
+        },
+        "asset_release": {
+          "type": "string"
+        },
+        "required_matlab_release": {
+          "const": "R2025a"
+        },
+        "source_kind": {
+          "type": "string"
+        },
+        "importer": {
+          "type": "object",
+          "required": [
+            "path",
+            "entrypoint"
+          ],
+          "properties": {
+            "path": {
+              "$ref": "#/$defs/relativePath"
+            },
+            "entrypoint": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "asset_files": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "path"
+            ],
+            "properties": {
+              "path": {
+                "$ref": "#/$defs/relativePath"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "materialization": {
+                "const": "bundled"
+              }
+            },
+            "required": [
+              "materialization"
+            ]
+          },
+          "then": {
+            "required": [
+              "path",
+              "manifest"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "materialization": {
+                "enum": [
+                  "importer",
+                  "local_importer"
+                ]
+              }
+            },
+            "required": [
+              "materialization"
+            ]
+          },
+          "then": {
+            "required": [
+              "recipe"
+            ]
+          }
+        }
+      ],
+      "additionalProperties": true
+    }
+  },
+  "$defs": {
+    "relativePath": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?![A-Za-z]:)(?![/\\\\])(?!.*(?:^|[/\\\\])\\.\\.(?:[/\\\\]|$)).+$"
+    },
+    "pathBinding": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/relativePath"
+        },
+        {
+          "type": "object",
+          "required": [
+            "path"
+          ],
+          "properties": {
+            "path": {
+              "$ref": "#/$defs/relativePath"
+            }
+          },
+          "additionalProperties": true
+        }
+      ]
+    }
+  },
+  "additionalProperties": true
+}

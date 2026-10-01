@@ -1,0 +1,350 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XTHERM-05",
+  "scenarios": [
+    {
+      "id": "hot_low_flow",
+      "values": {
+        "coolant_flow_lpm": 0.62,
+        "coolant_inlet_temperature_K": 300.15,
+        "charge_current_A": 258,
+        "charge_step_fraction": 0.18,
+        "charge_step_time_s": 104,
+        "initial_battery_temperature_K": 312.15,
+        "max_cell_voltage_V": 4.18
+      }
+    },
+    {
+      "id": "cold_high_flow",
+      "values": {
+        "coolant_flow_lpm": 1.76,
+        "coolant_inlet_temperature_K": 288.5,
+        "charge_current_A": 170,
+        "charge_step_fraction": -0.15,
+        "charge_step_time_s": 151,
+        "initial_battery_temperature_K": 299,
+        "max_cell_voltage_V": 4.02
+      }
+    },
+    {
+      "id": "high_current_boundary",
+      "values": {
+        "coolant_flow_lpm": 1.08,
+        "coolant_inlet_temperature_K": 294.15,
+        "charge_current_A": 260,
+        "charge_step_fraction": 0.16,
+        "charge_step_time_s": 91,
+        "initial_battery_temperature_K": 306.15,
+        "max_cell_voltage_V": 4.16
+      }
+    },
+    {
+      "id": "flow_pair_low",
+      "values": {
+        "coolant_flow_lpm": 0.66,
+        "coolant_inlet_temperature_K": 293.15,
+        "charge_current_A": 234,
+        "charge_step_fraction": 0.1,
+        "charge_step_time_s": 120,
+        "initial_battery_temperature_K": 303.15,
+        "max_cell_voltage_V": 4.1
+      }
+    },
+    {
+      "id": "flow_pair_high",
+      "values": {
+        "coolant_flow_lpm": 1.66,
+        "coolant_inlet_temperature_K": 293.15,
+        "charge_current_A": 234,
+        "charge_step_fraction": 0.1,
+        "charge_step_time_s": 120,
+        "initial_battery_temperature_K": 303.15,
+        "max_cell_voltage_V": 4.1
+      }
+    },
+    {
+      "id": "current_pair_up",
+      "values": {
+        "coolant_flow_lpm": 1,
+        "coolant_inlet_temperature_K": 293.15,
+        "charge_current_A": 50,
+        "charge_step_fraction": 0.2,
+        "charge_step_time_s": 120,
+        "initial_battery_temperature_K": 303.15,
+        "max_cell_voltage_V": 4.1
+      }
+    },
+    {
+      "id": "current_pair_control",
+      "values": {
+        "coolant_flow_lpm": 1,
+        "coolant_inlet_temperature_K": 293.15,
+        "charge_current_A": 50,
+        "charge_step_fraction": 0,
+        "charge_step_time_s": 120,
+        "initial_battery_temperature_K": 303.15,
+        "max_cell_voltage_V": 4.1
+      }
+    },
+    {
+      "id": "current_pair_down",
+      "values": {
+        "coolant_flow_lpm": 1,
+        "coolant_inlet_temperature_K": 293.15,
+        "charge_current_A": 50,
+        "charge_step_fraction": -0.2,
+        "charge_step_time_s": 120,
+        "initial_battery_temperature_K": 303.15,
+        "max_cell_voltage_V": 4.1
+      }
+    },
+    {
+      "id": "warm_inlet_boundary",
+      "values": {
+        "coolant_flow_lpm": 1.28,
+        "coolant_inlet_temperature_K": 302.5,
+        "charge_current_A": 246,
+        "charge_step_fraction": -0.12,
+        "charge_step_time_s": 139,
+        "initial_battery_temperature_K": 310.15,
+        "max_cell_voltage_V": 4.12
+      }
+    }
+  ],
+  "contract": {
+    "sim": {
+      "start": 0,
+      "stop": 240,
+      "max_step": 1
+    },
+    "public_inputs": [
+      {
+        "name": "coolant_flow_lpm",
+        "nominal": 1,
+        "min": 0.6,
+        "max": 1.8,
+        "unit": "L/min",
+        "meaning": "commanded coolant volume flow through the plate"
+      },
+      {
+        "name": "coolant_inlet_temperature_K",
+        "nominal": 293.15,
+        "min": 288.15,
+        "max": 303.15,
+        "unit": "K",
+        "meaning": "coolant temperature at the plate inlet reservoir"
+      },
+      {
+        "name": "charge_current_A",
+        "nominal": 234,
+        "min": 40,
+        "max": 260,
+        "unit": "A",
+        "meaning": "total-pack charging-current limit before the scheduled command change"
+      },
+      {
+        "name": "charge_step_fraction",
+        "nominal": 0.1,
+        "min": -0.2,
+        "max": 0.2,
+        "unit": "1",
+        "meaning": "fractional change of the charging-current limit"
+      },
+      {
+        "name": "charge_step_time_s",
+        "nominal": 120,
+        "min": 80,
+        "max": 160,
+        "unit": "s",
+        "meaning": "time of the charging-current-limit change"
+      },
+      {
+        "name": "initial_battery_temperature_K",
+        "nominal": 303.15,
+        "min": 298.15,
+        "max": 313.15,
+        "unit": "K",
+        "meaning": "common initial temperature of the battery thermal nodes"
+      },
+      {
+        "name": "max_cell_voltage_V",
+        "nominal": 4.1,
+        "min": 4,
+        "max": 4.2,
+        "unit": "V",
+        "meaning": "maximum cell-equivalent voltage setting for charging"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "battery_temperature",
+        "channels": 24,
+        "unit": "K",
+        "physical_source": "24 independently evolved battery thermal-node measurements"
+      },
+      {
+        "name": "plate_temperature",
+        "channels": 24,
+        "unit": "K",
+        "physical_source": "24 measured temperatures of the finite-capacity plate partitions"
+      },
+      {
+        "name": "coolant_temperature_rise",
+        "channels": 1,
+        "unit": "K",
+        "physical_source": "thermal-liquid outlet-minus-inlet temperature measurement"
+      },
+      {
+        "name": "coolant_pressure_drop",
+        "channels": 1,
+        "unit": "bar",
+        "physical_source": "thermal-liquid inlet-to-outlet pressure-drop measurement"
+      },
+      {
+        "name": "pack_current",
+        "channels": 1,
+        "unit": "A",
+        "physical_source": "total current measured in the physical battery electrical path"
+      },
+      {
+        "name": "cell_equivalent_voltage",
+        "channels": 1,
+        "unit": "V",
+        "physical_source": "mean cell-equivalent voltage derived from physical pack voltage measurements"
+      }
+    ],
+    "prompt": "Build a physically causal liquid-cooled 96-series, 3-parallel pouch-cell battery pack for controlled charging. The electrical pack and its distributed thermal model must be coupled so that charging losses create heat in the same battery elements whose temperatures are reported.\n\nThe thermal path must contain independently evolving battery thermal nodes, conductive coupling into a finite-heat-capacity plate with 24 spatial partitions, and a real through-flow coolant network with finite hydraulic pressure loss. The electrical source must deliver power through the physical pack. A controller must use measured electrical feedback to limit charging current and transition toward the declared cell-equivalent voltage ceiling; the controller design is otherwise unrestricted.\n\nRead coolant_flow_lpm, coolant_inlet_temperature_K, charge_current_A, charge_step_fraction, charge_step_time_s, initial_battery_temperature_K, and max_cell_voltage_V from MATLAB base-workspace variables. charge_current_A is the total-pack charging-current limit, not a per-branch current. Their nominal values are 1.00 L/min, 293.15 K, 234 A, 0.10, 120 s, 303.15 K, and 4.10 V. Their valid ranges are respectively 0.60--1.80 L/min, 288.15--303.15 K, 40--260 A, -0.20--0.20, 80--160 s, 298.15--313.15 K, and 4.00--4.20 V. At charge_step_time_s the total-pack current limit changes from charge_current_A to charge_current_A*(1+charge_step_fraction).\n\nAcross the declared range, the pack must charge with bounded current and voltage while the coolant removes heat from the distributed battery nodes. Increasing coolant flow must act through the physical fluid path and change both measured pressure loss and thermal response. Temperature fields must remain finite and spatially meaningful; prescribed output waveforms, duplicated temperature channels, command copies, and lookup-only plant surrogates are not valid implementations.\n\nLog Timeseries battery_temperature with 24 channels in kelvin, plate_temperature with 24 channels in kelvin, coolant_temperature_rise with one channel in kelvin, coolant_pressure_drop with one channel in bar, pack_current with one channel in total-pack amperes, and cell_equivalent_voltage with one channel in volts. Temperature channels must come from the stated battery nodes and plate partitions, coolant quantities from physical inlet/outlet sensing, and electrical quantities from the physical pack path.\n\nWork directly in the required model file and keep the latest usable state saved at that path throughout the task.",
+    "groups": {
+      "G": "runnable physical model, complete Timeseries contract and core-path qualification",
+      "A": "nominal charging and initial-condition accuracy",
+      "Q": "nominal battery/plate temperature-field quality",
+      "M": "distributed electro-thermal-fluid mechanism and causal perturbation response",
+      "R": "worst required operating-point robustness",
+      "D": "CC-active low-limit triplet with 1:1 total-pack ampere response",
+      "weights": {
+        "A": 0.2,
+        "Q": 0.25,
+        "M": 0.22,
+        "R": 0.23,
+        "D": 0.1
+      }
+    }
+  },
+  "sim": {
+    "start": 0,
+    "stop": 240,
+    "max_step": 1
+  },
+  "public_inputs": [
+    {
+      "name": "coolant_flow_lpm",
+      "nominal": 1,
+      "min": 0.6,
+      "max": 1.8,
+      "unit": "L/min",
+      "meaning": "commanded coolant volume flow through the plate"
+    },
+    {
+      "name": "coolant_inlet_temperature_K",
+      "nominal": 293.15,
+      "min": 288.15,
+      "max": 303.15,
+      "unit": "K",
+      "meaning": "coolant temperature at the plate inlet reservoir"
+    },
+    {
+      "name": "charge_current_A",
+      "nominal": 234,
+      "min": 40,
+      "max": 260,
+      "unit": "A",
+      "meaning": "total-pack charging-current limit before the scheduled command change"
+    },
+    {
+      "name": "charge_step_fraction",
+      "nominal": 0.1,
+      "min": -0.2,
+      "max": 0.2,
+      "unit": "1",
+      "meaning": "fractional change of the charging-current limit"
+    },
+    {
+      "name": "charge_step_time_s",
+      "nominal": 120,
+      "min": 80,
+      "max": 160,
+      "unit": "s",
+      "meaning": "time of the charging-current-limit change"
+    },
+    {
+      "name": "initial_battery_temperature_K",
+      "nominal": 303.15,
+      "min": 298.15,
+      "max": 313.15,
+      "unit": "K",
+      "meaning": "common initial temperature of the battery thermal nodes"
+    },
+    {
+      "name": "max_cell_voltage_V",
+      "nominal": 4.1,
+      "min": 4,
+      "max": 4.2,
+      "unit": "V",
+      "meaning": "maximum cell-equivalent voltage setting for charging"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "battery_temperature",
+      "channels": 24,
+      "unit": "K",
+      "physical_source": "24 independently evolved battery thermal-node measurements"
+    },
+    {
+      "name": "plate_temperature",
+      "channels": 24,
+      "unit": "K",
+      "physical_source": "24 measured temperatures of the finite-capacity plate partitions"
+    },
+    {
+      "name": "coolant_temperature_rise",
+      "channels": 1,
+      "unit": "K",
+      "physical_source": "thermal-liquid outlet-minus-inlet temperature measurement"
+    },
+    {
+      "name": "coolant_pressure_drop",
+      "channels": 1,
+      "unit": "bar",
+      "physical_source": "thermal-liquid inlet-to-outlet pressure-drop measurement"
+    },
+    {
+      "name": "pack_current",
+      "channels": 1,
+      "unit": "A",
+      "physical_source": "total current measured in the physical battery electrical path"
+    },
+    {
+      "name": "cell_equivalent_voltage",
+      "channels": 1,
+      "unit": "V",
+      "physical_source": "mean cell-equivalent voltage derived from physical pack voltage measurements"
+    }
+  ],
+  "prompt": "Build a physically causal liquid-cooled 96-series, 3-parallel pouch-cell battery pack for controlled charging. The electrical pack and its distributed thermal model must be coupled so that charging losses create heat in the same battery elements whose temperatures are reported.\n\nThe thermal path must contain independently evolving battery thermal nodes, conductive coupling into a finite-heat-capacity plate with 24 spatial partitions, and a real through-flow coolant network with finite hydraulic pressure loss. The electrical source must deliver power through the physical pack. A controller must use measured electrical feedback to limit charging current and transition toward the declared cell-equivalent voltage ceiling; the controller design is otherwise unrestricted.\n\nRead coolant_flow_lpm, coolant_inlet_temperature_K, charge_current_A, charge_step_fraction, charge_step_time_s, initial_battery_temperature_K, and max_cell_voltage_V from MATLAB base-workspace variables. charge_current_A is the total-pack charging-current limit, not a per-branch current. Their nominal values are 1.00 L/min, 293.15 K, 234 A, 0.10, 120 s, 303.15 K, and 4.10 V. Their valid ranges are respectively 0.60--1.80 L/min, 288.15--303.15 K, 40--260 A, -0.20--0.20, 80--160 s, 298.15--313.15 K, and 4.00--4.20 V. At charge_step_time_s the total-pack current limit changes from charge_current_A to charge_current_A*(1+charge_step_fraction).\n\nAcross the declared range, the pack must charge with bounded current and voltage while the coolant removes heat from the distributed battery nodes. Increasing coolant flow must act through the physical fluid path and change both measured pressure loss and thermal response. Temperature fields must remain finite and spatially meaningful; prescribed output waveforms, duplicated temperature channels, command copies, and lookup-only plant surrogates are not valid implementations.\n\nLog Timeseries battery_temperature with 24 channels in kelvin, plate_temperature with 24 channels in kelvin, coolant_temperature_rise with one channel in kelvin, coolant_pressure_drop with one channel in bar, pack_current with one channel in total-pack amperes, and cell_equivalent_voltage with one channel in volts. Temperature channels must come from the stated battery nodes and plate partitions, coolant quantities from physical inlet/outlet sensing, and electrical quantities from the physical pack path.\n\nWork directly in the required model file and keep the latest usable state saved at that path throughout the task.",
+  "groups": {
+    "G": "runnable physical model, complete Timeseries contract and core-path qualification",
+    "A": "nominal charging and initial-condition accuracy",
+    "Q": "nominal battery/plate temperature-field quality",
+    "M": "distributed electro-thermal-fluid mechanism and causal perturbation response",
+    "R": "worst required operating-point robustness",
+    "D": "CC-active low-limit triplet with 1:1 total-pack ampere response",
+    "weights": {
+      "A": 0.2,
+      "Q": 0.25,
+      "M": 0.22,
+      "R": 0.23,
+      "D": 0.1
+    }
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XBATT-05",
+  "file_count": 47,
+  "files": [
+    {
+      "path": "reference/files/src/+BatteryLibrary/+Models/icons/iconTECM.png",
+      "size_bytes": 4943
+    },
+    {
+      "path": "reference/files/src/+BatteryLibrary/+Models/icons/iconTECM.svg",
+      "size_bytes": 6254
+    },
+    {
+      "path": "reference/files/src/+BatteryLibrary/+Models/icons/iconTECMD.png",
+      "size_bytes": 5310
+    },
+    {
+      "path": "reference/files/src/+BatteryLibrary/+Models/icons/iconTECMD.svg",
+      "size_bytes": 5836
+    },
+    {
+      "path": "reference/files/src/+BatteryLibrary/+Models/icons/iconTSPMe.png",
+      "size_bytes": 5419
+    },
+    {
+      "path": "reference/files/src/+BatteryLibrary/+Models/icons/iconTSPMe.svg",
+      "size_bytes": 6689
+    },
+    {
+      "path": "reference/files/src/+BatteryLibrary/+Models/icons/iconTSPMeA.png",
+      "size_bytes": 6008
+    },
+    {
+      "path": "reference/files/src/+BatteryLibrary/+Models/icons/iconTSPMeA.svg",
+      "size_bytes": 7458
+    },
+    {
+      "path": "reference/files/src/+BatteryLibrary/+Models/lib.m",
+      "size_bytes": 73
+    },
+    {
+      "path": "reference/files/src/+BatteryLibrary/+Models/TECM.ssc",
+      "size_bytes": 5558
+    },
+    {
+      "path": "reference/files/src/+BatteryLibrary/+Models/TECMD.ssc",
+      "size_bytes": 8790
+    },
+    {
+      "path": "reference/files/src/+BatteryLibrary/+Models/TSPMe.ssc",
+      "size_bytes": 29256
+    },
+    {
+      "path": "reference/files/src/+BatteryLibrary/+Models/TSPMeA.ssc",
+      "size_bytes": 39340
+    },
+    {
+      "path": "reference/files/src/+BatteryLibrary/+Utilities/BatteryCycler.ssc",
+      "size_bytes": 4218
+    },
+    {
+      "path": "reference/files/src/+BatteryLibrary/+Utilities/ControlledElectricalSource.ssc",
+      "size_bytes": 2036
+    },
+    {
+      "path": "reference/files/src/+BatteryLibrary/+Utilities/ElectricalSource.ssc",
+      "size_bytes": 1733
+    },
+    {
+      "path": "reference/files/src/+BatteryLibrary/+Utilities/getModelParameters.m",
+      "size_bytes": 3088
+    },
+    {
+      "path": "reference/files/src/+BatteryLibrary/+Utilities/getVariables.m",
+      "size_bytes": 32578
+    },
+    {
+      "path": "reference/files/src/+BatteryLibrary/+Utilities/icons/iconCharger.png",
+      "size_bytes": 2079
+    },
+    {
+      "path": "reference/files/src/+BatteryLibrary/+Utilities/icons/iconCharger.svg",
+      "size_bytes": 6879
+    },
+    {
+      "path": "reference/files/src/+BatteryLibrary/+Utilities/icons/iconGenerator.png",
+      "size_bytes": 2709
+    },
+    {
+      "path": "reference/files/src/+BatteryLibrary/+Utilities/icons/iconGenerator.svg",
+      "size_bytes": 5203
+    },
+    {
+      "path": "reference/files/src/+BatteryLibrary/+Utilities/lib.m",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/src/+BatteryLibrary/+Utilities/plotVariables.m",
+      "size_bytes": 8644
+    },
+    {
+      "path": "reference/files/src/BatteryLibrary_lib.slx",
+      "size_bytes": 74152
+    },
+    {
+      "path": "reference/files/src/Examples/parameterEstimation_TECMD/Data/LGM50_5Ah_OCV.mat",
+      "size_bytes": 1935
+    },
+    {
+      "path": "reference/files/src/Examples/parameterEstimation_TECMD/Data/LGM50_5Ah_Pulse.mat",
+      "size_bytes": 848982
+    },
+    {
+      "path": "reference/files/src/Examples/parameterEstimation_TECMD/Data/LGM50_5Ah_RateTest.mat",
+      "size_bytes": 1919418
+    },
+    {
+      "path": "reference/files/src/Examples/parameterEstimation_TECMD/EstECMPara.m",
+      "size_bytes": 6640
+    },
+    {
+      "path": "reference/files/src/Examples/parameterEstimation_TECMD/Lls.m",
+      "size_bytes": 4394
+    },
+    {
+      "path": "reference/files/src/Examples/parameterEstimation_TECMD/LMAlgorithm.m",
+      "size_bytes": 12523
+    },
+    {
+      "path": "reference/files/src/Examples/parameterEstimation_TECMD/modelFit.m",
+      "size_bytes": 496
+    },
+    {
+      "path": "reference/files/src/Examples/parameterEstimation_TECMD/optParameters_TECMD_LGM50.mat",
+      "size_bytes": 1221
+    },
+    {
+      "path": "reference/files/src/Examples/parameterEstimation_TECMD/TECMD_OptimisationTemplate.slx",
+      "size_bytes": 336054
+    },
+    {
+      "path": "reference/files/src/Examples/parameterEstimation_TECMD/TECMD_Prototype.slx",
+      "size_bytes": 68920
+    },
+    {
+      "path": "reference/files/src/Examples/simpleExamples/TECM_SeriesParallel.slx",
+      "size_bytes": 76314
+    },
+    {
+      "path": "reference/files/src/Examples/simpleExamples/TECMD_cycle.slx",
+      "size_bytes": 52112
+    },
+    {
+      "path": "reference/files/src/Examples/simpleExamples/TECMD_discharge.slx",
+      "size_bytes": 54627
+    },
+    {
+      "path": "reference/files/src/Examples/simpleExamples/TSPMe_cycle.slx",
+      "size_bytes": 51293
+    },
+    {
+      "path": "reference/files/src/Examples/simpleExamples/TSPMe_power.slx",
+      "size_bytes": 51075
+    },
+    {
+      "path": "reference/files/src/Examples/simpleExamples/TSPMe_SeriesParallel.slx",
+      "size_bytes": 76007
+    },
+    {
+      "path": "reference/files/src/Examples/simpleExamples/TSPMeA_AdvancedCharger.slx",
+      "size_bytes": 67310
+    },
+    {
+      "path": "reference/files/src/Examples/simpleExamples/TSPMeA_cycle.slx",
+      "size_bytes": 65435
+    },
+    {
+      "path": "reference/files/src/Examples/viaMatlabCode/TSPMe_Prototype.slx",
+      "size_bytes": 86999
+    },
+    {
+      "path": "reference/files/src/Examples/viaMatlabCode/TSPMeA_Cycling.slx",
+      "size_bytes": 95354
+    },
+    {
+      "path": "reference/files/src/LICENSE",
+      "size_bytes": 1095
+    },
+    {
+      "path": "reference/files/src/README.md",
+      "size_bytes": 3926
+    }
+  ],
+  "entrypoint": "reference/files/src/Examples/simpleExamples/TSPMeA_AdvancedCharger.slx",
+  "expected_score": 100.0,
+  "expected_valid_scenarios": 7,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal",
+      "low_initial_soc",
+      "high_initial_soc",
+      "cold_cell_and_ambient",
+      "warm_cell_and_ambient",
+      "hot_weak_heat_rejection",
+      "hot_strong_heat_rejection"
+    ],
+    "nominal_scenario_id": "nominal",
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 4156459,
+  "excluded_files": []
+}

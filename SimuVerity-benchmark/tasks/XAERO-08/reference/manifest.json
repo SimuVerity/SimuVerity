@@ -1,0 +1,97 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XAERO-08",
+  "file_count": 18,
+  "files": [
+    {
+      "path": "reference/files/source/.gitignore",
+      "size_bytes": 5
+    },
+    {
+      "path": "reference/files/source/LICENSE",
+      "size_bytes": 11357
+    },
+    {
+      "path": "reference/files/source/read_mat.py",
+      "size_bytes": 826
+    },
+    {
+      "path": "reference/files/source/README.md",
+      "size_bytes": 225
+    },
+    {
+      "path": "reference/files/source/requirements.txt",
+      "size_bytes": 211
+    },
+    {
+      "path": "reference/files/source/simulink_stuff/dof_h.mat",
+      "size_bytes": 135600
+    },
+    {
+      "path": "reference/files/source/simulink_stuff/dof_theta.mat",
+      "size_bytes": 135600
+    },
+    {
+      "path": "reference/files/source/simulink_stuff/dof_timer.mat",
+      "size_bytes": 135600
+    },
+    {
+      "path": "reference/files/source/simulink_stuff/dof_x.mat",
+      "size_bytes": 135600
+    },
+    {
+      "path": "reference/files/source/simulink_stuff/h.mat",
+      "size_bytes": 70064
+    },
+    {
+      "path": "reference/files/source/simulink_stuff/Parameters.m",
+      "size_bytes": 321
+    },
+    {
+      "path": "reference/files/source/simulink_stuff/Rocket.slx",
+      "size_bytes": 43357
+    },
+    {
+      "path": "reference/files/source/simulink_stuff/Rocket_with_6dof.slx",
+      "size_bytes": 44286
+    },
+    {
+      "path": "reference/files/source/simulink_stuff/theta.mat",
+      "size_bytes": 70064
+    },
+    {
+      "path": "reference/files/source/simulink_stuff/timer.mat",
+      "size_bytes": 70064
+    },
+    {
+      "path": "reference/files/source/simulink_stuff/v.mat",
+      "size_bytes": 70064
+    },
+    {
+      "path": "reference/files/source/simulink_stuff/x.mat",
+      "size_bytes": 70064
+    },
+    {
+      "path": "reference/files/source_metadata.json",
+      "size_bytes": 356
+    }
+  ],
+  "entrypoint": "reference/files/source/simulink_stuff/Rocket.slx",
+  "expected_score": 100.0,
+  "expected_valid_scenarios": 5,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal",
+      "lower_mass_flow",
+      "higher_mass_flow",
+      "heavy_payload",
+      "stronger_gravity_turn"
+    ],
+    "nominal_scenario_id": "nominal",
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 993664,
+  "excluded_files": []
+}

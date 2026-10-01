@@ -1,0 +1,197 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XMECH-07",
+  "collection": "XMECH",
+  "reference": {
+    "identity_path": "tasks/XMECH-07/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Gripper_2Belts/Gripper_2Belts.slx",
+    "model_path": "tasks/XMECH-07/reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Gripper_2Belts/Gripper_2Belts.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XMECH-07",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a three-dimensional Simscape Multibody handling mechanism that transfers one free six-degree-of-freedom box from a moving input conveyor, through active gripper capture and transport, onto an orthogonal moving output conveyor.",
+    "engineering_objects": [
+      "The gripper must physically capture, retain, move, and release the box;",
+      "Run for 30 s and complete the physical sequence input-belt transport, gripper pickup and retention, cross-belt transfer, release, and output-belt transport.",
+      "Keep all states and forces finite, bound contact penetration, and make normal and tangential forces act only through their corresponding physical contacts."
+    ],
+    "physical_paths": [
+      "Build a three-dimensional Simscape Multibody handling mechanism that transfers one free six-degree-of-freedom box from a moving input conveyor, through active gripper capture and transport, onto an orthogonal moving output conveyor.",
+      "Keep all states and forces finite, bound contact penetration, and make normal and tangential forces act only through their corresponding physical contacts.",
+      "The gripper must physically capture, retain, move, and release the box;",
+      "Run for 30 s and complete the physical sequence input-belt transport, gripper pickup and retention, cross-belt transfer, release, and output-belt transport."
+    ],
+    "functional_paths": [
+      "Build a three-dimensional Simscape Multibody handling mechanism that transfers one free six-degree-of-freedom box from a moving input conveyor, through active gripper capture and transport, onto an orthogonal moving output conveyor."
+    ],
+    "information_paths": [
+      "InputBeltSpeedScale, OutputBeltSpeedScale, BeltKineticFrictionScale, BeltStaticFrictionScale, PayloadDensityScale -> F90-XMECH-07 plant/control path -> box_state, command_state, input_contact, output_contact"
+    ],
+    "modes_and_events": [
+      "The gripper must physically capture, retain, move, and release the box;",
+      "Run for 30 s and complete the physical sequence input-belt transport, gripper pickup and retention, cross-belt transfer, release, and output-belt transport."
+    ],
+    "interfaces": [
+      {
+        "name": "InputBeltSpeedScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read InputBeltSpeedScale, OutputBeltSpeedScale, BeltKineticFrictionScale, BeltStaticFrictionScale, and PayloadDensityScale from the MATLAB base workspace. InputBeltSpeedScale and OutputBeltSpeedScale are real unitless scalars in [0.85, 1.1]; BeltKineticFrictionScale and BeltStaticFrictionScale are real unitless scalars in [0.8, 1.2]; and PayloadDensityScale is a real unitless scalar in [0.8, 1.25].",
+        "source": "tasks/XMECH-07/public_spec.json"
+      },
+      {
+        "name": "OutputBeltSpeedScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read InputBeltSpeedScale, OutputBeltSpeedScale, BeltKineticFrictionScale, BeltStaticFrictionScale, and PayloadDensityScale from the MATLAB base workspace. InputBeltSpeedScale and OutputBeltSpeedScale are real unitless scalars in [0.85, 1.1]; BeltKineticFrictionScale and BeltStaticFrictionScale are real unitless scalars in [0.8, 1.2]; and PayloadDensityScale is a real unitless scalar in [0.8, 1.25].",
+        "source": "tasks/XMECH-07/public_spec.json"
+      },
+      {
+        "name": "BeltKineticFrictionScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read InputBeltSpeedScale, OutputBeltSpeedScale, BeltKineticFrictionScale, BeltStaticFrictionScale, and PayloadDensityScale from the MATLAB base workspace. InputBeltSpeedScale and OutputBeltSpeedScale are real unitless scalars in [0.85, 1.1]; BeltKineticFrictionScale and BeltStaticFrictionScale are real unitless scalars in [0.8, 1.2]; and PayloadDensityScale is a real unitless scalar in [0.8, 1.25].",
+        "source": "tasks/XMECH-07/public_spec.json"
+      },
+      {
+        "name": "BeltStaticFrictionScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read InputBeltSpeedScale, OutputBeltSpeedScale, BeltKineticFrictionScale, BeltStaticFrictionScale, and PayloadDensityScale from the MATLAB base workspace. InputBeltSpeedScale and OutputBeltSpeedScale are real unitless scalars in [0.85, 1.1]; BeltKineticFrictionScale and BeltStaticFrictionScale are real unitless scalars in [0.8, 1.2]; and PayloadDensityScale is a real unitless scalar in [0.8, 1.25].",
+        "source": "tasks/XMECH-07/public_spec.json"
+      },
+      {
+        "name": "PayloadDensityScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read InputBeltSpeedScale, OutputBeltSpeedScale, BeltKineticFrictionScale, BeltStaticFrictionScale, and PayloadDensityScale from the MATLAB base workspace. InputBeltSpeedScale and OutputBeltSpeedScale are real unitless scalars in [0.85, 1.1]; BeltKineticFrictionScale and BeltStaticFrictionScale are real unitless scalars in [0.8, 1.2]; and PayloadDensityScale is a real unitless scalar in [0.8, 1.25].",
+        "source": "tasks/XMECH-07/public_spec.json"
+      },
+      {
+        "name": "box_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s",
+          "m"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named box_state, command_state, input_contact, and output_contact. box_state has 6 channels in this order: x, y, z (m), then vx, vy, vz (m/s).",
+        "source": "tasks/XMECH-07/public_spec.json"
+      },
+      {
+        "name": "command_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s",
+          "rad",
+          "m"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named box_state, command_state, input_contact, and output_contact. command_state has 6 channels in this order: gripper-finger translation (m), gripper rotation (rad), gripper vertical translation (m), gripper post-rotation (rad), output-belt speed (m/s), and input-belt speed (m/s).",
+        "source": "tasks/XMECH-07/public_spec.json"
+      },
+      {
+        "name": "input_contact",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s",
+          "m",
+          "N"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named box_state, command_state, input_contact, and output_contact. input_contact and output_contact each have 8 channels in this order: separation (m), normal relative velocity (m/s), normal force (N), tangential x and y velocity (m/s), friction-force magnitude (N), and friction-force x and y components (N).",
+        "source": "tasks/XMECH-07/public_spec.json"
+      },
+      {
+        "name": "output_contact",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s",
+          "m",
+          "N"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named box_state, command_state, input_contact, and output_contact. input_contact and output_contact each have 8 channels in this order: separation (m), normal relative velocity (m/s), normal force (N), tangential x and y velocity (m/s), friction-force magnitude (N), and friction-force x and y components (N).",
+        "source": "tasks/XMECH-07/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "box_state has 6 channels in this order: x, y, z (m), then vx, vy, vz (m/s).",
+      "input_contact and output_contact each have 8 channels in this order: separation (m), normal relative velocity (m/s), normal force (N), tangential x and y velocity (m/s), friction-force magnitude (N), and friction-force x and y components (N)."
+    ],
+    "feedback_and_control_causality": [
+      "Build a three-dimensional Simscape Multibody handling mechanism that transfers one free six-degree-of-freedom box from a moving input conveyor, through active gripper capture and transport, onto an orthogonal moving output conveyor."
+    ],
+    "signal_sources": [
+      "InputBeltSpeedScale is read from the public MATLAB base-workspace input contract.",
+      "OutputBeltSpeedScale is read from the public MATLAB base-workspace input contract.",
+      "BeltKineticFrictionScale is read from the public MATLAB base-workspace input contract.",
+      "BeltStaticFrictionScale is read from the public MATLAB base-workspace input contract.",
+      "PayloadDensityScale is read from the public MATLAB base-workspace input contract.",
+      "box_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "command_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "input_contact is produced by the implemented plant or controller and logged under the public output contract.",
+      "output_contact is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "InputBeltSpeedScale: Read InputBeltSpeedScale, OutputBeltSpeedScale, BeltKineticFrictionScale, BeltStaticFrictionScale, and PayloadDensityScale from the MATLAB base workspace. InputBeltSpeedScale and OutputBeltSpeedScale are real unitless scalars in [0.85, 1.1]; BeltKineticFrictionScale and BeltStaticFrictionScale are real unitless scalars in [0.8, 1.2]; and PayloadDensityScale is a real unitless scalar in [0.8, 1.25].",
+      "OutputBeltSpeedScale: Read InputBeltSpeedScale, OutputBeltSpeedScale, BeltKineticFrictionScale, BeltStaticFrictionScale, and PayloadDensityScale from the MATLAB base workspace. InputBeltSpeedScale and OutputBeltSpeedScale are real unitless scalars in [0.85, 1.1]; BeltKineticFrictionScale and BeltStaticFrictionScale are real unitless scalars in [0.8, 1.2]; and PayloadDensityScale is a real unitless scalar in [0.8, 1.25].",
+      "BeltKineticFrictionScale: Read InputBeltSpeedScale, OutputBeltSpeedScale, BeltKineticFrictionScale, BeltStaticFrictionScale, and PayloadDensityScale from the MATLAB base workspace. InputBeltSpeedScale and OutputBeltSpeedScale are real unitless scalars in [0.85, 1.1]; BeltKineticFrictionScale and BeltStaticFrictionScale are real unitless scalars in [0.8, 1.2]; and PayloadDensityScale is a real unitless scalar in [0.8, 1.25].",
+      "BeltStaticFrictionScale: Read InputBeltSpeedScale, OutputBeltSpeedScale, BeltKineticFrictionScale, BeltStaticFrictionScale, and PayloadDensityScale from the MATLAB base workspace. InputBeltSpeedScale and OutputBeltSpeedScale are real unitless scalars in [0.85, 1.1]; BeltKineticFrictionScale and BeltStaticFrictionScale are real unitless scalars in [0.8, 1.2]; and PayloadDensityScale is a real unitless scalar in [0.8, 1.25].",
+      "PayloadDensityScale: Read InputBeltSpeedScale, OutputBeltSpeedScale, BeltKineticFrictionScale, BeltStaticFrictionScale, and PayloadDensityScale from the MATLAB base workspace. InputBeltSpeedScale and OutputBeltSpeedScale are real unitless scalars in [0.85, 1.1]; BeltKineticFrictionScale and BeltStaticFrictionScale are real unitless scalars in [0.8, 1.2]; and PayloadDensityScale is a real unitless scalar in [0.8, 1.25]."
+    ],
+    "disturbances": [
+      "Read InputBeltSpeedScale, OutputBeltSpeedScale, BeltKineticFrictionScale, BeltStaticFrictionScale, and PayloadDensityScale from the MATLAB base workspace.",
+      "Apply them to the actual belt motion, belt contact laws, and payload inertia while supporting the declared ranges."
+    ],
+    "dynamic_processes": [
+      "The gripper must physically capture, retain, move, and release the box;",
+      "Run for 30 s and complete the physical sequence input-belt transport, gripper pickup and retention, cross-belt transfer, release, and output-belt transport."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XMECH-07: prescribing box_state directly would bypass the system path described by: Build a three-dimensional Simscape Multibody handling mechanism that transfers one free six-degree-of-freedom box from a moving input conveyor, through active gripper capture and transport, onto an orthogonal moving output conveyor.",
+      "F90-XMECH-07: replaying a fixed box_state trace would ignore causal variation in InputBeltSpeedScale."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XMECH-07/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XMECH-07/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XMECH-07/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

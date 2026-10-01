@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simuverity.org/schemas/evaluation-result.schema.json",
+  "title": "SimuVerity evaluation result",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "task_id",
+    "generation_run_id",
+    "scoring_run_id",
+    "evidence_complete"
+  ],
+  "properties": {
+    "schema": {
+      "const": "simuverity.evaluation-result.v1"
+    },
+    "status": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "generation_run_id": {
+      "type": "string"
+    },
+    "scoring_run_id": {
+      "type": "string"
+    },
+    "evidence_complete": {
+      "type": "boolean"
+    },
+    "protocol_zero": {
+      "type": "boolean"
+    },
+    "score": {
+      "$ref": "score-result.schema.json"
+    }
+  },
+  "additionalProperties": true
+}

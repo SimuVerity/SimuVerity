@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+<title>Multibody Point Cloud Contact Cylinder on Ramp</title>
+<meta name="generator" content="MATLAB 25.1">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2026-01-13">
+<meta name="DC.source" content="sm_ptcld_cyl_on_ramp.m">
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="content">
+<h1>Multibody Point Cloud Contact Cylinder on Ramp</h1>
+<!--introduction-->
+<p>This example models a cylinder rolling down a ramp using two contact methods. It compares contact between two solids with contact between a point cloud and a solid. The number of points in the point cloud can be varied. To maintain the same penetration, the stiffness parameter is scaled with the number of points. Fewer points, however, results in more speed variation as the cylinder rolls down the ramp.</p>
+<!--/introduction-->
+<h2>Contents</h2>
+<div>
+<ul>
+<li>
+<a href="#1">Model</a>
+</li>
+<li>
+<a href="#2">Simulation Results from Simscape Logging</a>
+</li>
+<li>
+<a href="#6">Simulation Results from Simscape Logging: More Points</a>
+</li>
+</ul>
+</div>
+<h2 id="1">Model</h2>
+<img vspace="5" hspace="5" src="sm_ptcld_cyl_on_ramp_01.png" alt=""> <h2 id="2">Simulation Results from Simscape Logging</h2>
+<p>The plot below compares the vertical and horizontal speed of the cylinders as they roll down the ramp. The penetration into the ramp is quite similar for the two solids, but the rotational speeds differ.</p>
+<img vspace="5" hspace="5" src="sm_ptcld_cyl_on_ramp_02.png" alt=""> <p>
+<img vspace="5" hspace="5" src="sm_ptcld_cyl_on_ramp_anim_fewPts.png" alt=""> </p>
+<img vspace="5" hspace="5" src="sm_ptcld_cyl_on_ramp_03.png" alt=""> <h2 id="6">Simulation Results from Simscape Logging: More Points</h2>
+<p>The plot below compares the vertical and horizontal speed of the cylinders as they roll down the ramp. The penetration into the ramp is quite similar for the two solids, and with an increased number of points the rotational speeds of the cylinder with the point cloud has less variation.</p>
+<img vspace="5" hspace="5" src="sm_ptcld_cyl_on_ramp_04.png" alt=""> <p>
+<img vspace="5" hspace="5" src="sm_ptcld_cyl_on_ramp_anim_manyPts.png" alt=""> </p>
+<img vspace="5" hspace="5" src="sm_ptcld_cyl_on_ramp_05.png" alt=""> <p class="footer">Copyright 2022-2026 The MathWorks, Inc.<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2025a</a>
+<br>
+</p>
+</div>
+<!--
+##### SOURCE BEGIN #####
+%% Multibody Point Cloud Contact Cylinder on Ramp
+%
+% This example models a cylinder rolling down a ramp using two contact
+% methods.  It compares contact between two solids with contact between a
+% point cloud and a solid. The number of points in the point cloud can be
+% varied.  To maintain the same penetration, the stiffness parameter is
+% scaled with the number of points.  Fewer points, however, results in more
+% speed variation as the cylinder rolls down the ramp.
+%
+% Copyright 2022-2026 The MathWorks, Inc.
+
+
+%% Model
+
+open_system('sm_ptcld_cyl_on_ramp')
+
+set_param(find_system('sm_ptcld_cyl_on_ramp','MatchFilter',@Simulink.match.allVariants,'FindAll', 'on','type','annotation','Tag','ModelFeatures'),'Interpreter','off')
+
+%% Simulation Results from Simscape Logging
+%%
+%
+% The plot below compares the vertical and horizontal speed of the
+% cylinders as they roll down the ramp.  The penetration into the ramp is
+% quite similar for the two solids, but the rotational speeds differ.
+%
+
+[cyl, ptcld] = sm_ptcld_cyl_on_ramp_param(100,'plot');
+
+%% 
+%
+% <<sm_ptcld_cyl_on_ramp_anim_fewPts.png>>
+
+%%
+
+sim('sm_ptcld_cyl_on_ramp')
+sm_ptcld_cyl_on_ramp_plot1vel;
+
+%% Simulation Results from Simscape Logging: More Points 
+%%
+%
+% The plot below compares the vertical and horizontal speed of the
+% cylinders as they roll down the ramp.  The penetration into the ramp is
+% quite similar for the two solids, and with an increased number of points
+% the rotational speeds of the cylinder with the point cloud has less
+% variation.
+%
+
+[cyl, ptcld] = sm_ptcld_cyl_on_ramp_param(500,'plot');
+
+%% 
+%
+% <<sm_ptcld_cyl_on_ramp_anim_manyPts.png>>
+
+%%
+
+sim('sm_ptcld_cyl_on_ramp')
+sm_ptcld_cyl_on_ramp_plot1vel;
+
+%%
+%clear all
+close all
+bdclose all
+
+##### SOURCE END #####
+-->
+</body>
+</html>

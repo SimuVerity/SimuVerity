@@ -1,0 +1,62 @@
+{
+  "aggregation": {
+    "operation_order": "unchanged source pure-function order",
+    "post_total_cap_floor_or_override": "none",
+    "weights": {
+      "A": 0.25,
+      "C": 0.2,
+      "D": 0.1,
+      "M": 0.25,
+      "Q": 0.1,
+      "R": 0.1
+    }
+  },
+  "candidate_independent": true,
+  "criteria_id": "simuverity-101-v1:f90-xbatt-07:engineering-criteria",
+  "effect_targets": {
+    "all_pairwise": [
+      "state",
+      "command",
+      "limit",
+      "extrema",
+      "fault"
+    ],
+    "precharge_feedback_pair": [
+      "drive_precharge_ready",
+      "drive_precharge_incomplete"
+    ]
+  },
+  "missing_evidence_handling": "unchanged source qualification and metric-local handling",
+  "normalizers": {
+    "continuous_channel": "max(range(target), max_abs(target), 1.0); RMSE knee=0.08*scale",
+    "cross_scenario_effect": "target RMS delta; candidate utility=min(1,candidate_delta/target_delta)",
+    "discrete_channel": "fraction with abs(candidate-target)<0.5"
+  },
+  "reference_self_target": {
+    "G": 1,
+    "raw_or_total_score": 100.0
+  },
+  "runtime_inputs": [
+    "candidate_evidence",
+    "engineering_criteria_bundle"
+  ],
+  "scenario_targets": {
+    "lossless": true,
+    "resampled_or_downsampled": false,
+    "scenario_ids": [
+      "nominal_standby",
+      "drive_precharge_ready",
+      "drive_precharge_incomplete",
+      "charge_precharge_ready",
+      "voltage_temperature_derating",
+      "overvoltage_overtemperature_fault"
+    ],
+    "storage": "payload.scenario_targets"
+  },
+  "schema": "simuverity.engineering-criteria-manifest.v1",
+  "task_id": "F90-XBATT-07",
+  "payload": {
+    "file": "engineering_criteria_targets.json.gz",
+    "format": "gzip-json"
+  }
+}

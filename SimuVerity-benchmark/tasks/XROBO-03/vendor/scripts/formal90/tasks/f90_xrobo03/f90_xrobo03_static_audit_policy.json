@@ -1,0 +1,87 @@
+{
+  "schema": "simuverity.f90-xrobo03-static-audit-policy.v1",
+  "formal_task_id": "F90-XROBO-03",
+  "candidate_evidence_ready": true,
+  "display_name_is_identity": false,
+  "candidate_mask_text_is_identity": false,
+  "public_input_fields": [
+    "initial_body_height_m",
+    "initial_forward_velocity_mps",
+    "initial_vertical_velocity_mps",
+    "torso_mass_kg",
+    "ground_friction_scale",
+    "ground_stiffness_npm",
+    "ground_damping_nspm",
+    "joint_torque_limit_nm"
+  ],
+  "identity_parameters": [
+    "SourceBlock",
+    "ReferenceBlock",
+    "SourceType",
+    "BlockType"
+  ],
+  "physical_joint_tokens": [
+    "RevoluteJoint",
+    "6-DOFJoint"
+  ],
+  "spatial_contact_tokens": [
+    "SpatialContactForce"
+  ],
+  "physical_sensor_tokens": [
+    "TransformSensor",
+    "JointSensor",
+    "ForceSensor",
+    "TorqueSensor"
+  ],
+  "physical_signal_converter_tokens": [
+    "PS-SimulinkConverter"
+  ],
+  "trusted_physical_origin_tokens": [
+    "TransformSensor",
+    "JointSensor",
+    "ForceSensor",
+    "TorqueSensor",
+    "SpatialContactForce",
+    "RevoluteJoint",
+    "6-DOFJoint"
+  ],
+  "input_torque_modes": [
+    "InputTorque",
+    "ProvidedByInput"
+  ],
+  "computed_motion_modes": [
+    "ComputedMotion",
+    "AutomaticallyComputed"
+  ],
+  "sense_parameters": [
+    "SensePosition",
+    "SenseVelocity",
+    "SenseAcceleration",
+    "SenseTorque"
+  ],
+  "dynamic_block_types": [
+    "Integrator",
+    "DiscreteIntegrator",
+    "StateSpace",
+    "TransferFcn",
+    "UnitDelay",
+    "Memory",
+    "S-Function",
+    "Reference"
+  ],
+  "replay_source_block_types": [
+    "Constant",
+    "FromWorkspace",
+    "SignalBuilder",
+    "SignalEditor"
+  ],
+  "standard_public_outputs": [
+    "body_state",
+    "joint_state",
+    "contact_state",
+    "control_state"
+  ],
+  "minimum_physical_connections_per_joint": 2,
+  "minimum_physical_connections_per_contact": 2,
+  "maximum_upstream_trace_depth": 128
+}

@@ -1,0 +1,80 @@
+{
+  "schema": "simuverity.task.v1",
+  "release": "simuverity-101-v1",
+  "task_id": "XFLUID-04",
+  "ordinal": 46,
+  "collection": "XFLUID",
+  "runtime_alias": "XFLUID-04",
+  "required_model_file": "cand_XFLUID04.slx",
+  "evaluation_policy_id": "simuverity-101-v1:xfluid-04:scoring",
+  "candidate_closure": {
+    "public_input_names": [
+      "lift_target_mm",
+      "motion_start_s",
+      "ramp_duration_s",
+      "target_hold_s",
+      "supply_pressure_bar",
+      "supply_pressure_step_fraction",
+      "pressure_step_offset_s"
+    ],
+    "nominal_provider": "simuverity_public_nominal_inputs"
+  },
+  "public_spec": "public_spec.json",
+  "official_scenarios": "official_scenarios.json",
+  "extractor": {
+    "kind": "matlab_function",
+    "path": "extractor/run.m",
+    "entrypoint": "run",
+    "implementation": "vendor/scripts/unified/formal90/tasks/f90_xfluid04_extract_candidate_evidence.m",
+    "closure_manifest": "extractor/manifest.json"
+  },
+  "scorer": {
+    "kind": "python_function",
+    "path": "scorer.py",
+    "entrypoint": "score",
+    "closure_manifest": "scorer/manifest.json",
+    "offline_only": true
+  },
+  "reference": {
+    "materialization": "bundled",
+    "path": "reference/files",
+    "manifest": "reference/manifest.json",
+    "entrypoint": "reference/files/XFLUID04_reference.slx",
+    "clean_replay_setup": {
+      "phase": "before_load",
+      "path": "tasks/XFLUID-04/reference/clean_replay_setup/f90_xfluid04_reference_clean_replay_setup.m",
+      "entrypoint": "f90_xfluid04_reference_clean_replay_setup"
+    },
+    "expected_valid_scenarios": 6,
+    "score_tolerance": 5e-11,
+    "expected_score": 92.5223039543,
+    "expected_score_basis": "reference_replay",
+    "scenario_contract": {
+      "expected_ids": [
+        "nominal",
+        "low_supply_drop",
+        "high_supply_rise",
+        "high_target_boundary",
+        "pressure_drop_pair",
+        "pressure_control_pair"
+      ],
+      "nominal_scenario_id": "nominal",
+      "nominal_materialization": "extractor_appended_and_explicitly_published"
+    },
+    "score_tolerance_basis": "source_authority_numeric_precision",
+    "runtime_manifest": "reference/runtime_manifest.json"
+  },
+  "applicable_groups": [
+    "G",
+    "A",
+    "Q",
+    "M",
+    "R",
+    "D"
+  ],
+  "release_license_status": "INCLUDED_THIRD_PARTY_LICENSE",
+  "system_profile": {
+    "path": "system_profile.json",
+    "schema": "simuverity.system-profile.v1"
+  }
+}

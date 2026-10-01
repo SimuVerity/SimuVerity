@@ -1,0 +1,2925 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XMECH-03",
+  "file_count": 725,
+  "files": [
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Dual_Clutch_Trans.prj",
+      "size_bytes": 177
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Dual_Clutch_Trans.slx",
+      "size_bytes": 133040
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Images/DCT_Animation_Show_VR_IMAGE.jpg",
+      "size_bytes": 4667
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Images/DCT_Animation_Show_VR_IMAGE1.jpg",
+      "size_bytes": 38384
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Images/DCT_Clutches_Abstracted_IMAGE.jpg",
+      "size_bytes": 13110
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Images/DCT_Clutches_IMAGE.jpg",
+      "size_bytes": 20923
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Images/DCT_Engine_Data_Driven_IMAGE.jpg",
+      "size_bytes": 8604
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Images/DCT_Gears_Abstracted_IMAGE.jpg",
+      "size_bytes": 42096
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Images/DCT_Gears_IMAGE.jpg",
+      "size_bytes": 54429
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Images/DCT_Transmission_Abstracted_IMAGE.jpg",
+      "size_bytes": 50125
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Images/DCT_Transmission_Abstracted_IMAGE2.jpg",
+      "size_bytes": 48736
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Images/DCT_Transmission_IMAGE.jpg",
+      "size_bytes": 57971
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Images/DCT_Transmission_IMAGE2.jpg",
+      "size_bytes": 67886
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Images/DCT_Vehicle_Dynamics_Full_IMAGE.jpg",
+      "size_bytes": 11375
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Images/DCT_Vehicle_Dynamics_Simple_IMAGE.jpg",
+      "size_bytes": 9390
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Images/ECE_15_Cycle.jpg",
+      "size_bytes": 35162
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Images/EUDC_Cycle.jpg",
+      "size_bytes": 36582
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Images/EUDC_Cycle_Low_Power.jpg",
+      "size_bytes": 38440
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Images/FTP75_Image.jpg",
+      "size_bytes": 70772
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Libraries/Engine/Engine_Lib.slx",
+      "size_bytes": 126281
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Libraries/Engine/MBC_Engine_Calibrations.m",
+      "size_bytes": 7295
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Libraries/Engine/MBC_Files/SI_DIVCP_CVIVL_Turbo_I4.cag",
+      "size_bytes": 609770
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Libraries/Engine/MBC_Files/SI_DIVCP_CVIVL_Turbo_I4.mat",
+      "size_bytes": 2059288
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Libraries/Engine/MBC_Files/SI_DIVCP_CVIVL_Turbo_I4_Merged_Data.xls",
+      "size_bytes": 1299968
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Libraries/Transmission/Transmission_Lib.slx",
+      "size_bytes": 188973
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Libraries/Vehicle/DCT_Vehicle_Dynamics_Lib.slx",
+      "size_bytes": 116452
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Libraries/Vehicle/Vehicle_Dynamics_Testrig.slx",
+      "size_bytes": 76442
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/LICENSE.md",
+      "size_bytes": 1501
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Overview/Dual_Clutch_Trans.m",
+      "size_bytes": 3926
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Overview/html/Dual_Clutch_Trans.html",
+      "size_bytes": 11554
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Overview/html/Dual_Clutch_Trans.png",
+      "size_bytes": 3332
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Overview/html/Dual_Clutch_Trans_01.png",
+      "size_bytes": 74312
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Overview/html/Dual_Clutch_Trans_02.png",
+      "size_bytes": 37207
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Overview/html/Dual_Clutch_Trans_03.png",
+      "size_bytes": 56430
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Overview/html/Dual_Clutch_Trans_04.png",
+      "size_bytes": 42162
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Overview/html/Dual_Clutch_Trans_05.png",
+      "size_bytes": 215810
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Overview/html/Dual_Clutch_Trans_06.png",
+      "size_bytes": 22082
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Overview/html/Dual_Clutch_Trans_07.png",
+      "size_bytes": 62926
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Overview/html/Dual_Clutch_Trans_08.png",
+      "size_bytes": 62255
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Overview/html/Dual_Clutch_Trans_web.m",
+      "size_bytes": 30
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/README.md",
+      "size_bytes": 1654
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/3zvuZYoQhfnLGXfs6w3kqJ8KJl0/79VJzh1v20xm_Frsj7Z0Ve--GP4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/3zvuZYoQhfnLGXfs6w3kqJ8KJl0/79VJzh1v20xm_Frsj7Z0Ve--GP4p.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/3zvuZYoQhfnLGXfs6w3kqJ8KJl0/k6T1tp0JgQM624cb2YWgb1CROjMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/3zvuZYoQhfnLGXfs6w3kqJ8KJl0/k6T1tp0JgQM624cb2YWgb1CROjMp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/3zvuZYoQhfnLGXfs6w3kqJ8KJl0/n2DEgeG52k2M5KIQDSjjFUW7e-sd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/3zvuZYoQhfnLGXfs6w3kqJ8KJl0/n2DEgeG52k2M5KIQDSjjFUW7e-sp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/3zvuZYoQhfnLGXfs6w3kqJ8KJl0/pxyduuMjVraB0ZhqfIhfL1ZQ-IId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/3zvuZYoQhfnLGXfs6w3kqJ8KJl0/pxyduuMjVraB0ZhqfIhfL1ZQ-IIp.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/3zvuZYoQhfnLGXfs6w3kqJ8KJl0/TT3Niw01RWivhQ_09Vqtzng6_Ucd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/3zvuZYoQhfnLGXfs6w3kqJ8KJl0/TT3Niw01RWivhQ_09Vqtzng6_Ucp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/3zvuZYoQhfnLGXfs6w3kqJ8KJl0/wmJmS7cqaCMo-VTShjQN0-A9z58d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/3zvuZYoQhfnLGXfs6w3kqJ8KJl0/wmJmS7cqaCMo-VTShjQN0-A9z58p.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/3zvuZYoQhfnLGXfs6w3kqJ8KJl0/X9iWljUW4dLDGa-GNuxsXdn2SFgd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/3zvuZYoQhfnLGXfs6w3kqJ8KJl0/X9iWljUW4dLDGa-GNuxsXdn2SFgp.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BMuf9Foc2V4DZvm6yKEonbGeLPw/qMTs62HmaWu34FudICx3hIiYxyMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BMuf9Foc2V4DZvm6yKEonbGeLPw/qMTs62HmaWu34FudICx3hIiYxyMp.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BMuf9Foc2V4DZvm6yKEonbGeLPw/sXC-kxfhpTuijrgmNUGgPm51sy8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BMuf9Foc2V4DZvm6yKEonbGeLPw/sXC-kxfhpTuijrgmNUGgPm51sy8p.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BMuf9Foc2V4DZvm6yKEonbGeLPw/TgmwwswCSdZ6OFtp1mReARc0_4gd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BMuf9Foc2V4DZvm6yKEonbGeLPw/TgmwwswCSdZ6OFtp1mReARc0_4gp.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BMuf9Foc2V4DZvm6yKEonbGeLPw/Vt5CiBnBmVIN0-iqHA7T_B6nznAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BMuf9Foc2V4DZvm6yKEonbGeLPw/Vt5CiBnBmVIN0-iqHA7T_B6nznAp.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BMuf9Foc2V4DZvm6yKEonbGeLPw/wfe5HTVjtPiFwi5WS3flhdVSA5gd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BMuf9Foc2V4DZvm6yKEonbGeLPw/wfe5HTVjtPiFwi5WS3flhdVSA5gp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/0L2rhqdjUjZ4ura9y6dEUQa7erMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/0L2rhqdjUjZ4ura9y6dEUQa7erMp.xml",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/0zKzOsZmRBsZCxxtF8jCyNto_jQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/0zKzOsZmRBsZCxxtF8jCyNto_jQp.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/3qCL9hETY7v1JHabshlVWOxwkEMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/3qCL9hETY7v1JHabshlVWOxwkEMp.xml",
+      "size_bytes": 103
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/8o2kpPBUd2hBfeEL3idDX1NSJ2Ad.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/8o2kpPBUd2hBfeEL3idDX1NSJ2Ap.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/9EsNi9sT9uIpdIRJmhAVIo5aC8od.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/9EsNi9sT9uIpdIRJmhAVIo5aC8op.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Amk66a-jzSpkS8RZiDU4DeJn7NAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Amk66a-jzSpkS8RZiDU4DeJn7NAp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/B9IMIk9Zik_U1wfo5gMGlfpKy7cd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/B9IMIk9Zik_U1wfo5gMGlfpKy7cp.xml",
+      "size_bytes": 106
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/BPoAVQpp4krClhBPtJQNAM4qgIsd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/BPoAVQpp4krClhBPtJQNAM4qgIsp.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/cSpnwSjE9NECyT7wCtUZOgTQyTkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/cSpnwSjE9NECyT7wCtUZOgTQyTkp.xml",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/dWw1DVzp6bqTZVql5zvTQcyxIAcd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/dWw1DVzp6bqTZVql5zvTQcyxIAcp.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/GrQtheUvn1iptqSP7rWDNE1HNIgd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/GrQtheUvn1iptqSP7rWDNE1HNIgp.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/RgNFmTjIFBiiksru_ThqsJTv9jAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/RgNFmTjIFBiiksru_ThqsJTv9jAp.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/sNHgPqL9Rc7dnPyUp0FX1lwZneYd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/sNHgPqL9Rc7dnPyUp0FX1lwZneYp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Ur1esh7xN9L6aqDUKBE31DKE1Qod.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Ur1esh7xN9L6aqDUKBE31DKE1Qop.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Wq_yDU8VPuC88DWHBQLIbavq97Id.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Wq_yDU8VPuC88DWHBQLIbavq97Ip.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/y1oEb-_0qm3ryKG_h3qqg7-dnuwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/y1oEb-_0qm3ryKG_h3qqg7-dnuwp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Zj5us8AeVxFGO2EsIURgomI1KVkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Zj5us8AeVxFGO2EsIURgomI1KVkp.xml",
+      "size_bytes": 103
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/ZXcJ4_bNfaSnOyrn86GeY3D-59od.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/ZXcJ4_bNfaSnOyrn86GeY3D-59op.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/bw3rZC2lQGYsJnHBguJaUe15ng8/aWo79VZ-JH8rcxODiSfQ-p6f1XMd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/bw3rZC2lQGYsJnHBguJaUe15ng8/aWo79VZ-JH8rcxODiSfQ-p6f1XMp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/bw3rZC2lQGYsJnHBguJaUe15ng8/CI8ja8CbNAUaRMa3cY-yj8tHe4Md.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/bw3rZC2lQGYsJnHBguJaUe15ng8/CI8ja8CbNAUaRMa3cY-yj8tHe4Mp.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/CI8ja8CbNAUaRMa3cY-yj8tHe4M/5_scFBW2WOJvpGXNsGaMhzOZ12Ad.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/CI8ja8CbNAUaRMa3cY-yj8tHe4M/5_scFBW2WOJvpGXNsGaMhzOZ12Ap.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/CI8ja8CbNAUaRMa3cY-yj8tHe4M/_ZIQLhjOwKLvSOU-th7LrHUY-Ikd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/CI8ja8CbNAUaRMa3cY-yj8tHe4M/_ZIQLhjOwKLvSOU-th7LrHUY-Ikp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/CI8ja8CbNAUaRMa3cY-yj8tHe4M/wdxDqIeuIuK_vhwbeqQwwaksvmMd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/CI8ja8CbNAUaRMa3cY-yj8tHe4M/wdxDqIeuIuK_vhwbeqQwwaksvmMp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/DG0gR6qcAAvfFV1QmRyELypI2EQ/mpFFvLPBkVmlHM7BQsSmyLoukXgp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/7C8QGtD0GMAFhOVbXcDa6TP_ONAd.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/7C8QGtD0GMAFhOVbXcDa6TP_ONAp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/eCnxVUbHBP2LPDee_WymU2poOood.xml",
+      "size_bytes": 70
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/eCnxVUbHBP2LPDee_WymU2poOoop.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/fmMGcIN87Q94MbQWdmvOgqayLeod.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/fmMGcIN87Q94MbQWdmvOgqayLeop.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/gBBQQyRP54WlsG0P3epp2XgepDcd.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/gBBQQyRP54WlsG0P3epp2XgepDcp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/hMAUL2r20fsqzZuNeZG9goAW658d.xml",
+      "size_bytes": 88
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/hMAUL2r20fsqzZuNeZG9goAW658p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/kZu4bFqLOAfQMF9G0nliALkOMhMd.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/kZu4bFqLOAfQMF9G0nliALkOMhMp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/NuhZbifPXq6_G5_0Aed7bd0Arokd.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/NuhZbifPXq6_G5_0Aed7bd0Arokp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/o1HPrfqek0w8TBIbxJOXUdbnmP4d.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/o1HPrfqek0w8TBIbxJOXUdbnmP4p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/swCbPrN4LOraPNjCtNviUzcAMF0d.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/swCbPrN4LOraPNjCtNviUzcAMF0p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/tSEoUeABOy7_OkSctTDFwIy1cLkd.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/tSEoUeABOy7_OkSctTDFwIy1cLkp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/tTRyCdnl12_bsi3XzOxQ7dHZTfYd.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/tTRyCdnl12_bsi3XzOxQ7dHZTfYp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/UCewWLXw_TcMiAU5s23b8m4VCuod.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/UCewWLXw_TcMiAU5s23b8m4VCuop.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/xAhOq0Osj4fbpb8WhagEKRqFr40d.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/xAhOq0Osj4fbpb8WhagEKRqFr40p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/xl5o7shZ07IoN7mIZUe1wQD5SaUd.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/xl5o7shZ07IoN7mIZUe1wQD5SaUp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/xNt7uPvKo3-7NY1JQIz-qhEB7Cgd.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/xNt7uPvKo3-7NY1JQIz-qhEB7Cgp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/Y0o3qX1DioqxGEKDXsDbgRQkWtsd.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/Y0o3qX1DioqxGEKDXsDbgRQkWtsp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/Yp8I6BmkrcsZkFrnUw4qAcft9vod.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/Yp8I6BmkrcsZkFrnUw4qAcft9vop.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/Yu4N5_bsn23m3Td7mxYjwMtiKWwd.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/Yu4N5_bsn23m3Td7mxYjwMtiKWwp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EglwhYbCmP9iTINFBEOIVstjzsQ/fmZHGB_xPl7cAT_okSkvWZExinUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EglwhYbCmP9iTINFBEOIVstjzsQ/fmZHGB_xPl7cAT_okSkvWZExinUp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EglwhYbCmP9iTINFBEOIVstjzsQ/H0AVpActOz76jucInFMrxiTBVPcd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EglwhYbCmP9iTINFBEOIVstjzsQ/H0AVpActOz76jucInFMrxiTBVPcp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EglwhYbCmP9iTINFBEOIVstjzsQ/hFlq1CIuFM_5UUdr_wF4iGwOMu8d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EglwhYbCmP9iTINFBEOIVstjzsQ/hFlq1CIuFM_5UUdr_wF4iGwOMu8p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EglwhYbCmP9iTINFBEOIVstjzsQ/nt4I8-Fhax8oNE9kA3AZOGYywfgd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/EglwhYbCmP9iTINFBEOIVstjzsQ/nt4I8-Fhax8oNE9kA3AZOGYywfgp.xml",
+      "size_bytes": 110
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsd.xml",
+      "size_bytes": 115
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/fkYOQt5YWl7thiAn-ASOOJdqHtg/AIYTu7qGEjzuauB4GS-8Fx2KWSId.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/fkYOQt5YWl7thiAn-ASOOJdqHtg/AIYTu7qGEjzuauB4GS-8Fx2KWSIp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/fkYOQt5YWl7thiAn-ASOOJdqHtg/CFozbA11UzNGOTrbgXt7AqP4Ewgd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/fkYOQt5YWl7thiAn-ASOOJdqHtg/CFozbA11UzNGOTrbgXt7AqP4Ewgp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/fkYOQt5YWl7thiAn-ASOOJdqHtg/Gi1lPfn4KKUBAhA0XRA8V2xvxHQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/fkYOQt5YWl7thiAn-ASOOJdqHtg/Gi1lPfn4KKUBAhA0XRA8V2xvxHQp.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/fkYOQt5YWl7thiAn-ASOOJdqHtg/GT37XksPVMoeXuAGiOuwg20PjOAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/fkYOQt5YWl7thiAn-ASOOJdqHtg/GT37XksPVMoeXuAGiOuwg20PjOAp.xml",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/fkYOQt5YWl7thiAn-ASOOJdqHtg/h78g802hxogdIeIfFLSyfy5kU70d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/fkYOQt5YWl7thiAn-ASOOJdqHtg/h78g802hxogdIeIfFLSyfy5kU70p.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/fkYOQt5YWl7thiAn-ASOOJdqHtg/JkNFFiPv3wzIu5adRPLe21TNPGkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/fkYOQt5YWl7thiAn-ASOOJdqHtg/JkNFFiPv3wzIu5adRPLe21TNPGkp.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/fkYOQt5YWl7thiAn-ASOOJdqHtg/pZjGEfyLKQkPA-CfQcIKwzpz67od.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/fkYOQt5YWl7thiAn-ASOOJdqHtg/pZjGEfyLKQkPA-CfQcIKwzpz67op.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/fkYOQt5YWl7thiAn-ASOOJdqHtg/Uxy1umv6V7Z8cKwxuHzGmLTsw74d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/fkYOQt5YWl7thiAn-ASOOJdqHtg/Uxy1umv6V7Z8cKwxuHzGmLTsw74p.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/G9NDJ7OX-QFit7B-0qXeHgJJI9I/72ysxl9Gofje0w3Ho7BD2GFSdMId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/G9NDJ7OX-QFit7B-0qXeHgJJI9I/72ysxl9Gofje0w3Ho7BD2GFSdMIp.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/G9NDJ7OX-QFit7B-0qXeHgJJI9I/Kfpo5P1beCzNYqhrqqWDItp4s0Ad.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/G9NDJ7OX-QFit7B-0qXeHgJJI9I/Kfpo5P1beCzNYqhrqqWDItp4s0Ap.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/-U6nKzR318qLmoOERse8SHZsuaYd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/-U6nKzR318qLmoOERse8SHZsuaYp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/3ycCt8-2zagbizVYWyeKFczW0Z0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/3ycCt8-2zagbizVYWyeKFczW0Z0p.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/3zvuZYoQhfnLGXfs6w3kqJ8KJl0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/3zvuZYoQhfnLGXfs6w3kqJ8KJl0p.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/A_7FhdTUYgPBDBFBdEXo_tDch4Ud.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/A_7FhdTUYgPBDBFBdEXo_tDch4Up.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/B86RjPCB26DeVh5IXMIqR1sesPAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/B86RjPCB26DeVh5IXMIqR1sesPAp.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/bF90UTSHOl9-4JerHAhdmhSAlFId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/bF90UTSHOl9-4JerHAhdmhSAlFIp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/E65d75omOLeSV7rUsk09MHfDuAwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/E65d75omOLeSV7rUsk09MHfDuAwp.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/eVAPyOCCQ4w_OJi_0LBbd50gg28d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/eVAPyOCCQ4w_OJi_0LBbd50gg28p.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/F8SsFIY5vPlaoFA5q7-J_EFyAO8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/F8SsFIY5vPlaoFA5q7-J_EFyAO8p.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/FVF6aGzaama6CDNvP5pyniNP6O4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/FVF6aGzaama6CDNvP5pyniNP6O4p.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/gfC_hu99QKig_gFymhl4KWBAdIod.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/gfC_hu99QKig_gFymhl4KWBAdIop.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/hkIBybUEXYSnjJ7vFHOn26Y3WmQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/hkIBybUEXYSnjJ7vFHOn26Y3WmQp.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/jOiRCurrOVzaSe9eaY9RC--HPowd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/jOiRCurrOVzaSe9eaY9RC--HPowp.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/NlxryHRKP9brqePqaVriwZNB55Ed.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/NlxryHRKP9brqePqaVriwZNB55Ep.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/PzhbCIccDU8P80LevMJNWfFV3Swd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/PzhbCIccDU8P80LevMJNWfFV3Swp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/qIKthN4H5R-u_XvYqTDiUzIUeMsd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/qIKthN4H5R-u_XvYqTDiUzIUeMsp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/ScWKSX-iYo24BnJu22r-7rknbK8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/ScWKSX-iYo24BnJu22r-7rknbK8p.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/sOr5Q4U94B7o8tJPcqFoUwZnsYQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/sOr5Q4U94B7o8tJPcqFoUwZnsYQp.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/XZ6qwyZodEYgzymVtdcGWP0qbJEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/XZ6qwyZodEYgzymVtdcGWP0qbJEp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/XznsNGyz4CuZ1tLyMEwQ-AuEu2Ad.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/XznsNGyz4CuZ1tLyMEwQ-AuEu2Ap.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/zVuktkSYF8R_3mHC6H_l1CGUf7gd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/GBC4dO6XBFq8hCXma-NoEgtuFMM/zVuktkSYF8R_3mHC6H_l1CGUf7gp.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/Gtbq40Z4bUQ4huV9n68jBl4brVI/9EB7mfpzeoxE_28ouSQCwAgYffYd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/Gtbq40Z4bUQ4huV9n68jBl4brVI/9EB7mfpzeoxE_28ouSQCwAgYffYp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/Gtbq40Z4bUQ4huV9n68jBl4brVI/GFQ6NHbBzkR44SvacIDTdat5J7Ad.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/Gtbq40Z4bUQ4huV9n68jBl4brVI/GFQ6NHbBzkR44SvacIDTdat5J7Ap.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/Gtbq40Z4bUQ4huV9n68jBl4brVI/hTPh9hg0YS3E58qTCo3JW5IBJhEd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/Gtbq40Z4bUQ4huV9n68jBl4brVI/hTPh9hg0YS3E58qTCo3JW5IBJhEp.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/iEXnOfm2xEahf3t_IPKvkeNomZw/abarJX_9Hy1HsjYgrcphGwM5lyYd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/iEXnOfm2xEahf3t_IPKvkeNomZw/abarJX_9Hy1HsjYgrcphGwM5lyYp.xml",
+      "size_bytes": 107
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/iEXnOfm2xEahf3t_IPKvkeNomZw/e9FiwRMf3tluPsyMuqqGQFioIt4d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/iEXnOfm2xEahf3t_IPKvkeNomZw/e9FiwRMf3tluPsyMuqqGQFioIt4p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/iEXnOfm2xEahf3t_IPKvkeNomZw/M_5cR0tnkM_UblP_RfWEgdURyfcd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/iEXnOfm2xEahf3t_IPKvkeNomZw/M_5cR0tnkM_UblP_RfWEgdURyfcp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/iEXnOfm2xEahf3t_IPKvkeNomZw/Qng21aDm1vEYvkuX7rbpFmr7mvsd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/iEXnOfm2xEahf3t_IPKvkeNomZw/Qng21aDm1vEYvkuX7rbpFmr7mvsp.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/iEXnOfm2xEahf3t_IPKvkeNomZw/t4SmuOZCBSxYG5xz35MD63lM0qMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/iEXnOfm2xEahf3t_IPKvkeNomZw/t4SmuOZCBSxYG5xz35MD63lM0qMp.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ifQ22jUloeIAQMc1YF6eJ4UDl5Y/6dqY52DVTSBCh5wT2c_TXAGjnood.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ifQ22jUloeIAQMc1YF6eJ4UDl5Y/6dqY52DVTSBCh5wT2c_TXAGjnoop.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ifQ22jUloeIAQMc1YF6eJ4UDl5Y/cwUvhQLMrBXIhq-UEjayE2yDZlAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ifQ22jUloeIAQMc1YF6eJ4UDl5Y/cwUvhQLMrBXIhq-UEjayE2yDZlAp.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ifQ22jUloeIAQMc1YF6eJ4UDl5Y/iTFLfVbjcGbvddb7o-7sxDPE3_Yd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ifQ22jUloeIAQMc1YF6eJ4UDl5Y/iTFLfVbjcGbvddb7o-7sxDPE3_Yp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ifQ22jUloeIAQMc1YF6eJ4UDl5Y/jTUEUW3FCw9OjQDuhb6kPy340tAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ifQ22jUloeIAQMc1YF6eJ4UDl5Y/jTUEUW3FCw9OjQDuhb6kPy340tAp.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ifQ22jUloeIAQMc1YF6eJ4UDl5Y/N7HI2MbV-a1s6bSFqJZIHFtkue4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ifQ22jUloeIAQMc1YF6eJ4UDl5Y/N7HI2MbV-a1s6bSFqJZIHFtkue4p.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ifQ22jUloeIAQMc1YF6eJ4UDl5Y/nD93Nyyj8jIL8LOeb4K77ofiQIId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ifQ22jUloeIAQMc1YF6eJ4UDl5Y/nD93Nyyj8jIL8LOeb4K77ofiQIIp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ifQ22jUloeIAQMc1YF6eJ4UDl5Y/QoexqtXKvG_-WELnWuyUZbWpAK8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ifQ22jUloeIAQMc1YF6eJ4UDl5Y/QoexqtXKvG_-WELnWuyUZbWpAK8p.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ifQ22jUloeIAQMc1YF6eJ4UDl5Y/s9M6E5dJ2QmXvbdknHtgAkD1jOgd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ifQ22jUloeIAQMc1YF6eJ4UDl5Y/s9M6E5dJ2QmXvbdknHtgAkD1jOgp.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ifQ22jUloeIAQMc1YF6eJ4UDl5Y/UYbFEjOdfOAu1FXjlBUedmv9wSod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ifQ22jUloeIAQMc1YF6eJ4UDl5Y/UYbFEjOdfOAu1FXjlBUedmv9wSop.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ifQ22jUloeIAQMc1YF6eJ4UDl5Y/vF749H6RoXDqzaeET1_k7HuBn-gd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ifQ22jUloeIAQMc1YF6eJ4UDl5Y/vF749H6RoXDqzaeET1_k7HuBn-gp.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ifQ22jUloeIAQMc1YF6eJ4UDl5Y/WPy9-C8NhI8KEikfrTBoN-3RfOkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ifQ22jUloeIAQMc1YF6eJ4UDl5Y/WPy9-C8NhI8KEikfrTBoN-3RfOkp.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ifQ22jUloeIAQMc1YF6eJ4UDl5Y/XgLhy6KuUTm0qmMWgc-OquYgAFgd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ifQ22jUloeIAQMc1YF6eJ4UDl5Y/XgLhy6KuUTm0qmMWgc-OquYgAFgp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jR6onXZiatjRI3Z5t5kRxLibs4g/EglwhYbCmP9iTINFBEOIVstjzsQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jR6onXZiatjRI3Z5t5kRxLibs4g/EglwhYbCmP9iTINFBEOIVstjzsQp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jR6onXZiatjRI3Z5t5kRxLibs4g/K6X1_eJkEd-sjWoXvwv7735oRNMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jR6onXZiatjRI3Z5t5kRxLibs4g/K6X1_eJkEd-sjWoXvwv7735oRNMp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jR6onXZiatjRI3Z5t5kRxLibs4g/Wu8cj8jpgE92gCBWTa8WCGTmMugd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jR6onXZiatjRI3Z5t5kRxLibs4g/Wu8cj8jpgE92gCBWTa8WCGTmMugp.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jR6onXZiatjRI3Z5t5kRxLibs4g/z-OjHK74JdXdq8IH0KNttq6OIPwd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jR6onXZiatjRI3Z5t5kRxLibs4g/z-OjHK74JdXdq8IH0KNttq6OIPwp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/aAjnB80M5xN1i_CdSJLCsPnIZWod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/aAjnB80M5xN1i_CdSJLCsPnIZWop.xml",
+      "size_bytes": 107
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/alTGI4VGPhZSf8aSH2-X_uyQLY0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/alTGI4VGPhZSf8aSH2-X_uyQLY0p.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/CQi1eHwLrWUQOJ0rtTOaRKlDIlQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/CQi1eHwLrWUQOJ0rtTOaRKlDIlQp.xml",
+      "size_bytes": 105
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/ei2ExiA15WZb8u1YKQ6lFrvv4hQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/ei2ExiA15WZb8u1YKQ6lFrvv4hQp.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/fYowVV-41jPvNPcaeBUm5uNInbgd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/fYowVV-41jPvNPcaeBUm5uNInbgp.xml",
+      "size_bytes": 105
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/HaSLojR6ryJeKUVyWWlM7UGNiQMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/HaSLojR6ryJeKUVyWWlM7UGNiQMp.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/itxgJVmG-6tyXz4mq39nH6UeZakd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/itxgJVmG-6tyXz4mq39nH6UeZakp.xml",
+      "size_bytes": 107
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/je6aFb-HsZVmVg7LwB_1p8RyQ_gd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/je6aFb-HsZVmVg7LwB_1p8RyQ_gp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/jt-O677-u2zWQp_g62peIOgw77Md.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/jt-O677-u2zWQp_g62peIOgw77Mp.xml",
+      "size_bytes": 105
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/JUgByHrbUSIGB8OVEOcFgCpaK80d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/JUgByHrbUSIGB8OVEOcFgCpaK80p.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/p_TTTZEKuWeu5n5YrrXijnvTwuId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/p_TTTZEKuWeu5n5YrrXijnvTwuIp.xml",
+      "size_bytes": 107
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/pEkpnBscaCROIrSc9mKO9xSUwwAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/pEkpnBscaCROIrSc9mKO9xSUwwAp.xml",
+      "size_bytes": 103
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/ViuzgMTCny6X-uv0CZyN0u1ftSAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/ViuzgMTCny6X-uv0CZyN0u1ftSAp.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/vOiXXCJTNselw6oMU3P26BIYHQod.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/vOiXXCJTNselw6oMU3P26BIYHQop.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/wZwBQL70-uRwpX6F_U-vUVjT0eEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/jTUEUW3FCw9OjQDuhb6kPy340tA/wZwBQL70-uRwpX6F_U-vUVjT0eEp.xml",
+      "size_bytes": 105
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/-C7ELmkRBaMUc25kcvwV1quvQ7Id.xml",
+      "size_bytes": 154
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/-C7ELmkRBaMUc25kcvwV1quvQ7Ip.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/9On6nfAkfJKTLRLPIXgNNvNeWFcd.xml",
+      "size_bytes": 134
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/9On6nfAkfJKTLRLPIXgNNvNeWFcp.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/bFt0NowmwC30P5m8CSgGwXlurzAd.xml",
+      "size_bytes": 160
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/bFt0NowmwC30P5m8CSgGwXlurzAp.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/qhFEKABEPbFgr6qbCV1temvIKK4d.xml",
+      "size_bytes": 147
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/qhFEKABEPbFgr6qbCV1temvIKK4p.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/AVJ0aRIDhu6qPcAI-Czr65IBRNQd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/AVJ0aRIDhu6qPcAI-Czr65IBRNQp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/WS7L7U3R0F3ft4esx_Z4zRwM4vQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/WS7L7U3R0F3ft4esx_Z4zRwM4vQp.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/zE6dl9Cwv6toNlv5y_lDlRtrYfUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/zE6dl9Cwv6toNlv5y_lDlRtrYfUp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/Ku1GztezL9EjyCgEHy-OJ5TN58o/G9NDJ7OX-QFit7B-0qXeHgJJI9Id.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/Ku1GztezL9EjyCgEHy-OJ5TN58o/G9NDJ7OX-QFit7B-0qXeHgJJI9Ip.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/Ku1GztezL9EjyCgEHy-OJ5TN58o/Gtbq40Z4bUQ4huV9n68jBl4brVId.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/Ku1GztezL9EjyCgEHy-OJ5TN58o/Gtbq40Z4bUQ4huV9n68jBl4brVIp.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/Ku1GztezL9EjyCgEHy-OJ5TN58o/IvImEaWht1DCSt-baA1yrSqF640d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/Ku1GztezL9EjyCgEHy-OJ5TN58o/IvImEaWht1DCSt-baA1yrSqF640p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/Ku1GztezL9EjyCgEHy-OJ5TN58o/jR6onXZiatjRI3Z5t5kRxLibs4gd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/Ku1GztezL9EjyCgEHy-OJ5TN58o/jR6onXZiatjRI3Z5t5kRxLibs4gp.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/mpFFvLPBkVmlHM7BQsSmyLoukXg/oEvLf0V9xjwreRksSDm1ZgDiW7Ad.xml",
+      "size_bytes": 72
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/mpFFvLPBkVmlHM7BQsSmyLoukXg/oEvLf0V9xjwreRksSDm1ZgDiW7Ap.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4d.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4p.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZod.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZop.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/bzZpl7Bmkk9oxcSeEMLkCh6CW2wd.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/bzZpl7Bmkk9oxcSeEMLkCh6CW2wp.xml",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/f7GSy2T1Q-hR7yM3lrE0UaUdLIId.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/f7GSy2T1Q-hR7yM3lrE0UaUdLIIp.xml",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencd.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencp.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8d.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8p.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4d.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4p.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Id.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Ip.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkd.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/-Grmi7Z_ZdDcmS6ZU_4Wh4hAoaYd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/-Grmi7Z_ZdDcmS6ZU_4Wh4hAoaYp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/-zGPKRF1F87iYMkm3GtsM7HkyiAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/-zGPKRF1F87iYMkm3GtsM7HkyiAp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/03v-SBfw3z_sTepo8JvxWl7GYmAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/03v-SBfw3z_sTepo8JvxWl7GYmAp.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/3LKh531gtYLmGNRfwhSMFga_TaUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/3LKh531gtYLmGNRfwhSMFga_TaUp.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/4ELDnR4vpqnwsWHZF52xhvXoFRQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/4ELDnR4vpqnwsWHZF52xhvXoFRQp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/9girqmgTrL6CCm3Uq63FloV8h2gd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/9girqmgTrL6CCm3Uq63FloV8h2gp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/DJH4MPJ3Jwo6qfBapLxWMRPVrood.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/DJH4MPJ3Jwo6qfBapLxWMRPVroop.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/dXwm6enTUB2iczFVuPuA2ntAlLEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/dXwm6enTUB2iczFVuPuA2ntAlLEp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/EAKSDC8FLIsiDgwY8BaNmDvQ-nsd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/EAKSDC8FLIsiDgwY8BaNmDvQ-nsp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/eVq9A5QcxR1Y174UJb3kGollo_Ed.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/eVq9A5QcxR1Y174UJb3kGollo_Ep.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/evyO3u25Qy2MeT88vRU8muoVlkwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/evyO3u25Qy2MeT88vRU8muoVlkwp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/ey6DocwnGoArNTvBzMu9kBnmOood.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/ey6DocwnGoArNTvBzMu9kBnmOoop.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/gBwjBiDK0jWiEtJi_4q-7kvopDAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/gBwjBiDK0jWiEtJi_4q-7kvopDAp.xml",
+      "size_bytes": 103
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/GjaohrJEEiuKPhYLlm3-3boLPSgd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/GjaohrJEEiuKPhYLlm3-3boLPSgp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/i7C_VeRmrFbIEaohuE922kKEx-Qd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/i7C_VeRmrFbIEaohuE922kKEx-Qp.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/if1oGlhFWLaXnMB3lq-4uf5YQqId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/if1oGlhFWLaXnMB3lq-4uf5YQqIp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/jVekSS4D7rahmqT-jZWc7ioEJ5Yd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/jVekSS4D7rahmqT-jZWc7ioEJ5Yp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/k4k1hU9pSQfsKoDDbTnHWBeqWlId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/k4k1hU9pSQfsKoDDbTnHWBeqWlIp.xml",
+      "size_bytes": 103
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/kl_xeSS7YMLBpOAqYDCeKY1nmQQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/kl_xeSS7YMLBpOAqYDCeKY1nmQQp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/lb7YCc9mix5zIkFtSClXHcKEy5wd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/lb7YCc9mix5zIkFtSClXHcKEy5wp.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/Od8RibYg3BRR_dYn98DAeE26G1sd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/Od8RibYg3BRR_dYn98DAeE26G1sp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/PJXP3ExGsjcAiSo-pGg6rK_B4eUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/PJXP3ExGsjcAiSo-pGg6rK_B4eUp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/qEBt2Tlx0eaSFAxsGai7jtGiBT4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/qEBt2Tlx0eaSFAxsGai7jtGiBT4p.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/QyqGhhy_ngKdQyfq-UhCtYeNM8sd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/QyqGhhy_ngKdQyfq-UhCtYeNM8sp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/SAe1xbHaTeMGl9BNBgrTFUvi9mMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/SAe1xbHaTeMGl9BNBgrTFUvi9mMp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/vWZvHW9z-wFViRDGvNRVtgT1zWEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/vWZvHW9z-wFViRDGvNRVtgT1zWEp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/WlFkH0sWHCCs_X6o2HXAD9e8fHMd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/NlxryHRKP9brqePqaVriwZNB55E/WlFkH0sWHCCs_X6o2HXAD9e8fHMp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/nTITzoDRztxhE_8pvPhlF3xhfrQ/6RHIAcqReQ9PoroGXAEBlV2F2sQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/nTITzoDRztxhE_8pvPhlF3xhfrQ/6RHIAcqReQ9PoroGXAEBlV2F2sQp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/nTITzoDRztxhE_8pvPhlF3xhfrQ/JC_hcJQA0jhXP-wYB0-roDqaeOUd.xml",
+      "size_bytes": 143
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/nTITzoDRztxhE_8pvPhlF3xhfrQ/JC_hcJQA0jhXP-wYB0-roDqaeOUp.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/nTITzoDRztxhE_8pvPhlF3xhfrQ/uwbHsJ61UDMrY6VpQpW9RHzNuBId.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/nTITzoDRztxhE_8pvPhlF3xhfrQ/uwbHsJ61UDMrY6VpQpW9RHzNuBIp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/2D8iS8dUg0dmyyxwSQWx9C1695Ed.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/2D8iS8dUg0dmyyxwSQWx9C1695Ep.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/2nIJ1DF05NK9NKR2eXzJt7ZEvjkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/2nIJ1DF05NK9NKR2eXzJt7ZEvjkp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/3uzdwouM6BQfQJt7daHm4lJyChkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/3uzdwouM6BQfQJt7daHm4lJyChkp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/_pbiYEndGIigoyU0IoTxBJKnwkYd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/_pbiYEndGIigoyU0IoTxBJKnwkYp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/A3tNcX3OfLfLU6RwXZAk3j9eoNMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/A3tNcX3OfLfLU6RwXZAk3j9eoNMp.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/d5lwMrUQBoO-Vk1d1azookYsvPId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/d5lwMrUQBoO-Vk1d1azookYsvPIp.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/doj0XajMEiOm74c8IsZPFf5R8ewd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/doj0XajMEiOm74c8IsZPFf5R8ewp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/FQrl8oCEv_KkYNyY3clH5iIpD_Id.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/FQrl8oCEv_KkYNyY3clH5iIpD_Ip.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/G3ORHyCUZ77gcB4eo39JUVkaMoEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/G3ORHyCUZ77gcB4eo39JUVkaMoEp.xml",
+      "size_bytes": 103
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/G7ekAzx1Vp_dr9wSU11MUFlBUKkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/G7ekAzx1Vp_dr9wSU11MUFlBUKkp.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/ho6kUFI2r-nG3wUtfey0-JO7RNQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/ho6kUFI2r-nG3wUtfey0-JO7RNQp.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/hp6nyc3KEqkpZImdMbHSmv39zPEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/hp6nyc3KEqkpZImdMbHSmv39zPEp.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/i-WFFbUOA0Q32n-T5BqX7b_13AId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/i-WFFbUOA0Q32n-T5BqX7b_13AIp.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/IcUmF_6Gs6aXDLA-kGrb9n_k-Uod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/IcUmF_6Gs6aXDLA-kGrb9n_k-Uop.xml",
+      "size_bytes": 88
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/jCwBT8UxOZcdtPf27chifmklCWYd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/jCwBT8UxOZcdtPf27chifmklCWYp.xml",
+      "size_bytes": 103
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/kNi6ECxz9JBsWR1LIn8M-pkeK7Ad.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/kNi6ECxz9JBsWR1LIn8M-pkeK7Ap.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/mhVHnSmSJn6dy01j21Rnhw6kPAUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/mhVHnSmSJn6dy01j21Rnhw6kPAUp.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/mKbBBA3kRdAzcly-eATKh982sCEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/mKbBBA3kRdAzcly-eATKh982sCEp.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/mRGLXSDLG5hPXiI4ujluONvdCMUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/mRGLXSDLG5hPXiI4ujluONvdCMUp.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/qzXFTjcF3wS13SlHUQAPO_lW4Fwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/qzXFTjcF3wS13SlHUQAPO_lW4Fwp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/R0-zHE56adCoNipfFn-O4SFTzkod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/R0-zHE56adCoNipfFn-O4SFTzkop.xml",
+      "size_bytes": 103
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/S8Voy2YlBVyPJWIGnOBW2Dz9648d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/S8Voy2YlBVyPJWIGnOBW2Dz9648p.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/SsoBcb_Qz93SNHN7wIvcbPEZdbwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/SsoBcb_Qz93SNHN7wIvcbPEZdbwp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/TcVTYapiSy8Ipar4ViOCHFqhFecd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/TcVTYapiSy8Ipar4ViOCHFqhFecp.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/trvFKEXxoj8rlun4EvA537XKPXEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/trvFKEXxoj8rlun4EvA537XKPXEp.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/U9AKqvaCdwym5pSE8EwFMnIGxXUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/U9AKqvaCdwym5pSE8EwFMnIGxXUp.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/WV9DJ2d2R-4w0z_76YR5Jf5Cmcwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/WV9DJ2d2R-4w0z_76YR5Jf5Cmcwp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/y3pIxeAZrmnsmUWA3VrtIokR004d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/y3pIxeAZrmnsmUWA3VrtIokR004p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/yCMySP2Hn56WDh_AslgIuXyEZx0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/yCMySP2Hn56WDh_AslgIuXyEZx0p.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/zGiyEwP5BlQnd6tQkLcdcRh8b8cd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/zGiyEwP5BlQnd6tQkLcdcRh8b8cp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/Project.xml",
+      "size_bytes": 74
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/BT5hWoz-UTefONdqForZyI91O8Yd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/BT5hWoz-UTefONdqForZyI91O8Yp.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/bw3rZC2lQGYsJnHBguJaUe15ng8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/bw3rZC2lQGYsJnHBguJaUe15ng8p.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQp.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Ku1GztezL9EjyCgEHy-OJ5TN58od.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Ku1GztezL9EjyCgEHy-OJ5TN58op.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/mksfr-lFQO8a_IhuENv7j_4BuMId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/mksfr-lFQO8a_IhuENv7j_4BuMIp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/ojME0DLi1acAi9d0fF737hnpvFQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/ojME0DLi1acAi9d0fF737hnpvFQp.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/QMJD9OLFzxcTTbPOoh-ahQ4zTRUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/QMJD9OLFzxcTTbPOoh-ahQ4zTRUp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/qZzfNzcYlPNG4tag-34m4zeP9pkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/qZzfNzcYlPNG4tag-34m4zeP9pkp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/R0IsxKENiOKovWZXASFjrmpbBCYd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/R0IsxKENiOKovWZXASFjrmpbBCYp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/rh0jHbNfmojECiiHH7BQHmZTsWkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/rh0jHbNfmojECiiHH7BQHmZTsWkp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qMTs62HmaWu34FudICx3hIiYxyM/4SOm__k4unjyZ8WGx9jwktVDt0sd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qMTs62HmaWu34FudICx3hIiYxyM/4SOm__k4unjyZ8WGx9jwktVDt0sp.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qMTs62HmaWu34FudICx3hIiYxyM/7UPm9rsGiPbKmln5knuY0ctH4mod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qMTs62HmaWu34FudICx3hIiYxyM/7UPm9rsGiPbKmln5knuY0ctH4mop.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qMTs62HmaWu34FudICx3hIiYxyM/AkLbzgXIUdRYYm_QVX0TyJMqKdcd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qMTs62HmaWu34FudICx3hIiYxyM/AkLbzgXIUdRYYm_QVX0TyJMqKdcp.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qMTs62HmaWu34FudICx3hIiYxyM/BMkSAUfDoeSt7iBMcgxTyh2AHZMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qMTs62HmaWu34FudICx3hIiYxyM/BMkSAUfDoeSt7iBMcgxTyh2AHZMp.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qMTs62HmaWu34FudICx3hIiYxyM/dWLfTZUgw6ZN3DTuqnMM1ZgzymYd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qMTs62HmaWu34FudICx3hIiYxyM/dWLfTZUgw6ZN3DTuqnMM1ZgzymYp.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qMTs62HmaWu34FudICx3hIiYxyM/E5af1R6oISMidjnfUGvtIwgVqyQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qMTs62HmaWu34FudICx3hIiYxyM/E5af1R6oISMidjnfUGvtIwgVqyQp.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qMTs62HmaWu34FudICx3hIiYxyM/FBQLSTM6AjG3rmpF60f2cyj8sgwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qMTs62HmaWu34FudICx3hIiYxyM/FBQLSTM6AjG3rmpF60f2cyj8sgwp.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qMTs62HmaWu34FudICx3hIiYxyM/FWDQYY05_ko59SpAAEoZmjPrn70d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qMTs62HmaWu34FudICx3hIiYxyM/FWDQYY05_ko59SpAAEoZmjPrn70p.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qMTs62HmaWu34FudICx3hIiYxyM/mwJU9Wq_NtRrt5bpOH7KHXj924cd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qMTs62HmaWu34FudICx3hIiYxyM/mwJU9Wq_NtRrt5bpOH7KHXj924cp.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qMTs62HmaWu34FudICx3hIiYxyM/nfceyjw0XBVQ1ezMx2kdao1blecd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qMTs62HmaWu34FudICx3hIiYxyM/nfceyjw0XBVQ1ezMx2kdao1blecp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qMTs62HmaWu34FudICx3hIiYxyM/OlFv1RSGbyrqz6l3frLe3Z9hiDkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qMTs62HmaWu34FudICx3hIiYxyM/OlFv1RSGbyrqz6l3frLe3Z9hiDkp.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qMTs62HmaWu34FudICx3hIiYxyM/ZyYe0Hc2tdFsRBKQXJAhxWKX9Rgd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qMTs62HmaWu34FudICx3hIiYxyM/ZyYe0Hc2tdFsRBKQXJAhxWKX9Rgp.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/BMuf9Foc2V4DZvm6yKEonbGeLPwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/BMuf9Foc2V4DZvm6yKEonbGeLPwp.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/d6vJEerjwidIEdtbtRp_n6XbzEUd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/d6vJEerjwidIEdtbtRp_n6XbzEUp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/fkYOQt5YWl7thiAn-ASOOJdqHtgd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/fkYOQt5YWl7thiAn-ASOOJdqHtgp.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/GBC4dO6XBFq8hCXma-NoEgtuFMMd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/GBC4dO6XBFq8hCXma-NoEgtuFMMp.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/iEXnOfm2xEahf3t_IPKvkeNomZwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/iEXnOfm2xEahf3t_IPKvkeNomZwp.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/ifQ22jUloeIAQMc1YF6eJ4UDl5Yd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/ifQ22jUloeIAQMc1YF6eJ4UDl5Yp.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/nTITzoDRztxhE_8pvPhlF3xhfrQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/nTITzoDRztxhE_8pvPhlF3xhfrQp.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/tPZ497Lz-ykxiUwVRBHtLL-6dqYd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/qZzfNzcYlPNG4tag-34m4zeP9pk/tPZ497Lz-ykxiUwVRBHtLL-6dqYp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/root/6x1BhZX_fLnKpcwqra0qFwv1jIgp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/root/EEtUlUb-dLAdf0KpMVivaUlztwAp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/root/fjRQtWiSIy7hIlj-Kmk87M7s21kp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQd.xml",
+      "size_bytes": 72
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/root/KAXfQgCar2Yb8zOxgvf9hdmLP1Ep.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/root/NmGqIpAwUJcXFyLjFAGnU9uyN5Yp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/root/qaw0eS1zuuY1ar9TdPn1GMfrjbQp.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/root/Tpa2TdYQyLNeWJn7EF8wbNd7gFUp.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/root/W1eD2F85jUZK1DJhjzKdaV-n984p.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/root/WZRuNzqc-Db7NcQAZO8Y-R8U9ccp.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/rootp.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/Tpa2TdYQyLNeWJn7EF8wbNd7gFU/DG0gR6qcAAvfFV1QmRyELypI2EQd.xml",
+      "size_bytes": 62
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/Tpa2TdYQyLNeWJn7EF8wbNd7gFU/DG0gR6qcAAvfFV1QmRyELypI2EQp.xml",
+      "size_bytes": 116
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/tPZ497Lz-ykxiUwVRBHtLL-6dqY/7_gZjZFoPWZx4HyFuk3KBT7ODE4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/tPZ497Lz-ykxiUwVRBHtLL-6dqY/7_gZjZFoPWZx4HyFuk3KBT7ODE4p.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/tPZ497Lz-ykxiUwVRBHtLL-6dqY/DTmlUqKvNxhuwPmz_21qtUl9Na0d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/tPZ497Lz-ykxiUwVRBHtLL-6dqY/DTmlUqKvNxhuwPmz_21qtUl9Na0p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/tPZ497Lz-ykxiUwVRBHtLL-6dqY/yU7hQUIeXT6jTdPM18iZ8v_mk9wd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/tPZ497Lz-ykxiUwVRBHtLL-6dqY/yU7hQUIeXT6jTdPM18iZ8v_mk9wp.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/gCufEqeLpm6nHGjrfKcx3Yh-XLcd.xml",
+      "size_bytes": 60
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/W1eD2F85jUZK1DJhjzKdaV-n984/gCufEqeLpm6nHGjrfKcx3Yh-XLcp.xml",
+      "size_bytes": 118
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WPy9-C8NhI8KEikfrTBoN-3RfOk/3PmbM8_TWzLZ4Xn6PQlqaNmU9LAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WPy9-C8NhI8KEikfrTBoN-3RfOk/3PmbM8_TWzLZ4Xn6PQlqaNmU9LAp.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WPy9-C8NhI8KEikfrTBoN-3RfOk/5-rZuQ6jUzVKDs_ENa6FpLjwOtsd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WPy9-C8NhI8KEikfrTBoN-3RfOk/5-rZuQ6jUzVKDs_ENa6FpLjwOtsp.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WPy9-C8NhI8KEikfrTBoN-3RfOk/AMVLCW8lnMhMA9S9XMbNN2gU1v0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WPy9-C8NhI8KEikfrTBoN-3RfOk/AMVLCW8lnMhMA9S9XMbNN2gU1v0p.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WPy9-C8NhI8KEikfrTBoN-3RfOk/BO6xNAD3-V2OCzMVXjnRsK2KbAwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WPy9-C8NhI8KEikfrTBoN-3RfOk/BO6xNAD3-V2OCzMVXjnRsK2KbAwp.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WPy9-C8NhI8KEikfrTBoN-3RfOk/C5Dn4G8W0oKVxp60swD5phg1HFwd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WPy9-C8NhI8KEikfrTBoN-3RfOk/C5Dn4G8W0oKVxp60swD5phg1HFwp.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WPy9-C8NhI8KEikfrTBoN-3RfOk/PK1cLKszg0hqNVHuavyNqhWX3VId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WPy9-C8NhI8KEikfrTBoN-3RfOk/PK1cLKszg0hqNVHuavyNqhWX3VIp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WPy9-C8NhI8KEikfrTBoN-3RfOk/s0iV13Jf1MIUQrePNOd4ey1BPc4d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WPy9-C8NhI8KEikfrTBoN-3RfOk/s0iV13Jf1MIUQrePNOd4ey1BPc4p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WPy9-C8NhI8KEikfrTBoN-3RfOk/uopbDMSxsLIbMaLJUK3xT6EBx0Qd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WPy9-C8NhI8KEikfrTBoN-3RfOk/uopbDMSxsLIbMaLJUK3xT6EBx0Qp.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WPy9-C8NhI8KEikfrTBoN-3RfOk/WUT-aZ5Y7lhOdLGbJNk5qHgFWg8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WPy9-C8NhI8KEikfrTBoN-3RfOk/WUT-aZ5Y7lhOdLGbJNk5qHgFWg8p.xml",
+      "size_bytes": 103
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/004h6IcNoO7-ccR1SlXlx3EEEKYd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/004h6IcNoO7-ccR1SlXlx3EEEKYp.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/63eMs8LhIUqMjBgRQyI34CtUtRId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/63eMs8LhIUqMjBgRQyI34CtUtRIp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/arI59uh5jxU7nBOSDEVM4YKMc5sd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/arI59uh5jxU7nBOSDEVM4YKMc5sp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/b6Is0QMQ2WlvlkpLzlIJtwSUQekd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/b6Is0QMQ2WlvlkpLzlIJtwSUQekp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/BqnkO-NpZfxiKP6X2rrBwtoLA6Md.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/BqnkO-NpZfxiKP6X2rrBwtoLA6Mp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/CVEa0GnWkJ4RkLYiElXbt2vteOkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/CVEa0GnWkJ4RkLYiElXbt2vteOkp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/gzR7cgOkC_FdAg9D7N19Fhb68E4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/gzR7cgOkC_FdAg9D7N19Fhb68E4p.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/nParGHn3sDlb92s0PZy2LsLcigQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/nParGHn3sDlb92s0PZy2LsLcigQp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/ue9UFDDq4fznuXW0TVkoCdmNOK4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/ue9UFDDq4fznuXW0TVkoCdmNOK4p.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/umSDjkRC-BWI6FNZPXOLSGm1IDsd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/umSDjkRC-BWI6FNZPXOLSGm1IDsp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/UYsWTAbH6R1iwFjMtzzCEu1hP9od.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/UYsWTAbH6R1iwFjMtzzCEu1hP9op.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/XlqsHCKtnDWQ2qd0C4K7gYy5Qzgd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/XlqsHCKtnDWQ2qd0C4K7gYy5Qzgp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/Calc_Shift_Map_DL.m",
+      "size_bytes": 870
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/Calc_Shift_Map_RO.m",
+      "size_bytes": 670
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/Compare_Detailed_Abstracted_SimResults.m",
+      "size_bytes": 265
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/DCT_Model_Demo_Script.html",
+      "size_bytes": 12012
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/DCT_Model_Demo_Script.m",
+      "size_bytes": 3933
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/DCT_Model_Demo_Script_web.m",
+      "size_bytes": 34
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/DCT_Model_PARAM.m",
+      "size_bytes": 8766
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/DCT_Results_Summary.m",
+      "size_bytes": 577
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/Dual_Clutch_activeVariantBlock.m",
+      "size_bytes": 390
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/Dual_Clutch_Trans_plot1speed.m",
+      "size_bytes": 2740
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/Dual_Clutch_Trans_setsolver.m",
+      "size_bytes": 1063
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/Dual_Clutch_Trans_shiftmapoptim.m",
+      "size_bytes": 225
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/Dual_Clutch_Trans_shiftmaporig.m",
+      "size_bytes": 225
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/Dual_Clutch_Trans_tictoc.m",
+      "size_bytes": 367
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/Dual_Clutch_Trans_winopen_file.m",
+      "size_bytes": 427
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/FuelConsMap.mat",
+      "size_bytes": 3558
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/Plot_DCT_Results2.m",
+      "size_bytes": 2329
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/Plot_Gear_Shift_Schedule.m",
+      "size_bytes": 993
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/Shift_Map_Sim_Movie.m",
+      "size_bytes": 3239
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/startup_DCT_Model.m",
+      "size_bytes": 488
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/Test_DCT_Model_Short.m",
+      "size_bytes": 340
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/UrbanCycle1.mat",
+      "size_bytes": 10624
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/UrbanCycle2.mat",
+      "size_bytes": 13904
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/UrbanCycle3.mat",
+      "size_bytes": 13904
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/UrbanCycle4.mat",
+      "size_bytes": 2227
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/UrbanCycle5.mat",
+      "size_bytes": 1807
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/UrbanCycle6.mat",
+      "size_bytes": 285
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/UrbanCycle7.mat",
+      "size_bytes": 1020
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Scripts_Data/UrbanCycle8.mat",
+      "size_bytes": 3267
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/SECURITY.md",
+      "size_bytes": 394
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Fuel_Consumption/Create_Fuel_Consumption_LUT.m",
+      "size_bytes": 1416
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Fuel_Consumption/FC_SFit_Session.sfit",
+      "size_bytes": 10249
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Fuel_Consumption/FCMap_Poly2.mat",
+      "size_bytes": 2081
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Fuel_Consumption/Fuel_Consumption_DATA.xlsx",
+      "size_bytes": 21090
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Fuel_Consumption/Fuel_Consumption_PlotData.m",
+      "size_bytes": 522
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Fuel_Consumption/FuelConsMap.mat",
+      "size_bytes": 1212
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Fuel_Consumption/SI_DIVCP_CVIVL_Turbo_I4_FuelFlow.xlsx",
+      "size_bytes": 25891
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/find_min_fuel_1D.m",
+      "size_bytes": 1986
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/find_min_fuel_2D.m",
+      "size_bytes": 2320
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/find_min_fuel_ps2D.m",
+      "size_bytes": 2740
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/find_min_fuel_psMX_full_plot.m",
+      "size_bytes": 573
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/find_min_fuel_psMX_para.m",
+      "size_bytes": 4963
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/find_min_fuel_psMX_series.m",
+      "size_bytes": 5027
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/FuelUsedSweep1D_AbsRea_161.mat",
+      "size_bytes": 1948
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/FuelUsedSweep1D_AbsRea_7.mat",
+      "size_bytes": 489
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/FuelUsedSweep2D_AbsRea_1281.mat",
+      "size_bytes": 9604
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_1D.html",
+      "size_bytes": 8769
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_1D.png",
+      "size_bytes": 4848
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_1D_01.png",
+      "size_bytes": 16075
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_1D_02.png",
+      "size_bytes": 27950
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_1D_03.png",
+      "size_bytes": 17363
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_1D_04.png",
+      "size_bytes": 29511
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_2D.html",
+      "size_bytes": 11074
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_2D.png",
+      "size_bytes": 5020
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_2D_01.png",
+      "size_bytes": 95576
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_2D_02.png",
+      "size_bytes": 27989
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_2D_03.png",
+      "size_bytes": 62775
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_2D_04.png",
+      "size_bytes": 30688
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_ps2D.html",
+      "size_bytes": 10027
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_ps2D.png",
+      "size_bytes": 4964
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_ps2D_01.png",
+      "size_bytes": 95576
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_ps2D_02.png",
+      "size_bytes": 29122
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_ps2D_03.png",
+      "size_bytes": 95802
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_ps2D_04.png",
+      "size_bytes": 29601
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_psMX_para.html",
+      "size_bytes": 19830
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_psMX_para.png",
+      "size_bytes": 4997
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_psMX_para_01.png",
+      "size_bytes": 30399
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_psMX_para_02.png",
+      "size_bytes": 33796
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_psMX_series.html",
+      "size_bytes": 11641
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_psMX_series.png",
+      "size_bytes": 2595
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_psMX_series_01.png",
+      "size_bytes": 39832
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/html/find_min_fuel_psMX_series_02.png",
+      "size_bytes": 39730
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/obj_find_min_fuel_1D.m",
+      "size_bytes": 1376
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/obj_find_min_fuel_2D.m",
+      "size_bytes": 1488
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/obj_find_min_fuel_psMX.m",
+      "size_bytes": 1549
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/obj_find_min_fuel_psMX_full.m",
+      "size_bytes": 1412
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/Optim_Res/OptFm2D_AbsRea_DC7.mat",
+      "size_bytes": 336
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/Optim_Res/OptFm2D_AbsRea_DC7_Mesh.fig",
+      "size_bytes": 44629
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/Optim_Res/OptPS2D_AbsRea_DC7.mat",
+      "size_bytes": 330
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/Optim_Res/OptPS2D_AbsRea_DC7_Mesh.fig",
+      "size_bytes": 40459
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/Optim_Res/OptPSMX_AbsRea_DC4.mat",
+      "size_bytes": 582
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/Optim_Res/OptPSMX_AbsRea_DC4_Shiftmap.fig",
+      "size_bytes": 11273
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/reset_model_optim.m",
+      "size_bytes": 778
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/setup_model_optim.m",
+      "size_bytes": 865
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/setup_model_optim_full.m",
+      "size_bytes": 822
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/setup_optim1D_plots.m",
+      "size_bytes": 837
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Optimize/setup_optim2D_plots.m",
+      "size_bytes": 1051
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Real_Time/cleanup_rt_dir.m",
+      "size_bytes": 419
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Real_Time/Dual_Clutch_Trans_SLRT.m",
+      "size_bytes": 4351
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Reports/actxlicense.m",
+      "size_bytes": 160
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Reports/DCT_Model_Report_SHORT.html",
+      "size_bytes": 6538
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Reports/DCT_Model_Report_SHORT.rpt",
+      "size_bytes": 3636
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Reports/DCT_Model_Report_SHORT_html_files/image-002-sl.png",
+      "size_bytes": 82376
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Reports/DCT_Model_Report_SHORT_html_files/image-004-sl.png",
+      "size_bytes": 27844
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Reports/DCT_Model_Report_SHORT_html_files/image-006-sl.png",
+      "size_bytes": 62313
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Reports/DCT_Model_Report_SHORT_html_files/image-238-sf.png",
+      "size_bytes": 133618
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Reports/DCT_Model_Report_SHORT_html_files/image-360-hg.png",
+      "size_bytes": 7056
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Reports/DCT_Model_Report_SHORT_html_files/image-362-hg.png",
+      "size_bytes": 5454
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Reports/DCT_Model_Report_SHORT_html_files/image-364-sl.png",
+      "size_bytes": 26665
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Reports/DCT_Model_Report_SHORT_html_files/image-367-hg.png",
+      "size_bytes": 5874
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Reports/DCT_Model_Report_SHORT_html_files/image-369-hg.png",
+      "size_bytes": 5050
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Reports/DCT_Model_Report_SHORT_html_files/image-371-sl.png",
+      "size_bytes": 27608
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Reports/DCT_Model_Report_SHORT_html_files/image-filelist.mat",
+      "size_bytes": 475
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/DCT_Parameter_Sweep_1D.m",
+      "size_bytes": 3005
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/DCT_Parameter_Sweep_2D_para.m",
+      "size_bytes": 5480
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/DCT_Parameter_Sweep_2D_series.m",
+      "size_bytes": 4829
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/Generate_Sim_Settings.m",
+      "size_bytes": 1266
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/html/DCT_Parameter_Sweep_1D.html",
+      "size_bytes": 10814
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/html/DCT_Parameter_Sweep_1D.png",
+      "size_bytes": 1483
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/html/DCT_Parameter_Sweep_1D_01.png",
+      "size_bytes": 74312
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/html/DCT_Parameter_Sweep_1D_02.png",
+      "size_bytes": 24421
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/html/DCT_Parameter_Sweep_2D_para.html",
+      "size_bytes": 15226
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/html/DCT_Parameter_Sweep_2D_para.png",
+      "size_bytes": 2974
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/html/DCT_Parameter_Sweep_2D_para_01.png",
+      "size_bytes": 74312
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/html/DCT_Parameter_Sweep_2D_para_02.png",
+      "size_bytes": 30861
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/html/DCT_Parameter_Sweep_2D_para_03.png",
+      "size_bytes": 74767
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/html/DCT_Parameter_Sweep_2D_series.html",
+      "size_bytes": 10484
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/html/DCT_Parameter_Sweep_2D_series.png",
+      "size_bytes": 5987
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/html/DCT_Parameter_Sweep_2D_series_01.png",
+      "size_bytes": 74312
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/html/DCT_Parameter_Sweep_2D_series_02.png",
+      "size_bytes": 36075
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/html/DCT_Parameter_Sweep_2D_series_03.png",
+      "size_bytes": 40513
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/Initialize_MLPool.m",
+      "size_bytes": 281
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/Param_Sweep_Res/Compare_Det_Abs_Models_2DSweep.m",
+      "size_bytes": 154
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/Param_Sweep_Res/FuelUsedSweep1D_AbsRea_161.mat",
+      "size_bytes": 1946
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/Param_Sweep_Res/FuelUsedSweep1D_AbsRea_7.mat",
+      "size_bytes": 489
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/Param_Sweep_Res/FuelUsedSweep2D_AbsDes_65.mat",
+      "size_bytes": 974
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/Param_Sweep_Res/FuelUsedSweep2D_AbsRea_65.mat",
+      "size_bytes": 973
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/Param_Sweep_Res/FuelUsedSweep2D_DetDes_65.mat",
+      "size_bytes": 969
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/Param_Sweep_Res/FuelUsedSweep2D_DetRea_65.mat",
+      "size_bytes": 974
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/Param_Sweep_Res/Plot_Fuel_Used_2DSweep.m",
+      "size_bytes": 1456
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/reset_model_param_sweep.m",
+      "size_bytes": 1088
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/setup_model_param_sweep.m",
+      "size_bytes": 1165
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/ShiftMapParamGUI.fig",
+      "size_bytes": 4940
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Sweep/ShiftMapParamGUI.m",
+      "size_bytes": 4503
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Testing/IMT_Test_Dual_Clutch_Trans.m",
+      "size_bytes": 1151
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Testing/publish_Dual_Clutch_Trans.m",
+      "size_bytes": 1646
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Tune_Abstr_Model/Dual_Clutch_Trans_SDO.slx",
+      "size_bytes": 133541
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Tune_Abstr_Model/Dual_Clutch_Trans_SDO_optim.mat",
+      "size_bytes": 3365
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Tune_Abstr_Model/Dual_Clutch_Trans_SDO_sdosession.mat",
+      "size_bytes": 21424
+    },
+    {
+      "path": "reference/files/Simscape-Dual-Clutch/Workflows/Tune_Abstr_Model/RefRPMData.mat",
+      "size_bytes": 15686
+    }
+  ],
+  "entrypoint": "reference/files/Simscape-Dual-Clutch/Dual_Clutch_Trans.slx",
+  "expected_score": 91.51288338033656,
+  "expected_valid_scenarios": 5,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "urban_short_nominal",
+      "eudc_nominal",
+      "ftp_transient_nominal",
+      "urban_short_heavy",
+      "urban_short_clutch_derated"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 8051125,
+  "excluded_files": []
+}

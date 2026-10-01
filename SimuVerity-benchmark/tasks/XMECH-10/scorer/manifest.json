@@ -1,0 +1,36 @@
+{
+  "schema": "simuverity.scorer-manifest.v1",
+  "task_id": "XMECH-10",
+  "public_interface": "scorer.py:score",
+  "implementation": "scorer.py",
+  "source_modules": [
+    {
+      "module": "f90_xmech10_scoring_core",
+      "path": "vendor/scripts/formal90/tasks/f90_xmech10/f90_xmech10_scoring_core.py"
+    },
+    {
+      "module": "f90_xmech10_diagnostic_scoring",
+      "path": "vendor/scripts/formal90/tasks/f90_xmech10/f90_xmech10_diagnostic_scoring.py"
+    },
+    {
+      "module": "f90_xmech10_public_contract_scoring",
+      "path": "vendor/scripts/formal90/tasks/f90_xmech10/f90_xmech10_public_contract_scoring.py"
+    },
+    {
+      "module": "f90_xmech10_scoring",
+      "path": "vendor/scripts/formal90/tasks/f90_xmech10/f90_xmech10_scoring.py"
+    },
+    {
+      "module": "f90_xmech10_structure_policy",
+      "path": "vendor/scripts/formal90/tasks/f90_xmech10/f90_xmech10_structure_policy.py"
+    }
+  ],
+  "final_module": {
+    "module": "f90_xmech10_scoring",
+    "path": "vendor/scripts/formal90/tasks/f90_xmech10/f90_xmech10_scoring.py"
+  },
+  "payload_files": [],
+  "public_bridge": {
+    "mode": "function"
+  }
+}

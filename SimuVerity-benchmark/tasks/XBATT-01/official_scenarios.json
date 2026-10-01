@@ -1,0 +1,372 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XBATT-01",
+  "scenarios": [
+    {
+      "id": "hot_high_current",
+      "values": {
+        "ambient_temperature": 311.5,
+        "initial_soc": 0.78,
+        "discharge_current": 231,
+        "module_parameter_spread": 0.105,
+        "cooling_fault_fraction": 0.62,
+        "cooling_fault_time": 64
+      }
+    },
+    {
+      "id": "cold_low_soc",
+      "values": {
+        "ambient_temperature": 268,
+        "initial_soc": 0.44,
+        "discharge_current": 126,
+        "module_parameter_spread": 0.085,
+        "cooling_fault_fraction": 0.53,
+        "cooling_fault_time": 98
+      }
+    },
+    {
+      "id": "warm_spread",
+      "values": {
+        "ambient_temperature": 305.5,
+        "initial_soc": 0.61,
+        "discharge_current": 218,
+        "module_parameter_spread": 0.118,
+        "cooling_fault_fraction": 0.36,
+        "cooling_fault_time": 84
+      }
+    },
+    {
+      "id": "warm_spread_fault_pair_none",
+      "values": {
+        "ambient_temperature": 305.5,
+        "initial_soc": 0.61,
+        "discharge_current": 218,
+        "module_parameter_spread": 0.118,
+        "cooling_fault_fraction": 0,
+        "cooling_fault_time": 84
+      }
+    },
+    {
+      "id": "joint_interior",
+      "values": {
+        "ambient_temperature": 301.2,
+        "initial_soc": 0.84,
+        "discharge_current": 194,
+        "module_parameter_spread": 0.073,
+        "cooling_fault_fraction": 0.67,
+        "cooling_fault_time": 57
+      }
+    },
+    {
+      "id": "joint_high_stress",
+      "values": {
+        "ambient_temperature": 312,
+        "initial_soc": 0.8,
+        "discharge_current": 240,
+        "module_parameter_spread": 0.12,
+        "cooling_fault_fraction": 0.7,
+        "cooling_fault_time": 78
+      }
+    },
+    {
+      "id": "public_joint_endpoint",
+      "values": {
+        "ambient_temperature": 313,
+        "initial_soc": 0.4,
+        "discharge_current": 240,
+        "module_parameter_spread": 0.12,
+        "cooling_fault_fraction": 0.7,
+        "cooling_fault_time": 78
+      }
+    },
+    {
+      "id": "fault_pair_none",
+      "values": {
+        "ambient_temperature": 298,
+        "initial_soc": 0.72,
+        "discharge_current": 180,
+        "module_parameter_spread": 0.06,
+        "cooling_fault_fraction": 0,
+        "cooling_fault_time": 78
+      }
+    }
+  ],
+  "contract": {
+    "application_domain": "battery packs and electric-vehicle thermal management",
+    "physical_domains": [
+      "electrical storage",
+      "distributed thermal dynamics",
+      "coolant heat transport"
+    ],
+    "modeling_paradigm": "causal electro-thermal pack and actively controlled cooling loop",
+    "capability_types": [
+      "multidomain plant construction",
+      "thermal management",
+      "safety supervision",
+      "fault recovery"
+    ],
+    "difficulty": {
+      "physical_coupling": 2,
+      "nonlinear_or_switching": 1,
+      "dynamic_or_fault": 2,
+      "joint_operating_points": 2,
+      "multichannel_or_units": 2,
+      "functional_and_safety_constraints": 1,
+      "total": 10
+    },
+    "sim": {
+      "step": 0.05,
+      "stop": 180
+    },
+    "public_inputs": [
+      {
+        "name": "ambient_temperature",
+        "nominal": 298,
+        "min": 263,
+        "max": 313,
+        "unit": "K",
+        "meaning": "cooling-loop ambient temperature"
+      },
+      {
+        "name": "initial_soc",
+        "nominal": 0.72,
+        "min": 0.4,
+        "max": 0.9,
+        "unit": "1",
+        "meaning": "initial state of charge of all modules"
+      },
+      {
+        "name": "discharge_current",
+        "nominal": 180,
+        "min": 90,
+        "max": 240,
+        "unit": "A",
+        "meaning": "nominal positive pack-discharge current"
+      },
+      {
+        "name": "module_parameter_spread",
+        "nominal": 0.06,
+        "min": 0,
+        "max": 0.12,
+        "unit": "1",
+        "meaning": "fractional deterministic spread in module resistance and heat transfer"
+      },
+      {
+        "name": "cooling_fault_fraction",
+        "nominal": 0.45,
+        "min": 0,
+        "max": 0.7,
+        "unit": "1",
+        "meaning": "temporary cooling-path fault severity; zero means no degradation"
+      },
+      {
+        "name": "cooling_fault_time",
+        "nominal": 78,
+        "min": 55,
+        "max": 105,
+        "unit": "s",
+        "meaning": "start time of a 30 s cooling-flow degradation"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "battery_state",
+        "channels": 18,
+        "order": "[pack current, pack voltage, eight module voltages, eight module SOC values]",
+        "unit": "[A,V,V x8,1 x8]",
+        "physical_source": "actual series-pack electrical states and terminal measurements"
+      },
+      {
+        "name": "thermal_state",
+        "channels": 10,
+        "order": "[eight module temperatures, left coolant outlet temperature, right coolant outlet temperature]",
+        "unit": "[K x10]",
+        "physical_source": "actual distributed module and coolant temperatures"
+      },
+      {
+        "name": "cooling_state",
+        "channels": 6,
+        "order": "[pump command, delivered coolant flow, coolant pressure drop, auxiliary power, total removed heat, alarm]",
+        "unit": "[1,kg/s,kPa,W,W,boolean]",
+        "physical_source": "actual cooling actuation, hydraulic transport, electrical power and safety state"
+      },
+      {
+        "name": "thermal_flux",
+        "channels": 16,
+        "order": "[eight module heat-generation rates, eight module coolant heat-removal rates]",
+        "unit": "[W x16]",
+        "physical_source": "physical heat rates used by the module thermal balances"
+      }
+    ],
+    "prompt": "Build an eight-module series battery pack with coupled electrical storage, distributed module thermal states, and an actively regulated liquid-cooling path. Pack current must flow through the module electrical states, module losses must heat the corresponding thermal states, and the cooling actuator must remove heat through the coolant path rather than by directly overwriting temperatures.\n\nRead ambient_temperature, initial_soc, discharge_current, module_parameter_spread, cooling_fault_fraction, and cooling_fault_time from base-workspace variables. Their nominal values are 298 K, 0.72, 180 A, 0.06, 0.45, and 78 s. They operate respectively over 263--313 K, 0.40--0.90, 90--240 A, 0--0.12, 0--0.70, and 55--105 s. cooling_fault_fraction is the severity of a 30 s cooling-flow degradation beginning at cooling_fault_time; zero means no degradation. The detailed pump/fault characteristic may be nonlinear.\n\nAssume a clean MATLAB session in which only the declared public inputs are provided. Use eight 12s3p, 60 Ah modules assembled from 20 Ah cells, with nominal module resistance 0.014 ohm and nominal module heat capacity 18.0 kJ/K. Use a liquid coolant with effective specific heat 4.18 kJ/(kg*K) and effective density 1000 kg/m^3. The cooling actuator has a normalized command, a rated delivered mass flow of 0.30 kg/s, a rated loop pressure drop of 100 kPa, and rated electrical auxiliary power of 120 W at full command; actual flow, pressure drop, and power must remain within those ratings and be hydraulically feasible. Across the declared range and a repeatable multi-level discharge profile around discharge_current, regulate cooling to keep every module below 318 K, limit module temperature spread to 3 K, maintain module voltage above 36 V and SOC above 0.15, and respond to the temporary flow degradation without violating charge or thermal causality. The cooling-control and warning strategies are not prescribed.\n\nLog Timeseries battery_state, thermal_state, cooling_state, and thermal_flux. battery_state must contain [positive discharge current in A, pack terminal voltage in V, eight module terminal voltages in V, eight module SOC values]. thermal_state must contain eight module temperatures followed by left and right coolant outlet temperatures, all in K. cooling_state must contain [bounded pump command, delivered flow in kg/s, coolant-loop pressure drop in kPa, electrical auxiliary power in W, total coolant heat removal in W, alarm state]. thermal_flux must contain the eight actual module heat-generation rates followed by their eight coolant heat-removal rates in W. Logged quantities must come from the same causal electrical and thermal network rather than from commands or precomputed answer waveforms.\n\nWork directly in the required model file and keep the latest usable state saved at that path throughout the task.",
+    "groups": {
+      "G": "simulation, complete multichannel contract and bounded electrical/thermal states",
+      "A": "nominal temperature, temperature-spread and terminal-state accuracy",
+      "Q": "thermal/electrical safety, coolant quality and auxiliary-energy economy",
+      "M": "public-current profile, electro-thermal conservation, coolant transport, rated hydraulic feasibility and paired nonlinear fault causality",
+      "R": "worst joint ambient, SOC, current and module-spread operating point",
+      "D": "paired no-fault/fault cooling response, physical thermal consequence and post-fault recovery",
+      "weights": {
+        "A": 0.2,
+        "Q": 0.1,
+        "M": 0.3,
+        "R": 0.2,
+        "D": 0.2
+      }
+    },
+    "reference_sources": [
+      {
+        "source_type": "screened mechanism source",
+        "source_url": "https://github.com/mathworks/Battery-Pack-Model-Simscape",
+        "license": "MathWorks 3-clause product-restricted license; no model code copied",
+        "revision": "18f9d56193649ca1606dd0e30954baafec1a8098",
+        "use": "mechanism and scale audit: series modules, electro-thermal losses, coolant maldistribution and pump-energy tradeoff"
+      },
+      {
+        "source_type": "original equations",
+        "source_url": "",
+        "license": "original implementation; project license applies",
+        "revision": "simuverity-101-v1",
+        "use": "self-contained coulomb, terminal-voltage and per-module thermal-energy balances"
+      }
+    ]
+  },
+  "application_domain": "battery packs and electric-vehicle thermal management",
+  "physical_domains": [
+    "electrical storage",
+    "distributed thermal dynamics",
+    "coolant heat transport"
+  ],
+  "modeling_paradigm": "causal electro-thermal pack and actively controlled cooling loop",
+  "capability_types": [
+    "multidomain plant construction",
+    "thermal management",
+    "safety supervision",
+    "fault recovery"
+  ],
+  "difficulty": {
+    "physical_coupling": 2,
+    "nonlinear_or_switching": 1,
+    "dynamic_or_fault": 2,
+    "joint_operating_points": 2,
+    "multichannel_or_units": 2,
+    "functional_and_safety_constraints": 1,
+    "total": 10
+  },
+  "sim": {
+    "step": 0.05,
+    "stop": 180
+  },
+  "public_inputs": [
+    {
+      "name": "ambient_temperature",
+      "nominal": 298,
+      "min": 263,
+      "max": 313,
+      "unit": "K",
+      "meaning": "cooling-loop ambient temperature"
+    },
+    {
+      "name": "initial_soc",
+      "nominal": 0.72,
+      "min": 0.4,
+      "max": 0.9,
+      "unit": "1",
+      "meaning": "initial state of charge of all modules"
+    },
+    {
+      "name": "discharge_current",
+      "nominal": 180,
+      "min": 90,
+      "max": 240,
+      "unit": "A",
+      "meaning": "nominal positive pack-discharge current"
+    },
+    {
+      "name": "module_parameter_spread",
+      "nominal": 0.06,
+      "min": 0,
+      "max": 0.12,
+      "unit": "1",
+      "meaning": "fractional deterministic spread in module resistance and heat transfer"
+    },
+    {
+      "name": "cooling_fault_fraction",
+      "nominal": 0.45,
+      "min": 0,
+      "max": 0.7,
+      "unit": "1",
+      "meaning": "temporary cooling-path fault severity; zero means no degradation"
+    },
+    {
+      "name": "cooling_fault_time",
+      "nominal": 78,
+      "min": 55,
+      "max": 105,
+      "unit": "s",
+      "meaning": "start time of a 30 s cooling-flow degradation"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "battery_state",
+      "channels": 18,
+      "order": "[pack current, pack voltage, eight module voltages, eight module SOC values]",
+      "unit": "[A,V,V x8,1 x8]",
+      "physical_source": "actual series-pack electrical states and terminal measurements"
+    },
+    {
+      "name": "thermal_state",
+      "channels": 10,
+      "order": "[eight module temperatures, left coolant outlet temperature, right coolant outlet temperature]",
+      "unit": "[K x10]",
+      "physical_source": "actual distributed module and coolant temperatures"
+    },
+    {
+      "name": "cooling_state",
+      "channels": 6,
+      "order": "[pump command, delivered coolant flow, coolant pressure drop, auxiliary power, total removed heat, alarm]",
+      "unit": "[1,kg/s,kPa,W,W,boolean]",
+      "physical_source": "actual cooling actuation, hydraulic transport, electrical power and safety state"
+    },
+    {
+      "name": "thermal_flux",
+      "channels": 16,
+      "order": "[eight module heat-generation rates, eight module coolant heat-removal rates]",
+      "unit": "[W x16]",
+      "physical_source": "physical heat rates used by the module thermal balances"
+    }
+  ],
+  "prompt": "Build an eight-module series battery pack with coupled electrical storage, distributed module thermal states, and an actively regulated liquid-cooling path. Pack current must flow through the module electrical states, module losses must heat the corresponding thermal states, and the cooling actuator must remove heat through the coolant path rather than by directly overwriting temperatures.\n\nRead ambient_temperature, initial_soc, discharge_current, module_parameter_spread, cooling_fault_fraction, and cooling_fault_time from base-workspace variables. Their nominal values are 298 K, 0.72, 180 A, 0.06, 0.45, and 78 s. They operate respectively over 263--313 K, 0.40--0.90, 90--240 A, 0--0.12, 0--0.70, and 55--105 s. cooling_fault_fraction is the severity of a 30 s cooling-flow degradation beginning at cooling_fault_time; zero means no degradation. The detailed pump/fault characteristic may be nonlinear.\n\nAssume a clean MATLAB session in which only the declared public inputs are provided. Use eight 12s3p, 60 Ah modules assembled from 20 Ah cells, with nominal module resistance 0.014 ohm and nominal module heat capacity 18.0 kJ/K. Use a liquid coolant with effective specific heat 4.18 kJ/(kg*K) and effective density 1000 kg/m^3. The cooling actuator has a normalized command, a rated delivered mass flow of 0.30 kg/s, a rated loop pressure drop of 100 kPa, and rated electrical auxiliary power of 120 W at full command; actual flow, pressure drop, and power must remain within those ratings and be hydraulically feasible. Across the declared range and a repeatable multi-level discharge profile around discharge_current, regulate cooling to keep every module below 318 K, limit module temperature spread to 3 K, maintain module voltage above 36 V and SOC above 0.15, and respond to the temporary flow degradation without violating charge or thermal causality. The cooling-control and warning strategies are not prescribed.\n\nLog Timeseries battery_state, thermal_state, cooling_state, and thermal_flux. battery_state must contain [positive discharge current in A, pack terminal voltage in V, eight module terminal voltages in V, eight module SOC values]. thermal_state must contain eight module temperatures followed by left and right coolant outlet temperatures, all in K. cooling_state must contain [bounded pump command, delivered flow in kg/s, coolant-loop pressure drop in kPa, electrical auxiliary power in W, total coolant heat removal in W, alarm state]. thermal_flux must contain the eight actual module heat-generation rates followed by their eight coolant heat-removal rates in W. Logged quantities must come from the same causal electrical and thermal network rather than from commands or precomputed answer waveforms.\n\nWork directly in the required model file and keep the latest usable state saved at that path throughout the task.",
+  "groups": {
+    "G": "simulation, complete multichannel contract and bounded electrical/thermal states",
+    "A": "nominal temperature, temperature-spread and terminal-state accuracy",
+    "Q": "thermal/electrical safety, coolant quality and auxiliary-energy economy",
+    "M": "public-current profile, electro-thermal conservation, coolant transport, rated hydraulic feasibility and paired nonlinear fault causality",
+    "R": "worst joint ambient, SOC, current and module-spread operating point",
+    "D": "paired no-fault/fault cooling response, physical thermal consequence and post-fault recovery",
+    "weights": {
+      "A": 0.2,
+      "Q": 0.1,
+      "M": 0.3,
+      "R": 0.2,
+      "D": 0.2
+    }
+  },
+  "reference_sources": [
+    {
+      "source_type": "screened mechanism source",
+      "source_url": "https://github.com/mathworks/Battery-Pack-Model-Simscape",
+      "license": "MathWorks 3-clause product-restricted license; no model code copied",
+      "revision": "18f9d56193649ca1606dd0e30954baafec1a8098",
+      "use": "mechanism and scale audit: series modules, electro-thermal losses, coolant maldistribution and pump-energy tradeoff"
+    },
+    {
+      "source_type": "original equations",
+      "source_url": "",
+      "license": "original implementation; project license applies",
+      "revision": "simuverity-101-v1",
+      "use": "self-contained coulomb, terminal-voltage and per-module thermal-energy balances"
+    }
+  ]
+}

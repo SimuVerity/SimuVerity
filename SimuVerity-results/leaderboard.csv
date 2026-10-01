@@ -1,0 +1,7 @@
+run_id,model,harness,benchmark_release,taskset_id,task_count,repeat_count,result_count,scored_count,protocol_zero_count,score_sum,score_mean,delivered_count,native_executable_count,g_pass_count
+opus-4-8-claude-code-101,Claude Opus 4.8,Claude Code,simuverity-101-v1,simuverity-101-v1,101,3,303,263,70,4328.360891,42.855058,287,262,233
+gpt-5-5-codex-101,GPT-5.5,Codex,simuverity-101-v1,simuverity-101-v1,101,3,303,287,74,4214.213333,41.724884,299,287,229
+deepseek-v4-pro-claude-code-101,DeepSeek-V4-Pro,Claude Code,simuverity-101-v1,simuverity-101-v1,101,3,303,267,117,2868.302156,28.399031,294,267,186
+qwen3-8-max-claude-code-101,Qwen3.8-Max,Claude Code,simuverity-101-v1,simuverity-101-v1,101,3,303,245,140,2526.490388,25.014756,272,245,163
+glm-5-3-flash-claude-code-101,GLM-5.3-Flash,Claude Code,simuverity-101-v1,simuverity-101-v1,101,3,303,149,263,502.690996,4.977139,291,146,40
+qwen3-8-27b-fp8-claude-code-101,Qwen3.8-27B-FP8,Claude Code,simuverity-101-v1,simuverity-101-v1,101,3,303,41,284,161.892651,1.602898,92,41,19

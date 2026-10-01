@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+<title>Dual Clutch Transmission</title>
+<meta name="generator" content="MATLAB 25.1">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2025-12-22">
+<meta name="DC.source" content="Dual_Clutch_Trans.m">
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="content">
+<h1>Dual Clutch Transmission</h1>
+<!--introduction-->
+<p>This example shows a vehicle with a five-speed automatic dual-clutch transmission. The transmission controller converts the pedal deflection into a demanded torque. This demanded torque is then passed to the engine management. The pedal deflection and the vehicle speed are also used by the transmission controller to determine when the gear shifts should occur. Gear shifts are implemented via the two clutches, one clutch pressure being ramped up as the other clutch pressure is ramped down. Gear pre-selection via dog clutches ensures that the correct gear is fully selected before the on-going clutch is enabled.</p>
+<p>This model can be configured for fixed-step simulation, making it suitable for hardware-in-the-loop testing.</p>
+<!--/introduction-->
+<h2>Contents</h2>
+<div>
+<ul>
+<li>
+<a href="#1">Model</a>
+</li>
+<li>
+<a href="#2">Abstract Transmission Subsystem</a>
+</li>
+<li>
+<a href="#3">Detailed Transmission Subsystem</a>
+</li>
+<li>
+<a href="#4">Full Vehicle Subsystem</a>
+</li>
+<li>
+<a href="#5">Shifting Logic Subsystem</a>
+</li>
+<li>
+<a href="#6">Fuel Economy Subsystem</a>
+</li>
+<li>
+<a href="#7">Simulation Results from Simscape Logging</a>
+</li>
+<li>
+<a href="#9">Abstract Transmission, Simple Vehicle</a>
+</li>
+</ul>
+</div>
+<h2 id="1">Model</h2>
+<img vspace="5" hspace="5" src="Dual_Clutch_Trans_01.png" alt=""> <h2 id="2">Abstract Transmission Subsystem</h2>
+<p>
+<a href="matlab:open_system('Dual_Clutch_Trans');open_system('Dual_Clutch_Trans/Dual%20Clutch%20Transmission/Abstracted','force');">Open Subsystem</a>
+</p>
+<img vspace="5" hspace="5" src="Dual_Clutch_Trans_02.png" alt=""> <h2 id="3">Detailed Transmission Subsystem</h2>
+<p>
+<a href="matlab:open_system('Dual_Clutch_Trans');open_system('Dual_Clutch_Trans/Dual%20Clutch%20Transmission/Detailed','force');">Open Subsystem</a>
+</p>
+<img vspace="5" hspace="5" src="Dual_Clutch_Trans_03.png" alt=""> <h2 id="4">Full Vehicle Subsystem</h2>
+<p>
+<a href="matlab:open_system('Dual_Clutch_Trans');open_system('Dual_Clutch_Trans/Vehicle%20Dynamics/Full','force');">Open Subsystem</a>
+</p>
+<img vspace="5" hspace="5" src="Dual_Clutch_Trans_04.png" alt=""> <h2 id="5">Shifting Logic Subsystem</h2>
+<p>
+<a href="matlab:open_system('Dual_Clutch_Trans');open_system('Dual_Clutch_Trans/Transmission%20Controller/Shift%20state/Chart','force');">Open Subsystem</a>
+</p>
+<img vspace="5" hspace="5" src="Dual_Clutch_Trans_05.png" alt=""> <h2 id="6">Fuel Economy Subsystem</h2>
+<p>
+<a href="matlab:open_system('Dual_Clutch_Trans');open_system('Dual_Clutch_Trans/Fuel%20Economy','force');">Open Subsystem</a>
+</p>
+<img vspace="5" hspace="5" src="Dual_Clutch_Trans_06.png" alt=""> <h2 id="7">Simulation Results from Simscape Logging</h2>
+<p>The plots below show the engine and vehicle speed as it accelerates through the first three gears in the dual-clutch transmission. The half-gear states indicate gear shifts are taking place by engaging and disengaging the dual clutches.</p>
+<pre class="codeoutput">Elapsed time for Dual_Clutch_Trans = 29.4539
+</pre>
+<img vspace="5" hspace="5" src="Dual_Clutch_Trans_07.png" alt=""> <h2 id="9">Abstract Transmission, Simple Vehicle</h2>
+<pre class="codeoutput">Elapsed time for Dual_Clutch_Trans = 8.3193
+</pre>
+<img vspace="5" hspace="5" src="Dual_Clutch_Trans_08.png" alt=""> <p class="footer">Copyright 2014-2025 The MathWorks, Inc.<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2025a</a>
+<br>
+</p>
+</div>
+<!--
+##### SOURCE BEGIN #####
+%% Dual Clutch Transmission
+%
+% This example shows a vehicle with a five-speed automatic dual-clutch
+% transmission. The transmission controller converts the pedal deflection
+% into a demanded torque. This demanded torque is then passed to the engine
+% management. The pedal deflection and the vehicle speed are also used by
+% the transmission controller to determine when the gear shifts should
+% occur. Gear shifts are implemented via the two clutches, one clutch
+% pressure being ramped up as the other clutch pressure is ramped down.
+% Gear pre-selection via dog clutches ensures that the correct gear is
+% fully selected before the on-going clutch is enabled.
+% 
+% This model can be configured for fixed-step simulation, making it
+% suitable for hardware-in-the-loop testing.
+% Copyright 2014-2025 The MathWorks, Inc.
+
+
+%% Model
+
+open_system('Dual_Clutch_Trans')
+
+set_param(find_system('Dual_Clutch_Trans','MatchFilter',@Simulink.match.allVariants,'FindAll', 'on','type','annotation','Tag','ModelFeatures'),'Interpreter','off')
+
+%% Abstract Transmission Subsystem
+%
+% <matlab:open_system('Dual_Clutch_Trans');open_system('Dual_Clutch_Trans/Dual%20Clutch%20Transmission/Abstracted','force'); Open Subsystem>
+
+set_param('Dual_Clutch_Trans/Dual Clutch Transmission','LabelModeActiveChoice','Abstracted');
+set_param('Dual_Clutch_Trans/Dual Clutch Transmission/Abstracted','LinkStatus','none')
+open_system('Dual_Clutch_Trans/Dual Clutch Transmission/Abstracted','force')
+
+%% Detailed Transmission Subsystem
+%
+% <matlab:open_system('Dual_Clutch_Trans');open_system('Dual_Clutch_Trans/Dual%20Clutch%20Transmission/Detailed','force'); Open Subsystem>
+
+set_param('Dual_Clutch_Trans/Dual Clutch Transmission','LabelModeActiveChoice','Detailed');
+set_param('Dual_Clutch_Trans/Dual Clutch Transmission/Detailed','LinkStatus','none')
+open_system('Dual_Clutch_Trans/Dual Clutch Transmission/Detailed','force')
+
+%% Full Vehicle Subsystem
+%
+% <matlab:open_system('Dual_Clutch_Trans');open_system('Dual_Clutch_Trans/Vehicle%20Dynamics/Full','force'); Open Subsystem>
+
+set_param('Dual_Clutch_Trans/Vehicle Dynamics/','LabelModeActiveChoice','Full');
+set_param('Dual_Clutch_Trans/Vehicle Dynamics/Full','LinkStatus','none')
+open_system('Dual_Clutch_Trans/Vehicle Dynamics/Full','force')
+
+%% Shifting Logic Subsystem
+%
+% <matlab:open_system('Dual_Clutch_Trans');open_system('Dual_Clutch_Trans/Transmission%20Controller/Shift%20state/Chart','force'); Open Subsystem>
+
+set_param('Dual_Clutch_Trans/Transmission Controller/Shift state/Chart','LinkStatus','none')
+open_system('Dual_Clutch_Trans/Transmission Controller/Shift state/Chart','force')
+
+%% Fuel Economy Subsystem
+%
+% <matlab:open_system('Dual_Clutch_Trans');open_system('Dual_Clutch_Trans/Fuel%20Economy','force'); Open Subsystem>
+
+set_param('Dual_Clutch_Trans/Fuel Economy','LinkStatus','none')
+open_system('Dual_Clutch_Trans/Fuel Economy','force')
+
+%% Simulation Results from Simscape Logging
+%%
+%
+% The plots below show the engine and vehicle speed as it accelerates
+% through the first three gears in the dual-clutch transmission.  The
+% half-gear states indicate gear shifts are taking place by engaging and
+% disengaging the dual clutches.
+bdclose('Dual_Clutch_Trans');
+
+load_system('Dual_Clutch_Trans');
+Drive_Cycle_Num = 7;
+set_param('Dual_Clutch_Trans/Dual Clutch Transmission','LabelModeActiveChoice','Detailed');
+set_param('Dual_Clutch_Trans/Vehicle Dynamics','LabelModeActiveChoice','Full')
+sim('Dual_Clutch_Trans');
+Dual_Clutch_Trans_plot1speed;
+
+%% Abstract Transmission, Simple Vehicle
+
+Drive_Cycle_Num = 7;
+set_param('Dual_Clutch_Trans/Dual Clutch Transmission','LabelModeActiveChoice','Abstracted');
+set_param('Dual_Clutch_Trans/Vehicle Dynamics','LabelModeActiveChoice','Simple')
+sim('Dual_Clutch_Trans');
+Dual_Clutch_Trans_plot1speed;
+
+
+%%
+
+%clear all
+close all
+bdclose all
+
+##### SOURCE END #####
+-->
+</body>
+</html>

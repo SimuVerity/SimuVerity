@@ -1,0 +1,53 @@
+{
+  "schema": "simuverity.matlab-local-importer-recipe.v1",
+  "task_id": "XFLUID-05",
+  "release": "simuverity-101-v1",
+  "matlab_release": "R2025a",
+  "publisher": "The MathWorks, Inc.",
+  "redistributes_mathworks_files": false,
+  "destination": "%LOCALAPPDATA%/SimuVerity/assets/simuverity-101-v1/XFLUID-05",
+  "discovery": {
+    "method": "matlab_example_or_installed_product_search",
+    "example_id": "simscapefluids/PistonPumpWithLoadSensingAndPressureLimitingControlExample",
+    "expected_source_filenames": [
+      "PistonPumpWithLoadSensingAndPressureLimitingControl.slx"
+    ],
+    "expected_files": [
+      {
+        "name": "PistonPumpWithLoadSensingAndPressureLimitingControl.slx",
+        "size_bytes": 138166
+      }
+    ]
+  },
+  "transform": "transform.m",
+  "validation": {
+    "required": true,
+    "checks": [
+      "load",
+      "update",
+      "compile",
+      "simulate",
+      "all_official_scenarios",
+      "reference_score"
+    ],
+    "on_mismatch": "fail_closed"
+  },
+  "entrypoint": "PistonPumpWithLoadSensingAndPressureLimitingControl.slx",
+  "expected_valid_scenarios": 6,
+  "score_tolerance": 1e-12,
+  "expected_score": 92.93096301050997,
+  "expected_score_basis": "reference_replay",
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal_six_loads",
+      "low_speed",
+      "low_speed_rated_demand",
+      "reduced_flow_demand",
+      "open_load",
+      "restrictive_load"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision"
+}

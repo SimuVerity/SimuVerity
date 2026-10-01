@@ -1,0 +1,20 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XMECH-11",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/Models/Vehicle/sm_wheel_loader.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 2292,
+  "retained_bytes": 121374115,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ],
+  "clean_replay_setup": {
+    "phase": "before_load",
+    "path": "tasks/XMECH-11/reference/clean_replay_setup/ext_xmech_wheelloader_reference_clean_replay_setup.m",
+    "entrypoint": "ext_xmech_wheelloader_reference_clean_replay_setup"
+  }
+}

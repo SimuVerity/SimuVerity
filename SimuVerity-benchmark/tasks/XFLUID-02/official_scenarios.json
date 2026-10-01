@@ -1,0 +1,348 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XFLUID-02",
+  "scenarios": [
+    {
+      "id": "low_speed_low_pressure",
+      "values": {
+        "pump_speed_rpm": 785,
+        "output_pressure_bar": 4.8,
+        "speed_step_fraction": 0.13,
+        "speed_step_time": 0.61,
+        "seal_leak_fraction": 0,
+        "inlet_area_factor": 1,
+        "fault_cylinder": 1
+      }
+    },
+    {
+      "id": "high_speed_high_pressure",
+      "values": {
+        "pump_speed_rpm": 1105,
+        "output_pressure_bar": 9.2,
+        "speed_step_fraction": -0.12,
+        "speed_step_time": 0.76,
+        "seal_leak_fraction": 0,
+        "inlet_area_factor": 1,
+        "fault_cylinder": 3
+      }
+    },
+    {
+      "id": "seal_leak_cylinder2",
+      "values": {
+        "pump_speed_rpm": 1005,
+        "output_pressure_bar": 8.3,
+        "speed_step_fraction": 0.07,
+        "speed_step_time": 0.67,
+        "seal_leak_fraction": 0.052,
+        "inlet_area_factor": 1,
+        "fault_cylinder": 2
+      }
+    },
+    {
+      "id": "blocked_inlet_cylinder3",
+      "values": {
+        "pump_speed_rpm": 925,
+        "output_pressure_bar": 7.6,
+        "speed_step_fraction": -0.09,
+        "speed_step_time": 0.73,
+        "seal_leak_fraction": 0,
+        "inlet_area_factor": 0.38,
+        "fault_cylinder": 3
+      }
+    },
+    {
+      "id": "paired_fault",
+      "values": {
+        "pump_speed_rpm": 975,
+        "output_pressure_bar": 8.7,
+        "speed_step_fraction": 0.1,
+        "speed_step_time": 0.64,
+        "seal_leak_fraction": 0.04,
+        "inlet_area_factor": 0.52,
+        "fault_cylinder": 1
+      }
+    },
+    {
+      "id": "paired_control",
+      "values": {
+        "pump_speed_rpm": 975,
+        "output_pressure_bar": 8.7,
+        "speed_step_fraction": 0.1,
+        "speed_step_time": 0.64,
+        "seal_leak_fraction": 0,
+        "inlet_area_factor": 1,
+        "fault_cylinder": 1
+      }
+    }
+  ],
+  "contract": {
+    "sim": {
+      "step": 0.001,
+      "stop": 1.5
+    },
+    "public_inputs": [
+      {
+        "name": "pump_speed_rpm",
+        "nominal": 958,
+        "min": 760,
+        "max": 1120,
+        "unit": "rpm",
+        "meaning": "commanded steady crankshaft speed before a scheduled speed change"
+      },
+      {
+        "name": "output_pressure_bar",
+        "nominal": 7,
+        "min": 4.5,
+        "max": 9.5,
+        "unit": "bar",
+        "meaning": "hydraulic outlet back-pressure"
+      },
+      {
+        "name": "speed_step_fraction",
+        "nominal": 0.08,
+        "min": -0.15,
+        "max": 0.15,
+        "unit": "1",
+        "meaning": "fractional change in the speed command"
+      },
+      {
+        "name": "speed_step_time",
+        "nominal": 0.72,
+        "min": 0.55,
+        "max": 0.95,
+        "unit": "s",
+        "meaning": "time at which the speed command changes"
+      },
+      {
+        "name": "seal_leak_fraction",
+        "nominal": 0,
+        "min": 0,
+        "max": 0.06,
+        "unit": "1",
+        "meaning": "seal-leak area as a fraction of one inlet-check-valve maximum area"
+      },
+      {
+        "name": "inlet_area_factor",
+        "nominal": 1,
+        "min": 0.35,
+        "max": 1,
+        "unit": "1",
+        "meaning": "remaining inlet area fraction for the selected cylinder"
+      },
+      {
+        "name": "fault_cylinder",
+        "nominal": 2,
+        "min": 1,
+        "max": 3,
+        "unit": "index",
+        "meaning": "triplex cylinder to which the declared leak and inlet restriction apply"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "shaft_speed",
+        "channels": 1,
+        "unit": "rpm",
+        "physical_source": "measured physical crankshaft speed"
+      },
+      {
+        "name": "shaft_torque",
+        "channels": 1,
+        "unit": "N*m",
+        "physical_source": "bounded motor torque delivered to the shaft"
+      },
+      {
+        "name": "inlet_pressure",
+        "channels": 1,
+        "unit": "bar",
+        "physical_source": "pressure measured at the pump inlet port"
+      },
+      {
+        "name": "inlet_flow",
+        "channels": 1,
+        "unit": "L/min",
+        "physical_source": "volume flow measured at the pump inlet port"
+      },
+      {
+        "name": "outlet_pressure",
+        "channels": 1,
+        "unit": "bar",
+        "physical_source": "pressure measured at the pump outlet port"
+      },
+      {
+        "name": "outlet_flow",
+        "channels": 1,
+        "unit": "L/min",
+        "physical_source": "volume flow measured at the pump outlet port"
+      },
+      {
+        "name": "plunger1_flow",
+        "channels": 1,
+        "unit": "L/min",
+        "physical_source": "physical discharge flow through cylinder 1 outlet check valve"
+      },
+      {
+        "name": "plunger2_flow",
+        "channels": 1,
+        "unit": "L/min",
+        "physical_source": "physical discharge flow through cylinder 2 outlet check valve"
+      },
+      {
+        "name": "plunger3_flow",
+        "channels": 1,
+        "unit": "L/min",
+        "physical_source": "physical discharge flow through cylinder 3 outlet check valve"
+      }
+    ],
+    "prompt": "Build a physically causal triplex positive-displacement pump driven through a closed-loop shaft-speed actuator. The pump must contain three crank-driven plungers phased 120 degrees apart, separate inlet and outlet check valves for every cylinder, finite fluid compliance and hydraulic manifolds. It must continue to operate over the declared speed and outlet-pressure range, respond to a scheduled speed-command change, and exhibit the physical effects of a selected-cylinder seal leak or inlet restriction. A prescribed output waveform, prescribed plunger motion, lookup-only surrogate, or diagnostic-only model is not a valid implementation.\n\nRead pump_speed_rpm, output_pressure_bar, speed_step_fraction, speed_step_time, seal_leak_fraction, inlet_area_factor, and fault_cylinder from MATLAB base-workspace variables. pump_speed_rpm operates over 760--1120 rpm, output_pressure_bar over 4.5--9.5 bar, speed_step_fraction over -0.15--0.15, and speed_step_time over 0.55--0.95 s. seal_leak_fraction operates over 0--0.06 of one inlet-check-valve maximum area, inlet_area_factor over 0.35--1.0, and fault_cylinder selects cylinder 1, 2, or 3.\n\nUse a 24 mm plunger diameter and 30 mm stroke. Across the declared range, regulate the measured shaft speed to its commanded value, sustain positive delivered flow against the outlet pressure, retain bounded pressure and flow pulsation, and recover after the speed-command change. Leakage and restriction inputs must act in the physical fluid path of the selected cylinder rather than merely changing a reported diagnostic signal.\n\nLog Timeseries shaft_speed, shaft_torque, inlet_pressure, inlet_flow, outlet_pressure, outlet_flow, plunger1_flow, plunger2_flow, and plunger3_flow. Every value must be measured from the causal pump, shaft, manifold, or check-valve paths. Do not copy commands or precompute the required output traces.\n\nWork directly in the required model file and keep the latest usable state saved at that path throughout the task.",
+    "groups": {
+      "G": "load, update, simulate and complete physical Timeseries contract",
+      "A": "nominal speed, pressure and delivered-flow accuracy",
+      "Q": "outlet pressure/flow pulsation and three-cylinder balance",
+      "M": "triplex phase, displacement, check-valve causality and power-path consistency",
+      "R": "worst declared speed, pressure, leak and inlet-restriction operating point",
+      "D": "speed-step recovery and paired physical-fault response",
+      "weights": {
+        "A": 0.15,
+        "Q": 0.15,
+        "M": 0.3,
+        "R": 0.2,
+        "D": 0.2
+      }
+    }
+  },
+  "sim": {
+    "step": 0.001,
+    "stop": 1.5
+  },
+  "public_inputs": [
+    {
+      "name": "pump_speed_rpm",
+      "nominal": 958,
+      "min": 760,
+      "max": 1120,
+      "unit": "rpm",
+      "meaning": "commanded steady crankshaft speed before a scheduled speed change"
+    },
+    {
+      "name": "output_pressure_bar",
+      "nominal": 7,
+      "min": 4.5,
+      "max": 9.5,
+      "unit": "bar",
+      "meaning": "hydraulic outlet back-pressure"
+    },
+    {
+      "name": "speed_step_fraction",
+      "nominal": 0.08,
+      "min": -0.15,
+      "max": 0.15,
+      "unit": "1",
+      "meaning": "fractional change in the speed command"
+    },
+    {
+      "name": "speed_step_time",
+      "nominal": 0.72,
+      "min": 0.55,
+      "max": 0.95,
+      "unit": "s",
+      "meaning": "time at which the speed command changes"
+    },
+    {
+      "name": "seal_leak_fraction",
+      "nominal": 0,
+      "min": 0,
+      "max": 0.06,
+      "unit": "1",
+      "meaning": "seal-leak area as a fraction of one inlet-check-valve maximum area"
+    },
+    {
+      "name": "inlet_area_factor",
+      "nominal": 1,
+      "min": 0.35,
+      "max": 1,
+      "unit": "1",
+      "meaning": "remaining inlet area fraction for the selected cylinder"
+    },
+    {
+      "name": "fault_cylinder",
+      "nominal": 2,
+      "min": 1,
+      "max": 3,
+      "unit": "index",
+      "meaning": "triplex cylinder to which the declared leak and inlet restriction apply"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "shaft_speed",
+      "channels": 1,
+      "unit": "rpm",
+      "physical_source": "measured physical crankshaft speed"
+    },
+    {
+      "name": "shaft_torque",
+      "channels": 1,
+      "unit": "N*m",
+      "physical_source": "bounded motor torque delivered to the shaft"
+    },
+    {
+      "name": "inlet_pressure",
+      "channels": 1,
+      "unit": "bar",
+      "physical_source": "pressure measured at the pump inlet port"
+    },
+    {
+      "name": "inlet_flow",
+      "channels": 1,
+      "unit": "L/min",
+      "physical_source": "volume flow measured at the pump inlet port"
+    },
+    {
+      "name": "outlet_pressure",
+      "channels": 1,
+      "unit": "bar",
+      "physical_source": "pressure measured at the pump outlet port"
+    },
+    {
+      "name": "outlet_flow",
+      "channels": 1,
+      "unit": "L/min",
+      "physical_source": "volume flow measured at the pump outlet port"
+    },
+    {
+      "name": "plunger1_flow",
+      "channels": 1,
+      "unit": "L/min",
+      "physical_source": "physical discharge flow through cylinder 1 outlet check valve"
+    },
+    {
+      "name": "plunger2_flow",
+      "channels": 1,
+      "unit": "L/min",
+      "physical_source": "physical discharge flow through cylinder 2 outlet check valve"
+    },
+    {
+      "name": "plunger3_flow",
+      "channels": 1,
+      "unit": "L/min",
+      "physical_source": "physical discharge flow through cylinder 3 outlet check valve"
+    }
+  ],
+  "prompt": "Build a physically causal triplex positive-displacement pump driven through a closed-loop shaft-speed actuator. The pump must contain three crank-driven plungers phased 120 degrees apart, separate inlet and outlet check valves for every cylinder, finite fluid compliance and hydraulic manifolds. It must continue to operate over the declared speed and outlet-pressure range, respond to a scheduled speed-command change, and exhibit the physical effects of a selected-cylinder seal leak or inlet restriction. A prescribed output waveform, prescribed plunger motion, lookup-only surrogate, or diagnostic-only model is not a valid implementation.\n\nRead pump_speed_rpm, output_pressure_bar, speed_step_fraction, speed_step_time, seal_leak_fraction, inlet_area_factor, and fault_cylinder from MATLAB base-workspace variables. pump_speed_rpm operates over 760--1120 rpm, output_pressure_bar over 4.5--9.5 bar, speed_step_fraction over -0.15--0.15, and speed_step_time over 0.55--0.95 s. seal_leak_fraction operates over 0--0.06 of one inlet-check-valve maximum area, inlet_area_factor over 0.35--1.0, and fault_cylinder selects cylinder 1, 2, or 3.\n\nUse a 24 mm plunger diameter and 30 mm stroke. Across the declared range, regulate the measured shaft speed to its commanded value, sustain positive delivered flow against the outlet pressure, retain bounded pressure and flow pulsation, and recover after the speed-command change. Leakage and restriction inputs must act in the physical fluid path of the selected cylinder rather than merely changing a reported diagnostic signal.\n\nLog Timeseries shaft_speed, shaft_torque, inlet_pressure, inlet_flow, outlet_pressure, outlet_flow, plunger1_flow, plunger2_flow, and plunger3_flow. Every value must be measured from the causal pump, shaft, manifold, or check-valve paths. Do not copy commands or precompute the required output traces.\n\nWork directly in the required model file and keep the latest usable state saved at that path throughout the task.",
+  "groups": {
+    "G": "load, update, simulate and complete physical Timeseries contract",
+    "A": "nominal speed, pressure and delivered-flow accuracy",
+    "Q": "outlet pressure/flow pulsation and three-cylinder balance",
+    "M": "triplex phase, displacement, check-valve causality and power-path consistency",
+    "R": "worst declared speed, pressure, leak and inlet-restriction operating point",
+    "D": "speed-step recovery and paired physical-fault response",
+    "weights": {
+      "A": 0.15,
+      "Q": 0.15,
+      "M": 0.3,
+      "R": 0.2,
+      "D": 0.2
+    }
+  }
+}

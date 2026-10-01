@@ -1,0 +1,210 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XMECH-06",
+  "collection": "XMECH",
+  "reference": {
+    "identity_path": "tasks/XMECH-06/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/sm_car.slx",
+    "model_path": "tasks/XMECH-06/reference/files/sm_car.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XMECH-06",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a physical full-vehicle Formula Student model with a six-degree-of-freedom chassis, four independently contacting tires, front and rear suspension with springs, dampers and anti-roll behavior, steering, four-wheel propulsion, and wheel braking.",
+    "engineering_objects": [
+      "Build a physical full-vehicle Formula Student model with a six-degree-of-freedom chassis, four independently contacting tires, front and rear suspension with springs, dampers and anti-roll behavior, steering, four-wheel propulsion, and wheel braking.",
+      "The same connected vehicle must also support a straight-line acceleration-and-braking event so that longitudinal and lateral tire forces, load transfer, suspension motion, and body attitude arise from the physical mechanism rather than prescribed traces.",
+      "The vehicle must remain physically stable throughout these ranges."
+    ],
+    "physical_paths": [
+      "The same connected vehicle must also support a straight-line acceleration-and-braking event so that longitudinal and lateral tire forces, load transfer, suspension motion, and body attitude arise from the physical mechanism rather than prescribed traces.",
+      "The vehicle must remain physically stable throughout these ranges.",
+      "All channels must be measured from the connected model and the signals actually used by its driver, controller, tire contacts, suspension, and chassis.",
+      "Build a physical full-vehicle Formula Student model with a six-degree-of-freedom chassis, four independently contacting tires, front and rear suspension with springs, dampers and anti-roll behavior, steering, four-wheel propulsion, and wheel braking."
+    ],
+    "functional_paths": [
+      "Build a physical full-vehicle Formula Student model with a six-degree-of-freedom chassis, four independently contacting tires, front and rear suspension with springs, dampers and anti-roll behavior, steering, four-wheel propulsion, and wheel braking.",
+      "In the Skidpad event the driver and vehicle controller must use vehicle-state feedback to follow the supplied trajectory and target speed.",
+      "DriverCommands has 3 channels: steering wheel (rad), accelerator (0--1), and brake (0--1)."
+    ],
+    "information_paths": [
+      "EventMode, SpeedScale, RoadFrictionScale, PayloadMass_kg -> F90-XMECH-06 plant/control path -> VehicleState, ReferenceState, WheelForces, TireSlip, SuspensionState, DriverCommands"
+    ],
+    "modes_and_events": [
+      "Build a physical full-vehicle Formula Student model with a six-degree-of-freedom chassis, four independently contacting tires, front and rear suspension with springs, dampers and anti-roll behavior, steering, four-wheel propulsion, and wheel braking.",
+      "In the Skidpad event the driver and vehicle controller must use vehicle-state feedback to follow the supplied trajectory and target speed.",
+      "The same connected vehicle must also support a straight-line acceleration-and-braking event so that longitudinal and lateral tire forces, load transfer, suspension motion, and body attitude arise from the physical mechanism rather than prescribed traces."
+    ],
+    "interfaces": [
+      {
+        "name": "EventMode",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read EventMode, SpeedScale, RoadFrictionScale, and PayloadMass_kg from MATLAB base-workspace variables. EventMode must support Skidpad and WOT_Braking.",
+        "source": "tasks/XMECH-06/public_spec.json"
+      },
+      {
+        "name": "SpeedScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read EventMode, SpeedScale, RoadFrictionScale, and PayloadMass_kg from MATLAB base-workspace variables. Support SpeedScale from 0.85 to 1.10 for the skidpad target-speed profile, RoadFrictionScale from 0.80 to 1.00, and PayloadMass_kg from 0 to 20 kg.",
+        "source": "tasks/XMECH-06/public_spec.json"
+      },
+      {
+        "name": "RoadFrictionScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read EventMode, SpeedScale, RoadFrictionScale, and PayloadMass_kg from MATLAB base-workspace variables. Support SpeedScale from 0.85 to 1.10 for the skidpad target-speed profile, RoadFrictionScale from 0.80 to 1.00, and PayloadMass_kg from 0 to 20 kg.",
+        "source": "tasks/XMECH-06/public_spec.json"
+      },
+      {
+        "name": "PayloadMass_kg",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kg"
+        ],
+        "range_or_shape": "Read EventMode, SpeedScale, RoadFrictionScale, and PayloadMass_kg from MATLAB base-workspace variables. Support SpeedScale from 0.85 to 1.10 for the skidpad target-speed profile, RoadFrictionScale from 0.80 to 1.00, and PayloadMass_kg from 0 to 20 kg.",
+        "source": "tasks/XMECH-06/public_spec.json"
+      },
+      {
+        "name": "VehicleState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s^2",
+          "m/s",
+          "rad/s",
+          "rad",
+          "m"
+        ],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named VehicleState, ReferenceState, WheelForces, TireSlip, SuspensionState, and DriverCommands. VehicleState has 9 channels in this order: speed (m/s), longitudinal and lateral acceleration (m/s^2), roll, pitch, and yaw (rad), yaw rate (rad/s), and world x and y (m).",
+        "source": "tasks/XMECH-06/public_spec.json"
+      },
+      {
+        "name": "ReferenceState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s",
+          "rad",
+          "m"
+        ],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named VehicleState, ReferenceState, WheelForces, TireSlip, SuspensionState, and DriverCommands. ReferenceState has 3 channels: target speed (m/s), reference yaw (rad), and reference distance (m).",
+        "source": "tasks/XMECH-06/public_spec.json"
+      },
+      {
+        "name": "WheelForces",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N"
+        ],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named VehicleState, ReferenceState, WheelForces, TireSlip, SuspensionState, and DriverCommands. WheelForces has 12 channels: Fx for FL, FR, RL, RR; Fy in the same order; then Fz in the same order, all in N.",
+        "source": "tasks/XMECH-06/public_spec.json"
+      },
+      {
+        "name": "TireSlip",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "deg"
+        ],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named VehicleState, ReferenceState, WheelForces, TireSlip, SuspensionState, and DriverCommands. TireSlip has 4 channels in FL, FR, RL, RR order, all in deg.",
+        "source": "tasks/XMECH-06/public_spec.json"
+      },
+      {
+        "name": "SuspensionState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s",
+          "m"
+        ],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named VehicleState, ReferenceState, WheelForces, TireSlip, SuspensionState, and DriverCommands. SuspensionState has 8 channels: travel for FL, FR, RL, RR (m), followed by velocity in the same order (m/s).",
+        "source": "tasks/XMECH-06/public_spec.json"
+      },
+      {
+        "name": "DriverCommands",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad"
+        ],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named VehicleState, ReferenceState, WheelForces, TireSlip, SuspensionState, and DriverCommands. DriverCommands has 3 channels: steering wheel (rad), accelerator (0--1), and brake (0--1).",
+        "source": "tasks/XMECH-06/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a physical full-vehicle Formula Student model with a six-degree-of-freedom chassis, four independently contacting tires, front and rear suspension with springs, dampers and anti-roll behavior, steering, four-wheel propulsion, and wheel braking.",
+      "In the Skidpad event the driver and vehicle controller must use vehicle-state feedback to follow the supplied trajectory and target speed.",
+      "VehicleState has 9 channels in this order: speed (m/s), longitudinal and lateral acceleration (m/s^2), roll, pitch, and yaw (rad), yaw rate (rad/s), and world x and y (m)."
+    ],
+    "feedback_and_control_causality": [
+      "In the Skidpad event the driver and vehicle controller must use vehicle-state feedback to follow the supplied trajectory and target speed.",
+      "All channels must be measured from the connected model and the signals actually used by its driver, controller, tire contacts, suspension, and chassis."
+    ],
+    "signal_sources": [
+      "EventMode is read from the public MATLAB base-workspace input contract.",
+      "SpeedScale is read from the public MATLAB base-workspace input contract.",
+      "RoadFrictionScale is read from the public MATLAB base-workspace input contract.",
+      "PayloadMass_kg is read from the public MATLAB base-workspace input contract.",
+      "VehicleState is produced by the implemented plant or controller and logged under the public output contract.",
+      "ReferenceState is produced by the implemented plant or controller and logged under the public output contract.",
+      "WheelForces is produced by the implemented plant or controller and logged under the public output contract.",
+      "TireSlip is produced by the implemented plant or controller and logged under the public output contract.",
+      "SuspensionState is produced by the implemented plant or controller and logged under the public output contract.",
+      "DriverCommands is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "EventMode: Read EventMode, SpeedScale, RoadFrictionScale, and PayloadMass_kg from MATLAB base-workspace variables. EventMode must support Skidpad and WOT_Braking.",
+      "SpeedScale: Read EventMode, SpeedScale, RoadFrictionScale, and PayloadMass_kg from MATLAB base-workspace variables. Support SpeedScale from 0.85 to 1.10 for the skidpad target-speed profile, RoadFrictionScale from 0.80 to 1.00, and PayloadMass_kg from 0 to 20 kg.",
+      "RoadFrictionScale: Read EventMode, SpeedScale, RoadFrictionScale, and PayloadMass_kg from MATLAB base-workspace variables. Support SpeedScale from 0.85 to 1.10 for the skidpad target-speed profile, RoadFrictionScale from 0.80 to 1.00, and PayloadMass_kg from 0 to 20 kg.",
+      "PayloadMass_kg: Read EventMode, SpeedScale, RoadFrictionScale, and PayloadMass_kg from MATLAB base-workspace variables. Support SpeedScale from 0.85 to 1.10 for the skidpad target-speed profile, RoadFrictionScale from 0.80 to 1.00, and PayloadMass_kg from 0 to 20 kg."
+    ],
+    "disturbances": [
+      "The same connected vehicle must also support a straight-line acceleration-and-braking event so that longitudinal and lateral tire forces, load transfer, suspension motion, and body attitude arise from the physical mechanism rather than prescribed traces.",
+      "Read EventMode, SpeedScale, RoadFrictionScale, and PayloadMass_kg from MATLAB base-workspace variables.",
+      "Support SpeedScale from 0.85 to 1.10 for the skidpad target-speed profile, RoadFrictionScale from 0.80 to 1.00, and PayloadMass_kg from 0 to 20 kg."
+    ],
+    "dynamic_processes": [
+      "Record complete-run MATLAB Timeseries named VehicleState, ReferenceState, WheelForces, TireSlip, SuspensionState, and DriverCommands."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XMECH-06: prescribing VehicleState directly would bypass the system path described by: The same connected vehicle must also support a straight-line acceleration-and-braking event so that longitudinal and lateral tire forces, load transfer, suspension motion, and body attitude arise from the physical mechanism rather than prescribed traces.",
+      "F90-XMECH-06: replaying a fixed VehicleState trace would ignore causal variation in EventMode."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XMECH-06/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XMECH-06/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XMECH-06/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

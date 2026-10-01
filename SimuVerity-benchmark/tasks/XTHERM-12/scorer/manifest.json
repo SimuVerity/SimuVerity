@@ -1,0 +1,24 @@
+{
+  "schema": "simuverity.scorer-manifest.v1",
+  "task_id": "XTHERM-12",
+  "public_interface": "scorer.py:score",
+  "implementation": "scorer.py",
+  "source_modules": [
+    {
+      "module": "ext_scoring_common",
+      "path": "vendor/scripts/formal90/shared/ext_scoring_common.py"
+    },
+    {
+      "module": "ext_xtherm_bev_multiloop_01_offline_scorer",
+      "path": "vendor/scripts/formal90/tasks/ext_xtherm_bev_multiloop_01/ext_xtherm_bev_multiloop_01_offline_scorer.py"
+    }
+  ],
+  "final_module": {
+    "module": "ext_xtherm_bev_multiloop_01_offline_scorer",
+    "path": "vendor/scripts/formal90/tasks/ext_xtherm_bev_multiloop_01/ext_xtherm_bev_multiloop_01_offline_scorer.py"
+  },
+  "payload_files": [],
+  "public_bridge": {
+    "mode": "function"
+  }
+}

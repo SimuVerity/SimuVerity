@@ -1,0 +1,162 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XFLUID-05",
+  "collection": "XFLUID",
+  "reference": {
+    "identity_path": "tasks/XFLUID-05/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "PistonPumpWithLoadSensingAndPressureLimitingControl.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XFLUID-05",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a physically causal five-piston axial-piston pump test rig in Simscape Fluids.",
+    "engineering_objects": [
+      "Build a physically causal five-piston axial-piston pump test rig in Simscape Fluids.",
+      "A driven cylinder block, five evenly phased physical pistons, valve-plate inlet and discharge paths, and a physically actuated swash plate must form the pumping mechanism.",
+      "Include a physical load-sensing control unit that adjusts the swash-plate yoke to maintain useful delivery flow as load changes, together with pressure-limiting control that reduces displacement and prevents pump outlet pressure from materially exceeding 27 MPa."
+    ],
+    "physical_paths": [
+      "Feed the pump from a finite-pressure booster supply and discharge it through a variable load orifice.",
+      "The same closed physical control path must respond to each load transition and move the yoke; a prescribed flow trace, copied pressure signal, or mechanically disconnected hydraulic control is not valid.",
+      "piston_kinematics has 10 channels in this order: piston 1 through 5 displacement (m), followed by piston 1 through 5 velocity (m/s).",
+      "Build a physically causal five-piston axial-piston pump test rig in Simscape Fluids."
+    ],
+    "functional_paths": [
+      "Include a physical load-sensing control unit that adjusts the swash-plate yoke to maintain useful delivery flow as load changes, together with pressure-limiting control that reduces displacement and prevents pump outlet pressure from materially exceeding 27 MPa.",
+      "The same closed physical control path must respond to each load transition and move the yoke;",
+      "a prescribed flow trace, copied pressure signal, or mechanically disconnected hydraulic control is not valid."
+    ],
+    "information_paths": [
+      "PumpSpeed_rpm, FlowDemandScale, LoadOpeningScale -> F90-XFLUID-05 plant/control path -> pump_service, control_state, piston_kinematics"
+    ],
+    "modes_and_events": [
+      "Include a physical load-sensing control unit that adjusts the swash-plate yoke to maintain useful delivery flow as load changes, together with pressure-limiting control that reduces displacement and prevents pump outlet pressure from materially exceeding 27 MPa."
+    ],
+    "interfaces": [
+      {
+        "name": "PumpSpeed_rpm",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "rpm"
+        ],
+        "range_or_shape": "Read PumpSpeed_rpm, FlowDemandScale, and LoadOpeningScale from the MATLAB base workspace and support their declared ranges. PumpSpeed_rpm is a real scalar in [2200, 2500] rpm; FlowDemandScale is a real scalar in [0.9, 1.0] (unitless); and LoadOpeningScale is a real scalar in [0.85, 1.15] (unitless), applied to the complete public load-orifice opening profile.",
+        "source": "tasks/XFLUID-05/public_spec.json"
+      },
+      {
+        "name": "FlowDemandScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read PumpSpeed_rpm, FlowDemandScale, and LoadOpeningScale from the MATLAB base workspace and support their declared ranges. PumpSpeed_rpm is a real scalar in [2200, 2500] rpm; FlowDemandScale is a real scalar in [0.9, 1.0] (unitless); and LoadOpeningScale is a real scalar in [0.85, 1.15] (unitless), applied to the complete public load-orifice opening profile.",
+        "source": "tasks/XFLUID-05/public_spec.json"
+      },
+      {
+        "name": "LoadOpeningScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read PumpSpeed_rpm, FlowDemandScale, and LoadOpeningScale from the MATLAB base workspace and support their declared ranges. PumpSpeed_rpm is a real scalar in [2200, 2500] rpm; FlowDemandScale is a real scalar in [0.9, 1.0] (unitless); and LoadOpeningScale is a real scalar in [0.85, 1.15] (unitless), applied to the complete public load-orifice opening profile. Apply LoadOpeningScale to the complete published load-orifice profile.",
+        "source": "tasks/XFLUID-05/public_spec.json"
+      },
+      {
+        "name": "pump_service",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m^3",
+          "Pa",
+          "m"
+        ],
+        "range_or_shape": "Log complete-interval MATLAB Timeseries named pump_service, control_state, and piston_kinematics. pump_service has 3 channels in this order: load-orifice opening (m), delivered flow (m^3/s), and pump-outlet pressure (Pa).",
+        "source": "tasks/XFLUID-05/public_spec.json"
+      },
+      {
+        "name": "control_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "Pa",
+          "m"
+        ],
+        "range_or_shape": "Log complete-interval MATLAB Timeseries named pump_service, control_state, and piston_kinematics. control_state has 3 channels in this order: yoke position (m), flow-control differential pressure (Pa), and pilot-valve spool position (m).",
+        "source": "tasks/XFLUID-05/public_spec.json"
+      },
+      {
+        "name": "piston_kinematics",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s",
+          "m"
+        ],
+        "range_or_shape": "Log complete-interval MATLAB Timeseries named pump_service, control_state, and piston_kinematics. piston_kinematics has 10 channels in this order: piston 1 through 5 displacement (m), followed by piston 1 through 5 velocity (m/s).",
+        "source": "tasks/XFLUID-05/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "A driven cylinder block, five evenly phased physical pistons, valve-plate inlet and discharge paths, and a physically actuated swash plate must form the pumping mechanism.",
+      "pump_service has 3 channels in this order: load-orifice opening (m), delivered flow (m^3/s), and pump-outlet pressure (Pa).",
+      "control_state has 3 channels in this order: yoke position (m), flow-control differential pressure (Pa), and pilot-valve spool position (m)."
+    ],
+    "feedback_and_control_causality": [
+      "Build a physically causal five-piston axial-piston pump test rig in Simscape Fluids.",
+      "The five piston displacement and velocity pairs must reflect five causally participating pistons with distinct 72-degree phase offsets, not five copies of one trace."
+    ],
+    "signal_sources": [
+      "PumpSpeed_rpm is read from the public MATLAB base-workspace input contract.",
+      "FlowDemandScale is read from the public MATLAB base-workspace input contract.",
+      "LoadOpeningScale is read from the public MATLAB base-workspace input contract.",
+      "pump_service is produced by the implemented plant or controller and logged under the public output contract.",
+      "control_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "piston_kinematics is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "PumpSpeed_rpm: Read PumpSpeed_rpm, FlowDemandScale, and LoadOpeningScale from the MATLAB base workspace and support their declared ranges. PumpSpeed_rpm is a real scalar in [2200, 2500] rpm; FlowDemandScale is a real scalar in [0.9, 1.0] (unitless); and LoadOpeningScale is a real scalar in [0.85, 1.15] (unitless), applied to the complete public load-orifice opening profile.",
+      "FlowDemandScale: Read PumpSpeed_rpm, FlowDemandScale, and LoadOpeningScale from the MATLAB base workspace and support their declared ranges. PumpSpeed_rpm is a real scalar in [2200, 2500] rpm; FlowDemandScale is a real scalar in [0.9, 1.0] (unitless); and LoadOpeningScale is a real scalar in [0.85, 1.15] (unitless), applied to the complete public load-orifice opening profile.",
+      "LoadOpeningScale: Read PumpSpeed_rpm, FlowDemandScale, and LoadOpeningScale from the MATLAB base workspace and support their declared ranges. PumpSpeed_rpm is a real scalar in [2200, 2500] rpm; FlowDemandScale is a real scalar in [0.9, 1.0] (unitless); and LoadOpeningScale is a real scalar in [0.85, 1.15] (unitless), applied to the complete public load-orifice opening profile. Apply LoadOpeningScale to the complete published load-orifice profile."
+    ],
+    "disturbances": [
+      "Feed the pump from a finite-pressure booster supply and discharge it through a variable load orifice.",
+      "Include a physical load-sensing control unit that adjusts the swash-plate yoke to maintain useful delivery flow as load changes, together with pressure-limiting control that reduces displacement and prevents pump outlet pressure from materially exceeding 27 MPa.",
+      "Read PumpSpeed_rpm, FlowDemandScale, and LoadOpeningScale from the MATLAB base workspace and support their declared ranges."
+    ],
+    "dynamic_processes": [
+      "The same closed physical control path must respond to each load transition and move the yoke;"
+    ],
+    "task_specific_shortcuts": [
+      "F90-XFLUID-05: prescribing pump_service directly would bypass the system path described by: Feed the pump from a finite-pressure booster supply and discharge it through a variable load orifice.",
+      "F90-XFLUID-05: replaying a fixed pump_service trace would ignore causal variation in PumpSpeed_rpm."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XFLUID-05/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XFLUID-05/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XFLUID-05/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

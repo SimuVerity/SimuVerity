@@ -1,0 +1,1605 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XTHERM-05",
+  "file_count": 390,
+  "files": [
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/.gitattributes",
+      "size_bytes": 631
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/.github/workflows/ci.yml",
+      "size_bytes": 1399
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/.gitignore",
+      "size_bytes": 468
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/BatteryCoolingPlateSimscape.prj",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/+coolingPlateThermal/coolingPlateConnector.ssc",
+      "size_bytes": 3729
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/coolingPlateThermal_lib.slx",
+      "size_bytes": 41897
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/Libraries/+BatteryPack96S3P/+Modules/module.svg",
+      "size_bytes": 2417
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/Libraries/+BatteryPack96S3P/+Modules/ModuleType1.ssc",
+      "size_bytes": 11637
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/Libraries/+BatteryPack96S3P/+ParallelAssemblies/parallelAssembly.svg",
+      "size_bytes": 5109
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/Libraries/+BatteryPack96S3P/+ParallelAssemblies/ParallelAssemblyType1.ssc",
+      "size_bytes": 7835
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/Libraries/+BatteryPack96S3PLumpingAdapters/ElectricalLumpingAdapter.ssc",
+      "size_bytes": 862
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/Libraries/+BatteryPack96S3PLumpingAdapters/ThermalLumpingAdapter.ssc",
+      "size_bytes": 859
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/Libraries/+BatteryPack_192S3P/+Modules/module.svg",
+      "size_bytes": 2417
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/Libraries/+BatteryPack_192S3P/+Modules/ModuleType1.ssc",
+      "size_bytes": 11643
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/Libraries/+BatteryPack_192S3P/+ParallelAssemblies/parallelAssembly.svg",
+      "size_bytes": 5109
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/Libraries/+BatteryPack_192S3P/+ParallelAssemblies/ParallelAssemblyType1.ssc",
+      "size_bytes": 7841
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/Libraries/+BatteryPack_192S3PLumpingAdapters/ElectricalLumpingAdapter.ssc",
+      "size_bytes": 862
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/Libraries/+BatteryPack_192S3PLumpingAdapters/ThermalLumpingAdapter.ssc",
+      "size_bytes": 859
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/Libraries/BatteryPack96S3P.mat",
+      "size_bytes": 3072932
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/Libraries/BatteryPack96S3P.slx",
+      "size_bytes": 549755
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/Libraries/BatteryPack96S3P_lib.slx",
+      "size_bytes": 49483
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/Libraries/BatteryPack_192S3P.mat",
+      "size_bytes": 6168011
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/Libraries/BatteryPack_192S3P.slx",
+      "size_bytes": 1171961
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/Libraries/BatteryPack_192S3P_lib.slx",
+      "size_bytes": 51060
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/SupportingFiles/BatteryPack96S3PSpecificationData.mat",
+      "size_bytes": 1575
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/SupportingFiles/BendSubsystemWithMask.slx",
+      "size_bytes": 100098
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/SupportingFiles/CoolingPlate24NFlowConnectivityData.mat",
+      "size_bytes": 9123
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/SupportingFiles/CoolingPlate48NFlowConnectivityData.mat",
+      "size_bytes": 9143
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/SupportingFiles/PipeSubsystemWithMask.slx",
+      "size_bytes": 93808
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Components/TestHarness/BatteryTestHarness.slx",
+      "size_bytes": 140595
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Images/BendSubsystemWithMask.svg",
+      "size_bytes": 1810
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Images/CoolingPlateMaskIcon.png",
+      "size_bytes": 4131
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Images/PipeSubsystemWithMask.svg",
+      "size_bytes": 3167
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/license.txt",
+      "size_bytes": 1555
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Model/PouchBatteryPack96S3PWithCustomCoolingPlateForCharging.slx",
+      "size_bytes": 972035
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Overview/BatteryThermalManagementOverview.m",
+      "size_bytes": 2100
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Overview/HelpConnectivityData.m",
+      "size_bytes": 16135
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Overview/HelpDesignCoolingPlateFlowNetwork.m",
+      "size_bytes": 7215
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Overview/html/BatteryCoolingPlateTempAnimation.gif",
+      "size_bytes": 3470553
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Overview/html/BatteryThermalManagementOverview.html",
+      "size_bytes": 8829
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Overview/html/BatteryThermalManagementWorkflow.png",
+      "size_bytes": 251778
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Overview/html/CoolingPlateTempAnimation.gif",
+      "size_bytes": 2103634
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Overview/html/DesignCoolingFlowNetwork.png",
+      "size_bytes": 108606
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Overview/html/HelpConnectivityData.html",
+      "size_bytes": 40477
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Overview/html/HelpDesignCoolingPlateFlowNetwork.html",
+      "size_bytes": 20003
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Overview/html/ParallelChannelDesign1.png",
+      "size_bytes": 6059
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Overview/html/ParallelChannelDesign2.png",
+      "size_bytes": 5782
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Overview/html/ParallelChannelDesign3.png",
+      "size_bytes": 7018
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Overview/html/ParallelChannelDesign4.png",
+      "size_bytes": 6906
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Overview/html/ParallelChannelDesign5.png",
+      "size_bytes": 6325
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Overview/html/SerpentineChannelDesign1.png",
+      "size_bytes": 6943
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Overview/html/SerpentineChannelDesign2.png",
+      "size_bytes": 8775
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Overview/html/SerpentineChannelDesign3.png",
+      "size_bytes": 8624
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Overview/html/SerpentineChannelDesign4.png",
+      "size_bytes": 10003
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/README.md",
+      "size_bytes": 2691
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/-V17xoKMQuak4-chxc1ixTLv0tA/2jTeYSmveEeUzOyDt7TYXVMZk7Ed.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/-V17xoKMQuak4-chxc1ixTLv0tA/2jTeYSmveEeUzOyDt7TYXVMZk7Ep.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/-V17xoKMQuak4-chxc1ixTLv0tA/83X6Is2r3lzkvGVMcNQXQHy7TvYd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/-V17xoKMQuak4-chxc1ixTLv0tA/83X6Is2r3lzkvGVMcNQXQHy7TvYp.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/-V17xoKMQuak4-chxc1ixTLv0tA/C7TlsrYPxWbhSef-evJaKSBn5kMd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/-V17xoKMQuak4-chxc1ixTLv0tA/C7TlsrYPxWbhSef-evJaKSBn5kMp.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/-V17xoKMQuak4-chxc1ixTLv0tA/CcXge4kJj9mg2lnX-kF978YVlj4d.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/-V17xoKMQuak4-chxc1ixTLv0tA/CcXge4kJj9mg2lnX-kF978YVlj4p.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/-V17xoKMQuak4-chxc1ixTLv0tA/jKCcLhuJwGbTOZm5EXl5RdPFeFcd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/-V17xoKMQuak4-chxc1ixTLv0tA/jKCcLhuJwGbTOZm5EXl5RdPFeFcp.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/-V17xoKMQuak4-chxc1ixTLv0tA/K0_zL_jubJD11PZj9h6OmnfFUnAd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/-V17xoKMQuak4-chxc1ixTLv0tA/K0_zL_jubJD11PZj9h6OmnfFUnAp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/-V17xoKMQuak4-chxc1ixTLv0tA/L-gBUudiB7ZPAdVrB74kBj4WzWkd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/-V17xoKMQuak4-chxc1ixTLv0tA/L-gBUudiB7ZPAdVrB74kBj4WzWkp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/-V17xoKMQuak4-chxc1ixTLv0tA/laBMqz0GTEaqeVkVQnh5XTQdlk0d.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/-V17xoKMQuak4-chxc1ixTLv0tA/laBMqz0GTEaqeVkVQnh5XTQdlk0p.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/-V17xoKMQuak4-chxc1ixTLv0tA/n-bSgTztDZ5ud5GGCvmOEhHWS7Ad.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/-V17xoKMQuak4-chxc1ixTLv0tA/n-bSgTztDZ5ud5GGCvmOEhHWS7Ap.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/-V17xoKMQuak4-chxc1ixTLv0tA/QJOBPzj8Qgmn1nMVM7YX0Z_g6ysd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/-V17xoKMQuak4-chxc1ixTLv0tA/QJOBPzj8Qgmn1nMVM7YX0Z_g6ysp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/-V17xoKMQuak4-chxc1ixTLv0tA/S94sJ3eEb529yLpX67kg-CJl_hcd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/-V17xoKMQuak4-chxc1ixTLv0tA/S94sJ3eEb529yLpX67kg-CJl_hcp.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/-V17xoKMQuak4-chxc1ixTLv0tA/tRz7tFMG3CmsO8DgF8kIE-WJXSQd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/-V17xoKMQuak4-chxc1ixTLv0tA/tRz7tFMG3CmsO8DgF8kIE-WJXSQp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/0HeJNhhLXCWKhp_MRaUaOVpRhQA/1WyGylj2es2GvzjbgXSy0mc8GiYd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/0HeJNhhLXCWKhp_MRaUaOVpRhQA/1WyGylj2es2GvzjbgXSy0mc8GiYp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/0HeJNhhLXCWKhp_MRaUaOVpRhQA/2xoY7ucggK-0M5NQht5uLkUXqHAd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/0HeJNhhLXCWKhp_MRaUaOVpRhQA/2xoY7ucggK-0M5NQht5uLkUXqHAp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/0HeJNhhLXCWKhp_MRaUaOVpRhQA/9GwmiLeBuUBzzlxwEGH_sp7utt8d.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/0HeJNhhLXCWKhp_MRaUaOVpRhQA/9GwmiLeBuUBzzlxwEGH_sp7utt8p.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/15cCWvuvBMELG2-lZdnE6GDCM5Y/AKO3m6cJnMItBw9zPS-e2rG3S9Ed.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/15cCWvuvBMELG2-lZdnE6GDCM5Y/AKO3m6cJnMItBw9zPS-e2rG3S9Ep.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/15cCWvuvBMELG2-lZdnE6GDCM5Y/GDi9JoGtColKjzuH2HVeqKXX29wd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/15cCWvuvBMELG2-lZdnE6GDCM5Y/GDi9JoGtColKjzuH2HVeqKXX29wp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/7FFQee9K30-Om5HQSr6CGyjfgGw/20Yu0tBw0cloFz17oAnDjBFB8Ugd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/7FFQee9K30-Om5HQSr6CGyjfgGw/20Yu0tBw0cloFz17oAnDjBFB8Ugp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/7FFQee9K30-Om5HQSr6CGyjfgGw/eGe-xeFbq96ACfmtW2lMR6fdQLcd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/7FFQee9K30-Om5HQSr6CGyjfgGw/eGe-xeFbq96ACfmtW2lMR6fdQLcp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/7FFQee9K30-Om5HQSr6CGyjfgGw/XU1qWxZJwWlSBLrL7RiexPSIguYd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/7FFQee9K30-Om5HQSr6CGyjfgGw/XU1qWxZJwWlSBLrL7RiexPSIguYp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/_QGZtnRIC6BAfV-GkWb-Ddq7h_c/kZrBstdIj3IGQQvf8_IEGggbt68d.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/_QGZtnRIC6BAfV-GkWb-Ddq7h_c/kZrBstdIj3IGQQvf8_IEGggbt68p.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/_QGZtnRIC6BAfV-GkWb-Ddq7h_c/xM2KhcPnYUNF57qjED8_SAU8se4d.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/_QGZtnRIC6BAfV-GkWb-Ddq7h_c/xM2KhcPnYUNF57qjED8_SAU8se4p.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/_QGZtnRIC6BAfV-GkWb-Ddq7h_c/Xww3RUBPo0IW9rNV3B70hcX3lfQd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/_QGZtnRIC6BAfV-GkWb-Ddq7h_c/Xww3RUBPo0IW9rNV3B70hcX3lfQp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/BbdY0FAfuU_6EGeTCROX8FIC9TAd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/BbdY0FAfuU_6EGeTCROX8FIC9TAp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Oru_jaNjCFt91_sT6pER2wbJFBUd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Oru_jaNjCFt91_sT6pER2wbJFBUp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Ur1esh7xN9L6aqDUKBE31DKE1Qod.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Ur1esh7xN9L6aqDUKBE31DKE1Qop.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/YHhJ8RVr1EwQ8KDk2rUzB-iqBnId.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/YHhJ8RVr1EwQ8KDk2rUzB-iqBnIp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/cPXndeAzDVzjteo-ovAPHAZFVQ0/15cCWvuvBMELG2-lZdnE6GDCM5Yd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/cPXndeAzDVzjteo-ovAPHAZFVQ0/15cCWvuvBMELG2-lZdnE6GDCM5Yp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/cPXndeAzDVzjteo-ovAPHAZFVQ0/8kxZwssWxjeNauXjQYXuGFpIqqsd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/cPXndeAzDVzjteo-ovAPHAZFVQ0/8kxZwssWxjeNauXjQYXuGFpIqqsp.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/cPXndeAzDVzjteo-ovAPHAZFVQ0/osDq-UfZMGo5VaPxRhnWetQa2Fkd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/cPXndeAzDVzjteo-ovAPHAZFVQ0/osDq-UfZMGo5VaPxRhnWetQa2Fkp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/cPXndeAzDVzjteo-ovAPHAZFVQ0/pe2TpDK3RY032zdCPNOL_sroxb0d.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/cPXndeAzDVzjteo-ovAPHAZFVQ0/pe2TpDK3RY032zdCPNOL_sroxb0p.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/cPXndeAzDVzjteo-ovAPHAZFVQ0/y2bx6QUR3AemVJY_e8GIxX_buAsd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/cPXndeAzDVzjteo-ovAPHAZFVQ0/y2bx6QUR3AemVJY_e8GIxX_buAsp.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/cPXndeAzDVzjteo-ovAPHAZFVQ0/YCi1pzURbsQFvQnB0XAcG5UXGDwd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/cPXndeAzDVzjteo-ovAPHAZFVQ0/YCi1pzURbsQFvQnB0XAcG5UXGDwp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/dQ7eOFZM92o4QVW2zmp9Uury4TQ/WLziu1FebPFF-6YjopR53tiZtyEd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/dQ7eOFZM92o4QVW2zmp9Uury4TQ/WLziu1FebPFF-6YjopR53tiZtyEp.xml",
+      "size_bytes": 128
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/dQ7eOFZM92o4QVW2zmp9Uury4TQ/ysoCE1z4yzxps6zxaMfheWOmwrcd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/dQ7eOFZM92o4QVW2zmp9Uury4TQ/ysoCE1z4yzxps6zxaMfheWOmwrcp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/-WrGm5tSXXuktYfRbnWN32Gxfg8d.xml",
+      "size_bytes": 74
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/-WrGm5tSXXuktYfRbnWN32Gxfg8p.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/1UjkxfCZnGZfnOs8ZfKi2DGsQkAd.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/1UjkxfCZnGZfnOs8ZfKi2DGsQkAp.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/9FZwuOIOzpiLmjM4PimvIwLcN-Qd.xml",
+      "size_bytes": 74
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/9FZwuOIOzpiLmjM4PimvIwLcN-Qp.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/9VCJ4C996moMksAzTmKS85pS0WUd.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/9VCJ4C996moMksAzTmKS85pS0WUp.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/BYW_EqZR9r3eBAzr3c8w5dKzSfMd.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/BYW_EqZR9r3eBAzr3c8w5dKzSfMp.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/edgBAUtnzVBMUV85zTLBNWjQTMMd.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/edgBAUtnzVBMUV85zTLBNWjQTMMp.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/J21356UfWJ0wzM34bu5U8f0fpZMd.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/J21356UfWJ0wzM34bu5U8f0fpZMp.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/Joj0lN-GpaovSsk-wyhvdxTB10Yd.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/Joj0lN-GpaovSsk-wyhvdxTB10Yp.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/jwEq71kCXVGT_-a5tS6UdgyoBscd.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/jwEq71kCXVGT_-a5tS6UdgyoBscp.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/Kj4iK8PP_dYG8Is6WJQqIv_0IVkd.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/Kj4iK8PP_dYG8Is6WJQqIv_0IVkp.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/M0fAgPiZUHnrDUjXwVYxb_4rNVQd.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/M0fAgPiZUHnrDUjXwVYxb_4rNVQp.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/mcH07BlgTJPBsaxj6t3bAqv9SyUd.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/mcH07BlgTJPBsaxj6t3bAqv9SyUp.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/TfzjfHDRocVC87c-JE9jJrLidoUd.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/TfzjfHDRocVC87c-JE9jJrLidoUp.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/xuyKAoscXM5dT2h8nkfcCdgDH9kd.xml",
+      "size_bytes": 74
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/xuyKAoscXM5dT2h8nkfcCdgDH9kp.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/Fg5w7dtLfwo2lo3Yd3_90adC-QM/suYtAXxqQWpSZLwMDsa_yv2BhCgd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/Fg5w7dtLfwo2lo3Yd3_90adC-QM/suYtAXxqQWpSZLwMDsa_yv2BhCgp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/Fg5w7dtLfwo2lo3Yd3_90adC-QM/VZrvlrHAhg4j95GrMs99Z7O8kUId.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/Fg5w7dtLfwo2lo3Yd3_90adC-QM/VZrvlrHAhg4j95GrMs99Z7O8kUIp.xml",
+      "size_bytes": 119
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsd.xml",
+      "size_bytes": 114
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsp.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/HoHDHQ_WvHAAKj5aJOrvrg_vpt8/xXlmKuOQ7YT_G1elNhbKQIUqSRMd.xml",
+      "size_bytes": 61
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/HoHDHQ_WvHAAKj5aJOrvrg_vpt8/xXlmKuOQ7YT_G1elNhbKQIUqSRMp.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/I-dDyJ1p--Q0ihIJ8NFdLVLQLTU/p2B2kuKn-TR4inf0L2-zoGElvj0d.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/I-dDyJ1p--Q0ihIJ8NFdLVLQLTU/p2B2kuKn-TR4inf0L2-zoGElvj0p.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/I-dDyJ1p--Q0ihIJ8NFdLVLQLTU/V76yfcu8kfyIeJKa13j7YbWR_NEd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/I-dDyJ1p--Q0ihIJ8NFdLVLQLTU/V76yfcu8kfyIeJKa13j7YbWR_NEp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/5eCiy3SoHa8ITtNH8ZfnPlKmx8Qd.xml",
+      "size_bytes": 235
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/5eCiy3SoHa8ITtNH8ZfnPlKmx8Qp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/dU2Vq2Mb8Xg1klIYs9j_CGBNLJcd.xml",
+      "size_bytes": 184
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/dU2Vq2Mb8Xg1klIYs9j_CGBNLJcp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/u3AgF5NZza7iFvlVZ5-DFKAkBRcd.xml",
+      "size_bytes": 177
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/u3AgF5NZza7iFvlVZ5-DFKAkBRcp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/1mdYBgxBYEC5fOUoObbQIASutZQd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/1mdYBgxBYEC5fOUoObbQIASutZQp.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/AVJ0aRIDhu6qPcAI-Czr65IBRNQd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/AVJ0aRIDhu6qPcAI-Czr65IBRNQp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/MeQD4FtbiVwb8ZNFqXbw44OPkzMd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/MeQD4FtbiVwb8ZNFqXbw44OPkzMp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/WS7L7U3R0F3ft4esx_Z4zRwM4vQd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/WS7L7U3R0F3ft4esx_Z4zRwM4vQp.xml",
+      "size_bytes": 74
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/YktOeXEh08yfLMV0FZVT2U7nWRUd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/YktOeXEh08yfLMV0FZVT2U7nWRUp.xml",
+      "size_bytes": 105
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/l-puU0yAZscMqVEpKH6b0Twiu_s/cVME7HVZzrkgNiwyKm0BRukB87Yd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/l-puU0yAZscMqVEpKH6b0Twiu_s/cVME7HVZzrkgNiwyKm0BRukB87Yp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/l-puU0yAZscMqVEpKH6b0Twiu_s/LImkEcKXBoBRhzXyg9EscZTKHNgd.xml",
+      "size_bytes": 138
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/l-puU0yAZscMqVEpKH6b0Twiu_s/LImkEcKXBoBRhzXyg9EscZTKHNgp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/l-puU0yAZscMqVEpKH6b0Twiu_s/pMZg5Ioo5VUZrjfbud865u1El8Id.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/l-puU0yAZscMqVEpKH6b0Twiu_s/pMZg5Ioo5VUZrjfbud865u1El8Ip.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/l-puU0yAZscMqVEpKH6b0Twiu_s/SH_x6SIUn6VrJONMKE-bnkGApJUd.xml",
+      "size_bytes": 138
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/l-puU0yAZscMqVEpKH6b0Twiu_s/SH_x6SIUn6VrJONMKE-bnkGApJUp.xml",
+      "size_bytes": 105
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4d.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4p.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZod.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZop.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencd.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencp.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8d.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8p.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4d.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4p.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Id.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Ip.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkd.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkp.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/oR9peIbN9Y-83PouLTRh2ApEYXc/7tfzymjRv7cEca2VY6mAmERU8ekd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/oR9peIbN9Y-83PouLTRh2ApEYXc/7tfzymjRv7cEca2VY6mAmERU8ekp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/oR9peIbN9Y-83PouLTRh2ApEYXc/_QGZtnRIC6BAfV-GkWb-Ddq7h_cd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/oR9peIbN9Y-83PouLTRh2ApEYXc/_QGZtnRIC6BAfV-GkWb-Ddq7h_cp.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/oR9peIbN9Y-83PouLTRh2ApEYXc/yOzxhf3zUjMbWUwr3EWMvpP8Qlod.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/oR9peIbN9Y-83PouLTRh2ApEYXc/yOzxhf3zUjMbWUwr3EWMvpP8Qlop.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/p2B2kuKn-TR4inf0L2-zoGElvj0/0kK47cOHwsW7a1GaaqpQDigXMNUd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/p2B2kuKn-TR4inf0L2-zoGElvj0/0kK47cOHwsW7a1GaaqpQDigXMNUp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/p2B2kuKn-TR4inf0L2-zoGElvj0/geuseqfzde5lmCB2PlA6wD238ucd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/p2B2kuKn-TR4inf0L2-zoGElvj0/geuseqfzde5lmCB2PlA6wD238ucp.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/pe2TpDK3RY032zdCPNOL_sroxb0/0HeJNhhLXCWKhp_MRaUaOVpRhQAd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/pe2TpDK3RY032zdCPNOL_sroxb0/0HeJNhhLXCWKhp_MRaUaOVpRhQAp.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/pe2TpDK3RY032zdCPNOL_sroxb0/6GOywIwHj5t2yYyoTyCS1mqnBRod.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/pe2TpDK3RY032zdCPNOL_sroxb0/6GOywIwHj5t2yYyoTyCS1mqnBRop.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/pe2TpDK3RY032zdCPNOL_sroxb0/ahXDxCpOdiekRVAos8XhbJ2qWdsd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/pe2TpDK3RY032zdCPNOL_sroxb0/ahXDxCpOdiekRVAos8XhbJ2qWdsp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/pe2TpDK3RY032zdCPNOL_sroxb0/CNGF4PvfOsRo7YkIUEhAKCQ2h1od.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/pe2TpDK3RY032zdCPNOL_sroxb0/CNGF4PvfOsRo7YkIUEhAKCQ2h1op.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/pe2TpDK3RY032zdCPNOL_sroxb0/Cy8rtSm_ag2PZukSWj_OXGUhMwMd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/pe2TpDK3RY032zdCPNOL_sroxb0/Cy8rtSm_ag2PZukSWj_OXGUhMwMp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/pe2TpDK3RY032zdCPNOL_sroxb0/eyNzvu0-1Z2Z2ZaYy8cFVrwXa5Yd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/pe2TpDK3RY032zdCPNOL_sroxb0/eyNzvu0-1Z2Z2ZaYy8cFVrwXa5Yp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/pe2TpDK3RY032zdCPNOL_sroxb0/oR9peIbN9Y-83PouLTRh2ApEYXcd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/pe2TpDK3RY032zdCPNOL_sroxb0/oR9peIbN9Y-83PouLTRh2ApEYXcp.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/pe2TpDK3RY032zdCPNOL_sroxb0/peabniWGY41VZkSXDu6PHSLNIIwd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/pe2TpDK3RY032zdCPNOL_sroxb0/peabniWGY41VZkSXDu6PHSLNIIwp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/pe2TpDK3RY032zdCPNOL_sroxb0/r3oZkU0SCFsnMpiD8YBnFsxIRCod.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/pe2TpDK3RY032zdCPNOL_sroxb0/r3oZkU0SCFsnMpiD8YBnFsxIRCop.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/pe2TpDK3RY032zdCPNOL_sroxb0/VLHLdBSi5S_qNO4fDDzcnojMyW8d.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/pe2TpDK3RY032zdCPNOL_sroxb0/VLHLdBSi5S_qNO4fDDzcnojMyW8p.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/pe2TpDK3RY032zdCPNOL_sroxb0/YYud5MvXfKVxXEwUiF3wnkTm9wYd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/pe2TpDK3RY032zdCPNOL_sroxb0/YYud5MvXfKVxXEwUiF3wnkTm9wYp.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/Project.xml",
+      "size_bytes": 73
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/-V17xoKMQuak4-chxc1ixTLv0tAd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/-V17xoKMQuak4-chxc1ixTLv0tAp.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/2uRqUwgzsMPtKV1vY4JvGEQwdJId.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/2uRqUwgzsMPtKV1vY4JvGEQwdJIp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/BT5hWoz-UTefONdqForZyI91O8Yd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/BT5hWoz-UTefONdqForZyI91O8Yp.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/cPXndeAzDVzjteo-ovAPHAZFVQ0d.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/cPXndeAzDVzjteo-ovAPHAZFVQ0p.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/dQ7eOFZM92o4QVW2zmp9Uury4TQd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/dQ7eOFZM92o4QVW2zmp9Uury4TQp.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Fg5w7dtLfwo2lo3Yd3_90adC-QMd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Fg5w7dtLfwo2lo3Yd3_90adC-QMp.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/I-dDyJ1p--Q0ihIJ8NFdLVLQLTUd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/I-dDyJ1p--Q0ihIJ8NFdLVLQLTUp.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQp.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/l-puU0yAZscMqVEpKH6b0Twiu_sd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/l-puU0yAZscMqVEpKH6b0Twiu_sp.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/qD-kr16wmwlzR-nIg1IG_vvRrWkd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/qD-kr16wmwlzR-nIg1IG_vvRrWkp.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/QMJD9OLFzxcTTbPOoh-ahQ4zTRUd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/QMJD9OLFzxcTTbPOoh-ahQ4zTRUp.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/rh0jHbNfmojECiiHH7BQHmZTsWkd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/rh0jHbNfmojECiiHH7BQHmZTsWkp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/TMK4UzWHdRLhy_w-CHt9y11Q8XAd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/TMK4UzWHdRLhy_w-CHt9y11Q8XAp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/ZdVxxv9BsNz7MGUxtEc6Pq3qh1Md.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/ZdVxxv9BsNz7MGUxtEc6Pq3qh1Mp.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/root/EEtUlUb-dLAdf0KpMVivaUlztwAp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/root/fjRQtWiSIy7hIlj-Kmk87M7s21kp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQd.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/root/HoHDHQ_WvHAAKj5aJOrvrg_vpt8p.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/root/KAXfQgCar2Yb8zOxgvf9hdmLP1Ep.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/root/LUgSFhI3RPozNzNcutxrczVe6f0p.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/root/qaw0eS1zuuY1ar9TdPn1GMfrjbQp.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/rootp.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/VLHLdBSi5S_qNO4fDDzcnojMyW8/7FFQee9K30-Om5HQSr6CGyjfgGwd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/VLHLdBSi5S_qNO4fDDzcnojMyW8/7FFQee9K30-Om5HQSr6CGyjfgGwp.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/VLHLdBSi5S_qNO4fDDzcnojMyW8/udT0AQpcCmzgo2d72Zw-ngG2nPEd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/VLHLdBSi5S_qNO4fDDzcnojMyW8/udT0AQpcCmzgo2d72Zw-ngG2nPEp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/VLHLdBSi5S_qNO4fDDzcnojMyW8/zhz7qsbgDWETe9_ggF3D-wNUOAMd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/VLHLdBSi5S_qNO4fDDzcnojMyW8/zhz7qsbgDWETe9_ggF3D-wNUOAMp.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/2MuzFBvYxSkw1pQeSH0h-7V3fmYd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/2MuzFBvYxSkw1pQeSH0h-7V3fmYp.xml",
+      "size_bytes": 106
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/6dGxtJ2oFIA-DaVUgWVzTR4Zf88d.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/6dGxtJ2oFIA-DaVUgWVzTR4Zf88p.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/6pt37tIZiNRo8UUk20kN2E-csxYd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/7SMJp391n8RSPdSyrauqqnsLDk8d.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/7SMJp391n8RSPdSyrauqqnsLDk8p.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/AjLrmeX6Tce9SDac_6dbn4B3A00d.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/AjLrmeX6Tce9SDac_6dbn4B3A00p.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/b6Is0QMQ2WlvlkpLzlIJtwSUQekd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/b6Is0QMQ2WlvlkpLzlIJtwSUQekp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/BeGtg61klpcS-p3dGHds2Kuu04Ed.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/BeGtg61klpcS-p3dGHds2Kuu04Ep.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/c-Yom8UzZYzDCK8w8WxvduyzzcQd.xml",
+      "size_bytes": 142
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/c-Yom8UzZYzDCK8w8WxvduyzzcQp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/EkDmmani-gp7BRnTn2Wa1I6hp_Ed.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/EkDmmani-gp7BRnTn2Wa1I6hp_Ep.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/GuBEFqH1AALpDwYRRsZFQiEPPbgd.xml",
+      "size_bytes": 142
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/GuBEFqH1AALpDwYRRsZFQiEPPbgp.xml",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/HgCLxHCBC8j-yN7Q-IBSxm0B7UUd.xml",
+      "size_bytes": 142
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/HgCLxHCBC8j-yN7Q-IBSxm0B7UUp.xml",
+      "size_bytes": 107
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/kouGixb1Nt1mmzMckx_DDrcWIzgd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/kouGixb1Nt1mmzMckx_DDrcWIzgp.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/n46KmFGWERNukLtjoZg4-LZChx8d.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/n46KmFGWERNukLtjoZg4-LZChx8p.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/p4fL4msa_S230g8TyMZdzqL1XsEd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/p4fL4msa_S230g8TyMZdzqL1XsEp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/pFGWhB4Xpp-Zgyqwlbt8z4aImxkd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/pFGWhB4Xpp-Zgyqwlbt8z4aImxkp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/rru0ngRAKaY9o0qkZa6zsR3x0_Yd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/rru0ngRAKaY9o0qkZa6zsR3x0_Yp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/Sk1qliPcs8RL9Uz0ayPnY2LimYsd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/Sk1qliPcs8RL9Uz0ayPnY2LimYsp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/XVYIRckQ0H6thfeTPsz6r-j_egcd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/XVYIRckQ0H6thfeTPsz6r-j_egcp.xml",
+      "size_bytes": 106
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/y2bx6QUR3AemVJY_e8GIxX_buAs/cR-nh3sQhMpN3zXjj5sQ_ip_LgAd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/y2bx6QUR3AemVJY_e8GIxX_buAs/cR-nh3sQhMpN3zXjj5sQ_ip_LgAp.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/y2bx6QUR3AemVJY_e8GIxX_buAs/eogr49KKD38k25wE5pCJWdTGgJcd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/y2bx6QUR3AemVJY_e8GIxX_buAs/eogr49KKD38k25wE5pCJWdTGgJcp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/y2bx6QUR3AemVJY_e8GIxX_buAs/j5780VkXL79uAgeZ1Ox-CKnw-Mcd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/y2bx6QUR3AemVJY_e8GIxX_buAs/j5780VkXL79uAgeZ1Ox-CKnw-Mcp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/y2bx6QUR3AemVJY_e8GIxX_buAs/ShMxzOKLgt6p-96uC8OfRz0me2Id.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/y2bx6QUR3AemVJY_e8GIxX_buAs/ShMxzOKLgt6p-96uC8OfRz0me2Ip.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/y2bx6QUR3AemVJY_e8GIxX_buAs/vbff3vQWxyjHyzjqeCo269aykmcd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/y2bx6QUR3AemVJY_e8GIxX_buAs/vbff3vQWxyjHyzjqeCo269aykmcp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/y2bx6QUR3AemVJY_e8GIxX_buAs/yRbRRS9M0hokV4yh20npZsjc24Id.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/y2bx6QUR3AemVJY_e8GIxX_buAs/yRbRRS9M0hokV4yh20npZsjc24Ip.xml",
+      "size_bytes": 107
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/YCi1pzURbsQFvQnB0XAcG5UXGDw/1nByTzA-HdmnEsU5UxgTbxOuMZod.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/YCi1pzURbsQFvQnB0XAcG5UXGDw/1nByTzA-HdmnEsU5UxgTbxOuMZop.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/YCi1pzURbsQFvQnB0XAcG5UXGDw/BmraS79_f3X9ozF7QZx1ZQjZfN4d.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/YCi1pzURbsQFvQnB0XAcG5UXGDw/BmraS79_f3X9ozF7QZx1ZQjZfN4p.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/yOzxhf3zUjMbWUwr3EWMvpP8Qlo/or00Ax2qzRa5ZXRPeKY6-9c5yfId.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/yOzxhf3zUjMbWUwr3EWMvpP8Qlo/or00Ax2qzRa5ZXRPeKY6-9c5yfIp.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/yOzxhf3zUjMbWUwr3EWMvpP8Qlo/pjcymZOco6jgrHRe_TjiuRl8PH0d.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/yOzxhf3zUjMbWUwr3EWMvpP8Qlo/pjcymZOco6jgrHRe_TjiuRl8PH0p.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/yOzxhf3zUjMbWUwr3EWMvpP8Qlo/X7jUjZxLYZvGHuLXsbVFWuwxIjod.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/yOzxhf3zUjMbWUwr3EWMvpP8Qlo/X7jUjZxLYZvGHuLXsbVFWuwxIjop.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/YYud5MvXfKVxXEwUiF3wnkTm9wY/crU8SnbxSnzf2Ygmp-k8fqtChf0d.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/YYud5MvXfKVxXEwUiF3wnkTm9wY/crU8SnbxSnzf2Ygmp-k8fqtChf0p.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/YYud5MvXfKVxXEwUiF3wnkTm9wY/EcqBSn2Tdd26iV9uPg4qdXCN3M8d.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/YYud5MvXfKVxXEwUiF3wnkTm9wY/EcqBSn2Tdd26iV9uPg4qdXCN3M8p.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/YYud5MvXfKVxXEwUiF3wnkTm9wY/YSdcd-br55thtoW2x3XRUx2hGLcd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/YYud5MvXfKVxXEwUiF3wnkTm9wY/YSdcd-br55thtoW2x3XRUx2hGLcp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/0BvViPRjJusABovYToavHw9qP_0d.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/0BvViPRjJusABovYToavHw9qP_0p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/dJCQSpFO60HAAc-IZX0eb67dD7Ad.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/dJCQSpFO60HAAc-IZX0eb67dD7Ap.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/jh9jNsdCLH7IxPvavKZyOCDGKuwd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/jh9jNsdCLH7IxPvavKZyOCDGKuwp.xml",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/m1cCIuHvOPz-BhLVtzDKi7x4PBAd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/m1cCIuHvOPz-BhLVtzDKi7x4PBAp.xml",
+      "size_bytes": 110
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/OmxHQraLZimkaGuw72DT4yzd-NEd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/OmxHQraLZimkaGuw72DT4yzd-NEp.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/pfX4AIJq4BmDgwuDKu-MivP8dvId.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/pfX4AIJq4BmDgwuDKu-MivP8dvIp.xml",
+      "size_bytes": 107
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/QOpe-1pctdftDIjwQLRdjOUZW44d.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/QOpe-1pctdftDIjwQLRdjOUZW44p.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/wJf3-DgjrueHKfWlPqTpk7kVIf0d.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/wJf3-DgjrueHKfWlPqTpk7kVIf0p.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/zISCDhxOq9Rrebq-8APnR8g8ucod.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/zISCDhxOq9Rrebq-8APnR8g8ucop.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/zhz7qsbgDWETe9_ggF3D-wNUOAM/CO0rbi6eFFMhmltmIs5kbmaqM6Md.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/zhz7qsbgDWETe9_ggF3D-wNUOAM/CO0rbi6eFFMhmltmIs5kbmaqM6Mp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/zhz7qsbgDWETe9_ggF3D-wNUOAM/ElJV-0PRHVxGtQxkf5lM4brZIlgd.xml",
+      "size_bytes": 140
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/zhz7qsbgDWETe9_ggF3D-wNUOAM/ElJV-0PRHVxGtQxkf5lM4brZIlgp.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/zhz7qsbgDWETe9_ggF3D-wNUOAM/PoLskct86qler8al0oG6U0qa6rYd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/zhz7qsbgDWETe9_ggF3D-wNUOAM/PoLskct86qler8al0oG6U0qa6rYp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Scripts/applyBatteryChargeCycleParametersInModel.m",
+      "size_bytes": 1522
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Scripts/applyBatteryModuleParametersInModel.m",
+      "size_bytes": 5428
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Scripts/BuildBatteryPackWithCoolingPlate.m",
+      "size_bytes": 4949
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Scripts/ComponentConnectivity.m",
+      "size_bytes": 99300
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Scripts/OpenBatteryThermalManagementSimscape.m",
+      "size_bytes": 173
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Scripts/OpenDesignCoolingFlowNetworkHelp.m",
+      "size_bytes": 156
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Scripts/OpenThermalAnalysisWorkflow.m",
+      "size_bytes": 172
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Scripts/simulateBatteryAndCoolingPlateWithLoad.m",
+      "size_bytes": 2799
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/SECURITY.md",
+      "size_bytes": 394
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Tests/BatteryThermalManagementSystemMQC.m",
+      "size_bytes": 5974
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Tests/BatteryThermalManagementSystemTestRunner.m",
+      "size_bytes": 1515
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Tests/initializeTestForWorkflows.m",
+      "size_bytes": 2133
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/utils/animateBatteryAndPlateTemp3D.m",
+      "size_bytes": 6653
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/utils/animatePlatePartitionTemp.m",
+      "size_bytes": 3919
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/utils/createConnectivityDataStruct.m",
+      "size_bytes": 74465
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/utils/designCoolingPlateFlowNetwork.m",
+      "size_bytes": 10912
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/utils/generateBendPts.m",
+      "size_bytes": 2703
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/utils/generateCoolingPlateHarness.m",
+      "size_bytes": 7781
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/utils/placeSubsystemPort.p",
+      "size_bytes": 191
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/utils/plotBatteryAndPlateTemp3D.m",
+      "size_bytes": 8830
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/utils/plotCoolingChannels.m",
+      "size_bytes": 5991
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/utils/plotModuleAssemblyYZTemp.m",
+      "size_bytes": 3714
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/utils/plotPlatePartitionTemp.m",
+      "size_bytes": 2386
+    },
+    {
+      "path": "reference/files/XTHERM05_reference.slx",
+      "size_bytes": 238433
+    }
+  ],
+  "entrypoint": "reference/files/XTHERM05_reference.slx",
+  "expected_score": 94.22749767382876,
+  "expected_score_basis": "reference_replay",
+  "expected_valid_scenarios": 9,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "hot_low_flow",
+      "cold_high_flow",
+      "high_current_boundary",
+      "flow_pair_low",
+      "flow_pair_high",
+      "current_pair_up",
+      "current_pair_control",
+      "current_pair_down",
+      "warm_inlet_boundary"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 19122550,
+  "excluded_files": [
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Overview/html/DesignAndIntegrateCoolingPlate.gif",
+      "size_bytes": 28433766,
+      "category": "documentation_media",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/6pt37tIZiNRo8UUk20kN2E-csxYp.xml",
+      "size_bytes": 104,
+      "category": "documentation_project_metadata",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    }
+  ]
+}

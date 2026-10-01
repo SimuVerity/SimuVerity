@@ -1,0 +1,264 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XTHERM-01",
+  "collection": "XTHERM",
+  "reference": {
+    "identity_path": "tasks/XTHERM-01/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/XTHERM02_reference.slx",
+    "model_path": "tasks/XTHERM-01/reference/files/XTHERM02_reference.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XTHERM-01",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a coupled vehicle thermal-management model containing finite thermal storage for cabin air, cabin interior mass, a generic power-electronics/e-drive component, and a liquid coolant loop.",
+    "engineering_objects": [
+      "Build a coupled vehicle thermal-management model containing finite thermal storage for cabin air, cabin interior mass, a generic power-electronics/e-drive component, and a liquid coolant loop.",
+      "These inequalities only exclude combinations that fail a basic energy and heat-rejection feasibility screen;",
+      "Coolant mass flow must not exceed 0.35 kg/s, PTC heat must not exceed 8000 W, and the active cooling system must have a physically plausible coefficient of performance between 1.5 and 6."
+    ],
+    "physical_paths": [
+      "Build a coupled vehicle thermal-management model containing finite thermal storage for cabin air, cabin interior mass, a generic power-electronics/e-drive component, and a liquid coolant loop.",
+      "These inequalities only exclude combinations that fail a basic energy and heat-rejection feasibility screen;",
+      "Coolant mass flow must not exceed 0.35 kg/s, PTC heat must not exceed 8000 W, and the active cooling system must have a physically plausible coefficient of performance between 1.5 and 6."
+    ],
+    "functional_paths": [
+      "These inequalities only exclude combinations that fail a basic energy and heat-rejection feasibility screen;",
+      "they are not the score formula and do not prescribe the model topology or controller.",
+      "At every admissible evaluated operating point, regulate the actual cabin-air temperature to cabin_temperature_setpoint, keep the actual component temperature below component_temperature_limit, coordinate the two consumers of the shared refrigerant capacity, and recover after both temporary events."
+    ],
+    "information_paths": [
+      "ambient_temperature, solar_irradiance, cabin_internal_gain, component_heat_load, cabin_temperature_setpoint, component_temperature_limit, refrigerant_capacity, component_heat_step_fraction, heat_step_time, compressor_capacity_loss, capacity_event_time -> F90-XTHERM-01 plant/control path -> thermal_state, thermal_flow, actuator_state, energy_state"
+    ],
+    "modes_and_events": [
+      "Build a coupled vehicle thermal-management model containing finite thermal storage for cabin air, cabin interior mass, a generic power-electronics/e-drive component, and a liquid coolant loop.",
+      "Read ambient_temperature, solar_irradiance, cabin_internal_gain, component_heat_load, cabin_temperature_setpoint, component_temperature_limit, refrigerant_capacity, component_heat_step_fraction, heat_step_time, compressor_capacity_loss, and capacity_event_time from base-workspace variables.",
+      "Let Q_component_event = component_heat_load*(1+component_heat_step_fraction), Q_available_event = refrigerant_capacity*(1-compressor_capacity_loss), and Q_cabin_screen = cabin_internal_gain+4*solar_irradiance."
+    ],
+    "interfaces": [
+      {
+        "name": "ambient_temperature",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "K"
+        ],
+        "range_or_shape": "Read ambient_temperature, solar_irradiance, cabin_internal_gain, component_heat_load, cabin_temperature_setpoint, component_temperature_limit, refrigerant_capacity, component_heat_step_fraction, heat_step_time, compressor_capacity_loss, and capacity_event_time from base-workspace variables. Evaluation uses only joint tuples satisfying all of the following public admissibility conditions: component_temperature_limit-ambient_temperature >= 5 K; Q_available_event >= 0.75*Q_component_event; Q_available_event >= Q_cabin_screen+0.25*Q_component_event; and 8000 W+Q_cabin_screen >= 150 W/K*max(cabin_temperature_setpoint-ambient_temperature,0 K).",
+        "source": "tasks/XTHERM-01/public_spec.json"
+      },
+      {
+        "name": "solar_irradiance",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "W/m^2"
+        ],
+        "range_or_shape": "Read ambient_temperature, solar_irradiance, cabin_internal_gain, component_heat_load, cabin_temperature_setpoint, component_temperature_limit, refrigerant_capacity, component_heat_step_fraction, heat_step_time, compressor_capacity_loss, and capacity_event_time from base-workspace variables. Let Q_component_event = component_heat_load*(1+component_heat_step_fraction), Q_available_event = refrigerant_capacity*(1-compressor_capacity_loss), and Q_cabin_screen = cabin_internal_gain+4*solar_irradiance.",
+        "source": "tasks/XTHERM-01/public_spec.json"
+      },
+      {
+        "name": "cabin_internal_gain",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "W"
+        ],
+        "range_or_shape": "Read ambient_temperature, solar_irradiance, cabin_internal_gain, component_heat_load, cabin_temperature_setpoint, component_temperature_limit, refrigerant_capacity, component_heat_step_fraction, heat_step_time, compressor_capacity_loss, and capacity_event_time from base-workspace variables. Let Q_component_event = component_heat_load*(1+component_heat_step_fraction), Q_available_event = refrigerant_capacity*(1-compressor_capacity_loss), and Q_cabin_screen = cabin_internal_gain+4*solar_irradiance.",
+        "source": "tasks/XTHERM-01/public_spec.json"
+      },
+      {
+        "name": "component_heat_load",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "W"
+        ],
+        "range_or_shape": "Read ambient_temperature, solar_irradiance, cabin_internal_gain, component_heat_load, cabin_temperature_setpoint, component_temperature_limit, refrigerant_capacity, component_heat_step_fraction, heat_step_time, compressor_capacity_loss, and capacity_event_time from base-workspace variables. Let Q_component_event = component_heat_load*(1+component_heat_step_fraction), Q_available_event = refrigerant_capacity*(1-compressor_capacity_loss), and Q_cabin_screen = cabin_internal_gain+4*solar_irradiance.",
+        "source": "tasks/XTHERM-01/public_spec.json"
+      },
+      {
+        "name": "cabin_temperature_setpoint",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "K"
+        ],
+        "range_or_shape": "Read ambient_temperature, solar_irradiance, cabin_internal_gain, component_heat_load, cabin_temperature_setpoint, component_temperature_limit, refrigerant_capacity, component_heat_step_fraction, heat_step_time, compressor_capacity_loss, and capacity_event_time from base-workspace variables. Evaluation uses only joint tuples satisfying all of the following public admissibility conditions: component_temperature_limit-ambient_temperature >= 5 K; Q_available_event >= 0.75*Q_component_event; Q_available_event >= Q_cabin_screen+0.25*Q_component_event; and 8000 W+Q_cabin_screen >= 150 W/K*max(cabin_temperature_setpoint-ambient_temperature,0 K). At every admissible evaluated operating point, regulate the actual cabin-air temperature to cabin_temperature_setpoint, keep the actual component temperature below component_temperature_limit, coordinate the two consumers of the shared refrigerant capacity, and recover after both temporary events.",
+        "source": "tasks/XTHERM-01/public_spec.json"
+      },
+      {
+        "name": "component_temperature_limit",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "K"
+        ],
+        "range_or_shape": "Read ambient_temperature, solar_irradiance, cabin_internal_gain, component_heat_load, cabin_temperature_setpoint, component_temperature_limit, refrigerant_capacity, component_heat_step_fraction, heat_step_time, compressor_capacity_loss, and capacity_event_time from base-workspace variables. Evaluation uses only joint tuples satisfying all of the following public admissibility conditions: component_temperature_limit-ambient_temperature >= 5 K; Q_available_event >= 0.75*Q_component_event; Q_available_event >= Q_cabin_screen+0.25*Q_component_event; and 8000 W+Q_cabin_screen >= 150 W/K*max(cabin_temperature_setpoint-ambient_temperature,0 K). At every admissible evaluated operating point, regulate the actual cabin-air temperature to cabin_temperature_setpoint, keep the actual component temperature below component_temperature_limit, coordinate the two consumers of the shared refrigerant capacity, and recover after both temporary events.",
+        "source": "tasks/XTHERM-01/public_spec.json"
+      },
+      {
+        "name": "refrigerant_capacity",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "W"
+        ],
+        "range_or_shape": "Read ambient_temperature, solar_irradiance, cabin_internal_gain, component_heat_load, cabin_temperature_setpoint, component_temperature_limit, refrigerant_capacity, component_heat_step_fraction, heat_step_time, compressor_capacity_loss, and capacity_event_time from base-workspace variables. Let Q_component_event = component_heat_load*(1+component_heat_step_fraction), Q_available_event = refrigerant_capacity*(1-compressor_capacity_loss), and Q_cabin_screen = cabin_internal_gain+4*solar_irradiance.",
+        "source": "tasks/XTHERM-01/public_spec.json"
+      },
+      {
+        "name": "component_heat_step_fraction",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read ambient_temperature, solar_irradiance, cabin_internal_gain, component_heat_load, cabin_temperature_setpoint, component_temperature_limit, refrigerant_capacity, component_heat_step_fraction, heat_step_time, compressor_capacity_loss, and capacity_event_time from base-workspace variables. Let Q_component_event = component_heat_load*(1+component_heat_step_fraction), Q_available_event = refrigerant_capacity*(1-compressor_capacity_loss), and Q_cabin_screen = cabin_internal_gain+4*solar_irradiance.",
+        "source": "tasks/XTHERM-01/public_spec.json"
+      },
+      {
+        "name": "heat_step_time",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read ambient_temperature, solar_irradiance, cabin_internal_gain, component_heat_load, cabin_temperature_setpoint, component_temperature_limit, refrigerant_capacity, component_heat_step_fraction, heat_step_time, compressor_capacity_loss, and capacity_event_time from base-workspace variables.",
+        "source": "tasks/XTHERM-01/public_spec.json"
+      },
+      {
+        "name": "compressor_capacity_loss",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read ambient_temperature, solar_irradiance, cabin_internal_gain, component_heat_load, cabin_temperature_setpoint, component_temperature_limit, refrigerant_capacity, component_heat_step_fraction, heat_step_time, compressor_capacity_loss, and capacity_event_time from base-workspace variables. Let Q_component_event = component_heat_load*(1+component_heat_step_fraction), Q_available_event = refrigerant_capacity*(1-compressor_capacity_loss), and Q_cabin_screen = cabin_internal_gain+4*solar_irradiance.",
+        "source": "tasks/XTHERM-01/public_spec.json"
+      },
+      {
+        "name": "capacity_event_time",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read ambient_temperature, solar_irradiance, cabin_internal_gain, component_heat_load, cabin_temperature_setpoint, component_temperature_limit, refrigerant_capacity, component_heat_step_fraction, heat_step_time, compressor_capacity_loss, and capacity_event_time from base-workspace variables.",
+        "source": "tasks/XTHERM-01/public_spec.json"
+      },
+      {
+        "name": "thermal_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "K"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named thermal_state, thermal_flow, actuator_state, and energy_state. thermal_state has 4 channels in this order: cabin air, cabin interior mass, cooled component, and coolant temperature, all in K.",
+        "source": "tasks/XTHERM-01/public_spec.json"
+      },
+      {
+        "name": "thermal_flow",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "W"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named thermal_state, thermal_flow, actuator_state, and energy_state. thermal_flow has 11 channels in this order: ambient-to-cabin, ambient-to-interior-mass, interior-mass-to-cabin, cabin gain, PTC-to-cabin, evaporator-from-cabin, component generation, component-to-coolant, chiller-from-coolant, radiator-to-ambient, and condenser-to-ambient heat flow, all in W.",
+        "source": "tasks/XTHERM-01/public_spec.json"
+      },
+      {
+        "name": "actuator_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[1,W,1,1,1,kg/s,1,1,W,W,W,W]"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named thermal_state, thermal_flow, actuator_state, and energy_state. actuator_state has 12 channels in this order: compressor command (1), available cooling capacity (W), evaporator allocation (1), chiller allocation (1), coolant-pump command (1), coolant mass flow (kg/s), cabin-blower command (1), radiator bypass (1), compressor power (W), pump power (W), blower power (W), and PTC power (W).",
+        "source": "tasks/XTHERM-01/public_spec.json"
+      },
+      {
+        "name": "energy_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "kWh"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named thermal_state, thermal_flow, actuator_state, and energy_state. energy_state has 4 channels in this order: cumulative compressor, coolant-pump, cabin-blower, and PTC electrical energy, all in kWh.",
+        "source": "tasks/XTHERM-01/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "they are not the score formula and do not prescribe the model topology or controller.",
+      "At every admissible evaluated operating point, regulate the actual cabin-air temperature to cabin_temperature_setpoint, keep the actual component temperature below component_temperature_limit, coordinate the two consumers of the shared refrigerant capacity, and recover after both temporary events.",
+      "thermal_state has 4 channels in this order: cabin air, cabin interior mass, cooled component, and coolant temperature, all in K."
+    ],
+    "feedback_and_control_causality": [
+      "they are not the score formula and do not prescribe the model topology or controller.",
+      "At every admissible evaluated operating point, regulate the actual cabin-air temperature to cabin_temperature_setpoint, keep the actual component temperature below component_temperature_limit, coordinate the two consumers of the shared refrigerant capacity, and recover after both temporary events."
+    ],
+    "signal_sources": [
+      "ambient_temperature is read from the public MATLAB base-workspace input contract.",
+      "solar_irradiance is read from the public MATLAB base-workspace input contract.",
+      "cabin_internal_gain is read from the public MATLAB base-workspace input contract.",
+      "component_heat_load is read from the public MATLAB base-workspace input contract.",
+      "cabin_temperature_setpoint is read from the public MATLAB base-workspace input contract.",
+      "component_temperature_limit is read from the public MATLAB base-workspace input contract.",
+      "refrigerant_capacity is read from the public MATLAB base-workspace input contract.",
+      "component_heat_step_fraction is read from the public MATLAB base-workspace input contract.",
+      "heat_step_time is read from the public MATLAB base-workspace input contract.",
+      "compressor_capacity_loss is read from the public MATLAB base-workspace input contract.",
+      "capacity_event_time is read from the public MATLAB base-workspace input contract.",
+      "thermal_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "thermal_flow is produced by the implemented plant or controller and logged under the public output contract.",
+      "actuator_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "energy_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "ambient_temperature: Read ambient_temperature, solar_irradiance, cabin_internal_gain, component_heat_load, cabin_temperature_setpoint, component_temperature_limit, refrigerant_capacity, component_heat_step_fraction, heat_step_time, compressor_capacity_loss, and capacity_event_time from base-workspace variables. Evaluation uses only joint tuples satisfying all of the following public admissibility conditions: component_temperature_limit-ambient_temperature >= 5 K; Q_available_event >= 0.75*Q_component_event; Q_available_event >= Q_cabin_screen+0.25*Q_component_event; and 8000 W+Q_cabin_screen >= 150 W/K*max(cabin_temperature_setpoint-ambient_temperature,0 K).",
+      "solar_irradiance: Read ambient_temperature, solar_irradiance, cabin_internal_gain, component_heat_load, cabin_temperature_setpoint, component_temperature_limit, refrigerant_capacity, component_heat_step_fraction, heat_step_time, compressor_capacity_loss, and capacity_event_time from base-workspace variables. Let Q_component_event = component_heat_load*(1+component_heat_step_fraction), Q_available_event = refrigerant_capacity*(1-compressor_capacity_loss), and Q_cabin_screen = cabin_internal_gain+4*solar_irradiance.",
+      "cabin_internal_gain: Read ambient_temperature, solar_irradiance, cabin_internal_gain, component_heat_load, cabin_temperature_setpoint, component_temperature_limit, refrigerant_capacity, component_heat_step_fraction, heat_step_time, compressor_capacity_loss, and capacity_event_time from base-workspace variables. Let Q_component_event = component_heat_load*(1+component_heat_step_fraction), Q_available_event = refrigerant_capacity*(1-compressor_capacity_loss), and Q_cabin_screen = cabin_internal_gain+4*solar_irradiance.",
+      "component_heat_load: Read ambient_temperature, solar_irradiance, cabin_internal_gain, component_heat_load, cabin_temperature_setpoint, component_temperature_limit, refrigerant_capacity, component_heat_step_fraction, heat_step_time, compressor_capacity_loss, and capacity_event_time from base-workspace variables. Let Q_component_event = component_heat_load*(1+component_heat_step_fraction), Q_available_event = refrigerant_capacity*(1-compressor_capacity_loss), and Q_cabin_screen = cabin_internal_gain+4*solar_irradiance.",
+      "cabin_temperature_setpoint: Read ambient_temperature, solar_irradiance, cabin_internal_gain, component_heat_load, cabin_temperature_setpoint, component_temperature_limit, refrigerant_capacity, component_heat_step_fraction, heat_step_time, compressor_capacity_loss, and capacity_event_time from base-workspace variables. Evaluation uses only joint tuples satisfying all of the following public admissibility conditions: component_temperature_limit-ambient_temperature >= 5 K; Q_available_event >= 0.75*Q_component_event; Q_available_event >= Q_cabin_screen+0.25*Q_component_event; and 8000 W+Q_cabin_screen >= 150 W/K*max(cabin_temperature_setpoint-ambient_temperature,0 K). At every admissible evaluated operating point, regulate the actual cabin-air temperature to cabin_temperature_setpoint, keep the actual component temperature below component_temperature_limit, coordinate the two consumers of the shared refrigerant capacity, and recover after both temporary events.",
+      "component_temperature_limit: Read ambient_temperature, solar_irradiance, cabin_internal_gain, component_heat_load, cabin_temperature_setpoint, component_temperature_limit, refrigerant_capacity, component_heat_step_fraction, heat_step_time, compressor_capacity_loss, and capacity_event_time from base-workspace variables. Evaluation uses only joint tuples satisfying all of the following public admissibility conditions: component_temperature_limit-ambient_temperature >= 5 K; Q_available_event >= 0.75*Q_component_event; Q_available_event >= Q_cabin_screen+0.25*Q_component_event; and 8000 W+Q_cabin_screen >= 150 W/K*max(cabin_temperature_setpoint-ambient_temperature,0 K). At every admissible evaluated operating point, regulate the actual cabin-air temperature to cabin_temperature_setpoint, keep the actual component temperature below component_temperature_limit, coordinate the two consumers of the shared refrigerant capacity, and recover after both temporary events.",
+      "refrigerant_capacity: Read ambient_temperature, solar_irradiance, cabin_internal_gain, component_heat_load, cabin_temperature_setpoint, component_temperature_limit, refrigerant_capacity, component_heat_step_fraction, heat_step_time, compressor_capacity_loss, and capacity_event_time from base-workspace variables. Let Q_component_event = component_heat_load*(1+component_heat_step_fraction), Q_available_event = refrigerant_capacity*(1-compressor_capacity_loss), and Q_cabin_screen = cabin_internal_gain+4*solar_irradiance.",
+      "component_heat_step_fraction: Read ambient_temperature, solar_irradiance, cabin_internal_gain, component_heat_load, cabin_temperature_setpoint, component_temperature_limit, refrigerant_capacity, component_heat_step_fraction, heat_step_time, compressor_capacity_loss, and capacity_event_time from base-workspace variables. Let Q_component_event = component_heat_load*(1+component_heat_step_fraction), Q_available_event = refrigerant_capacity*(1-compressor_capacity_loss), and Q_cabin_screen = cabin_internal_gain+4*solar_irradiance."
+    ],
+    "disturbances": [
+      "Read ambient_temperature, solar_irradiance, cabin_internal_gain, component_heat_load, cabin_temperature_setpoint, component_temperature_limit, refrigerant_capacity, component_heat_step_fraction, heat_step_time, compressor_capacity_loss, and capacity_event_time from base-workspace variables.",
+      "Let Q_component_event = component_heat_load*(1+component_heat_step_fraction), Q_available_event = refrigerant_capacity*(1-compressor_capacity_loss), and Q_cabin_screen = cabin_internal_gain+4*solar_irradiance."
+    ],
+    "dynamic_processes": [
+      "Read ambient_temperature, solar_irradiance, cabin_internal_gain, component_heat_load, cabin_temperature_setpoint, component_temperature_limit, refrigerant_capacity, component_heat_step_fraction, heat_step_time, compressor_capacity_loss, and capacity_event_time from base-workspace variables.",
+      "Let Q_component_event = component_heat_load*(1+component_heat_step_fraction), Q_available_event = refrigerant_capacity*(1-compressor_capacity_loss), and Q_cabin_screen = cabin_internal_gain+4*solar_irradiance.",
+      "At every admissible evaluated operating point, regulate the actual cabin-air temperature to cabin_temperature_setpoint, keep the actual component temperature below component_temperature_limit, coordinate the two consumers of the shared refrigerant capacity, and recover after both temporary events."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XTHERM-01: prescribing thermal_state directly would bypass the system path described by: Build a coupled vehicle thermal-management model containing finite thermal storage for cabin air, cabin interior mass, a generic power-electronics/e-drive component, and a liquid coolant loop.",
+      "F90-XTHERM-01: replaying a fixed thermal_state trace would ignore causal variation in ambient_temperature."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XTHERM-01/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XTHERM-01/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XTHERM-01/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

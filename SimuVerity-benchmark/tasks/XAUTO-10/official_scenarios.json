@@ -1,0 +1,156 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XAUTO-10",
+  "scenarios": [
+    {
+      "id": "straight_low_symmetric",
+      "steering_angle_deg": 0.0,
+      "rear_left_torque_nm": 20.0,
+      "rear_right_torque_nm": 20.0
+    },
+    {
+      "id": "straight_high_symmetric",
+      "steering_angle_deg": 0.0,
+      "rear_left_torque_nm": 40.0,
+      "rear_right_torque_nm": 40.0
+    },
+    {
+      "id": "moderate_left_steer",
+      "steering_angle_deg": 3.0,
+      "rear_left_torque_nm": 40.0,
+      "rear_right_torque_nm": 40.0
+    },
+    {
+      "id": "larger_left_steer",
+      "steering_angle_deg": 6.0,
+      "rear_left_torque_nm": 40.0,
+      "rear_right_torque_nm": 40.0
+    },
+    {
+      "id": "small_left_torque_bias",
+      "steering_angle_deg": 3.0,
+      "rear_left_torque_nm": 40.25,
+      "rear_right_torque_nm": 39.75
+    },
+    {
+      "id": "small_right_torque_bias",
+      "steering_angle_deg": 3.0,
+      "rear_left_torque_nm": 39.75,
+      "rear_right_torque_nm": 40.25
+    }
+  ],
+  "contract": {
+    "difficulty": {
+      "score": 10,
+      "maximum": 12,
+      "basis": [
+        "at least five causally coupled subsystems: steering geometry, wheel rotation, tyre slip/friction, load/force coupling, and three-axis body dynamics",
+        "nonlinear combined-slip tyre dynamics and dynamic rear-wheel actuation",
+        "three independently effective intervention axes: steering, symmetric rear torque, and differential rear torque",
+        "six private conditions spanning dynamic, steady/terminal, symmetry, and robustness targets"
+      ]
+    },
+    "simulation": {
+      "duration_seconds": 5.0,
+      "evidence_grid_step_seconds": 0.01
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85,
+      "preferred_reference_score": 90,
+      "normalize_or_rescale": false,
+      "groups": {
+        "A": {
+          "weight": 0.24,
+          "meaning": "vehicle velocity, acceleration, yaw-rate, and yaw-acceleration trajectory accuracy"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "finite complete logs with exact public widths, units, order, and five-second coverage"
+        },
+        "M": {
+          "weight": 0.22,
+          "meaning": "wheel-slip, tyre-force, wheel-actuation, and coupled body-dynamics mechanism fidelity"
+        },
+        "C": {
+          "weight": 0.18,
+          "meaning": "open-loop steering, symmetric-torque, and differential-torque causal intervention fidelity"
+        },
+        "R": {
+          "weight": 0.14,
+          "meaning": "worst private-condition handling and numerical robustness"
+        },
+        "D": {
+          "weight": 0.12,
+          "meaning": "startup, transient shape, and terminal dynamic fidelity"
+        }
+      },
+      "within_group": "task-specific weighted arithmetic aggregation with explicit worst-condition retention",
+      "across_groups": "weighted geometric mean; absent critical mechanism groups may be zero"
+    },
+    "minimum_shortcut_sanity_contract": [
+      "missing required output",
+      "one scenario replayed for every intervention",
+      "zero or constant vehicle motion",
+      "zero or disconnected wheel-slip dynamics",
+      "command channels copied as physical-state outputs",
+      "left/right differential-torque sign ignored",
+      "truncated run"
+    ]
+  },
+  "difficulty": {
+    "score": 10,
+    "maximum": 12,
+    "basis": [
+      "at least five causally coupled subsystems: steering geometry, wheel rotation, tyre slip/friction, load/force coupling, and three-axis body dynamics",
+      "nonlinear combined-slip tyre dynamics and dynamic rear-wheel actuation",
+      "three independently effective intervention axes: steering, symmetric rear torque, and differential rear torque",
+      "six private conditions spanning dynamic, steady/terminal, symmetry, and robustness targets"
+    ]
+  },
+  "simulation": {
+    "duration_seconds": 5.0,
+    "evidence_grid_step_seconds": 0.01
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85,
+    "preferred_reference_score": 90,
+    "normalize_or_rescale": false,
+    "groups": {
+      "A": {
+        "weight": 0.24,
+        "meaning": "vehicle velocity, acceleration, yaw-rate, and yaw-acceleration trajectory accuracy"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "finite complete logs with exact public widths, units, order, and five-second coverage"
+      },
+      "M": {
+        "weight": 0.22,
+        "meaning": "wheel-slip, tyre-force, wheel-actuation, and coupled body-dynamics mechanism fidelity"
+      },
+      "C": {
+        "weight": 0.18,
+        "meaning": "open-loop steering, symmetric-torque, and differential-torque causal intervention fidelity"
+      },
+      "R": {
+        "weight": 0.14,
+        "meaning": "worst private-condition handling and numerical robustness"
+      },
+      "D": {
+        "weight": 0.12,
+        "meaning": "startup, transient shape, and terminal dynamic fidelity"
+      }
+    },
+    "within_group": "task-specific weighted arithmetic aggregation with explicit worst-condition retention",
+    "across_groups": "weighted geometric mean; absent critical mechanism groups may be zero"
+  },
+  "minimum_shortcut_sanity_contract": [
+    "missing required output",
+    "one scenario replayed for every intervention",
+    "zero or constant vehicle motion",
+    "zero or disconnected wheel-slip dynamics",
+    "command channels copied as physical-state outputs",
+    "left/right differential-torque sign ignored",
+    "truncated run"
+  ]
+}

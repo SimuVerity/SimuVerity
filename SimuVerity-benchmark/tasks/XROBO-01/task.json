@@ -1,0 +1,83 @@
+{
+  "schema": "simuverity.task.v1",
+  "release": "simuverity-101-v1",
+  "task_id": "XROBO-01",
+  "ordinal": 69,
+  "collection": "XROBO",
+  "runtime_alias": "XROBO-01",
+  "required_model_file": "cand_XROBO01.slx",
+  "evaluation_policy_id": "simuverity-101-v1:xrobo-01:scoring",
+  "candidate_closure": {
+    "public_input_names": [
+      "initial_forward_speed_mps",
+      "supported_mass_kg",
+      "ground_stiffness_npm",
+      "ground_damping_nspm",
+      "propulsive_torque_nm",
+      "knee_stiffness_nmprad"
+    ],
+    "nominal_provider": "simuverity_public_nominal_inputs"
+  },
+  "public_spec": "public_spec.json",
+  "official_scenarios": "official_scenarios.json",
+  "extractor": {
+    "kind": "matlab_function",
+    "path": "extractor/run.m",
+    "entrypoint": "run",
+    "implementation": "vendor/scripts/formal90/tasks/f90_xrobo01/f90_xrobo01_extract_candidate_evidence.m",
+    "closure_manifest": "extractor/manifest.json"
+  },
+  "scorer": {
+    "kind": "python_function",
+    "path": "scorer.py",
+    "entrypoint": "score",
+    "closure_manifest": "scorer/manifest.json",
+    "offline_only": true
+  },
+  "reference": {
+    "materialization": "bundled",
+    "path": "reference/files",
+    "manifest": "reference/manifest.json",
+    "entrypoint": "reference/files/XROBO01_reference.slx",
+    "expected_valid_scenarios": 11,
+    "score_tolerance": 1e-12,
+    "expected_score": 99.78814422735029,
+    "expected_score_basis": "reference_replay",
+    "scenario_contract": {
+      "expected_ids": [
+        "nominal",
+        "soft_ground_heavy",
+        "stiff_ground_fast",
+        "low_propulsion_heavy",
+        "interior_compliance",
+        "torque_pair_low",
+        "torque_pair_high",
+        "ground_stiffness_pair_low",
+        "ground_stiffness_pair_high",
+        "ground_damping_pair_low",
+        "ground_damping_pair_high"
+      ],
+      "nominal_scenario_id": "nominal",
+      "nominal_materialization": "authoritative_scenario_set"
+    },
+    "score_tolerance_basis": "source_authority_numeric_precision",
+    "runtime_manifest": "reference/runtime_manifest.json",
+    "source_closure": {
+      "path": "reference/files/sm_robot_run_4legs.slx",
+      "role": "upstream_source_closure_only_not_reference_entrypoint"
+    }
+  },
+  "applicable_groups": [
+    "G",
+    "A",
+    "Q",
+    "M",
+    "R",
+    "D"
+  ],
+  "release_license_status": "INCLUDED_THIRD_PARTY_LICENSE",
+  "system_profile": {
+    "path": "system_profile.json",
+    "schema": "simuverity.system-profile.v1"
+  }
+}

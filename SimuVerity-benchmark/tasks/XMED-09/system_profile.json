@@ -1,0 +1,191 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XMED-09",
+  "collection": "XMED",
+  "reference": {
+    "identity_path": "tasks/XMED-09/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/source/CVS_LVAD_2021a.slx",
+    "model_path": "tasks/XMED-09/reference/files/source/CVS_LVAD_2021a.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XMED-09",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a closed-loop lumped-parameter cardiovascular model coupled to a pulsatile left-ventricular assist device (LVAD).",
+    "engineering_objects": [
+      "The cardiovascular plant shall include four cardiac chambers with time-varying elastance, one-way cardiac valves, systemic and pulmonary vascular compartments, and pressure/volume state dynamics.",
+      "The assist device shall include filling and ejection dynamics and shall exchange flow with the cardiovascular plant rather than prescribing an output waveform.",
+      "Each mode must act on the corresponding connected plant or feedback path and may not merely relabel an output."
+    ],
+    "physical_paths": [
+      "Read these scalar mode inputs from the MATLAB base workspace: CardiacConditionMode (0 healthy, 1 impaired; nominal 1), LVADConnected (0 disconnected, 1 connected; nominal 1), AssistControllerMode (0 PID, 1 sliding-mode; nominal 1), BaroreflexEnabled (0 disabled, 1 enabled; nominal 1), ResistanceVariationEnabled (0 constant systemic resistance, 1 dynamic resistance response; nominal 1), and ElastanceVariationEnabled (0 constant ventricular elastance limit, 1 autonomically varying elastance limit; nominal 1).",
+      "Each mode must act on the corresponding connected plant or feedback path and may not merely relabel an output.",
+      "Cardiac-condition, assist-connection, controller-law, baroreflex, resistance-response and elastance-response mode changes must produce their connected causal effects while preserving a valid simulation.",
+      "The cardiovascular plant shall include four cardiac chambers with time-varying elastance, one-way cardiac valves, systemic and pulmonary vascular compartments, and pressure/volume state dynamics."
+    ],
+    "functional_paths": [
+      "nominal 1), AssistControllerMode (0 PID, 1 sliding-mode;",
+      "AssistControlState, four columns [assist-device ejection pressure mmHg, controller effort, integrated absolute pressure error, time-weighted integrated absolute pressure error];",
+      "The nominal case must show pulsatile, bounded chamber dynamics and stable pressure regulation."
+    ],
+    "information_paths": [
+      "CardiacConditionMode, LVADConnected, AssistControllerMode, BaroreflexEnabled, ResistanceVariationEnabled, ElastanceVariationEnabled -> F90-XMED-09 plant/control path -> HemodynamicState, AssistControlState, ChamberState"
+    ],
+    "modes_and_events": [
+      "Build a closed-loop lumped-parameter cardiovascular model coupled to a pulsatile left-ventricular assist device (LVAD).",
+      "Read these scalar mode inputs from the MATLAB base workspace: CardiacConditionMode (0 healthy, 1 impaired;",
+      "nominal 1), AssistControllerMode (0 PID, 1 sliding-mode;"
+    ],
+    "interfaces": [
+      {
+        "name": "CardiacConditionMode",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read these scalar mode inputs from the MATLAB base workspace: CardiacConditionMode (0 healthy, 1 impaired; nominal 1), LVADConnected (0 disconnected, 1 connected; nominal 1), AssistControllerMode (0 PID, 1 sliding-mode; nominal 1), BaroreflexEnabled (0 disabled, 1 enabled; nominal 1), ResistanceVariationEnabled (0 constant systemic resistance, 1 dynamic resistance response; nominal 1), and ElastanceVariationEnabled (0 constant ventricular elastance limit, 1 autonomically varying elastance limit; nominal 1).",
+        "source": "tasks/XMED-09/public_spec.json"
+      },
+      {
+        "name": "LVADConnected",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read these scalar mode inputs from the MATLAB base workspace: CardiacConditionMode (0 healthy, 1 impaired; nominal 1), LVADConnected (0 disconnected, 1 connected; nominal 1), AssistControllerMode (0 PID, 1 sliding-mode; nominal 1), BaroreflexEnabled (0 disabled, 1 enabled; nominal 1), ResistanceVariationEnabled (0 constant systemic resistance, 1 dynamic resistance response; nominal 1), and ElastanceVariationEnabled (0 constant ventricular elastance limit, 1 autonomically varying elastance limit; nominal 1).",
+        "source": "tasks/XMED-09/public_spec.json"
+      },
+      {
+        "name": "AssistControllerMode",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read these scalar mode inputs from the MATLAB base workspace: CardiacConditionMode (0 healthy, 1 impaired; nominal 1), LVADConnected (0 disconnected, 1 connected; nominal 1), AssistControllerMode (0 PID, 1 sliding-mode; nominal 1), BaroreflexEnabled (0 disabled, 1 enabled; nominal 1), ResistanceVariationEnabled (0 constant systemic resistance, 1 dynamic resistance response; nominal 1), and ElastanceVariationEnabled (0 constant ventricular elastance limit, 1 autonomically varying elastance limit; nominal 1).",
+        "source": "tasks/XMED-09/public_spec.json"
+      },
+      {
+        "name": "BaroreflexEnabled",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read these scalar mode inputs from the MATLAB base workspace: CardiacConditionMode (0 healthy, 1 impaired; nominal 1), LVADConnected (0 disconnected, 1 connected; nominal 1), AssistControllerMode (0 PID, 1 sliding-mode; nominal 1), BaroreflexEnabled (0 disabled, 1 enabled; nominal 1), ResistanceVariationEnabled (0 constant systemic resistance, 1 dynamic resistance response; nominal 1), and ElastanceVariationEnabled (0 constant ventricular elastance limit, 1 autonomically varying elastance limit; nominal 1).",
+        "source": "tasks/XMED-09/public_spec.json"
+      },
+      {
+        "name": "ResistanceVariationEnabled",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read these scalar mode inputs from the MATLAB base workspace: CardiacConditionMode (0 healthy, 1 impaired; nominal 1), LVADConnected (0 disconnected, 1 connected; nominal 1), AssistControllerMode (0 PID, 1 sliding-mode; nominal 1), BaroreflexEnabled (0 disabled, 1 enabled; nominal 1), ResistanceVariationEnabled (0 constant systemic resistance, 1 dynamic resistance response; nominal 1), and ElastanceVariationEnabled (0 constant ventricular elastance limit, 1 autonomically varying elastance limit; nominal 1).",
+        "source": "tasks/XMED-09/public_spec.json"
+      },
+      {
+        "name": "ElastanceVariationEnabled",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read these scalar mode inputs from the MATLAB base workspace: CardiacConditionMode (0 healthy, 1 impaired; nominal 1), LVADConnected (0 disconnected, 1 connected; nominal 1), AssistControllerMode (0 PID, 1 sliding-mode; nominal 1), BaroreflexEnabled (0 disabled, 1 enabled; nominal 1), ResistanceVariationEnabled (0 constant systemic resistance, 1 dynamic resistance response; nominal 1), and ElastanceVariationEnabled (0 constant ventricular elastance limit, 1 autonomically varying elastance limit; nominal 1).",
+        "source": "tasks/XMED-09/public_spec.json"
+      },
+      {
+        "name": "HemodynamicState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "mmHg",
+          "mL"
+        ],
+        "range_or_shape": "Record complete, strictly increasing Timeseries from simulation start to finish with these exact names and channel orders: HemodynamicState, four columns [systemic arterial pressure mmHg, aortic pressure mmHg, left-ventricular pressure mmHg, left-ventricular volume mL]; AssistControlState, four columns [assist-device ejection pressure mmHg, controller effort, integrated absolute pressure error, time-weighted integrated absolute pressure error]; ChamberState, four columns [right-atrial pressure mmHg, right-ventricular pressure mmHg, left-atrial pressure mmHg, right-ventricular volume mL].",
+        "source": "tasks/XMED-09/public_spec.json"
+      },
+      {
+        "name": "AssistControlState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "mmHg",
+          "controller_unit",
+          "mmHg_s",
+          "mmHg_s2"
+        ],
+        "range_or_shape": "Record complete, strictly increasing Timeseries from simulation start to finish with these exact names and channel orders: HemodynamicState, four columns [systemic arterial pressure mmHg, aortic pressure mmHg, left-ventricular pressure mmHg, left-ventricular volume mL]; AssistControlState, four columns [assist-device ejection pressure mmHg, controller effort, integrated absolute pressure error, time-weighted integrated absolute pressure error]; ChamberState, four columns [right-atrial pressure mmHg, right-ventricular pressure mmHg, left-atrial pressure mmHg, right-ventricular volume mL].",
+        "source": "tasks/XMED-09/public_spec.json"
+      },
+      {
+        "name": "ChamberState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "mmHg",
+          "mL"
+        ],
+        "range_or_shape": "Record complete, strictly increasing Timeseries from simulation start to finish with these exact names and channel orders: HemodynamicState, four columns [systemic arterial pressure mmHg, aortic pressure mmHg, left-ventricular pressure mmHg, left-ventricular volume mL]; AssistControlState, four columns [assist-device ejection pressure mmHg, controller effort, integrated absolute pressure error, time-weighted integrated absolute pressure error]; ChamberState, four columns [right-atrial pressure mmHg, right-ventricular pressure mmHg, left-atrial pressure mmHg, right-ventricular volume mL].",
+        "source": "tasks/XMED-09/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Use measured systemic arterial pressure in a feedback path that coordinates the assist-device command with a dynamic baroreflex or equivalent autonomic compensation mechanism.",
+      "nominal 1), AssistControllerMode (0 PID, 1 sliding-mode;",
+      "Record complete, strictly increasing Timeseries from simulation start to finish with these exact names and channel orders: HemodynamicState, four columns [systemic arterial pressure mmHg, aortic pressure mmHg, left-ventricular pressure mmHg, left-ventricular volume mL];"
+    ],
+    "feedback_and_control_causality": [
+      "Build a closed-loop lumped-parameter cardiovascular model coupled to a pulsatile left-ventricular assist device (LVAD).",
+      "The cardiovascular plant shall include four cardiac chambers with time-varying elastance, one-way cardiac valves, systemic and pulmonary vascular compartments, and pressure/volume state dynamics.",
+      "The assist device shall include filling and ejection dynamics and shall exchange flow with the cardiovascular plant rather than prescribing an output waveform."
+    ],
+    "signal_sources": [
+      "CardiacConditionMode is read from the public MATLAB base-workspace input contract.",
+      "LVADConnected is read from the public MATLAB base-workspace input contract.",
+      "AssistControllerMode is read from the public MATLAB base-workspace input contract.",
+      "BaroreflexEnabled is read from the public MATLAB base-workspace input contract.",
+      "ResistanceVariationEnabled is read from the public MATLAB base-workspace input contract.",
+      "ElastanceVariationEnabled is read from the public MATLAB base-workspace input contract.",
+      "HemodynamicState is produced by the implemented plant or controller and logged under the public output contract.",
+      "AssistControlState is produced by the implemented plant or controller and logged under the public output contract.",
+      "ChamberState is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "CardiacConditionMode: Read these scalar mode inputs from the MATLAB base workspace: CardiacConditionMode (0 healthy, 1 impaired; nominal 1), LVADConnected (0 disconnected, 1 connected; nominal 1), AssistControllerMode (0 PID, 1 sliding-mode; nominal 1), BaroreflexEnabled (0 disabled, 1 enabled; nominal 1), ResistanceVariationEnabled (0 constant systemic resistance, 1 dynamic resistance response; nominal 1), and ElastanceVariationEnabled (0 constant ventricular elastance limit, 1 autonomically varying elastance limit; nominal 1).",
+      "LVADConnected: Read these scalar mode inputs from the MATLAB base workspace: CardiacConditionMode (0 healthy, 1 impaired; nominal 1), LVADConnected (0 disconnected, 1 connected; nominal 1), AssistControllerMode (0 PID, 1 sliding-mode; nominal 1), BaroreflexEnabled (0 disabled, 1 enabled; nominal 1), ResistanceVariationEnabled (0 constant systemic resistance, 1 dynamic resistance response; nominal 1), and ElastanceVariationEnabled (0 constant ventricular elastance limit, 1 autonomically varying elastance limit; nominal 1).",
+      "AssistControllerMode: Read these scalar mode inputs from the MATLAB base workspace: CardiacConditionMode (0 healthy, 1 impaired; nominal 1), LVADConnected (0 disconnected, 1 connected; nominal 1), AssistControllerMode (0 PID, 1 sliding-mode; nominal 1), BaroreflexEnabled (0 disabled, 1 enabled; nominal 1), ResistanceVariationEnabled (0 constant systemic resistance, 1 dynamic resistance response; nominal 1), and ElastanceVariationEnabled (0 constant ventricular elastance limit, 1 autonomically varying elastance limit; nominal 1).",
+      "BaroreflexEnabled: Read these scalar mode inputs from the MATLAB base workspace: CardiacConditionMode (0 healthy, 1 impaired; nominal 1), LVADConnected (0 disconnected, 1 connected; nominal 1), AssistControllerMode (0 PID, 1 sliding-mode; nominal 1), BaroreflexEnabled (0 disabled, 1 enabled; nominal 1), ResistanceVariationEnabled (0 constant systemic resistance, 1 dynamic resistance response; nominal 1), and ElastanceVariationEnabled (0 constant ventricular elastance limit, 1 autonomically varying elastance limit; nominal 1).",
+      "ResistanceVariationEnabled: Read these scalar mode inputs from the MATLAB base workspace: CardiacConditionMode (0 healthy, 1 impaired; nominal 1), LVADConnected (0 disconnected, 1 connected; nominal 1), AssistControllerMode (0 PID, 1 sliding-mode; nominal 1), BaroreflexEnabled (0 disabled, 1 enabled; nominal 1), ResistanceVariationEnabled (0 constant systemic resistance, 1 dynamic resistance response; nominal 1), and ElastanceVariationEnabled (0 constant ventricular elastance limit, 1 autonomically varying elastance limit; nominal 1).",
+      "ElastanceVariationEnabled: Read these scalar mode inputs from the MATLAB base workspace: CardiacConditionMode (0 healthy, 1 impaired; nominal 1), LVADConnected (0 disconnected, 1 connected; nominal 1), AssistControllerMode (0 PID, 1 sliding-mode; nominal 1), BaroreflexEnabled (0 disabled, 1 enabled; nominal 1), ResistanceVariationEnabled (0 constant systemic resistance, 1 dynamic resistance response; nominal 1), and ElastanceVariationEnabled (0 constant ventricular elastance limit, 1 autonomically varying elastance limit; nominal 1)."
+    ],
+    "disturbances": [
+      "The cardiovascular plant shall include four cardiac chambers with time-varying elastance, one-way cardiac valves, systemic and pulmonary vascular compartments, and pressure/volume state dynamics.",
+      "Read these scalar mode inputs from the MATLAB base workspace: CardiacConditionMode (0 healthy, 1 impaired; nominal 1), LVADConnected (0 disconnected, 1 connected; nominal 1), AssistControllerMode (0 PID, 1 sliding-mode; nominal 1), BaroreflexEnabled (0 disabled, 1 enabled; nominal 1), ResistanceVariationEnabled (0 constant systemic resistance, 1 dynamic resistance response; nominal 1), and ElastanceVariationEnabled (0 constant ventricular elastance limit, 1 autonomically varying elastance limit; nominal 1)."
+    ],
+    "dynamic_processes": [
+      "The cardiovascular plant shall include four cardiac chambers with time-varying elastance, one-way cardiac valves, systemic and pulmonary vascular compartments, and pressure/volume state dynamics.",
+      "The assist device shall include filling and ejection dynamics and shall exchange flow with the cardiovascular plant rather than prescribing an output waveform.",
+      "Use measured systemic arterial pressure in a feedback path that coordinates the assist-device command with a dynamic baroreflex or equivalent autonomic compensation mechanism."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XMED-09: prescribing HemodynamicState directly would bypass the system path described by: Read these scalar mode inputs from the MATLAB base workspace: CardiacConditionMode (0 healthy, 1 impaired; nominal 1), LVADConnected (0 disconnected, 1 connected; nominal 1), AssistControllerMode (0 PID, 1 sliding-mode; nominal 1), BaroreflexEnabled (0 disabled, 1 enabled; nominal 1), ResistanceVariationEnabled (0 constant systemic resistance, 1 dynamic resistance response; nominal 1), and ElastanceVariationEnabled (0 constant ventricular elastance limit, 1 autonomically varying elastance limit; nominal 1).",
+      "F90-XMED-09: replaying a fixed HemodynamicState trace would ignore causal variation in CardiacConditionMode."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XMED-09/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XMED-09/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XMED-09/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

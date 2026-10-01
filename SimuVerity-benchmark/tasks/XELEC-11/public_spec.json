@@ -1,0 +1,8 @@
+{
+  "schema": "simuverity.public-spec.v1",
+  "task_id": "XELEC-11",
+  "collection": "XELEC",
+  "runtime_alias": "XELEC-11",
+  "candidate_filename": "cand_XELEC11.slx",
+  "prompt": "Build a single-phase-input permanent-magnet synchronous motor drive. A single-phase AC source must feed a rectifier and smoothing DC link, which must feed a controllable three-phase inverter supplying a Permanent Magnet Synchronous Machine. Read F_cmd from a base-workspace variable; its nominal value is 50 Hz and its operating range is 45 to 55 Hz. The physically measured inverter output frequency must follow F_cmd, and the physical rotor speed must change in the same direction as the commanded frequency while the three motor-side phases remain balanced. Log complete-run MATLAB Timeseries Wm, Vdc, Vabc and Iabc. Wm must be the physical rotor mechanical speed, Vdc must be the measured DC-link voltage, and Vabc and Iabc must each contain exactly the three physically measured motor-side phases.\n\nSubmission filename contract: create, edit, and save the final self-contained Simulink model as cand_XELEC11.slx in the assigned submission directory; keep the latest usable state at that exact path throughout the run."
+}

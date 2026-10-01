@@ -1,0 +1,180 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XAUTO-04",
+  "scenarios": [
+    {
+      "id": "nominal_uniform",
+      "class": "nominal",
+      "TargetSpeed_mps": 20.0,
+      "BrakeStartDistance_m": 200.0,
+      "RequestedDeceleration_g": 0.35,
+      "RoadFrictionScaleHigh": 0.75,
+      "RoadFrictionScaleLow": 0.3,
+      "UseLowFrictionPatch": false,
+      "LowFrictionPatch_m": [
+        150.0,
+        -100.0,
+        1000.0,
+        200.0
+      ]
+    },
+    {
+      "id": "uniform_low_friction",
+      "class": "uniform_friction_boundary",
+      "TargetSpeed_mps": 16.0,
+      "BrakeStartDistance_m": 170.0,
+      "RequestedDeceleration_g": 0.2,
+      "RoadFrictionScaleHigh": 0.5,
+      "RoadFrictionScaleLow": 0.25,
+      "UseLowFrictionPatch": false,
+      "LowFrictionPatch_m": [
+        150.0,
+        -100.0,
+        1000.0,
+        200.0
+      ]
+    },
+    {
+      "id": "uniform_high_demand",
+      "class": "demand_boundary",
+      "TargetSpeed_mps": 20.0,
+      "BrakeStartDistance_m": 200.0,
+      "RequestedDeceleration_g": 0.5,
+      "RoadFrictionScaleHigh": 0.8,
+      "RoadFrictionScaleLow": 0.3,
+      "UseLowFrictionPatch": false,
+      "LowFrictionPatch_m": [
+        150.0,
+        -100.0,
+        1000.0,
+        200.0
+      ]
+    },
+    {
+      "id": "longitudinal_low_patch",
+      "class": "friction_transition",
+      "TargetSpeed_mps": 20.0,
+      "BrakeStartDistance_m": 200.0,
+      "RequestedDeceleration_g": 0.22,
+      "RoadFrictionScaleHigh": 0.75,
+      "RoadFrictionScaleLow": 0.5,
+      "UseLowFrictionPatch": true,
+      "LowFrictionPatch_m": [
+        150.0,
+        -100.0,
+        1000.0,
+        200.0
+      ]
+    },
+    {
+      "id": "left_right_split_mu",
+      "class": "split_mu_boundary",
+      "TargetSpeed_mps": 20.0,
+      "BrakeStartDistance_m": 200.0,
+      "RequestedDeceleration_g": 0.28,
+      "RoadFrictionScaleHigh": 0.75,
+      "RoadFrictionScaleLow": 0.5,
+      "UseLowFrictionPatch": true,
+      "LowFrictionPatch_m": [
+        150.0,
+        -100.0,
+        1000.0,
+        100.0
+      ]
+    },
+    {
+      "id": "lower_speed_reduced_demand",
+      "class": "operating_boundary",
+      "TargetSpeed_mps": 17.0,
+      "BrakeStartDistance_m": 170.0,
+      "RequestedDeceleration_g": 0.25,
+      "RoadFrictionScaleHigh": 0.6,
+      "RoadFrictionScaleLow": 0.3,
+      "UseLowFrictionPatch": false,
+      "LowFrictionPatch_m": [
+        140.0,
+        -100.0,
+        1000.0,
+        200.0
+      ]
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "start_s": 0,
+      "stop_s": 25,
+      "simulation_mode": "accelerator",
+      "one_persistent_matlab_session": true,
+      "wall_watchdog_s": 1800
+    },
+    "groups": {
+      "G": "load, update, compile, six valid complete-run scenarios, active four-channel ABS and 14DOF vehicle paths, and finite four-wheel evidence",
+      "A": "nominal speed attainment, braking effectiveness, wheel-lock suppression and directional stability",
+      "Q": "longitudinal slip quality, four-channel brake-pressure modulation, force consistency and signal independence",
+      "M": "connected full-vehicle mechanism plus causal response to friction, demand, spatial patch and split-mu inputs",
+      "R": "100 percent worst-case braking, lock suppression and stability across all private scenarios",
+      "D": "brake onset, pressure build-up, ABS modulation and post-command speed recovery dynamics"
+    },
+    "weights": {
+      "A": 0.15,
+      "Q": 0.15,
+      "M": 0.3,
+      "R": 0.25,
+      "D": 0.15
+    },
+    "aggregation": {
+      "within_group": "weighted arithmetic mean of dedicated normalized indicators",
+      "critical_multiscenario_performance": "minimum",
+      "total": "G * 100 * A^0.15 * Q^0.15 * M^0.30 * R^0.25 * D^0.15"
+    },
+    "shortcut_minimum": [
+      "missing or disconnected required output",
+      "vehicle speed copied into all four wheel channels",
+      "identical open-loop pressure under split-mu conditions",
+      "constant pressure with no closed-loop ABS modulation",
+      "nominal output replayed for every private condition",
+      "missing body, suspension, wheel, tire, driveline, brake or feedback mechanism"
+    ],
+    "scoring_policy": {
+      "policy_id": "simuverity-101-v1:xauto-04:scoring"
+    }
+  },
+  "simulation": {
+    "start_s": 0,
+    "stop_s": 25,
+    "simulation_mode": "accelerator",
+    "one_persistent_matlab_session": true,
+    "wall_watchdog_s": 1800
+  },
+  "groups": {
+    "G": "load, update, compile, six valid complete-run scenarios, active four-channel ABS and 14DOF vehicle paths, and finite four-wheel evidence",
+    "A": "nominal speed attainment, braking effectiveness, wheel-lock suppression and directional stability",
+    "Q": "longitudinal slip quality, four-channel brake-pressure modulation, force consistency and signal independence",
+    "M": "connected full-vehicle mechanism plus causal response to friction, demand, spatial patch and split-mu inputs",
+    "R": "100 percent worst-case braking, lock suppression and stability across all private scenarios",
+    "D": "brake onset, pressure build-up, ABS modulation and post-command speed recovery dynamics"
+  },
+  "weights": {
+    "A": 0.15,
+    "Q": 0.15,
+    "M": 0.3,
+    "R": 0.25,
+    "D": 0.15
+  },
+  "aggregation": {
+    "within_group": "weighted arithmetic mean of dedicated normalized indicators",
+    "critical_multiscenario_performance": "minimum",
+    "total": "G * 100 * A^0.15 * Q^0.15 * M^0.30 * R^0.25 * D^0.15"
+  },
+  "shortcut_minimum": [
+    "missing or disconnected required output",
+    "vehicle speed copied into all four wheel channels",
+    "identical open-loop pressure under split-mu conditions",
+    "constant pressure with no closed-loop ABS modulation",
+    "nominal output replayed for every private condition",
+    "missing body, suspension, wheel, tire, driveline, brake or feedback mechanism"
+  ],
+  "scoring_policy": {
+    "policy_id": "simuverity-101-v1:xauto-04:scoring"
+  }
+}

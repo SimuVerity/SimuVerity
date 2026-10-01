@@ -1,0 +1,225 @@
+{
+  "schema": "simuverity.matlab-local-importer-recipe.v1",
+  "task_id": "XMECH-09",
+  "release": "simuverity-101-v1",
+  "matlab_release": "R2025a",
+  "publisher": "The MathWorks, Inc.",
+  "redistributes_mathworks_files": false,
+  "destination": "%LOCALAPPDATA%/SimuVerity/assets/simuverity-101-v1/XMECH-09",
+  "discovery": {
+    "method": "mathworks_open_example_relative_root",
+    "example_id": "sm/BackhoeExample",
+    "source_root": {
+      "selection": "unique_relative_anchor_path",
+      "anchor_path": "Backhoe.slx"
+    },
+    "expected_files": [
+      {
+        "path": "Backhoe.slx",
+        "size_bytes": 242884
+      },
+      {
+        "path": "BackhoeLibrary.slx",
+        "size_bytes": 102988
+      },
+      {
+        "path": "BackhoeSupport/Data/BackhoeInput.mat",
+        "size_bytes": 3030
+      },
+      {
+        "path": "BackhoeSupport/Images/Actuator.png",
+        "size_bytes": 42633
+      },
+      {
+        "path": "BackhoeSupport/Images/Arm.png",
+        "size_bytes": 247100
+      },
+      {
+        "path": "BackhoeSupport/Images/Arms.png",
+        "size_bytes": 73060
+      },
+      {
+        "path": "BackhoeSupport/Images/Attach.png",
+        "size_bytes": 63316
+      },
+      {
+        "path": "BackhoeSupport/Images/AttachmentArms.png",
+        "size_bytes": 55305
+      },
+      {
+        "path": "BackhoeSupport/Images/Backhoe.png",
+        "size_bytes": 103276
+      },
+      {
+        "path": "BackhoeSupport/Images/Bracket.png",
+        "size_bytes": 34909
+      },
+      {
+        "path": "BackhoeSupport/Images/Bracket1.png",
+        "size_bytes": 48933
+      },
+      {
+        "path": "BackhoeSupport/Images/Bracket2.png",
+        "size_bytes": 99759
+      },
+      {
+        "path": "BackhoeSupport/Images/BracketAssembly.png",
+        "size_bytes": 53740
+      },
+      {
+        "path": "BackhoeSupport/Images/Bucket.png",
+        "size_bytes": 94238
+      },
+      {
+        "path": "BackhoeSupport/Images/BucketBack.png",
+        "size_bytes": 68112
+      },
+      {
+        "path": "BackhoeSupport/Images/BucketCase.png",
+        "size_bytes": 51304
+      },
+      {
+        "path": "BackhoeSupport/Images/BucketPins.png",
+        "size_bytes": 35083
+      },
+      {
+        "path": "BackhoeSupport/Images/BucketPlate.png",
+        "size_bytes": 51579
+      },
+      {
+        "path": "BackhoeSupport/Images/BucketSide.png",
+        "size_bytes": 28974
+      },
+      {
+        "path": "BackhoeSupport/Images/BucketTop.png",
+        "size_bytes": 34970
+      },
+      {
+        "path": "BackhoeSupport/Images/CrankArm.png",
+        "size_bytes": 69715
+      },
+      {
+        "path": "BackhoeSupport/Images/CrankAssembly.png",
+        "size_bytes": 42491
+      },
+      {
+        "path": "BackhoeSupport/Images/CrankPin.png",
+        "size_bytes": 16230
+      },
+      {
+        "path": "BackhoeSupport/Images/LowerArm.png",
+        "size_bytes": 113593
+      },
+      {
+        "path": "BackhoeSupport/Images/LowerAssembly.png",
+        "size_bytes": 125159
+      },
+      {
+        "path": "BackhoeSupport/Images/LowerAssemblyActuator.png",
+        "size_bytes": 233889
+      },
+      {
+        "path": "BackhoeSupport/Images/LowerVehicle.png",
+        "size_bytes": 74697
+      },
+      {
+        "path": "BackhoeSupport/Images/MountingAssembly.png",
+        "size_bytes": 197047
+      },
+      {
+        "path": "BackhoeSupport/Images/MountingBase.png",
+        "size_bytes": 28313
+      },
+      {
+        "path": "BackhoeSupport/Images/MountingBaseAssembly.png",
+        "size_bytes": 173387
+      },
+      {
+        "path": "BackhoeSupport/Images/MountingHub.png",
+        "size_bytes": 112015
+      },
+      {
+        "path": "BackhoeSupport/Images/MountingPlates.png",
+        "size_bytes": 91162
+      },
+      {
+        "path": "BackhoeSupport/Images/PIDMask.png",
+        "size_bytes": 17769
+      },
+      {
+        "path": "BackhoeSupport/Images/SupportArm.png",
+        "size_bytes": 48404
+      },
+      {
+        "path": "BackhoeSupport/Images/SupportArms.png",
+        "size_bytes": 100504
+      },
+      {
+        "path": "BackhoeSupport/Images/SupportAssembly.png",
+        "size_bytes": 66545
+      },
+      {
+        "path": "BackhoeSupport/Images/Teeth.png",
+        "size_bytes": 48958
+      },
+      {
+        "path": "BackhoeSupport/Images/UpperArm.png",
+        "size_bytes": 135385
+      },
+      {
+        "path": "BackhoeSupport/Images/UpperAssembly.png",
+        "size_bytes": 62143
+      },
+      {
+        "path": "BackhoeSupport/Images/UpperAssemblyActuator.png",
+        "size_bytes": 189782
+      },
+      {
+        "path": "BackhoeSupport/Images/UpperBar.png",
+        "size_bytes": 49085
+      },
+      {
+        "path": "BackhoeSupport/Images/UpperVehicle.png",
+        "size_bytes": 171490
+      },
+      {
+        "path": "BackhoeSupport/Images/Vehicle.png",
+        "size_bytes": 181165
+      },
+      {
+        "path": "BackhoeSupport/Images/Wheel.png",
+        "size_bytes": 16716
+      }
+    ]
+  },
+  "transform": "transform.m",
+  "validation": {
+    "required": true,
+    "checks": [
+      "load",
+      "update",
+      "compile",
+      "simulate",
+      "all_official_scenarios",
+      "reference_score"
+    ],
+    "on_mismatch": "fail_closed"
+  },
+  "entrypoint": "Backhoe.slx",
+  "expected_valid_scenarios": 6,
+  "score_tolerance": 1e-12,
+  "expected_score": 93.7596653684186,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal",
+      "low_excursion",
+      "high_excursion",
+      "bucket_upper_bias",
+      "base_support_bias",
+      "coordinated_mixed"
+    ],
+    "nominal_scenario_id": "nominal",
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision"
+}

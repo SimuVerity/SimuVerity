@@ -1,0 +1,33 @@
+{
+  "schema": "simuverity.scorer-manifest.v1",
+  "task_id": "XMECH-11",
+  "public_interface": "scorer.py:score",
+  "implementation": "scorer.py",
+  "source_modules": [
+    {
+      "module": "ext_scoring_common",
+      "path": "vendor/scripts/formal90/shared/ext_scoring_common.py"
+    },
+    {
+      "module": "ext_xmech_wheelloader_coord_01_scoring_core",
+      "path": "vendor/scripts/formal90/tasks/ext_xmech_wheelloader_coord_01/ext_xmech_wheelloader_coord_01_scoring_core.py"
+    },
+    {
+      "module": "ext_xmech_wheelloader_coord_01_offline_scorer",
+      "path": "vendor/scripts/formal90/tasks/ext_xmech_wheelloader_coord_01/ext_xmech_wheelloader_coord_01_offline_scorer.py"
+    }
+  ],
+  "final_module": {
+    "module": "ext_xmech_wheelloader_coord_01_offline_scorer",
+    "path": "vendor/scripts/formal90/tasks/ext_xmech_wheelloader_coord_01/ext_xmech_wheelloader_coord_01_offline_scorer.py"
+  },
+  "payload_files": [
+    {
+      "role": "scorer_data",
+      "path": "vendor/scripts/formal90/tasks/ext_xmech_wheelloader_coord_01/wheel_loader_operator_profiles.json"
+    }
+  ],
+  "public_bridge": {
+    "mode": "function"
+  }
+}

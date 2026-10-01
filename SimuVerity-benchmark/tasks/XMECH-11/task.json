@@ -1,0 +1,76 @@
+{
+  "schema": "simuverity.task.v1",
+  "release": "simuverity-101-v1",
+  "task_id": "XMECH-11",
+  "ordinal": 99,
+  "collection": "XMECH",
+  "runtime_alias": "XMECH-11",
+  "required_model_file": "cand_XMECH11.slx",
+  "evaluation_policy_id": "simuverity-101-v1:xmech-11:scoring",
+  "candidate_closure": {
+    "public_input_names": [
+      "wheel_loader_command",
+      "wheel_loader_environment"
+    ],
+    "nominal_provider": "simuverity_public_nominal_inputs"
+  },
+  "public_spec": "public_spec.json",
+  "official_scenarios": "official_scenarios.json",
+  "extractor": {
+    "kind": "matlab_function",
+    "path": "extractor/run.m",
+    "entrypoint": "run",
+    "implementation": "vendor/scripts/formal90/tasks/ext_xmech_wheelloader_coord_01/ext_xmech_wheelloader_coord_01_extract_evidence.m",
+    "closure_manifest": "extractor/manifest.json"
+  },
+  "scorer": {
+    "kind": "python_function",
+    "path": "scorer.py",
+    "entrypoint": "score",
+    "closure_manifest": "scorer/manifest.json",
+    "offline_only": true
+  },
+  "reference": {
+    "materialization": "bundled",
+    "path": "reference/files",
+    "manifest": "reference/manifest.json",
+    "entrypoint": "reference/files/Models/Vehicle/sm_wheel_loader.slx",
+    "expected_valid_scenarios": 6,
+    "score_tolerance": 1e-12,
+    "expected_score": 100.0,
+    "expected_score_basis": "reference_replay",
+    "scenario_contract": {
+      "expected_ids": [
+        "nominal_y_cycle",
+        "low_friction",
+        "heavy_payload",
+        "pump_derate",
+        "low_hrb_precharge",
+        "combined_robust"
+      ],
+      "nominal_scenario_id": null,
+      "nominal_materialization": "authoritative_scenario_set"
+    },
+    "score_tolerance_basis": "source_authority_numeric_precision",
+    "runtime_manifest": "reference/runtime_manifest.json",
+    "clean_replay_setup": {
+      "phase": "before_load",
+      "path": "tasks/XMECH-11/reference/clean_replay_setup/ext_xmech_wheelloader_reference_clean_replay_setup.m",
+      "entrypoint": "ext_xmech_wheelloader_reference_clean_replay_setup"
+    }
+  },
+  "applicable_groups": [
+    "G",
+    "A",
+    "Q",
+    "M",
+    "C",
+    "R",
+    "D"
+  ],
+  "release_license_status": "INCLUDED_THIRD_PARTY_LICENSE",
+  "system_profile": {
+    "path": "system_profile.json",
+    "schema": "simuverity.system-profile.v1"
+  }
+}

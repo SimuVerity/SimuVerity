@@ -1,0 +1,380 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XMECH-01",
+  "scenarios": [
+    {
+      "id": "paired_no_loss",
+      "values": {
+        "left_traction_loss": 0
+      }
+    },
+    {
+      "id": "traction_binding_probe",
+      "values": {
+        "left_track_command": 2.1,
+        "right_track_command": 0.7,
+        "payload_mass": 520,
+        "terrain_friction": 0.48,
+        "grade_angle": 9,
+        "left_traction_loss": 0.58,
+        "traction_event_time": 4.2
+      }
+    },
+    {
+      "id": "traction_binding_probe_no_loss",
+      "values": {
+        "left_track_command": 2.1,
+        "right_track_command": 0.7,
+        "payload_mass": 520,
+        "terrain_friction": 0.48,
+        "grade_angle": 9,
+        "left_traction_loss": 0,
+        "traction_event_time": 4.2
+      }
+    },
+    {
+      "id": "turn_heavy_low_mu",
+      "values": {
+        "left_track_command": 0.88,
+        "right_track_command": 1.78,
+        "payload_mass": 485,
+        "terrain_friction": 0.54,
+        "grade_angle": 6.8,
+        "left_traction_loss": 0.51,
+        "traction_event_time": 4.7
+      }
+    },
+    {
+      "id": "downhill_reverse_turn",
+      "values": {
+        "left_track_command": 1.86,
+        "right_track_command": 0.82,
+        "payload_mass": 205,
+        "terrain_friction": 0.61,
+        "grade_angle": -4.5,
+        "left_traction_loss": 0.43,
+        "traction_event_time": 6.4
+      }
+    },
+    {
+      "id": "fast_loaded_grip",
+      "values": {
+        "left_track_command": 1.91,
+        "right_track_command": 1.73,
+        "payload_mass": 510,
+        "terrain_friction": 0.89,
+        "grade_angle": 4.4,
+        "left_traction_loss": 0.56,
+        "traction_event_time": 5.9
+      }
+    },
+    {
+      "id": "interior_asymmetric",
+      "values": {
+        "left_track_command": 1.14,
+        "right_track_command": 1.62,
+        "payload_mass": 365,
+        "terrain_friction": 0.67,
+        "grade_angle": 1.2,
+        "left_traction_loss": 0.29,
+        "traction_event_time": 4.35
+      }
+    }
+  ],
+  "contract": {
+    "application_domain": "mechanical and multibody ground vehicles",
+    "physical_domains": [
+      "rigid-body planar motion",
+      "track-terrain frictional contact",
+      "electromechanical drive dynamics"
+    ],
+    "modeling_paradigm": "causal coupled dynamics with two driven tracks and finite traction",
+    "capability_types": [
+      "multibody plant construction",
+      "nonlinear contact",
+      "closed-loop drive regulation",
+      "disturbance recovery"
+    ],
+    "difficulty": {
+      "physical_coupling": 2,
+      "nonlinear_or_switching": 2,
+      "dynamic_or_fault": 2,
+      "joint_operating_points": 2,
+      "multichannel_or_units": 1,
+      "functional_and_safety_constraints": 1,
+      "total": 10
+    },
+    "sim": {
+      "step": 0.005,
+      "stop": 12
+    },
+    "public_inputs": [
+      {
+        "name": "left_track_command",
+        "nominal": 1.45,
+        "min": 0.7,
+        "max": 2.1,
+        "unit": "m/s",
+        "meaning": "commanded left-track surface speed"
+      },
+      {
+        "name": "right_track_command",
+        "nominal": 1.45,
+        "min": 0.7,
+        "max": 2.1,
+        "unit": "m/s",
+        "meaning": "commanded right-track surface speed"
+      },
+      {
+        "name": "payload_mass",
+        "nominal": 300,
+        "min": 120,
+        "max": 520,
+        "unit": "kg",
+        "meaning": "payload added to the 720 kg base vehicle"
+      },
+      {
+        "name": "terrain_friction",
+        "nominal": 0.72,
+        "min": 0.48,
+        "max": 0.95,
+        "unit": "1",
+        "meaning": "nominal longitudinal track-terrain friction coefficient"
+      },
+      {
+        "name": "grade_angle",
+        "nominal": 3,
+        "min": -6,
+        "max": 9,
+        "unit": "deg",
+        "meaning": "positive uphill terrain grade"
+      },
+      {
+        "name": "left_traction_loss",
+        "nominal": 0.35,
+        "min": 0,
+        "max": 0.58,
+        "unit": "1",
+        "meaning": "fractional temporary reduction of left-track friction; zero is the no-loss control"
+      },
+      {
+        "name": "traction_event_time",
+        "nominal": 5.4,
+        "min": 4.2,
+        "max": 7,
+        "unit": "s",
+        "meaning": "start time of a 1.2 s left-track traction-loss event"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "vehicle_motion",
+        "channels": 5,
+        "order": "[x position, y position, yaw angle, forward speed, yaw rate]",
+        "unit": "[m,m,rad,m/s,rad/s]",
+        "physical_source": "measured rigid-body motion of the driven vehicle chassis"
+      },
+      {
+        "name": "track_state",
+        "channels": 4,
+        "order": "[left surface speed, right surface speed, left slip ratio, right slip ratio]",
+        "unit": "[m/s,m/s,1,1]",
+        "physical_source": "actual track motion and contact slip using the public symmetric slip definition, not duplicated commands"
+      },
+      {
+        "name": "terrain_contact",
+        "channels": 4,
+        "order": "[left longitudinal force, right longitudinal force, left normal force, right normal force]",
+        "unit": "[N,N,N,N]",
+        "physical_source": "longitudinal interface forces under one fixed global action/reaction convention and positive normal-load magnitudes"
+      },
+      {
+        "name": "drive_actuation",
+        "channels": 2,
+        "order": "[left drive force, right drive force]",
+        "unit": "[N,N]",
+        "physical_source": "bounded generalized drive forces under one fixed global actuator sign convention"
+      }
+    ],
+    "prompt": "Build a differential tracked ground vehicle with a rigid chassis, two independently driven tracks, finite track inertia, and nonlinear frictional contact with the terrain. Drive forces must reach the chassis through the two track-terrain contact paths; directly prescribing chassis motion is not a valid implementation.\n\nRead left_track_command, right_track_command, payload_mass, terrain_friction, grade_angle, left_traction_loss, and traction_event_time from base-workspace variables. Their nominal values are 1.45 m/s, 1.45 m/s, 300 kg, 0.72, 3 deg, 0.35, and 5.4 s. They operate respectively over 0.70--2.10 m/s, 0.70--2.10 m/s, 120--520 kg, 0.48--0.95, -6--9 deg, 0--0.58, and 4.2--7.0 s. The left-track friction coefficient is reduced by left_traction_loss for 1.2 s beginning at traction_event_time; zero means no traction reduction.\n\nAssume a clean MATLAB session in which only the declared public inputs are provided. Use a 720 kg base chassis and a 1.2 m track-centre spacing. A reduced planar longitudinal-yaw chassis model is intended: no independent lateral-velocity state is required, and chassis translational velocity is aligned with the reported yaw direction. Across the declared range, regulate actual left and right track motion, produce the corresponding forward and differential-steering response through physical contact forces, remain dynamically bounded, and recover after the temporary traction loss.\n\nLog Timeseries vehicle_motion, track_state, terrain_contact, and drive_actuation. vehicle_motion must contain [x position in m, y position in m, yaw angle in rad, chassis forward speed in m/s, yaw rate in rad/s]. track_state must contain [actual left and right track surface speeds in m/s, left and right contact slip ratios]. For each side, define slip as (track surface speed minus the local chassis path speed) divided by max(abs(track surface speed),abs(local chassis path speed),0.35 m/s); the local path speeds use the stated 1.2 m track-centre spacing. terrain_contact must contain [left and right longitudinal interface forces in N, left and right positive normal-load magnitudes in N]. The longitudinal channels may consistently report either terrain-on-vehicle forces or their equal-and-opposite vehicle-on-terrain reactions, but one global convention must be used for both sides and every run. drive_actuation must contain the actual bounded left and right generalized drive forces in N under one fixed global actuator sign convention. The logged quantities must come from the causal driven vehicle and contact simulation rather than from commands or precomputed trajectories.\n\nWork directly in the required model file and keep the latest usable state saved at that path throughout the task.",
+    "groups": {
+      "G": "simulation, Timeseries output contract, finite numeric channels and valid timebase",
+      "A": "nominal track-speed, forward-speed and differential-steering accuracy",
+      "Q": "nominal slip, track synchronization and contact-force smoothness",
+      "M": "contact physics, kinematic/passivity consistency, drive activity and track/chassis energy consistency",
+      "C": "causal traction-loss binding in the fixed traction_binding_probe comparison",
+      "R": "worst joint payload, grade, friction and steering operating point",
+      "D": "event response and recovery in the fixed traction_binding_probe loss/no-loss comparison",
+      "weights": {
+        "A": 0.35,
+        "Q": 0.1,
+        "M": 0.25,
+        "C": 0.1,
+        "R": 0.1,
+        "D": 0.1
+      }
+    },
+    "reference_sources": [
+      {
+        "source_type": "original equations",
+        "source_url": "",
+        "license": "original implementation; project license applies",
+        "revision": "simuverity-101-v1",
+        "use": "two finite-inertia tracks, friction-limited contact, public symmetric slip, global action/reaction sign inference and planar chassis momentum balances"
+      },
+      {
+        "source_type": "screened mechanism source",
+        "source_url": "https://github.com/mathworks/Spatial-Contact-Force-Examples-Simscape-Multibody",
+        "license": "MathWorks 3-clause product-restricted license; no model code copied",
+        "revision": "37e356f6de6607cd8335ad3d5fdecf9718fd62b4",
+        "use": "mechanism and parameter-scale audit only: independently driven tracked body with distributed terrain contact"
+      }
+    ]
+  },
+  "application_domain": "mechanical and multibody ground vehicles",
+  "physical_domains": [
+    "rigid-body planar motion",
+    "track-terrain frictional contact",
+    "electromechanical drive dynamics"
+  ],
+  "modeling_paradigm": "causal coupled dynamics with two driven tracks and finite traction",
+  "capability_types": [
+    "multibody plant construction",
+    "nonlinear contact",
+    "closed-loop drive regulation",
+    "disturbance recovery"
+  ],
+  "difficulty": {
+    "physical_coupling": 2,
+    "nonlinear_or_switching": 2,
+    "dynamic_or_fault": 2,
+    "joint_operating_points": 2,
+    "multichannel_or_units": 1,
+    "functional_and_safety_constraints": 1,
+    "total": 10
+  },
+  "sim": {
+    "step": 0.005,
+    "stop": 12
+  },
+  "public_inputs": [
+    {
+      "name": "left_track_command",
+      "nominal": 1.45,
+      "min": 0.7,
+      "max": 2.1,
+      "unit": "m/s",
+      "meaning": "commanded left-track surface speed"
+    },
+    {
+      "name": "right_track_command",
+      "nominal": 1.45,
+      "min": 0.7,
+      "max": 2.1,
+      "unit": "m/s",
+      "meaning": "commanded right-track surface speed"
+    },
+    {
+      "name": "payload_mass",
+      "nominal": 300,
+      "min": 120,
+      "max": 520,
+      "unit": "kg",
+      "meaning": "payload added to the 720 kg base vehicle"
+    },
+    {
+      "name": "terrain_friction",
+      "nominal": 0.72,
+      "min": 0.48,
+      "max": 0.95,
+      "unit": "1",
+      "meaning": "nominal longitudinal track-terrain friction coefficient"
+    },
+    {
+      "name": "grade_angle",
+      "nominal": 3,
+      "min": -6,
+      "max": 9,
+      "unit": "deg",
+      "meaning": "positive uphill terrain grade"
+    },
+    {
+      "name": "left_traction_loss",
+      "nominal": 0.35,
+      "min": 0,
+      "max": 0.58,
+      "unit": "1",
+      "meaning": "fractional temporary reduction of left-track friction; zero is the no-loss control"
+    },
+    {
+      "name": "traction_event_time",
+      "nominal": 5.4,
+      "min": 4.2,
+      "max": 7,
+      "unit": "s",
+      "meaning": "start time of a 1.2 s left-track traction-loss event"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "vehicle_motion",
+      "channels": 5,
+      "order": "[x position, y position, yaw angle, forward speed, yaw rate]",
+      "unit": "[m,m,rad,m/s,rad/s]",
+      "physical_source": "measured rigid-body motion of the driven vehicle chassis"
+    },
+    {
+      "name": "track_state",
+      "channels": 4,
+      "order": "[left surface speed, right surface speed, left slip ratio, right slip ratio]",
+      "unit": "[m/s,m/s,1,1]",
+      "physical_source": "actual track motion and contact slip using the public symmetric slip definition, not duplicated commands"
+    },
+    {
+      "name": "terrain_contact",
+      "channels": 4,
+      "order": "[left longitudinal force, right longitudinal force, left normal force, right normal force]",
+      "unit": "[N,N,N,N]",
+      "physical_source": "longitudinal interface forces under one fixed global action/reaction convention and positive normal-load magnitudes"
+    },
+    {
+      "name": "drive_actuation",
+      "channels": 2,
+      "order": "[left drive force, right drive force]",
+      "unit": "[N,N]",
+      "physical_source": "bounded generalized drive forces under one fixed global actuator sign convention"
+    }
+  ],
+  "prompt": "Build a differential tracked ground vehicle with a rigid chassis, two independently driven tracks, finite track inertia, and nonlinear frictional contact with the terrain. Drive forces must reach the chassis through the two track-terrain contact paths; directly prescribing chassis motion is not a valid implementation.\n\nRead left_track_command, right_track_command, payload_mass, terrain_friction, grade_angle, left_traction_loss, and traction_event_time from base-workspace variables. Their nominal values are 1.45 m/s, 1.45 m/s, 300 kg, 0.72, 3 deg, 0.35, and 5.4 s. They operate respectively over 0.70--2.10 m/s, 0.70--2.10 m/s, 120--520 kg, 0.48--0.95, -6--9 deg, 0--0.58, and 4.2--7.0 s. The left-track friction coefficient is reduced by left_traction_loss for 1.2 s beginning at traction_event_time; zero means no traction reduction.\n\nAssume a clean MATLAB session in which only the declared public inputs are provided. Use a 720 kg base chassis and a 1.2 m track-centre spacing. A reduced planar longitudinal-yaw chassis model is intended: no independent lateral-velocity state is required, and chassis translational velocity is aligned with the reported yaw direction. Across the declared range, regulate actual left and right track motion, produce the corresponding forward and differential-steering response through physical contact forces, remain dynamically bounded, and recover after the temporary traction loss.\n\nLog Timeseries vehicle_motion, track_state, terrain_contact, and drive_actuation. vehicle_motion must contain [x position in m, y position in m, yaw angle in rad, chassis forward speed in m/s, yaw rate in rad/s]. track_state must contain [actual left and right track surface speeds in m/s, left and right contact slip ratios]. For each side, define slip as (track surface speed minus the local chassis path speed) divided by max(abs(track surface speed),abs(local chassis path speed),0.35 m/s); the local path speeds use the stated 1.2 m track-centre spacing. terrain_contact must contain [left and right longitudinal interface forces in N, left and right positive normal-load magnitudes in N]. The longitudinal channels may consistently report either terrain-on-vehicle forces or their equal-and-opposite vehicle-on-terrain reactions, but one global convention must be used for both sides and every run. drive_actuation must contain the actual bounded left and right generalized drive forces in N under one fixed global actuator sign convention. The logged quantities must come from the causal driven vehicle and contact simulation rather than from commands or precomputed trajectories.\n\nWork directly in the required model file and keep the latest usable state saved at that path throughout the task.",
+  "groups": {
+    "G": "simulation, Timeseries output contract, finite numeric channels and valid timebase",
+    "A": "nominal track-speed, forward-speed and differential-steering accuracy",
+    "Q": "nominal slip, track synchronization and contact-force smoothness",
+    "M": "force-motion consistency, normal-load consistency and observable traction event",
+    "R": "worst joint payload, grade, friction and steering operating point",
+    "D": "true in-run traction-loss response and post-event recovery",
+    "weights": {
+      "A": 0.2,
+      "Q": 0.1,
+      "M": 0.3,
+      "R": 0.2,
+      "D": 0.2
+    }
+  },
+  "reference_sources": [
+    {
+      "source_type": "original equations",
+      "source_url": "",
+      "license": "original implementation; project license applies",
+      "revision": "simuverity-101-v1",
+      "use": "two finite-inertia tracks, friction-limited contact, public symmetric slip, global action/reaction sign inference and planar chassis momentum balances"
+    },
+    {
+      "source_type": "screened mechanism source",
+      "source_url": "https://github.com/mathworks/Spatial-Contact-Force-Examples-Simscape-Multibody",
+      "license": "MathWorks 3-clause product-restricted license; no model code copied",
+      "revision": "37e356f6de6607cd8335ad3d5fdecf9718fd62b4",
+      "use": "mechanism and parameter-scale audit only: independently driven tracked body with distributed terrain contact"
+    }
+  ]
+}

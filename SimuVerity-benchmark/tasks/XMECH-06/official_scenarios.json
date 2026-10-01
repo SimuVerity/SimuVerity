@@ -1,0 +1,154 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XMECH-06",
+  "scenarios": [
+    {
+      "id": "nominal_skidpad",
+      "class": "nominal_closed_loop",
+      "EventMode": "Skidpad",
+      "SpeedScale": 1.0,
+      "RoadFrictionScale": 1.0,
+      "PayloadMass_kg": 0.0,
+      "stop_time_s": 12.0
+    },
+    {
+      "id": "high_speed_skidpad",
+      "class": "speed_boundary",
+      "EventMode": "Skidpad",
+      "SpeedScale": 1.1,
+      "RoadFrictionScale": 1.0,
+      "PayloadMass_kg": 0.0,
+      "stop_time_s": 12.0
+    },
+    {
+      "id": "low_friction_skidpad",
+      "class": "friction_boundary",
+      "EventMode": "Skidpad",
+      "SpeedScale": 1.0,
+      "RoadFrictionScale": 0.8,
+      "PayloadMass_kg": 0.0,
+      "stop_time_s": 12.0
+    },
+    {
+      "id": "payload_skidpad",
+      "class": "payload_boundary",
+      "EventMode": "Skidpad",
+      "SpeedScale": 1.0,
+      "RoadFrictionScale": 1.0,
+      "PayloadMass_kg": 20.0,
+      "stop_time_s": 12.0
+    },
+    {
+      "id": "combined_skidpad",
+      "class": "joint_boundary",
+      "EventMode": "Skidpad",
+      "SpeedScale": 1.08,
+      "RoadFrictionScale": 0.85,
+      "PayloadMass_kg": 15.0,
+      "stop_time_s": 12.0
+    },
+    {
+      "id": "acceleration_braking",
+      "class": "longitudinal_dynamic",
+      "EventMode": "WOT_Braking",
+      "SpeedScale": 1.0,
+      "RoadFrictionScale": 1.0,
+      "PayloadMass_kg": 0.0,
+      "stop_time_s": 15.0
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "one_isolated_persistent_matlab_session": true,
+      "evidence_then_offline_scoring": true,
+      "reference_adapter": "Use the source's existing event, vehicle, road-friction and native logsout interfaces; do not save the source model."
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "preferred_reference_target_raw": 90.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.2,
+          "meaning": "nominal skidpad speed and heading tracking"
+        },
+        "Q": {
+          "weight": 0.15,
+          "meaning": "body attitude, tire-slip, force and suspension quality"
+        },
+        "M": {
+          "weight": 0.3,
+          "meaning": "connected four-wheel contact, suspension and force-attitude causality"
+        },
+        "R": {
+          "weight": 0.2,
+          "meaning": "worst private operating condition"
+        },
+        "D": {
+          "weight": 0.15,
+          "meaning": "lateral load transfer and acceleration-braking dynamics"
+        }
+      },
+      "within_group": "dedicated weighted arithmetic mean",
+      "across_groups": "weighted geometric mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum",
+      "policy_id": "simuverity-101-v1:xmech-06:scoring"
+    },
+    "shortcut_sanity_contract": [
+      "qualification_or_required_output_missing",
+      "trajectory_only_or_kinematic_vehicle",
+      "single_track_or_copied_four-wheel_forces",
+      "fixed_body_attitude",
+      "inactive_suspension",
+      "tire forces unrelated to chassis acceleration",
+      "private speed_friction_payload_or_event_inputs_ignored"
+    ]
+  },
+  "simulation": {
+    "one_isolated_persistent_matlab_session": true,
+    "evidence_then_offline_scoring": true,
+    "reference_adapter": "Use the source's existing event, vehicle, road-friction and native logsout interfaces; do not save the source model."
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "preferred_reference_target_raw": 90.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.2,
+        "meaning": "nominal skidpad speed and heading tracking"
+      },
+      "Q": {
+        "weight": 0.15,
+        "meaning": "body attitude, tire-slip, force and suspension quality"
+      },
+      "M": {
+        "weight": 0.3,
+        "meaning": "connected four-wheel contact, suspension and force-attitude causality"
+      },
+      "R": {
+        "weight": 0.2,
+        "meaning": "worst private operating condition"
+      },
+      "D": {
+        "weight": 0.15,
+        "meaning": "lateral load transfer and acceleration-braking dynamics"
+      }
+    },
+    "within_group": "dedicated weighted arithmetic mean",
+    "across_groups": "weighted geometric mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum",
+    "policy_id": "simuverity-101-v1:xmech-06:scoring"
+  },
+  "shortcut_sanity_contract": [
+    "qualification_or_required_output_missing",
+    "trajectory_only_or_kinematic_vehicle",
+    "single_track_or_copied_four-wheel_forces",
+    "fixed_body_attitude",
+    "inactive_suspension",
+    "tire forces unrelated to chassis acceleration",
+    "private speed_friction_payload_or_event_inputs_ignored"
+  ]
+}

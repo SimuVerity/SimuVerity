@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simuverity.org/schemas/score-result.schema.json",
+  "title": "SimuVerity offline score result",
+  "type": "object",
+  "required": ["status", "protocol_zero", "total", "groups", "metrics", "scenarios", "failure_reasons"],
+  "properties": {
+    "status": {"type": "string"},
+    "protocol_zero": {"type": "boolean"},
+    "total": {"type": "number", "minimum": 0, "maximum": 100},
+    "groups": {
+      "type": "object",
+      "propertyNames": {"enum": ["G", "A", "Q", "M", "C", "R", "D"]},
+      "additionalProperties": {"type": "number"}
+    },
+    "metrics": {"type": "object"},
+    "scenarios": {"type": "array", "items": {"type": "object"}},
+    "failure_reasons": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}
+

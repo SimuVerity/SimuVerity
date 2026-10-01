@@ -1,0 +1,39 @@
+{
+  "schema": "simuverity.scorer-manifest.v1",
+  "task_id": "XROBO-03",
+  "public_interface": "scorer.py:score",
+  "implementation": "scorer.py",
+  "source_modules": [
+    {
+      "module": "f90_xrobo03_structure_scoring",
+      "path": "vendor/scripts/formal90/tasks/f90_xrobo03/f90_xrobo03_structure_scoring.py"
+    },
+    {
+      "module": "f90_xrobo03_metric_identity",
+      "path": "vendor/scripts/formal90/tasks/f90_xrobo03/f90_xrobo03_metric_identity.py"
+    },
+    {
+      "module": "f90_xrobo03_group_aggregation",
+      "path": "vendor/scripts/formal90/tasks/f90_xrobo03/f90_xrobo03_group_aggregation.py"
+    },
+    {
+      "module": "f90_xrobo03_scoring",
+      "path": "vendor/scripts/formal90/tasks/f90_xrobo03/f90_xrobo03_scoring.py"
+    }
+  ],
+  "final_module": {
+    "module": "f90_xrobo03_scoring",
+    "path": "vendor/scripts/formal90/tasks/f90_xrobo03/f90_xrobo03_scoring.py"
+  },
+  "payload_files": [],
+  "public_bridge": {
+    "mode": "cli",
+    "argv": [
+      "--evidence",
+      "{evidence}",
+      "--output",
+      "{output}"
+    ],
+    "result": "file"
+  }
+}

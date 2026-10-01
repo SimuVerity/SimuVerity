@@ -1,0 +1,44 @@
+component SpringLUT
+% Translational Spring (Lookup Table)
+% The block represents an ideal mechanical linear spring.
+%
+% Connections R and C are mechanical translational conserving ports. 
+% The block positive direction is from port R to port C. This means that
+% the force is positive if it acts in the direction from R to C.
+
+% Copyright 2005-2025 The MathWorks, Inc.
+
+  nodes
+    r = foundation.mechanical.translational.translational; % r:right
+    c = foundation.mechanical.translational.translational; % c:left
+  end
+  parameters
+    xd = {[-0.5 -0.4 0 0.4 0.5], 'mm'}; % Displacement
+    kd = {[100 10 10 10 100], 'N/m'};   % Spring Stiffness
+  end
+  variables
+    f = { 0, 'N'   }; % Force through variable
+    x = { 0, 'm'   }; % Displacement
+    v = { 0, 'm/s' }; % Velocity across variable
+    k = { 0, 'N/m' }; % Spring Stiffness
+  end
+  function setup
+    if any(kd<0)
+        pm_error('simscape:GreaterThanOrEqualToZero','Spring Stiffness')
+    end
+  end
+
+  branches
+    f : r.f -> c.f; % Through variable f from node r to node c
+  end
+
+  equations
+    v == r.v - c.v; % Across variable v from r to c
+
+    k == tablelookup(xd,kd,x,...
+        interpolation=linear,...
+        extrapolation=nearest);
+    f == k*x;    % Force equation
+    v == x.der;  % Displacement equation
+  end
+end

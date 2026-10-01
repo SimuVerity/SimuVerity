@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:d="http://www.mathworks.com/blockgraphics" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg" width="350" height="350" d:options="ScalingOnResizeMax:2.0;Rotate:Off;Resize:FitToBlock;">
+	<g id="right_up" title="part_0">
+		<path id="path" class="path" style="stroke:#edb120;stroke-width: 3;" d=" M 32.53,241.55 Q 24.85,251.16 24.85,259.48 Q 24.85,267.81 32.53,274.86"/>
+		<path id="path_2" class="path" style="stroke:#edb120;stroke-width: 3;" d=" M 32.53,274.86 Q 24.85,284.47 24.85,292.79 Q 24.85,301.12 32.53,308.17"/>
+		<path id="path_3" class="path" style="stroke:#edb120;stroke-width: 3;" d=" M 32.53,241.55 Q 40.21,251.16 40.21,259.48 Q 40.21,267.81 32.53,274.86"/>
+		<path id="path_4" class="path" style="stroke:#edb120;stroke-width: 3;" transform="matrix(0,1,-1,0,314.3267345428,-271.0225086212)" d=" M 296.5,4.99 Q 288.81,14.6 288.81,22.92 Q 288.81,31.25 296.5,38.3"/>
+		<path id="path_5" class="path" style="stroke:#edb120;stroke-width: 3;" transform="matrix(0,1,-1,0,280.9982452393,-237.7041473389)" d=" M 263.17,4.97 Q 255.49,14.58 255.49,22.9 Q 255.49,31.23 263.17,38.28"/>
+		<path id="path_6" class="path" style="stroke:#edb120;stroke-width: 3;" transform="matrix(0,1,-1,0,321.9937896729,-263.3413543701)" d=" M 288.81,12.64 Q 296.5,22.25 296.5,30.57 Q 296.5,38.9 288.81,45.95"/>
+		<path id="path_50" class="path" style="stroke:#edb120;stroke-width: 3;" d=" M 32.53,241.55 Q 151.74,245.19 204.27,191.16 Q 256.81,137.14 242.68,25.45"/>
+		<path id="path_94" class="path" style="stroke:#edb120;stroke-width: 3;" d=" M 32.53,308.17 Q 190.15,312.23 259.35,241.55 Q 328.55,170.87 309.31,25.46"/>
+		<line id="line" class="line" style="stroke:#ff0000;stroke-width: 4;" x1="171.91" y1="291.52" x2="171.91" y2="341.14"/>
+	</g>
+</svg>

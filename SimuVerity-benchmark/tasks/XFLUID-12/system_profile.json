@@ -1,0 +1,133 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XFLUID-12",
+  "collection": "XFLUID",
+  "reference": {
+    "identity_path": "tasks/XFLUID-12/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/repo/examples/RM3/RM3.slx",
+    "model_path": "tasks/XFLUID-12/reference/files/repo/examples/RM3/RM3.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id EXT-XFLUID-WECSIM-RM3",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a causal two-body axisymmetric point-absorber wave-energy converter.",
+    "engineering_objects": [
+      "Build a causal two-body axisymmetric point-absorber wave-energy converter.",
+      "A surface float and a submerged spar/plate must each have rigid-body heave dynamics and physically connected hydrodynamic excitation, radiation, added-mass and hydrostatic-restoring effects.",
+      "Couple the two bodies through a translational power-take-off (PTO) so that its force acts on their relative heave motion and its absorbed power is calculated from that same force/velocity path."
+    ],
+    "physical_paths": [
+      "A surface float and a submerged spar/plate must each have rigid-body heave dynamics and physically connected hydrodynamic excitation, radiation, added-mass and hydrostatic-restoring effects.",
+      "Couple the two bodies through a translational power-take-off (PTO) so that its force acts on their relative heave motion and its absorbed power is calculated from that same force/velocity path.",
+      "Build a causal two-body axisymmetric point-absorber wave-energy converter."
+    ],
+    "functional_paths": [
+      "Build a causal two-body axisymmetric point-absorber wave-energy converter."
+    ],
+    "information_paths": [
+      "rm3_command -> EXT-XFLUID-WECSIM-RM3 plant/control path -> rm3_body_response, rm3_pto_response, rm3_hydrodynamic_response"
+    ],
+    "modes_and_events": [
+      "EXT-XFLUID-WECSIM-RM3 startup and continuous operation follow the current public task contract."
+    ],
+    "interfaces": [
+      {
+        "name": "rm3_command",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m",
+          "s",
+          "N*s/m"
+        ],
+        "range_or_shape": "Read rm3_command from the MATLAB base workspace as a scalar struct with exactly these public fields: wave_height_m, a real scalar from 1.5 to 4.0 m; wave_period_s, a real scalar from 6.5 to 10.0 s; and pto_damping_n_s_m, a real scalar from 600000 to 2000000 N*s/m.",
+        "source": "tasks/XFLUID-12/public_spec.json"
+      },
+      {
+        "name": "rm3_body_response",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m",
+          "m/s"
+        ],
+        "range_or_shape": "rm3_body_response has [float_heave_m, float_heave_velocity_m_s, spar_heave_m, spar_heave_velocity_m_s] in [m, m/s, m, m/s].",
+        "source": "tasks/XFLUID-12/public_spec.json"
+      },
+      {
+        "name": "rm3_pto_response",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m",
+          "m/s",
+          "N",
+          "W"
+        ],
+        "range_or_shape": "rm3_pto_response has [relative_heave_m, relative_heave_velocity_m_s, pto_force_n, absorbed_power_w] in [m, m/s, N, W].",
+        "source": "tasks/XFLUID-12/public_spec.json"
+      },
+      {
+        "name": "rm3_hydrodynamic_response",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m",
+          "N"
+        ],
+        "range_or_shape": "rm3_hydrodynamic_response has [wave_elevation_m, float_excitation_force_z_n, float_radiation_force_z_n, float_restoring_force_z_n] in [m, N, N, N].",
+        "source": "tasks/XFLUID-12/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a causal two-body axisymmetric point-absorber wave-energy converter."
+    ],
+    "feedback_and_control_causality": [
+      "Build a causal two-body axisymmetric point-absorber wave-energy converter."
+    ],
+    "signal_sources": [
+      "rm3_command is read from the public MATLAB base-workspace input contract.",
+      "rm3_body_response is produced by the implemented plant or controller and logged under the public output contract.",
+      "rm3_pto_response is produced by the implemented plant or controller and logged under the public output contract.",
+      "rm3_hydrodynamic_response is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "rm3_command: Read rm3_command from the MATLAB base workspace as a scalar struct with exactly these public fields: wave_height_m, a real scalar from 1.5 to 4.0 m; wave_period_s, a real scalar from 6.5 to 10.0 s; and pto_damping_n_s_m, a real scalar from 600000 to 2000000 N*s/m."
+    ],
+    "disturbances": [
+      "EXT-XFLUID-WECSIM-RM3 operating variation is supplied through rm3_command."
+    ],
+    "dynamic_processes": [
+      "A surface float and a submerged spar/plate must each have rigid-body heave dynamics and physically connected hydrodynamic excitation, radiation, added-mass and hydrostatic-restoring effects."
+    ],
+    "task_specific_shortcuts": [
+      "EXT-XFLUID-WECSIM-RM3: prescribing rm3_body_response directly would bypass the system path described by: A surface float and a submerged spar/plate must each have rigid-body heave dynamics and physically connected hydrodynamic excitation, radiation, added-mass and hydrostatic-restoring effects.",
+      "EXT-XFLUID-WECSIM-RM3: replaying a fixed rm3_body_response trace would ignore causal variation in rm3_command."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XFLUID-12/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XFLUID-12/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XFLUID-12/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

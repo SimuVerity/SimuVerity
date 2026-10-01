@@ -1,0 +1,15 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XMECH-07",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Gripper_2Belts/Gripper_2Belts.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 981,
+  "retained_bytes": 17563315,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ]
+}

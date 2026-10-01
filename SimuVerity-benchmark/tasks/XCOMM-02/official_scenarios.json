@@ -1,0 +1,175 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XCOMM-02",
+  "scenarios": [
+    {
+      "id": "nominal",
+      "class": "nominal",
+      "seed": 4102,
+      "target_angle_deg": 40,
+      "interferer_angle_deg": -30,
+      "target_gain": 1.0,
+      "interferer_gain": 1.0,
+      "noise_gain": 0.1,
+      "DiagonalLoading": 0.005,
+      "invalid_intervals_1based_inclusive": []
+    },
+    {
+      "id": "mirrored",
+      "class": "angular_boundary",
+      "seed": 4103,
+      "target_angle_deg": -35,
+      "interferer_angle_deg": 30,
+      "target_gain": 1.0,
+      "interferer_gain": 1.0,
+      "noise_gain": 0.1,
+      "DiagonalLoading": 0.005,
+      "invalid_intervals_1based_inclusive": []
+    },
+    {
+      "id": "close_strong_interferer",
+      "class": "separation_boundary",
+      "seed": 4104,
+      "target_angle_deg": 10,
+      "interferer_angle_deg": 25,
+      "target_gain": 1.0,
+      "interferer_gain": 2.0,
+      "noise_gain": 0.08,
+      "DiagonalLoading": 0.005,
+      "invalid_intervals_1based_inclusive": []
+    },
+    {
+      "id": "low_snr_edge",
+      "class": "noise_boundary",
+      "seed": 4105,
+      "target_angle_deg": 50,
+      "interferer_angle_deg": -45,
+      "target_gain": 1.0,
+      "interferer_gain": 1.5,
+      "noise_gain": 0.2,
+      "DiagonalLoading": 0.005,
+      "invalid_intervals_1based_inclusive": []
+    },
+    {
+      "id": "loading_robustness",
+      "class": "loading_gain_and_valid_gap_boundary",
+      "seed": 4106,
+      "target_angle_deg": -40,
+      "interferer_angle_deg": 5,
+      "target_gain": 0.6,
+      "interferer_gain": 1.5,
+      "noise_gain": 0.12,
+      "DiagonalLoading": 0.015,
+      "invalid_intervals_1based_inclusive": [
+        [
+          2001,
+          2400
+        ],
+        [
+          6001,
+          6500
+        ],
+        [
+          10001,
+          10500
+        ]
+      ]
+    }
+  ],
+  "contract": {
+    "scoring_policy": {
+      "policy_id": "simuverity-101-v1:xcomm-02:scoring"
+    },
+    "simulation": {
+      "sample_count": 15000,
+      "covariance_window_valid_samples": 4096,
+      "reference_pipeline_delay_samples": 646,
+      "reference_stop_tick": 15646,
+      "one_persistent_matlab_session": true,
+      "wall_watchdog_s": 1800
+    },
+    "reference_adapter": {
+      "policy": "execute the unchanged model_init once to establish all source dependencies, clear the loaded model InitFcn only in memory, inject each private input set into the original top-level source variables, and close without saving",
+      "substantive_reference_modifications": 0,
+      "model_must_not_be_saved": true
+    },
+    "groups": {
+      "G": "load, update, compile, all five simulations, complete finite evidence, correct four-channel streaming and valid contracts, and a connected covariance-to-weight-to-output path",
+      "A": "desired-signal preservation, distortionless steering response, and demodulated QPSK quality",
+      "Q": "interferer suppression, output noise gain, fixed-point agreement, bounded values, and absence of saturation",
+      "M": "measured-input covariance, diagonal loading, matrix-solve residual, normalization identity, and weights causally driving the beamformed output",
+      "R": "100 percent worst-case critical performance over all five required scenarios",
+      "D": "first-valid latency, covariance/weight update cadence, and convergence or stability across successive adaptation windows"
+    },
+    "weights": {
+      "A": 0.15,
+      "Q": 0.15,
+      "M": 0.3,
+      "R": 0.2,
+      "D": 0.2
+    },
+    "aggregation": {
+      "within_group": "weighted arithmetic mean of dedicated normalized indicators",
+      "critical_multiscenario_performance": "minimum",
+      "total": "G * 100 * A^0.15 * Q^0.15 * M^0.30 * R^0.20 * D^0.20"
+    },
+    "shortcut_minimum": [
+      "single-channel passthrough or a non-adaptive phase-shift beamformer",
+      "hard-coded nominal weights or steering angle",
+      "replayed desired QPSK or precomputed reference output",
+      "steering vector, diagonal loading, interference, noise, or InputValid ignored",
+      "one scalar duplicated into four apparent weights",
+      "covariance formed from a desired reference rather than measured four-channel samples",
+      "matrix solve or adaptive weights disconnected from the final beam output",
+      "floating-point implementation presented as a fixed-point HDL-compatible path",
+      "fabricated always-valid handshakes without real adaptation latency"
+    ]
+  },
+  "scoring_policy": {
+    "policy_id": "simuverity-101-v1:xcomm-02:scoring"
+  },
+  "simulation": {
+    "sample_count": 15000,
+    "covariance_window_valid_samples": 4096,
+    "reference_pipeline_delay_samples": 646,
+    "reference_stop_tick": 15646,
+    "one_persistent_matlab_session": true,
+    "wall_watchdog_s": 1800
+  },
+  "reference_adapter": {
+    "policy": "execute the unchanged model_init once to establish all source dependencies, clear the loaded model InitFcn only in memory, inject each private input set into the original top-level source variables, and close without saving",
+    "substantive_reference_modifications": 0,
+    "model_must_not_be_saved": true
+  },
+  "groups": {
+    "G": "load, update, compile, all five simulations, complete finite evidence, correct four-channel streaming and valid contracts, and a connected covariance-to-weight-to-output path",
+    "A": "desired-signal preservation, distortionless steering response, and demodulated QPSK quality",
+    "Q": "interferer suppression, output noise gain, fixed-point agreement, bounded values, and absence of saturation",
+    "M": "measured-input covariance, diagonal loading, matrix-solve residual, normalization identity, and weights causally driving the beamformed output",
+    "R": "100 percent worst-case critical performance over all five required scenarios",
+    "D": "first-valid latency, covariance/weight update cadence, and convergence or stability across successive adaptation windows"
+  },
+  "weights": {
+    "A": 0.15,
+    "Q": 0.15,
+    "M": 0.3,
+    "R": 0.2,
+    "D": 0.2
+  },
+  "aggregation": {
+    "within_group": "weighted arithmetic mean of dedicated normalized indicators",
+    "critical_multiscenario_performance": "minimum",
+    "total": "G * 100 * A^0.15 * Q^0.15 * M^0.30 * R^0.20 * D^0.20"
+  },
+  "shortcut_minimum": [
+    "single-channel passthrough or a non-adaptive phase-shift beamformer",
+    "hard-coded nominal weights or steering angle",
+    "replayed desired QPSK or precomputed reference output",
+    "steering vector, diagonal loading, interference, noise, or InputValid ignored",
+    "one scalar duplicated into four apparent weights",
+    "covariance formed from a desired reference rather than measured four-channel samples",
+    "matrix solve or adaptive weights disconnected from the final beam output",
+    "floating-point implementation presented as a fixed-point HDL-compatible path",
+    "fabricated always-valid handshakes without real adaptation latency"
+  ]
+}

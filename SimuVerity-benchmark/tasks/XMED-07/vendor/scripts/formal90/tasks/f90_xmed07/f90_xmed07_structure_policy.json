@@ -1,0 +1,221 @@
+{
+  "schema": "simuverity.f90-xmed07-structure-policy.v1",
+  "formal_task_id": "F90-XMED-07",
+  "candidate_evidence_ready": true,
+  "candidate_discovery_fields": [
+    "Name"
+  ],
+  "qualification_identity_fields": [
+    "BlockType",
+    "SourceBlock",
+    "ReferenceBlock",
+    "SourceType"
+  ],
+  "name_match_is_sufficient": false,
+  "mask_type_is_trusted_identity": false,
+  "global_signal_scc_is_qualification": false,
+  "physical_graph_edge_kind": "actual Simscape Domain conserving-port connection",
+  "signal_graph_edge_kind": "actual directed Simulink signal or directed physical-signal converter connection",
+  "public_input_fields": [
+    "delivery_mode",
+    "bolus_magnitude_units",
+    "bolus_stroke_time_s",
+    "pause_time_s",
+    "cycle_count",
+    "quick_bolus_magnitude_units",
+    "quick_bolus_stroke_time_s",
+    "basal_rate_units_per_hour",
+    "patient_backpressure_Pa",
+    "occlusion_onset_s",
+    "occlusion_fraction",
+    "low_remaining_limit_units"
+  ],
+  "drive_command_fields": [
+    "delivery_mode",
+    "bolus_magnitude_units",
+    "bolus_stroke_time_s",
+    "pause_time_s",
+    "cycle_count",
+    "quick_bolus_magnitude_units",
+    "quick_bolus_stroke_time_s",
+    "basal_rate_units_per_hour"
+  ],
+  "low_remaining_command_field": "low_remaining_limit_units",
+  "public_outputs": [
+    "motion_state",
+    "delivery_state",
+    "safety_state"
+  ],
+  "role_discovery_tokens": {
+    "motor_controller": ["motor controller", "speed controller", "pid"],
+    "occlusion_detector": ["occlusion", "restriction detector", "alarm detector"],
+    "supervisor": ["supervisor", "supervisory", "safety", "enable", "mode logic"],
+    "remaining": ["remaining", "reservoir amount", "drug amount", "dose remaining"]
+  },
+  "role_identity_tokens": {
+    "motor": [
+      "ee_lib/Electromechanical/Brushed Motors/DC Motor",
+      "DC Motor",
+      "Permanent Magnet DC Motor",
+      "PMSM",
+      "Stepper Motor"
+    ],
+    "transmission": [
+      "Leadscrew",
+      "Lead Screw",
+      "Rotational-Translational",
+      "Simple Gear",
+      "Gearbox",
+      "Rack and Pinion"
+    ],
+    "slide": [
+      "Mechanical/Translational Elements/Mass",
+      "Translational Mass",
+      "Variable Translational Spring",
+      "Translational Friction",
+      "Single-Acting Hydraulic Cylinder"
+    ],
+    "reservoir": [
+      "Hydraulic Piston Chamber",
+      "Constant Volume Hydraulic Chamber",
+      "Single-Acting Hydraulic Cylinder",
+      "Reservoir",
+      "Tank"
+    ],
+    "line": [
+      "Hydraulic Pipeline",
+      "Pipe (IL)",
+      "Pipeline",
+      "Hydraulic Hose",
+      "Spring-Loaded Accumulator",
+      "Constant Volume Hydraulic Chamber"
+    ],
+    "patient": [
+      "Hydraulic Pressure Source",
+      "Controlled Reservoir (IL)",
+      "Reservoir (IL)",
+      "Pressure Source"
+    ],
+    "flow_sensor": [
+      "Hydraulic Flow Rate Sensor",
+      "Flow Rate Sensor (IL)",
+      "Mass & Energy Flow Rate Sensor"
+    ],
+    "speed_sensor": [
+      "Ideal Rotational Motion Sensor",
+      "Rotational Motion Sensor"
+    ],
+    "force_sensor": [
+      "Ideal Force Sensor",
+      "Force Sensor",
+      "Hydraulic Pressure Sensor",
+      "Pressure Sensor (IL)"
+    ],
+    "pressure_sensor": [
+      "Hydraulic Pressure Sensor",
+      "Pressure Sensor (IL)",
+      "Pressure & Temperature Sensor"
+    ],
+    "displacement_sensor": [
+      "Ideal Translational Motion Sensor",
+      "Translational Motion Sensor"
+    ],
+    "occlusion_source": [
+      "Variable Area Hydraulic Orifice",
+      "Variable Local Restriction",
+      "Variable Orifice",
+      "Variable Resistance",
+      "Control Valve"
+    ],
+    "actuator": [
+      "Controlled Voltage Source",
+      "Controlled Current Source",
+      "Controlled Torque Source"
+    ],
+    "ps_to_simulink": ["PS-Simulink Converter"],
+    "simulink_to_ps": ["Simulink-PS Converter"]
+  },
+  "minimum_conserving_ports": {
+    "motor": 2,
+    "transmission": 2,
+    "slide": 2,
+    "reservoir": 2,
+    "line": 2,
+    "patient": 1,
+    "flow_sensor": 2,
+    "speed_sensor": 1,
+    "force_sensor": 1,
+    "pressure_sensor": 1,
+    "displacement_sensor": 1,
+    "occlusion_source": 2,
+    "actuator": 1
+  },
+  "control_block_types": [
+    "PIDController",
+    "DiscretePIDController",
+    "Integrator",
+    "DiscreteIntegrator",
+    "StateSpace",
+    "DiscreteStateSpace",
+    "TransferFcn",
+    "DiscreteTransferFcn",
+    "Sum",
+    "Gain",
+    "Product",
+    "Switch",
+    "MultiPortSwitch",
+    "Logic",
+    "RelationalOperator",
+    "CompareToConstant",
+    "CompareToZero",
+    "Saturate",
+    "RateLimiter",
+    "UnitDelay",
+    "Delay",
+    "Memory",
+    "S-Function",
+    "MATLABSystem"
+  ],
+  "stateflow_control_types": [
+    "Chart",
+    "MATLAB Function",
+    "State Transition Table"
+  ],
+  "motor_controller_specialist_types": [
+    "PIDController",
+    "DiscretePIDController",
+    "Integrator",
+    "DiscreteIntegrator",
+    "StateSpace",
+    "DiscreteStateSpace",
+    "TransferFcn",
+    "DiscreteTransferFcn"
+  ],
+  "detector_specialist_types": [
+    "RelationalOperator",
+    "CompareToConstant",
+    "CompareToZero",
+    "Logic"
+  ],
+  "supervisor_specialist_types": [
+    "Switch",
+    "MultiPortSwitch",
+    "Logic",
+    "UnitDelay",
+    "Memory"
+  ],
+  "remaining_specialist_types": [
+    "Integrator",
+    "DiscreteIntegrator",
+    "Sum",
+    "Gain",
+    "Product",
+    "UnitDelay",
+    "Memory"
+  ],
+  "maximum_role_candidates": 128,
+  "physical_route_requires_distinct_role_witnesses": true,
+  "flow_sensor_witnesses_must_be_distinct": true,
+  "public_output_mux_is_sufficient": false,
+  "public_output_requires_role_specific_upstream_origins": true
+}

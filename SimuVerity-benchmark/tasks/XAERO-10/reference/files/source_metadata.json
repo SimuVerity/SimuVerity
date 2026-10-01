@@ -1,0 +1,11 @@
+{
+  "schema": "simuverity.third-party-source.v1",
+  "task_id": "F90-XAERO-10",
+  "repository": "https://github.com/nopour/2DOF-Helicopter-Control",
+  "revision": "5cf56d9318f706e2e5a8b6afb5770cfedf912129",
+  "license_spdx": "MIT",
+  "selected_model": "2018_Simulink/comparison_noise_nonoise.slx",
+  "core_modified": false,
+  "known_source_logger_wiring_issue": "NonLinear1 duplicates the first-branch x1..x4 tags instead of logging the second branch.",
+  "public_measurement_adaptation": "The evaluator adds unsaved measurement taps to the four second-branch plant-state integrators without changing dynamics, control, observation, or actuation."
+}

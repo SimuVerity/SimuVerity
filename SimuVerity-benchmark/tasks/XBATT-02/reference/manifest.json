@@ -1,0 +1,33 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XBATT-02",
+  "file_count": 1,
+  "files": [
+    {
+      "path": "reference/files/XBATT02_reference.slx",
+      "size_bytes": 118618
+    }
+  ],
+  "entrypoint": "reference/files/XBATT02_reference.slx",
+  "expected_score": 100.0,
+  "expected_valid_scenarios": 9,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal",
+      "hot_high_discharge",
+      "low_soc_supervision",
+      "cold_regeneration",
+      "maldistribution_pair_low",
+      "maldistribution_pair_high",
+      "demand_pair_low",
+      "demand_pair_high",
+      "joint_boundary"
+    ],
+    "nominal_scenario_id": "nominal",
+    "nominal_materialization": "extractor_appended_and_explicitly_published"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 118618,
+  "excluded_files": []
+}

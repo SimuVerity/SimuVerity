@@ -1,0 +1,140 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XFLUID-03",
+  "scenarios": [
+    {
+      "id": "nominal",
+      "engine_speed_rpm": 2000.0,
+      "pump_displacement_cm3_rev": 60.0,
+      "implement_depth_cm": 9.0,
+      "soil_cohesion_kpa": 2.2
+    },
+    {
+      "id": "low_engine_speed",
+      "engine_speed_rpm": 1700.0,
+      "pump_displacement_cm3_rev": 60.0,
+      "implement_depth_cm": 9.0,
+      "soil_cohesion_kpa": 2.2
+    },
+    {
+      "id": "reduced_pump_displacement",
+      "engine_speed_rpm": 2000.0,
+      "pump_displacement_cm3_rev": 45.0,
+      "implement_depth_cm": 9.0,
+      "soil_cohesion_kpa": 2.2
+    },
+    {
+      "id": "deep_implement",
+      "engine_speed_rpm": 2000.0,
+      "pump_displacement_cm3_rev": 60.0,
+      "implement_depth_cm": 11.0,
+      "soil_cohesion_kpa": 2.2
+    },
+    {
+      "id": "cohesive_soil",
+      "engine_speed_rpm": 2000.0,
+      "pump_displacement_cm3_rev": 60.0,
+      "implement_depth_cm": 9.0,
+      "soil_cohesion_kpa": 3.0
+    },
+    {
+      "id": "combined_boundary",
+      "engine_speed_rpm": 1700.0,
+      "pump_displacement_cm3_rev": 45.0,
+      "implement_depth_cm": 11.0,
+      "soil_cohesion_kpa": 3.0
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "stop_time_s": 60.0,
+      "cold_start": true,
+      "native_input_script": "Scripts/TractorEnergyComputationInput.m",
+      "evaluation_adapter": "In-memory workspace exposure and logging only; the source model is never saved."
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.15,
+          "meaning": "nominal operating accuracy and boundedness"
+        },
+        "Q": {
+          "weight": 0.15,
+          "meaning": "hydraulic, axle-balance, and energy quality"
+        },
+        "M": {
+          "weight": 0.3,
+          "meaning": "causal hydro-mechanical mechanism and sensitivity"
+        },
+        "R": {
+          "weight": 0.25,
+          "meaning": "worst-case valid operation across private scenarios"
+        },
+        "D": {
+          "weight": 0.15,
+          "meaning": "cold-start rise and late-window stability"
+        }
+      },
+      "within_group": "weighted_arithmetic_mean",
+      "across_groups": "weighted_geometric_mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum",
+      "policy_id": "simuverity-101-v1:xfluid-03:scoring"
+    },
+    "shortcut_sanity_contract": [
+      "qualification_or_required_output_missing",
+      "prescribed_or_replayed_vehicle_motion",
+      "hydraulic_power_path_missing",
+      "front_or_rear_drive_path_missing",
+      "workspace_inputs_changed_only_in_logs",
+      "zero_or_nonphysical_transmission_loss"
+    ]
+  },
+  "simulation": {
+    "stop_time_s": 60.0,
+    "cold_start": true,
+    "native_input_script": "Scripts/TractorEnergyComputationInput.m",
+    "evaluation_adapter": "In-memory workspace exposure and logging only; the source model is never saved."
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.15,
+        "meaning": "nominal operating accuracy and boundedness"
+      },
+      "Q": {
+        "weight": 0.15,
+        "meaning": "hydraulic, axle-balance, and energy quality"
+      },
+      "M": {
+        "weight": 0.3,
+        "meaning": "causal hydro-mechanical mechanism and sensitivity"
+      },
+      "R": {
+        "weight": 0.25,
+        "meaning": "worst-case valid operation across private scenarios"
+      },
+      "D": {
+        "weight": 0.15,
+        "meaning": "cold-start rise and late-window stability"
+      }
+    },
+    "within_group": "weighted_arithmetic_mean",
+    "across_groups": "weighted_geometric_mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum",
+    "policy_id": "simuverity-101-v1:xfluid-03:scoring"
+  },
+  "shortcut_sanity_contract": [
+    "qualification_or_required_output_missing",
+    "prescribed_or_replayed_vehicle_motion",
+    "hydraulic_power_path_missing",
+    "front_or_rear_drive_path_missing",
+    "workspace_inputs_changed_only_in_logs",
+    "zero_or_nonphysical_transmission_loss"
+  ]
+}

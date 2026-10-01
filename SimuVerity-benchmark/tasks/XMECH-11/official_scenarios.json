@@ -1,0 +1,144 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XMECH-11",
+  "scenarios": [
+    {
+      "id": "nominal_y_cycle",
+      "stop_time_s": 70,
+      "payload_scale": 1.0,
+      "tire_mu_static": 0.6,
+      "tire_mu_dynamic": 0.5,
+      "implement_pump_scale": 1.0,
+      "hrb_precharge_pressure_MPa": 11.101325
+    },
+    {
+      "id": "low_friction",
+      "stop_time_s": 38,
+      "payload_scale": 1.0,
+      "tire_mu_static": 0.42,
+      "tire_mu_dynamic": 0.34,
+      "implement_pump_scale": 1.0,
+      "hrb_precharge_pressure_MPa": 11.101325
+    },
+    {
+      "id": "heavy_payload",
+      "stop_time_s": 25,
+      "payload_scale": 1.2,
+      "tire_mu_static": 0.6,
+      "tire_mu_dynamic": 0.5,
+      "implement_pump_scale": 1.0,
+      "hrb_precharge_pressure_MPa": 11.101325
+    },
+    {
+      "id": "pump_derate",
+      "stop_time_s": 25,
+      "payload_scale": 1.0,
+      "tire_mu_static": 0.6,
+      "tire_mu_dynamic": 0.5,
+      "implement_pump_scale": 0.82,
+      "hrb_precharge_pressure_MPa": 11.101325
+    },
+    {
+      "id": "low_hrb_precharge",
+      "stop_time_s": 38,
+      "payload_scale": 1.0,
+      "tire_mu_static": 0.6,
+      "tire_mu_dynamic": 0.5,
+      "implement_pump_scale": 1.0,
+      "hrb_precharge_pressure_MPa": 9.5
+    },
+    {
+      "id": "combined_robust",
+      "stop_time_s": 30,
+      "payload_scale": 1.15,
+      "tire_mu_static": 0.48,
+      "tire_mu_dynamic": 0.39,
+      "implement_pump_scale": 0.88,
+      "hrb_precharge_pressure_MPa": 12.5
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "start_time_s": 0,
+      "output_step_s": 0.05,
+      "command_profile": "source BucketYCycle projected to the four-channel public contract"
+    },
+    "score_policy": {
+      "raw_admission_threshold": 90.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "applicable_groups": [
+        "A",
+        "Q",
+        "M",
+        "C",
+        "R",
+        "D"
+      ],
+      "group_weights": {
+        "A": 0.18,
+        "Q": 0.12,
+        "M": 0.24,
+        "C": 0.2,
+        "R": 0.16,
+        "D": 0.1
+      },
+      "within_group": "task-local weighted arithmetic and explicit bottlenecks",
+      "across_groups": "strict_weighted_geometric_mean",
+      "strict_zero_rule": "any applicable group zero means total zero",
+      "epsilon_floor": false,
+      "post_total_cap": false,
+      "evaluation_policy_id": "simuverity-101-v1:xmech-11:scoring"
+    },
+    "shortcut_sanity_contract": [
+      "required_output_missing",
+      "command_or_prerecorded_output_copy",
+      "vehicle_or_ground_path_disconnected",
+      "hydraulic_pressure_flow_force_path_missing",
+      "power_split_or_clutch_dynamics_missing",
+      "environment_interventions_ignored",
+      "hydraulic_regenerative_brake_or_accumulator_missing"
+    ]
+  },
+  "simulation": {
+    "start_time_s": 0,
+    "output_step_s": 0.05,
+    "command_profile": "source BucketYCycle projected to the four-channel public contract"
+  },
+  "score_policy": {
+    "raw_admission_threshold": 90.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "applicable_groups": [
+      "A",
+      "Q",
+      "M",
+      "C",
+      "R",
+      "D"
+    ],
+    "group_weights": {
+      "A": 0.18,
+      "Q": 0.12,
+      "M": 0.24,
+      "C": 0.2,
+      "R": 0.16,
+      "D": 0.1
+    },
+    "within_group": "task-local weighted arithmetic and explicit bottlenecks",
+    "across_groups": "strict_weighted_geometric_mean",
+    "strict_zero_rule": "any applicable group zero means total zero",
+    "epsilon_floor": false,
+    "post_total_cap": false,
+    "evaluation_policy_id": "simuverity-101-v1:xmech-11:scoring"
+  },
+  "shortcut_sanity_contract": [
+    "required_output_missing",
+    "command_or_prerecorded_output_copy",
+    "vehicle_or_ground_path_disconnected",
+    "hydraulic_pressure_flow_force_path_missing",
+    "power_split_or_clutch_dynamics_missing",
+    "environment_interventions_ignored",
+    "hydraulic_regenerative_brake_or_accumulator_missing"
+  ]
+}

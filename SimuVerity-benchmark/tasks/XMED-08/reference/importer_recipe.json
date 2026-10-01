@@ -1,0 +1,57 @@
+{
+  "schema": "simuverity.matlab-local-importer-recipe.v1",
+  "task_id": "XMED-08",
+  "release": "simuverity-101-v1",
+  "matlab_release": "R2025a",
+  "publisher": "The MathWorks, Inc.",
+  "redistributes_mathworks_files": false,
+  "destination": "%LOCALAPPDATA%/SimuVerity/assets/simuverity-101-v1/XMED-08",
+  "discovery": {
+    "method": "matlab_example_or_installed_product_search",
+    "example_id": "dsp/RealTimeECGQRSDetectionExample",
+    "expected_source_filenames": [
+      "ex_ecg_sigprocessing.slx",
+      "ex_ecgdata360Hz.mat"
+    ],
+    "expected_files": [
+      {
+        "name": "ex_ecg_sigprocessing.slx",
+        "size_bytes": 49131
+      },
+      {
+        "name": "ex_ecgdata360Hz.mat",
+        "size_bytes": 429755
+      }
+    ]
+  },
+  "transform": "transform.m",
+  "validation": {
+    "required": true,
+    "checks": [
+      "load",
+      "update",
+      "compile",
+      "simulate",
+      "all_official_scenarios",
+      "reference_score"
+    ],
+    "on_mismatch": "fail_closed"
+  },
+  "entrypoint": "ex_ecg_sigprocessing.slx",
+  "expected_valid_scenarios": 6,
+  "score_tolerance": 1e-12,
+  "expected_score": 95.12109952577924,
+  "scenario_contract": {
+    "expected_ids": [
+      "recorded_82_clean",
+      "synthetic_45_baseline",
+      "synthetic_60_mains",
+      "synthetic_160_emg",
+      "synthetic_220_motion",
+      "recorded_82_combined"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision"
+}

@@ -1,0 +1,74 @@
+{
+  "schema": "simuverity.task.v1",
+  "release": "simuverity-101-v1",
+  "task_id": "XMECH-04",
+  "ordinal": 54,
+  "collection": "XMECH",
+  "runtime_alias": "XMECH-04",
+  "required_model_file": "cand_XMECH04.slx",
+  "evaluation_policy_id": "simuverity-101-v1:xmech-04:scoring",
+  "candidate_closure": {
+    "public_input_names": [
+      "target_xyz_cm",
+      "wrist_target_deg",
+      "move_time",
+      "payload_mass",
+      "torque_limit_scale",
+      "disturbance_torque_nm",
+      "disturbance_start"
+    ],
+    "nominal_provider": "simuverity_public_nominal_inputs"
+  },
+  "public_spec": "public_spec.json",
+  "official_scenarios": "official_scenarios.json",
+  "extractor": {
+    "kind": "matlab_function",
+    "path": "extractor/run.m",
+    "entrypoint": "run",
+    "implementation": "vendor/scripts/formal90/tasks/f90_xmech04/f90_xmech04_extract_candidate_evidence.m",
+    "closure_manifest": "extractor/manifest.json"
+  },
+  "scorer": {
+    "kind": "python_function",
+    "path": "scorer.py",
+    "entrypoint": "score",
+    "closure_manifest": "scorer/manifest.json",
+    "offline_only": true
+  },
+  "reference": {
+    "materialization": "bundled",
+    "path": "reference/files",
+    "manifest": "reference/manifest.json",
+    "entrypoint": "reference/files/XMECH04_reference.slx",
+    "expected_valid_scenarios": 5,
+    "score_tolerance": 5e-07,
+    "expected_score": 98.79122293256899,
+    "expected_score_basis": "reference_replay",
+    "scenario_contract": {
+      "expected_ids": [
+        "heavy_corner",
+        "heavy_corner_no_disturbance",
+        "opposite_reach",
+        "long_reach_fast",
+        "interior_loaded"
+      ],
+      "nominal_scenario_id": null,
+      "nominal_materialization": "authoritative_scenario_set"
+    },
+    "score_tolerance_basis": "source_authority_numeric_precision",
+    "runtime_manifest": "reference/runtime_manifest.json"
+  },
+  "applicable_groups": [
+    "G",
+    "A",
+    "Q",
+    "M",
+    "R",
+    "D"
+  ],
+  "release_license_status": "INCLUDED_THIRD_PARTY_LICENSE",
+  "system_profile": {
+    "path": "system_profile.json",
+    "schema": "simuverity.system-profile.v1"
+  }
+}

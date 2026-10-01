@@ -1,0 +1,49 @@
+{
+  "criteria_id": "simuverity-101-v1:f90-xaero-09:engineering-criteria",
+  "effect_targets": {
+    "baseline_scenario": "nominal_yaw_step",
+    "binding": "fixed_scalar_effects_derived_from_lossless_scenario_targets",
+    "intervention_scenarios": [
+      "multiaxis_four_jet",
+      "low_authority_mode_one",
+      "high_authority_recovery",
+      "yaw_dominant_mixed_rate"
+    ]
+  },
+  "normalizers": {
+    "binding": "unchanged_formula_derived_from_fixed_scenario_targets",
+    "operation_order": "declared"
+  },
+  "qualification_targets": {
+    "evidence_complete": true,
+    "all_scenarios_valid": true,
+    "compile_pass": true,
+    "load_pass": true,
+    "simulate_pass": true,
+    "task_id": "F90-XAERO-09",
+    "update_pass": true
+  },
+  "runtime_reference_model_access": false,
+  "runtime_source_reference_required": false,
+  "scenario_targets": {
+    "included_scenario_fields": [
+      "id",
+      "time_s",
+      "attitude_state",
+      "phase_plane_state",
+      "rcs_state",
+      "metrics.final_relative_attitude_rad",
+      "metrics.jet_activity_mean",
+      "metrics.tail_rate_rms_rad_s",
+      "metrics.jet_switch_count",
+      "valid"
+    ],
+    "numeric_conversion": "none",
+    "payload_codec": "gzip-json",
+    "payload_file": "f90_xaero09_engineering_criteria_targets.json.gz",
+    "representation": "lossless_timeseries_lookup_table",
+    "sample_order": "preserved_exactly"
+  },
+  "schema": "simuverity.engineering-criteria.v1",
+  "task_id": "F90-XAERO-09"
+}

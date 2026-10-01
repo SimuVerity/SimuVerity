@@ -1,0 +1,17 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XAERO-04",
+  "materialization": "local_importer",
+  "entrypoint": "VTOLApp/models/VTOLTiltrotor.slx",
+  "recipe": "reference/importer_recipe.json",
+  "transform": "reference/transform.m",
+  "retained_file_count": 0,
+  "retained_bytes": 0,
+  "excluded_files": [],
+  "clean_replay_setup": {
+    "phase": "before_load",
+    "path": "tasks/XAERO-04/reference/clean_replay_setup/f90_xaero04_reference_clean_replay_setup.m",
+    "entrypoint": "f90_xaero04_reference_clean_replay_setup"
+  },
+  "expected_source_file_count": 452
+}

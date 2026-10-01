@@ -1,0 +1,32 @@
+{
+  "schema": "simuverity.extractor-closure.v1",
+  "task_id": "XAERO-03",
+  "entrypoint": "vendor/scripts/formal90/tasks/f90_xaero03/f90_xaero03_extract_candidate_evidence.m",
+  "public_wrapper": "extractor/run.m",
+  "files": [
+    {
+      "source_name": "f90_xaero03_build_reference.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xaero03/f90_xaero03_build_reference.m"
+    },
+    {
+      "source_name": "f90_xaero03_definition.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xaero03/f90_xaero03_definition.m"
+    },
+    {
+      "source_name": "f90_xaero03_extract_evidence.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xaero03/f90_xaero03_extract_evidence.m"
+    },
+    {
+      "source_name": "f90_xaero03_extract_candidate_evidence.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xaero03/f90_xaero03_extract_candidate_evidence.m"
+    },
+    {
+      "source_name": "simuverity_public_output_compatibility.m",
+      "public_path": "vendor/scripts/unified/public_output/simuverity_public_output_compatibility.m"
+    },
+    {
+      "source_name": "xp9_file_presence_file.m",
+      "public_path": "vendor/scripts/xp9/xp9_file_presence_file.m"
+    }
+  ]
+}

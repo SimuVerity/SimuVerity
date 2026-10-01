@@ -1,0 +1,45 @@
+{
+  "schema": "simuverity.scorer-manifest.v1",
+  "task_id": "XMECH-08",
+  "public_interface": "scorer.py:score",
+  "implementation": "scorer.py",
+  "source_modules": [
+    {
+      "module": "f90_xmech08_scoring",
+      "path": "vendor/scripts/formal90/tasks/f90_xmech08/f90_xmech08_scoring.py"
+    },
+    {
+      "module": "f90_xmech08_metric_ownership",
+      "path": "vendor/scripts/formal90/tasks/f90_xmech08/f90_xmech08_metric_ownership.py"
+    },
+    {
+      "module": "f90_xmech08_scoring_core",
+      "path": "vendor/scripts/formal90/tasks/f90_xmech08/f90_xmech08_scoring_core.py"
+    },
+    {
+      "module": "f90_xmech08_structure_scoring",
+      "path": "vendor/scripts/formal90/tasks/f90_xmech08/f90_xmech08_structure_scoring.py"
+    },
+    {
+      "module": "f90_xmech08_scoring_core_core",
+      "path": "vendor/scripts/formal90/tasks/f90_xmech08/f90_xmech08_scoring_core_core.py"
+    }
+  ],
+  "final_module": {
+    "module": "f90_xmech08_scoring",
+    "path": "vendor/scripts/formal90/tasks/f90_xmech08/f90_xmech08_scoring.py"
+  },
+  "payload_files": [
+    {
+      "source_name": "engineering_criteria.json",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xmech08/engineering_criteria.json"
+    },
+    {
+      "source_name": "engineering_criteria_targets.json.gz",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xmech08/engineering_criteria_targets.json.gz"
+    }
+  ],
+  "public_bridge": {
+    "mode": "function"
+  }
+}

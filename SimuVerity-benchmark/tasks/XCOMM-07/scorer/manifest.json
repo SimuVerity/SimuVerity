@@ -1,0 +1,45 @@
+{
+  "schema": "simuverity.scorer-manifest.v1",
+  "task_id": "XCOMM-07",
+  "public_interface": "scorer.py:score",
+  "implementation": "scorer.py",
+  "source_modules": [
+    {
+      "module": "f90_xcomm07_scoring_core",
+      "path": "vendor/scripts/formal90/tasks/f90_xcomm07/f90_xcomm07_scoring_core.py"
+    },
+    {
+      "module": "f90_xcomm07_public_contract",
+      "path": "vendor/scripts/formal90/tasks/f90_xcomm07/f90_xcomm07_public_contract.py"
+    },
+    {
+      "module": "f90_xcomm07_scoring",
+      "path": "vendor/scripts/formal90/tasks/f90_xcomm07/f90_xcomm07_scoring.py"
+    }
+  ],
+  "final_module": {
+    "module": "f90_xcomm07_scoring",
+    "path": "vendor/scripts/formal90/tasks/f90_xcomm07/f90_xcomm07_scoring.py"
+  },
+  "payload_files": [
+    {
+      "role": "engineering_criteria",
+      "path": "vendor/scripts/formal90/tasks/f90_xcomm07/engineering_criteria_targets.json.gz"
+    },
+    {
+      "role": "engineering_criteria",
+      "path": "vendor/scripts/formal90/tasks/f90_xcomm07/engineering_criteria.json"
+    }
+  ],
+  "public_bridge": {
+    "mode": "cli",
+    "argv": [
+      "{evidence}",
+      "--criteria",
+      "{criteria}",
+      "--output",
+      "{output}"
+    ],
+    "result": "file"
+  }
+}

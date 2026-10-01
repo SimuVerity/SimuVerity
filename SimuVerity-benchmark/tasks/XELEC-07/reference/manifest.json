@@ -1,0 +1,49 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XELEC-07",
+  "file_count": 4,
+  "files": [
+    {
+      "path": "reference/files/DQsinepwm3pGrid.mdl",
+      "size_bytes": 192020
+    },
+    {
+      "path": "reference/files/DQsinepwm3pGrid.mdl.r2018a",
+      "size_bytes": 150474
+    },
+    {
+      "path": "reference/files/DQsinepwm3pGrid.png",
+      "size_bytes": 103991
+    },
+    {
+      "path": "reference/files/license.txt",
+      "size_bytes": 1468
+    }
+  ],
+  "entrypoint": "reference/files/DQsinepwm3pGrid.mdl",
+  "expected_score": 91.2563486,
+  "expected_valid_scenarios": 13,
+  "score_tolerance": 5e-08,
+  "scenario_contract": {
+    "expected_ids": [
+      "id_less",
+      "id_more",
+      "iq_positive",
+      "iq_negative",
+      "id_iq_joint",
+      "id_iq_interior_pos",
+      "id_iq_interior_neg",
+      "grid_low",
+      "grid_high",
+      "joint_grid_low_pos",
+      "joint_grid_high_neg",
+      "joint_grid_low_endpoint_pos",
+      "joint_grid_high_endpoint_neg"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 447953,
+  "excluded_files": []
+}

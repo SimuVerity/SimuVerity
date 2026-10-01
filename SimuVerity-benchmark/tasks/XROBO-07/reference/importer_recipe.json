@@ -1,0 +1,97 @@
+{
+  "schema": "simuverity.matlab-local-importer-recipe.v1",
+  "task_id": "XROBO-07",
+  "release": "simuverity-101-v1",
+  "matlab_release": "R2025a",
+  "publisher": "The MathWorks, Inc.",
+  "redistributes_mathworks_files": false,
+  "destination": "%LOCALAPPDATA%/SimuVerity/assets/simuverity-101-v1/XROBO-07",
+  "discovery": {
+    "method": "matlab_example_or_installed_product_search",
+    "example_id": "nav/AvoidObstaclesUsingTEBLocalPlannerInSimulinkExample",
+    "expected_source_filenames": [
+      "PathFollowingTEB.slx",
+      "exampleHelperBuildVehicleGraphic.m",
+      "exampleHelperCheckCollision.m",
+      "exampleHelperGlobalPlanning.m",
+      "exampleHelperPlotMap.m",
+      "exampleHelperPlotVehicle.m",
+      "exampleHelperProcessTEBErrorFlags.m",
+      "exampleHelperVehicleSpecs.m",
+      "offroadMap.mat"
+    ],
+    "expected_files": [
+      {
+        "name": "offroadMap.mat",
+        "size_bytes": 4502
+      },
+      {
+        "name": "PathFollowingTEB.slx",
+        "size_bytes": 77177
+      },
+      {
+        "name": "exampleHelperBuildVehicleGraphic.m",
+        "size_bytes": 847
+      },
+      {
+        "name": "exampleHelperCheckCollision.m",
+        "size_bytes": 646
+      },
+      {
+        "name": "exampleHelperGlobalPlanning.m",
+        "size_bytes": 1223
+      },
+      {
+        "name": "exampleHelperPlotMap.m",
+        "size_bytes": 656
+      },
+      {
+        "name": "exampleHelperPlotVehicle.m",
+        "size_bytes": 707
+      },
+      {
+        "name": "exampleHelperProcessTEBErrorFlags.m",
+        "size_bytes": 5184
+      },
+      {
+        "name": "exampleHelperVehicleSpecs.m",
+        "size_bytes": 1079
+      }
+    ]
+  },
+  "transform": "transform.m",
+  "generated_support_files": [
+    {
+      "name": "simuverity_xrobo07_robot_state_logger.m",
+      "size_bytes": 2941
+    }
+  ],
+  "validation": {
+    "required": true,
+    "checks": [
+      "load",
+      "update",
+      "compile",
+      "simulate",
+      "all_official_scenarios",
+      "reference_score"
+    ],
+    "on_mismatch": "fail_closed"
+  },
+  "entrypoint": "PathFollowingTEB_SimuVerityReference.slx",
+  "expected_valid_scenarios": 5,
+  "score_tolerance": 1e-12,
+  "expected_score": 90.83098860410136,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal_offroad",
+      "alternate_start_goal",
+      "heading_and_goal_shift",
+      "static_map_detour",
+      "kinematic_margin_stress"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision"
+}

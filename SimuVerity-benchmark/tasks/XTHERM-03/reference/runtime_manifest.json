@@ -1,0 +1,20 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XTHERM-03",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/source/MSFcascade.mdl",
+  "clean_replay_setup": {
+    "phase": "after_load_before_update",
+    "path": "tasks/XTHERM-03/reference/clean_replay_setup/f90_xtherm03_reference_clean_replay_setup.m",
+    "entrypoint": "f90_xtherm03_reference_clean_replay_setup"
+  },
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 13,
+  "retained_bytes": 449515,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ]
+}

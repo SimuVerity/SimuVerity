@@ -1,0 +1,132 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XELEC-11",
+  "collection": "XELEC",
+  "reference": {
+    "identity_path": "tasks/XELEC-11/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/singele_phase_to_3phase_svpwm_PMSM_VF.mdl",
+    "model_path": "tasks/XELEC-11/reference/files/singele_phase_to_3phase_svpwm_PMSM_VF.mdl"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id D011",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a single-phase-input permanent-magnet synchronous motor drive.",
+    "engineering_objects": [
+      "smoothing DC link",
+      "controllable three-phase inverter"
+    ],
+    "physical_paths": [
+      "A single-phase AC source must feed a rectifier and smoothing DC link, which must feed a controllable three-phase inverter supplying a Permanent Magnet Synchronous Machine."
+    ],
+    "functional_paths": [
+      "A single-phase AC source must feed a rectifier and smoothing DC link, which must feed a controllable three-phase inverter supplying a Permanent Magnet Synchronous Machine."
+    ],
+    "information_paths": [
+      "F_cmd -> D011 plant/control path -> Wm, Vdc, Vabc, Iabc"
+    ],
+    "modes_and_events": [
+      "D011 startup and continuous operation follow the current public task contract."
+    ],
+    "interfaces": [
+      {
+        "name": "F_cmd",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read F_cmd from a base-workspace variable; its nominal value is 50 Hz and its operating range is 45 to 55 Hz. The physically measured inverter output frequency must follow F_cmd, and the physical rotor speed must change in the same direction as the commanded frequency while the three motor-side phases remain balanced.",
+        "source": "tasks/XELEC-11/public_spec.json"
+      },
+      {
+        "name": "Wm",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Log complete-run MATLAB Timeseries Wm, Vdc, Vabc and Iabc. Wm must be the physical rotor mechanical speed, Vdc must be the measured DC-link voltage, and Vabc and Iabc must each contain exactly the three physically measured motor-side phases.",
+        "source": "tasks/XELEC-11/public_spec.json"
+      },
+      {
+        "name": "Vdc",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "V"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries Wm, Vdc, Vabc and Iabc. Wm must be the physical rotor mechanical speed, Vdc must be the measured DC-link voltage, and Vabc and Iabc must each contain exactly the three physically measured motor-side phases.",
+        "source": "tasks/XELEC-11/public_spec.json"
+      },
+      {
+        "name": "Vabc",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "V"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries Wm, Vdc, Vabc and Iabc. Wm must be the physical rotor mechanical speed, Vdc must be the measured DC-link voltage, and Vabc and Iabc must each contain exactly the three physically measured motor-side phases.",
+        "source": "tasks/XELEC-11/public_spec.json"
+      },
+      {
+        "name": "Iabc",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries Wm, Vdc, Vabc and Iabc. Wm must be the physical rotor mechanical speed, Vdc must be the measured DC-link voltage, and Vabc and Iabc must each contain exactly the three physically measured motor-side phases.",
+        "source": "tasks/XELEC-11/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a single-phase-input permanent-magnet synchronous motor drive.",
+      "A single-phase AC source must feed a rectifier and smoothing DC link, which must feed a controllable three-phase inverter supplying a Permanent Magnet Synchronous Machine.",
+      "The physically measured inverter output frequency must follow F_cmd, and the physical rotor speed must change in the same direction as the commanded frequency while the three motor-side phases remain balanced."
+    ],
+    "feedback_and_control_causality": [
+      "A single-phase AC source must feed a rectifier and smoothing DC link, which must feed a controllable three-phase inverter supplying a Permanent Magnet Synchronous Machine."
+    ],
+    "signal_sources": [
+      "F_cmd is read from the public MATLAB base-workspace input contract.",
+      "Wm is produced by the implemented plant or controller and logged under the public output contract.",
+      "Vdc is produced by the implemented plant or controller and logged under the public output contract.",
+      "Vabc is produced by the implemented plant or controller and logged under the public output contract.",
+      "Iabc is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "F_cmd: Read F_cmd from a base-workspace variable; its nominal value is 50 Hz and its operating range is 45 to 55 Hz. The physically measured inverter output frequency must follow F_cmd, and the physical rotor speed must change in the same direction as the commanded frequency while the three motor-side phases remain balanced."
+    ],
+    "disturbances": [
+      "D011 operating variation is supplied through F_cmd."
+    ],
+    "dynamic_processes": [
+      "Log complete-run MATLAB Timeseries Wm, Vdc, Vabc and Iabc."
+    ],
+    "task_specific_shortcuts": [
+      "D011: prescribing Wm directly would bypass the system path described by: A single-phase AC source must feed a rectifier and smoothing DC link, which must feed a controllable three-phase inverter supplying a Permanent Magnet Synchronous Machine.",
+      "D011: replaying a fixed Wm trace would ignore causal variation in F_cmd."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XELEC-11/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XELEC-11/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XELEC-11/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

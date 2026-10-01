@@ -1,0 +1,216 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XAUTO-06",
+  "collection": "XAUTO",
+  "reference": {
+    "identity_path": "tasks/XAUTO-06/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/source/HEV/PowerSplitHEV_system_model.mdl",
+    "model_path": "tasks/XAUTO-06/reference/files/source/HEV/PowerSplitHEV_system_model.mdl"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XAUTO-06",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a Simulink/Simscape longitudinal model of a power-split hybrid-electric passenger vehicle.",
+    "engineering_objects": [
+      "Build a Simulink/Simscape longitudinal model of a power-split hybrid-electric passenger vehicle.",
+      "The physical drivetrain shall include an internal-combustion engine, two motor-generator units, a planetary power-split mechanism, a high-voltage battery with a DC/DC power path, and a driven vehicle/load.",
+      "These elements must be connected by real mechanical and electrical power paths rather than by prescribed output signals."
+    ],
+    "physical_paths": [
+      "The physical drivetrain shall include an internal-combustion engine, two motor-generator units, a planetary power-split mechanism, a high-voltage battery with a DC/DC power path, and a driven vehicle/load.",
+      "These elements must be connected by real mechanical and electrical power paths rather than by prescribed output signals.",
+      "The system shall remain functional for speed references from standstill through 110 km/h, road grades from -5% through +3%, and initial battery state of charge from 50% through 70%.",
+      "Build a Simulink/Simscape longitudinal model of a power-split hybrid-electric passenger vehicle."
+    ],
+    "functional_paths": [
+      "Implement closed-loop vehicle-speed tracking from a measured vehicle-speed signal and a time-varying speed reference.",
+      "All logs must be measurements or commands from the implemented vehicle and controller, not prescribed result waveforms."
+    ],
+    "information_paths": [
+      "v_ref_kph, road_grade_pct, initial_soc_pct -> F90-XAUTO-06 plant/control path -> VehicleSpeed_kph, VehicleSpeedReference_kph, BatterySOC_pct, EnginePower_kW, MG1Power_kW, MG2Power_kW, BatteryPower_kW, BrakeCommand, RegenCommand"
+    ],
+    "modes_and_events": [
+      "Build a Simulink/Simscape longitudinal model of a power-split hybrid-electric passenger vehicle."
+    ],
+    "interfaces": [
+      {
+        "name": "v_ref_kph",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "km/h"
+        ],
+        "range_or_shape": "Read v_ref_kph, road_grade_pct, and initial_soc_pct from the MATLAB base workspace. v_ref_kph and road_grade_pct may be scalar or Timeseries inputs; initial_soc_pct is a scalar percentage.",
+        "source": "tasks/XAUTO-06/public_spec.json"
+      },
+      {
+        "name": "road_grade_pct",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "%"
+        ],
+        "range_or_shape": "Read v_ref_kph, road_grade_pct, and initial_soc_pct from the MATLAB base workspace. v_ref_kph and road_grade_pct may be scalar or Timeseries inputs; initial_soc_pct is a scalar percentage.",
+        "source": "tasks/XAUTO-06/public_spec.json"
+      },
+      {
+        "name": "initial_soc_pct",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "%"
+        ],
+        "range_or_shape": "Read v_ref_kph, road_grade_pct, and initial_soc_pct from the MATLAB base workspace. v_ref_kph and road_grade_pct may be scalar or Timeseries inputs; initial_soc_pct is a scalar percentage.",
+        "source": "tasks/XAUTO-06/public_spec.json"
+      },
+      {
+        "name": "VehicleSpeed_kph",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "km/h"
+        ],
+        "range_or_shape": "Record complete Timeseries from simulation start to finish for VehicleSpeed_kph, VehicleSpeedReference_kph, BatterySOC_pct, EnginePower_kW, MG1Power_kW, MG2Power_kW, BatteryPower_kW, BrakeCommand, and RegenCommand.",
+        "source": "tasks/XAUTO-06/public_spec.json"
+      },
+      {
+        "name": "VehicleSpeedReference_kph",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "km/h"
+        ],
+        "range_or_shape": "Record complete Timeseries from simulation start to finish for VehicleSpeed_kph, VehicleSpeedReference_kph, BatterySOC_pct, EnginePower_kW, MG1Power_kW, MG2Power_kW, BatteryPower_kW, BrakeCommand, and RegenCommand.",
+        "source": "tasks/XAUTO-06/public_spec.json"
+      },
+      {
+        "name": "BatterySOC_pct",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "%"
+        ],
+        "range_or_shape": "Record complete Timeseries from simulation start to finish for VehicleSpeed_kph, VehicleSpeedReference_kph, BatterySOC_pct, EnginePower_kW, MG1Power_kW, MG2Power_kW, BatteryPower_kW, BrakeCommand, and RegenCommand.",
+        "source": "tasks/XAUTO-06/public_spec.json"
+      },
+      {
+        "name": "EnginePower_kW",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "kW"
+        ],
+        "range_or_shape": "Record complete Timeseries from simulation start to finish for VehicleSpeed_kph, VehicleSpeedReference_kph, BatterySOC_pct, EnginePower_kW, MG1Power_kW, MG2Power_kW, BatteryPower_kW, BrakeCommand, and RegenCommand.",
+        "source": "tasks/XAUTO-06/public_spec.json"
+      },
+      {
+        "name": "MG1Power_kW",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "kW"
+        ],
+        "range_or_shape": "Record complete Timeseries from simulation start to finish for VehicleSpeed_kph, VehicleSpeedReference_kph, BatterySOC_pct, EnginePower_kW, MG1Power_kW, MG2Power_kW, BatteryPower_kW, BrakeCommand, and RegenCommand.",
+        "source": "tasks/XAUTO-06/public_spec.json"
+      },
+      {
+        "name": "MG2Power_kW",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "kW"
+        ],
+        "range_or_shape": "Record complete Timeseries from simulation start to finish for VehicleSpeed_kph, VehicleSpeedReference_kph, BatterySOC_pct, EnginePower_kW, MG1Power_kW, MG2Power_kW, BatteryPower_kW, BrakeCommand, and RegenCommand.",
+        "source": "tasks/XAUTO-06/public_spec.json"
+      },
+      {
+        "name": "BatteryPower_kW",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "kW"
+        ],
+        "range_or_shape": "Record complete Timeseries from simulation start to finish for VehicleSpeed_kph, VehicleSpeedReference_kph, BatterySOC_pct, EnginePower_kW, MG1Power_kW, MG2Power_kW, BatteryPower_kW, BrakeCommand, and RegenCommand.",
+        "source": "tasks/XAUTO-06/public_spec.json"
+      },
+      {
+        "name": "BrakeCommand",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Record complete Timeseries from simulation start to finish for VehicleSpeed_kph, VehicleSpeedReference_kph, BatterySOC_pct, EnginePower_kW, MG1Power_kW, MG2Power_kW, BatteryPower_kW, BrakeCommand, and RegenCommand.",
+        "source": "tasks/XAUTO-06/public_spec.json"
+      },
+      {
+        "name": "RegenCommand",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Record complete Timeseries from simulation start to finish for VehicleSpeed_kph, VehicleSpeedReference_kph, BatterySOC_pct, EnginePower_kW, MG1Power_kW, MG2Power_kW, BatteryPower_kW, BrakeCommand, and RegenCommand.",
+        "source": "tasks/XAUTO-06/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "A supervisory power-management function shall coordinate engine and electrical power, keep the battery state of charge bounded, and use regenerative braking during deceleration when operating conditions allow it.",
+      "All logs must be measurements or commands from the implemented vehicle and controller, not prescribed result waveforms."
+    ],
+    "feedback_and_control_causality": [
+      "Implement closed-loop vehicle-speed tracking from a measured vehicle-speed signal and a time-varying speed reference.",
+      "All logs must be measurements or commands from the implemented vehicle and controller, not prescribed result waveforms."
+    ],
+    "signal_sources": [
+      "v_ref_kph is read from the public MATLAB base-workspace input contract.",
+      "road_grade_pct is read from the public MATLAB base-workspace input contract.",
+      "initial_soc_pct is read from the public MATLAB base-workspace input contract.",
+      "VehicleSpeed_kph is produced by the implemented plant or controller and logged under the public output contract.",
+      "VehicleSpeedReference_kph is produced by the implemented plant or controller and logged under the public output contract.",
+      "BatterySOC_pct is produced by the implemented plant or controller and logged under the public output contract.",
+      "EnginePower_kW is produced by the implemented plant or controller and logged under the public output contract.",
+      "MG1Power_kW is produced by the implemented plant or controller and logged under the public output contract.",
+      "MG2Power_kW is produced by the implemented plant or controller and logged under the public output contract.",
+      "BatteryPower_kW is produced by the implemented plant or controller and logged under the public output contract.",
+      "BrakeCommand is produced by the implemented plant or controller and logged under the public output contract.",
+      "RegenCommand is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "v_ref_kph: Read v_ref_kph, road_grade_pct, and initial_soc_pct from the MATLAB base workspace. v_ref_kph and road_grade_pct may be scalar or Timeseries inputs; initial_soc_pct is a scalar percentage.",
+      "road_grade_pct: Read v_ref_kph, road_grade_pct, and initial_soc_pct from the MATLAB base workspace. v_ref_kph and road_grade_pct may be scalar or Timeseries inputs; initial_soc_pct is a scalar percentage.",
+      "initial_soc_pct: Read v_ref_kph, road_grade_pct, and initial_soc_pct from the MATLAB base workspace. v_ref_kph and road_grade_pct may be scalar or Timeseries inputs; initial_soc_pct is a scalar percentage."
+    ],
+    "disturbances": [
+      "The physical drivetrain shall include an internal-combustion engine, two motor-generator units, a planetary power-split mechanism, a high-voltage battery with a DC/DC power path, and a driven vehicle/load."
+    ],
+    "dynamic_processes": [
+      "Implement closed-loop vehicle-speed tracking from a measured vehicle-speed signal and a time-varying speed reference."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XAUTO-06: prescribing VehicleSpeed_kph directly would bypass the system path described by: The physical drivetrain shall include an internal-combustion engine, two motor-generator units, a planetary power-split mechanism, a high-voltage battery with a DC/DC power path, and a driven vehicle/load.",
+      "F90-XAUTO-06: replaying a fixed VehicleSpeed_kph trace would ignore causal variation in v_ref_kph."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XAUTO-06/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XAUTO-06/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XAUTO-06/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

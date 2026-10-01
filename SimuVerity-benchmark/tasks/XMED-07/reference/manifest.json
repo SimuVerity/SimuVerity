@@ -1,0 +1,171 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XMED-07",
+  "file_count": 36,
+  "files": [
+    {
+      "path": "reference/files/src/Data/InitializationInsulinPump.m",
+      "size_bytes": 8628
+    },
+    {
+      "path": "reference/files/src/Data/NNClassifierData.mat",
+      "size_bytes": 40917
+    },
+    {
+      "path": "reference/files/src/Data/NoOcc1.mat",
+      "size_bytes": 89334
+    },
+    {
+      "path": "reference/files/src/Data/NoOcc2.mat",
+      "size_bytes": 88727
+    },
+    {
+      "path": "reference/files/src/Data/NoOcc3.mat",
+      "size_bytes": 88212
+    },
+    {
+      "path": "reference/files/src/Data/ProjectInit.m",
+      "size_bytes": 670
+    },
+    {
+      "path": "reference/files/src/Data/ProjectTerm.m",
+      "size_bytes": 37
+    },
+    {
+      "path": "reference/files/src/Data/SVMTest3.mat",
+      "size_bytes": 11372
+    },
+    {
+      "path": "reference/files/src/InfusionPumpProject.prj",
+      "size_bytes": 181
+    },
+    {
+      "path": "reference/files/src/license.txt",
+      "size_bytes": 1499
+    },
+    {
+      "path": "reference/files/src/Models/Controller/InfusionPumpSoftwareModel.slmx",
+      "size_bytes": 5253
+    },
+    {
+      "path": "reference/files/src/Models/Controller/InfusionPumpSoftwareModel.slx",
+      "size_bytes": 659318
+    },
+    {
+      "path": "reference/files/src/Models/Controller/InfusionPumpSoftwareModelNoOccDetect.slx",
+      "size_bytes": 571046
+    },
+    {
+      "path": "reference/files/src/Models/Controller/MotorController.slmx",
+      "size_bytes": 5299
+    },
+    {
+      "path": "reference/files/src/Models/Controller/MotorController.slx",
+      "size_bytes": 449730
+    },
+    {
+      "path": "reference/files/src/Models/Controller/OcclusionDetection.slmx",
+      "size_bytes": 4725
+    },
+    {
+      "path": "reference/files/src/Models/Controller/OcclusionDetection.slx",
+      "size_bytes": 513309
+    },
+    {
+      "path": "reference/files/src/Models/Controller/Supervisory.slmx",
+      "size_bytes": 9791
+    },
+    {
+      "path": "reference/files/src/Models/Controller/Supervisory.slx",
+      "size_bytes": 475860
+    },
+    {
+      "path": "reference/files/src/Models/InfusionPumpModelV7.slx",
+      "size_bytes": 533745
+    },
+    {
+      "path": "reference/files/src/Models/InfusionPumpModelV7NoOccDetect.slx",
+      "size_bytes": 520250
+    },
+    {
+      "path": "reference/files/src/Models/Plant/InfusionPumpPlantModel.slx",
+      "size_bytes": 360106
+    },
+    {
+      "path": "reference/files/src/Models/Plant/InsulinPumpModelV7_ParFor.slx",
+      "size_bytes": 908503
+    },
+    {
+      "path": "reference/files/src/README.md",
+      "size_bytes": 6813
+    },
+    {
+      "path": "reference/files/src/SECURITY.md",
+      "size_bytes": 394
+    },
+    {
+      "path": "reference/files/src/Task/Task_1_RequirementManagement.m",
+      "size_bytes": 635
+    },
+    {
+      "path": "reference/files/src/Task/Task_2_1_ClosedLoopOccDeactivated.m",
+      "size_bytes": 260
+    },
+    {
+      "path": "reference/files/src/Task/Task_2_2_ClosedLoopOccActive.m",
+      "size_bytes": 230
+    },
+    {
+      "path": "reference/files/src/Task/Task_3_ModelAdvisor.m",
+      "size_bytes": 614
+    },
+    {
+      "path": "reference/files/src/Task/Task_4_1_TestCaseDefinition.m",
+      "size_bytes": 564
+    },
+    {
+      "path": "reference/files/src/Task/Task_4_2_BaselineTestResults.m",
+      "size_bytes": 514
+    },
+    {
+      "path": "reference/files/src/Task/Task_4_3_ImprovedTestResults.m",
+      "size_bytes": 405
+    },
+    {
+      "path": "reference/files/src/Task/Task_5_ModelCoverage.m",
+      "size_bytes": 1457
+    },
+    {
+      "path": "reference/files/src/Task/Task_6_CodeGeneration.m",
+      "size_bytes": 447
+    },
+    {
+      "path": "reference/files/src/Task/Task_7_SILEquivTest.m",
+      "size_bytes": 648
+    },
+    {
+      "path": "reference/files/src/Task/Task_8_ParameterSweep.m",
+      "size_bytes": 1677
+    }
+  ],
+  "entrypoint": "reference/files/src/Models/InfusionPumpModelV7.slx",
+  "expected_score": 98.00283422413308,
+  "expected_valid_scenarios": 7,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal_normal_bolus",
+      "slow_large_normal_bolus",
+      "quick_bolus_profile",
+      "basal_delivery",
+      "high_backpressure_basal",
+      "moderate_restriction_no_alarm",
+      "severe_occlusion"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 5361170,
+  "excluded_files": []
+}

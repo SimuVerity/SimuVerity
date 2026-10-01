@@ -1,0 +1,207 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XAERO-04",
+  "collection": "XAERO",
+  "reference": {
+    "identity_path": "tasks/XAERO-04/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "VTOLApp/models/VTOLTiltrotor.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XAERO-04",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a closed-loop tiltrotor VTOL flight model in Simulink.",
+    "engineering_objects": [
+      "The plant must contain a finite-mass six-degree-of-freedom rigid body, aerodynamic and propulsion forces, four rotor paths, two independently actuated front-rotor tilt paths, conventional aerodynamic control surfaces, gravity and ground interaction.",
+      "Vehicle motion must result from the connected actuator, propulsion, aerodynamic and rigid-body dynamics;",
+      "All actuator commands must be causally connected to the vehicle plant, and measured vehicle state must close the flight-control loop."
+    ],
+    "physical_paths": [
+      "Vehicle motion must result from the connected actuator, propulsion, aerodynamic and rigid-body dynamics; prescribed motion or replayed state histories are not valid solutions.",
+      "All actuator commands must be causally connected to the vehicle plant, and measured vehicle state must close the flight-control loop.",
+      "Measurements must come from the connected mission, control, actuator and physical plant paths that determine vehicle motion.",
+      "The plant must contain a finite-mass six-degree-of-freedom rigid body, aerodynamic and propulsion forces, four rotor paths, two independently actuated front-rotor tilt paths, conventional aerodynamic control surfaces, gravity and ground interaction."
+    ],
+    "functional_paths": [
+      "The plant must contain a finite-mass six-degree-of-freedom rigid body, aerodynamic and propulsion forces, four rotor paths, two independently actuated front-rotor tilt paths, conventional aerodynamic control surfaces, gravity and ground interaction.",
+      "A mission manager and feedback controller must support hover waypoint flight, a controlled hover-to-fixed-wing transition, and fixed-wing waypoint or orbit flight.",
+      "During each mission, track the commanded path with bounded position, altitude, attitude and body-rate errors."
+    ],
+    "information_paths": [
+      "MissionKind, InitialFlightMode, MissionProfile, PayloadScale, EnableWind, SimulationDuration_s -> F90-XAERO-04 plant/control path -> PositionTracking, TransitionState, VehicleState, ActuatorCommand"
+    ],
+    "modes_and_events": [
+      "Build a closed-loop tiltrotor VTOL flight model in Simulink.",
+      "Read MissionKind, InitialFlightMode, MissionProfile, PayloadScale, EnableWind and SimulationDuration_s from the MATLAB base workspace.",
+      "The transition must acquire forward airspeed while continuously tilting the front rotors and avoiding excessive altitude loss or prolonged command saturation."
+    ],
+    "interfaces": [
+      {
+        "name": "MissionKind",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read MissionKind, InitialFlightMode, MissionProfile, PayloadScale, EnableWind and SimulationDuration_s from the MATLAB base workspace. MissionKind is a scalar integer in {1, 2, 3} for hover waypoint, hover-to-fixed-wing transition, and fixed-wing waypoint-orbit missions; InitialFlightMode is a scalar integer 0 (hover) or 2 (fixed wing); MissionProfile is an N-by-8 real matrix ordered [mission operation code, north position (m), east position (m), down position (m), operation parameters 1-4], with operation codes 1 (arm or initialize), 2 (track waypoint), 3 (track orbit using columns 5-8), 4 (land), and 6 (change between hover and forward-flight configuration); PayloadScale is a real scalar in [0.9, 1.1] (multiplicative mass factor); EnableWind is a scalar logical; and SimulationDuration_s is a real scalar in [30, 60] s.",
+        "source": "tasks/XAERO-04/public_spec.json"
+      },
+      {
+        "name": "InitialFlightMode",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read MissionKind, InitialFlightMode, MissionProfile, PayloadScale, EnableWind and SimulationDuration_s from the MATLAB base workspace. MissionKind is a scalar integer in {1, 2, 3} for hover waypoint, hover-to-fixed-wing transition, and fixed-wing waypoint-orbit missions; InitialFlightMode is a scalar integer 0 (hover) or 2 (fixed wing); MissionProfile is an N-by-8 real matrix ordered [mission operation code, north position (m), east position (m), down position (m), operation parameters 1-4], with operation codes 1 (arm or initialize), 2 (track waypoint), 3 (track orbit using columns 5-8), 4 (land), and 6 (change between hover and forward-flight configuration); PayloadScale is a real scalar in [0.9, 1.1] (multiplicative mass factor); EnableWind is a scalar logical; and SimulationDuration_s is a real scalar in [30, 60] s.",
+        "source": "tasks/XAERO-04/public_spec.json"
+      },
+      {
+        "name": "MissionProfile",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read MissionKind, InitialFlightMode, MissionProfile, PayloadScale, EnableWind and SimulationDuration_s from the MATLAB base workspace. MissionProfile uses the public operation codes and column order in the input contract. MissionKind is a scalar integer in {1, 2, 3} for hover waypoint, hover-to-fixed-wing transition, and fixed-wing waypoint-orbit missions; InitialFlightMode is a scalar integer 0 (hover) or 2 (fixed wing); MissionProfile is an N-by-8 real matrix ordered [mission operation code, north position (m), east position (m), down position (m), operation parameters 1-4], with operation codes 1 (arm or initialize), 2 (track waypoint), 3 (track orbit using columns 5-8), 4 (land), and 6 (change between hover and forward-flight configuration); PayloadScale is a real scalar in [0.9, 1.1] (multiplicative mass factor); EnableWind is a scalar logical; and SimulationDuration_s is a real scalar in [30, 60] s.",
+        "source": "tasks/XAERO-04/public_spec.json"
+      },
+      {
+        "name": "PayloadScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "multiplicative mass factor"
+        ],
+        "range_or_shape": "Read MissionKind, InitialFlightMode, MissionProfile, PayloadScale, EnableWind and SimulationDuration_s from the MATLAB base workspace. MissionKind is a scalar integer in {1, 2, 3} for hover waypoint, hover-to-fixed-wing transition, and fixed-wing waypoint-orbit missions; InitialFlightMode is a scalar integer 0 (hover) or 2 (fixed wing); MissionProfile is an N-by-8 real matrix ordered [mission operation code, north position (m), east position (m), down position (m), operation parameters 1-4], with operation codes 1 (arm or initialize), 2 (track waypoint), 3 (track orbit using columns 5-8), 4 (land), and 6 (change between hover and forward-flight configuration); PayloadScale is a real scalar in [0.9, 1.1] (multiplicative mass factor); EnableWind is a scalar logical; and SimulationDuration_s is a real scalar in [30, 60] s.",
+        "source": "tasks/XAERO-04/public_spec.json"
+      },
+      {
+        "name": "EnableWind",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read MissionKind, InitialFlightMode, MissionProfile, PayloadScale, EnableWind and SimulationDuration_s from the MATLAB base workspace. MissionKind is a scalar integer in {1, 2, 3} for hover waypoint, hover-to-fixed-wing transition, and fixed-wing waypoint-orbit missions; InitialFlightMode is a scalar integer 0 (hover) or 2 (fixed wing); MissionProfile is an N-by-8 real matrix ordered [mission operation code, north position (m), east position (m), down position (m), operation parameters 1-4], with operation codes 1 (arm or initialize), 2 (track waypoint), 3 (track orbit using columns 5-8), 4 (land), and 6 (change between hover and forward-flight configuration); PayloadScale is a real scalar in [0.9, 1.1] (multiplicative mass factor); EnableWind is a scalar logical; and SimulationDuration_s is a real scalar in [30, 60] s.",
+        "source": "tasks/XAERO-04/public_spec.json"
+      },
+      {
+        "name": "SimulationDuration_s",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read MissionKind, InitialFlightMode, MissionProfile, PayloadScale, EnableWind and SimulationDuration_s from the MATLAB base workspace. MissionKind is a scalar integer in {1, 2, 3} for hover waypoint, hover-to-fixed-wing transition, and fixed-wing waypoint-orbit missions; InitialFlightMode is a scalar integer 0 (hover) or 2 (fixed wing); MissionProfile is an N-by-8 real matrix ordered [mission operation code, north position (m), east position (m), down position (m), operation parameters 1-4], with operation codes 1 (arm or initialize), 2 (track waypoint), 3 (track orbit using columns 5-8), 4 (land), and 6 (change between hover and forward-flight configuration); PayloadScale is a real scalar in [0.9, 1.1] (multiplicative mass factor); EnableWind is a scalar logical; and SimulationDuration_s is a real scalar in [30, 60] s.",
+        "source": "tasks/XAERO-04/public_spec.json"
+      },
+      {
+        "name": "PositionTracking",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named PositionTracking, TransitionState, VehicleState, and ActuatorCommand. PositionTracking has 6 channels in this order: commanded north, east, and down position, followed by measured north, east, and down position, all in m.",
+        "source": "tasks/XAERO-04/public_spec.json"
+      },
+      {
+        "name": "TransitionState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s",
+          "rad",
+          "m"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named PositionTracking, TransitionState, VehicleState, and ActuatorCommand. TransitionState has 4 channels in this order: airspeed (m/s), front-rotor tilt angle (rad), pitch angle (rad), and altitude above the local ground plane (m).",
+        "source": "tasks/XAERO-04/public_spec.json"
+      },
+      {
+        "name": "VehicleState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s",
+          "rad/s",
+          "rad",
+          "m"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named PositionTracking, TransitionState, VehicleState, and ActuatorCommand. VehicleState has 13 channels in this order: north, east, and down position (m); north, east, and down velocity (m/s); roll, pitch, and yaw (rad); body roll, pitch, and yaw rate (rad/s); and airspeed (m/s).",
+        "source": "tasks/XAERO-04/public_spec.json"
+      },
+      {
+        "name": "ActuatorCommand",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rev/s",
+          "rad"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named PositionTracking, TransitionState, VehicleState, and ActuatorCommand. ActuatorCommand has 10 channels in this order: front-left, front-right, rear-right, and rear-left rotor-speed commands in rev/s; front-left and front-right rotor-tilt commands (rad); aileron, elevator, and rudder commands (rad); and the forward-thrust rotor-speed-increment command in rev/s.",
+        "source": "tasks/XAERO-04/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "A mission manager and feedback controller must support hover waypoint flight, a controlled hover-to-fixed-wing transition, and fixed-wing waypoint or orbit flight.",
+      "MissionProfile uses the public operation codes and column order in the input contract.",
+      "PositionTracking has 6 channels in this order: commanded north, east, and down position, followed by measured north, east, and down position, all in m."
+    ],
+    "feedback_and_control_causality": [
+      "Build a closed-loop tiltrotor VTOL flight model in Simulink.",
+      "The plant must contain a finite-mass six-degree-of-freedom rigid body, aerodynamic and propulsion forces, four rotor paths, two independently actuated front-rotor tilt paths, conventional aerodynamic control surfaces, gravity and ground interaction.",
+      "A mission manager and feedback controller must support hover waypoint flight, a controlled hover-to-fixed-wing transition, and fixed-wing waypoint or orbit flight."
+    ],
+    "signal_sources": [
+      "MissionKind is read from the public MATLAB base-workspace input contract.",
+      "InitialFlightMode is read from the public MATLAB base-workspace input contract.",
+      "MissionProfile is read from the public MATLAB base-workspace input contract.",
+      "PayloadScale is read from the public MATLAB base-workspace input contract.",
+      "EnableWind is read from the public MATLAB base-workspace input contract.",
+      "SimulationDuration_s is read from the public MATLAB base-workspace input contract.",
+      "PositionTracking is produced by the implemented plant or controller and logged under the public output contract.",
+      "TransitionState is produced by the implemented plant or controller and logged under the public output contract.",
+      "VehicleState is produced by the implemented plant or controller and logged under the public output contract.",
+      "ActuatorCommand is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "MissionKind: Read MissionKind, InitialFlightMode, MissionProfile, PayloadScale, EnableWind and SimulationDuration_s from the MATLAB base workspace. MissionKind is a scalar integer in {1, 2, 3} for hover waypoint, hover-to-fixed-wing transition, and fixed-wing waypoint-orbit missions; InitialFlightMode is a scalar integer 0 (hover) or 2 (fixed wing); MissionProfile is an N-by-8 real matrix ordered [mission operation code, north position (m), east position (m), down position (m), operation parameters 1-4], with operation codes 1 (arm or initialize), 2 (track waypoint), 3 (track orbit using columns 5-8), 4 (land), and 6 (change between hover and forward-flight configuration); PayloadScale is a real scalar in [0.9, 1.1] (multiplicative mass factor); EnableWind is a scalar logical; and SimulationDuration_s is a real scalar in [30, 60] s.",
+      "InitialFlightMode: Read MissionKind, InitialFlightMode, MissionProfile, PayloadScale, EnableWind and SimulationDuration_s from the MATLAB base workspace. MissionKind is a scalar integer in {1, 2, 3} for hover waypoint, hover-to-fixed-wing transition, and fixed-wing waypoint-orbit missions; InitialFlightMode is a scalar integer 0 (hover) or 2 (fixed wing); MissionProfile is an N-by-8 real matrix ordered [mission operation code, north position (m), east position (m), down position (m), operation parameters 1-4], with operation codes 1 (arm or initialize), 2 (track waypoint), 3 (track orbit using columns 5-8), 4 (land), and 6 (change between hover and forward-flight configuration); PayloadScale is a real scalar in [0.9, 1.1] (multiplicative mass factor); EnableWind is a scalar logical; and SimulationDuration_s is a real scalar in [30, 60] s.",
+      "MissionProfile: Read MissionKind, InitialFlightMode, MissionProfile, PayloadScale, EnableWind and SimulationDuration_s from the MATLAB base workspace. MissionProfile uses the public operation codes and column order in the input contract. MissionKind is a scalar integer in {1, 2, 3} for hover waypoint, hover-to-fixed-wing transition, and fixed-wing waypoint-orbit missions; InitialFlightMode is a scalar integer 0 (hover) or 2 (fixed wing); MissionProfile is an N-by-8 real matrix ordered [mission operation code, north position (m), east position (m), down position (m), operation parameters 1-4], with operation codes 1 (arm or initialize), 2 (track waypoint), 3 (track orbit using columns 5-8), 4 (land), and 6 (change between hover and forward-flight configuration); PayloadScale is a real scalar in [0.9, 1.1] (multiplicative mass factor); EnableWind is a scalar logical; and SimulationDuration_s is a real scalar in [30, 60] s.",
+      "PayloadScale: Read MissionKind, InitialFlightMode, MissionProfile, PayloadScale, EnableWind and SimulationDuration_s from the MATLAB base workspace. MissionKind is a scalar integer in {1, 2, 3} for hover waypoint, hover-to-fixed-wing transition, and fixed-wing waypoint-orbit missions; InitialFlightMode is a scalar integer 0 (hover) or 2 (fixed wing); MissionProfile is an N-by-8 real matrix ordered [mission operation code, north position (m), east position (m), down position (m), operation parameters 1-4], with operation codes 1 (arm or initialize), 2 (track waypoint), 3 (track orbit using columns 5-8), 4 (land), and 6 (change between hover and forward-flight configuration); PayloadScale is a real scalar in [0.9, 1.1] (multiplicative mass factor); EnableWind is a scalar logical; and SimulationDuration_s is a real scalar in [30, 60] s.",
+      "EnableWind: Read MissionKind, InitialFlightMode, MissionProfile, PayloadScale, EnableWind and SimulationDuration_s from the MATLAB base workspace. MissionKind is a scalar integer in {1, 2, 3} for hover waypoint, hover-to-fixed-wing transition, and fixed-wing waypoint-orbit missions; InitialFlightMode is a scalar integer 0 (hover) or 2 (fixed wing); MissionProfile is an N-by-8 real matrix ordered [mission operation code, north position (m), east position (m), down position (m), operation parameters 1-4], with operation codes 1 (arm or initialize), 2 (track waypoint), 3 (track orbit using columns 5-8), 4 (land), and 6 (change between hover and forward-flight configuration); PayloadScale is a real scalar in [0.9, 1.1] (multiplicative mass factor); EnableWind is a scalar logical; and SimulationDuration_s is a real scalar in [30, 60] s.",
+      "SimulationDuration_s: Read MissionKind, InitialFlightMode, MissionProfile, PayloadScale, EnableWind and SimulationDuration_s from the MATLAB base workspace. MissionKind is a scalar integer in {1, 2, 3} for hover waypoint, hover-to-fixed-wing transition, and fixed-wing waypoint-orbit missions; InitialFlightMode is a scalar integer 0 (hover) or 2 (fixed wing); MissionProfile is an N-by-8 real matrix ordered [mission operation code, north position (m), east position (m), down position (m), operation parameters 1-4], with operation codes 1 (arm or initialize), 2 (track waypoint), 3 (track orbit using columns 5-8), 4 (land), and 6 (change between hover and forward-flight configuration); PayloadScale is a real scalar in [0.9, 1.1] (multiplicative mass factor); EnableWind is a scalar logical; and SimulationDuration_s is a real scalar in [30, 60] s."
+    ],
+    "disturbances": [
+      "Read MissionKind, InitialFlightMode, MissionProfile, PayloadScale, EnableWind and SimulationDuration_s from the MATLAB base workspace.",
+      "Support the full stated payload range and both calm and wind-enabled operation."
+    ],
+    "dynamic_processes": [
+      "The plant must contain a finite-mass six-degree-of-freedom rigid body, aerodynamic and propulsion forces, four rotor paths, two independently actuated front-rotor tilt paths, conventional aerodynamic control surfaces, gravity and ground interaction.",
+      "A mission manager and feedback controller must support hover waypoint flight, a controlled hover-to-fixed-wing transition, and fixed-wing waypoint or orbit flight.",
+      "Vehicle motion must result from the connected actuator, propulsion, aerodynamic and rigid-body dynamics;"
+    ],
+    "task_specific_shortcuts": [
+      "F90-XAERO-04: prescribing PositionTracking directly would bypass the system path described by: Vehicle motion must result from the connected actuator, propulsion, aerodynamic and rigid-body dynamics; prescribed motion or replayed state histories are not valid solutions.",
+      "F90-XAERO-04: replaying a fixed PositionTracking trace would ignore causal variation in MissionKind."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XAERO-04/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XAERO-04/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XAERO-04/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

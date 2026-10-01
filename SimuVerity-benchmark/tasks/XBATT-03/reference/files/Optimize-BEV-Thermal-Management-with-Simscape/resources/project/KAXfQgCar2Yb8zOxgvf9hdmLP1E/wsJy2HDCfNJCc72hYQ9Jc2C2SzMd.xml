@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Info File="Models/BEV_Thermal_Management.slx" GroupUUID="" Icon="" Name="BEV_Thermal_Management" Type="Basic" Visible="1">
+    <Extension Name="StartUpPrev" Value="65e36e5d-3018-4c09-ab89-a05ed7664408"/>
+</Info>

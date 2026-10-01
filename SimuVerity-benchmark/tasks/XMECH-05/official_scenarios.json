@@ -1,0 +1,171 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XMECH-05",
+  "scenarios": [
+    {
+      "id": "nominal",
+      "class": "nominal",
+      "PayloadMass_kg": 70.0,
+      "WheelFrictionScale": 1.0,
+      "BumpRadius_m": 1.0
+    },
+    {
+      "id": "light_payload",
+      "class": "payload_boundary",
+      "PayloadMass_kg": 63.0,
+      "WheelFrictionScale": 1.0,
+      "BumpRadius_m": 1.0
+    },
+    {
+      "id": "heavy_payload",
+      "class": "payload_boundary",
+      "PayloadMass_kg": 77.0,
+      "WheelFrictionScale": 1.0,
+      "BumpRadius_m": 1.0
+    },
+    {
+      "id": "low_friction",
+      "class": "traction_boundary",
+      "PayloadMass_kg": 70.0,
+      "WheelFrictionScale": 0.9,
+      "BumpRadius_m": 1.0
+    },
+    {
+      "id": "high_friction",
+      "class": "traction_boundary",
+      "PayloadMass_kg": 70.0,
+      "WheelFrictionScale": 1.1,
+      "BumpRadius_m": 1.0
+    },
+    {
+      "id": "large_bump",
+      "class": "obstacle_boundary",
+      "PayloadMass_kg": 70.0,
+      "WheelFrictionScale": 1.0,
+      "BumpRadius_m": 1.1
+    },
+    {
+      "id": "combined_boundary",
+      "class": "joint_boundary",
+      "PayloadMass_kg": 77.0,
+      "WheelFrictionScale": 0.9,
+      "BumpRadius_m": 1.05
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "stop_time_s": 53.0,
+      "cold_start_each_scenario": true,
+      "reference_adapter": "Map the public payload, wheel-friction, and bump-radius inputs to existing model-workspace parameters and extract native Simscape Multibody states plus native wheel-contact logs without saving the source model.",
+      "evidence_then_offline_scoring": true
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "preferred_reference_target_raw": 90.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.25,
+          "meaning": "nominal mission completion and payload handling"
+        },
+        "Q": {
+          "weight": 0.15,
+          "meaning": "physical pose, contact, balance, and settling quality"
+        },
+        "M": {
+          "weight": 0.25,
+          "meaning": "connected multibody mechanism and causal actuation/contact response"
+        },
+        "R": {
+          "weight": 0.2,
+          "meaning": "worst-case mission retention over payload, friction, obstacle, and combined boundaries"
+        },
+        "D": {
+          "weight": 0.15,
+          "meaning": "pickup, bump traversal, transport, placement, and recovery dynamics"
+        }
+      },
+      "within_group": "dedicated weighted arithmetic mean",
+      "across_groups": "weighted geometric mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum",
+      "policy_id": "simuverity-101-v1:xmech-05:scoring",
+      "fixed_reference_raw_score": 95.2124973731,
+      "fixed_reference_groups": {
+        "A": 1.0,
+        "Q": 1.0,
+        "M": 1.0,
+        "R": 0.964228516385686,
+        "D": 0.7569254059007453
+      },
+      "final_fresh_raw_score": 95.2124973731,
+      "final_fresh_score_delta": 0.0
+    },
+    "shortcut_sanity_contract": [
+      "qualification_or_required_output_missing",
+      "constant_or_prescribed_vehicle_and_payload_pose",
+      "nominal_trace_copied_across_private_inputs",
+      "missing_physical_multibody_or_contact mechanism",
+      "missing_wheel_contact_forces",
+      "missing_lift_or_tilt_motion",
+      "payload_not_coupled_to_vehicle_mission"
+    ]
+  },
+  "simulation": {
+    "stop_time_s": 53.0,
+    "cold_start_each_scenario": true,
+    "reference_adapter": "Map the public payload, wheel-friction, and bump-radius inputs to existing model-workspace parameters and extract native Simscape Multibody states plus native wheel-contact logs without saving the source model.",
+    "evidence_then_offline_scoring": true
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "preferred_reference_target_raw": 90.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.25,
+        "meaning": "nominal mission completion and payload handling"
+      },
+      "Q": {
+        "weight": 0.15,
+        "meaning": "physical pose, contact, balance, and settling quality"
+      },
+      "M": {
+        "weight": 0.25,
+        "meaning": "connected multibody mechanism and causal actuation/contact response"
+      },
+      "R": {
+        "weight": 0.2,
+        "meaning": "worst-case mission retention over payload, friction, obstacle, and combined boundaries"
+      },
+      "D": {
+        "weight": 0.15,
+        "meaning": "pickup, bump traversal, transport, placement, and recovery dynamics"
+      }
+    },
+    "within_group": "dedicated weighted arithmetic mean",
+    "across_groups": "weighted geometric mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum",
+    "policy_id": "simuverity-101-v1:xmech-05:scoring",
+    "fixed_reference_raw_score": 95.2124973731,
+    "fixed_reference_groups": {
+      "A": 1.0,
+      "Q": 1.0,
+      "M": 1.0,
+      "R": 0.964228516385686,
+      "D": 0.7569254059007453
+    },
+    "final_fresh_raw_score": 95.2124973731,
+    "final_fresh_score_delta": 0.0
+  },
+  "shortcut_sanity_contract": [
+    "qualification_or_required_output_missing",
+    "constant_or_prescribed_vehicle_and_payload_pose",
+    "nominal_trace_copied_across_private_inputs",
+    "missing_physical_multibody_or_contact mechanism",
+    "missing_wheel_contact_forces",
+    "missing_lift_or_tilt_motion",
+    "payload_not_coupled_to_vehicle_mission"
+  ]
+}

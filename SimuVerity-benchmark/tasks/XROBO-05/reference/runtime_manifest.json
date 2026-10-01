@@ -1,0 +1,86 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XROBO-05",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/MSS/SIMULINK/mssSimulinkDemos/demoAUVdepthHeadingControl.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 413,
+  "retained_bytes": 53499805,
+  "excluded_files": [
+    {
+      "path": "reference/files/MSS/documentation/Tutoiral on modelling and simulation of marine craft/Powerpoint/M1_intro.pptx",
+      "size_bytes": 4165477,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/MSS/documentation/Tutoiral on modelling and simulation of marine craft/Powerpoint/M10_HydroSW.pptx",
+      "size_bytes": 1736486,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/MSS/documentation/Tutoiral on modelling and simulation of marine craft/Powerpoint/M2_Hydrodynamics.ppt",
+      "size_bytes": 1134592,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/MSS/documentation/Tutoiral on modelling and simulation of marine craft/Powerpoint/M3_RB_dynamics.ppt",
+      "size_bytes": 2611200,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/MSS/documentation/Tutoiral on modelling and simulation of marine craft/Powerpoint/M4_maneuvering models.pptx",
+      "size_bytes": 11616420,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/MSS/documentation/Tutoiral on modelling and simulation of marine craft/Powerpoint/M5_disturbances.ppt",
+      "size_bytes": 4296192,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/MSS/documentation/Tutoiral on modelling and simulation of marine craft/Powerpoint/M6_FD_Seakeeping models.ppt",
+      "size_bytes": 1132032,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/MSS/documentation/Tutoiral on modelling and simulation of marine craft/Powerpoint/M7_time_domain_models_short.ppt",
+      "size_bytes": 1858048,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/MSS/documentation/Tutoiral on modelling and simulation of marine craft/Powerpoint/M8_man_in_seaway.ppt",
+      "size_bytes": 1003520,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/MSS/documentation/Tutoiral on modelling and simulation of marine craft/Powerpoint/M9_models_n_motion_control.pptx",
+      "size_bytes": 6531195,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    }
+  ],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ]
+}

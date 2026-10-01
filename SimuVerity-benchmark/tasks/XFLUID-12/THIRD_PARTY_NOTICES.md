@@ -1,0 +1,14 @@
+# Third-party notice: XFLUID-12
+
+The SimuVerity task specification, wrapper, and packaging code are covered by the repository license. Reference assets remain under their upstream terms; the repository license does not replace those terms.
+
+Reference materialization: `bundled`.
+
+Upstream metadata:
+
+- license: Apache-2.0
+- commit: a23d2993807410fe78cc63546c1ba9d81912024f
+
+Included license/notice files:
+
+- `reference/files/repo/LICENSE`

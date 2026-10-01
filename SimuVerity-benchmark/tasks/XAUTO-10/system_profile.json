@@ -1,0 +1,162 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XAUTO-10",
+  "collection": "XAUTO",
+  "reference": {
+    "identity_path": "tasks/XAUTO-10/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/source/simulink/torque_vectoring_sim.slx",
+    "model_path": "tasks/XAUTO-10/reference/files/source/simulink/torque_vectoring_sim.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XAUTO-10",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a Simulink model of a rear-wheel-drive vehicle handling plant.",
+    "engineering_objects": [
+      "Build a Simulink model of a rear-wheel-drive vehicle handling plant.",
+      "The model shall contain coupled steering kinematics, dynamic wheel rotation, longitudinal and lateral tyre slip, nonlinear combined tyre-force generation, axle/body load transfer or equivalent force coupling, and longitudinal, lateral, and yaw vehicle dynamics.",
+      "Rear-left and rear-right wheel torques shall act through the wheel and tyre dynamics;"
+    ],
+    "physical_paths": [
+      "Rear-left and rear-right wheel torques shall act through the wheel and tyre dynamics; do not prescribe vehicle motion or slip outputs directly.",
+      "Build a Simulink model of a rear-wheel-drive vehicle handling plant.",
+      "The model shall contain coupled steering kinematics, dynamic wheel rotation, longitudinal and lateral tyre slip, nonlinear combined tyre-force generation, axle/body load transfer or equivalent force coupling, and longitudinal, lateral, and yaw vehicle dynamics.",
+      "Rear-left and rear-right wheel torques shall act through the wheel and tyre dynamics;"
+    ],
+    "functional_paths": [
+      "The model shall contain coupled steering kinematics, dynamic wheel rotation, longitudinal and lateral tyre slip, nonlinear combined tyre-force generation, axle/body load transfer or equivalent force coupling, and longitudinal, lateral, and yaw vehicle dynamics.",
+      "It does not require a yaw-rate feedback controller.",
+      "A desired-yaw-rate diagnostic may be computed from the commanded steering and measured vehicle state, but it must not be presented as evidence of closed-loop torque-vectoring control."
+    ],
+    "information_paths": [
+      "steering_angle_deg, rear_left_torque_nm, rear_right_torque_nm -> F90-XAUTO-10 plant/control path -> vehicle_motion_state, wheel_slip_state, rear_wheel_command_state"
+    ],
+    "modes_and_events": [
+      "Build a Simulink model of a rear-wheel-drive vehicle handling plant.",
+      "The model shall contain coupled steering kinematics, dynamic wheel rotation, longitudinal and lateral tyre slip, nonlinear combined tyre-force generation, axle/body load transfer or equivalent force coupling, and longitudinal, lateral, and yaw vehicle dynamics.",
+      "The model shall remain finite for equal rear torques, changes in the equal-torque level, and small mirrored left/right torque differences at fixed total torque."
+    ],
+    "interfaces": [
+      {
+        "name": "steering_angle_deg",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "deg"
+        ],
+        "range_or_shape": "Read the scalar workspace inputs steering_angle_deg, rear_left_torque_nm, and rear_right_torque_nm. Support steering_angle_deg from -6 to +6 degrees and each rear-wheel torque from 15 to 45 N*m.",
+        "source": "tasks/XAUTO-10/public_spec.json"
+      },
+      {
+        "name": "rear_left_torque_nm",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "N*m"
+        ],
+        "range_or_shape": "Read the scalar workspace inputs steering_angle_deg, rear_left_torque_nm, and rear_right_torque_nm.",
+        "source": "tasks/XAUTO-10/public_spec.json"
+      },
+      {
+        "name": "rear_right_torque_nm",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "N*m"
+        ],
+        "range_or_shape": "Read the scalar workspace inputs steering_angle_deg, rear_left_torque_nm, and rear_right_torque_nm.",
+        "source": "tasks/XAUTO-10/public_spec.json"
+      },
+      {
+        "name": "vehicle_motion_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s^2",
+          "rad/s^2",
+          "m/s",
+          "rad/s"
+        ],
+        "range_or_shape": "vehicle_motion_state shall have seven columns in this order: longitudinal velocity (m/s), lateral velocity (m/s), longitudinal acceleration (m/s^2), lateral acceleration (m/s^2), yaw rate (rad/s), yaw acceleration (rad/s^2), and desired-yaw-rate diagnostic (rad/s).",
+        "source": "tasks/XAUTO-10/public_spec.json"
+      },
+      {
+        "name": "wheel_slip_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "wheel_slip_state shall have twelve columns: four longitudinal-slip channels, four lateral-slip channels, and four combined-slip channels, each ordered front-left, front-right, rear-left, rear-right.",
+        "source": "tasks/XAUTO-10/public_spec.json"
+      },
+      {
+        "name": "rear_wheel_command_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N*m",
+          "deg"
+        ],
+        "range_or_shape": "rear_wheel_command_state shall have three columns: steering command (deg), rear-left torque command (N*m), and rear-right torque command (N*m).",
+        "source": "tasks/XAUTO-10/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "The model shall contain coupled steering kinematics, dynamic wheel rotation, longitudinal and lateral tyre slip, nonlinear combined tyre-force generation, axle/body load transfer or equivalent force coupling, and longitudinal, lateral, and yaw vehicle dynamics.",
+      "It does not require a yaw-rate feedback controller.",
+      "A desired-yaw-rate diagnostic may be computed from the commanded steering and measured vehicle state, but it must not be presented as evidence of closed-loop torque-vectoring control."
+    ],
+    "feedback_and_control_causality": [
+      "Build a Simulink model of a rear-wheel-drive vehicle handling plant.",
+      "This task is an open-loop plant construction problem.",
+      "It does not require a yaw-rate feedback controller."
+    ],
+    "signal_sources": [
+      "steering_angle_deg is read from the public MATLAB base-workspace input contract.",
+      "rear_left_torque_nm is read from the public MATLAB base-workspace input contract.",
+      "rear_right_torque_nm is read from the public MATLAB base-workspace input contract.",
+      "vehicle_motion_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "wheel_slip_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "rear_wheel_command_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "steering_angle_deg: Read the scalar workspace inputs steering_angle_deg, rear_left_torque_nm, and rear_right_torque_nm. Support steering_angle_deg from -6 to +6 degrees and each rear-wheel torque from 15 to 45 N*m.",
+      "rear_left_torque_nm: Read the scalar workspace inputs steering_angle_deg, rear_left_torque_nm, and rear_right_torque_nm.",
+      "rear_right_torque_nm: Read the scalar workspace inputs steering_angle_deg, rear_left_torque_nm, and rear_right_torque_nm."
+    ],
+    "disturbances": [
+      "The model shall contain coupled steering kinematics, dynamic wheel rotation, longitudinal and lateral tyre slip, nonlinear combined tyre-force generation, axle/body load transfer or equivalent force coupling, and longitudinal, lateral, and yaw vehicle dynamics."
+    ],
+    "dynamic_processes": [
+      "The model shall contain coupled steering kinematics, dynamic wheel rotation, longitudinal and lateral tyre slip, nonlinear combined tyre-force generation, axle/body load transfer or equivalent force coupling, and longitudinal, lateral, and yaw vehicle dynamics.",
+      "Rear-left and rear-right wheel torques shall act through the wheel and tyre dynamics;"
+    ],
+    "task_specific_shortcuts": [
+      "F90-XAUTO-10: prescribing vehicle_motion_state directly would bypass the system path described by: Rear-left and rear-right wheel torques shall act through the wheel and tyre dynamics; do not prescribe vehicle motion or slip outputs directly.",
+      "F90-XAUTO-10: replaying a fixed vehicle_motion_state trace would ignore causal variation in steering_angle_deg."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XAUTO-10/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XAUTO-10/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XAUTO-10/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

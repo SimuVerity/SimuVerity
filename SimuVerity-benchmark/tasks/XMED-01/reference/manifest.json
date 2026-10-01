@@ -1,0 +1,30 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XMED-01",
+  "file_count": 1,
+  "files": [
+    {
+      "path": "reference/files/XMED01_reference.slx",
+      "size_bytes": 116502
+    }
+  ],
+  "entrypoint": "reference/files/XMED01_reference.slx",
+  "expected_score": 97.58829689981866,
+  "expected_score_basis": "reference_replay",
+  "expected_valid_scenarios": 5,
+  "score_tolerance": 5e-07,
+  "scenario_contract": {
+    "expected_ids": [
+      "leak_probe",
+      "stiff_obstructed",
+      "compliant_leaky",
+      "joint_interior",
+      "low_compliance_high_leak"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 116502,
+  "excluded_files": []
+}

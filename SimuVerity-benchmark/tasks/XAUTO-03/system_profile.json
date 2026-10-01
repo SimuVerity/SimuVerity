@@ -1,0 +1,135 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XAUTO-03",
+  "collection": "XAUTO",
+  "reference": {
+    "identity_path": "tasks/XAUTO-03/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/source/automotive-electrical-system/ssc_battery_management_R2019b.slx",
+    "model_path": "tasks/XAUTO-03/reference/files/source/automotive-electrical-system/ssc_battery_management_R2019b.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XAUTO-03",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a conventional 12 V automotive electrical system in Simscape.",
+    "engineering_objects": [
+      "The solution must demonstrate a real electrical power path from alternator and battery to the loads, rather than prescribed output signals."
+    ],
+    "physical_paths": [
+      "The solution must demonstrate a real electrical power path from alternator and battery to the loads, rather than prescribed output signals."
+    ],
+    "functional_paths": [
+      "The alternator regulation must use the measured bus voltage in a closed loop so that the battery and accessory supply remain usable while engine speed and accessory demand vary."
+    ],
+    "information_paths": [
+      "engine_speed_rpm, accessory_load_profile -> F90-XAUTO-03 plant/control path -> V_batt, V_alt, V_loads, I_loads"
+    ],
+    "modes_and_events": [
+      "The model shall accept an engine-speed profile and an accessory-load profile from the MATLAB base workspace."
+    ],
+    "interfaces": [
+      {
+        "name": "engine_speed_rpm",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Use the exact MATLAB base-workspace fields engine_speed_rpm and accessory_load_profile; both are time-varying profiles, with engine_speed_rpm carrying engine speed and accessory_load_profile carrying aggregate accessory demand.",
+        "source": "tasks/XAUTO-03/public_spec.json"
+      },
+      {
+        "name": "accessory_load_profile",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Use the exact MATLAB base-workspace fields engine_speed_rpm and accessory_load_profile; both are time-varying profiles, with engine_speed_rpm carrying engine speed and accessory_load_profile carrying aggregate accessory demand.",
+        "source": "tasks/XAUTO-03/public_spec.json"
+      },
+      {
+        "name": "V_batt",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Log V_batt, V_alt, V_loads, and I_loads as full-duration Timeseries measured at the actual battery, alternator, and load interfaces.",
+        "source": "tasks/XAUTO-03/public_spec.json"
+      },
+      {
+        "name": "V_alt",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Log V_batt, V_alt, V_loads, and I_loads as full-duration Timeseries measured at the actual battery, alternator, and load interfaces.",
+        "source": "tasks/XAUTO-03/public_spec.json"
+      },
+      {
+        "name": "V_loads",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Log V_batt, V_alt, V_loads, and I_loads as full-duration Timeseries measured at the actual battery, alternator, and load interfaces.",
+        "source": "tasks/XAUTO-03/public_spec.json"
+      },
+      {
+        "name": "I_loads",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Log V_batt, V_alt, V_loads, and I_loads as full-duration Timeseries measured at the actual battery, alternator, and load interfaces.",
+        "source": "tasks/XAUTO-03/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "A variable-speed alternator, a lead-acid battery, and multiple resistive accessory loads must share one DC electrical bus."
+    ],
+    "feedback_and_control_causality": [
+      "The alternator regulation must use the measured bus voltage in a closed loop so that the battery and accessory supply remain usable while engine speed and accessory demand vary."
+    ],
+    "signal_sources": [
+      "engine_speed_rpm is read from the public MATLAB base-workspace input contract.",
+      "accessory_load_profile is read from the public MATLAB base-workspace input contract.",
+      "V_batt is produced by the implemented plant or controller and logged under the public output contract.",
+      "V_alt is produced by the implemented plant or controller and logged under the public output contract.",
+      "V_loads is produced by the implemented plant or controller and logged under the public output contract.",
+      "I_loads is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "engine_speed_rpm: Use the exact MATLAB base-workspace fields engine_speed_rpm and accessory_load_profile; both are time-varying profiles, with engine_speed_rpm carrying engine speed and accessory_load_profile carrying aggregate accessory demand.",
+      "accessory_load_profile: Use the exact MATLAB base-workspace fields engine_speed_rpm and accessory_load_profile; both are time-varying profiles, with engine_speed_rpm carrying engine speed and accessory_load_profile carrying aggregate accessory demand."
+    ],
+    "disturbances": [
+      "A variable-speed alternator, a lead-acid battery, and multiple resistive accessory loads must share one DC electrical bus.",
+      "The model shall accept an engine-speed profile and an accessory-load profile from the MATLAB base workspace.",
+      "Log V_batt, V_alt, V_loads, and I_loads as full-duration Timeseries measured at the actual battery, alternator, and load interfaces."
+    ],
+    "dynamic_processes": [
+      "Log V_batt, V_alt, V_loads, and I_loads as full-duration Timeseries measured at the actual battery, alternator, and load interfaces."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XAUTO-03: prescribing V_batt directly would bypass the system path described by: The solution must demonstrate a real electrical power path from alternator and battery to the loads, rather than prescribed output signals.",
+      "F90-XAUTO-03: replaying a fixed V_batt trace would ignore causal variation in engine_speed_rpm."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XAUTO-03/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XAUTO-03/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XAUTO-03/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

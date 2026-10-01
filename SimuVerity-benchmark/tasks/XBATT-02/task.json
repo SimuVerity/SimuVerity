@@ -1,0 +1,80 @@
+{
+  "schema": "simuverity.task.v1",
+  "release": "simuverity-101-v1",
+  "task_id": "XBATT-02",
+  "ordinal": 27,
+  "collection": "XBATT",
+  "runtime_alias": "XBATT-02",
+  "required_model_file": "cand_XBATT02.slx",
+  "evaluation_policy_id": "simuverity-101-v1:xbatt-02:scoring",
+  "candidate_closure": {
+    "public_input_names": [
+      "ambient_temperature",
+      "coolant_inlet_temperature",
+      "initial_soc",
+      "current_demand",
+      "module_resistance_spread",
+      "coolant_maldistribution",
+      "load_step_time",
+      "regen_start_time"
+    ],
+    "nominal_provider": "simuverity_public_nominal_inputs"
+  },
+  "public_spec": "public_spec.json",
+  "official_scenarios": "official_scenarios.json",
+  "extractor": {
+    "kind": "matlab_function",
+    "path": "extractor/run.m",
+    "entrypoint": "run",
+    "implementation": "vendor/scripts/formal90/tasks/f90_xbatt02/f90_xbatt02_extract_candidate_evidence.m",
+    "closure_manifest": "extractor/manifest.json"
+  },
+  "scorer": {
+    "kind": "python_function",
+    "path": "scorer.py",
+    "entrypoint": "score",
+    "closure_manifest": "scorer/manifest.json",
+    "offline_only": true
+  },
+  "reference": {
+    "materialization": "bundled",
+    "source_kind": "expert_built",
+    "path": "reference/files",
+    "manifest": "reference/manifest.json",
+    "entrypoint": "reference/files/XBATT02_reference.slx",
+    "expected_valid_scenarios": 9,
+    "score_tolerance": 1e-12,
+    "expected_score": 100.0,
+    "expected_score_basis": "reference_replay",
+    "scenario_contract": {
+      "expected_ids": [
+        "nominal",
+        "hot_high_discharge",
+        "low_soc_supervision",
+        "cold_regeneration",
+        "maldistribution_pair_low",
+        "maldistribution_pair_high",
+        "demand_pair_low",
+        "demand_pair_high",
+        "joint_boundary"
+      ],
+      "nominal_scenario_id": "nominal",
+      "nominal_materialization": "extractor_appended_and_explicitly_published"
+    },
+    "score_tolerance_basis": "source_authority_numeric_precision",
+    "runtime_manifest": "reference/runtime_manifest.json"
+  },
+  "applicable_groups": [
+    "G",
+    "A",
+    "Q",
+    "M",
+    "R",
+    "D"
+  ],
+  "release_license_status": "PROJECT_ORIGINAL_APACHE_2_0",
+  "system_profile": {
+    "path": "system_profile.json",
+    "schema": "simuverity.system-profile.v1"
+  }
+}

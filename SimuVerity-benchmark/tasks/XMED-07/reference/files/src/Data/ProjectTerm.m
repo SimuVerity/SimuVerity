@@ -1,0 +1,1 @@
+Simulink.fileGenControl( 'reset' );

@@ -1,0 +1,28 @@
+component myAbs
+% PS Abs :0.75 :fixed
+% This block returns the absolute value of its input:
+%
+% y = abs(u).
+%
+% It does not generate a zero crossing when the sign of u changes.
+% All connections are physical signal ports.
+
+% Copyright 2016-2025 The MathWorks, Inc.
+
+  inputs
+    I = { 0, '1' }; % :left
+  end
+
+  outputs
+    O = { 0, '1' }; % :right
+  end
+
+  equations
+    if lt(I,0)
+        O==-I
+    else
+        O==I
+    end
+  end
+ 
+end

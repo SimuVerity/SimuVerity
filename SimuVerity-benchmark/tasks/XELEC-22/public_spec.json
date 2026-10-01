@@ -1,0 +1,8 @@
+{
+  "schema": "simuverity.public-spec.v1",
+  "task_id": "XELEC-22",
+  "collection": "XELEC",
+  "runtime_alias": "XELEC-22",
+  "candidate_filename": "cand_XELEC22.slx",
+  "prompt": "Build an electronic load controller for a three-phase 50 Hz micro-hydro generator. The generator must feed a common PCC with separate user-load and converter-controlled ballast-load branches connected in parallel. Read R_user from a base-workspace variable; its nominal value is 10 ohm and its operating range is +/-10%. Regulate ballast absorption in closed loop so generator active power remains approximately constant as user load changes. The converter DC-bus target is about 1 kV and the generator-speed target is 1 pu. The regulated states and generator active power must settle promptly across the stated load range. PCC voltage and current must remain balanced and reasonably sinusoidal. Psource is positive from generator into PCC, Pload from PCC into user load, and Pdump from ballast branch toward PCC. Log complete-run physical MATLAB Timeseries Vdc, Vabc, Iabc, Psource, Pload, Pdump and Speed. Vabc and Iabc must contain all three measured PCC phases; the power signals must measure their respective branches; Speed must be physical generator speed.\n\nSubmission filename contract: create, edit, and save the final self-contained Simulink model as cand_XELEC22.slx in the assigned submission directory; keep the latest usable state at that exact path throughout the run."
+}

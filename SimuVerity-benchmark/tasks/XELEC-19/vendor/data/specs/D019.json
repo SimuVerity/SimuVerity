@@ -1,0 +1,341 @@
+{
+  "id": "D019",
+  "schema_version": "1.0",
+  "scoring": "layered-continuous",
+  "domain": "inverter",
+  "title": "D019: Multilevel inverter (MLI, discrete-switch build) -> multilevel bipolar AC",
+  "routing": "behavior+structure+scenarios",
+  "prompt": "Build a three-phase multilevel inverter with an explicit power stage made from discrete controllable semiconductor switches rather than a preassembled bridge block. A DC source must feed the multilevel switching stage, which must supply a balanced three-phase load. Read P_load from a base-workspace variable; its nominal value is 500 W and its operating envelope is +/-10%. At nominal conditions one physically measured output phase must be a stepped bipolar 50 Hz waveform near 412 V peak-to-peak, and it must remain at the intended frequency and voltage level across the stated load envelope. Log that physical output phase voltage as a Timeseries named Vout.",
+  "sim": {
+    "solver": [],
+    "stop": 0.5,
+    "max_step": []
+  },
+  "input_contract": {
+    "P_load": {
+      "default": 500,
+      "required": true,
+      "required_block_any": [
+        "load|rlc|resist|100 w"
+      ],
+      "required_parameter_any": [
+        "activepower|resistance|value"
+      ],
+      "min_bindings": 1
+    }
+  },
+  "outputs": [
+    {
+      "name": "Vout",
+      "role": "core",
+      "datatype": "timeseries",
+      "min_channels": 1,
+      "max_channels": 1,
+      "time_coverage": 0.95,
+      "min_samples": 16,
+      "provenance": {
+        "required_any_upstream": [
+          "voltage measurement",
+          "three-phase vi measurement"
+        ],
+        "forbidden_upstream": [
+          "constant",
+          "sine wave",
+          "signal builder"
+        ],
+        "max_trace_depth": 24
+      }
+    }
+  ],
+  "behavioral": [
+    {
+      "id": "vout_pp",
+      "signal": "Vout",
+      "metric": "pp",
+      "scenario": "nominal",
+      "group": "nominal",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 412.2,
+      "tol_pass": 25,
+      "tol_zero": 100,
+      "curve_p": 1,
+      "weight": 1,
+      "require_steady": true,
+      "steady_stat": "rms",
+      "steady_fraction": 0.2,
+      "steady_cycle_hz": 50,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1,
+      "steady_all_channels": false
+    },
+    {
+      "id": "vout_freq",
+      "signal": "Vout",
+      "metric": "fund_freq",
+      "scenario": "nominal",
+      "group": "nominal",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 50,
+      "tol_pass": 1,
+      "tol_zero": 5,
+      "curve_p": 1,
+      "weight": 0.8,
+      "fundamental_hz": 50
+    },
+    {
+      "id": "vout_thd",
+      "signal": "Vout",
+      "metric": "thd",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "quality",
+      "basis": "expert",
+      "sided": "lower",
+      "target": 0.03,
+      "tol_pass": 0.04,
+      "tol_zero": 0.2,
+      "curve_p": 1,
+      "weight": 1,
+      "fundamental_hz": 50
+    },
+    {
+      "id": "vout_mean",
+      "signal": "Vout",
+      "metric": "mean",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "quality",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 5,
+      "tol_zero": 25,
+      "curve_p": 1,
+      "weight": 0.5
+    },
+    {
+      "id": "vout_pp_load_up",
+      "signal": "Vout",
+      "metric": "pp",
+      "scenario": "load_up",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 412.2,
+      "tol_pass": 35,
+      "tol_zero": 125,
+      "curve_p": 1,
+      "weight": 1,
+      "require_steady": true,
+      "steady_stat": "rms",
+      "steady_fraction": 0.2,
+      "steady_cycle_hz": 50,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1,
+      "steady_all_channels": false
+    },
+    {
+      "id": "vout_freq_load_up",
+      "signal": "Vout",
+      "metric": "fund_freq",
+      "scenario": "load_up",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 50,
+      "tol_pass": 1.5,
+      "tol_zero": 6,
+      "curve_p": 1,
+      "weight": 0.8,
+      "fundamental_hz": 50
+    },
+    {
+      "id": "vout_pp_load_down",
+      "signal": "Vout",
+      "metric": "pp",
+      "scenario": "load_down",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 412.2,
+      "tol_pass": 35,
+      "tol_zero": 125,
+      "curve_p": 1,
+      "weight": 1,
+      "require_steady": true,
+      "steady_stat": "rms",
+      "steady_fraction": 0.2,
+      "steady_cycle_hz": 50,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1,
+      "steady_all_channels": false
+    },
+    {
+      "id": "vout_freq_load_down",
+      "signal": "Vout",
+      "metric": "fund_freq",
+      "scenario": "load_down",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 50,
+      "tol_pass": 1.5,
+      "tol_zero": 6,
+      "curve_p": 1,
+      "weight": 0.8,
+      "fundamental_hz": 50
+    }
+  ],
+  "structural": {
+    "recognizers": [
+      {
+        "id": "discrete_controllable_stage",
+        "prim": "count_mask",
+        "args": [
+          "igbt",
+          "mosfet",
+          "ideal switch"
+        ],
+        "mandatory": true,
+        "weight": 1,
+        "k": 1
+      },
+      {
+        "id": "no_universal_bridge",
+        "prim": "forbid_universal_bridge",
+        "args": [],
+        "mandatory": true,
+        "weight": 1
+      },
+      {
+        "id": "three_phase_stage",
+        "prim": "three_phase_bridge",
+        "args": [],
+        "mandatory": true,
+        "weight": 1
+      },
+      {
+        "id": "dc_source_switches_load",
+        "prim": "physical_path",
+        "args": [],
+        "source": [
+          "\\|pv array[^|]*\\|subsystem\\|",
+          "\\|controlled current source[^|]*\\|",
+          "\\|dc voltage source[^|]*\\|",
+          "\\|battery[^|]*\\|",
+          "\\|dc source[^|]*\\|"
+        ],
+        "via": [
+          "\\|mosfet[^|]*\\|subsystem\\|mosfet",
+          "\\|igbt[^|]*\\|subsystem\\|igbt",
+          "\\|ideal switch[^|]*\\|"
+        ],
+        "target": [
+          "\\|parallel rlc load[^|]*\\|",
+          "\\|series rlc load[^|]*\\|",
+          "\\|load[^|]*\\|"
+        ],
+        "mandatory": true,
+        "weight": 1,
+        "require_via_cut": true
+      }
+    ]
+  },
+  "golden_tap": {
+    "Vout": {
+      "by": "block_input",
+      "path": "MLI17/Scope",
+      "port": 1
+    }
+  },
+  "scenarios": [
+    {
+      "id": "load_up",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "P_load": 550
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^100 W$",
+          "parameter": "ActivePower",
+          "scale": 1.1
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "output_voltage_holds_load_up",
+          "nominal_band": "vout_pp",
+          "scenario_band": "vout_pp_load_up",
+          "relation": "ratio_range",
+          "min_ratio": 0.9,
+          "max_ratio": 1.1
+        }
+      ],
+      "public_envelope": "P_load +/-10%"
+    },
+    {
+      "id": "load_down",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "P_load": 450
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^100 W$",
+          "parameter": "ActivePower",
+          "scale": 0.9
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "output_voltage_holds_load_down",
+          "nominal_band": "vout_pp",
+          "scenario_band": "vout_pp_load_down",
+          "relation": "ratio_range",
+          "min_ratio": 0.9,
+          "max_ratio": 1.1
+        }
+      ],
+      "public_envelope": "P_load +/-10%"
+    }
+  ],
+  "release": {
+    "status": "candidate-qualified",
+    "quarantined": false,
+    "release_ready": false,
+    "notes": "The declared load envelope is exercised while the output-voltage holding requirement is scored directly; the former contradictory voltage-motion witnesses have been removed. A conserving DC/source-to-discrete-switches-to-load path is verified.",
+    "blockers": [
+      "Task-specific adversarial regression and an independent legal implementation or expert review remain required."
+    ]
+  },
+  "task_specific_checks": [
+    {
+      "id": "D019.internal_multilevel_stage_level_count",
+      "semantic_kind": "band",
+      "scenario": "nominal",
+      "layer": "nominal",
+      "mandatory": true,
+      "fundamental_hz": 50,
+      "min_effective_levels": 3,
+      "analysis_cycles": 3,
+      "min_plateau_coverage": 0.45,
+      "min_level_separation_frac": 0.08,
+      "level_tolerance_frac": 0.035,
+      "min_level_occupancy_frac": 0.01
+    }
+  ]
+}

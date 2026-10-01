@@ -1,0 +1,140 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XTHERM-04",
+  "scenarios": [
+    {
+      "id": "native_cold_to_hot_transition",
+      "T_house_init_degC": 16.0,
+      "T_set_degC": 21.0,
+      "T_ambient_cold_degC": -10.0,
+      "T_ambient_hot_degC": 35.0,
+      "internal_heat_gain_scale": 1.0
+    },
+    {
+      "id": "cold_heating_boundary",
+      "T_house_init_degC": 14.0,
+      "T_set_degC": 21.0,
+      "T_ambient_cold_degC": -15.0,
+      "T_ambient_hot_degC": 30.0,
+      "internal_heat_gain_scale": 1.0
+    },
+    {
+      "id": "hot_cooling_boundary",
+      "T_house_init_degC": 28.0,
+      "T_set_degC": 22.0,
+      "T_ambient_cold_degC": 5.0,
+      "T_ambient_hot_degC": 40.0,
+      "internal_heat_gain_scale": 1.0
+    },
+    {
+      "id": "high_internal_heat_gain",
+      "T_house_init_degC": 21.0,
+      "T_set_degC": 21.0,
+      "T_ambient_cold_degC": 0.0,
+      "T_ambient_hot_degC": 35.0,
+      "internal_heat_gain_scale": 1.5
+    },
+    {
+      "id": "upper_setpoint_boundary",
+      "T_house_init_degC": 18.0,
+      "T_set_degC": 23.0,
+      "T_ambient_cold_degC": -5.0,
+      "T_ambient_hot_degC": 32.0,
+      "internal_heat_gain_scale": 0.8
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "stop_time_s": 32400.0,
+      "cold_start": true,
+      "evaluation_adapter": "Disable only the nonphysical P-H visualization block in memory, expose existing temperature and heat-gain parameters, log the three native Results buses, and read native Simscape evidence without saving the source model."
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "preferred_reference_target_raw": 90.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.2,
+          "meaning": "nominal temperature regulation and bounded operation"
+        },
+        "Q": {
+          "weight": 0.15,
+          "meaning": "refrigerant, heat-flow, power, and COP quality"
+        },
+        "M": {
+          "weight": 0.3,
+          "meaning": "closed-loop thermo-fluid and mode-reversal causality"
+        },
+        "R": {
+          "weight": 0.2,
+          "meaning": "worst-case retention across private thermal conditions"
+        },
+        "D": {
+          "weight": 0.15,
+          "meaning": "heating/cooling transition and comfort recovery"
+        }
+      },
+      "within_group": "weighted_arithmetic_mean",
+      "across_groups": "weighted_geometric_mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum",
+      "policy_id": "simuverity-101-v1:xtherm-04:scoring"
+    },
+    "shortcut_sanity_contract": [
+      "qualification_or_required_output_missing",
+      "thermo_fluid_path_missing",
+      "temperature_feedback_missing",
+      "house_temperature_copied_from_setpoint",
+      "constant_prerecorded_heat_and_power",
+      "private_conditions_ignored",
+      "mode_reversal_without_physical_flow_reversal"
+    ]
+  },
+  "simulation": {
+    "stop_time_s": 32400.0,
+    "cold_start": true,
+    "evaluation_adapter": "Disable only the nonphysical P-H visualization block in memory, expose existing temperature and heat-gain parameters, log the three native Results buses, and read native Simscape evidence without saving the source model."
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "preferred_reference_target_raw": 90.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.2,
+        "meaning": "nominal temperature regulation and bounded operation"
+      },
+      "Q": {
+        "weight": 0.15,
+        "meaning": "refrigerant, heat-flow, power, and COP quality"
+      },
+      "M": {
+        "weight": 0.3,
+        "meaning": "closed-loop thermo-fluid and mode-reversal causality"
+      },
+      "R": {
+        "weight": 0.2,
+        "meaning": "worst-case retention across private thermal conditions"
+      },
+      "D": {
+        "weight": 0.15,
+        "meaning": "heating/cooling transition and comfort recovery"
+      }
+    },
+    "within_group": "weighted_arithmetic_mean",
+    "across_groups": "weighted_geometric_mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum",
+    "policy_id": "simuverity-101-v1:xtherm-04:scoring"
+  },
+  "shortcut_sanity_contract": [
+    "qualification_or_required_output_missing",
+    "thermo_fluid_path_missing",
+    "temperature_feedback_missing",
+    "house_temperature_copied_from_setpoint",
+    "constant_prerecorded_heat_and_power",
+    "private_conditions_ignored",
+    "mode_reversal_without_physical_flow_reversal"
+  ]
+}

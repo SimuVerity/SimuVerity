@@ -1,0 +1,20 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XAERO-07",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/ssc_aircraft_elec.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 342,
+  "retained_bytes": 2531853,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ],
+  "clean_replay_setup": {
+    "phase": "before_load",
+    "path": "tasks/XAERO-07/reference/clean_replay_setup/f90_xaero07_reference_clean_replay_setup.m",
+    "entrypoint": "f90_xaero07_reference_clean_replay_setup"
+  }
+}

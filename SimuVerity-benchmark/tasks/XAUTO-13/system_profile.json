@@ -1,0 +1,117 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XAUTO-13",
+  "collection": "XAUTO",
+  "reference": {
+    "identity_path": "tasks/XAUTO-13/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/ext_xauto_pmsm_param_est_reference.slx",
+    "model_path": "tasks/XAUTO-13/reference/files/ext_xauto_pmsm_param_est_reference.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id EXT-XAUTO-PMSM-PARAM-EST",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build an online estimator for the electrical and mechanical parameters of a permanent-magnet synchronous motor.",
+    "engineering_objects": [
+      "EXT-XAUTO-PMSM-PARAM-EST plant and controller described by the current public task contract",
+      "Measured output interfaces: parameter_estimates, observer_diagnostics"
+    ],
+    "physical_paths": [
+      "Do not reconstruct an answer from a scenario label, replay a stored trajectory, hold a fixed parameter vector, or create decorative diagnostics disconnected from the estimator."
+    ],
+    "functional_paths": [
+      "The six estimates use these public design ranges: Rs 0.020--0.050 ohm, Ldd 60e-6--100e-6 H, Ldq from -30e-6 to -10e-6 H, Lqq 160e-6--240e-6 H, inertia 0.0035--0.0060 kg*m^2, and damping 0.10--0.30 N*m*s/rad.",
+      "The estimate trajectory must be causally driven by the supplied measurements and excitation, must evolve from an internal prior within the published design envelope, and must respond when the measured response changes.",
+      "parameter_estimates must contain [Rs_est_ohm, Ldd_est_H, Ldq_est_H, Lqq_est_H, inertia_est_kgm2, damping_est_Nms] in [ohm, H, H, H, kg*m^2, N*m*s/rad]."
+    ],
+    "information_paths": [
+      "pmsm_measurement_experiment -> EXT-XAUTO-PMSM-PARAM-EST plant/control path -> parameter_estimates, observer_diagnostics"
+    ],
+    "modes_and_events": [
+      "EXT-XAUTO-PMSM-PARAM-EST startup and continuous operation follow the current public task contract."
+    ],
+    "interfaces": [
+      {
+        "name": "pmsm_measurement_experiment",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read the evaluator-owned scalar struct pmsm_measurement_experiment from the MATLAB base workspace. Both logs must begin at 0 s, remain finite, and reach pmsm_measurement_experiment.duration_s.",
+        "source": "tasks/XAUTO-13/public_spec.json"
+      },
+      {
+        "name": "parameter_estimates",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "ohm",
+          "H",
+          "kg*m^2",
+          "N*m*s/rad"
+        ],
+        "range_or_shape": "parameter_estimates must contain [Rs_est_ohm, Ldd_est_H, Ldq_est_H, Lqq_est_H, inertia_est_kgm2, damping_est_Nms] in [ohm, H, H, H, kg*m^2, N*m*s/rad].",
+        "source": "tasks/XAUTO-13/public_spec.json"
+      },
+      {
+        "name": "observer_diagnostics",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "observer_diagnostics must contain [innovation_d_A, innovation_q_A] in amperes.",
+        "source": "tasks/XAUTO-13/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "EXT-XAUTO-PMSM-PARAM-EST uses the channel order and units declared for parameter_estimates, observer_diagnostics."
+    ],
+    "feedback_and_control_causality": [
+      "The estimate trajectory must be causally driven by the supplied measurements and excitation, must evolve from an internal prior within the published design envelope, and must respond when the measured response changes."
+    ],
+    "signal_sources": [
+      "pmsm_measurement_experiment is read from the public MATLAB base-workspace input contract.",
+      "parameter_estimates is produced by the implemented plant or controller and logged under the public output contract.",
+      "observer_diagnostics is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "pmsm_measurement_experiment: Read the evaluator-owned scalar struct pmsm_measurement_experiment from the MATLAB base workspace. Both logs must begin at 0 s, remain finite, and reach pmsm_measurement_experiment.duration_s."
+    ],
+    "disturbances": [
+      "Use the applied d-q excitation and the coupled current, speed, and torque measurements to identify stator resistance, incremental d/q inductance and signed cross-coupling, rotor/load inertia, and viscous damping online."
+    ],
+    "dynamic_processes": [
+      "voltage_command_dq_V is a complete-run Timeseries with channels [delta_ud_V, delta_uq_V], each in -4 to 4 V.",
+      "measured_electrical_state is a complete-run Timeseries with channels [delta_id_A, delta_iq_A, delta_electrical_speed_radps, delta_electromagnetic_torque_Nm] and respective ranges [-120,120] A, [-120,120] A, [-500,500] rad/s, and [-200,200] N*m.",
+      "Log exactly two complete-run Timeseries."
+    ],
+    "task_specific_shortcuts": [
+      "EXT-XAUTO-PMSM-PARAM-EST: prescribing parameter_estimates directly would bypass the system path described by: Do not reconstruct an answer from a scenario label, replay a stored trajectory, hold a fixed parameter vector, or create decorative diagnostics disconnected from the estimator.",
+      "EXT-XAUTO-PMSM-PARAM-EST: replaying a fixed parameter_estimates trace would ignore causal variation in pmsm_measurement_experiment."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XAUTO-13/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XAUTO-13/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XAUTO-13/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

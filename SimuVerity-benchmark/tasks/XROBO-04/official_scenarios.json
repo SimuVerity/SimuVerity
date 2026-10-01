@@ -1,0 +1,129 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XROBO-04",
+  "scenarios": [
+    {
+      "id": "nominal_path1_uneven",
+      "class": "nominal",
+      "path_id": 1,
+      "terrain": "uneven",
+      "TargetSpeed_mps": 0.03,
+      "TerrainMuStatic": 0.8,
+      "TerrainMuDynamic": 0.6
+    },
+    {
+      "id": "path2_uneven",
+      "class": "path_boundary",
+      "path_id": 2,
+      "terrain": "uneven",
+      "TargetSpeed_mps": 0.03,
+      "TerrainMuStatic": 0.8,
+      "TerrainMuDynamic": 0.6
+    },
+    {
+      "id": "path2_flat",
+      "class": "terrain_contrast",
+      "path_id": 2,
+      "terrain": "flat",
+      "TargetSpeed_mps": 0.03,
+      "TerrainMuStatic": 0.8,
+      "TerrainMuDynamic": 0.6
+    },
+    {
+      "id": "path1_low_speed",
+      "class": "speed_boundary",
+      "path_id": 1,
+      "terrain": "uneven",
+      "TargetSpeed_mps": 0.024,
+      "TerrainMuStatic": 0.8,
+      "TerrainMuDynamic": 0.6
+    },
+    {
+      "id": "path1_low_friction",
+      "class": "friction_boundary",
+      "path_id": 1,
+      "terrain": "uneven",
+      "TargetSpeed_mps": 0.03,
+      "TerrainMuStatic": 0.64,
+      "TerrainMuDynamic": 0.48
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "start_s": 0,
+      "maximum_stop_s": 1300,
+      "allow_native_mission_stop": true,
+      "one_persistent_matlab_session": true,
+      "nominal_wall_watchdog_s": 1800
+    },
+    "groups": {
+      "G": "load, update, compile, all five simulations, complete finite evidence, and connected six-wheel rover, feedback, manipulator, sample, storage, and electrical chassis paths",
+      "A": "path, speed, sample approach, pickup, and storage accuracy",
+      "Q": "body attitude, wheel slip and load-sharing proxies, bounded actuation, and chassis energy quality",
+      "M": "real rocker-bogie, six contacts, closed-loop actuation, physical mobile-manipulation mission, and six-drive/four-steer electrical-energy causality",
+      "C": "closed-loop path, speed, manipulator, and pickup/storage causal response",
+      "R": "100 percent worst-case mission performance over all required private conditions",
+      "D": "path/speed recovery through curves and terrain plus manipulator joint and end-effector convergence during pickup and storage"
+    },
+    "weights": {
+      "A": 0.15,
+      "Q": 0.15,
+      "M": 0.15,
+      "C": 0.15,
+      "R": 0.2,
+      "D": 0.2
+    },
+    "aggregation": {
+      "within_group": "weighted arithmetic mean with explicit critical witnesses",
+      "critical_multiscenario_performance": "minimum",
+      "total": "G * 100 * A^0.15 * Q^0.15 * M^0.15 * C^0.15 * R^0.20 * D^0.20"
+    },
+    "shortcut_minimum": [
+      "chassis position copied or replayed from the supplied path",
+      "one wheel signal duplicated into six apparent wheel channels",
+      "missing physical wheel-terrain contacts or rocker-bogie articulation",
+      "disconnected rover pose or speed feedback",
+      "terrain, path, speed, or friction input ignored",
+      "manipulator command replay without measured joint, end-effector, pickup, and storage evidence",
+      "ideal actuation or command-derived energy presented as a six-drive/four-steer electrical path"
+    ]
+  },
+  "simulation": {
+    "start_s": 0,
+    "maximum_stop_s": 1300,
+    "allow_native_mission_stop": true,
+    "one_persistent_matlab_session": true,
+    "nominal_wall_watchdog_s": 1800
+  },
+  "groups": {
+    "G": "load, update, compile, all five simulations, complete finite evidence, and connected six-wheel rover, feedback, manipulator, sample, storage, and electrical chassis paths",
+    "A": "path, speed, sample approach, pickup, and storage accuracy",
+    "Q": "body attitude, wheel slip and load-sharing proxies, bounded actuation, and chassis energy quality",
+    "M": "real rocker-bogie, six contacts, closed-loop actuation, physical mobile-manipulation mission, and six-drive/four-steer electrical-energy causality",
+    "C": "closed-loop path, speed, manipulator, and pickup/storage causal response",
+    "R": "100 percent worst-case mission performance over all required private conditions",
+    "D": "path/speed recovery through curves and terrain plus manipulator joint and end-effector convergence during pickup and storage"
+  },
+  "weights": {
+    "A": 0.15,
+    "Q": 0.15,
+    "M": 0.15,
+    "C": 0.15,
+    "R": 0.2,
+    "D": 0.2
+  },
+  "aggregation": {
+    "within_group": "weighted arithmetic mean with explicit critical witnesses",
+    "critical_multiscenario_performance": "minimum",
+    "total": "G * 100 * A^0.15 * Q^0.15 * M^0.15 * C^0.15 * R^0.20 * D^0.20"
+  },
+  "shortcut_minimum": [
+    "chassis position copied or replayed from the supplied path",
+    "one wheel signal duplicated into six apparent wheel channels",
+    "missing physical wheel-terrain contacts or rocker-bogie articulation",
+    "disconnected rover pose or speed feedback",
+    "terrain, path, speed, or friction input ignored",
+    "manipulator command replay without measured joint, end-effector, pickup, and storage evidence",
+    "ideal actuation or command-derived energy presented as a six-drive/four-steer electrical path"
+  ]
+}

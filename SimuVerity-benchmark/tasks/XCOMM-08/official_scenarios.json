@@ -1,0 +1,112 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XCOMM-08",
+  "scenarios": [
+    {
+      "id": "nominal",
+      "ChannelSNR_dB": 18.5,
+      "SourceSeed": 1234573,
+      "NoiseSeed": 54321
+    },
+    {
+      "id": "lower_snr",
+      "ChannelSNR_dB": 17.0,
+      "SourceSeed": 8102,
+      "NoiseSeed": 9102
+    },
+    {
+      "id": "transition_snr",
+      "ChannelSNR_dB": 18.0,
+      "SourceSeed": 8103,
+      "NoiseSeed": 9103
+    },
+    {
+      "id": "high_snr",
+      "ChannelSNR_dB": 22.0,
+      "SourceSeed": 8104,
+      "NoiseSeed": 9104
+    },
+    {
+      "id": "alternate_seed_nominal",
+      "ChannelSNR_dB": 18.5,
+      "SourceSeed": 8105,
+      "NoiseSeed": 9105
+    },
+    {
+      "id": "alternate_seed_boundary",
+      "ChannelSNR_dB": 17.0,
+      "SourceSeed": 8106,
+      "NoiseSeed": 9106
+    }
+  ],
+  "contract": {
+    "preferred_reference_score": 90,
+    "simulation": {
+      "stop_time_s": 0.04,
+      "one_persistent_matlab_session": true
+    },
+    "groups": {
+      "G": "runnable complete coded-OFDM link and valid evidence contract",
+      "A": "final packet and bit recovery accuracy",
+      "Q": "constellation, OFDM, SNR, and inner-to-outer decoding quality",
+      "M": "causal coding, interleaving, modulation, soft-decoding, and final-decoding mechanism",
+      "R": "worst required private SNR and seed condition",
+      "D": "decoder warmup, delay alignment, and post-warmup stability"
+    },
+    "weights": {
+      "A": 0.25,
+      "Q": 0.15,
+      "M": 0.25,
+      "R": 0.2,
+      "D": 0.15
+    },
+    "aggregation": {
+      "within_group": "weighted arithmetic mean",
+      "critical_multi_scenario": "100 percent minimum",
+      "total": "G * 100 * A^0.25 * Q^0.15 * M^0.25 * R^0.20 * D^0.15"
+    },
+    "reference_raw_score": 100.0,
+    "shortcut_minimum": [
+      "copied or constant BER with empty or inconsistent denominators",
+      "source-to-error-meter or source-to-decoder bypass",
+      "stored packets or waveforms that ignore alternate source and noise seeds",
+      "receiver stopping after inner decoding without outer deinterleaving and Reed-Solomon recovery",
+      "hard-decision placeholder presented as the required soft demapper",
+      "empty warmup-only logs scored as perfect",
+      "missing coding, interleaving, 64-QAM, OFDM, or final-decoding behavior"
+    ]
+  },
+  "simulation": {
+    "stop_time_s": 0.04,
+    "one_persistent_matlab_session": true
+  },
+  "groups": {
+    "G": "runnable complete coded-OFDM link and valid evidence contract",
+    "A": "final packet and bit recovery accuracy",
+    "Q": "constellation, OFDM, SNR, and inner-to-outer decoding quality",
+    "M": "causal coding, interleaving, modulation, soft-decoding, and final-decoding mechanism",
+    "R": "worst required private SNR and seed condition",
+    "D": "decoder warmup, delay alignment, and post-warmup stability"
+  },
+  "weights": {
+    "A": 0.25,
+    "Q": 0.15,
+    "M": 0.25,
+    "R": 0.2,
+    "D": 0.15
+  },
+  "aggregation": {
+    "within_group": "weighted arithmetic mean",
+    "critical_multi_scenario": "100 percent minimum",
+    "total": "G * 100 * A^0.25 * Q^0.15 * M^0.25 * R^0.20 * D^0.15"
+  },
+  "shortcut_minimum": [
+    "copied or constant BER with empty or inconsistent denominators",
+    "source-to-error-meter or source-to-decoder bypass",
+    "stored packets or waveforms that ignore alternate source and noise seeds",
+    "receiver stopping after inner decoding without outer deinterleaving and Reed-Solomon recovery",
+    "hard-decision placeholder presented as the required soft demapper",
+    "empty warmup-only logs scored as perfect",
+    "missing coding, interleaving, 64-QAM, OFDM, or final-decoding behavior"
+  ]
+}

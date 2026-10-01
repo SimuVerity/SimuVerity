@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:d="http://www.mathworks.com/blockgraphics" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg" width="350" height="350" d:options="ScalingOnResizeMax:2.0;Rotate:Off;Resize:FitToBlock;">
+	<g id="right_pipe" title="part_0" d:visible="directionPipe === 'right'">
+		<g id="Cylinder">
+			<path id="part_1" class="path" style="fill:#ffffff;stroke-width: 3;stroke:#f57729;" d=" M 61.46,203 L 286.51,203 C 298.8,203 307,189 307,175 C 307,161 298.8,147 286.51,147 L 61.46,147 C 72.76,147 81.92,159.53 81.92,175 C 81.92,190.47 72.76,203 61.46,203 Z"/>
+			<ellipse id="part_2" class="ellipse" style="stroke-width: 3;stroke:#f57729;" cx="61.46" cy="175" rx="20.46" ry="28"/>
+		</g>
+		<line id="line" class="line" style="stroke-opacity: 1;stroke-width: 4;stroke:#ff0000;" x1="174" y1="146" x2="174" y2="108"/>
+	</g>
+	<g id="left_pipe" title="part_0" d:visible="directionPipe === 'left'">
+		<g id="Cylinder_5">
+			<path id="part" class="path" style="fill:#ffffff;stroke-width: 3;stroke:#f57729;" d=" M 288.54,203 L 63.49,203 C 51.2,203 43,189 43,175 C 43,161 51.2,147 63.49,147 L 288.54,147 C 277.24,147 268.08,159.53 268.08,175 C 268.08,190.47 277.24,203 288.54,203 Z"/>
+			<ellipse id="part_4" class="ellipse" style="stroke-width: 3;stroke:#f57729;" cx="288.54" cy="175" rx="20.46" ry="28"/>
+		</g>
+		<line id="line_6" class="line" style="stroke-opacity: 1;stroke-width: 4;stroke:#ff0000;" x1="176" y1="203" x2="176" y2="241"/>
+	</g>
+	<g id="up_pipe" title="part_0" d:visible="directionPipe === 'up'">
+		<g id="Cylinder_10">
+			<path id="part_8" class="path" style="fill:#ffffff;stroke-width: 3;stroke:#f57729;" transform="matrix(0,-1,1,0,13.2313079834,342.7653961182)" d=" M 55.23,192.77 L 280.28,192.77 C 292.57,192.77 300.77,178.77 300.77,164.77 C 300.77,150.77 292.57,136.77 280.28,136.77 L 55.23,136.77 C 66.53,136.77 75.69,149.3 75.69,164.77 C 75.69,180.24 66.53,192.77 55.23,192.77 Z"/>
+			<ellipse id="part_9" class="ellipse" style="stroke-width: 3;stroke:#f57729;" transform="matrix(0,-1,1,0,-109.5400085449,465.5400085449)" cx="178" cy="287.54" rx="20.46" ry="28"/>
+		</g>
+		<line id="line_11" class="line" style="stroke-opacity: 1;stroke-width: 4;stroke:#ff0000;" transform="matrix(0,1,-1,0,306,44)" x1="131" y1="194" x2="131" y2="156"/>
+	</g>
+	<g id="down_pipe" title="part_0" d:visible="directionPipe === 'down'">
+		<g id="Cylinder_15">
+			<path id="part_13" class="path" style="fill:#ffffff;stroke-width: 3;stroke:#f57729;" transform="matrix(0,-1,1,0,-9.2303771972,359.2224121094)" d=" M 297.77,212.23 L 72.72,212.23 C 60.43,212.23 52.23,198.23 52.23,184.23 C 52.23,170.23 60.43,156.23 72.72,156.23 L 297.77,156.23 C 286.47,156.23 277.31,168.76 277.31,184.23 C 277.31,199.7 286.47,212.23 297.77,212.23 Z"/>
+			<ellipse id="part_14" class="ellipse" style="stroke-width: 3;stroke:#f57729;" transform="matrix(0,-1,1,0,113.5400009155,236.4599990845)" cx="175" cy="61.46" rx="20.46" ry="28"/>
+		</g>
+		<line id="line_16" class="line" style="stroke-opacity: 1;stroke-width: 4;stroke:#ff0000;" transform="matrix(0,1,-1,0,395,-47)" x1="221" y1="193" x2="221" y2="155"/>
+	</g>
+</svg>

@@ -1,0 +1,26 @@
+function def = f90_xtherm09_definition
+%F90_XTHERM09_DEFINITION Golden-first aircraft ECS contract.
+taskRoot = string(getenv("SIMUVERITY_TASK_ROOT"));
+def = struct;
+def.id = "XTHERM09";
+def.formal_id = "F90-XTHERM-09";
+def.target_model_file = "AircraftEnvironmentalControlSystem.slx";
+def.sim = struct("start",0,"stop",6000);
+def.reference_model = string(getenv("SIMUVERITY_SEALED_CANDIDATE_PATH"));
+def.reference_file_presence = lower(strtrim(string("present")));
+assert(def.reference_file_presence == "present", ...
+    "SimuVerity:F90:XTHERM09:ReferencePresence", ...
+    "Task-bound reference file presence is missing or invalid.");
+def.public_spec = fullfile(taskRoot,"public_spec.json");
+def.official_scenarios = simuverity_official_scenarios_path();
+def.output_names = [ ...
+    "cabin_pressure","atmospheric_pressure","cabin_temperature", ...
+    "atmospheric_temperature","cabin_relative_humidity", ...
+    "atmospheric_relative_humidity","cabin_ozone_ppm", ...
+    "atmospheric_ozone_ppm","acm_mass_flow", ...
+    "turbine_outlet_temperature","flow_valve_area", ...
+    "bypass_valve_area","trim_valve_area","outflow_valve_area"];
+p = jsondecode(fileread(def.official_scenarios));
+def.scenarios = p.scenarios;
+def.weights = p.weights;
+end

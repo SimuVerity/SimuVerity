@@ -1,0 +1,20 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XROBO-04",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/Models/mars_rover_terrain.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 627,
+  "retained_bytes": 68386255,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ],
+  "clean_replay_setup": {
+    "phase": "before_load",
+    "path": "tasks/XROBO-04/reference/clean_replay_setup/f90_xrobo04_reference_clean_replay_setup.m",
+    "entrypoint": "f90_xrobo04_reference_clean_replay_setup"
+  }
+}

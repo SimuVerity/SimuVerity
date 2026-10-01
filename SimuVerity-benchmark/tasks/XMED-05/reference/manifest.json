@@ -1,0 +1,502 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XMED-05",
+  "file_count": 119,
+  "files": [
+    {
+      "path": "reference/files/PACER_v0.2.0/Cells0.mat",
+      "size_bytes": 42168976
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/heart0.mat",
+      "size_bytes": 594208
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/heart1.mat",
+      "size_bytes": 724720
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/Lib/Libs.slx",
+      "size_bytes": 1111132
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/Lib/Libs_second.slx",
+      "size_bytes": 1115632
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/LICENSE",
+      "size_bytes": 11558
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/AV.slx",
+      "size_bytes": 140178
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/AV_trace_1.mat",
+      "size_bytes": 708723
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/AV_trace_2.mat",
+      "size_bytes": 710062
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/BH.mat",
+      "size_bytes": 1401
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/CLSfixed.slx",
+      "size_bytes": 1164078
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/CN.mat",
+      "size_bytes": 1408
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/CNcell.slx",
+      "size_bytes": 104539
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/HeartExe.slx",
+      "size_bytes": 533936
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/HeartExe_second.slx",
+      "size_bytes": 661377
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/HeartV10.slx",
+      "size_bytes": 623684
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/HeartV9.slx",
+      "size_bytes": 519898
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/HPScell.slx",
+      "size_bytes": 107885
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/N3Cfg_second.mat",
+      "size_bytes": 13836
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/N3Data.mat",
+      "size_bytes": 2129
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/N3Data_second.mat",
+      "size_bytes": 1966
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/parasMulti.mat",
+      "size_bytes": 942
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/parasMulti2.mat",
+      "size_bytes": 941
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/parasMulti3.mat",
+      "size_bytes": 935
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/parasMulti_AV_block.mat",
+      "size_bytes": 505
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/parasMulti_Bradycardia.mat",
+      "size_bytes": 517
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/parasMulti_second.mat",
+      "size_bytes": 944
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/parasNormal.mat",
+      "size_bytes": 926
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/plotCells.m",
+      "size_bytes": 1605
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/plotCells_second.m",
+      "size_bytes": 1626
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/Plottrace.m",
+      "size_bytes": 1028
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/RunCLSfixed.m",
+      "size_bytes": 2266
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/SA.mat",
+      "size_bytes": 1415
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/SAcell.slx",
+      "size_bytes": 104645
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models/simAV_Trace.m",
+      "size_bytes": 4233
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Heart_138N477P106VM.slx",
+      "size_bytes": 4191412
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Heart_138N477P106VM_allData.slx",
+      "size_bytes": 4258352
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Heart_138N477P106VM_EGM.slx",
+      "size_bytes": 4258371
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Heart_253N969P221VM.slx",
+      "size_bytes": 8408900
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Heart_253N969P221VM_allData.slx",
+      "size_bytes": 8477395
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Heart_253N969P221VM_EGM.slx",
+      "size_bytes": 8477414
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Heart_253N969P221VM_EGM_infarct.slx",
+      "size_bytes": 8479799
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Heart_253N969P221VM_infarct.slx",
+      "size_bytes": 8408902
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Heart_374N1479P342VM.slx",
+      "size_bytes": 12815250
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Heart_374N1479P342VM_allData.slx",
+      "size_bytes": 12883944
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Heart_374N1479P342VM_EGM.slx",
+      "size_bytes": 12883951
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Heart_43N54P11VM_allData.slx",
+      "size_bytes": 665108
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Heart_43N54P11VM_EGM.slx",
+      "size_bytes": 665596
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Heart_43N54P11VM_Waves.slx",
+      "size_bytes": 669662
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Heart_61.slx",
+      "size_bytes": 2446856
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Heart_61_exe.slx",
+      "size_bytes": 2483932
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Heart_932N4245P900VM.slx",
+      "size_bytes": 36390365
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Heart_932N4245P900VM_allData.slx",
+      "size_bytes": 36556905
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Heart_932N4245P900VM_EGM.slx",
+      "size_bytes": 36557027
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Heart_93N270P61VM.slx",
+      "size_bytes": 2446857
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Heart_93N270P61VM_allData.slx",
+      "size_bytes": 2503142
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Heart_93N270P61VM_EGM.slx",
+      "size_bytes": 2503265
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/N3Cfg_second_138N477P106VM.mat",
+      "size_bytes": 48345
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/N3Cfg_second_253N969P221VM.mat",
+      "size_bytes": 90088
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/N3Cfg_second_253N969P221VM_infarct.mat",
+      "size_bytes": 90540
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/N3Cfg_second_374N1479P342VM.mat",
+      "size_bytes": 135193
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/N3Cfg_second_43N54P11VM.mat",
+      "size_bytes": 13746
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/N3Cfg_second_61.mat",
+      "size_bytes": 31856
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/N3Cfg_second_932N4245P900VM.mat",
+      "size_bytes": 338741
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/N3Cfg_second_93N270P61VM.mat",
+      "size_bytes": 31754
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/N3Data_second_138N477P106VM.mat",
+      "size_bytes": 4322
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/N3Data_second_253N969P221VM.mat",
+      "size_bytes": 7221
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/N3Data_second_253N969P221VM_infarct.mat",
+      "size_bytes": 7462
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/N3Data_second_374N1479P342VM.mat",
+      "size_bytes": 10225
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/N3Data_second_43N54P11VM.mat",
+      "size_bytes": 1933
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/N3Data_second_61.mat",
+      "size_bytes": 3222
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/N3Data_second_932N4245P900VM.mat",
+      "size_bytes": 24537
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/N3Data_second_93N270P61VM.mat",
+      "size_bytes": 3187
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/plotCells_second_61.m",
+      "size_bytes": 1632
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/plotData_egm_43N54P11VM.m",
+      "size_bytes": 1894
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/plotData_tune.m",
+      "size_bytes": 3156
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/plotExp.m",
+      "size_bytes": 5843
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/plotGraph.m",
+      "size_bytes": 1886
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Ventricles/GenerateVentricleNetworkFile.m",
+      "size_bytes": 14894
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Ventricles/HeartNetwork.txt",
+      "size_bytes": 848
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Ventricles/triangle",
+      "size_bytes": 207300
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/models_refine/Ventricles/Ventricles.png",
+      "size_bytes": 7862
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/N3Cfg.mat",
+      "size_bytes": 14146
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/N3Data.mat",
+      "size_bytes": 2129
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/README.md",
+      "size_bytes": 9837
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/setup_Heart.m",
+      "size_bytes": 264
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/Buildmodel_fcn.m",
+      "size_bytes": 23201
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/Buildmodel_fcn_debug.m",
+      "size_bytes": 24553
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/genpp.m",
+      "size_bytes": 1521
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/Heart_GUI.m",
+      "size_bytes": 21893
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/Heart_N3.xlsx",
+      "size_bytes": 593930
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/Heart_N3_second.xlsx",
+      "size_bytes": 630131
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/N3Cfg.mat",
+      "size_bytes": 14146
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/N3Cfg_second.mat",
+      "size_bytes": 13836
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/N3Data.mat",
+      "size_bytes": 2129
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/N3Data_second.mat",
+      "size_bytes": 1966
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/PreBuild.m",
+      "size_bytes": 2095
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/PreBuild_second.m",
+      "size_bytes": 2202
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/PreCfgfcn.m",
+      "size_bytes": 5226
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/PreCfgfcn_second.m",
+      "size_bytes": 5382
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/Refine/Heart_N3_second_138N477P106VM.xlsx",
+      "size_bytes": 673002
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/Refine/Heart_N3_second_253N969P221VM.xlsx",
+      "size_bytes": 744932
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/Refine/Heart_N3_second_253N969P221VM_infarct.xlsx",
+      "size_bytes": 745246
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/Refine/Heart_N3_second_374N1479P342VM.xlsx",
+      "size_bytes": 821706
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/Refine/Heart_N3_second_374N1479P342VM_infarct.xlsx",
+      "size_bytes": 821866
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/Refine/Heart_N3_second_43N54P11VM.xlsx",
+      "size_bytes": 630070
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/Refine/Heart_N3_second_644N2802P612VM.xlsx",
+      "size_bytes": 1015240
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/Refine/Heart_N3_second_932N4245P900VM.xlsx",
+      "size_bytes": 1222473
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/Refine/Heart_N3_second_93N270P61VM.xlsx",
+      "size_bytes": 642321
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/Refine/PreBuild_second_138N477P106VM.m",
+      "size_bytes": 2376
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/Refine/PreBuild_second_253N969P221VM.m",
+      "size_bytes": 2376
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/Refine/PreBuild_second_374N1479P342VM.m",
+      "size_bytes": 2381
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/Refine/PreBuild_second_43N54P11VM.m",
+      "size_bytes": 2362
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/Refine/PreBuild_second_43N54P11VM_debug.m",
+      "size_bytes": 2358
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/Refine/PreBuild_second_644N2802P612VM.m",
+      "size_bytes": 2360
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/Refine/PreBuild_second_932N4245P900VM.m",
+      "size_bytes": 2365
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/Refine/PreBuild_second_93N270P61VM.m",
+      "size_bytes": 2367
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/SaveTrace_sfcn.m",
+      "size_bytes": 5855
+    },
+    {
+      "path": "reference/files/PACER_v0.2.0/src/subtightplot.m",
+      "size_bytes": 3219
+    }
+  ],
+  "entrypoint": "reference/files/PACER_v0.2.0/models/CLSfixed.slx",
+  "expected_score": 98.91734298608728,
+  "expected_valid_scenarios": 6,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "normal_delay",
+      "bradycardia",
+      "av_block",
+      "combined_pathology",
+      "pvc_retrograde_stress",
+      "extra_vp_reentry_stress"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 278377408,
+  "excluded_files": []
+}

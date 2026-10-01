@@ -1,0 +1,20 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XMECH-06",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/sm_car.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 2443,
+  "retained_bytes": 111727358,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ],
+  "clean_replay_setup": {
+    "phase": "before_load",
+    "path": "tasks/XMECH-06/reference/clean_replay_setup/f90_xmech06_reference_clean_replay_setup.m",
+    "entrypoint": "f90_xmech06_reference_clean_replay_setup"
+  }
+}

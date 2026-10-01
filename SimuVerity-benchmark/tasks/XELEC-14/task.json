@@ -1,0 +1,71 @@
+{
+  "schema": "simuverity.task.v1",
+  "release": "simuverity-101-v1",
+  "task_id": "XELEC-14",
+  "ordinal": 5,
+  "collection": "XELEC",
+  "runtime_alias": "XELEC-14",
+  "required_model_file": "cand_XELEC14.slx",
+  "evaluation_policy_id": "simuverity-101-v1:xelec-14:scoring",
+  "candidate_closure": {
+    "public_input_names": [
+      "Vsrc_amp",
+      "P_load"
+    ],
+    "nominal_provider": "simuverity_public_nominal_inputs"
+  },
+  "public_spec": "public_spec.json",
+  "official_scenarios": "official_scenarios.json",
+  "extractor": {
+    "kind": "matlab_function",
+    "path": "extractor/run.m",
+    "entrypoint": "run",
+    "implementation": "vendor/scripts/unified/d16/tasks/d014/d014_extract_candidate_evidence.m",
+    "closure_manifest": "extractor/manifest.json"
+  },
+  "scorer": {
+    "kind": "python_function",
+    "path": "scorer.py",
+    "entrypoint": "score",
+    "closure_manifest": "scorer/manifest.json",
+    "offline_only": true
+  },
+  "reference": {
+    "materialization": "bundled",
+    "path": "reference/files",
+    "manifest": "reference/manifest.json",
+    "entrypoint": "reference/files/single_phase_to_3phase.mdl",
+    "expected_valid_scenarios": 8,
+    "score_tolerance": 5e-05,
+    "expected_score": 91.03806167323117,
+    "expected_score_basis": "reference_replay",
+    "scenario_contract": {
+      "expected_ids": [
+        "source_up",
+        "source_down",
+        "load_up",
+        "load_down",
+        "joint_low_source_high_load",
+        "joint_high_source_low_load",
+        "joint_interior_a",
+        "joint_interior_b"
+      ],
+      "nominal_scenario_id": null,
+      "nominal_materialization": "authoritative_scenario_set"
+    },
+    "score_tolerance_basis": "source_authority_numeric_precision",
+    "runtime_manifest": "reference/runtime_manifest.json"
+  },
+  "applicable_groups": [
+    "G",
+    "A",
+    "Q",
+    "M",
+    "R"
+  ],
+  "release_license_status": "INCLUDED_THIRD_PARTY_LICENSE",
+  "system_profile": {
+    "path": "system_profile.json",
+    "schema": "simuverity.system-profile.v1"
+  }
+}

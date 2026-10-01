@@ -1,0 +1,229 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XROBO-03",
+  "collection": "XROBO",
+  "reference": {
+    "identity_path": "tasks/XROBO-03/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "rlQuadrupedRobot.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XROBO-03",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a three-dimensional quadruped robot with a finite-mass torso, four articulated two-link legs, eight torque-actuated revolute joints, and four spatial foot-ground contacts.",
+    "engineering_objects": [
+      "F90-XROBO-03 plant and controller described by the current public task contract",
+      "Measured output interfaces: body_state, joint_state, contact_state, control_state"
+    ],
+    "physical_paths": [
+      "Prescribing body motion, replaying stored trajectories, bypassing the articulated contacts, or logging signals disconnected from the simulated plant is not valid.",
+      "Normalized actions must causally map through the declared torque limit to the applied hip and knee torques."
+    ],
+    "functional_paths": [
+      "Use measured body motion, joint motion, and contact behavior in a causal feedback controller or policy that produces eight bounded actions.",
+      "The controller form is not prescribed: learned, model-based, and conventional feedback implementations are all allowed."
+    ],
+    "information_paths": [
+      "initial_body_height_m, initial_forward_velocity_mps, initial_vertical_velocity_mps, torso_mass_kg, ground_friction_scale, ground_stiffness_npm, ground_damping_nspm, joint_torque_limit_nm -> F90-XROBO-03 plant/control path -> body_state, joint_state, contact_state, control_state"
+    ],
+    "modes_and_events": [
+      "The controller form is not prescribed: learned, model-based, and conventional feedback implementations are all allowed."
+    ],
+    "interfaces": [
+      {
+        "name": "initial_body_height_m",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read initial_body_height_m, initial_forward_velocity_mps, initial_vertical_velocity_mps, torso_mass_kg, ground_friction_scale, ground_stiffness_npm, ground_damping_nspm, and joint_torque_limit_nm from the MATLAB base workspace. The scalar inputs are initial_body_height_m [0.7, 0.8] m, initial_forward_velocity_mps [-0.1, 0.15] m/s, initial_vertical_velocity_mps [-0.12, 0.12] m/s, torso_mass_kg [1.7, 2.4] kg, ground_friction_scale [0.65, 1.1] (unitless), ground_stiffness_npm [750, 1400] N/m, ground_damping_nspm [75, 150] N*s/m, and joint_torque_limit_nm [8, 10] N*m; all are finite real scalars.",
+        "source": "tasks/XROBO-03/public_spec.json"
+      },
+      {
+        "name": "initial_forward_velocity_mps",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Read initial_body_height_m, initial_forward_velocity_mps, initial_vertical_velocity_mps, torso_mass_kg, ground_friction_scale, ground_stiffness_npm, ground_damping_nspm, and joint_torque_limit_nm from the MATLAB base workspace. The scalar inputs are initial_body_height_m [0.7, 0.8] m, initial_forward_velocity_mps [-0.1, 0.15] m/s, initial_vertical_velocity_mps [-0.12, 0.12] m/s, torso_mass_kg [1.7, 2.4] kg, ground_friction_scale [0.65, 1.1] (unitless), ground_stiffness_npm [750, 1400] N/m, ground_damping_nspm [75, 150] N*s/m, and joint_torque_limit_nm [8, 10] N*m; all are finite real scalars.",
+        "source": "tasks/XROBO-03/public_spec.json"
+      },
+      {
+        "name": "initial_vertical_velocity_mps",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Read initial_body_height_m, initial_forward_velocity_mps, initial_vertical_velocity_mps, torso_mass_kg, ground_friction_scale, ground_stiffness_npm, ground_damping_nspm, and joint_torque_limit_nm from the MATLAB base workspace. The scalar inputs are initial_body_height_m [0.7, 0.8] m, initial_forward_velocity_mps [-0.1, 0.15] m/s, initial_vertical_velocity_mps [-0.12, 0.12] m/s, torso_mass_kg [1.7, 2.4] kg, ground_friction_scale [0.65, 1.1] (unitless), ground_stiffness_npm [750, 1400] N/m, ground_damping_nspm [75, 150] N*s/m, and joint_torque_limit_nm [8, 10] N*m; all are finite real scalars.",
+        "source": "tasks/XROBO-03/public_spec.json"
+      },
+      {
+        "name": "torso_mass_kg",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kg"
+        ],
+        "range_or_shape": "Read initial_body_height_m, initial_forward_velocity_mps, initial_vertical_velocity_mps, torso_mass_kg, ground_friction_scale, ground_stiffness_npm, ground_damping_nspm, and joint_torque_limit_nm from the MATLAB base workspace. The scalar inputs are initial_body_height_m [0.7, 0.8] m, initial_forward_velocity_mps [-0.1, 0.15] m/s, initial_vertical_velocity_mps [-0.12, 0.12] m/s, torso_mass_kg [1.7, 2.4] kg, ground_friction_scale [0.65, 1.1] (unitless), ground_stiffness_npm [750, 1400] N/m, ground_damping_nspm [75, 150] N*s/m, and joint_torque_limit_nm [8, 10] N*m; all are finite real scalars.",
+        "source": "tasks/XROBO-03/public_spec.json"
+      },
+      {
+        "name": "ground_friction_scale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read initial_body_height_m, initial_forward_velocity_mps, initial_vertical_velocity_mps, torso_mass_kg, ground_friction_scale, ground_stiffness_npm, ground_damping_nspm, and joint_torque_limit_nm from the MATLAB base workspace. The scalar inputs are initial_body_height_m [0.7, 0.8] m, initial_forward_velocity_mps [-0.1, 0.15] m/s, initial_vertical_velocity_mps [-0.12, 0.12] m/s, torso_mass_kg [1.7, 2.4] kg, ground_friction_scale [0.65, 1.1] (unitless), ground_stiffness_npm [750, 1400] N/m, ground_damping_nspm [75, 150] N*s/m, and joint_torque_limit_nm [8, 10] N*m; all are finite real scalars.",
+        "source": "tasks/XROBO-03/public_spec.json"
+      },
+      {
+        "name": "ground_stiffness_npm",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "N/m"
+        ],
+        "range_or_shape": "Read initial_body_height_m, initial_forward_velocity_mps, initial_vertical_velocity_mps, torso_mass_kg, ground_friction_scale, ground_stiffness_npm, ground_damping_nspm, and joint_torque_limit_nm from the MATLAB base workspace. The scalar inputs are initial_body_height_m [0.7, 0.8] m, initial_forward_velocity_mps [-0.1, 0.15] m/s, initial_vertical_velocity_mps [-0.12, 0.12] m/s, torso_mass_kg [1.7, 2.4] kg, ground_friction_scale [0.65, 1.1] (unitless), ground_stiffness_npm [750, 1400] N/m, ground_damping_nspm [75, 150] N*s/m, and joint_torque_limit_nm [8, 10] N*m; all are finite real scalars.",
+        "source": "tasks/XROBO-03/public_spec.json"
+      },
+      {
+        "name": "ground_damping_nspm",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "N*s/m"
+        ],
+        "range_or_shape": "Read initial_body_height_m, initial_forward_velocity_mps, initial_vertical_velocity_mps, torso_mass_kg, ground_friction_scale, ground_stiffness_npm, ground_damping_nspm, and joint_torque_limit_nm from the MATLAB base workspace. The scalar inputs are initial_body_height_m [0.7, 0.8] m, initial_forward_velocity_mps [-0.1, 0.15] m/s, initial_vertical_velocity_mps [-0.12, 0.12] m/s, torso_mass_kg [1.7, 2.4] kg, ground_friction_scale [0.65, 1.1] (unitless), ground_stiffness_npm [750, 1400] N/m, ground_damping_nspm [75, 150] N*s/m, and joint_torque_limit_nm [8, 10] N*m; all are finite real scalars.",
+        "source": "tasks/XROBO-03/public_spec.json"
+      },
+      {
+        "name": "joint_torque_limit_nm",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "N*m"
+        ],
+        "range_or_shape": "Read initial_body_height_m, initial_forward_velocity_mps, initial_vertical_velocity_mps, torso_mass_kg, ground_friction_scale, ground_stiffness_npm, ground_damping_nspm, and joint_torque_limit_nm from the MATLAB base workspace. The scalar inputs are initial_body_height_m [0.7, 0.8] m, initial_forward_velocity_mps [-0.1, 0.15] m/s, initial_vertical_velocity_mps [-0.12, 0.12] m/s, torso_mass_kg [1.7, 2.4] kg, ground_friction_scale [0.65, 1.1] (unitless), ground_stiffness_npm [750, 1400] N/m, ground_damping_nspm [75, 150] N*s/m, and joint_torque_limit_nm [8, 10] N*m; all are finite real scalars.",
+        "source": "tasks/XROBO-03/public_spec.json"
+      },
+      {
+        "name": "body_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m",
+          "m/s",
+          "rad",
+          "rad/s"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named body_state, joint_state, contact_state, and control_state. body_state has 12 channels in this order: world x, y, z (m); world vx, vy, vz (m/s); roll, pitch, yaw (rad); and world angular velocity x, y, z (rad/s).",
+        "source": "tasks/XROBO-03/public_spec.json"
+      },
+      {
+        "name": "joint_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad",
+          "rad/s"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named body_state, joint_state, contact_state, and control_state. joint_state has 16 channels: FL, FR, RL, RR hip and knee angles (rad), followed by the corresponding eight speeds (rad/s), using hip then knee within each leg.",
+        "source": "tasks/XROBO-03/public_spec.json"
+      },
+      {
+        "name": "contact_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named body_state, joint_state, contact_state, and control_state. contact_state has 8 channels: FL, FR, RL, RR normal force followed by FL, FR, RL, RR friction-force magnitude, all in N.",
+        "source": "tasks/XROBO-03/public_spec.json"
+      },
+      {
+        "name": "control_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1",
+          "N*m"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named body_state, joint_state, contact_state, and control_state. control_state has 16 channels: the eight normalized hip and knee actions in the same leg order, followed by the eight applied joint torques (N*m).",
+        "source": "tasks/XROBO-03/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Use measured body motion, joint motion, and contact behavior in a causal feedback controller or policy that produces eight bounded actions.",
+      "The controller form is not prescribed: learned, model-based, and conventional feedback implementations are all allowed.",
+      "body_state has 12 channels in this order: world x, y, z (m);"
+    ],
+    "feedback_and_control_causality": [
+      "Use measured body motion, joint motion, and contact behavior in a causal feedback controller or policy that produces eight bounded actions.",
+      "The controller form is not prescribed: learned, model-based, and conventional feedback implementations are all allowed.",
+      "Prescribing body motion, replaying stored trajectories, bypassing the articulated contacts, or logging signals disconnected from the simulated plant is not valid."
+    ],
+    "signal_sources": [
+      "initial_body_height_m is read from the public MATLAB base-workspace input contract.",
+      "initial_forward_velocity_mps is read from the public MATLAB base-workspace input contract.",
+      "initial_vertical_velocity_mps is read from the public MATLAB base-workspace input contract.",
+      "torso_mass_kg is read from the public MATLAB base-workspace input contract.",
+      "ground_friction_scale is read from the public MATLAB base-workspace input contract.",
+      "ground_stiffness_npm is read from the public MATLAB base-workspace input contract.",
+      "ground_damping_nspm is read from the public MATLAB base-workspace input contract.",
+      "joint_torque_limit_nm is read from the public MATLAB base-workspace input contract.",
+      "body_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "joint_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "contact_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "control_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "initial_body_height_m: Read initial_body_height_m, initial_forward_velocity_mps, initial_vertical_velocity_mps, torso_mass_kg, ground_friction_scale, ground_stiffness_npm, ground_damping_nspm, and joint_torque_limit_nm from the MATLAB base workspace. The scalar inputs are initial_body_height_m [0.7, 0.8] m, initial_forward_velocity_mps [-0.1, 0.15] m/s, initial_vertical_velocity_mps [-0.12, 0.12] m/s, torso_mass_kg [1.7, 2.4] kg, ground_friction_scale [0.65, 1.1] (unitless), ground_stiffness_npm [750, 1400] N/m, ground_damping_nspm [75, 150] N*s/m, and joint_torque_limit_nm [8, 10] N*m; all are finite real scalars.",
+      "initial_forward_velocity_mps: Read initial_body_height_m, initial_forward_velocity_mps, initial_vertical_velocity_mps, torso_mass_kg, ground_friction_scale, ground_stiffness_npm, ground_damping_nspm, and joint_torque_limit_nm from the MATLAB base workspace. The scalar inputs are initial_body_height_m [0.7, 0.8] m, initial_forward_velocity_mps [-0.1, 0.15] m/s, initial_vertical_velocity_mps [-0.12, 0.12] m/s, torso_mass_kg [1.7, 2.4] kg, ground_friction_scale [0.65, 1.1] (unitless), ground_stiffness_npm [750, 1400] N/m, ground_damping_nspm [75, 150] N*s/m, and joint_torque_limit_nm [8, 10] N*m; all are finite real scalars.",
+      "initial_vertical_velocity_mps: Read initial_body_height_m, initial_forward_velocity_mps, initial_vertical_velocity_mps, torso_mass_kg, ground_friction_scale, ground_stiffness_npm, ground_damping_nspm, and joint_torque_limit_nm from the MATLAB base workspace. The scalar inputs are initial_body_height_m [0.7, 0.8] m, initial_forward_velocity_mps [-0.1, 0.15] m/s, initial_vertical_velocity_mps [-0.12, 0.12] m/s, torso_mass_kg [1.7, 2.4] kg, ground_friction_scale [0.65, 1.1] (unitless), ground_stiffness_npm [750, 1400] N/m, ground_damping_nspm [75, 150] N*s/m, and joint_torque_limit_nm [8, 10] N*m; all are finite real scalars.",
+      "torso_mass_kg: Read initial_body_height_m, initial_forward_velocity_mps, initial_vertical_velocity_mps, torso_mass_kg, ground_friction_scale, ground_stiffness_npm, ground_damping_nspm, and joint_torque_limit_nm from the MATLAB base workspace. The scalar inputs are initial_body_height_m [0.7, 0.8] m, initial_forward_velocity_mps [-0.1, 0.15] m/s, initial_vertical_velocity_mps [-0.12, 0.12] m/s, torso_mass_kg [1.7, 2.4] kg, ground_friction_scale [0.65, 1.1] (unitless), ground_stiffness_npm [750, 1400] N/m, ground_damping_nspm [75, 150] N*s/m, and joint_torque_limit_nm [8, 10] N*m; all are finite real scalars.",
+      "ground_friction_scale: Read initial_body_height_m, initial_forward_velocity_mps, initial_vertical_velocity_mps, torso_mass_kg, ground_friction_scale, ground_stiffness_npm, ground_damping_nspm, and joint_torque_limit_nm from the MATLAB base workspace. The scalar inputs are initial_body_height_m [0.7, 0.8] m, initial_forward_velocity_mps [-0.1, 0.15] m/s, initial_vertical_velocity_mps [-0.12, 0.12] m/s, torso_mass_kg [1.7, 2.4] kg, ground_friction_scale [0.65, 1.1] (unitless), ground_stiffness_npm [750, 1400] N/m, ground_damping_nspm [75, 150] N*s/m, and joint_torque_limit_nm [8, 10] N*m; all are finite real scalars.",
+      "ground_stiffness_npm: Read initial_body_height_m, initial_forward_velocity_mps, initial_vertical_velocity_mps, torso_mass_kg, ground_friction_scale, ground_stiffness_npm, ground_damping_nspm, and joint_torque_limit_nm from the MATLAB base workspace. The scalar inputs are initial_body_height_m [0.7, 0.8] m, initial_forward_velocity_mps [-0.1, 0.15] m/s, initial_vertical_velocity_mps [-0.12, 0.12] m/s, torso_mass_kg [1.7, 2.4] kg, ground_friction_scale [0.65, 1.1] (unitless), ground_stiffness_npm [750, 1400] N/m, ground_damping_nspm [75, 150] N*s/m, and joint_torque_limit_nm [8, 10] N*m; all are finite real scalars.",
+      "ground_damping_nspm: Read initial_body_height_m, initial_forward_velocity_mps, initial_vertical_velocity_mps, torso_mass_kg, ground_friction_scale, ground_stiffness_npm, ground_damping_nspm, and joint_torque_limit_nm from the MATLAB base workspace. The scalar inputs are initial_body_height_m [0.7, 0.8] m, initial_forward_velocity_mps [-0.1, 0.15] m/s, initial_vertical_velocity_mps [-0.12, 0.12] m/s, torso_mass_kg [1.7, 2.4] kg, ground_friction_scale [0.65, 1.1] (unitless), ground_stiffness_npm [750, 1400] N/m, ground_damping_nspm [75, 150] N*s/m, and joint_torque_limit_nm [8, 10] N*m; all are finite real scalars.",
+      "joint_torque_limit_nm: Read initial_body_height_m, initial_forward_velocity_mps, initial_vertical_velocity_mps, torso_mass_kg, ground_friction_scale, ground_stiffness_npm, ground_damping_nspm, and joint_torque_limit_nm from the MATLAB base workspace. The scalar inputs are initial_body_height_m [0.7, 0.8] m, initial_forward_velocity_mps [-0.1, 0.15] m/s, initial_vertical_velocity_mps [-0.12, 0.12] m/s, torso_mass_kg [1.7, 2.4] kg, ground_friction_scale [0.65, 1.1] (unitless), ground_stiffness_npm [750, 1400] N/m, ground_damping_nspm [75, 150] N*s/m, and joint_torque_limit_nm [8, 10] N*m; all are finite real scalars."
+    ],
+    "disturbances": [
+      "F90-XROBO-03 operating variation is supplied through initial_body_height_m, initial_forward_velocity_mps, initial_vertical_velocity_mps, torso_mass_kg, ground_friction_scale, ground_stiffness_npm, ground_damping_nspm, joint_torque_limit_nm."
+    ],
+    "dynamic_processes": [
+      "Log complete-run MATLAB Timeseries named body_state, joint_state, contact_state, and control_state."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XROBO-03: prescribing body_state directly would bypass the system path described by: Prescribing body motion, replaying stored trajectories, bypassing the articulated contacts, or logging signals disconnected from the simulated plant is not valid.",
+      "F90-XROBO-03: replaying a fixed body_state trace would ignore causal variation in initial_body_height_m."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XROBO-03/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XROBO-03/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XROBO-03/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

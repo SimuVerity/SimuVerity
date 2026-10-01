@@ -1,0 +1,147 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XAUTO-07",
+  "collection": "XAUTO",
+  "reference": {
+    "identity_path": "tasks/XAUTO-07/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "IPMSMAxleDriveEV_SimuVerityReference.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XAUTO-07",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a battery-fed electric axle-drive model in Simulink for a 1100 kg vehicle.",
+    "engineering_objects": [
+      "The physical power path must include a high-voltage DC source, DC link, controlled three-phase converter, interior permanent-magnet synchronous motor, fixed 9:1 gear reduction, differential/axle load, wheels, and finite-mass longitudinal vehicle dynamics.",
+      "The exact current-controller realization, coordinate transforms, switching abstraction, and torque-control equations are not prescribed, but the electrical feedback path and electromechanical/vehicle energy path must be causal and connected.",
+      "The model should track achievable torque, remain finite under every declared scale pair, accelerate under positive demand, enter generating torque under braking, and show a physically consistent change in final speed when braking is reduced."
+    ],
+    "physical_paths": [
+      "The physical power path must include a high-voltage DC source, DC link, controlled three-phase converter, interior permanent-magnet synchronous motor, fixed 9:1 gear reduction, differential/axle load, wheels, and finite-mass longitudinal vehicle dynamics.",
+      "A connected drive controller must convert the driver's accelerator and brake requests into a bounded torque reference and regulate the motor through measured phase currents and rotor/electrical state.",
+      "Acceleration and regenerative braking torque must act through the converter, motor, gear, and vehicle path; prescribed vehicle speed or replayed torque/current trajectories are not valid.",
+      "The exact current-controller realization, coordinate transforms, switching abstraction, and torque-control equations are not prescribed, but the electrical feedback path and electromechanical/vehicle energy path must be causal and connected."
+    ],
+    "functional_paths": [
+      "The physical power path must include a high-voltage DC source, DC link, controlled three-phase converter, interior permanent-magnet synchronous motor, fixed 9:1 gear reduction, differential/axle load, wheels, and finite-mass longitudinal vehicle dynamics.",
+      "A connected drive controller must convert the driver's accelerator and brake requests into a bounded torque reference and regulate the motor through measured phase currents and rotor/electrical state.",
+      "The exact current-controller realization, coordinate transforms, switching abstraction, and torque-control equations are not prescribed, but the electrical feedback path and electromechanical/vehicle energy path must be causal and connected."
+    ],
+    "information_paths": [
+      "ev_drive_input -> F90-XAUTO-07 plant/control path -> driver_input, motor_torque, phase_currents, vehicle_speed"
+    ],
+    "modes_and_events": [
+      "Build a battery-fed electric axle-drive model in Simulink for a 1100 kg vehicle.",
+      "The motor must operate in both motoring and generating modes.",
+      "The exact current-controller realization, coordinate transforms, switching abstraction, and torque-control equations are not prescribed, but the electrical feedback path and electromechanical/vehicle energy path must be causal and connected."
+    ],
+    "interfaces": [
+      {
+        "name": "ev_drive_input",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read ev_drive_input from the MATLAB base workspace.",
+        "source": "tasks/XAUTO-07/public_spec.json"
+      },
+      {
+        "name": "driver_input",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named driver_input, motor_torque, phase_currents, and vehicle_speed. driver_input has width 2 in this order: applied accelerator and brake, both unitless fractions. driver_input must contain the applied, clipped accelerator and brake profiles.",
+        "source": "tasks/XAUTO-07/public_spec.json"
+      },
+      {
+        "name": "motor_torque",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N*m"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named driver_input, motor_torque, phase_currents, and vehicle_speed. motor_torque has width 4 in this order: controller torque reference, actual shaft torque, controller-estimated torque, and symmetric torque limit, all in N*m. motor_torque must contain the controller reference, actual shaft torque, controller-estimated torque, and symmetric torque limit.",
+        "source": "tasks/XAUTO-07/public_spec.json"
+      },
+      {
+        "name": "phase_currents",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named driver_input, motor_torque, phase_currents, and vehicle_speed. phase_currents has width 3 in this order: phase-a, phase-b, and phase-c current, all in A. phase_currents must be the actual three-phase currents in the motor drive.",
+        "source": "tasks/XAUTO-07/public_spec.json"
+      },
+      {
+        "name": "vehicle_speed",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "km/h"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named driver_input, motor_torque, phase_currents, and vehicle_speed. vehicle_speed has width 1: vehicle speed in km/h. vehicle_speed must come from the finite-mass vehicle state.",
+        "source": "tasks/XAUTO-07/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "The physical power path must include a high-voltage DC source, DC link, controlled three-phase converter, interior permanent-magnet synchronous motor, fixed 9:1 gear reduction, differential/axle load, wheels, and finite-mass longitudinal vehicle dynamics.",
+      "A connected drive controller must convert the driver's accelerator and brake requests into a bounded torque reference and regulate the motor through measured phase currents and rotor/electrical state.",
+      "The exact current-controller realization, coordinate transforms, switching abstraction, and torque-control equations are not prescribed, but the electrical feedback path and electromechanical/vehicle energy path must be causal and connected."
+    ],
+    "feedback_and_control_causality": [
+      "A connected drive controller must convert the driver's accelerator and brake requests into a bounded torque reference and regulate the motor through measured phase currents and rotor/electrical state.",
+      "The exact current-controller realization, coordinate transforms, switching abstraction, and torque-control equations are not prescribed, but the electrical feedback path and electromechanical/vehicle energy path must be causal and connected.",
+      "motor_torque must contain the controller reference, actual shaft torque, controller-estimated torque, and symmetric torque limit."
+    ],
+    "signal_sources": [
+      "ev_drive_input is read from the public MATLAB base-workspace input contract.",
+      "driver_input is produced by the implemented plant or controller and logged under the public output contract.",
+      "motor_torque is produced by the implemented plant or controller and logged under the public output contract.",
+      "phase_currents is produced by the implemented plant or controller and logged under the public output contract.",
+      "vehicle_speed is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "ev_drive_input: Read ev_drive_input from the MATLAB base workspace."
+    ],
+    "disturbances": [
+      "The physical power path must include a high-voltage DC source, DC link, controlled three-phase converter, interior permanent-magnet synchronous motor, fixed 9:1 gear reduction, differential/axle load, wheels, and finite-mass longitudinal vehicle dynamics.",
+      "Use the published incline and zero-wind profiles unchanged."
+    ],
+    "dynamic_processes": [
+      "The physical power path must include a high-voltage DC source, DC link, controlled three-phase converter, interior permanent-magnet synchronous motor, fixed 9:1 gear reduction, differential/axle load, wheels, and finite-mass longitudinal vehicle dynamics.",
+      "The exact current-controller realization, coordinate transforms, switching abstraction, and torque-control equations are not prescribed, but the electrical feedback path and electromechanical/vehicle energy path must be causal and connected.",
+      "The model should track achievable torque, remain finite under every declared scale pair, accelerate under positive demand, enter generating torque under braking, and show a physically consistent change in final speed when braking is reduced."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XAUTO-07: prescribing driver_input directly would bypass the system path described by: The physical power path must include a high-voltage DC source, DC link, controlled three-phase converter, interior permanent-magnet synchronous motor, fixed 9:1 gear reduction, differential/axle load, wheels, and finite-mass longitudinal vehicle dynamics.",
+      "F90-XAUTO-07: replaying a fixed driver_input trace would ignore causal variation in ev_drive_input."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XAUTO-07/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XAUTO-07/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XAUTO-07/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

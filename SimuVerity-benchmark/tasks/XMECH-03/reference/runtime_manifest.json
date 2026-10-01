@@ -1,0 +1,20 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XMECH-03",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/Simscape-Dual-Clutch/Dual_Clutch_Trans.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 725,
+  "retained_bytes": 8051125,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ],
+  "clean_replay_setup": {
+    "phase": "before_load",
+    "path": "tasks/XMECH-03/reference/clean_replay_setup/f90_xmech03_reference_clean_replay_setup.m",
+    "entrypoint": "f90_xmech03_reference_clean_replay_setup"
+  }
+}

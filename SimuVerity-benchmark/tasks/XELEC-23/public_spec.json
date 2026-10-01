@@ -1,0 +1,8 @@
+{
+  "schema": "simuverity.public-spec.v1",
+  "task_id": "XELEC-23",
+  "collection": "XELEC",
+  "runtime_alias": "XELEC-23",
+  "candidate_filename": "cand_XELEC23.slx",
+  "prompt": "Build a three-phase shunt active power filter for a 50 Hz source feeding a nonlinear load. The source and nonlinear load must connect at a common PCC, and a controllable three-phase converter with a split DC link must connect in shunt at that PCC. Read R_nl from a base-workspace variable; its nominal value is 4 ohm and its operating envelope is +/-10%. At nominal conditions and throughout this envelope, the physical source current must be substantially less distorted than the nonlinear-load current, the measured currents must satisfy current balance at the PCC, the total DC-link voltage must remain about 1.16 kV, and the two DC-link halves must remain balanced. The current compensation and split DC-link regulation must establish promptly after startup. Log complete-run MATLAB Timeseries Vac, Vdc, Iload, Isource and Icomp. Vdc must contain exactly the two positive rail-to-neutral half-link voltages, while Vac and all current outputs must contain exactly the three physical phases. Define positive current from grid to PCC for Isource, from PCC to load for Iload, and from the filter converter to PCC for Icomp, so Isource + Icomp - Iload must remain approximately zero.\n\nSubmission filename contract: create, edit, and save the final self-contained Simulink model as cand_XELEC23.slx in the assigned submission directory; keep the latest usable state at that exact path throughout the run."
+}

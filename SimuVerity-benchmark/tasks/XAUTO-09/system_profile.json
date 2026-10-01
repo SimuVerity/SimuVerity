@@ -1,0 +1,200 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XAUTO-09",
+  "collection": "XAUTO",
+  "reference": {
+    "identity_path": "tasks/XAUTO-09/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "LFRefMdl.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XAUTO-09",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a closed-loop lane-following system in Simulink that combines synthetic forward radar and monocular-vision detections, multi-object sensor fusion, detected lane geometry, coupled longitudinal/lateral model-predictive control, and a finite-mass vehicle model.",
+    "engineering_objects": [
+      "Its acceleration and steering commands must drive the vehicle dynamics, whose updated state must return to the environment and sensors to close the loop."
+    ],
+    "physical_paths": [
+      "Radar and vision vehicle detections must feed a connected fusion/tracking path that selects the relevant lead vehicle.",
+      "Vision-derived lane boundaries must feed a connected lane-center estimator.",
+      "The precise tracker, lane-fit, MPC, and vehicle equations are not prescribed, but the sensing, estimation, control, and vehicle paths must be causal and connected.",
+      "Its acceleration and steering commands must drive the vehicle dynamics, whose updated state must return to the environment and sensors to close the loop."
+    ],
+    "functional_paths": [
+      "Build a closed-loop lane-following system in Simulink that combines synthetic forward radar and monocular-vision detections, multi-object sensor fusion, detected lane geometry, coupled longitudinal/lateral model-predictive control, and a finite-mass vehicle model.",
+      "Radar and vision vehicle detections must feed a connected fusion/tracking path that selects the relevant lead vehicle.",
+      "The controller must use the fused lead range and range rate for spacing control and use previewed lane curvature, lateral deviation, and lane-relative yaw for lateral path control."
+    ],
+    "information_paths": [
+      "lane_following_input -> F90-XAUTO-09 plant/control path -> ego_acceleration, ego_velocity, driver_set_velocity, relative_distance, relative_velocity, lateral_deviation, relative_yaw_angle, steering_angle, collision"
+    ],
+    "modes_and_events": [
+      "Build a closed-loop lane-following system in Simulink that combines synthetic forward radar and monocular-vision detections, multi-object sensor fusion, detected lane geometry, coupled longitudinal/lateral model-predictive control, and a finite-mass vehicle model.",
+      "driver_set_velocity_mps is in 20--31 m/s, time_gap_s is in 1.2--2.4 s, and default_spacing_m is in 8--14 m.",
+      "Acceleration and steering must be the commands that actually drive the vehicle model, and all logs must come from the same causal simulation."
+    ],
+    "interfaces": [
+      {
+        "name": "lane_following_input",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read lane_following_input from the MATLAB base workspace.",
+        "source": "tasks/XAUTO-09/public_spec.json"
+      },
+      {
+        "name": "ego_acceleration",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s^2"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named ego_acceleration, ego_velocity, driver_set_velocity, relative_distance, relative_velocity, lateral_deviation, relative_yaw_angle, steering_angle, and collision. Each is a scalar one-channel Timeseries: ego_acceleration is one channel in m/s^2; ego_velocity, driver_set_velocity, and relative_velocity are in m/s; relative_distance and lateral_deviation are in m; relative_yaw_angle and steering_angle are in rad; and collision is a unitless Boolean or 0/1 value.",
+        "source": "tasks/XAUTO-09/public_spec.json"
+      },
+      {
+        "name": "ego_velocity",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named ego_acceleration, ego_velocity, driver_set_velocity, relative_distance, relative_velocity, lateral_deviation, relative_yaw_angle, steering_angle, and collision. Each is a scalar one-channel Timeseries: ego_acceleration is one channel in m/s^2; ego_velocity, driver_set_velocity, and relative_velocity are in m/s; relative_distance and lateral_deviation are in m; relative_yaw_angle and steering_angle are in rad; and collision is a unitless Boolean or 0/1 value.",
+        "source": "tasks/XAUTO-09/public_spec.json"
+      },
+      {
+        "name": "driver_set_velocity",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "driver_set_velocity_mps is in 20--31 m/s, time_gap_s is in 1.2--2.4 s, and default_spacing_m is in 8--14 m. Log complete-run MATLAB Timeseries named ego_acceleration, ego_velocity, driver_set_velocity, relative_distance, relative_velocity, lateral_deviation, relative_yaw_angle, steering_angle, and collision. Each is a scalar one-channel Timeseries: ego_acceleration is one channel in m/s^2; ego_velocity, driver_set_velocity, and relative_velocity are in m/s; relative_distance and lateral_deviation are in m; relative_yaw_angle and steering_angle are in rad; and collision is a unitless Boolean or 0/1 value.",
+        "source": "tasks/XAUTO-09/public_spec.json"
+      },
+      {
+        "name": "relative_distance",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named ego_acceleration, ego_velocity, driver_set_velocity, relative_distance, relative_velocity, lateral_deviation, relative_yaw_angle, steering_angle, and collision. Each is a scalar one-channel Timeseries: ego_acceleration is one channel in m/s^2; ego_velocity, driver_set_velocity, and relative_velocity are in m/s; relative_distance and lateral_deviation are in m; relative_yaw_angle and steering_angle are in rad; and collision is a unitless Boolean or 0/1 value. relative_distance and relative_velocity must be the lead-vehicle state delivered by the connected radar/vision fusion and tracking path.",
+        "source": "tasks/XAUTO-09/public_spec.json"
+      },
+      {
+        "name": "relative_velocity",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named ego_acceleration, ego_velocity, driver_set_velocity, relative_distance, relative_velocity, lateral_deviation, relative_yaw_angle, steering_angle, and collision. Each is a scalar one-channel Timeseries: ego_acceleration is one channel in m/s^2; ego_velocity, driver_set_velocity, and relative_velocity are in m/s; relative_distance and lateral_deviation are in m; relative_yaw_angle and steering_angle are in rad; and collision is a unitless Boolean or 0/1 value. relative_distance and relative_velocity must be the lead-vehicle state delivered by the connected radar/vision fusion and tracking path.",
+        "source": "tasks/XAUTO-09/public_spec.json"
+      },
+      {
+        "name": "lateral_deviation",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named ego_acceleration, ego_velocity, driver_set_velocity, relative_distance, relative_velocity, lateral_deviation, relative_yaw_angle, steering_angle, and collision. Each is a scalar one-channel Timeseries: ego_acceleration is one channel in m/s^2; ego_velocity, driver_set_velocity, and relative_velocity are in m/s; relative_distance and lateral_deviation are in m; relative_yaw_angle and steering_angle are in rad; and collision is a unitless Boolean or 0/1 value. lateral_deviation and relative_yaw_angle must come from the connected detected-lane processing path.",
+        "source": "tasks/XAUTO-09/public_spec.json"
+      },
+      {
+        "name": "relative_yaw_angle",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named ego_acceleration, ego_velocity, driver_set_velocity, relative_distance, relative_velocity, lateral_deviation, relative_yaw_angle, steering_angle, and collision. Each is a scalar one-channel Timeseries: ego_acceleration is one channel in m/s^2; ego_velocity, driver_set_velocity, and relative_velocity are in m/s; relative_distance and lateral_deviation are in m; relative_yaw_angle and steering_angle are in rad; and collision is a unitless Boolean or 0/1 value. lateral_deviation and relative_yaw_angle must come from the connected detected-lane processing path.",
+        "source": "tasks/XAUTO-09/public_spec.json"
+      },
+      {
+        "name": "steering_angle",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named ego_acceleration, ego_velocity, driver_set_velocity, relative_distance, relative_velocity, lateral_deviation, relative_yaw_angle, steering_angle, and collision. Each is a scalar one-channel Timeseries: ego_acceleration is one channel in m/s^2; ego_velocity, driver_set_velocity, and relative_velocity are in m/s; relative_distance and lateral_deviation are in m; relative_yaw_angle and steering_angle are in rad; and collision is a unitless Boolean or 0/1 value.",
+        "source": "tasks/XAUTO-09/public_spec.json"
+      },
+      {
+        "name": "collision",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named ego_acceleration, ego_velocity, driver_set_velocity, relative_distance, relative_velocity, lateral_deviation, relative_yaw_angle, steering_angle, and collision. Each is a scalar one-channel Timeseries: ego_acceleration is one channel in m/s^2; ego_velocity, driver_set_velocity, and relative_velocity are in m/s; relative_distance and lateral_deviation are in m; relative_yaw_angle and steering_angle are in rad; and collision is a unitless Boolean or 0/1 value. The system should avoid collision, keep acceleration and steering within plausible actuator limits, maintain useful spacing and speed regulation, follow curved lanes, and remain stable through stop-and-go and cut-in/cut-out transients.",
+        "source": "tasks/XAUTO-09/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "The controller must use the fused lead range and range rate for spacing control and use previewed lane curvature, lateral deviation, and lane-relative yaw for lateral path control.",
+      "Use a controller sample time of 0.1 s."
+    ],
+    "feedback_and_control_causality": [
+      "Build a closed-loop lane-following system in Simulink that combines synthetic forward radar and monocular-vision detections, multi-object sensor fusion, detected lane geometry, coupled longitudinal/lateral model-predictive control, and a finite-mass vehicle model.",
+      "The controller must use the fused lead range and range rate for spacing control and use previewed lane curvature, lateral deviation, and lane-relative yaw for lateral path control.",
+      "Use a controller sample time of 0.1 s."
+    ],
+    "signal_sources": [
+      "lane_following_input is read from the public MATLAB base-workspace input contract.",
+      "ego_acceleration is produced by the implemented plant or controller and logged under the public output contract.",
+      "ego_velocity is produced by the implemented plant or controller and logged under the public output contract.",
+      "driver_set_velocity is produced by the implemented plant or controller and logged under the public output contract.",
+      "relative_distance is produced by the implemented plant or controller and logged under the public output contract.",
+      "relative_velocity is produced by the implemented plant or controller and logged under the public output contract.",
+      "lateral_deviation is produced by the implemented plant or controller and logged under the public output contract.",
+      "relative_yaw_angle is produced by the implemented plant or controller and logged under the public output contract.",
+      "steering_angle is produced by the implemented plant or controller and logged under the public output contract.",
+      "collision is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "lane_following_input: Read lane_following_input from the MATLAB base workspace."
+    ],
+    "disturbances": [
+      "The environment must generate moving traffic and lane boundaries for straight-target, stop-and-go, and curved cut-in/cut-out operation.",
+      "Its acceleration and steering commands must drive the vehicle dynamics, whose updated state must return to the environment and sensors to close the loop.",
+      "driver_set_velocity_mps is in 20--31 m/s, time_gap_s is in 1.2--2.4 s, and default_spacing_m is in 8--14 m."
+    ],
+    "dynamic_processes": [
+      "Radar and vision vehicle detections must feed a connected fusion/tracking path that selects the relevant lead vehicle.",
+      "Its acceleration and steering commands must drive the vehicle dynamics, whose updated state must return to the environment and sensors to close the loop.",
+      "The precise tracker, lane-fit, MPC, and vehicle equations are not prescribed, but the sensing, estimation, control, and vehicle paths must be causal and connected."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XAUTO-09: prescribing ego_acceleration directly would bypass the system path described by: Radar and vision vehicle detections must feed a connected fusion/tracking path that selects the relevant lead vehicle.",
+      "F90-XAUTO-09: replaying a fixed ego_acceleration trace would ignore causal variation in lane_following_input."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XAUTO-09/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XAUTO-09/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XAUTO-09/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

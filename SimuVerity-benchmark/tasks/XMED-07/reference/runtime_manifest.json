@@ -1,0 +1,20 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XMED-07",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/src/Models/InfusionPumpModelV7.slx",
+  "clean_replay_setup": {
+    "phase": "after_load_before_update",
+    "path": "tasks/XMED-07/reference/clean_replay_setup/f90_xmed07_reference_clean_replay_setup.m",
+    "entrypoint": "f90_xmed07_reference_clean_replay_setup"
+  },
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 36,
+  "retained_bytes": 5361170,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ]
+}

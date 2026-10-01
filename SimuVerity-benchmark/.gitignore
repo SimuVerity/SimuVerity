@@ -1,0 +1,23 @@
+/.venv/
+/.pytest_cache/
+/.ruff_cache/
+/build/
+/dist/
+*.egg-info/
+__pycache__/
+*.py[cod]
+
+# Generated trials, evaluations, and locally materialized licensed assets.
+/runs/
+/evaluations/
+/.simuverity/
+/assets-cache/
+/slprj/
+*.slxc
+
+# Credentials and machine-local MCP configuration must never be committed.
+auth.json
+.credentials.json
+*.local.json
+*.secrets.*
+.env

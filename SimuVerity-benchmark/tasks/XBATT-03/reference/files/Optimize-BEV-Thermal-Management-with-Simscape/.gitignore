@@ -1,0 +1,19 @@
+# Ignore Libraries directory
+Libraries/cylPackParChnlsLumped/
+
+# Ignore specific file in Scripts_Data
+Scripts_Data/Data/exemplarlyTestRun.mat
+
+# Ignore specific files in Slides_Videos
+Slides_Videos/~$More Complex Sensitivity Analysis.pptx
+Slides_Videos/~$Sensitivity.pptx
+
+# Ignore all PowerPoint files (if desired)
+# Slides_Videos/*.pptx
+
+# Ignore work directory
+work/
+
+# Ignore result directories
+Workflows/Sensitivity/results/*.mat
+Workflows/Optimization/results/*.mat

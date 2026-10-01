@@ -1,0 +1,32 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XBATT-01",
+  "file_count": 1,
+  "files": [
+    {
+      "path": "reference/files/XBATT01_reference.slx",
+      "size_bytes": 118899
+    }
+  ],
+  "entrypoint": "reference/files/XBATT01_reference.slx",
+  "expected_score": 96.619563,
+  "expected_valid_scenarios": 8,
+  "score_tolerance": 5e-07,
+  "scenario_contract": {
+    "expected_ids": [
+      "hot_high_current",
+      "cold_low_soc",
+      "warm_spread",
+      "warm_spread_fault_pair_none",
+      "joint_interior",
+      "joint_high_stress",
+      "public_joint_endpoint",
+      "fault_pair_none"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 118899,
+  "excluded_files": []
+}

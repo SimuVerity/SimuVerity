@@ -1,0 +1,151 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XBATT-10",
+  "collection": "XBATT",
+  "reference": {
+    "identity_path": "tasks/XBATT-10/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/Simulink Vehicle Model/EV_Truck_Model.slx",
+    "model_path": "tasks/XBATT-10/reference/files/Simulink Vehicle Model/EV_Truck_Model.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XBATT-10",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a closed-loop battery-electric truck model that reads ev_truck_input from the MATLAB base workspace and follows the supplied longitudinal drive cycle.",
+    "engineering_objects": [
+      "Include a physical battery, an electric motor and driveline, longitudinal vehicle and wheel dynamics, a driver or longitudinal speed controller, service braking, auxiliary electrical demand, and regenerative braking that can be enabled or disabled.",
+      "powertrain_rating_kw must causally limit available motor torque or power.",
+      "battery_initial_soc_fraction must initialize the physical battery state."
+    ],
+    "physical_paths": [
+      "Battery voltage, current, power, and SOC must come from one connected physical energy path; motor torque, speed, and power must be mutually consistent; vehicle speed must result from the controlled driveline and vehicle dynamics.",
+      "Hard-coded private trajectories, copied scalar inputs, disconnected battery or motor branches, fabricated Timeseries, or a regeneration flag that does not change physical braking-energy flow are not acceptable.",
+      "Include a physical battery, an electric motor and driveline, longitudinal vehicle and wheel dynamics, a driver or longitudinal speed controller, service braking, auxiliary electrical demand, and regenerative braking that can be enabled or disabled.",
+      "powertrain_rating_kw must causally limit available motor torque or power."
+    ],
+    "functional_paths": [
+      "Include a physical battery, an electric motor and driveline, longitudinal vehicle and wheel dynamics, a driver or longitudinal speed controller, service braking, auxiliary electrical demand, and regenerative braking that can be enabled or disabled.",
+      "vehicle speed must result from the controlled driveline and vehicle dynamics."
+    ],
+    "information_paths": [
+      "ev_truck_input -> F90-XBATT-10 plant/control path -> vehicle, motor, battery, controls"
+    ],
+    "modes_and_events": [
+      "Build a closed-loop battery-electric truck model that reads ev_truck_input from the MATLAB base workspace and follows the supplied longitudinal drive cycle.",
+      "The model must handle both acceleration and braking portions of any valid supplied drive cycle."
+    ],
+    "interfaces": [
+      {
+        "name": "ev_truck_input",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Build a closed-loop battery-electric truck model that reads ev_truck_input from the MATLAB base workspace and follows the supplied longitudinal drive cycle. ev_truck_input is a MATLAB struct with these public fields: drive_cycle_time_s is a strictly increasing real column vector beginning at 0 s and ending between 10 and 20 s; drive_cycle_speed_mps is an equal-length real column vector in 0--25 m/s; vehicle_mass_kg is a real scalar in 2500--6500 kg; powertrain_rating_kw is 95, 132, or 150 kW; battery_initial_soc_fraction is a real scalar in 0.40--0.95; and regenerative_braking_enabled is a logical scalar or numeric 0/1.",
+        "source": "tasks/XBATT-10/public_spec.json"
+      },
+      {
+        "name": "vehicle",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "km/h",
+          "m/s^2",
+          "km"
+        ],
+        "range_or_shape": "ev_truck_input is a MATLAB struct with these public fields: drive_cycle_time_s is a strictly increasing real column vector beginning at 0 s and ending between 10 and 20 s; drive_cycle_speed_mps is an equal-length real column vector in 0--25 m/s; vehicle_mass_kg is a real scalar in 2500--6500 kg; powertrain_rating_kw is 95, 132, or 150 kW; battery_initial_soc_fraction is a real scalar in 0.40--0.95; and regenerative_braking_enabled is a logical scalar or numeric 0/1. Include a physical battery, an electric motor and driveline, longitudinal vehicle and wheel dynamics, a driver or longitudinal speed controller, service braking, auxiliary electrical demand, and regenerative braking that can be enabled or disabled. vehicle_mass_kg must affect the vehicle inertia and road-load response. vehicle has width 4 in this order: drive_cycle_speed_kph (km/h), vehicle_speed_kph (km/h), vehicle_acceleration_mps2 (m/s^2), vehicle_distance_km (km). Battery voltage, current, power, and SOC must come from one connected physical energy path; motor torque, speed, and power must be mutually consistent; vehicle speed must result from the controlled driveline and vehicle dynamics.",
+        "source": "tasks/XBATT-10/public_spec.json"
+      },
+      {
+        "name": "motor",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N*m",
+          "rpm",
+          "kW"
+        ],
+        "range_or_shape": "Include a physical battery, an electric motor and driveline, longitudinal vehicle and wheel dynamics, a driver or longitudinal speed controller, service braking, auxiliary electrical demand, and regenerative braking that can be enabled or disabled. powertrain_rating_kw must causally limit available motor torque or power. When regenerative_braking_enabled is true, deceleration must produce negative motor mechanical power and return energy to the battery; when false, service braking must still decelerate the truck without fabricated regenerative battery power. motor has width 3 in this order: torque_Nm (N*m), speed_rpm (rpm), mechanical_power_kW (kW). Battery voltage, current, power, and SOC must come from one connected physical energy path; motor torque, speed, and power must be mutually consistent; vehicle speed must result from the controlled driveline and vehicle dynamics. Hard-coded private trajectories, copied scalar inputs, disconnected battery or motor branches, fabricated Timeseries, or a regeneration flag that does not change physical braking-energy flow are not acceptable.",
+        "source": "tasks/XBATT-10/public_spec.json"
+      },
+      {
+        "name": "battery",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "V",
+          "A",
+          "kW",
+          "1"
+        ],
+        "range_or_shape": "Build a closed-loop battery-electric truck model that reads ev_truck_input from the MATLAB base workspace and follows the supplied longitudinal drive cycle. ev_truck_input is a MATLAB struct with these public fields: drive_cycle_time_s is a strictly increasing real column vector beginning at 0 s and ending between 10 and 20 s; drive_cycle_speed_mps is an equal-length real column vector in 0--25 m/s; vehicle_mass_kg is a real scalar in 2500--6500 kg; powertrain_rating_kw is 95, 132, or 150 kW; battery_initial_soc_fraction is a real scalar in 0.40--0.95; and regenerative_braking_enabled is a logical scalar or numeric 0/1. Include a physical battery, an electric motor and driveline, longitudinal vehicle and wheel dynamics, a driver or longitudinal speed controller, service braking, auxiliary electrical demand, and regenerative braking that can be enabled or disabled. battery_initial_soc_fraction must initialize the physical battery state. When regenerative_braking_enabled is true, deceleration must produce negative motor mechanical power and return energy to the battery; when false, service braking must still decelerate the truck without fabricated regenerative battery power. battery has width 4 in this order: voltage_V (V), current_A (A), power_kW (kW), soc_fraction (unitless, unit 1). Hard-coded private trajectories, copied scalar inputs, disconnected battery or motor branches, fabricated Timeseries, or a regeneration flag that does not change physical braking-energy flow are not acceptable.",
+        "source": "tasks/XBATT-10/public_spec.json"
+      },
+      {
+        "name": "controls",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N*m",
+          "1",
+          "%"
+        ],
+        "range_or_shape": "controls has width 4 in this order: torque_command_Nm (N*m), brake_command (unitless, unit 1), throttle_percent (%), brake_percent (%).",
+        "source": "tasks/XBATT-10/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Include a physical battery, an electric motor and driveline, longitudinal vehicle and wheel dynamics, a driver or longitudinal speed controller, service braking, auxiliary electrical demand, and regenerative braking that can be enabled or disabled.",
+      "When regenerative_braking_enabled is true, deceleration must produce negative motor mechanical power and return energy to the battery;"
+    ],
+    "feedback_and_control_causality": [
+      "Build a closed-loop battery-electric truck model that reads ev_truck_input from the MATLAB base workspace and follows the supplied longitudinal drive cycle.",
+      "Include a physical battery, an electric motor and driveline, longitudinal vehicle and wheel dynamics, a driver or longitudinal speed controller, service braking, auxiliary electrical demand, and regenerative braking that can be enabled or disabled.",
+      "powertrain_rating_kw must causally limit available motor torque or power."
+    ],
+    "signal_sources": [
+      "ev_truck_input is read from the public MATLAB base-workspace input contract.",
+      "vehicle is produced by the implemented plant or controller and logged under the public output contract.",
+      "motor is produced by the implemented plant or controller and logged under the public output contract.",
+      "battery is produced by the implemented plant or controller and logged under the public output contract.",
+      "controls is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "ev_truck_input: Build a closed-loop battery-electric truck model that reads ev_truck_input from the MATLAB base workspace and follows the supplied longitudinal drive cycle. ev_truck_input is a MATLAB struct with these public fields: drive_cycle_time_s is a strictly increasing real column vector beginning at 0 s and ending between 10 and 20 s; drive_cycle_speed_mps is an equal-length real column vector in 0--25 m/s; vehicle_mass_kg is a real scalar in 2500--6500 kg; powertrain_rating_kw is 95, 132, or 150 kW; battery_initial_soc_fraction is a real scalar in 0.40--0.95; and regenerative_braking_enabled is a logical scalar or numeric 0/1."
+    ],
+    "disturbances": [
+      "vehicle_mass_kg must affect the vehicle inertia and road-load response."
+    ],
+    "dynamic_processes": [
+      "Include a physical battery, an electric motor and driveline, longitudinal vehicle and wheel dynamics, a driver or longitudinal speed controller, service braking, auxiliary electrical demand, and regenerative braking that can be enabled or disabled.",
+      "vehicle speed must result from the controlled driveline and vehicle dynamics."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XBATT-10: prescribing vehicle directly would bypass the system path described by: Battery voltage, current, power, and SOC must come from one connected physical energy path; motor torque, speed, and power must be mutually consistent; vehicle speed must result from the controlled driveline and vehicle dynamics.",
+      "F90-XBATT-10: replaying a fixed vehicle trace would ignore causal variation in ev_truck_input."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XBATT-10/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XBATT-10/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XBATT-10/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

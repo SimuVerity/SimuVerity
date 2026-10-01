@@ -1,0 +1,187 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XBATT-06",
+  "collection": "XBATT",
+  "reference": {
+    "identity_path": "tasks/XBATT-06/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/src/BatteryEstim3RC_PTBS_EQ_RUL_v1.slx",
+    "model_path": "tasks/XBATT-06/reference/files/src/BatteryEstim3RC_PTBS_EQ_RUL_v1.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XBATT-06",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a temperature-aware battery monitoring model around a three-time-constant equivalent circuit.",
+    "engineering_objects": [
+      "The electrical plant and estimator must contain a series resistance and three distinct parallel RC polarization branches, with state-of-charge-dependent physical parameters and finite dynamic states."
+    ],
+    "physical_paths": [
+      "Replaying workspace input columns, copying a nominal trace across operating conditions, bypassing an RC branch, or calculating safety margin from a disconnected display path is not acceptable.",
+      "The electrical plant and estimator must contain a series resistance and three distinct parallel RC polarization branches, with state-of-charge-dependent physical parameters and finite dynamic states."
+    ],
+    "functional_paths": [
+      "Estimate terminal voltage and SOC causally from the applied current, temperature, initial state, and capacity.",
+      "Track or identify the seven 3RC electrical parameters R0, R1, C1, R2, C2, R3, and C3 over the usable SOC range."
+    ],
+    "information_paths": [
+      "battery_input, initial_soc, available_capacity_Ah, forecast_discharge_current_A, reserve_capacity_Ah, required_landing_time_s -> F90-XBATT-06 plant/control path -> electrical_state, identified_3rc, rul_state"
+    ],
+    "modes_and_events": [
+      "Build a temperature-aware battery monitoring model around a three-time-constant equivalent circuit."
+    ],
+    "interfaces": [
+      {
+        "name": "battery_input",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read battery_input, initial_soc, available_capacity_Ah, forecast_discharge_current_A, reserve_capacity_Ah, and required_landing_time_s from the MATLAB base workspace. battery_input is a Timeseries with two real input channels [positive-discharge current in A, battery temperature in K]. All three logs must cover the full battery_input time interval, remain finite, and come from one causal simulation.",
+        "source": "tasks/XBATT-06/public_spec.json"
+      },
+      {
+        "name": "initial_soc",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read battery_input, initial_soc, available_capacity_Ah, forecast_discharge_current_A, reserve_capacity_Ah, and required_landing_time_s from the MATLAB base workspace.",
+        "source": "tasks/XBATT-06/public_spec.json"
+      },
+      {
+        "name": "available_capacity_Ah",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "Ah"
+        ],
+        "range_or_shape": "Read battery_input, initial_soc, available_capacity_Ah, forecast_discharge_current_A, reserve_capacity_Ah, and required_landing_time_s from the MATLAB base workspace.",
+        "source": "tasks/XBATT-06/public_spec.json"
+      },
+      {
+        "name": "forecast_discharge_current_A",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "Read battery_input, initial_soc, available_capacity_Ah, forecast_discharge_current_A, reserve_capacity_Ah, and required_landing_time_s from the MATLAB base workspace. Use coulomb-consistent capacity accounting to predict remaining useful time under forecast_discharge_current_A.",
+        "source": "tasks/XBATT-06/public_spec.json"
+      },
+      {
+        "name": "reserve_capacity_Ah",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "Ah"
+        ],
+        "range_or_shape": "Read battery_input, initial_soc, available_capacity_Ah, forecast_discharge_current_A, reserve_capacity_Ah, and required_landing_time_s from the MATLAB base workspace. Subtract reserve_capacity_Ah before predicting usable RUL, and report landing safety margin as predicted RUL minus required_landing_time_s.",
+        "source": "tasks/XBATT-06/public_spec.json"
+      },
+      {
+        "name": "required_landing_time_s",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read battery_input, initial_soc, available_capacity_Ah, forecast_discharge_current_A, reserve_capacity_Ah, and required_landing_time_s from the MATLAB base workspace. Subtract reserve_capacity_Ah before predicting usable RUL, and report landing safety margin as predicted RUL minus required_landing_time_s.",
+        "source": "tasks/XBATT-06/public_spec.json"
+      },
+      {
+        "name": "electrical_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "V",
+          "1"
+        ],
+        "range_or_shape": "Log complete-run Timeseries named electrical_state, identified_3rc, and rul_state. electrical_state has width 4 in this order: terminal voltage (V), estimated terminal voltage (V), plant SOC (unitless fraction), and estimated SOC (unitless fraction).",
+        "source": "tasks/XBATT-06/public_spec.json"
+      },
+      {
+        "name": "identified_3rc",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "Log complete-run Timeseries named electrical_state, identified_3rc, and rul_state. identified_3rc has width 8 in this order: R0 (ohm), R1 (ohm), C1 (F), R2 (ohm), C2 (F), R3 (ohm), C3 (F), and estimated available capacity (A*h).",
+        "source": "tasks/XBATT-06/public_spec.json"
+      },
+      {
+        "name": "rul_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "Log complete-run Timeseries named electrical_state, identified_3rc, and rul_state. rul_state has width 4 in this order: consumed charge (A*h), remaining usable capacity before reserve (A*h), predicted RUL (s), and landing safety margin (s).",
+        "source": "tasks/XBATT-06/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "A one-RC approximation, a static voltage lookup, or prescribed voltage/SOC/RUL waveforms is not sufficient.",
+      "battery_input is a Timeseries with two real input channels [positive-discharge current in A, battery temperature in K]."
+    ],
+    "feedback_and_control_causality": [
+      "The electrical plant and estimator must contain a series resistance and three distinct parallel RC polarization branches, with state-of-charge-dependent physical parameters and finite dynamic states.",
+      "Estimate terminal voltage and SOC causally from the applied current, temperature, initial state, and capacity."
+    ],
+    "signal_sources": [
+      "battery_input is read from the public MATLAB base-workspace input contract.",
+      "initial_soc is read from the public MATLAB base-workspace input contract.",
+      "available_capacity_Ah is read from the public MATLAB base-workspace input contract.",
+      "forecast_discharge_current_A is read from the public MATLAB base-workspace input contract.",
+      "reserve_capacity_Ah is read from the public MATLAB base-workspace input contract.",
+      "required_landing_time_s is read from the public MATLAB base-workspace input contract.",
+      "electrical_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "identified_3rc is produced by the implemented plant or controller and logged under the public output contract.",
+      "rul_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "battery_input: Read battery_input, initial_soc, available_capacity_Ah, forecast_discharge_current_A, reserve_capacity_Ah, and required_landing_time_s from the MATLAB base workspace. battery_input is a Timeseries with two real input channels [positive-discharge current in A, battery temperature in K]. All three logs must cover the full battery_input time interval, remain finite, and come from one causal simulation.",
+      "initial_soc: Read battery_input, initial_soc, available_capacity_Ah, forecast_discharge_current_A, reserve_capacity_Ah, and required_landing_time_s from the MATLAB base workspace.",
+      "available_capacity_Ah: Read battery_input, initial_soc, available_capacity_Ah, forecast_discharge_current_A, reserve_capacity_Ah, and required_landing_time_s from the MATLAB base workspace.",
+      "forecast_discharge_current_A: Read battery_input, initial_soc, available_capacity_Ah, forecast_discharge_current_A, reserve_capacity_Ah, and required_landing_time_s from the MATLAB base workspace. Use coulomb-consistent capacity accounting to predict remaining useful time under forecast_discharge_current_A.",
+      "reserve_capacity_Ah: Read battery_input, initial_soc, available_capacity_Ah, forecast_discharge_current_A, reserve_capacity_Ah, and required_landing_time_s from the MATLAB base workspace. Subtract reserve_capacity_Ah before predicting usable RUL, and report landing safety margin as predicted RUL minus required_landing_time_s.",
+      "required_landing_time_s: Read battery_input, initial_soc, available_capacity_Ah, forecast_discharge_current_A, reserve_capacity_Ah, and required_landing_time_s from the MATLAB base workspace. Subtract reserve_capacity_Ah before predicting usable RUL, and report landing safety margin as predicted RUL minus required_landing_time_s."
+    ],
+    "disturbances": [
+      "F90-XBATT-06 operating variation is supplied through battery_input, initial_soc, available_capacity_Ah, forecast_discharge_current_A, reserve_capacity_Ah, required_landing_time_s."
+    ],
+    "dynamic_processes": [
+      "The electrical plant and estimator must contain a series resistance and three distinct parallel RC polarization branches, with state-of-charge-dependent physical parameters and finite dynamic states.",
+      "Track or identify the seven 3RC electrical parameters R0, R1, C1, R2, C2, R3, and C3 over the usable SOC range.",
+      "Current, temperature, initial SOC, and available capacity must act on the same dynamic battery and estimator that produce the logs."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XBATT-06: prescribing electrical_state directly would bypass the system path described by: Replaying workspace input columns, copying a nominal trace across operating conditions, bypassing an RC branch, or calculating safety margin from a disconnected display path is not acceptable.",
+      "F90-XBATT-06: replaying a fixed electrical_state trace would ignore causal variation in battery_input."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XBATT-06/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XBATT-06/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XBATT-06/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

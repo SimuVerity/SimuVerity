@@ -1,0 +1,168 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XELEC-08",
+  "collection": "XELEC",
+  "reference": {
+    "identity_path": "tasks/XELEC-08/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/statom_3_phase.mdl",
+    "model_path": "tasks/XELEC-08/reference/files/statom_3_phase.mdl"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id D008",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a three-phase shunt STATCOM for a 50 Hz system.",
+    "engineering_objects": [
+      "D008 plant and controller described by the current public task contract",
+      "Measured output interfaces: Vdc, Vpcc, Icomp, Igrid, Iload"
+    ],
+    "physical_paths": [
+      "A three-phase grid and load must share a common PCC, and a controllable two-level voltage-source converter with a physical DC-link capacitor must connect in shunt at that PCC through one coupling reactor per phase."
+    ],
+    "functional_paths": [
+      "A three-phase grid and load must share a common PCC, and a controllable two-level voltage-source converter with a physical DC-link capacitor must connect in shunt at that PCC through one coupling reactor per phase.",
+      "The DC-link regulation and reactive compensation must establish promptly after startup."
+    ],
+    "information_paths": [
+      "Vsrc_LL, P_load, Q_load -> D008 plant/control path -> Vdc, Vpcc, Icomp, Igrid, Iload"
+    ],
+    "modes_and_events": [
+      "The DC-link regulation and reactive compensation must establish promptly after startup."
+    ],
+    "interfaces": [
+      {
+        "name": "Vsrc_LL",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read Vsrc_LL, P_load and Q_load from base-workspace variables; their nominal values are 190.53 V, 1000 W and 5000 var, and each operates over a +/-10% envelope.",
+        "source": "tasks/XELEC-08/public_spec.json"
+      },
+      {
+        "name": "P_load",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read Vsrc_LL, P_load and Q_load from base-workspace variables; their nominal values are 190.53 V, 1000 W and 5000 var, and each operates over a +/-10% envelope.",
+        "source": "tasks/XELEC-08/public_spec.json"
+      },
+      {
+        "name": "Q_load",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read Vsrc_LL, P_load and Q_load from base-workspace variables; their nominal values are 190.53 V, 1000 W and 5000 var, and each operates over a +/-10% envelope. The measured DC-link voltage must remain near 399 V as these inputs vary, and the physical converter current must compensate the reactive component of the load current and respond in the appropriate direction when Q_load changes.",
+        "source": "tasks/XELEC-08/public_spec.json"
+      },
+      {
+        "name": "Vdc",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "V"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries Vdc, Vpcc, Icomp, Igrid and Iload.",
+        "source": "tasks/XELEC-08/public_spec.json"
+      },
+      {
+        "name": "Vpcc",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "V"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries Vdc, Vpcc, Icomp, Igrid and Iload. Vpcc must be one physically measured PCC phase voltage; Icomp, Igrid and Iload must each contain exactly the three physically measured phase currents. Use the same phase ordering for Icomp, Igrid and Iload; Vpcc must be the PCC phase voltage corresponding to channel 1 of those three current signals.",
+        "source": "tasks/XELEC-08/public_spec.json"
+      },
+      {
+        "name": "Icomp",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries Vdc, Vpcc, Icomp, Igrid and Iload. Vpcc must be one physically measured PCC phase voltage; Icomp, Igrid and Iload must each contain exactly the three physically measured phase currents. Use the same phase ordering for Icomp, Igrid and Iload; Vpcc must be the PCC phase voltage corresponding to channel 1 of those three current signals. Define positive current from grid to PCC for Igrid, from PCC to load for Iload, and from PCC to converter for Icomp, so Igrid - Iload - Icomp must remain approximately zero at the PCC.",
+        "source": "tasks/XELEC-08/public_spec.json"
+      },
+      {
+        "name": "Igrid",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries Vdc, Vpcc, Icomp, Igrid and Iload. Vpcc must be one physically measured PCC phase voltage; Icomp, Igrid and Iload must each contain exactly the three physically measured phase currents. Use the same phase ordering for Icomp, Igrid and Iload; Vpcc must be the PCC phase voltage corresponding to channel 1 of those three current signals. Define positive current from grid to PCC for Igrid, from PCC to load for Iload, and from PCC to converter for Icomp, so Igrid - Iload - Icomp must remain approximately zero at the PCC.",
+        "source": "tasks/XELEC-08/public_spec.json"
+      },
+      {
+        "name": "Iload",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries Vdc, Vpcc, Icomp, Igrid and Iload. Vpcc must be one physically measured PCC phase voltage; Icomp, Igrid and Iload must each contain exactly the three physically measured phase currents. Use the same phase ordering for Icomp, Igrid and Iload; Vpcc must be the PCC phase voltage corresponding to channel 1 of those three current signals. Define positive current from grid to PCC for Igrid, from PCC to load for Iload, and from PCC to converter for Icomp, so Igrid - Iload - Icomp must remain approximately zero at the PCC.",
+        "source": "tasks/XELEC-08/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a three-phase shunt STATCOM for a 50 Hz system.",
+      "A three-phase grid and load must share a common PCC, and a controllable two-level voltage-source converter with a physical DC-link capacitor must connect in shunt at that PCC through one coupling reactor per phase.",
+      "Vpcc must be one physically measured PCC phase voltage;"
+    ],
+    "feedback_and_control_causality": [
+      "The DC-link regulation and reactive compensation must establish promptly after startup."
+    ],
+    "signal_sources": [
+      "Vsrc_LL is read from the public MATLAB base-workspace input contract.",
+      "P_load is read from the public MATLAB base-workspace input contract.",
+      "Q_load is read from the public MATLAB base-workspace input contract.",
+      "Vdc is produced by the implemented plant or controller and logged under the public output contract.",
+      "Vpcc is produced by the implemented plant or controller and logged under the public output contract.",
+      "Icomp is produced by the implemented plant or controller and logged under the public output contract.",
+      "Igrid is produced by the implemented plant or controller and logged under the public output contract.",
+      "Iload is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "Vsrc_LL: Read Vsrc_LL, P_load and Q_load from base-workspace variables; their nominal values are 190.53 V, 1000 W and 5000 var, and each operates over a +/-10% envelope.",
+      "P_load: Read Vsrc_LL, P_load and Q_load from base-workspace variables; their nominal values are 190.53 V, 1000 W and 5000 var, and each operates over a +/-10% envelope.",
+      "Q_load: Read Vsrc_LL, P_load and Q_load from base-workspace variables; their nominal values are 190.53 V, 1000 W and 5000 var, and each operates over a +/-10% envelope. The measured DC-link voltage must remain near 399 V as these inputs vary, and the physical converter current must compensate the reactive component of the load current and respond in the appropriate direction when Q_load changes."
+    ],
+    "disturbances": [
+      "A three-phase grid and load must share a common PCC, and a controllable two-level voltage-source converter with a physical DC-link capacitor must connect in shunt at that PCC through one coupling reactor per phase.",
+      "Read Vsrc_LL, P_load and Q_load from base-workspace variables;",
+      "The measured DC-link voltage must remain near 399 V as these inputs vary, and the physical converter current must compensate the reactive component of the load current and respond in the appropriate direction when Q_load changes."
+    ],
+    "dynamic_processes": [
+      "The DC-link regulation and reactive compensation must establish promptly after startup."
+    ],
+    "task_specific_shortcuts": [
+      "D008: prescribing Vdc directly would bypass the system path described by: A three-phase grid and load must share a common PCC, and a controllable two-level voltage-source converter with a physical DC-link capacitor must connect in shunt at that PCC through one coupling reactor per phase.",
+      "D008: replaying a fixed Vdc trace would ignore causal variation in Vsrc_LL."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XELEC-08/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XELEC-08/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XELEC-08/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

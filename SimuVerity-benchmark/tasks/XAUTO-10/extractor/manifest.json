@@ -1,0 +1,32 @@
+{
+  "schema": "simuverity.extractor-closure.v1",
+  "task_id": "XAUTO-10",
+  "entrypoint": "vendor/scripts/formal90/tasks/f90_xauto10/f90_xauto10_extract_candidate_evidence.m",
+  "public_wrapper": "extractor/run.m",
+  "files": [
+    {
+      "source_name": "simuverity_official_scenarios_path.m",
+      "public_path": "extractor/support/simuverity_official_scenarios_path.m"
+    },
+    {
+      "source_name": "f90_xauto10_extract_candidate_evidence.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xauto10/f90_xauto10_extract_candidate_evidence.m"
+    },
+    {
+      "source_name": "f90_xauto10_extract_evidence.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xauto10/f90_xauto10_extract_evidence.m"
+    },
+    {
+      "source_name": "f90_xauto10_extract_reference_evidence.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xauto10/f90_xauto10_extract_reference_evidence.m"
+    },
+    {
+      "source_name": "simuverity_load_candidate_dependencies.m",
+      "public_path": "vendor/scripts/unified/candidate_closure/simuverity_load_candidate_dependencies.m"
+    },
+    {
+      "source_name": "simuverity_reload_candidate_dependencies.m",
+      "public_path": "vendor/scripts/unified/candidate_closure/simuverity_reload_candidate_dependencies.m"
+    }
+  ]
+}

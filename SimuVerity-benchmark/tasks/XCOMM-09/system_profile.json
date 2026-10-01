@@ -1,0 +1,191 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XCOMM-09",
+  "collection": "XCOMM",
+  "reference": {
+    "identity_path": "tasks/XCOMM-09/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "HTLinkModelWLANModel.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XCOMM-09",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a complete burst-mode IEEE 802.11n high-throughput baseband link in Simulink.",
+    "engineering_objects": [
+      "The receiver must autonomously detect each packet, acquire timing and carrier synchronization, estimate the 2-by-2 channel from the received HT training fields, separate and equalize both spatial streams, track the data-field pilots, estimate noise power, demodulate and decode the PSDU, and report packet recovery quality."
+    ],
+    "physical_paths": [
+      "Build a complete burst-mode IEEE 802.11n high-throughput baseband link in Simulink.",
+      "Pass every packet through a causal stochastic 2-by-2 TGn multipath-fading channel and additive noise before it reaches the receiver.",
+      "mcs_index is a valid two-spatial-stream HT MCS from 8 through 15, and spatial_mapping is Direct or Fourier.",
+      "The receiver must autonomously detect each packet, acquire timing and carrier synchronization, estimate the 2-by-2 channel from the received HT training fields, separate and equalize both spatial streams, track the data-field pilots, estimate noise power, demodulate and decode the PSDU, and report packet recovery quality."
+    ],
+    "functional_paths": [
+      "The receiver must autonomously detect each packet, acquire timing and carrier synchronization, estimate the 2-by-2 channel from the received HT training fields, separate and equalize both spatial streams, track the data-field pilots, estimate noise power, demodulate and decode the PSDU, and report packet recovery quality."
+    ],
+    "information_paths": [
+      "mcs_index, snr_db, spatial_mapping, payload_seed, channel_seed, noise_seed -> F90-XCOMM-09 plant/control path -> packet_state, synchronization_state, mimo_state, quality_state"
+    ],
+    "modes_and_events": [
+      "Build a complete burst-mode IEEE 802.11n high-throughput baseband link in Simulink."
+    ],
+    "interfaces": [
+      {
+        "name": "mcs_index",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read mcs_index, snr_db, spatial_mapping, payload_seed, channel_seed, and noise_seed from the MATLAB base workspace. mcs_index is a valid two-spatial-stream HT MCS from 8 through 15, and spatial_mapping is Direct or Fourier. The input fields are mcs_index, an integer in [8, 15] selecting a valid two-spatial-stream HT MCS; snr_db, a real scalar in [23, 30] dB; spatial_mapping, exactly Direct or Fourier; payload_seed, an integer in [0, 2147483646]; and channel_seed and noise_seed, integers in [1, 2147483646].",
+        "source": "tasks/XCOMM-09/public_spec.json"
+      },
+      {
+        "name": "snr_db",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "dB"
+        ],
+        "range_or_shape": "Read mcs_index, snr_db, spatial_mapping, payload_seed, channel_seed, and noise_seed from the MATLAB base workspace. The input fields are mcs_index, an integer in [8, 15] selecting a valid two-spatial-stream HT MCS; snr_db, a real scalar in [23, 30] dB; spatial_mapping, exactly Direct or Fourier; payload_seed, an integer in [0, 2147483646]; and channel_seed and noise_seed, integers in [1, 2147483646].",
+        "source": "tasks/XCOMM-09/public_spec.json"
+      },
+      {
+        "name": "spatial_mapping",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read mcs_index, snr_db, spatial_mapping, payload_seed, channel_seed, and noise_seed from the MATLAB base workspace. mcs_index is a valid two-spatial-stream HT MCS from 8 through 15, and spatial_mapping is Direct or Fourier. The input fields are mcs_index, an integer in [8, 15] selecting a valid two-spatial-stream HT MCS; snr_db, a real scalar in [23, 30] dB; spatial_mapping, exactly Direct or Fourier; payload_seed, an integer in [0, 2147483646]; and channel_seed and noise_seed, integers in [1, 2147483646].",
+        "source": "tasks/XCOMM-09/public_spec.json"
+      },
+      {
+        "name": "payload_seed",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read mcs_index, snr_db, spatial_mapping, payload_seed, channel_seed, and noise_seed from the MATLAB base workspace. The input fields are mcs_index, an integer in [8, 15] selecting a valid two-spatial-stream HT MCS; snr_db, a real scalar in [23, 30] dB; spatial_mapping, exactly Direct or Fourier; payload_seed, an integer in [0, 2147483646]; and channel_seed and noise_seed, integers in [1, 2147483646].",
+        "source": "tasks/XCOMM-09/public_spec.json"
+      },
+      {
+        "name": "channel_seed",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read mcs_index, snr_db, spatial_mapping, payload_seed, channel_seed, and noise_seed from the MATLAB base workspace. The input fields are mcs_index, an integer in [8, 15] selecting a valid two-spatial-stream HT MCS; snr_db, a real scalar in [23, 30] dB; spatial_mapping, exactly Direct or Fourier; payload_seed, an integer in [0, 2147483646]; and channel_seed and noise_seed, integers in [1, 2147483646].",
+        "source": "tasks/XCOMM-09/public_spec.json"
+      },
+      {
+        "name": "noise_seed",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read mcs_index, snr_db, spatial_mapping, payload_seed, channel_seed, and noise_seed from the MATLAB base workspace. The input fields are mcs_index, an integer in [8, 15] selecting a valid two-spatial-stream HT MCS; snr_db, a real scalar in [23, 30] dB; spatial_mapping, exactly Direct or Fourier; payload_seed, an integer in [0, 2147483646]; and channel_seed and noise_seed, integers in [1, 2147483646].",
+        "source": "tasks/XCOMM-09/public_spec.json"
+      },
+      {
+        "name": "packet_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named packet_state, synchronization_state, mimo_state, and quality_state. packet_state has width 16385: channels 1-8192 are the transmitted 1024-byte PSDU bits in bit order, channels 8193-16384 are the corresponding recovered PSDU bits, and channel 16385 is the packet-detected flag; all are unitless binary values.",
+        "source": "tasks/XCOMM-09/public_spec.json"
+      },
+      {
+        "name": "synchronization_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "Hz"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named packet_state, synchronization_state, mimo_state, and quality_state. synchronization_state has width 4 in this order: coarse packet offset (samples), coarse CFO estimate (Hz), fine CFO estimate (Hz), and symbol-timing offset (samples).",
+        "source": "tasks/XCOMM-09/public_spec.json"
+      },
+      {
+        "name": "mimo_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "complex symbol"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named packet_state, synchronization_state, mimo_state, and quality_state. mimo_state has width 7 in this order: the flattened 2-by-2 complex channel estimate H11, H21, H12, H22 in MATLAB column-major order; the equalized complex symbols for spatial streams 1 and 2; and estimated noise power.",
+        "source": "tasks/XCOMM-09/public_spec.json"
+      },
+      {
+        "name": "quality_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "count"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named packet_state, synchronization_state, mimo_state, and quality_state. quality_state has width 3 in this order: packet-error rate, packet-error count, and compared-packet count. The channel estimate and equalized symbols must be the actual receiver-internal quantities used to recover the same PSDUs counted by quality_state.",
+        "source": "tasks/XCOMM-09/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "synchronization_state has width 4 in this order: coarse packet offset (samples), coarse CFO estimate (Hz), fine CFO estimate (Hz), and symbol-timing offset (samples).",
+      "mimo_state has width 7 in this order: the flattened 2-by-2 complex channel estimate H11, H21, H12, H22 in MATLAB column-major order; the equalized complex symbols for spatial streams 1 and 2; and estimated noise power.",
+      "quality_state has width 3 in this order: packet-error rate, packet-error count, and compared-packet count."
+    ],
+    "feedback_and_control_causality": [
+      "Pass every packet through a causal stochastic 2-by-2 TGn multipath-fading channel and additive noise before it reaches the receiver."
+    ],
+    "signal_sources": [
+      "mcs_index is read from the public MATLAB base-workspace input contract.",
+      "snr_db is read from the public MATLAB base-workspace input contract.",
+      "spatial_mapping is read from the public MATLAB base-workspace input contract.",
+      "payload_seed is read from the public MATLAB base-workspace input contract.",
+      "channel_seed is read from the public MATLAB base-workspace input contract.",
+      "noise_seed is read from the public MATLAB base-workspace input contract.",
+      "packet_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "synchronization_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "mimo_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "quality_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "mcs_index: Read mcs_index, snr_db, spatial_mapping, payload_seed, channel_seed, and noise_seed from the MATLAB base workspace. mcs_index is a valid two-spatial-stream HT MCS from 8 through 15, and spatial_mapping is Direct or Fourier. The input fields are mcs_index, an integer in [8, 15] selecting a valid two-spatial-stream HT MCS; snr_db, a real scalar in [23, 30] dB; spatial_mapping, exactly Direct or Fourier; payload_seed, an integer in [0, 2147483646]; and channel_seed and noise_seed, integers in [1, 2147483646].",
+      "snr_db: Read mcs_index, snr_db, spatial_mapping, payload_seed, channel_seed, and noise_seed from the MATLAB base workspace. The input fields are mcs_index, an integer in [8, 15] selecting a valid two-spatial-stream HT MCS; snr_db, a real scalar in [23, 30] dB; spatial_mapping, exactly Direct or Fourier; payload_seed, an integer in [0, 2147483646]; and channel_seed and noise_seed, integers in [1, 2147483646].",
+      "spatial_mapping: Read mcs_index, snr_db, spatial_mapping, payload_seed, channel_seed, and noise_seed from the MATLAB base workspace. mcs_index is a valid two-spatial-stream HT MCS from 8 through 15, and spatial_mapping is Direct or Fourier. The input fields are mcs_index, an integer in [8, 15] selecting a valid two-spatial-stream HT MCS; snr_db, a real scalar in [23, 30] dB; spatial_mapping, exactly Direct or Fourier; payload_seed, an integer in [0, 2147483646]; and channel_seed and noise_seed, integers in [1, 2147483646].",
+      "payload_seed: Read mcs_index, snr_db, spatial_mapping, payload_seed, channel_seed, and noise_seed from the MATLAB base workspace. The input fields are mcs_index, an integer in [8, 15] selecting a valid two-spatial-stream HT MCS; snr_db, a real scalar in [23, 30] dB; spatial_mapping, exactly Direct or Fourier; payload_seed, an integer in [0, 2147483646]; and channel_seed and noise_seed, integers in [1, 2147483646].",
+      "channel_seed: Read mcs_index, snr_db, spatial_mapping, payload_seed, channel_seed, and noise_seed from the MATLAB base workspace. The input fields are mcs_index, an integer in [8, 15] selecting a valid two-spatial-stream HT MCS; snr_db, a real scalar in [23, 30] dB; spatial_mapping, exactly Direct or Fourier; payload_seed, an integer in [0, 2147483646]; and channel_seed and noise_seed, integers in [1, 2147483646].",
+      "noise_seed: Read mcs_index, snr_db, spatial_mapping, payload_seed, channel_seed, and noise_seed from the MATLAB base workspace. The input fields are mcs_index, an integer in [8, 15] selecting a valid two-spatial-stream HT MCS; snr_db, a real scalar in [23, 30] dB; spatial_mapping, exactly Direct or Fourier; payload_seed, an integer in [0, 2147483646]; and channel_seed and noise_seed, integers in [1, 2147483646]."
+    ],
+    "disturbances": [
+      "Pass every packet through a causal stochastic 2-by-2 TGn multipath-fading channel and additive noise before it reaches the receiver.",
+      "Read mcs_index, snr_db, spatial_mapping, payload_seed, channel_seed, and noise_seed from the MATLAB base workspace.",
+      "Distinct seeds must produce fresh payloads, fading realizations, and noise."
+    ],
+    "dynamic_processes": [
+      "The receiver must autonomously detect each packet, acquire timing and carrier synchronization, estimate the 2-by-2 channel from the received HT training fields, separate and equalize both spatial streams, track the data-field pilots, estimate noise power, demodulate and decode the PSDU, and report packet recovery quality.",
+      "The channel estimate and equalized symbols must be the actual receiver-internal quantities used to recover the same PSDUs counted by quality_state."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XCOMM-09: prescribing packet_state directly would bypass the system path described by: Build a complete burst-mode IEEE 802.11n high-throughput baseband link in Simulink.",
+      "F90-XCOMM-09: replaying a fixed packet_state trace would ignore causal variation in mcs_index."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XCOMM-09/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XCOMM-09/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XCOMM-09/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

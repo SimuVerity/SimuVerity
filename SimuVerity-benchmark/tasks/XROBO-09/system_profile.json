@@ -1,0 +1,214 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XROBO-09",
+  "collection": "XROBO",
+  "reference": {
+    "identity_path": "tasks/XROBO-09/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "MarineVessel/Model/ASVDemo.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XROBO-09",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a closed-loop autonomous surface-vessel system in Simulink.",
+    "engineering_objects": [
+      "The physical plant must model six-degree-of-freedom vessel motion with inertia, hydrostatic restoring effects, hydrodynamic and current-dependent forces, and two independently driven propellers.",
+      "PropulsionState has 6 channels [desired surge thrust (N), desired yaw moment (N*m), left and right propeller command (rad/s), delivered surge force (N), delivered yaw moment (N*m)].",
+      "Every recorded value must come from the connected physical, control, traffic-assessment, or planning path."
+    ],
+    "physical_paths": [
+      "The controller must use measured vessel motion to track the requested forward speed and waypoint route through bounded propeller actuation.",
+      "Every recorded value must come from the connected physical, control, traffic-assessment, or planning path.",
+      "The physical plant must model six-degree-of-freedom vessel motion with inertia, hydrostatic restoring effects, hydrodynamic and current-dependent forces, and two independently driven propellers.",
+      "PropulsionState has 6 channels [desired surge thrust (N), desired yaw moment (N*m), left and right propeller command (rad/s), delivered surge force (N), delivered yaw moment (N*m)]."
+    ],
+    "functional_paths": [
+      "The controller must use measured vessel motion to track the requested forward speed and waypoint route through bounded propeller actuation.",
+      "Every recorded value must come from the connected physical, control, traffic-assessment, or planning path."
+    ],
+    "information_paths": [
+      "Waypoints_m, TrafficMotion, DesiredSpeed_mps, CurrentSpeed_mps, CurrentDirection_deg -> F90-XROBO-09 plant/control path -> VesselState, GuidanceState, PropulsionState, TrafficState, OperatingState"
+    ],
+    "modes_and_events": [
+      "The physical plant must model six-degree-of-freedom vessel motion with inertia, hydrostatic restoring effects, hydrodynamic and current-dependent forces, and two independently driven propellers.",
+      "The model must also evaluate the supplied traffic-vessel motion, identify potential close encounters, and perform rule-consistent collision-avoidance manoeuvres before returning to useful waypoint progress.",
+      "raw radar, lidar, camera processing, SLAM, wind and wave modelling are not required."
+    ],
+    "interfaces": [
+      {
+        "name": "Waypoints_m",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read Waypoints_m, TrafficMotion, DesiredSpeed_mps, CurrentSpeed_mps, and CurrentDirection_deg from the MATLAB base workspace and support the ranges and formats stated in public_inputs. Waypoints_m is an N-by-2 real matrix in m with columns [x_m, y_m].",
+        "source": "tasks/XROBO-09/public_spec.json"
+      },
+      {
+        "name": "TrafficMotion",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read Waypoints_m, TrafficMotion, DesiredSpeed_mps, CurrentSpeed_mps, and CurrentDirection_deg from the MATLAB base workspace and support the ranges and formats stated in public_inputs. TrafficMotion may contain one, two, or three active traffic vessels. TrafficMotion is a complete-run Timeseries with 18 channels in this exact order: [vessel1_x_m, vessel1_y_m, vessel1_vx_mps, vessel1_vy_mps, vessel1_yaw_rad, vessel1_active_flag, vessel2_x_m, vessel2_y_m, vessel2_vx_mps, vessel2_vy_mps, vessel2_yaw_rad, vessel2_active_flag, vessel3_x_m, vessel3_y_m, vessel3_vx_mps, vessel3_vy_mps, vessel3_yaw_rad, vessel3_active_flag]; inactive rows use active_flag=0.",
+        "source": "tasks/XROBO-09/public_spec.json"
+      },
+      {
+        "name": "DesiredSpeed_mps",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Read Waypoints_m, TrafficMotion, DesiredSpeed_mps, CurrentSpeed_mps, and CurrentDirection_deg from the MATLAB base workspace and support the ranges and formats stated in public_inputs. DesiredSpeed_mps is a real scalar in [1.2, 1.8] m/s; CurrentSpeed_mps is a real scalar in [0, 0.35] m/s; and CurrentDirection_deg is a real scalar in [-180, 180] deg.",
+        "source": "tasks/XROBO-09/public_spec.json"
+      },
+      {
+        "name": "CurrentSpeed_mps",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Read Waypoints_m, TrafficMotion, DesiredSpeed_mps, CurrentSpeed_mps, and CurrentDirection_deg from the MATLAB base workspace and support the ranges and formats stated in public_inputs. DesiredSpeed_mps is a real scalar in [1.2, 1.8] m/s; CurrentSpeed_mps is a real scalar in [0, 0.35] m/s; and CurrentDirection_deg is a real scalar in [-180, 180] deg.",
+        "source": "tasks/XROBO-09/public_spec.json"
+      },
+      {
+        "name": "CurrentDirection_deg",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "deg"
+        ],
+        "range_or_shape": "Read Waypoints_m, TrafficMotion, DesiredSpeed_mps, CurrentSpeed_mps, and CurrentDirection_deg from the MATLAB base workspace and support the ranges and formats stated in public_inputs. DesiredSpeed_mps is a real scalar in [1.2, 1.8] m/s; CurrentSpeed_mps is a real scalar in [0, 0.35] m/s; and CurrentDirection_deg is a real scalar in [-180, 180] deg.",
+        "source": "tasks/XROBO-09/public_spec.json"
+      },
+      {
+        "name": "VesselState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s",
+          "rad/s",
+          "rad",
+          "m"
+        ],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named VesselState, GuidanceState, PropulsionState, TrafficState, and OperatingState. VesselState has 14 channels in this order: x,y,z (m); surge,sway,heave velocity (m/s); roll,pitch,yaw (rad); roll,pitch,yaw rate (rad/s); signed speed (m/s); and course (rad).",
+        "source": "tasks/XROBO-09/public_spec.json"
+      },
+      {
+        "name": "GuidanceState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s",
+          "rad",
+          "m"
+        ],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named VesselState, GuidanceState, PropulsionState, TrafficState, and OperatingState. GuidanceState has 7 channels [desired speed (m/s), desired yaw (rad), reference x,y (m), next-reference x,y (m), operating mode].",
+        "source": "tasks/XROBO-09/public_spec.json"
+      },
+      {
+        "name": "PropulsionState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N*m",
+          "rad/s",
+          "N"
+        ],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named VesselState, GuidanceState, PropulsionState, TrafficState, and OperatingState. PropulsionState has 6 channels [desired surge thrust (N), desired yaw moment (N*m), left and right propeller command (rad/s), delivered surge force (N), delivered yaw moment (N*m)].",
+        "source": "tasks/XROBO-09/public_spec.json"
+      },
+      {
+        "name": "TrafficState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m",
+          "m/s",
+          "rad",
+          "deg"
+        ],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named VesselState, GuidanceState, PropulsionState, TrafficState, and OperatingState. TrafficState contains three consecutive 10-channel vessel groups, each ordered [x_m,y_m,vx_mps,vy_mps,yaw_rad,closest-approach time_s,closest-approach distance_m,potential-collision flag,relative bearing_deg,encounter sector].",
+        "source": "tasks/XROBO-09/public_spec.json"
+      },
+      {
+        "name": "OperatingState",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s",
+          "rad"
+        ],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named VesselState, GuidanceState, PropulsionState, TrafficState, and OperatingState. OperatingState has 4 channels [current speed (m/s), current direction (rad), autonomous-run flag, collision-avoidance-enabled flag].",
+        "source": "tasks/XROBO-09/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "The controller must use measured vessel motion to track the requested forward speed and waypoint route through bounded propeller actuation.",
+      "VesselState has 14 channels in this order: x,y,z (m);",
+      "roll,pitch,yaw (rad);"
+    ],
+    "feedback_and_control_causality": [
+      "Build a closed-loop autonomous surface-vessel system in Simulink.",
+      "The physical plant must model six-degree-of-freedom vessel motion with inertia, hydrostatic restoring effects, hydrodynamic and current-dependent forces, and two independently driven propellers.",
+      "The controller must use measured vessel motion to track the requested forward speed and waypoint route through bounded propeller actuation."
+    ],
+    "signal_sources": [
+      "Waypoints_m is read from the public MATLAB base-workspace input contract.",
+      "TrafficMotion is read from the public MATLAB base-workspace input contract.",
+      "DesiredSpeed_mps is read from the public MATLAB base-workspace input contract.",
+      "CurrentSpeed_mps is read from the public MATLAB base-workspace input contract.",
+      "CurrentDirection_deg is read from the public MATLAB base-workspace input contract.",
+      "VesselState is produced by the implemented plant or controller and logged under the public output contract.",
+      "GuidanceState is produced by the implemented plant or controller and logged under the public output contract.",
+      "PropulsionState is produced by the implemented plant or controller and logged under the public output contract.",
+      "TrafficState is produced by the implemented plant or controller and logged under the public output contract.",
+      "OperatingState is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "Waypoints_m: Read Waypoints_m, TrafficMotion, DesiredSpeed_mps, CurrentSpeed_mps, and CurrentDirection_deg from the MATLAB base workspace and support the ranges and formats stated in public_inputs. Waypoints_m is an N-by-2 real matrix in m with columns [x_m, y_m].",
+      "TrafficMotion: Read Waypoints_m, TrafficMotion, DesiredSpeed_mps, CurrentSpeed_mps, and CurrentDirection_deg from the MATLAB base workspace and support the ranges and formats stated in public_inputs. TrafficMotion may contain one, two, or three active traffic vessels. TrafficMotion is a complete-run Timeseries with 18 channels in this exact order: [vessel1_x_m, vessel1_y_m, vessel1_vx_mps, vessel1_vy_mps, vessel1_yaw_rad, vessel1_active_flag, vessel2_x_m, vessel2_y_m, vessel2_vx_mps, vessel2_vy_mps, vessel2_yaw_rad, vessel2_active_flag, vessel3_x_m, vessel3_y_m, vessel3_vx_mps, vessel3_vy_mps, vessel3_yaw_rad, vessel3_active_flag]; inactive rows use active_flag=0.",
+      "DesiredSpeed_mps: Read Waypoints_m, TrafficMotion, DesiredSpeed_mps, CurrentSpeed_mps, and CurrentDirection_deg from the MATLAB base workspace and support the ranges and formats stated in public_inputs. DesiredSpeed_mps is a real scalar in [1.2, 1.8] m/s; CurrentSpeed_mps is a real scalar in [0, 0.35] m/s; and CurrentDirection_deg is a real scalar in [-180, 180] deg.",
+      "CurrentSpeed_mps: Read Waypoints_m, TrafficMotion, DesiredSpeed_mps, CurrentSpeed_mps, and CurrentDirection_deg from the MATLAB base workspace and support the ranges and formats stated in public_inputs. DesiredSpeed_mps is a real scalar in [1.2, 1.8] m/s; CurrentSpeed_mps is a real scalar in [0, 0.35] m/s; and CurrentDirection_deg is a real scalar in [-180, 180] deg.",
+      "CurrentDirection_deg: Read Waypoints_m, TrafficMotion, DesiredSpeed_mps, CurrentSpeed_mps, and CurrentDirection_deg from the MATLAB base workspace and support the ranges and formats stated in public_inputs. DesiredSpeed_mps is a real scalar in [1.2, 1.8] m/s; CurrentSpeed_mps is a real scalar in [0, 0.35] m/s; and CurrentDirection_deg is a real scalar in [-180, 180] deg."
+    ],
+    "disturbances": [
+      "raw radar, lidar, camera processing, SLAM, wind and wave modelling are not required."
+    ],
+    "dynamic_processes": [
+      "The physical plant must model six-degree-of-freedom vessel motion with inertia, hydrostatic restoring effects, hydrodynamic and current-dependent forces, and two independently driven propellers.",
+      "The controller must use measured vessel motion to track the requested forward speed and waypoint route through bounded propeller actuation."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XROBO-09: prescribing VesselState directly would bypass the system path described by: The controller must use measured vessel motion to track the requested forward speed and waypoint route through bounded propeller actuation.",
+      "F90-XROBO-09: replaying a fixed VesselState trace would ignore causal variation in Waypoints_m."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XROBO-09/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XROBO-09/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XROBO-09/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

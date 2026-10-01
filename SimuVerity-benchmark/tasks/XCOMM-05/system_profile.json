@@ -1,0 +1,213 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XCOMM-05",
+  "collection": "XCOMM",
+  "reference": {
+    "identity_path": "tasks/XCOMM-05/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "slexHybridBeamforming.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XCOMM-05",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a Simulink model of a hybrid analog/digital massive-MIMO communication link that simultaneously carries two independent 16-QAM spatial streams through a scattering channel.",
+    "engineering_objects": [
+      "ChannelMatrix contains the complex normalized 16-by-64 physical channel used for beamforming."
+    ],
+    "physical_paths": [
+      "Build a Simulink model of a hybrid analog/digital massive-MIMO communication link that simultaneously carries two independent 16-QAM spatial streams through a scattering channel.",
+      "The transmitter shall use 64 antenna elements through four RF chains, and the receiver shall use 16 antenna elements through four RF chains.",
+      "ChannelMatrix contains the complex normalized 16-by-64 physical channel used for beamforming."
+    ],
+    "functional_paths": [
+      "Build a Simulink model of a hybrid analog/digital massive-MIMO communication link that simultaneously carries two independent 16-QAM spatial streams through a scattering channel."
+    ],
+    "information_paths": [
+      "ChannelSNR_dB, ChannelCoherenceSymbols, PhaseGridPointsPerAxis, BeamformingAlgorithm -> F90-XCOMM-05 plant/control path -> TxSymbols, RxSymbols, ChannelMatrix, TxDigitalWeights, TxAnalogAngles, RxDigitalWeights, RxAnalogAngles, ChannelUpdateFlag"
+    ],
+    "modes_and_events": [
+      "Build a Simulink model of a hybrid analog/digital massive-MIMO communication link that simultaneously carries two independent 16-QAM spatial streams through a scattering channel."
+    ],
+    "interfaces": [
+      {
+        "name": "ChannelSNR_dB",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "dB"
+        ],
+        "range_or_shape": "Read ChannelSNR_dB, ChannelCoherenceSymbols, PhaseGridPointsPerAxis, and BeamformingAlgorithm from the MATLAB base workspace. ChannelSNR_dB must support 0 to 8 dB, ChannelCoherenceSymbols 500 to 1500 symbols, PhaseGridPointsPerAxis 5 to 9, and BeamformingAlgorithm the values QSHB and HBPS.",
+        "source": "tasks/XCOMM-05/public_spec.json"
+      },
+      {
+        "name": "ChannelCoherenceSymbols",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "symbols"
+        ],
+        "range_or_shape": "Read ChannelSNR_dB, ChannelCoherenceSymbols, PhaseGridPointsPerAxis, and BeamformingAlgorithm from the MATLAB base workspace. ChannelSNR_dB must support 0 to 8 dB, ChannelCoherenceSymbols 500 to 1500 symbols, PhaseGridPointsPerAxis 5 to 9, and BeamformingAlgorithm the values QSHB and HBPS.",
+        "source": "tasks/XCOMM-05/public_spec.json"
+      },
+      {
+        "name": "PhaseGridPointsPerAxis",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "integer"
+        ],
+        "range_or_shape": "Read ChannelSNR_dB, ChannelCoherenceSymbols, PhaseGridPointsPerAxis, and BeamformingAlgorithm from the MATLAB base workspace. ChannelSNR_dB must support 0 to 8 dB, ChannelCoherenceSymbols 500 to 1500 symbols, PhaseGridPointsPerAxis 5 to 9, and BeamformingAlgorithm the values QSHB and HBPS.",
+        "source": "tasks/XCOMM-05/public_spec.json"
+      },
+      {
+        "name": "BeamformingAlgorithm",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read ChannelSNR_dB, ChannelCoherenceSymbols, PhaseGridPointsPerAxis, and BeamformingAlgorithm from the MATLAB base workspace. ChannelSNR_dB must support 0 to 8 dB, ChannelCoherenceSymbols 500 to 1500 symbols, PhaseGridPointsPerAxis 5 to 9, and BeamformingAlgorithm the values QSHB and HBPS.",
+        "source": "tasks/XCOMM-05/public_spec.json"
+      },
+      {
+        "name": "TxSymbols",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Record TxSymbols, RxSymbols, ChannelMatrix, TxDigitalWeights, TxAnalogAngles, RxDigitalWeights, RxAnalogAngles, and ChannelUpdateFlag as complete-run MATLAB Timeseries. TxSymbols and RxSymbols each contain the two complex unitless spatial streams.",
+        "source": "tasks/XCOMM-05/public_spec.json"
+      },
+      {
+        "name": "RxSymbols",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Record TxSymbols, RxSymbols, ChannelMatrix, TxDigitalWeights, TxAnalogAngles, RxDigitalWeights, RxAnalogAngles, and ChannelUpdateFlag as complete-run MATLAB Timeseries. TxSymbols and RxSymbols each contain the two complex unitless spatial streams.",
+        "source": "tasks/XCOMM-05/public_spec.json"
+      },
+      {
+        "name": "ChannelMatrix",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "normalized complex coefficient"
+        ],
+        "range_or_shape": "Record TxSymbols, RxSymbols, ChannelMatrix, TxDigitalWeights, TxAnalogAngles, RxDigitalWeights, RxAnalogAngles, and ChannelUpdateFlag as complete-run MATLAB Timeseries. ChannelMatrix contains the complex normalized 16-by-64 physical channel used for beamforming.",
+        "source": "tasks/XCOMM-05/public_spec.json"
+      },
+      {
+        "name": "TxDigitalWeights",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad"
+        ],
+        "range_or_shape": "Record TxSymbols, RxSymbols, ChannelMatrix, TxDigitalWeights, TxAnalogAngles, RxDigitalWeights, RxAnalogAngles, and ChannelUpdateFlag as complete-run MATLAB Timeseries. TxDigitalWeights contains the complex 4-by-2 digital precoder, TxAnalogAngles contains the 64-by-4 phase-only transmit stage in rad, RxAnalogAngles contains the 16-by-4 phase-only receive stage in rad, and RxDigitalWeights contains the complex 2-by-4 digital combiner; these must be the weights actually used by the signal path.",
+        "source": "tasks/XCOMM-05/public_spec.json"
+      },
+      {
+        "name": "TxAnalogAngles",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad"
+        ],
+        "range_or_shape": "Record TxSymbols, RxSymbols, ChannelMatrix, TxDigitalWeights, TxAnalogAngles, RxDigitalWeights, RxAnalogAngles, and ChannelUpdateFlag as complete-run MATLAB Timeseries. TxDigitalWeights contains the complex 4-by-2 digital precoder, TxAnalogAngles contains the 64-by-4 phase-only transmit stage in rad, RxAnalogAngles contains the 16-by-4 phase-only receive stage in rad, and RxDigitalWeights contains the complex 2-by-4 digital combiner; these must be the weights actually used by the signal path.",
+        "source": "tasks/XCOMM-05/public_spec.json"
+      },
+      {
+        "name": "RxDigitalWeights",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad"
+        ],
+        "range_or_shape": "Record TxSymbols, RxSymbols, ChannelMatrix, TxDigitalWeights, TxAnalogAngles, RxDigitalWeights, RxAnalogAngles, and ChannelUpdateFlag as complete-run MATLAB Timeseries. TxDigitalWeights contains the complex 4-by-2 digital precoder, TxAnalogAngles contains the 64-by-4 phase-only transmit stage in rad, RxAnalogAngles contains the 16-by-4 phase-only receive stage in rad, and RxDigitalWeights contains the complex 2-by-4 digital combiner; these must be the weights actually used by the signal path.",
+        "source": "tasks/XCOMM-05/public_spec.json"
+      },
+      {
+        "name": "RxAnalogAngles",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad"
+        ],
+        "range_or_shape": "Record TxSymbols, RxSymbols, ChannelMatrix, TxDigitalWeights, TxAnalogAngles, RxDigitalWeights, RxAnalogAngles, and ChannelUpdateFlag as complete-run MATLAB Timeseries. TxDigitalWeights contains the complex 4-by-2 digital precoder, TxAnalogAngles contains the 64-by-4 phase-only transmit stage in rad, RxAnalogAngles contains the 16-by-4 phase-only receive stage in rad, and RxDigitalWeights contains the complex 2-by-4 digital combiner; these must be the weights actually used by the signal path.",
+        "source": "tasks/XCOMM-05/public_spec.json"
+      },
+      {
+        "name": "ChannelUpdateFlag",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Record TxSymbols, RxSymbols, ChannelMatrix, TxDigitalWeights, TxAnalogAngles, RxDigitalWeights, RxAnalogAngles, and ChannelUpdateFlag as complete-run MATLAB Timeseries. ChannelUpdateFlag identifies the processing-block update cadence.",
+        "source": "tasks/XCOMM-05/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Both transmit precoding and receive combining must contain digital and phase-only analog stages whose weights are derived from the available channel matrix.",
+      "Read ChannelSNR_dB, ChannelCoherenceSymbols, PhaseGridPointsPerAxis, and BeamformingAlgorithm from the MATLAB base workspace.",
+      "ChannelSNR_dB must support 0 to 8 dB, ChannelCoherenceSymbols 500 to 1500 symbols, PhaseGridPointsPerAxis 5 to 9, and BeamformingAlgorithm the values QSHB and HBPS."
+    ],
+    "feedback_and_control_causality": [
+      "Build a Simulink model of a hybrid analog/digital massive-MIMO communication link that simultaneously carries two independent 16-QAM spatial streams through a scattering channel."
+    ],
+    "signal_sources": [
+      "ChannelSNR_dB is read from the public MATLAB base-workspace input contract.",
+      "ChannelCoherenceSymbols is read from the public MATLAB base-workspace input contract.",
+      "PhaseGridPointsPerAxis is read from the public MATLAB base-workspace input contract.",
+      "BeamformingAlgorithm is read from the public MATLAB base-workspace input contract.",
+      "TxSymbols is produced by the implemented plant or controller and logged under the public output contract.",
+      "RxSymbols is produced by the implemented plant or controller and logged under the public output contract.",
+      "ChannelMatrix is produced by the implemented plant or controller and logged under the public output contract.",
+      "TxDigitalWeights is produced by the implemented plant or controller and logged under the public output contract.",
+      "TxAnalogAngles is produced by the implemented plant or controller and logged under the public output contract.",
+      "RxDigitalWeights is produced by the implemented plant or controller and logged under the public output contract.",
+      "RxAnalogAngles is produced by the implemented plant or controller and logged under the public output contract.",
+      "ChannelUpdateFlag is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "ChannelSNR_dB: Read ChannelSNR_dB, ChannelCoherenceSymbols, PhaseGridPointsPerAxis, and BeamformingAlgorithm from the MATLAB base workspace. ChannelSNR_dB must support 0 to 8 dB, ChannelCoherenceSymbols 500 to 1500 symbols, PhaseGridPointsPerAxis 5 to 9, and BeamformingAlgorithm the values QSHB and HBPS.",
+      "ChannelCoherenceSymbols: Read ChannelSNR_dB, ChannelCoherenceSymbols, PhaseGridPointsPerAxis, and BeamformingAlgorithm from the MATLAB base workspace. ChannelSNR_dB must support 0 to 8 dB, ChannelCoherenceSymbols 500 to 1500 symbols, PhaseGridPointsPerAxis 5 to 9, and BeamformingAlgorithm the values QSHB and HBPS.",
+      "PhaseGridPointsPerAxis: Read ChannelSNR_dB, ChannelCoherenceSymbols, PhaseGridPointsPerAxis, and BeamformingAlgorithm from the MATLAB base workspace. ChannelSNR_dB must support 0 to 8 dB, ChannelCoherenceSymbols 500 to 1500 symbols, PhaseGridPointsPerAxis 5 to 9, and BeamformingAlgorithm the values QSHB and HBPS.",
+      "BeamformingAlgorithm: Read ChannelSNR_dB, ChannelCoherenceSymbols, PhaseGridPointsPerAxis, and BeamformingAlgorithm from the MATLAB base workspace. ChannelSNR_dB must support 0 to 8 dB, ChannelCoherenceSymbols 500 to 1500 symbols, PhaseGridPointsPerAxis 5 to 9, and BeamformingAlgorithm the values QSHB and HBPS."
+    ],
+    "disturbances": [
+      "F90-XCOMM-05 operating variation is supplied through ChannelSNR_dB, ChannelCoherenceSymbols, PhaseGridPointsPerAxis, BeamformingAlgorithm."
+    ],
+    "dynamic_processes": [
+      "Record TxSymbols, RxSymbols, ChannelMatrix, TxDigitalWeights, TxAnalogAngles, RxDigitalWeights, RxAnalogAngles, and ChannelUpdateFlag as complete-run MATLAB Timeseries."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XCOMM-05: prescribing TxSymbols directly would bypass the system path described by: Build a Simulink model of a hybrid analog/digital massive-MIMO communication link that simultaneously carries two independent 16-QAM spatial streams through a scattering channel.",
+      "F90-XCOMM-05: replaying a fixed TxSymbols trace would ignore causal variation in ChannelSNR_dB."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XCOMM-05/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XCOMM-05/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XCOMM-05/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

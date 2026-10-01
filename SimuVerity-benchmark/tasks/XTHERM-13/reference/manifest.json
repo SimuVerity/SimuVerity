@@ -1,0 +1,1407 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XTHERM-13",
+  "file_count": 344,
+  "files": [
+    {
+      "path": "reference/files/.gitattributes",
+      "size_bytes": 505
+    },
+    {
+      "path": "reference/files/.gitignore",
+      "size_bytes": 37
+    },
+    {
+      "path": "reference/files/0kK47cOHwsW7a1GaaqpQDigXMNUd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/0kK47cOHwsW7a1GaaqpQDigXMNUp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/29cPW_rGHxtSRwSydLmCas-I-98d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/29cPW_rGHxtSRwSydLmCas-I-98p.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/2kj09UetkV_lru3gvSPXnY6-nM4d.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/2kj09UetkV_lru3gvSPXnY6-nM4p.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/2uRqUwgzsMPtKV1vY4JvGEQwdJId.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/2uRqUwgzsMPtKV1vY4JvGEQwdJIp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/3bQmTUeB87fXWvaxzzSRYwF0Gy8d.xml",
+      "size_bytes": 72
+    },
+    {
+      "path": "reference/files/3bQmTUeB87fXWvaxzzSRYwF0Gy8p.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/3DyvsUVLWMve_IEvRjvkk-mFgvgd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/3DyvsUVLWMve_IEvRjvkk-mFgvgp.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/4155nIdfAm3W0mnBpDoLzUOanMUd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/4155nIdfAm3W0mnBpDoLzUOanMUp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/4hWN90Y_2MwTC9qOU91JpM-A4Ksd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/4hWN90Y_2MwTC9qOU91JpM-A4Ksp.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/5NR4WDLKLUCGZgaD7-9-OLT4W-od.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/5NR4WDLKLUCGZgaD7-9-OLT4W-op.xml",
+      "size_bytes": 129
+    },
+    {
+      "path": "reference/files/6hAmvzsYtOqdj33w1oFgsvQZMhsd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/6hAmvzsYtOqdj33w1oFgsvQZMhsp.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/6x1BhZX_fLnKpcwqra0qFwv1jIgp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/7bDiWTyGcQz3b43iVcg4msV4bXkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/7bDiWTyGcQz3b43iVcg4msV4bXkp.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/7ka5q0cvzoJdpNP3rBlvS3OI_5Yd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/7ka5q0cvzoJdpNP3rBlvS3OI_5Yp.xml",
+      "size_bytes": 129
+    },
+    {
+      "path": "reference/files/7triqhVukDeNUWIZfeAhXtcVe8od.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/7triqhVukDeNUWIZfeAhXtcVe8op.xml",
+      "size_bytes": 103
+    },
+    {
+      "path": "reference/files/7YmjHDBwBofjlBtnmQMZeXMERH4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/7YmjHDBwBofjlBtnmQMZeXMERH4p.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/_qjpttZtfAQoASsKl4RfT_nbVJEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/_qjpttZtfAQoASsKl4RfT_nbVJEp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/_R__bKvx9EBI_zR_8le8Bph4HkUd.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/_R__bKvx9EBI_zR_8le8Bph4HkUp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/A3pEdij9uw9PgmcK3nRHYrhkW4wd.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/A3pEdij9uw9PgmcK3nRHYrhkW4wp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/aBGUMztFy6eZezKTlctX40TaNL0d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/aBGUMztFy6eZezKTlctX40TaNL0p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/aEHSZBIY-yve10yGis12Zr5DLZod.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/aEHSZBIY-yve10yGis12Zr5DLZop.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/agpy7YlXm06JV5FUDoJAErpwzqcp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/ambient_cold.json",
+      "size_bytes": 1478
+    },
+    {
+      "path": "reference/files/ambient_warm.json",
+      "size_bytes": 1455
+    },
+    {
+      "path": "reference/files/aNURqzkBuVeGF0jg3LQxDjf4megd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/aNURqzkBuVeGF0jg3LQxDjf4megp.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/AtWY8ZsaTxoYZNQNXZIe5uwSEzgd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/AtWY8ZsaTxoYZNQNXZIe5uwSEzgp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/AVJ0aRIDhu6qPcAI-Czr65IBRNQd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/AVJ0aRIDhu6qPcAI-Czr65IBRNQp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/b5CFPw_wBrtF8G3JjfoUeQI53zod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/b5CFPw_wBrtF8G3JjfoUeQI53zop.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/b6Is0QMQ2WlvlkpLzlIJtwSUQekd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/b6Is0QMQ2WlvlkpLzlIJtwSUQekp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/baseline.json",
+      "size_bytes": 1466
+    },
+    {
+      "path": "reference/files/bbMm3kT3UxYY7CybRmLD29EtzZId.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/bbMm3kT3UxYY7CybRmLD29EtzZIp.xml",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/BFXNY9NImILgmHK4F79d16VBj9Ad.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/BFXNY9NImILgmHK4F79d16VBj9Ap.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/bktgQsUDkySIZesXXpbuq1SQ2a0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/bktgQsUDkySIZesXXpbuq1SQ2a0p.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/blockDescriptionTES.html",
+      "size_bytes": 15730
+    },
+    {
+      "path": "reference/files/blockDescriptionTES.m",
+      "size_bytes": 5031
+    },
+    {
+      "path": "reference/files/blockMaskTES.png",
+      "size_bytes": 151621
+    },
+    {
+      "path": "reference/files/c0p8uKOcUc8SGNQ9gacerBaY6oEd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/c0p8uKOcUc8SGNQ9gacerBaY6oEp.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/c1BDLVglBhtfFcCjslXQbr59fLcd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/c1BDLVglBhtfFcCjslXQbr59fLcp.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/C5kKo61N42qFtFnuWOQkwuKPxGAd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/C5kKo61N42qFtFnuWOQkwuKPxGAp.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/C_CxNGBRlKj5Q6yhR97D6yIChPgd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/C_CxNGBRlKj5Q6yhR97D6yIChPgp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/CA_0Ml6V03BzfSXxQUT93JAdhaEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/CA_0Ml6V03BzfSXxQUT93JAdhaEp.xml",
+      "size_bytes": 106
+    },
+    {
+      "path": "reference/files/calcComponentCost.m",
+      "size_bytes": 593
+    },
+    {
+      "path": "reference/files/calcSystemCostAndSaving.m",
+      "size_bytes": 1074
+    },
+    {
+      "path": "reference/files/ci.yml",
+      "size_bytes": 1230
+    },
+    {
+      "path": "reference/files/ciireE4d5V7sLbaSyPkQPSzdRygd.xml",
+      "size_bytes": 70
+    },
+    {
+      "path": "reference/files/ciireE4d5V7sLbaSyPkQPSzdRygp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/CinlqtQ3aaQLfjIebr-bz2yAVwId.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/CinlqtQ3aaQLfjIebr-bz2yAVwIp.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/CostRecovery.png",
+      "size_bytes": 35879
+    },
+    {
+      "path": "reference/files/cPXndeAzDVzjteo-ovAPHAZFVQ0d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/cPXndeAzDVzjteo-ovAPHAZFVQ0p.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/CT_9doIrIRnFMOiBuKJDUgWafoEd.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/CT_9doIrIRnFMOiBuKJDUgWafoEp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/CxU3b1R2Q1n4_uMaCZ3FWLmJfjMd.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/CxU3b1R2Q1n4_uMaCZ3FWLmJfjMp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/dJm5kCcHTKbuzoh7NUZ5KfvhY3Md.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/dJm5kCcHTKbuzoh7NUZ5KfvhY3Mp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/dlA7YHyD7-IwqcB-oITFTrK5FsAd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/dlA7YHyD7-IwqcB-oITFTrK5FsAp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/dQ7eOFZM92o4QVW2zmp9Uury4TQd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/dQ7eOFZM92o4QVW2zmp9Uury4TQp.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/dTwy1ZK5nxe4IwpxmL7E6C1OKLQd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/dTwy1ZK5nxe4IwpxmL7E6C1OKLQp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/EEtUlUb-dLAdf0KpMVivaUlztwAp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/EKWD9TEQiL7WmTJWSj_C45c19U0d.xml",
+      "size_bytes": 116
+    },
+    {
+      "path": "reference/files/EKWD9TEQiL7WmTJWSj_C45c19U0p.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/elR_Bhgbj8J_GwWmSvr_xyOC93Yd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/elR_Bhgbj8J_GwWmSvr_xyOC93Yp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/eOwoCcVkoiSm7uSIwcBsC7goodgd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/eOwoCcVkoiSm7uSIwcBsC7goodgp.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/ew5nmteSkn6U_Qzdd3kW69Jm2n0d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/ew5nmteSkn6U_Qzdd3kW69Jm2n0p.xml",
+      "size_bytes": 129
+    },
+    {
+      "path": "reference/files/extractWeatherAndSolarData.m",
+      "size_bytes": 1702
+    },
+    {
+      "path": "reference/files/Fg5w7dtLfwo2lo3Yd3_90adC-QMd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Fg5w7dtLfwo2lo3Yd3_90adC-QMp.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/FGHyQ-Z6W-jRhurN_kYYy8VstfId.xml",
+      "size_bytes": 147
+    },
+    {
+      "path": "reference/files/FGHyQ-Z6W-jRhurN_kYYy8VstfIp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/fitPolyAndSolve.m",
+      "size_bytes": 310
+    },
+    {
+      "path": "reference/files/fjRQtWiSIy7hIlj-Kmk87M7s21kp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Fn32L3G3JYiOT_eC27DKcxpiLNgd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Fn32L3G3JYiOT_eC27DKcxpiLNgp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/fNHYl5Thk2Y8FMHcQ4vJClvtWGod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/fNHYl5Thk2Y8FMHcQ4vJClvtWGop.xml",
+      "size_bytes": 107
+    },
+    {
+      "path": "reference/files/fS_1vpnF4prh9S8Emg3caEkc5VAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/fS_1vpnF4prh9S8Emg3caEkc5VAp.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/fullFactorialDesign.m",
+      "size_bytes": 621
+    },
+    {
+      "path": "reference/files/FwzjE-_YOdq-seREF81WWBMQC68d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/FwzjE-_YOdq-seREF81WWBMQC68p.xml",
+      "size_bytes": 88
+    },
+    {
+      "path": "reference/files/G0imG5n9-1_hQyeK5Cn1-yebd84d.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/G0imG5n9-1_hQyeK5Cn1-yebd84p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/GD8ljliKW9YnRVPNcLA80W-yDnkd.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/GD8ljliKW9YnRVPNcLA80W-yDnkp.xml",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/getTESsize.m",
+      "size_bytes": 1400
+    },
+    {
+      "path": "reference/files/geuseqfzde5lmCB2PlA6wD238ucd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/geuseqfzde5lmCB2PlA6wD238ucp.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/GiiBklLgTxteCEmomM8RCvWT0nQd.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/GiiBklLgTxteCEmomM8RCvWT0nQp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/gjDnZHVyGX4hetXYNnax36XMQr4d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/gjDnZHVyGX4hetXYNnax36XMQr4p.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/GRFkbw7479cnWy540fcyhIRIci8d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/GRFkbw7479cnWy540fcyhIRIci8p.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/hRk-tg8RCBAX0osCWLmV8qmlXTUd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/hRk-tg8RCBAX0osCWLmV8qmlXTUp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/hV5LMDMm_SRpnMZPBwIKZZtiZ1gd.xml",
+      "size_bytes": 145
+    },
+    {
+      "path": "reference/files/hV5LMDMm_SRpnMZPBwIKZZtiZ1gp.xml",
+      "size_bytes": 88
+    },
+    {
+      "path": "reference/files/hxAV_YIuBPUlgVnl9JxVWKY7F7Md.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/hxAV_YIuBPUlgVnl9JxVWKY7F7Mp.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/I-dDyJ1p--Q0ihIJ8NFdLVLQLTUd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/I-dDyJ1p--Q0ihIJ8NFdLVLQLTUp.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/IeZK1jtNPTYP-L9qT1pXSe0kalod.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/IeZK1jtNPTYP-L9qT1pXSe0kalop.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/initialBatteryCapacityEstimate.m",
+      "size_bytes": 1248
+    },
+    {
+      "path": "reference/files/Iomd3e1w4uRm-azLJjD98hVyar0d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Iomd3e1w4uRm-azLJjD98hVyar0p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/IWdvuPfFZu9n6P1XEhYjSe_R034d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/IWdvuPfFZu9n6P1XEhYjSe_R034p.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/j4xwF_j8iFTVayUMfxLgMnTbencd.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/j4xwF_j8iFTVayUMfxLgMnTbencp.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/jdpXPNP2xnNUZyVRfHR05IpUV4Id.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/jdpXPNP2xnNUZyVRfHR05IpUV4Ip.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/JmdNBXgFDi7WzXuFfrNq6H2eqegd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/JmdNBXgFDi7WzXuFfrNq6H2eqegp.xml",
+      "size_bytes": 129
+    },
+    {
+      "path": "reference/files/jPqeb4x4LEF4PUKnMPtgL-pJJ1sd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/jPqeb4x4LEF4PUKnMPtgL-pJJ1sp.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/JVaSt5vZDqSZtmg99N5TbIt5e9sd.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/JVaSt5vZDqSZtmg99N5TbIt5e9sp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/KAXfQgCar2Yb8zOxgvf9hdmLP1Ep.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQp.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/KKyDJtbdIBOlaeHmIZd5VX6vqx8d.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/KKyDJtbdIBOlaeHmIZd5VX6vqx8p.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/l-puU0yAZscMqVEpKH6b0Twiu_sd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/l-puU0yAZscMqVEpKH6b0Twiu_sp.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/layoutShape.m",
+      "size_bytes": 519
+    },
+    {
+      "path": "reference/files/license.txt",
+      "size_bytes": 1555
+    },
+    {
+      "path": "reference/files/lmb-zLItnF4bv8zSAXjJLPewgJcd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/lmb-zLItnF4bv8zSAXjJLPewgJcp.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/lumpedTES.ssc",
+      "size_bytes": 9553
+    },
+    {
+      "path": "reference/files/lXo9_MbcYEXvDPDKeX4Hj4Qjw_Yd.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/lXo9_MbcYEXvDPDKeX4Hj4Qjw_Yp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/MA2VU7ZC27vse0RNiSteF7HFi8wd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/MA2VU7ZC27vse0RNiSteF7HFi8wp.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/maskIcon.png",
+      "size_bytes": 8832
+    },
+    {
+      "path": "reference/files/measurement_bias_negative.json",
+      "size_bytes": 1472
+    },
+    {
+      "path": "reference/files/measurement_bias_positive.json",
+      "size_bytes": 1466
+    },
+    {
+      "path": "reference/files/MPPTcircuit.png",
+      "size_bytes": 24308
+    },
+    {
+      "path": "reference/files/MPTtAI1mP5ZvnAPy2j4He601j4Yd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/MPTtAI1mP5ZvnAPy2j4He601j4Yp.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/NjSPEMsIuLUyIpr2u1Js5bVPsOsd.xml",
+      "size_bytes": 115
+    },
+    {
+      "path": "reference/files/NjSPEMsIuLUyIpr2u1Js5bVPsOsp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/NK6nhpgZKH55XvQdUUbhgZr-f4od.xml",
+      "size_bytes": 62
+    },
+    {
+      "path": "reference/files/NK6nhpgZKH55XvQdUUbhgZr-f4op.xml",
+      "size_bytes": 116
+    },
+    {
+      "path": "reference/files/NmGqIpAwUJcXFyLjFAGnU9uyN5Yp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/npo_JeFl9qebBPOXWkIPMdLTmMYd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/npo_JeFl9qebBPOXWkIPMdLTmMYp.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/Nrow03kJASaBLoJXHkTB_gKBOkod.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/Nrow03kJASaBLoJXHkTB_gKBOkop.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/O98D6XdsKdfjCWu2hLOdaHmtVAwd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/O98D6XdsKdfjCWu2hLOdaHmtVAwp.xml",
+      "size_bytes": 129
+    },
+    {
+      "path": "reference/files/oIM1B1vGck4K0NO8jKrY8I9202kd.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/oIM1B1vGck4K0NO8jKrY8I9202kp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/openResidentialHeatSimscape.m",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/osDq-UfZMGo5VaPxRhnWetQa2Fkd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/osDq-UfZMGo5VaPxRhnWetQa2Fkp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/oXBpEOu3IKTXd8PByXE3moDAiAkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/oXBpEOu3IKTXd8PByXE3moDAiAkp.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/P-RAGS_ZPaM8C0-RdgJyyYVRTn0d.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/P-RAGS_ZPaM8C0-RdgJyyYVRTn0p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/p2B2kuKn-TR4inf0L2-zoGElvj0d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/p2B2kuKn-TR4inf0L2-zoGElvj0p.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/PCBRglrddb-ILGsm8HRcwvUreD0d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/PCBRglrddb-ILGsm8HRcwvUreD0p.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/PeE5T_3WV6aDHZBkzXafcz5r2k4d.xml",
+      "size_bytes": 183
+    },
+    {
+      "path": "reference/files/PeE5T_3WV6aDHZBkzXafcz5r2k4p.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/PLEWE06mmIKGHWWMuOZ7gUgTqLod.xml",
+      "size_bytes": 147
+    },
+    {
+      "path": "reference/files/PLEWE06mmIKGHWWMuOZ7gUgTqLop.xml",
+      "size_bytes": 110
+    },
+    {
+      "path": "reference/files/plotMonthTemp.m",
+      "size_bytes": 663
+    },
+    {
+      "path": "reference/files/plotPVpower.m",
+      "size_bytes": 815
+    },
+    {
+      "path": "reference/files/plotPVpowerAndIrr.m",
+      "size_bytes": 812
+    },
+    {
+      "path": "reference/files/pMZg5Ioo5VUZrjfbud865u1El8Id.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/pMZg5Ioo5VUZrjfbud865u1El8Ip.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Project.xml",
+      "size_bytes": 74
+    },
+    {
+      "path": "reference/files/pSFJ062bfpCw4AB2U2UcQZwCVsod.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/pSFJ062bfpCw4AB2U2UcQZwCVsop.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/PuQRq8BxkSxLWTA4PZXpWtXJF18d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/PuQRq8BxkSxLWTA4PZXpWtXJF18p.xml",
+      "size_bytes": 129
+    },
+    {
+      "path": "reference/files/QaQIf8qKZIUQjoimdw3sn14vEY8d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/QaQIf8qKZIUQjoimdw3sn14vEY8p.xml",
+      "size_bytes": 129
+    },
+    {
+      "path": "reference/files/qaw0eS1zuuY1ar9TdPn1GMfrjbQp.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/qD-kr16wmwlzR-nIg1IG_vvRrWkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/qD-kr16wmwlzR-nIg1IG_vvRrWkp.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/Qee8Mk1-yzKe8Xzlz4YAyCFU74od.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Qee8Mk1-yzKe8Xzlz4YAyCFU74op.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/QMJD9OLFzxcTTbPOoh-ahQ4zTRUd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/QMJD9OLFzxcTTbPOoh-ahQ4zTRUp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/QRPRK_ij-2HNlYd41EY2jaXDKa0d.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/QRPRK_ij-2HNlYd41EY2jaXDKa0p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/QUtLSZ1F7q7SRgNHFzi5_nnhh9sd.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/QUtLSZ1F7q7SRgNHFzi5_nnhh9sp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/QWNDYJD5mGW1bWYvPx9DtKnxzw4d.xml",
+      "size_bytes": 87
+    },
+    {
+      "path": "reference/files/QWNDYJD5mGW1bWYvPx9DtKnxzw4p.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/qXpy4Fah7AnQOGPcLpAGeEpNc3Qd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/qXpy4Fah7AnQOGPcLpAGeEpNc3Qp.xml",
+      "size_bytes": 107
+    },
+    {
+      "path": "reference/files/qyKF8qHr4x-QFNX6c9n6Lo3Tkcsd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/qyKF8qHr4x-QFNX6c9n6Lo3Tkcsp.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/R1RggVhA72agIvELiuhWPRS8F0Id.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/R1RggVhA72agIvELiuhWPRS8F0Ip.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/r4jgj5kiRJzx9x8eWYvAL7tAGE0d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/r4jgj5kiRJzx9x8eWYvAL7tAGE0p.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/r8LR4nLmg9ai3oHrW1r_-KocQzkd.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/r8LR4nLmg9ai3oHrW1r_-KocQzkp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/README.md",
+      "size_bytes": 2192
+    },
+    {
+      "path": "reference/files/resetHouseParams.m",
+      "size_bytes": 9660
+    },
+    {
+      "path": "reference/files/Residential unit.svg",
+      "size_bytes": 1659
+    },
+    {
+      "path": "reference/files/ResidentialBuildingTESandPVcell.html",
+      "size_bytes": 12401
+    },
+    {
+      "path": "reference/files/ResidentialBuildingTESandPVcell.m",
+      "size_bytes": 3330
+    },
+    {
+      "path": "reference/files/ResidentialBuildingTESandPVcell.slx",
+      "size_bytes": 129744
+    },
+    {
+      "path": "reference/files/ResidentialBuildingTESandPVcell_eq04234782492993571773.png",
+      "size_bytes": 715
+    },
+    {
+      "path": "reference/files/ResidentialBuildingTESandPVcell_eq05957124644736009177.png",
+      "size_bytes": 4088
+    },
+    {
+      "path": "reference/files/ResidentialBuildingTESandPVcell_eq08783089781685090913.png",
+      "size_bytes": 890
+    },
+    {
+      "path": "reference/files/ResidentialBuildingTESandPVcell_eq09610815503961935356.png",
+      "size_bytes": 4031
+    },
+    {
+      "path": "reference/files/ResidentialBuildingTESandPVcell_eq10400070808277276123.png",
+      "size_bytes": 840
+    },
+    {
+      "path": "reference/files/ResidentialBuildingTESandPVcell_eq13778725294678372914.png",
+      "size_bytes": 645
+    },
+    {
+      "path": "reference/files/ResidentialBuildingTESandPVcell_eq14440076464137941470.png",
+      "size_bytes": 2076
+    },
+    {
+      "path": "reference/files/ResidentialBuildingTESandPVcell_eq14958545416380561496.png",
+      "size_bytes": 1412
+    },
+    {
+      "path": "reference/files/residentialUnitSetParam.m",
+      "size_bytes": 9590
+    },
+    {
+      "path": "reference/files/rh0jHbNfmojECiiHH7BQHmZTsWkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/rh0jHbNfmojECiiHH7BQHmZTsWkp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Rmti9P3TERy_GsGENgV5eeAy3T8d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/Rmti9P3TERy_GsGENgV5eeAy3T8p.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/rootp.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/runResUnitHeatingSim.m",
+      "size_bytes": 8229
+    },
+    {
+      "path": "reference/files/sa-AC2LfGINssUZsCYKzHg3Y1Tkd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/sa-AC2LfGINssUZsCYKzHg3Y1Tkp.xml",
+      "size_bytes": 90
+    },
+    {
+      "path": "reference/files/sandBattery.png",
+      "size_bytes": 47336
+    },
+    {
+      "path": "reference/files/sandBattery.slx",
+      "size_bytes": 40451
+    },
+    {
+      "path": "reference/files/SandBatteryNegativeTest.m",
+      "size_bytes": 2079
+    },
+    {
+      "path": "reference/files/SandBatteryNegativeTestRunner.m",
+      "size_bytes": 851
+    },
+    {
+      "path": "reference/files/SandBatteryTestHarness.slx",
+      "size_bytes": 42054
+    },
+    {
+      "path": "reference/files/SandBatteryTestRunner.m",
+      "size_bytes": 840
+    },
+    {
+      "path": "reference/files/SandBatteryUnitTest.m",
+      "size_bytes": 435
+    },
+    {
+      "path": "reference/files/scematicTES.png",
+      "size_bytes": 42633
+    },
+    {
+      "path": "reference/files/SECURITY.md",
+      "size_bytes": 394
+    },
+    {
+      "path": "reference/files/setpoint_high.json",
+      "size_bytes": 1466
+    },
+    {
+      "path": "reference/files/setpoint_low.json",
+      "size_bytes": 1466
+    },
+    {
+      "path": "reference/files/setSystemParams.m",
+      "size_bytes": 606
+    },
+    {
+      "path": "reference/files/SetupTestHarness.m",
+      "size_bytes": 1890
+    },
+    {
+      "path": "reference/files/Sg2yJaHSnNbNGQpi97AYBEYSC5Ad.xml",
+      "size_bytes": 147
+    },
+    {
+      "path": "reference/files/Sg2yJaHSnNbNGQpi97AYBEYSC5Ap.xml",
+      "size_bytes": 107
+    },
+    {
+      "path": "reference/files/solar_delayed_3h.json",
+      "size_bytes": 1466
+    },
+    {
+      "path": "reference/files/solar_high.json",
+      "size_bytes": 1466
+    },
+    {
+      "path": "reference/files/solar_low.json",
+      "size_bytes": 1465
+    },
+    {
+      "path": "reference/files/solar_nominal_timing.json",
+      "size_bytes": 1466
+    },
+    {
+      "path": "reference/files/suYtAXxqQWpSZLwMDsa_yv2BhCgd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/suYtAXxqQWpSZLwMDsa_yv2BhCgp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/TdGeG82zxAliLFtKk4-siJ4dBykd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/TdGeG82zxAliLFtKk4-siJ4dBykp.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/TES.png",
+      "size_bytes": 32591
+    },
+    {
+      "path": "reference/files/TEScombinationsResults.mat",
+      "size_bytes": 2363
+    },
+    {
+      "path": "reference/files/TEScomponentData.mat",
+      "size_bytes": 1842
+    },
+    {
+      "path": "reference/files/TESnetwork.png",
+      "size_bytes": 410429
+    },
+    {
+      "path": "reference/files/ThermalBattery.svg",
+      "size_bytes": 4716
+    },
+    {
+      "path": "reference/files/ThermalBatterySetParam.m",
+      "size_bytes": 7293
+    },
+    {
+      "path": "reference/files/thermalEnergyStorageDesignOverview.html",
+      "size_bytes": 8536
+    },
+    {
+      "path": "reference/files/thermalEnergyStorageDesignOverview.m",
+      "size_bytes": 1713
+    },
+    {
+      "path": "reference/files/thermalEnergyStorageDesignOverview.png",
+      "size_bytes": 2991
+    },
+    {
+      "path": "reference/files/thermalEnergyStorageDesignOverview_01.png",
+      "size_bytes": 112266
+    },
+    {
+      "path": "reference/files/ThermalEnergyStorageSimscape.prj",
+      "size_bytes": 177
+    },
+    {
+      "path": "reference/files/tIsSSAUWiPZ31S5IQu6EmG2Hifgd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/tIsSSAUWiPZ31S5IQu6EmG2Hifgp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/TMK4UzWHdRLhy_w-CHt9y11Q8XAd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/TMK4UzWHdRLhy_w-CHt9y11Q8XAp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/totalPhotoVoltaicPower.mat",
+      "size_bytes": 984
+    },
+    {
+      "path": "reference/files/totalPhotoVoltaicPower.rights",
+      "size_bytes": 19051
+    },
+    {
+      "path": "reference/files/totalPhotovoltaicPowerGlobalSolarAtlas.png",
+      "size_bytes": 505055
+    },
+    {
+      "path": "reference/files/Tpa2TdYQyLNeWJn7EF8wbNd7gFUp.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/tV0Oxg4C7wfyumykuWyUqQEM3Q4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/tV0Oxg4C7wfyumykuWyUqQEM3Q4p.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/UdJN--6dRKQtTfMXkgW2GTtjoXcd.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/UdJN--6dRKQtTfMXkgW2GTtjoXcp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/uu-tdYMdb657cLlEGepKCIXIWsQd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/uu-tdYMdb657cLlEGepKCIXIWsQp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/uuid-7ca2100f-fcc9-4fe8-805e-5875dd82ecca.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/V76yfcu8kfyIeJKa13j7YbWR_NEd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/V76yfcu8kfyIeJKa13j7YbWR_NEp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/V7N3t0XX3jVKkGOyQh1CDMYKJYQd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/V7N3t0XX3jVKkGOyQh1CDMYKJYQp.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/verificationResults.mat",
+      "size_bytes": 1141173
+    },
+    {
+      "path": "reference/files/VIYSqNbi-KLLZUsiaKY9a7IvDyod.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/VIYSqNbi-KLLZUsiaKY9a7IvDyop.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/W4T90UPLN8T5O-oCRliM6HxniNkd.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/W4T90UPLN8T5O-oCRliM6HxniNkp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/weatherAndSolarDataYear.mat",
+      "size_bytes": 72193
+    },
+    {
+      "path": "reference/files/WqnHrnN36p5vOr8KuwzslTmXSS4d.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/WqnHrnN36p5vOr8KuwzslTmXSS4p.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/WS7L7U3R0F3ft4esx_Z4zRwM4vQd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/WS7L7U3R0F3ft4esx_Z4zRwM4vQp.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/XAwv038Ruk4kNLt5RBOufibqGp8d.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/XAwv038Ruk4kNLt5RBOufibqGp8p.xml",
+      "size_bytes": 129
+    },
+    {
+      "path": "reference/files/yoHldnloITb-unJULrUQlJIkOTcd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/yoHldnloITb-unJULrUQlJIkOTcp.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/ysoCE1z4yzxps6zxaMfheWOmwrcd.xml",
+      "size_bytes": 47
+    },
+    {
+      "path": "reference/files/ysoCE1z4yzxps6zxaMfheWOmwrcp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Z7zqWplFjVIMkUFpcVQ92IcPU6sd.xml",
+      "size_bytes": 165
+    },
+    {
+      "path": "reference/files/Z7zqWplFjVIMkUFpcVQ92IcPU6sp.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/zfnXa0D6pjpPlvtjuVVkxFJmcQ8d.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/zfnXa0D6pjpPlvtjuVVkxFJmcQ8p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/zNjl5PBLGRplLZRhslXid8_iCUEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/zNjl5PBLGRplLZRhslXid8_iCUEp.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/zYwpOSmvtNWGiPtqSo1k58NI4uEd.xml",
+      "size_bytes": 175
+    },
+    {
+      "path": "reference/files/zYwpOSmvtNWGiPtqSo1k58NI4uEp.xml",
+      "size_bytes": 90
+    }
+  ],
+  "entrypoint": "reference/files/ResidentialBuildingTESandPVcell.slx",
+  "expected_score": 100.0,
+  "expected_valid_scenarios": 11,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "baseline",
+      "solar_low",
+      "solar_high",
+      "ambient_cold",
+      "ambient_warm",
+      "setpoint_low",
+      "setpoint_high",
+      "solar_nominal_timing",
+      "solar_delayed_3h",
+      "measurement_bias_negative",
+      "measurement_bias_positive"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 3000801,
+  "excluded_files": []
+}

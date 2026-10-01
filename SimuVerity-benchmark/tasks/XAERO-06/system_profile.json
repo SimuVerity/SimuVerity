@@ -1,0 +1,181 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XAERO-06",
+  "collection": "XAERO",
+  "reference": {
+    "identity_path": "tasks/XAERO-06/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "aeroblk_HL20_UE.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XAERO-06",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a closed-loop Simulink model of an unpowered lifting body that performs an automatic atmospheric approach, follows a physically feasible descent path, executes a flare, and reaches the runway with bounded terminal speed, sink rate, attitude, and alignment.",
+    "engineering_objects": [
+      "Build a closed-loop Simulink model of an unpowered lifting body that performs an automatic atmospheric approach, follows a physically feasible descent path, executes a flare, and reaches the runway with bounded terminal speed, sink rate, attitude, and alignment.",
+      "The basic system must contain a finite-mass six-degree-of-freedom rigid-body airframe, atmosphere and wind, nonlinear aerodynamic forces and moments, air-data and inertial/navigation measurements, approach and flare guidance, feedback control, and bounded dynamic aerodynamic-surface actuators.",
+      "Vehicle motion must result from the connected aerodynamic, actuator, and rigid-body paths;"
+    ],
+    "physical_paths": [
+      "Vehicle motion must result from the connected aerodynamic, actuator, and rigid-body paths; prescribed or replayed position histories are not valid.",
+      "The vehicle has no sustained propulsion available during the evaluated approach, so its trajectory and terminal condition must be achieved through physically consistent energy management and aerodynamic control.",
+      "The guidance and actuator records must be the signals causally connected to the same measured airframe trajectory.",
+      "Build a closed-loop Simulink model of an unpowered lifting body that performs an automatic atmospheric approach, follows a physically feasible descent path, executes a flare, and reaches the runway with bounded terminal speed, sink rate, attitude, and alignment."
+    ],
+    "functional_paths": [
+      "The basic system must contain a finite-mass six-degree-of-freedom rigid-body airframe, atmosphere and wind, nonlinear aerodynamic forces and moments, air-data and inertial/navigation measurements, approach and flare guidance, feedback control, and bounded dynamic aerodynamic-surface actuators.",
+      "The vehicle has no sustained propulsion available during the evaluated approach, so its trajectory and terminal condition must be achieved through physically consistent energy management and aerodynamic control.",
+      "The control architecture is otherwise your choice."
+    ],
+    "information_paths": [
+      "InitialAirspeedScale, InitialBankOffset_deg, VehicleMassScale, WindSeverityScale -> F90-XAERO-06 plant/control path -> landing_state, guidance_command, surface_command_deg, surface_position_deg"
+    ],
+    "modes_and_events": [
+      "Build a closed-loop Simulink model of an unpowered lifting body that performs an automatic atmospheric approach, follows a physically feasible descent path, executes a flare, and reaches the runway with bounded terminal speed, sink rate, attitude, and alignment."
+    ],
+    "interfaces": [
+      {
+        "name": "InitialAirspeedScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read InitialAirspeedScale, InitialBankOffset_deg, VehicleMassScale, and WindSeverityScale from the MATLAB base workspace and support their full stated ranges. InitialAirspeedScale, VehicleMassScale, and WindSeverityScale are finite real scalars in [0.97, 1.03], [0.95, 1.05], and [0.7, 1.3], respectively; InitialBankOffset_deg is a finite real scalar in [-3, 3] deg.",
+        "source": "tasks/XAERO-06/public_spec.json"
+      },
+      {
+        "name": "InitialBankOffset_deg",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "deg"
+        ],
+        "range_or_shape": "Read InitialAirspeedScale, InitialBankOffset_deg, VehicleMassScale, and WindSeverityScale from the MATLAB base workspace and support their full stated ranges. InitialAirspeedScale, VehicleMassScale, and WindSeverityScale are finite real scalars in [0.97, 1.03], [0.95, 1.05], and [0.7, 1.3], respectively; InitialBankOffset_deg is a finite real scalar in [-3, 3] deg.",
+        "source": "tasks/XAERO-06/public_spec.json"
+      },
+      {
+        "name": "VehicleMassScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read InitialAirspeedScale, InitialBankOffset_deg, VehicleMassScale, and WindSeverityScale from the MATLAB base workspace and support their full stated ranges. InitialAirspeedScale, VehicleMassScale, and WindSeverityScale are finite real scalars in [0.97, 1.03], [0.95, 1.05], and [0.7, 1.3], respectively; InitialBankOffset_deg is a finite real scalar in [-3, 3] deg.",
+        "source": "tasks/XAERO-06/public_spec.json"
+      },
+      {
+        "name": "WindSeverityScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read InitialAirspeedScale, InitialBankOffset_deg, VehicleMassScale, and WindSeverityScale from the MATLAB base workspace and support their full stated ranges. InitialAirspeedScale, VehicleMassScale, and WindSeverityScale are finite real scalars in [0.97, 1.03], [0.95, 1.05], and [0.7, 1.3], respectively; InitialBankOffset_deg is a finite real scalar in [-3, 3] deg.",
+        "source": "tasks/XAERO-06/public_spec.json"
+      },
+      {
+        "name": "landing_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s",
+          "rad/s",
+          "Pa",
+          "rad",
+          "m"
+        ],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named landing_state, guidance_command, surface_command_deg, and surface_position_deg. landing_state has 16 channels in this order: north, east, and down position (m); north, east, and down velocity (m/s); roll, pitch, and yaw (rad); body roll, pitch, and yaw rate (rad/s); angle of attack (rad); sideslip angle (rad); Mach number; and dynamic pressure (Pa).",
+        "source": "tasks/XAERO-06/public_spec.json"
+      },
+      {
+        "name": "guidance_command",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "deg"
+        ],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named landing_state, guidance_command, surface_command_deg, and surface_position_deg. guidance_command has 3 channels in this order: roll demand, angle-of-attack demand, and sideslip demand, all in deg.",
+        "source": "tasks/XAERO-06/public_spec.json"
+      },
+      {
+        "name": "surface_command_deg",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "deg"
+        ],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named landing_state, guidance_command, surface_command_deg, and surface_position_deg. surface_command_deg has 6 channels in this order: aileron, elevator, rudder, positive body-flap, negative body-flap, and differential body-flap demand, all in deg.",
+        "source": "tasks/XAERO-06/public_spec.json"
+      },
+      {
+        "name": "surface_position_deg",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "deg"
+        ],
+        "range_or_shape": "Record complete-run MATLAB Timeseries named landing_state, guidance_command, surface_command_deg, and surface_position_deg. surface_position_deg has the corresponding 6 achieved surface positions in the same order and units.",
+        "source": "tasks/XAERO-06/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a closed-loop Simulink model of an unpowered lifting body that performs an automatic atmospheric approach, follows a physically feasible descent path, executes a flare, and reaches the runway with bounded terminal speed, sink rate, attitude, and alignment.",
+      "The basic system must contain a finite-mass six-degree-of-freedom rigid-body airframe, atmosphere and wind, nonlinear aerodynamic forces and moments, air-data and inertial/navigation measurements, approach and flare guidance, feedback control, and bounded dynamic aerodynamic-surface actuators.",
+      "landing_state has 16 channels in this order: north, east, and down position (m);"
+    ],
+    "feedback_and_control_causality": [
+      "Build a closed-loop Simulink model of an unpowered lifting body that performs an automatic atmospheric approach, follows a physically feasible descent path, executes a flare, and reaches the runway with bounded terminal speed, sink rate, attitude, and alignment.",
+      "The basic system must contain a finite-mass six-degree-of-freedom rigid-body airframe, atmosphere and wind, nonlinear aerodynamic forces and moments, air-data and inertial/navigation measurements, approach and flare guidance, feedback control, and bounded dynamic aerodynamic-surface actuators.",
+      "Vehicle motion must result from the connected aerodynamic, actuator, and rigid-body paths;"
+    ],
+    "signal_sources": [
+      "InitialAirspeedScale is read from the public MATLAB base-workspace input contract.",
+      "InitialBankOffset_deg is read from the public MATLAB base-workspace input contract.",
+      "VehicleMassScale is read from the public MATLAB base-workspace input contract.",
+      "WindSeverityScale is read from the public MATLAB base-workspace input contract.",
+      "landing_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "guidance_command is produced by the implemented plant or controller and logged under the public output contract.",
+      "surface_command_deg is produced by the implemented plant or controller and logged under the public output contract.",
+      "surface_position_deg is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "InitialAirspeedScale: Read InitialAirspeedScale, InitialBankOffset_deg, VehicleMassScale, and WindSeverityScale from the MATLAB base workspace and support their full stated ranges. InitialAirspeedScale, VehicleMassScale, and WindSeverityScale are finite real scalars in [0.97, 1.03], [0.95, 1.05], and [0.7, 1.3], respectively; InitialBankOffset_deg is a finite real scalar in [-3, 3] deg.",
+      "InitialBankOffset_deg: Read InitialAirspeedScale, InitialBankOffset_deg, VehicleMassScale, and WindSeverityScale from the MATLAB base workspace and support their full stated ranges. InitialAirspeedScale, VehicleMassScale, and WindSeverityScale are finite real scalars in [0.97, 1.03], [0.95, 1.05], and [0.7, 1.3], respectively; InitialBankOffset_deg is a finite real scalar in [-3, 3] deg.",
+      "VehicleMassScale: Read InitialAirspeedScale, InitialBankOffset_deg, VehicleMassScale, and WindSeverityScale from the MATLAB base workspace and support their full stated ranges. InitialAirspeedScale, VehicleMassScale, and WindSeverityScale are finite real scalars in [0.97, 1.03], [0.95, 1.05], and [0.7, 1.3], respectively; InitialBankOffset_deg is a finite real scalar in [-3, 3] deg.",
+      "WindSeverityScale: Read InitialAirspeedScale, InitialBankOffset_deg, VehicleMassScale, and WindSeverityScale from the MATLAB base workspace and support their full stated ranges. InitialAirspeedScale, VehicleMassScale, and WindSeverityScale are finite real scalars in [0.97, 1.03], [0.95, 1.05], and [0.7, 1.3], respectively; InitialBankOffset_deg is a finite real scalar in [-3, 3] deg."
+    ],
+    "disturbances": [
+      "The basic system must contain a finite-mass six-degree-of-freedom rigid-body airframe, atmosphere and wind, nonlinear aerodynamic forces and moments, air-data and inertial/navigation measurements, approach and flare guidance, feedback control, and bounded dynamic aerodynamic-surface actuators.",
+      "Read InitialAirspeedScale, InitialBankOffset_deg, VehicleMassScale, and WindSeverityScale from the MATLAB base workspace and support their full stated ranges."
+    ],
+    "dynamic_processes": [
+      "The basic system must contain a finite-mass six-degree-of-freedom rigid-body airframe, atmosphere and wind, nonlinear aerodynamic forces and moments, air-data and inertial/navigation measurements, approach and flare guidance, feedback control, and bounded dynamic aerodynamic-surface actuators.",
+      "Vehicle motion must result from the connected aerodynamic, actuator, and rigid-body paths;",
+      "The vehicle has no sustained propulsion available during the evaluated approach, so its trajectory and terminal condition must be achieved through physically consistent energy management and aerodynamic control."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XAERO-06: prescribing landing_state directly would bypass the system path described by: Vehicle motion must result from the connected aerodynamic, actuator, and rigid-body paths; prescribed or replayed position histories are not valid.",
+      "F90-XAERO-06: replaying a fixed landing_state trace would ignore causal variation in InitialAirspeedScale."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XAERO-06/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XAERO-06/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XAERO-06/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

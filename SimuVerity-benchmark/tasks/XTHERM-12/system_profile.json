@@ -1,0 +1,155 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XTHERM-12",
+  "collection": "XTHERM",
+  "reference": {
+    "identity_path": "tasks/XTHERM-12/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/Models/BEV_Thermal_Management.slx",
+    "model_path": "tasks/XTHERM-12/reference/files/Models/BEV_Thermal_Management.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id EXT-XTHERM-BEV-MULTILOOP-01",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a closed-loop battery-electric-vehicle thermal-management model with one physically connected vehicle/e-drive plant, battery pack, traction motor, DC/DC converter, cabin thermal mass, coolant circuits, and a vapor-compression refrigerant circuit.",
+    "engineering_objects": [
+      "Build a closed-loop battery-electric-vehicle thermal-management model with one physically connected vehicle/e-drive plant, battery pack, traction motor, DC/DC converter, cabin thermal mass, coolant circuits, and a vapor-compression refrigerant circuit.",
+      "Vehicle speed must causally load the e-drive and its thermal states.",
+      "Before simulation, read bev_drive_command and bev_thermal_command from the MATLAB base workspace."
+    ],
+    "physical_paths": [
+      "Build a closed-loop battery-electric-vehicle thermal-management model with one physically connected vehicle/e-drive plant, battery pack, traction motor, DC/DC converter, cabin thermal mass, coolant circuits, and a vapor-compression refrigerant circuit.",
+      "The coolant and refrigerant paths must exchange heat through connected heat exchangers and use measured cabin and component temperatures to coordinate the fan, compressor, motor coolant pump, battery coolant pump, and cabin blower.",
+      "Every public input field must affect its corresponding connected environment, load, controller, or plant path.",
+      "Vehicle speed must causally load the e-drive and its thermal states."
+    ],
+    "functional_paths": [
+      "Every public input field must affect its corresponding connected environment, load, controller, or plant path."
+    ],
+    "information_paths": [
+      "bev_drive_command, bev_thermal_command -> EXT-XTHERM-BEV-MULTILOOP-01 plant/control path -> bev_vehicle_response, bev_temperature_response, bev_heat_flow_response, bev_actuator_response"
+    ],
+    "modes_and_events": [
+      "Build a closed-loop battery-electric-vehicle thermal-management model with one physically connected vehicle/e-drive plant, battery pack, traction motor, DC/DC converter, cabin thermal mass, coolant circuits, and a vapor-compression refrigerant circuit.",
+      "The same architecture must respond causally to changes in cabin setpoint, A/C enable, recirculation mode, and occupant load."
+    ],
+    "interfaces": [
+      {
+        "name": "bev_drive_command",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "km/h"
+        ],
+        "range_or_shape": "Before simulation, read bev_drive_command and bev_thermal_command from the MATLAB base workspace. bev_drive_command is a one-channel Timeseries [speed_ref_kph] in km/h, covers 0.0--30.0 s, and has no sample gap above 0.1 s.",
+        "source": "tasks/XTHERM-12/public_spec.json"
+      },
+      {
+        "name": "bev_thermal_command",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Before simulation, read bev_drive_command and bev_thermal_command from the MATLAB base workspace. bev_thermal_command is a scalar struct with ambient_temperature_degC in 25--40 degC, relative_humidity in 0.35--0.70, cabin_setpoint_degC in 22--30 degC, integer occupant_count in 1--5, and logical ac_enable and recirculation_enable in {0,1}.",
+        "source": "tasks/XTHERM-12/public_spec.json"
+      },
+      {
+        "name": "bev_vehicle_response",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "km/h"
+        ],
+        "range_or_shape": "bev_vehicle_response has width 2: [speed reference, actual vehicle speed] in [km/h, km/h].",
+        "source": "tasks/XTHERM-12/public_spec.json"
+      },
+      {
+        "name": "bev_temperature_response",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "bev_temperature_response has width 6: [cabin, ambient, cabin setpoint, maximum battery, DC/DC, motor temperature] in degC.",
+        "source": "tasks/XTHERM-12/public_spec.json"
+      },
+      {
+        "name": "bev_heat_flow_response",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "W"
+        ],
+        "range_or_shape": "bev_heat_flow_response has width 6: [battery, motor, condenser, chiller, evaporator, radiator heat flow] in W; retain the signed sensor values consistently rather than replacing them with prescribed magnitudes.",
+        "source": "tasks/XTHERM-12/public_spec.json"
+      },
+      {
+        "name": "bev_actuator_response",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "bev_actuator_response has width 5: [fan, compressor, motor coolant pump, battery coolant pump, cabin blower] as the normalized 0--1 commands actually applied to the connected plant.",
+        "source": "tasks/XTHERM-12/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "The coolant and refrigerant paths must exchange heat through connected heat exchangers and use measured cabin and component temperatures to coordinate the fan, compressor, motor coolant pump, battery coolant pump, and cabin blower.",
+      "Every public input field must affect its corresponding connected environment, load, controller, or plant path.",
+      "Log four full-run MATLAB Timeseries in the exact published order and units."
+    ],
+    "feedback_and_control_causality": [
+      "Build a closed-loop battery-electric-vehicle thermal-management model with one physically connected vehicle/e-drive plant, battery pack, traction motor, DC/DC converter, cabin thermal mass, coolant circuits, and a vapor-compression refrigerant circuit.",
+      "Vehicle speed must causally load the e-drive and its thermal states.",
+      "Do not prescribe actual speed, cabin or component temperatures, heat flows, or applied actuator histories directly."
+    ],
+    "signal_sources": [
+      "bev_drive_command is read from the public MATLAB base-workspace input contract.",
+      "bev_thermal_command is read from the public MATLAB base-workspace input contract.",
+      "bev_vehicle_response is produced by the implemented plant or controller and logged under the public output contract.",
+      "bev_temperature_response is produced by the implemented plant or controller and logged under the public output contract.",
+      "bev_heat_flow_response is produced by the implemented plant or controller and logged under the public output contract.",
+      "bev_actuator_response is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "bev_drive_command: Before simulation, read bev_drive_command and bev_thermal_command from the MATLAB base workspace. bev_drive_command is a one-channel Timeseries [speed_ref_kph] in km/h, covers 0.0--30.0 s, and has no sample gap above 0.1 s.",
+      "bev_thermal_command: Before simulation, read bev_drive_command and bev_thermal_command from the MATLAB base workspace. bev_thermal_command is a scalar struct with ambient_temperature_degC in 25--40 degC, relative_humidity in 0.35--0.70, cabin_setpoint_degC in 22--30 degC, integer occupant_count in 1--5, and logical ac_enable and recirculation_enable in {0,1}."
+    ],
+    "disturbances": [
+      "Vehicle speed must causally load the e-drive and its thermal states.",
+      "Use fixed environmental pressure 0.101325 MPa and CO2 fraction 0.0004.",
+      "Every public input field must affect its corresponding connected environment, load, controller, or plant path."
+    ],
+    "dynamic_processes": [
+      "Temperature channels must come from dynamic thermal states, actual vehicle speed from vehicle dynamics, heat flows from the connected thermal paths, and actuator channels from the commands applied to those paths."
+    ],
+    "task_specific_shortcuts": [
+      "EXT-XTHERM-BEV-MULTILOOP-01: prescribing bev_vehicle_response directly would bypass the system path described by: Build a closed-loop battery-electric-vehicle thermal-management model with one physically connected vehicle/e-drive plant, battery pack, traction motor, DC/DC converter, cabin thermal mass, coolant circuits, and a vapor-compression refrigerant circuit.",
+      "EXT-XTHERM-BEV-MULTILOOP-01: replaying a fixed bev_vehicle_response trace would ignore causal variation in bev_drive_command."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XTHERM-12/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XTHERM-12/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XTHERM-12/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

@@ -1,0 +1,1046 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SimscapeMultibodyImportXML xmlns="urn:mathworks:SimscapeMultibody:import" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+   <Created by="Steve Miller" from="Onshape" on="12/20/16||09:28:51" using="Simscape Multibody Exporter"/>
+   <ModelUnits length="meter" mass="kilogram"/>
+   <DataUnits length="meter" mass="kilogram"/>
+   <RootAssembly name="youBot" uid="f7e31fec304b84837f227827" version="w-d1c195a5b8b0fdc10e829218">
+      <InstanceTree>
+         <Instance entityUid="KFPD*:*6e9b634061a5f76e218a4642" name="Gripper Housing A &lt;1&gt;" uid="MQCL7ITt82XzSJmVv">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 -0.000000000 -0.000000000 1.000000000 0.000000000 0.000000000 -0.000000000 1.000000000 </Rotation>
+               <Translation>-0.000300000 0.000000000 -0.000200000 </Translation>
+            </Transform>
+         </Instance>
+         <Instance entityUid="KFfC*:*6e9b634061a5f76e218a4642" name="Finger A &lt;1&gt;" uid="Mc/EHx6o2hdN2wXID">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 -0.000000000 -0.000000000 1.000000000 -0.000000000 -0.000000000 0.000000000 1.000000000 </Rotation>
+               <Translation>-0.000300000 0.000000000 -0.000200000 </Translation>
+            </Transform>
+         </Instance>
+         <Instance entityUid="JFb*:*6e9b634061a5f76e218a4642" name="Bicep &lt;1&gt;" uid="M5pd6zMvBFA5LLAi6">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 0.000000000 -0.000000000 1.000000000 0.000000000 -0.000000000 0.000000000 1.000000000 </Rotation>
+               <Translation>-0.000200000 0.000000000 -0.000200000 </Translation>
+            </Transform>
+         </Instance>
+         <Instance entityUid="KFfH*:*6e9b634061a5f76e218a4642" name="Pin Housing C2 &lt;1&gt;" uid="MYYbRNbkiktSV0S9H">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 -0.000000000 -0.000000000 1.000000000 0.000000000 0.000000000 -0.000000000 1.000000000 </Rotation>
+               <Translation>-0.000300000 0.000000000 -0.000200000 </Translation>
+            </Transform>
+         </Instance>
+         <Instance entityUid="JFX*:*6e9b634061a5f76e218a4642" name="Pivot &lt;1&gt;" uid="MP9s0DxY+8MZrO2ms">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 0.000000000 -0.000000000 1.000000000 -0.000000000 -0.000000000 0.000000000 1.000000000 </Rotation>
+               <Translation>-0.000000000 0.000000000 -0.000200000 </Translation>
+            </Transform>
+         </Instance>
+         <Instance entityUid="JRD*:*6e9b634061a5f76e218a4642" name="Forearm Black Inlay &lt;1&gt;" uid="Mnm19j9zROzZs0e7h">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 </Rotation>
+               <Translation>0.000000000 0.000000000 0.000000000 </Translation>
+            </Transform>
+         </Instance>
+         <Instance entityUid="KFHC*:*6e9b634061a5f76e218a4642" name="Finger B &lt;1&gt;" uid="M/FcyvbYz7DvMq8Mm">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 -0.000000000 -0.000000000 1.000000000 0.000000000 0.000000000 -0.000000000 1.000000000 </Rotation>
+               <Translation>-0.000300000 0.000000000 -0.000200000 </Translation>
+            </Transform>
+         </Instance>
+         <Instance entityUid="KFXD*:*6e9b634061a5f76e218a4642" name="Pin Housing A1 &lt;1&gt;" uid="MJIn7av9p/WbjPJyi">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 -0.000000000 -0.000000000 1.000000000 0.000000000 0.000000000 -0.000000000 1.000000000 </Rotation>
+               <Translation>-0.000300000 0.000000000 -0.000200000 </Translation>
+            </Transform>
+         </Instance>
+         <Instance entityUid="JFT*:*6e9b634061a5f76e218a4642" name="Wrist &lt;1&gt;" uid="MHXP/uzk2lsXfawqv">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 -0.000000000 -0.000000000 1.000000000 0.000000000 0.000000000 -0.000000000 1.000000000 </Rotation>
+               <Translation>-0.000300000 0.000000000 -0.000200000 </Translation>
+            </Transform>
+         </Instance>
+         <Instance entityUid="KFjE*:*6e9b634061a5f76e218a4642" name="Pin Gripper Pivot 2 &lt;1&gt;" uid="MGe0QmqxDPFi32RAS">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 -0.000000000 -0.000000000 1.000000000 0.000000000 0.000000000 -0.000000000 1.000000000 </Rotation>
+               <Translation>-0.000300000 0.000000000 -0.000200000 </Translation>
+            </Transform>
+         </Instance>
+         <Instance entityUid="JFL*:*6e9b634061a5f76e218a4642" grounded="true" name="Base &lt;1&gt;" uid="MGWlrg0c8PD99AYj6">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 </Rotation>
+               <Translation>0.000000000 0.000000000 0.000000000 </Translation>
+            </Transform>
+         </Instance>
+         <Instance entityUid="JFP*:*6e9b634061a5f76e218a4642" name="Gripper Pivot &lt;1&gt;" uid="Me1nsJUO5uG62iscZ">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 -0.000000000 -0.000000000 1.000000000 0.000000000 0.000000000 -0.000000000 1.000000000 </Rotation>
+               <Translation>-0.000300000 0.000000000 -0.000200000 </Translation>
+            </Transform>
+         </Instance>
+         <Instance entityUid="KFfD*:*6e9b634061a5f76e218a4642" name="Pin Gripper Pivot 1 &lt;1&gt;" uid="MgXGfxgXuKbbA4yje">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 -0.000000000 -0.000000000 1.000000000 0.000000000 0.000000000 -0.000000000 1.000000000 </Rotation>
+               <Translation>-0.000300000 0.000000000 -0.000200000 </Translation>
+            </Transform>
+         </Instance>
+         <Instance entityUid="KFHG*:*6e9b634061a5f76e218a4642" name="Pin Gripper Pivot 3 &lt;1&gt;" uid="M0zldehVEzMbQdnw8">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 -0.000000000 -0.000000000 1.000000000 0.000000000 0.000000000 -0.000000000 1.000000000 </Rotation>
+               <Translation>-0.000300000 0.000000000 -0.000200000 </Translation>
+            </Transform>
+         </Instance>
+         <Instance entityUid="KFHE*:*6e9b634061a5f76e218a4642" name="Pin Housing C1 &lt;1&gt;" uid="M4C3QBhz83670AWaT">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 -0.000000000 -0.000000000 1.000000000 0.000000000 0.000000000 -0.000000000 1.000000000 </Rotation>
+               <Translation>-0.000300000 0.000000000 -0.000200000 </Translation>
+            </Transform>
+         </Instance>
+         <Instance entityUid="KFjC*:*6e9b634061a5f76e218a4642" name="Pin Gripper Pivot 4 &lt;1&gt;" uid="MI0kFfjjxeMID17Pq">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 -0.000000000 -0.000000000 1.000000000 0.000000000 0.000000000 -0.000000000 1.000000000 </Rotation>
+               <Translation>-0.000300000 0.000000000 -0.000200000 </Translation>
+            </Transform>
+         </Instance>
+         <Instance entityUid="KFPF*:*6e9b634061a5f76e218a4642" name="Electronics Board &lt;1&gt;" uid="Mqz/tavbi0ImT3aov">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 -0.000000000 -0.000000000 1.000000000 0.000000000 0.000000000 -0.000000000 1.000000000 </Rotation>
+               <Translation>-0.000300000 0.000000000 -0.000200000 </Translation>
+            </Transform>
+         </Instance>
+         <Instance entityUid="KFvC*:*6e9b634061a5f76e218a4642" name="Gripper Housing B &lt;1&gt;" uid="M3/vPgM2zWYw3JhuK">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 -0.000000000 -0.000000000 1.000000000 0.000000000 0.000000000 -0.000000000 1.000000000 </Rotation>
+               <Translation>-0.000300000 0.000000000 -0.000200000 </Translation>
+            </Transform>
+         </Instance>
+         <Instance entityUid="KF/C*:*6e9b634061a5f76e218a4642" name="Motor Finger B &lt;1&gt;" uid="MKuKfHMWXtBfwf54q">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 -0.000000000 -0.000000000 1.000000000 0.000000000 0.000000000 -0.000000000 1.000000000 </Rotation>
+               <Translation>-0.000300000 0.000000000 -0.000200000 </Translation>
+            </Transform>
+         </Instance>
+         <Instance entityUid="KFTE*:*6e9b634061a5f76e218a4642" name="Pin Housing B1 &lt;1&gt;" uid="MK3QUb8ZVjf+e1kkm">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 -0.000000000 -0.000000000 1.000000000 0.000000000 0.000000000 -0.000000000 1.000000000 </Rotation>
+               <Translation>-0.000300000 0.000000000 -0.000200000 </Translation>
+            </Transform>
+         </Instance>
+         <Instance entityUid="JFf*:*6e9b634061a5f76e218a4642" name="Forearm &lt;1&gt;" uid="MjwLGqbk0Wo48X9n1">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 0.000000000 -0.000000000 1.000000000 0.000000000 -0.000000000 0.000000000 1.000000000 </Rotation>
+               <Translation>-0.000300000 0.000000000 -0.000200000 </Translation>
+            </Transform>
+         </Instance>
+         <Instance entityUid="KFDE*:*6e9b634061a5f76e218a4642" name="Motor Finger A &lt;1&gt;" uid="M1wr1VY/kov3tYEgP">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 -0.000000000 -0.000000000 1.000000000 0.000000000 0.000000000 -0.000000000 1.000000000 </Rotation>
+               <Translation>-0.000300000 0.000000000 -0.000200000 </Translation>
+            </Transform>
+         </Instance>
+         <Instance entityUid="JOD*:*6e9b634061a5f76e218a4642" name="Pivot Black Inlay &lt;1&gt;" uid="MdO9SUBHg02GWox5a">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 </Rotation>
+               <Translation>0.000000000 0.000000000 0.000000000 </Translation>
+            </Transform>
+         </Instance>
+         <Instance entityUid="KFHF*:*6e9b634061a5f76e218a4642" name="Pin Housing B2 &lt;1&gt;" uid="MqZb5r1WSs+H75hpv">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 -0.000000000 -0.000000000 1.000000000 0.000000000 0.000000000 -0.000000000 1.000000000 </Rotation>
+               <Translation>-0.000300000 0.000000000 -0.000200000 </Translation>
+            </Transform>
+         </Instance>
+         <Instance entityUid="KFnC*:*6e9b634061a5f76e218a4642" name="Pin Housing A2 &lt;1&gt;" uid="MjAmnsf04NT1Bi6Ik">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 -0.000000000 -0.000000000 1.000000000 0.000000000 0.000000000 -0.000000000 1.000000000 </Rotation>
+               <Translation>-0.000300000 0.000000000 -0.000200000 </Translation>
+            </Transform>
+         </Instance>
+      </InstanceTree>
+      <Constraints/>
+      <Joints>
+         <Revolute name="RevoluteBasePivot">
+            <BaseFrame>
+               <InstancePath>
+                  <Uid>MGWlrg0c8PD99AYj6</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1.000000000 0.000000000 -0.000000000 -0.000000000 -1.000000000 -0.000000000 -0.000000000 0.000000000 -1.000000000 </Rotation>
+                  <Translation>0.000001124 0.005776696 0.072000790 </Translation>
+               </Transform>
+            </BaseFrame>
+            <FollowerFrame>
+               <InstancePath>
+                  <Uid>MP9s0DxY+8MZrO2ms</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1.000000000 0.000000000 -0.000000000 -0.000000000 -1.000000000 -0.000000000 -0.000000000 0.000000000 -1.000000000 </Rotation>
+                  <Translation>0.000001125 0.005776696 0.072200790 </Translation>
+               </Transform>
+            </FollowerFrame>
+         </Revolute>
+         <Revolute name="RevolutePivotBicep">
+            <BaseFrame>
+               <InstancePath>
+                  <Uid>MP9s0DxY+8MZrO2ms</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>-0.000000000 -0.000000000 -1.000000000 1.000000000 0.000000000 -0.000000000 0.000000000 -1.000000000 0.000000000 </Rotation>
+                  <Translation>0.009001125 0.038776696 0.147200790 </Translation>
+               </Transform>
+            </BaseFrame>
+            <FollowerFrame>
+               <InstancePath>
+                  <Uid>M5pd6zMvBFA5LLAi6</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>-0.000000000 -0.000000000 -1.000000000 1.000000000 0.000000000 -0.000000000 0.000000000 -1.000000000 0.000000000 </Rotation>
+                  <Translation>0.009201125 0.038776696 0.147200790 </Translation>
+               </Transform>
+            </FollowerFrame>
+         </Revolute>
+         <Revolute name="RevoluteBicepForearm">
+            <BaseFrame>
+               <InstancePath>
+                  <Uid>M5pd6zMvBFA5LLAi6</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>-0.000000000 -0.000000000 -1.000000000 1.000000000 0.000000000 -0.000000000 0.000000000 -1.000000000 0.000000000 </Rotation>
+                  <Translation>0.010501125 0.038776696 0.302200790 </Translation>
+               </Transform>
+            </BaseFrame>
+            <FollowerFrame>
+               <InstancePath>
+                  <Uid>MjwLGqbk0Wo48X9n1</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>-0.000000000 -0.000000000 -1.000000000 1.000000000 0.000000000 -0.000000000 0.000000000 -1.000000000 0.000000000 </Rotation>
+                  <Translation>0.010601125 0.038776696 0.302200790 </Translation>
+               </Transform>
+            </FollowerFrame>
+         </Revolute>
+         <Revolute name="RevoluteForearmWrist">
+            <BaseFrame>
+               <InstancePath>
+                  <Uid>MjwLGqbk0Wo48X9n1</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>-0.000000000 -0.000000000 -1.000000000 1.000000000 0.000000000 -0.000000000 0.000000000 -1.000000000 0.000000000 </Rotation>
+                  <Translation>-0.008298875 0.038776696 0.437200790 </Translation>
+               </Transform>
+            </BaseFrame>
+            <FollowerFrame>
+               <InstancePath>
+                  <Uid>MHXP/uzk2lsXfawqv</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>-0.000000000 -0.000000000 -1.000000000 1.000000000 0.000000000 -0.000000000 0.000000000 -1.000000000 0.000000000 </Rotation>
+                  <Translation>-0.008298875 0.038776696 0.437200790 </Translation>
+               </Transform>
+            </FollowerFrame>
+         </Revolute>
+         <Revolute name="RevoluteWristGripperPivot">
+            <BaseFrame>
+               <InstancePath>
+                  <Uid>MHXP/uzk2lsXfawqv</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1.000000000 0.000000000 -0.000000000 -0.000000000 -1.000000000 -0.000000000 -0.000000000 0.000000000 -1.000000000 </Rotation>
+                  <Translation>0.000701125 0.038776809 0.517700790 </Translation>
+               </Transform>
+            </BaseFrame>
+            <FollowerFrame>
+               <InstancePath>
+                  <Uid>Me1nsJUO5uG62iscZ</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1.000000000 0.000000000 -0.000000000 -0.000000000 -1.000000000 -0.000000000 -0.000000000 0.000000000 -1.000000000 </Rotation>
+                  <Translation>0.000701125 0.038776809 0.517700790 </Translation>
+               </Transform>
+            </FollowerFrame>
+         </Revolute>
+         <Prismatic name="PrismaticFingerB">
+            <BaseFrame>
+               <InstancePath>
+                  <Uid>M3/vPgM2zWYw3JhuK</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>0.000000000 0.000000000 -1.000000000 0.000000000 1.000000000 0.000000000 1.000000000 -0.000000000 0.000000000 </Rotation>
+                  <Translation>0.000637305 0.038723630 0.601364880 </Translation>
+               </Transform>
+            </BaseFrame>
+            <FollowerFrame>
+               <InstancePath>
+                  <Uid>M/FcyvbYz7DvMq8Mm</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>0.000000000 -0.000000000 -1.000000000 -0.000000000 1.000000000 -0.000000000 1.000000000 0.000000000 0.000000000 </Rotation>
+                  <Translation>0.000637305 0.038723630 0.601364880 </Translation>
+               </Transform>
+            </FollowerFrame>
+         </Prismatic>
+         <Prismatic name="PrismaticFingerA">
+            <BaseFrame>
+               <InstancePath>
+                  <Uid>MQCL7ITt82XzSJmVv</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>-0.000000000 -0.000000000 1.000000000 -0.000000000 -1.000000000 -0.000000000 1.000000000 -0.000000000 -0.000000000 </Rotation>
+                  <Translation>0.000637305 0.038723630 0.601364880 </Translation>
+               </Transform>
+            </BaseFrame>
+            <FollowerFrame>
+               <InstancePath>
+                  <Uid>Mc/EHx6o2hdN2wXID</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>-0.000000000 0.000000000 1.000000000 0.000000000 -1.000000000 0.000000000 1.000000000 0.000000000 -0.000000000 </Rotation>
+                  <Translation>0.000637305 0.038723630 0.601364880 </Translation>
+               </Transform>
+            </FollowerFrame>
+         </Prismatic>
+         <Weld name="group_root_M_u8IFQD4tLqO8LuJ_1">
+            <BaseFrame>
+               <InstancePath>
+                  <Uid>MjwLGqbk0Wo48X9n1</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1.000000000 -0.000000000 -0.000000000 0.000000000 1.000000000 -0.000000000 0.000000000 -0.000000000 1.000000000 </Rotation>
+                  <Translation>0.000300000 -0.000000000 0.000200000 </Translation>
+               </Transform>
+            </BaseFrame>
+            <FollowerFrame>
+               <InstancePath>
+                  <Uid>Mnm19j9zROzZs0e7h</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+                  <Translation>0 0 0</Translation>
+               </Transform>
+            </FollowerFrame>
+         </Weld>
+         <Weld name="group_root_M3_XiDptQ6FvuI9tc_1">
+            <BaseFrame>
+               <InstancePath>
+                  <Uid>MYYbRNbkiktSV0S9H</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 </Rotation>
+                  <Translation>0.000000000 0.000000000 0.000000000 </Translation>
+               </Transform>
+            </BaseFrame>
+            <FollowerFrame>
+               <InstancePath>
+                  <Uid>MQCL7ITt82XzSJmVv</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+                  <Translation>0 0 0</Translation>
+               </Transform>
+            </FollowerFrame>
+         </Weld>
+         <Weld name="group_root_M3_XiDptQ6FvuI9tc_2">
+            <BaseFrame>
+               <InstancePath>
+                  <Uid>MJIn7av9p/WbjPJyi</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 </Rotation>
+                  <Translation>0.000000000 0.000000000 0.000000000 </Translation>
+               </Transform>
+            </BaseFrame>
+            <FollowerFrame>
+               <InstancePath>
+                  <Uid>MYYbRNbkiktSV0S9H</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+                  <Translation>0 0 0</Translation>
+               </Transform>
+            </FollowerFrame>
+         </Weld>
+         <Weld name="group_root_M3_XiDptQ6FvuI9tc_3">
+            <BaseFrame>
+               <InstancePath>
+                  <Uid>MGe0QmqxDPFi32RAS</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 </Rotation>
+                  <Translation>0.000000000 0.000000000 0.000000000 </Translation>
+               </Transform>
+            </BaseFrame>
+            <FollowerFrame>
+               <InstancePath>
+                  <Uid>MJIn7av9p/WbjPJyi</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+                  <Translation>0 0 0</Translation>
+               </Transform>
+            </FollowerFrame>
+         </Weld>
+         <Weld name="group_root_M3_XiDptQ6FvuI9tc_4">
+            <BaseFrame>
+               <InstancePath>
+                  <Uid>Me1nsJUO5uG62iscZ</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 </Rotation>
+                  <Translation>0.000000000 0.000000000 0.000000000 </Translation>
+               </Transform>
+            </BaseFrame>
+            <FollowerFrame>
+               <InstancePath>
+                  <Uid>MGe0QmqxDPFi32RAS</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+                  <Translation>0 0 0</Translation>
+               </Transform>
+            </FollowerFrame>
+         </Weld>
+         <Weld name="group_root_M3_XiDptQ6FvuI9tc_5">
+            <BaseFrame>
+               <InstancePath>
+                  <Uid>MgXGfxgXuKbbA4yje</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 </Rotation>
+                  <Translation>0.000000000 0.000000000 0.000000000 </Translation>
+               </Transform>
+            </BaseFrame>
+            <FollowerFrame>
+               <InstancePath>
+                  <Uid>Me1nsJUO5uG62iscZ</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+                  <Translation>0 0 0</Translation>
+               </Transform>
+            </FollowerFrame>
+         </Weld>
+         <Weld name="group_root_M3_XiDptQ6FvuI9tc_6">
+            <BaseFrame>
+               <InstancePath>
+                  <Uid>M0zldehVEzMbQdnw8</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 </Rotation>
+                  <Translation>0.000000000 0.000000000 0.000000000 </Translation>
+               </Transform>
+            </BaseFrame>
+            <FollowerFrame>
+               <InstancePath>
+                  <Uid>MgXGfxgXuKbbA4yje</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+                  <Translation>0 0 0</Translation>
+               </Transform>
+            </FollowerFrame>
+         </Weld>
+         <Weld name="group_root_M3_XiDptQ6FvuI9tc_7">
+            <BaseFrame>
+               <InstancePath>
+                  <Uid>M4C3QBhz83670AWaT</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 </Rotation>
+                  <Translation>0.000000000 0.000000000 0.000000000 </Translation>
+               </Transform>
+            </BaseFrame>
+            <FollowerFrame>
+               <InstancePath>
+                  <Uid>M0zldehVEzMbQdnw8</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+                  <Translation>0 0 0</Translation>
+               </Transform>
+            </FollowerFrame>
+         </Weld>
+         <Weld name="group_root_M3_XiDptQ6FvuI9tc_8">
+            <BaseFrame>
+               <InstancePath>
+                  <Uid>MI0kFfjjxeMID17Pq</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 </Rotation>
+                  <Translation>0.000000000 0.000000000 0.000000000 </Translation>
+               </Transform>
+            </BaseFrame>
+            <FollowerFrame>
+               <InstancePath>
+                  <Uid>M4C3QBhz83670AWaT</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+                  <Translation>0 0 0</Translation>
+               </Transform>
+            </FollowerFrame>
+         </Weld>
+         <Weld name="group_root_M3_XiDptQ6FvuI9tc_9">
+            <BaseFrame>
+               <InstancePath>
+                  <Uid>Mqz/tavbi0ImT3aov</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 </Rotation>
+                  <Translation>0.000000000 0.000000000 0.000000000 </Translation>
+               </Transform>
+            </BaseFrame>
+            <FollowerFrame>
+               <InstancePath>
+                  <Uid>MI0kFfjjxeMID17Pq</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+                  <Translation>0 0 0</Translation>
+               </Transform>
+            </FollowerFrame>
+         </Weld>
+         <Weld name="group_root_M3_XiDptQ6FvuI9tc_10">
+            <BaseFrame>
+               <InstancePath>
+                  <Uid>M3/vPgM2zWYw3JhuK</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 </Rotation>
+                  <Translation>0.000000000 0.000000000 0.000000000 </Translation>
+               </Transform>
+            </BaseFrame>
+            <FollowerFrame>
+               <InstancePath>
+                  <Uid>Mqz/tavbi0ImT3aov</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+                  <Translation>0 0 0</Translation>
+               </Transform>
+            </FollowerFrame>
+         </Weld>
+         <Weld name="group_root_M3_XiDptQ6FvuI9tc_11">
+            <BaseFrame>
+               <InstancePath>
+                  <Uid>MKuKfHMWXtBfwf54q</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 </Rotation>
+                  <Translation>0.000000000 0.000000000 0.000000000 </Translation>
+               </Transform>
+            </BaseFrame>
+            <FollowerFrame>
+               <InstancePath>
+                  <Uid>M3/vPgM2zWYw3JhuK</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+                  <Translation>0 0 0</Translation>
+               </Transform>
+            </FollowerFrame>
+         </Weld>
+         <Weld name="group_root_M3_XiDptQ6FvuI9tc_12">
+            <BaseFrame>
+               <InstancePath>
+                  <Uid>MK3QUb8ZVjf+e1kkm</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 </Rotation>
+                  <Translation>0.000000000 0.000000000 0.000000000 </Translation>
+               </Transform>
+            </BaseFrame>
+            <FollowerFrame>
+               <InstancePath>
+                  <Uid>MKuKfHMWXtBfwf54q</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+                  <Translation>0 0 0</Translation>
+               </Transform>
+            </FollowerFrame>
+         </Weld>
+         <Weld name="group_root_M3_XiDptQ6FvuI9tc_13">
+            <BaseFrame>
+               <InstancePath>
+                  <Uid>M1wr1VY/kov3tYEgP</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 </Rotation>
+                  <Translation>0.000000000 0.000000000 0.000000000 </Translation>
+               </Transform>
+            </BaseFrame>
+            <FollowerFrame>
+               <InstancePath>
+                  <Uid>MK3QUb8ZVjf+e1kkm</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+                  <Translation>0 0 0</Translation>
+               </Transform>
+            </FollowerFrame>
+         </Weld>
+         <Weld name="group_root_M3_XiDptQ6FvuI9tc_14">
+            <BaseFrame>
+               <InstancePath>
+                  <Uid>MqZb5r1WSs+H75hpv</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 </Rotation>
+                  <Translation>0.000000000 0.000000000 0.000000000 </Translation>
+               </Transform>
+            </BaseFrame>
+            <FollowerFrame>
+               <InstancePath>
+                  <Uid>M1wr1VY/kov3tYEgP</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+                  <Translation>0 0 0</Translation>
+               </Transform>
+            </FollowerFrame>
+         </Weld>
+         <Weld name="group_root_M3_XiDptQ6FvuI9tc_15">
+            <BaseFrame>
+               <InstancePath>
+                  <Uid>MjAmnsf04NT1Bi6Ik</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 </Rotation>
+                  <Translation>0.000000000 0.000000000 0.000000000 </Translation>
+               </Transform>
+            </BaseFrame>
+            <FollowerFrame>
+               <InstancePath>
+                  <Uid>MqZb5r1WSs+H75hpv</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+                  <Translation>0 0 0</Translation>
+               </Transform>
+            </FollowerFrame>
+         </Weld>
+         <Weld name="group_root_Mphn5u3_JzpamfiUE_1">
+            <BaseFrame>
+               <InstancePath>
+                  <Uid>MdO9SUBHg02GWox5a</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1.000000000 0.000000000 0.000000000 -0.000000000 1.000000000 -0.000000000 -0.000000000 0.000000000 1.000000000 </Rotation>
+                  <Translation>-0.000000000 0.000000000 -0.000200000 </Translation>
+               </Transform>
+            </BaseFrame>
+            <FollowerFrame>
+               <InstancePath>
+                  <Uid>MP9s0DxY+8MZrO2ms</Uid>
+               </InstancePath>
+               <Transform>
+                  <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+                  <Translation>0 0 0</Translation>
+               </Transform>
+            </FollowerFrame>
+         </Weld>
+      </Joints>
+   </RootAssembly>
+   <Assemblies/>
+   <Parts>
+      <Part name="Base" uid="JFL*:*6e9b634061a5f76e218a4642">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>1.25662797</Mass>
+            <CenterOfMass>-0.000003810 0.003123842 0.034409296 </CenterOfMass>
+            <Inertia>0.002880243 0.002581185 0.004325985 0.000019556 -0.000000092 -0.000000620 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Base.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.200000000" g="0.200000000" r="0.200000000"/>
+            <Diffuse a="1.000000000" b="0.200000000" g="0.200000000" r="0.200000000"/>
+            <Specular a="1.000000000" b="0.200000000" g="0.200000000" r="0.200000000"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Gripper Pivot" uid="JFP*:*6e9b634061a5f76e218a4642">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.268943863</Mass>
+            <CenterOfMass>0.000743090 0.038794877 0.532702983 </CenterOfMass>
+            <Inertia>0.000115389 0.000216130 0.000278973 -0.000000000 0.000000050 0.000000264 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Gripper Pivot.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.301960784" g="0.301960784" r="0.301960784"/>
+            <Diffuse a="1.000000000" b="0.301960784" g="0.301960784" r="0.301960784"/>
+            <Specular a="1.000000000" b="0.301960784" g="0.301960784" r="0.301960784"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Wrist" uid="JFT*:*6e9b634061a5f76e218a4642">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.775843014</Mass>
+            <CenterOfMass>0.012009146 0.038769677 0.473089686 </CenterOfMass>
+            <Inertia>0.000849934 0.001202727 0.000738995 -0.000000008 0.000213113 0.000000400 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Wrist.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.203921569" g="0.568627451" r="0.988235294"/>
+            <Diffuse a="1.000000000" b="0.203921569" g="0.568627451" r="0.988235294"/>
+            <Specular a="1.000000000" b="0.203921569" g="0.568627451" r="0.988235294"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Pivot" uid="JFX*:*6e9b634061a5f76e218a4642">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>1.27524119</Mass>
+            <CenterOfMass>-0.005740934 0.010811296 0.107229203 </CenterOfMass>
+            <Inertia>0.002933641 0.002300538 0.002831957 -0.000524491 0.000279851 0.000163862 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Pivot.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.203921569" g="0.568627451" r="0.988235294"/>
+            <Diffuse a="1.000000000" b="0.203921569" g="0.568627451" r="0.988235294"/>
+            <Specular a="1.000000000" b="0.203921569" g="0.568627451" r="0.988235294"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Bicep" uid="JFb*:*6e9b634061a5f76e218a4642">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>1.20490762</Mass>
+            <CenterOfMass>0.030936135 0.041579977 0.217566964 </CenterOfMass>
+            <Inertia>0.003997660 0.003963488 0.000839303 0.000017593 -0.000024839 -0.000010403 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Bicep.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.203921569" g="0.568627451" r="0.988235294"/>
+            <Diffuse a="1.000000000" b="0.203921569" g="0.568627451" r="0.988235294"/>
+            <Specular a="1.000000000" b="0.203921569" g="0.568627451" r="0.988235294"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Forearm" uid="JFf*:*6e9b634061a5f76e218a4642">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.837299104</Mass>
+            <CenterOfMass>-0.024702806 0.038780327 0.362321120 </CenterOfMass>
+            <Inertia>0.002253437 0.002242549 0.000434717 0.000000016 0.000182870 -0.000000136 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Forearm.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.203921569" g="0.568627451" r="0.988235294"/>
+            <Diffuse a="1.000000000" b="0.203921569" g="0.568627451" r="0.988235294"/>
+            <Specular a="1.000000000" b="0.203921569" g="0.568627451" r="0.988235294"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Finger B" uid="KFHC*:*6e9b634061a5f76e218a4642">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.0232852691</Mass>
+            <CenterOfMass>-0.010114967 0.038692554 0.616516487 </CenterOfMass>
+            <Inertia>0.000007090 0.000008434 0.000002036 -0.000000002 -0.000001123 0.000000001 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Finger B.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.301960784" g="0.301960784" r="0.301960784"/>
+            <Diffuse a="1.000000000" b="0.301960784" g="0.301960784" r="0.301960784"/>
+            <Specular a="1.000000000" b="0.301960784" g="0.301960784" r="0.301960784"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Finger A" uid="KFfC*:*6e9b634061a5f76e218a4642">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.0232852691</Mass>
+            <CenterOfMass>0.011389577 0.038754706 0.616516487 </CenterOfMass>
+            <Inertia>0.000007090 0.000008434 0.000002036 0.000000002 0.000001123 0.000000001 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Finger A.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.301960784" g="0.301960784" r="0.301960784"/>
+            <Diffuse a="1.000000000" b="0.301960784" g="0.301960784" r="0.301960784"/>
+            <Specular a="1.000000000" b="0.301960784" g="0.301960784" r="0.301960784"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Pin Gripper Pivot 4" uid="KFjC*:*6e9b634061a5f76e218a4642">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.000934478141</Mass>
+            <CenterOfMass>0.040637305 0.051723630 0.535076375 </CenterOfMass>
+            <Inertia>0.000000104 0.000000104 0.000000003 -0.000000000 -0.000000000 -0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Pin Gripper Pivot 4.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Diffuse a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Specular a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Pin Housing A2" uid="KFnC*:*6e9b634061a5f76e218a4642">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.00126208342</Mass>
+            <CenterOfMass>0.023307787 0.024723630 0.569364880 </CenterOfMass>
+            <Inertia>0.000000004 0.000000293 0.000000293 0.000000000 0.000000000 -0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Pin Housing A2.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Diffuse a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Specular a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Gripper Housing B" uid="KFvC*:*6e9b634061a5f76e218a4642">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.0403154128</Mass>
+            <CenterOfMass>-0.024326478 0.038212039 0.580981386 </CenterOfMass>
+            <Inertia>0.000020560 0.000018444 0.000016567 -0.000000660 -0.000003526 0.000000107 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Gripper Housing B.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.301960784" g="0.301960784" r="0.301960784"/>
+            <Diffuse a="1.000000000" b="0.301960784" g="0.301960784" r="0.301960784"/>
+            <Specular a="1.000000000" b="0.301960784" g="0.301960784" r="0.301960784"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Motor Finger B" uid="KF/C*:*6e9b634061a5f76e218a4642">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.0174762012</Mass>
+            <CenterOfMass>-0.024569406 0.038723630 0.580372386 </CenterOfMass>
+            <Inertia>0.000001341 0.000001321 0.000001450 0.000000000 -0.000000003 0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Motor Finger B.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Diffuse a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Specular a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Gripper Housing A" uid="KFPD*:*6e9b634061a5f76e218a4642">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.040315441</Mass>
+            <CenterOfMass>0.025601106 0.039235202 0.580981360 </CenterOfMass>
+            <Inertia>0.000020560 0.000018444 0.000016567 0.000000660 0.000003526 0.000000107 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Gripper Housing A.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.301960784" g="0.301960784" r="0.301960784"/>
+            <Diffuse a="1.000000000" b="0.301960784" g="0.301960784" r="0.301960784"/>
+            <Specular a="1.000000000" b="0.301960784" g="0.301960784" r="0.301960784"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Pin Housing A1" uid="KFXD*:*6e9b634061a5f76e218a4642">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.00115288166</Mass>
+            <CenterOfMass>0.015704582 0.050723630 0.594864880 </CenterOfMass>
+            <Inertia>0.000000004 0.000000216 0.000000216 -0.000000000 0.000000000 -0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Pin Housing A1.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Diffuse a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Specular a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Pin Gripper Pivot 1" uid="KFfD*:*6e9b634061a5f76e218a4642">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.000934478141</Mass>
+            <CenterOfMass>-0.039362695 0.051723630 0.535076375 </CenterOfMass>
+            <Inertia>0.000000104 0.000000104 0.000000003 -0.000000000 -0.000000000 -0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Pin Gripper Pivot 1.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Diffuse a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Specular a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Motor Finger A" uid="KFDE*:*6e9b634061a5f76e218a4642">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.0174762012</Mass>
+            <CenterOfMass>0.025844017 0.038723630 0.580372386 </CenterOfMass>
+            <Inertia>0.000001341 0.000001321 0.000001450 -0.000000000 0.000000003 0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Motor Finger A.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Diffuse a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Specular a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Pin Housing C1" uid="KFHE*:*6e9b634061a5f76e218a4642">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.000195493371</Mass>
+            <CenterOfMass>0.000637305 0.026723630 0.604864880 </CenterOfMass>
+            <Inertia>0.000000000 0.000000004 0.000000004 -0.000000000 0.000000000 -0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Pin Housing C1.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Diffuse a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Specular a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Pin Housing B1" uid="KFTE*:*6e9b634061a5f76e218a4642">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.00115288166</Mass>
+            <CenterOfMass>-0.014429971 0.026723630 0.594864880 </CenterOfMass>
+            <Inertia>0.000000004 0.000000216 0.000000216 0.000000000 0.000000000 -0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Pin Housing B1.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Diffuse a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Specular a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Pin Gripper Pivot 2" uid="KFjE*:*6e9b634061a5f76e218a4642">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.000934478141</Mass>
+            <CenterOfMass>-0.039339945 0.025653836 0.535076375 </CenterOfMass>
+            <Inertia>0.000000104 0.000000104 0.000000003 -0.000000000 -0.000000000 -0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Pin Gripper Pivot 2.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Diffuse a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Specular a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Pin Housing B2" uid="KFHF*:*6e9b634061a5f76e218a4642">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.00126208342</Mass>
+            <CenterOfMass>-0.022033176 0.052723630 0.569364880 </CenterOfMass>
+            <Inertia>0.000000004 0.000000293 0.000000293 0.000000000 0.000000000 -0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Pin Housing B2.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Diffuse a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Specular a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Electronics Board" uid="KFPF*:*6e9b634061a5f76e218a4642">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.00920367337</Mass>
+            <CenterOfMass>0.005563115 0.038880834 0.561503206 </CenterOfMass>
+            <Inertia>0.000001203 0.000004595 0.000005754 0.000000002 0.000000091 0.000000045 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Electronics Board.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Diffuse a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Specular a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Pin Gripper Pivot 3" uid="KFHG*:*6e9b634061a5f76e218a4642">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.000934478141</Mass>
+            <CenterOfMass>0.040637305 0.025723630 0.535076375 </CenterOfMass>
+            <Inertia>0.000000104 0.000000104 0.000000003 -0.000000000 -0.000000000 -0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Pin Gripper Pivot 3.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Diffuse a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Specular a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Pin Housing C2" uid="KFfH*:*6e9b634061a5f76e218a4642">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.000195493371</Mass>
+            <CenterOfMass>0.000637305 0.050723630 0.604864880 </CenterOfMass>
+            <Inertia>0.000000000 0.000000004 0.000000004 -0.000000000 0.000000000 -0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Pin Housing C2.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Diffuse a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Specular a="1.000000000" b="0.933333333" g="0.819607843" r="0.792156863"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Pivot Black Inlay" uid="JOD*:*6e9b634061a5f76e218a4642">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.000200022113</Mass>
+            <CenterOfMass>-0.037155125 0.038776696 0.147200790 </CenterOfMass>
+            <Inertia>0.000000061 0.000000030 0.000000030 -0.000000000 -0.000000000 0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Pivot Black Inlay.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.078431373" g="0.078431373" r="0.078431373"/>
+            <Diffuse a="1.000000000" b="0.078431373" g="0.078431373" r="0.078431373"/>
+            <Specular a="1.000000000" b="0.078431373" g="0.078431373" r="0.078431373"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Forearm Black Inlay" uid="JRD*:*6e9b634061a5f76e218a4642">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.000969640219</Mass>
+            <CenterOfMass>-0.034918023 0.038776694 0.302302317 </CenterOfMass>
+            <Inertia>0.000000203 0.000000102 0.000000102 -0.000000000 -0.000000000 0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Forearm Black Inlay.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.078431373" g="0.078431373" r="0.078431373"/>
+            <Diffuse a="1.000000000" b="0.078431373" g="0.078431373" r="0.078431373"/>
+            <Specular a="1.000000000" b="0.078431373" g="0.078431373" r="0.078431373"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+   </Parts>
+</SimscapeMultibodyImportXML>

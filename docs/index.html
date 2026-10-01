@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SimuVerity: a benchmark of 101 text-to-executable Simulink model-generation tasks across ten engineering domains, evaluated through native simulation and six engineering dimensions.">
+  <meta name="keywords" content="SimuVerity, Simulink, benchmark, agents, model generation, native simulation, engineering evaluation">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="SimuVerity: Benchmarking Agents for Engineering-Grade Simulink Model Generation">
+  <meta property="og:description" content="A benchmark of 101 text-to-executable Simulink model-generation tasks across ten engineering domains.">
+  <meta property="og:url" content="https://simuverity.github.io/SimuVerity/">
+  <meta property="og:image" content="https://simuverity.github.io/SimuVerity/static/images/overview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>SimuVerity: Benchmarking Agents for Engineering-Grade Simulink Model Generation</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">SimuVerity: Benchmarking Agents<br class="is-hidden-mobile"> for Engineering-Grade Simulink<br class="is-hidden-mobile"> Model Generation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Ruiqi Zhang<sup>*</sup>,</span>
+            <span class="author-block">Jiahao Wang<sup>*</sup>,</span>
+            <span class="author-block">Mingxuan Li,</span>
+            <span class="author-block">Haichen Luo,</span>
+            <span class="author-block">Chaoting Wang,</span>
+            <span class="author-block">Guoyu Mou,</span>
+            <span class="author-block">Keyu Lai,</span>
+            <span class="author-block">Hanchao Lv,</span>
+            <span class="author-block">Jiaxu Wang,</span>
+            <span class="author-block">Yibo Zheng,</span>
+            <span class="author-block">Aijun Yang<sup>&dagger;</sup>,</span>
+            <span class="author-block">Xiaohua Wang<sup>&dagger;</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Xi'an Jiaotong University</span>
+            <span class="eql-cntrb"><small><br><sup>*</sup>Equal contribution &nbsp;&nbsp; <sup>&dagger;</sup>Corresponding authors</small></span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/SimuVerity/SimuVerity" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code &amp; Data</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#leaderboard" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-trophy"></i></span>
+                  <span>Leaderboard</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <a href="static/images/overview.png" target="_blank">
+        <img src="static/images/overview.png" alt="Task composition and agent performance in SimuVerity" class="paper-figure">
+      </a>
+      <p class="figure-caption"><b>Task composition and agent performance in SimuVerity.</b> (a) Task distribution across ten engineering domains; outer-ring line lengths indicate mean domain scores. (b) Six-dimensional performance and overall scores of six agents.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>Existing Simulink benchmarks mainly evaluate whether generated models compile, execute, or resemble a reference model. These criteria do not establish whether a model satisfies its engineering requirements. We introduce SimuVerity, a benchmark of 101 text-to-executable Simulink model-generation tasks across ten engineering domains. For each task, executable-system profiles ground the engineering specification and four families of native simulation scenarios. A hierarchical evaluator first checks artifact delivery, native executability, and engineering qualification, then scores qualified models across six dimensions covering accuracy, output quality, mechanistic fidelity, control and causal integrity, operating-domain robustness, and dynamic response. We evaluate six agent systems with SimuVerity. The best system achieves an overall score of only 42.86. The results show that structural similarity is a poor proxy for engineering performance: capability bottlenecks arise both in producing qualified implementations and in satisfying multidimensional requirements after qualification. Meanwhile, some high-scoring models still exhibit severe visual-layout disorder. SimuVerity provides a systematic basis for assessing agents' engineering capabilities and diagnosing failures in executable Simulink model generation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered section-title">Benchmark Pipeline</h2>
+    <a href="static/images/pipeline.png" target="_blank">
+      <img src="static/images/pipeline.png" alt="The SimuVerity pipeline" class="paper-figure">
+    </a>
+    <p class="figure-caption"><b>The SimuVerity pipeline.</b> Benchmark construction, native simulation testing, and six-dimensional performance evaluation.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered section-title">Evaluation Example</h2>
+    <a href="static/images/evaluation_example.png" target="_blank">
+      <img src="static/images/evaluation_example.png" alt="Evaluation of the closed-loop tiltrotor VTOL model" class="paper-figure">
+    </a>
+    <p class="figure-caption"><b>Evaluation of the closed-loop tiltrotor VTOL model.</b> Native simulation evidence, six-dimensional scores, and failure diagnosis for the candidate model. Four of six scenarios are shown.</p>
+  </div>
+</section>
+
+<section class="section" id="leaderboard">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered section-title">Leaderboard</h2>
+    <p class="leaderboard-note">If you would like your agent system to be listed on the leaderboard, please email us at <a href="mailto:ruiqizhang_swjtu@126.com">ruiqizhang_swjtu@126.com</a> or <a href="mailto:wjhwdscience@stu.xjtu.edu.cn">wjhwdscience@stu.xjtu.edu.cn</a>, or <a href="https://github.com/SimuVerity/SimuVerity/issues" target="_blank">open a GitHub issue</a>.</p>
+    <div class="table-container">
+      <table class="table is-fullwidth is-hoverable leaderboard">
+        <thead>
+          <tr><th>Rank</th><th>Agent system</th><th>Overall</th><th>Delivered</th><th>Executable</th><th>G pass</th></tr>
+        </thead>
+        <tbody>
+          <tr class="top"><td>1</td><td>Opus 4.8 + Claude Code</td><td>42.86</td><td>94.72%</td><td>86.47%</td><td>76.90%</td></tr>
+          <tr><td>2</td><td>GPT-5.5 + Codex</td><td>41.72</td><td>98.68%</td><td>94.72%</td><td>75.58%</td></tr>
+          <tr><td>3</td><td>DeepSeek-V4-Pro + Claude Code</td><td>28.40</td><td>97.03%</td><td>88.12%</td><td>61.39%</td></tr>
+          <tr><td>4</td><td>Qwen3.8-Max + Claude Code</td><td>25.01</td><td>89.77%</td><td>80.86%</td><td>53.80%</td></tr>
+          <tr><td>5</td><td>GLM-5.3-Flash + Claude Code</td><td>4.98</td><td>96.04%</td><td>48.18%</td><td>13.20%</td></tr>
+          <tr><td>6</td><td>Qwen3.8-27B-FP8 + Claude Code</td><td>1.60</td><td>30.36%</td><td>13.53%</td><td>6.27%</td></tr>
+          <tr class="reference"><td>-</td><td>Reference</td><td>96.01</td><td>100.00%</td><td>100.00%</td><td>100.00%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="figure-caption">Overall scores and prerequisite pass rates. Agent results are three-run means; Reference reports the mean score of 101 task-specific reference systems.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered section-title">Experimental Results</h2>
+    <a href="static/images/experimental_summary.png" target="_blank">
+      <img src="static/images/experimental_summary.png" alt="Summary of the experimental results" class="paper-figure">
+    </a>
+    <p class="figure-caption"><b>Summary of the experimental results.</b> (a) Overall performance, (b) structural relation, (c) tool access, and (d) prerequisite-gate outcomes.</p>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{zhang2026simuverity,
+  title   = {SimuVerity: Benchmarking Agents for Engineering-Grade Simulink Model Generation},
+  author  = {Zhang, Ruiqi and Wang, Jiahao and Li, Mingxuan and Luo, Haichen and Wang, Chaoting and Mou, Guoyu and Lai, Keyu and Lv, Hanchao and Wang, Jiaxu and Zheng, Yibo and Yang, Aijun and Wang, Xiaohua},
+  journal = {arXiv preprint arXiv:XXXX.XXXXX},
+  year    = {2026}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

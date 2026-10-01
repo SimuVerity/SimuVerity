@@ -1,0 +1,637 @@
+{
+  "id": "D011",
+  "evaluation_policy_id": "simuverity-101-v1:d011:scoring",
+  "policy_status": "CURRENT",
+  "schema_version": "1.0",
+  "scoring": "layered-continuous",
+  "domain": "motor_drive",
+  "title": "D011: Single-phase-input frequency-controlled PMSM drive",
+  "routing": "behavior+structure+scenarios",
+  "prompt": "Build a single-phase-input permanent-magnet synchronous motor drive. A single-phase AC source must feed a rectifier and smoothing DC link, which must feed a controllable three-phase inverter supplying a Permanent Magnet Synchronous Machine. Read F_cmd from a base-workspace variable; its nominal value is 50 Hz and its operating range is 45 to 55 Hz. The physically measured inverter output frequency must follow F_cmd, and the physical rotor speed must change in the same direction as the commanded frequency while the three motor-side phases remain balanced. Log Timeseries Wm, Vdc, Vabc and Iabc. Wm must be the physical rotor mechanical speed, Vdc must be the measured DC-link voltage, and Vabc and Iabc must each contain exactly the three physically measured motor-side phases.",
+  "sim": {
+    "solver": [],
+    "stop": 1,
+    "max_step": []
+  },
+  "input_contract": {
+    "F_cmd": {
+      "default": 50,
+      "required": true,
+      "required_block_any": [
+        "frequency|freq|(^|/)f$|constant"
+      ],
+      "required_parameter_any": [
+        "value|frequency"
+      ],
+      "min_bindings": 1
+    }
+  },
+  "outputs": [
+    {
+      "name": "Wm",
+      "role": "core",
+      "datatype": "timeseries",
+      "min_channels": 1,
+      "max_channels": 1,
+      "time_coverage": 0.95,
+      "min_samples": 16,
+      "provenance": {
+        "required_any_upstream": [
+          "permanent magnet synchronous machine",
+          "machine",
+          "bus selector"
+        ],
+        "forbidden_upstream": [
+          "sine wave",
+          "signal builder"
+        ],
+        "max_trace_depth": 32
+      }
+    },
+    {
+      "name": "Vdc",
+      "role": "core",
+      "datatype": "timeseries",
+      "min_channels": 1,
+      "max_channels": 1,
+      "time_coverage": 0.95,
+      "min_samples": 16,
+      "provenance": {
+        "required_any_upstream": [
+          "voltage measurement",
+          "three-phase vi measurement"
+        ],
+        "forbidden_upstream": [
+          "sine wave",
+          "signal builder",
+          "constant"
+        ],
+        "max_trace_depth": 32
+      }
+    },
+    {
+      "name": "Vabc",
+      "role": "core",
+      "datatype": "timeseries",
+      "min_channels": 3,
+      "max_channels": 3,
+      "time_coverage": 0.95,
+      "min_samples": 16,
+      "provenance": {
+        "required_any_upstream": [
+          "voltage measurement",
+          "three-phase vi measurement"
+        ],
+        "forbidden_upstream": [
+          "sine wave",
+          "signal builder",
+          "constant"
+        ],
+        "max_trace_depth": 32,
+        "require_independent_channels": true,
+        "max_abs_channel_corr": 0.95
+      }
+    },
+    {
+      "name": "Iabc",
+      "role": "core",
+      "datatype": "timeseries",
+      "min_channels": 3,
+      "max_channels": 3,
+      "time_coverage": 0.95,
+      "min_samples": 16,
+      "provenance": {
+        "required_any_upstream": [
+          "current measurement",
+          "three-phase vi measurement"
+        ],
+        "forbidden_upstream": [
+          "sine wave",
+          "signal builder",
+          "constant"
+        ],
+        "max_trace_depth": 32,
+        "require_independent_channels": true,
+        "max_abs_channel_corr": 0.95
+      }
+    }
+  ],
+  "behavioral": [
+    {
+      "id": "speed_nom",
+      "signal": "Wm",
+      "metric": "ss",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "diagnostic",
+      "basis": "reference",
+      "sided": "two",
+      "target": 157.08,
+      "tol_pass": 13,
+      "tol_zero": 55,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "vdc_nom",
+      "signal": "Vdc",
+      "metric": "ss",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "diagnostic",
+      "basis": "reference",
+      "sided": "two",
+      "target": 638.95,
+      "tol_pass": 40,
+      "tol_zero": 180,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "vabc_pp",
+      "signal": "Vabc",
+      "metric": "pp",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "diagnostic",
+      "basis": "reference",
+      "sided": "two",
+      "target": 1352.4,
+      "tol_pass": 170,
+      "tol_zero": 680,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "vabc_freq",
+      "signal": "Vabc",
+      "metric": "fund_freq",
+      "scenario": "nominal",
+      "group": "nominal",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 50,
+      "tol_pass": 1,
+      "tol_zero": 5,
+      "curve_p": 1,
+      "weight": 1,
+      "fundamental_hz": 50,
+      "require_steady": true,
+      "steady_stat": "rms",
+      "steady_fraction": 0.2,
+      "steady_cycle_hz": 50,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1,
+      "steady_all_channels": true
+    },
+    {
+      "id": "vabc_balance",
+      "signal": "Vabc",
+      "metric": "imbalance",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "quality",
+      "basis": "analytical",
+      "sided": "lower",
+      "target": 0.02,
+      "tol_pass": 0.06,
+      "tol_zero": 0.25,
+      "curve_p": 1,
+      "weight": 0.8,
+      "require_steady": true,
+      "steady_stat": "rms",
+      "steady_fraction": 0.2,
+      "steady_cycle_hz": 50,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1,
+      "steady_all_channels": true
+    },
+    {
+      "id": "iabc_balance",
+      "signal": "Iabc",
+      "metric": "imbalance",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "quality",
+      "basis": "analytical",
+      "sided": "lower",
+      "target": 0.03,
+      "tol_pass": 0.08,
+      "tol_zero": 0.3,
+      "curve_p": 1,
+      "weight": 0.8,
+      "require_steady": true,
+      "steady_stat": "rms",
+      "steady_fraction": 0.2,
+      "steady_cycle_hz": 50,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1,
+      "steady_all_channels": true
+    },
+    {
+      "id": "iabc_thd",
+      "signal": "Iabc",
+      "metric": "thd",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "quality",
+      "basis": "expert",
+      "sided": "lower",
+      "target": 0.05,
+      "tol_pass": 0.08,
+      "tol_zero": 0.3,
+      "curve_p": 1,
+      "weight": 0.7,
+      "fundamental_hz": 50,
+      "require_steady": true,
+      "steady_stat": "rms",
+      "steady_fraction": 0.2,
+      "steady_cycle_hz": 50,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1,
+      "steady_all_channels": true
+    },
+    {
+      "id": "speed_witness",
+      "signal": "Wm",
+      "metric": "ss",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0,
+      "require_steady": true,
+      "steady_stat": "mean",
+      "steady_fraction": 0.2,
+      "steady_bins": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1
+    },
+    {
+      "id": "freq_witness",
+      "signal": "Vabc",
+      "metric": "fund_freq",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0,
+      "fundamental_hz": 50,
+      "require_steady": true,
+      "steady_stat": "rms",
+      "steady_fraction": 0.2,
+      "steady_cycle_hz": 50,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1,
+      "steady_all_channels": true
+    },
+    {
+      "id": "voltage_rms_witness",
+      "signal": "Vabc",
+      "metric": "rms",
+      "scenario": "nominal",
+      "group": "quality",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0
+    },
+    {
+      "id": "freq_low",
+      "signal": "Vabc",
+      "metric": "fund_freq",
+      "scenario": "frequency_low",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 45,
+      "tol_pass": 1.5,
+      "tol_zero": 7,
+      "curve_p": 1,
+      "weight": 1,
+      "fundamental_hz": 45,
+      "require_steady": true,
+      "steady_stat": "rms",
+      "steady_fraction": 0.2,
+      "steady_cycle_hz": 45,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1,
+      "steady_all_channels": true
+    },
+    {
+      "id": "speed_low_witness",
+      "signal": "Wm",
+      "metric": "ss",
+      "scenario": "frequency_low",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0,
+      "require_steady": true,
+      "steady_stat": "mean",
+      "steady_fraction": 0.2,
+      "steady_bins": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1
+    },
+    {
+      "id": "freq_low_witness",
+      "signal": "Vabc",
+      "metric": "fund_freq",
+      "scenario": "frequency_low",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0,
+      "fundamental_hz": 45,
+      "require_steady": true,
+      "steady_stat": "rms",
+      "steady_fraction": 0.2,
+      "steady_cycle_hz": 45,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1,
+      "steady_all_channels": true
+    },
+    {
+      "id": "freq_high",
+      "signal": "Vabc",
+      "metric": "fund_freq",
+      "scenario": "frequency_high",
+      "group": "robustness",
+      "criticality": "must",
+      "basis": "prompt",
+      "sided": "two",
+      "target": 55,
+      "tol_pass": 1.5,
+      "tol_zero": 7,
+      "curve_p": 1,
+      "weight": 1,
+      "fundamental_hz": 55,
+      "require_steady": true,
+      "steady_stat": "rms",
+      "steady_fraction": 0.2,
+      "steady_cycle_hz": 55,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1,
+      "steady_all_channels": true
+    },
+    {
+      "id": "speed_high_witness",
+      "signal": "Wm",
+      "metric": "ss",
+      "scenario": "frequency_high",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0,
+      "require_steady": true,
+      "steady_stat": "mean",
+      "steady_fraction": 0.2,
+      "steady_bins": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1
+    },
+    {
+      "id": "freq_high_witness",
+      "signal": "Vabc",
+      "metric": "fund_freq",
+      "scenario": "frequency_high",
+      "group": "robustness",
+      "criticality": "diagnostic",
+      "basis": "analytical",
+      "sided": "two",
+      "target": 0,
+      "tol_pass": 1,
+      "tol_zero": 2,
+      "curve_p": 1,
+      "weight": 0,
+      "fundamental_hz": 55,
+      "require_steady": true,
+      "steady_stat": "rms",
+      "steady_fraction": 0.2,
+      "steady_cycle_hz": 55,
+      "steady_cycles": 5,
+      "steady_rel_range_max": 0.1,
+      "steady_rel_drift_max": 0.1,
+      "steady_all_channels": true
+    }
+  ],
+  "structural": {
+    "recognizers": [
+      {
+        "id": "pmsm",
+        "prim": "count_mask",
+        "args": [
+          "permanent magnet synchronous machine"
+        ],
+        "mandatory": true,
+        "weight": 1,
+        "k": 1
+      },
+      {
+        "id": "three_phase_inverter",
+        "prim": "three_phase_bridge",
+        "args": [],
+        "mandatory": true,
+        "weight": 1
+      },
+      {
+        "id": "controllable_stage",
+        "prim": "has_power_device",
+        "args": [
+          "igbt",
+          "mosfet",
+          "gto",
+          "ideal switch"
+        ],
+        "mandatory": true,
+        "weight": 1
+      },
+      {
+        "id": "dc_link_storage",
+        "prim": "count_capacitor",
+        "args": [],
+        "mandatory": true,
+        "weight": 1,
+        "k": 1
+      },
+      {
+        "id": "inverter_to_pmsm",
+        "prim": "physical_path",
+        "args": [],
+        "source": [
+          "^[^|]*\\|[^|]*\\|[^|]*\\|(three-level bridge|universal bridge|mosfet|igbt|gto|ideal switch)[^|]*\\|",
+          "^[^|]*\\|[^|]*\\|[^|]*\\|[^|]*\\|[^|]*(three-level bridge|universal bridge|mosfet|igbt|gto|ideal switch)"
+        ],
+        "via": [],
+        "target": [
+          "^[^|]*\\|[^|]*\\|[^|]*\\|permanent magnet synchronous machine[^|]*\\|",
+          "^[^|]*\\|[^|]*\\|[^|]*\\|[^|]*\\|[^|]*permanent magnet synchronous machine"
+        ],
+        "mandatory": true,
+        "weight": 1,
+        "require_via_cut": false
+      }
+    ]
+  },
+  "golden_tap": {
+    "Wm": {
+      "by": "block_output",
+      "path": "singele_phase_to_3phase_svpwm_PMSM_VF/Bus\nSelector",
+      "port": 1
+    },
+    "Vdc": {
+      "by": "block_output",
+      "path": "singele_phase_to_3phase_svpwm_PMSM_VF/Voltage Measurement",
+      "port": 1
+    },
+    "Vabc": {
+      "by": "block_output",
+      "path": "singele_phase_to_3phase_svpwm_PMSM_VF/Three-Phase\nV-I Measurement",
+      "port": 1
+    },
+    "Iabc": {
+      "by": "block_output",
+      "path": "singele_phase_to_3phase_svpwm_PMSM_VF/Three-Phase\nV-I Measurement",
+      "port": 2
+    }
+  },
+  "scenarios": [
+    {
+      "id": "frequency_low",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "F_cmd": 45
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^F$",
+          "parameter": "Value",
+          "value": 45
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "lower_frequency_reduces_speed",
+          "nominal_band": "speed_witness",
+          "scenario_band": "speed_low_witness",
+          "relation": "decrease_frac_min",
+          "threshold": 0.05
+        },
+        {
+          "id": "lower_command_reduces_frequency",
+          "nominal_band": "freq_witness",
+          "scenario_band": "freq_low_witness",
+          "relation": "decrease_frac_min",
+          "threshold": 0.05
+        }
+      ],
+      "public_envelope": "F_cmd 45..55 Hz"
+    },
+    {
+      "id": "frequency_high",
+      "required": true,
+      "weight": 1,
+      "agent_variables": {
+        "F_cmd": 55
+      },
+      "golden_set_param": [
+        {
+          "path_regex": "^F$",
+          "parameter": "Value",
+          "value": 55
+        }
+      ],
+      "witnesses": [
+        {
+          "id": "higher_frequency_increases_speed",
+          "nominal_band": "speed_witness",
+          "scenario_band": "speed_high_witness",
+          "relation": "increase_frac_min",
+          "threshold": 0.05
+        },
+        {
+          "id": "higher_command_increases_frequency",
+          "nominal_band": "freq_witness",
+          "scenario_band": "freq_high_witness",
+          "relation": "increase_frac_min",
+          "threshold": 0.05
+        }
+      ],
+      "public_envelope": "F_cmd 45..55 Hz"
+    }
+  ],
+  "release": {
+    "status": "candidate-qualified-relabel",
+    "quarantined": false,
+    "blockers": [
+      "The unsupported volts-per-hertz amplitude claim was removed; task-specific adversarial regression and an independent legal implementation or expert review remain required."
+    ],
+    "release_ready": false
+  },
+  "task_specific_checks": [
+    {
+      "id": "D011.active_svpwm_gate_ownership",
+      "semantic_kind": "structure",
+      "scenario": "nominal",
+      "layer": "qualification",
+      "mandatory": true
+    },
+    {
+      "id": "D011.dc_link_rectifier_ownership",
+      "semantic_kind": "structure",
+      "scenario": "nominal",
+      "layer": "qualification",
+      "mandatory": true,
+      "public_basis": "The AC source must feed a rectifier and smoothing DC link before the inverter."
+    },
+    {
+      "id": "D011.mechanical_causality",
+      "semantic_kind": "structure",
+      "scenario": "nominal",
+      "layer": "qualification",
+      "mandatory": true,
+      "public_basis": "The system is a PMSM motor drive and Wm is its physical rotor mechanical-speed response."
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XMECH-10",
+  "collection": "XMECH",
+  "reference": {
+    "identity_path": "tasks/XMECH-10/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/src/youBot_Arm.slx",
+    "model_path": "tasks/XMECH-10/reference/files/src/youBot_Arm.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XMECH-10",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a Simulink and Simscape model of an automated transfer cell containing a five-axis articulated robot arm with a commanded two-finger gripper, an input conveyor, an output conveyor, and a rigid package.",
+    "engineering_objects": [
+      "prescribed arm-joint motion is not an acceptable replacement for the electrical drives and robot dynamics.",
+      "The two gripper fingers must have commanded and measured opening motion with finite mechanical friction and a physically coupled electrical-load estimate.",
+      "Do not bypass the electrical arm drives, transmissions, arm-joint dynamics, sensing, gripper motion, or contact paths at any value in those ranges."
+    ],
+    "physical_paths": [
+      "Each of the five arm joints must be driven from a shared DC electrical source through a controlled H-bridge, a DC motor, and a mechanical transmission with finite friction.",
+      "Read the following variables from the MATLAB base workspace and remain functional throughout their stated inclusive ranges: SupplyVoltage_V from 21.6 to 26.4 V (nominal 24 V), PayloadMass_kg from 0.35 to 0.50 kg (nominal 0.40 kg), JointFrictionScale from 0.8 to 1.2 (nominal 1.0), and SequenceDelayScale from 0.9 to 1.1 (nominal 1.0).",
+      "The evaluator runs the model from 0 s through 20 s.",
+      "prescribed arm-joint motion is not an acceptable replacement for the electrical drives and robot dynamics."
+    ],
+    "functional_paths": [
+      "Each of the five arm joints must be driven from a shared DC electrical source through a controlled H-bridge, a DC motor, and a mechanical transmission with finite friction.",
+      "Measured arm-joint position must close the corresponding actuator-control loop;",
+      "The two gripper fingers must have commanded and measured opening motion with finite mechanical friction and a physically coupled electrical-load estimate."
+    ],
+    "information_paths": [
+      "SupplyVoltage_V, PayloadMass_kg, JointFrictionScale, SequenceDelayScale -> F90-XMECH-10 plant/control path -> joint_command, joint_position, motor_current, joint_effort, payload_pose, sensor_state"
+    ],
+    "modes_and_events": [
+      "Build a Simulink and Simscape model of an automated transfer cell containing a five-axis articulated robot arm with a commanded two-finger gripper, an input conveyor, an output conveyor, and a rigid package.",
+      "The cell must pick the freely moving package from the input conveyor, retain it during arm motion, release it onto the output conveyor, and move the released package away.",
+      "The evaluator runs the model from 0 s through 20 s."
+    ],
+    "interfaces": [
+      {
+        "name": "SupplyVoltage_V",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "V"
+        ],
+        "range_or_shape": "Read the following variables from the MATLAB base workspace and remain functional throughout their stated inclusive ranges: SupplyVoltage_V from 21.6 to 26.4 V (nominal 24 V), PayloadMass_kg from 0.35 to 0.50 kg (nominal 0.40 kg), JointFrictionScale from 0.8 to 1.2 (nominal 1.0), and SequenceDelayScale from 0.9 to 1.1 (nominal 1.0).",
+        "source": "tasks/XMECH-10/public_spec.json"
+      },
+      {
+        "name": "PayloadMass_kg",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kg"
+        ],
+        "range_or_shape": "Read the following variables from the MATLAB base workspace and remain functional throughout their stated inclusive ranges: SupplyVoltage_V from 21.6 to 26.4 V (nominal 24 V), PayloadMass_kg from 0.35 to 0.50 kg (nominal 0.40 kg), JointFrictionScale from 0.8 to 1.2 (nominal 1.0), and SequenceDelayScale from 0.9 to 1.1 (nominal 1.0).",
+        "source": "tasks/XMECH-10/public_spec.json"
+      },
+      {
+        "name": "JointFrictionScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read the following variables from the MATLAB base workspace and remain functional throughout their stated inclusive ranges: SupplyVoltage_V from 21.6 to 26.4 V (nominal 24 V), PayloadMass_kg from 0.35 to 0.50 kg (nominal 0.40 kg), JointFrictionScale from 0.8 to 1.2 (nominal 1.0), and SequenceDelayScale from 0.9 to 1.1 (nominal 1.0).",
+        "source": "tasks/XMECH-10/public_spec.json"
+      },
+      {
+        "name": "SequenceDelayScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read the following variables from the MATLAB base workspace and remain functional throughout their stated inclusive ranges: SupplyVoltage_V from 21.6 to 26.4 V (nominal 24 V), PayloadMass_kg from 0.35 to 0.50 kg (nominal 0.40 kg), JointFrictionScale from 0.8 to 1.2 (nominal 1.0), and SequenceDelayScale from 0.9 to 1.1 (nominal 1.0).",
+        "source": "tasks/XMECH-10/public_spec.json"
+      },
+      {
+        "name": "joint_command",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad",
+          "A"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named joint_command, joint_position, motor_current, joint_effort, payload_pose, and sensor_state. joint_command and joint_position each have 7 channels in pivot, bicep, forearm, wrist, gripper, finger A, and finger B order; the first five use rad and the two finger channels use mm.",
+        "source": "tasks/XMECH-10/public_spec.json"
+      },
+      {
+        "name": "joint_position",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad",
+          "A"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named joint_command, joint_position, motor_current, joint_effort, payload_pose, and sensor_state. joint_command and joint_position each have 7 channels in pivot, bicep, forearm, wrist, gripper, finger A, and finger B order; the first five use rad and the two finger channels use mm.",
+        "source": "tasks/XMECH-10/public_spec.json"
+      },
+      {
+        "name": "motor_current",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named joint_command, joint_position, motor_current, joint_effort, payload_pose, and sensor_state. motor_current has 7 channels in the same axis order, all in A.",
+        "source": "tasks/XMECH-10/public_spec.json"
+      },
+      {
+        "name": "joint_effort",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N*m",
+          "N"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named joint_command, joint_position, motor_current, joint_effort, payload_pose, and sensor_state. joint_effort has 7 channels in the same order: the first five torques in N*m and the two finger forces in N.",
+        "source": "tasks/XMECH-10/public_spec.json"
+      },
+      {
+        "name": "payload_pose",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named joint_command, joint_position, motor_current, joint_effort, payload_pose, and sensor_state. payload_pose has 3 channels giving world-frame [x, y, z] position in metres; +z is upward.",
+        "source": "tasks/XMECH-10/public_spec.json"
+      },
+      {
+        "name": "sensor_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named joint_command, joint_position, motor_current, joint_effort, payload_pose, and sensor_state. sensor_state has 4 channels in this order: input box present, input light curtain, output box present, and output light curtain.",
+        "source": "tasks/XMECH-10/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a Simulink and Simscape model of an automated transfer cell containing a five-axis articulated robot arm with a commanded two-finger gripper, an input conveyor, an output conveyor, and a rigid package.",
+      "Each of the five arm joints must be driven from a shared DC electrical source through a controlled H-bridge, a DC motor, and a mechanical transmission with finite friction.",
+      "Use package-presence or light-curtain sensing to coordinate the conveyors, arm, and gripper."
+    ],
+    "feedback_and_control_causality": [
+      "Measured arm-joint position must close the corresponding actuator-control loop;",
+      "The complete sensing, pickup, closed-loop multi-axis arm transport, release, and output conveyance sequence must be represented in that interval."
+    ],
+    "signal_sources": [
+      "SupplyVoltage_V is read from the public MATLAB base-workspace input contract.",
+      "PayloadMass_kg is read from the public MATLAB base-workspace input contract.",
+      "JointFrictionScale is read from the public MATLAB base-workspace input contract.",
+      "SequenceDelayScale is read from the public MATLAB base-workspace input contract.",
+      "joint_command is produced by the implemented plant or controller and logged under the public output contract.",
+      "joint_position is produced by the implemented plant or controller and logged under the public output contract.",
+      "motor_current is produced by the implemented plant or controller and logged under the public output contract.",
+      "joint_effort is produced by the implemented plant or controller and logged under the public output contract.",
+      "payload_pose is produced by the implemented plant or controller and logged under the public output contract.",
+      "sensor_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "SupplyVoltage_V: Read the following variables from the MATLAB base workspace and remain functional throughout their stated inclusive ranges: SupplyVoltage_V from 21.6 to 26.4 V (nominal 24 V), PayloadMass_kg from 0.35 to 0.50 kg (nominal 0.40 kg), JointFrictionScale from 0.8 to 1.2 (nominal 1.0), and SequenceDelayScale from 0.9 to 1.1 (nominal 1.0).",
+      "PayloadMass_kg: Read the following variables from the MATLAB base workspace and remain functional throughout their stated inclusive ranges: SupplyVoltage_V from 21.6 to 26.4 V (nominal 24 V), PayloadMass_kg from 0.35 to 0.50 kg (nominal 0.40 kg), JointFrictionScale from 0.8 to 1.2 (nominal 1.0), and SequenceDelayScale from 0.9 to 1.1 (nominal 1.0).",
+      "JointFrictionScale: Read the following variables from the MATLAB base workspace and remain functional throughout their stated inclusive ranges: SupplyVoltage_V from 21.6 to 26.4 V (nominal 24 V), PayloadMass_kg from 0.35 to 0.50 kg (nominal 0.40 kg), JointFrictionScale from 0.8 to 1.2 (nominal 1.0), and SequenceDelayScale from 0.9 to 1.1 (nominal 1.0).",
+      "SequenceDelayScale: Read the following variables from the MATLAB base workspace and remain functional throughout their stated inclusive ranges: SupplyVoltage_V from 21.6 to 26.4 V (nominal 24 V), PayloadMass_kg from 0.35 to 0.50 kg (nominal 0.40 kg), JointFrictionScale from 0.8 to 1.2 (nominal 1.0), and SequenceDelayScale from 0.9 to 1.1 (nominal 1.0)."
+    ],
+    "disturbances": [
+      "The two gripper fingers must have commanded and measured opening motion with finite mechanical friction and a physically coupled electrical-load estimate.",
+      "Read the following variables from the MATLAB base workspace and remain functional throughout their stated inclusive ranges: SupplyVoltage_V from 21.6 to 26.4 V (nominal 24 V), PayloadMass_kg from 0.35 to 0.50 kg (nominal 0.40 kg), JointFrictionScale from 0.8 to 1.2 (nominal 1.0), and SequenceDelayScale from 0.9 to 1.1 (nominal 1.0).",
+      "Log complete-run MATLAB Timeseries named joint_command, joint_position, motor_current, joint_effort, payload_pose, and sensor_state."
+    ],
+    "dynamic_processes": [
+      "prescribed arm-joint motion is not an acceptable replacement for the electrical drives and robot dynamics.",
+      "The cell must pick the freely moving package from the input conveyor, retain it during arm motion, release it onto the output conveyor, and move the released package away.",
+      "Do not bypass the electrical arm drives, transmissions, arm-joint dynamics, sensing, gripper motion, or contact paths at any value in those ranges."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XMECH-10: prescribing joint_command directly would bypass the system path described by: Each of the five arm joints must be driven from a shared DC electrical source through a controlled H-bridge, a DC motor, and a mechanical transmission with finite friction.",
+      "F90-XMECH-10: replaying a fixed joint_command trace would ignore causal variation in SupplyVoltage_V."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XMECH-10/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XMECH-10/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XMECH-10/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

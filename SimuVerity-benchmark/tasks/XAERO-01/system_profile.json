@@ -1,0 +1,230 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XAERO-01",
+  "collection": "XAERO",
+  "reference": {
+    "identity_path": "tasks/XAERO-01/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/XAERO01_reference.slx",
+    "model_path": "tasks/XAERO-01/reference/files/XAERO01_reference.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id P9-XAERO01",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a four-rotor unmanned aircraft with nonlinear six-degree-of-freedom rigid-body dynamics, four finite-response propulsion channels, aerodynamic wind loading, and closed-loop hover-point regulation.",
+    "engineering_objects": [
+      "P9-XAERO01 plant and controller described by the current public task contract",
+      "Measured output interfaces: flight_state, propulsion, environment_state"
+    ],
+    "physical_paths": [
+      "Rotor thrusts and moments must drive the aircraft states through the rigid-body equations; directly prescribing position or attitude is not a valid implementation."
+    ],
+    "functional_paths": [
+      "Build a four-rotor unmanned aircraft with nonlinear six-degree-of-freedom rigid-body dynamics, four finite-response propulsion channels, aerodynamic wind loading, and closed-loop hover-point regulation.",
+      "Move from the origin to the requested hover point, remain stable in the declared wind and payload range, and recover hover-point regulation after both the gust and payload release.",
+      "The control and allocation methods are not prescribed."
+    ],
+    "information_paths": [
+      "target_x, target_y, target_z, payload_mass, wind_speed, wind_heading, gust_factor, gust_time, payload_release_time -> P9-XAERO01 plant/control path -> flight_state, propulsion, environment_state"
+    ],
+    "modes_and_events": [
+      "Read target_x, target_y, target_z, payload_mass, wind_speed, wind_heading, gust_factor, gust_time, and payload_release_time from base-workspace variables.",
+      "A 1.2 s cross-wind gust begins at gust_time, and the payload is released at payload_release_time.",
+      "Move from the origin to the requested hover point, remain stable in the declared wind and payload range, and recover hover-point regulation after both the gust and payload release."
+    ],
+    "interfaces": [
+      {
+        "name": "target_x",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read target_x, target_y, target_z, payload_mass, wind_speed, wind_heading, gust_factor, gust_time, and payload_release_time from base-workspace variables.",
+        "source": "tasks/XAERO-01/public_spec.json"
+      },
+      {
+        "name": "target_y",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read target_x, target_y, target_z, payload_mass, wind_speed, wind_heading, gust_factor, gust_time, and payload_release_time from base-workspace variables.",
+        "source": "tasks/XAERO-01/public_spec.json"
+      },
+      {
+        "name": "target_z",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read target_x, target_y, target_z, payload_mass, wind_speed, wind_heading, gust_factor, gust_time, and payload_release_time from base-workspace variables.",
+        "source": "tasks/XAERO-01/public_spec.json"
+      },
+      {
+        "name": "payload_mass",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kg"
+        ],
+        "range_or_shape": "Read target_x, target_y, target_z, payload_mass, wind_speed, wind_heading, gust_factor, gust_time, and payload_release_time from base-workspace variables.",
+        "source": "tasks/XAERO-01/public_spec.json"
+      },
+      {
+        "name": "wind_speed",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Read target_x, target_y, target_z, payload_mass, wind_speed, wind_heading, gust_factor, gust_time, and payload_release_time from base-workspace variables.",
+        "source": "tasks/XAERO-01/public_spec.json"
+      },
+      {
+        "name": "wind_heading",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "deg"
+        ],
+        "range_or_shape": "Read target_x, target_y, target_z, payload_mass, wind_speed, wind_heading, gust_factor, gust_time, and payload_release_time from base-workspace variables.",
+        "source": "tasks/XAERO-01/public_spec.json"
+      },
+      {
+        "name": "gust_factor",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read target_x, target_y, target_z, payload_mass, wind_speed, wind_heading, gust_factor, gust_time, and payload_release_time from base-workspace variables.",
+        "source": "tasks/XAERO-01/public_spec.json"
+      },
+      {
+        "name": "gust_time",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read target_x, target_y, target_z, payload_mass, wind_speed, wind_heading, gust_factor, gust_time, and payload_release_time from base-workspace variables. A 1.2 s cross-wind gust begins at gust_time, and the payload is released at payload_release_time.",
+        "source": "tasks/XAERO-01/public_spec.json"
+      },
+      {
+        "name": "payload_release_time",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read target_x, target_y, target_z, payload_mass, wind_speed, wind_heading, gust_factor, gust_time, and payload_release_time from base-workspace variables. A 1.2 s cross-wind gust begins at gust_time, and the payload is released at payload_release_time.",
+        "source": "tasks/XAERO-01/public_spec.json"
+      },
+      {
+        "name": "flight_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[m,m,m,m/s,m/s,m/s,rad,rad,rad,rad/s,rad/s,rad/s]"
+        ],
+        "range_or_shape": "Log Timeseries flight_state, propulsion, and environment_state. flight_state must contain [x, y, z in m, vx, vy, vz in m/s, roll, pitch, yaw in rad, p, q, r in rad/s].",
+        "source": "tasks/XAERO-01/public_spec.json"
+      },
+      {
+        "name": "propulsion",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[N x4,rad/s x4,W,Wh]"
+        ],
+        "range_or_shape": "Build a four-rotor unmanned aircraft with nonlinear six-degree-of-freedom rigid-body dynamics, four finite-response propulsion channels, aerodynamic wind loading, and closed-loop hover-point regulation. Limit each rotor to 20 N and 1100 rad/s, limit total propulsion electrical power to 2.4 kW, and keep absolute roll and pitch below 0.70 rad. Log Timeseries flight_state, propulsion, and environment_state. propulsion must contain [FL, FR, RL, RR actual thrust in N, the corresponding four rotor speeds in rad/s, electrical power in W, remaining energy in Wh]. Logged quantities must come from the same causal flight and propulsion simulation rather than from commands or precomputed trajectories.",
+        "source": "tasks/XAERO-01/public_spec.json"
+      },
+      {
+        "name": "environment_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[m/s,m/s,m/s,kg]"
+        ],
+        "range_or_shape": "Log Timeseries flight_state, propulsion, and environment_state. environment_state must contain the actual applied [wind x, wind y, wind z in m/s, attached payload mass in kg].",
+        "source": "tasks/XAERO-01/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Use a 3.2 kg unloaded airframe with body axes aligned to its principal inertia axes, a 0.32 m rotor arm, and a 0.018 N*m/N rotor yaw-moment coefficient.",
+      "Limit each rotor to 20 N and 1100 rad/s, limit total propulsion electrical power to 2.4 kW, and keep absolute roll and pitch below 0.70 rad.",
+      "Use a right-handed world frame with positive z upward."
+    ],
+    "feedback_and_control_causality": [
+      "Build a four-rotor unmanned aircraft with nonlinear six-degree-of-freedom rigid-body dynamics, four finite-response propulsion channels, aerodynamic wind loading, and closed-loop hover-point regulation.",
+      "Move from the origin to the requested hover point, remain stable in the declared wind and payload range, and recover hover-point regulation after both the gust and payload release.",
+      "Logged quantities must come from the same causal flight and propulsion simulation rather than from commands or precomputed trajectories."
+    ],
+    "signal_sources": [
+      "target_x is read from the public MATLAB base-workspace input contract.",
+      "target_y is read from the public MATLAB base-workspace input contract.",
+      "target_z is read from the public MATLAB base-workspace input contract.",
+      "payload_mass is read from the public MATLAB base-workspace input contract.",
+      "wind_speed is read from the public MATLAB base-workspace input contract.",
+      "wind_heading is read from the public MATLAB base-workspace input contract.",
+      "gust_factor is read from the public MATLAB base-workspace input contract.",
+      "gust_time is read from the public MATLAB base-workspace input contract.",
+      "payload_release_time is read from the public MATLAB base-workspace input contract.",
+      "flight_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "propulsion is produced by the implemented plant or controller and logged under the public output contract.",
+      "environment_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "target_x: Read target_x, target_y, target_z, payload_mass, wind_speed, wind_heading, gust_factor, gust_time, and payload_release_time from base-workspace variables.",
+      "target_y: Read target_x, target_y, target_z, payload_mass, wind_speed, wind_heading, gust_factor, gust_time, and payload_release_time from base-workspace variables.",
+      "target_z: Read target_x, target_y, target_z, payload_mass, wind_speed, wind_heading, gust_factor, gust_time, and payload_release_time from base-workspace variables.",
+      "payload_mass: Read target_x, target_y, target_z, payload_mass, wind_speed, wind_heading, gust_factor, gust_time, and payload_release_time from base-workspace variables.",
+      "wind_speed: Read target_x, target_y, target_z, payload_mass, wind_speed, wind_heading, gust_factor, gust_time, and payload_release_time from base-workspace variables.",
+      "wind_heading: Read target_x, target_y, target_z, payload_mass, wind_speed, wind_heading, gust_factor, gust_time, and payload_release_time from base-workspace variables.",
+      "gust_factor: Read target_x, target_y, target_z, payload_mass, wind_speed, wind_heading, gust_factor, gust_time, and payload_release_time from base-workspace variables.",
+      "gust_time: Read target_x, target_y, target_z, payload_mass, wind_speed, wind_heading, gust_factor, gust_time, and payload_release_time from base-workspace variables. A 1.2 s cross-wind gust begins at gust_time, and the payload is released at payload_release_time."
+    ],
+    "disturbances": [
+      "Build a four-rotor unmanned aircraft with nonlinear six-degree-of-freedom rigid-body dynamics, four finite-response propulsion channels, aerodynamic wind loading, and closed-loop hover-point regulation.",
+      "Read target_x, target_y, target_z, payload_mass, wind_speed, wind_heading, gust_factor, gust_time, and payload_release_time from base-workspace variables.",
+      "A 1.2 s cross-wind gust begins at gust_time, and the payload is released at payload_release_time."
+    ],
+    "dynamic_processes": [
+      "Build a four-rotor unmanned aircraft with nonlinear six-degree-of-freedom rigid-body dynamics, four finite-response propulsion channels, aerodynamic wind loading, and closed-loop hover-point regulation.",
+      "Read target_x, target_y, target_z, payload_mass, wind_speed, wind_heading, gust_factor, gust_time, and payload_release_time from base-workspace variables.",
+      "A 1.2 s cross-wind gust begins at gust_time, and the payload is released at payload_release_time."
+    ],
+    "task_specific_shortcuts": [
+      "P9-XAERO01: prescribing flight_state directly would bypass the system path described by: Rotor thrusts and moments must drive the aircraft states through the rigid-body equations; directly prescribing position or attitude is not a valid implementation.",
+      "P9-XAERO01: replaying a fixed flight_state trace would ignore causal variation in target_x."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XAERO-01/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XAERO-01/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XAERO-01/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

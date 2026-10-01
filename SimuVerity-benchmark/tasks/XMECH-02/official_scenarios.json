@@ -1,0 +1,260 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XMECH-02",
+  "scenarios": [
+    {
+      "id": "nominal_start",
+      "class": "nominal_dynamic",
+      "time_s": [
+        0,
+        5,
+        15,
+        30,
+        50,
+        70
+      ],
+      "wind_speed_mps": [
+        0,
+        4,
+        9,
+        12,
+        12,
+        12
+      ],
+      "wind_direction_deg": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "high_wind_regulation",
+      "class": "upper_boundary",
+      "time_s": [
+        0,
+        8,
+        20,
+        35,
+        52,
+        70
+      ],
+      "wind_speed_mps": [
+        8,
+        12,
+        18,
+        18,
+        14,
+        14
+      ],
+      "wind_direction_deg": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "positive_direction_change",
+      "class": "signed_yaw_dynamic",
+      "time_s": [
+        0,
+        10,
+        25,
+        45,
+        70
+      ],
+      "wind_speed_mps": [
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "wind_direction_deg": [
+        0,
+        0,
+        18,
+        18,
+        18
+      ]
+    },
+    {
+      "id": "negative_direction_change",
+      "class": "signed_yaw_dynamic",
+      "time_s": [
+        0,
+        10,
+        25,
+        45,
+        70
+      ],
+      "wind_speed_mps": [
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "wind_direction_deg": [
+        0,
+        0,
+        -18,
+        -18,
+        -18
+      ]
+    },
+    {
+      "id": "joint_wind_event",
+      "class": "joint_dynamic",
+      "time_s": [
+        0,
+        8,
+        20,
+        35,
+        50,
+        70
+      ],
+      "wind_speed_mps": [
+        9,
+        11,
+        17,
+        17,
+        13,
+        13
+      ],
+      "wind_direction_deg": [
+        0,
+        0,
+        15,
+        15,
+        5,
+        5
+      ]
+    }
+  ],
+  "contract": {
+    "scenario_contract_id": "xmech02-scenarios",
+    "score_policy_id": "simuverity-101-v1:xmech-02:scoring",
+    "scenario_sets": {
+      "nominal": [
+        "nominal_start"
+      ],
+      "range_and_boundary": [
+        "nominal_start",
+        "high_wind_regulation",
+        "positive_direction_change",
+        "negative_direction_change",
+        "joint_wind_event"
+      ],
+      "worst_case_reduction": [
+        "high_wind_regulation",
+        "positive_direction_change",
+        "negative_direction_change",
+        "joint_wind_event"
+      ],
+      "signed_yaw_pair": [
+        "positive_direction_change",
+        "negative_direction_change"
+      ],
+      "dynamic": [
+        "nominal_start",
+        "high_wind_regulation",
+        "positive_direction_change",
+        "negative_direction_change",
+        "joint_wind_event"
+      ]
+    },
+    "groups": {
+      "G": "model execution, complete finite output contract, scenario application, source-integrity checks, and full evidence capture",
+      "A": "normal start, rotor and generator operation, pitch tracking, yaw alignment, and useful generation",
+      "Q": "bounded speeds, torque, power, actuator effort, ripple, and measurement quality",
+      "M": "wind-to-aerodynamic-to-drivetrain-to-generator causality plus physical hydraulic-pitch and electric-yaw actuation",
+      "R": "worst private operating-point performance across the declared wind range",
+      "D": "start and high-wind transition response, signed yaw recovery, and joint-disturbance recovery",
+      "weights": {
+        "A": 0.2,
+        "Q": 0.15,
+        "M": 0.3,
+        "R": 0.2,
+        "D": 0.15
+      }
+    },
+    "scoring_rules": {
+      "formula": "G hard gate followed by a weighted geometric mean of A/Q/M/R/D",
+      "multi_scenario_reduction": "critical range and recovery metrics use the worst scenario",
+      "gating": "G failure produces total score 0",
+      "causal_caps": [
+        "copied wind, pitch, or yaw commands without delayed measured response",
+        "missing hydraulic-force activity in any blade actuator",
+        "missing electric-yaw torque activity or one-sided yaw response",
+        "missing rotor-to-generator torque and power response",
+        "disconnected feedback or prescribed output motion"
+      ],
+      "authoritative_implementation": "scripts/formal90/tasks/f90_xmech02/f90_xmech02_scoring_core.py"
+    }
+  },
+  "scenario_contract_id": "xmech02-scenarios",
+  "score_policy_id": "simuverity-101-v1:xmech-02:scoring",
+  "scenario_sets": {
+    "nominal": [
+      "nominal_start"
+    ],
+    "range_and_boundary": [
+      "nominal_start",
+      "high_wind_regulation",
+      "positive_direction_change",
+      "negative_direction_change",
+      "joint_wind_event"
+    ],
+    "worst_case_reduction": [
+      "high_wind_regulation",
+      "positive_direction_change",
+      "negative_direction_change",
+      "joint_wind_event"
+    ],
+    "signed_yaw_pair": [
+      "positive_direction_change",
+      "negative_direction_change"
+    ],
+    "dynamic": [
+      "nominal_start",
+      "high_wind_regulation",
+      "positive_direction_change",
+      "negative_direction_change",
+      "joint_wind_event"
+    ]
+  },
+  "groups": {
+    "G": "model execution, complete finite output contract, scenario application, source-integrity checks, and full evidence capture",
+    "A": "normal start, rotor and generator operation, pitch tracking, yaw alignment, and useful generation",
+    "Q": "bounded speeds, torque, power, actuator effort, ripple, and measurement quality",
+    "M": "wind-to-aerodynamic-to-drivetrain-to-generator causality plus physical hydraulic-pitch and electric-yaw actuation",
+    "R": "worst private operating-point performance across the declared wind range",
+    "D": "start and high-wind transition response, signed yaw recovery, and joint-disturbance recovery",
+    "weights": {
+      "A": 0.2,
+      "Q": 0.15,
+      "M": 0.3,
+      "R": 0.2,
+      "D": 0.15
+    }
+  },
+  "scoring_rules": {
+    "formula": "G hard gate followed by a weighted geometric mean of A/Q/M/R/D",
+    "multi_scenario_reduction": "critical range and recovery metrics use the worst scenario",
+    "gating": "G failure produces total score 0",
+    "causal_caps": [
+      "copied wind, pitch, or yaw commands without delayed measured response",
+      "missing hydraulic-force activity in any blade actuator",
+      "missing electric-yaw torque activity or one-sided yaw response",
+      "missing rotor-to-generator torque and power response",
+      "disconnected feedback or prescribed output motion"
+    ],
+    "authoritative_implementation": "scripts/formal90/tasks/f90_xmech02/f90_xmech02_scoring_core.py"
+  }
+}

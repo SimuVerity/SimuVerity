@@ -1,0 +1,522 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XAUTO-12",
+  "scenarios": [
+    {
+      "id": "symmetric_circle_swap",
+      "duration_s": 10,
+      "initial_positions_m": [
+        [
+          15,
+          0
+        ],
+        [
+          10.6066,
+          10.6066
+        ],
+        [
+          0,
+          15
+        ],
+        [
+          -10.6066,
+          10.6066
+        ],
+        [
+          -15,
+          0
+        ],
+        [
+          -10.6066,
+          -10.6066
+        ],
+        [
+          0,
+          -15
+        ],
+        [
+          10.6066,
+          -10.6066
+        ]
+      ],
+      "goal_positions_m": [
+        [
+          -15,
+          0
+        ],
+        [
+          -10.6066,
+          -10.6066
+        ],
+        [
+          0,
+          -15
+        ],
+        [
+          10.6066,
+          -10.6066
+        ],
+        [
+          15,
+          0
+        ],
+        [
+          10.6066,
+          10.6066
+        ],
+        [
+          0,
+          15
+        ],
+        [
+          -10.6066,
+          10.6066
+        ]
+      ],
+      "initial_speeds_mps": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "initial_headings_rad": [
+        3.141592653589793,
+        -2.356194,
+        -1.570796,
+        -0.785398,
+        0,
+        0.785398,
+        1.570796,
+        2.356194
+      ],
+      "agent_radius_m": 1,
+      "preferred_speed_mps": 2,
+      "maximum_acceleration_mps2": 3,
+      "maximum_steering_tangent": 2,
+      "passive_agents": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "narrow_two_sided_crossing",
+      "duration_s": 10,
+      "initial_positions_m": [
+        [
+          -12,
+          -6
+        ],
+        [
+          -12,
+          -2
+        ],
+        [
+          -12,
+          2
+        ],
+        [
+          -12,
+          6
+        ],
+        [
+          12,
+          -6
+        ],
+        [
+          12,
+          -2
+        ],
+        [
+          12,
+          2
+        ],
+        [
+          12,
+          6
+        ]
+      ],
+      "goal_positions_m": [
+        [
+          12,
+          6
+        ],
+        [
+          12,
+          2
+        ],
+        [
+          12,
+          -2
+        ],
+        [
+          12,
+          -6
+        ],
+        [
+          -12,
+          6
+        ],
+        [
+          -12,
+          2
+        ],
+        [
+          -12,
+          -2
+        ],
+        [
+          -12,
+          -6
+        ]
+      ],
+      "initial_speeds_mps": [
+        1.5,
+        2,
+        2.5,
+        1.8,
+        2.4,
+        1.6,
+        2.2,
+        1.9
+      ],
+      "initial_headings_rad": [
+        0,
+        0,
+        0,
+        0,
+        3.141592653589793,
+        3.141592653589793,
+        3.141592653589793,
+        3.141592653589793
+      ],
+      "agent_radius_m": 0.9,
+      "preferred_speed_mps": 2.2,
+      "maximum_acceleration_mps2": 3,
+      "maximum_steering_tangent": 1.8,
+      "passive_agents": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "offset_asymmetric_exchange",
+      "duration_s": 10,
+      "initial_positions_m": [
+        [
+          14,
+          3
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          -3,
+          14
+        ],
+        [
+          -12,
+          8
+        ],
+        [
+          -14,
+          -3
+        ],
+        [
+          -8,
+          -12
+        ],
+        [
+          3,
+          -14
+        ],
+        [
+          12,
+          -8
+        ]
+      ],
+      "goal_positions_m": [
+        [
+          -13,
+          -4
+        ],
+        [
+          -7,
+          -13
+        ],
+        [
+          4,
+          -13
+        ],
+        [
+          13,
+          -7
+        ],
+        [
+          13,
+          4
+        ],
+        [
+          7,
+          13
+        ],
+        [
+          -4,
+          13
+        ],
+        [
+          -13,
+          7
+        ]
+      ],
+      "initial_speeds_mps": [
+        1,
+        1.4,
+        1.8,
+        2.2,
+        2.6,
+        2.0,
+        1.6,
+        1.2
+      ],
+      "initial_headings_rad": [
+        -2.9,
+        -2.2,
+        -1.3,
+        -0.5,
+        0.2,
+        0.9,
+        1.8,
+        2.5
+      ],
+      "agent_radius_m": 1.1,
+      "preferred_speed_mps": 2.4,
+      "maximum_acceleration_mps2": 3.5,
+      "maximum_steering_tangent": 2.2,
+      "passive_agents": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "moving_passive_obstacle",
+      "duration_s": 10,
+      "initial_positions_m": [
+        [
+          -14,
+          -8
+        ],
+        [
+          -14,
+          -3
+        ],
+        [
+          -14,
+          3
+        ],
+        [
+          -14,
+          8
+        ],
+        [
+          14,
+          -8
+        ],
+        [
+          14,
+          -3
+        ],
+        [
+          14,
+          3
+        ],
+        [
+          0,
+          -15
+        ]
+      ],
+      "goal_positions_m": [
+        [
+          14,
+          8
+        ],
+        [
+          14,
+          3
+        ],
+        [
+          14,
+          -3
+        ],
+        [
+          14,
+          -8
+        ],
+        [
+          -14,
+          8
+        ],
+        [
+          -14,
+          3
+        ],
+        [
+          -14,
+          -3
+        ],
+        [
+          0,
+          15
+        ]
+      ],
+      "initial_speeds_mps": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1.5
+      ],
+      "initial_headings_rad": [
+        0,
+        0,
+        0,
+        0,
+        3.141592653589793,
+        3.141592653589793,
+        3.141592653589793,
+        1.570796
+      ],
+      "agent_radius_m": 1,
+      "preferred_speed_mps": 2,
+      "maximum_acceleration_mps2": 3,
+      "maximum_steering_tangent": 2,
+      "passive_agents": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+      ]
+    }
+  ],
+  "contract": {
+    "difficulty": {
+      "score": 8,
+      "maximum": 12,
+      "basis": [
+        "eight mutually coupled car-like agents",
+        "decentralized online constrained optimization",
+        "control-barrier and velocity-obstacle safety",
+        "moving passive obstacle",
+        "multi-scenario pairwise causal evidence"
+      ]
+    },
+    "score_policy": {
+      "raw_threshold": 90,
+      "normalize_threshold_to_100": false,
+      "cross_group_aggregation": "G_times_strict_weighted_geometric_mean",
+      "zero_rule": "any applicable group at zero makes total zero",
+      "epsilon_floor": false,
+      "post_total_cap": false,
+      "groups": {
+        "A": {
+          "weight": 0.24,
+          "meaning": "goal progress and terminal distance"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "finite complete public logs"
+        },
+        "M": {
+          "weight": 0.24,
+          "meaning": "pairwise physical safety and car kinematics"
+        },
+        "C": {
+          "weight": 0.22,
+          "meaning": "coupled obstacle-to-control causality"
+        },
+        "R": {
+          "weight": 0.12,
+          "meaning": "worst mission"
+        },
+        "D": {
+          "weight": 0.08,
+          "meaning": "bounded transient and solver continuity"
+        }
+      }
+    }
+  },
+  "difficulty": {
+    "score": 8,
+    "maximum": 12,
+    "basis": [
+      "eight mutually coupled car-like agents",
+      "decentralized online constrained optimization",
+      "control-barrier and velocity-obstacle safety",
+      "moving passive obstacle",
+      "multi-scenario pairwise causal evidence"
+    ]
+  },
+  "score_policy": {
+    "raw_threshold": 90,
+    "normalize_threshold_to_100": false,
+    "cross_group_aggregation": "G_times_strict_weighted_geometric_mean",
+    "zero_rule": "any applicable group at zero makes total zero",
+    "epsilon_floor": false,
+    "post_total_cap": false,
+    "groups": {
+      "A": {
+        "weight": 0.24,
+        "meaning": "goal progress and terminal distance"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "finite complete public logs"
+      },
+      "M": {
+        "weight": 0.24,
+        "meaning": "pairwise physical safety and car kinematics"
+      },
+      "C": {
+        "weight": 0.22,
+        "meaning": "coupled obstacle-to-control causality"
+      },
+      "R": {
+        "weight": 0.12,
+        "meaning": "worst mission"
+      },
+      "D": {
+        "weight": 0.08,
+        "meaning": "bounded transient and solver continuity"
+      }
+    }
+  }
+}

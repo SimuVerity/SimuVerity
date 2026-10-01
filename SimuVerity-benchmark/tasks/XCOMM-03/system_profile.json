@@ -1,0 +1,176 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XCOMM-03",
+  "collection": "XCOMM",
+  "reference": {
+    "identity_path": "tasks/XCOMM-03/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "slexSTAPExample.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XCOMM-03",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a Simulink model of a moving monostatic pulsed radar that detects a moving target in distributed ground clutter and stationary barrage-jammer interference.",
+    "engineering_objects": [
+      "The received target return, jammer, clutter and receiver noise must enter one physical signal path before a causal adaptive space-time suppression stage.",
+      "The adaptive output must retain the target range response while suppressing clutter and jammer energy.",
+      "Read TargetPosition_m, TargetVelocity_mps, TargetRCS_m2, JammerPosition_m and ClutterPowerScale from the MATLAB base workspace."
+    ],
+    "physical_paths": [
+      "These outputs must be taken from the connected measured-signal and adaptive-processing paths rather than copied target parameters or prerecorded profiles.",
+      "The received target return, jammer, clutter and receiver noise must enter one physical signal path before a causal adaptive space-time suppression stage.",
+      "The adaptive output must retain the target range response while suppressing clutter and jammer energy.",
+      "Read TargetPosition_m, TargetVelocity_mps, TargetRCS_m2, JammerPosition_m and ClutterPowerScale from the MATLAB base workspace."
+    ],
+    "functional_paths": [
+      "Build a Simulink model of a moving monostatic pulsed radar that detects a moving target in distributed ground clutter and stationary barrage-jammer interference."
+    ],
+    "information_paths": [
+      "TargetPosition_m, TargetVelocity_mps, TargetRCS_m2, JammerPosition_m, ClutterPowerScale -> F90-XCOMM-03 plant/control path -> ReceivedRangeResponse, SuppressedRangeResponse, AdaptiveWeights"
+    ],
+    "modes_and_events": [
+      "Build a Simulink model of a moving monostatic pulsed radar that detects a moving target in distributed ground clutter and stationary barrage-jammer interference."
+    ],
+    "interfaces": [
+      {
+        "name": "TargetPosition_m",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read TargetPosition_m, TargetVelocity_mps, TargetRCS_m2, JammerPosition_m and ClutterPowerScale from the MATLAB base workspace. TargetPosition_m and JammerPosition_m are global Cartesian positions in metres, TargetVelocity_mps is the global target velocity in metres per second, TargetRCS_m2 is between 0.7 and 1.5 square metres, and ClutterPowerScale is between 0.7 and 1.5. TargetPosition_m and JammerPosition_m are finite real 3-by-1 global Cartesian vectors in m; TargetVelocity_mps is a finite real 3-by-1 global Cartesian vector in m/s; TargetRCS_m2 is a finite real scalar in [0.7, 1.5] m^2; and ClutterPowerScale is a finite real scalar in [0.7, 1.5] (unitless).",
+        "source": "tasks/XCOMM-03/public_spec.json"
+      },
+      {
+        "name": "TargetVelocity_mps",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Read TargetPosition_m, TargetVelocity_mps, TargetRCS_m2, JammerPosition_m and ClutterPowerScale from the MATLAB base workspace. TargetPosition_m and JammerPosition_m are global Cartesian positions in metres, TargetVelocity_mps is the global target velocity in metres per second, TargetRCS_m2 is between 0.7 and 1.5 square metres, and ClutterPowerScale is between 0.7 and 1.5. TargetPosition_m and JammerPosition_m are finite real 3-by-1 global Cartesian vectors in m; TargetVelocity_mps is a finite real 3-by-1 global Cartesian vector in m/s; TargetRCS_m2 is a finite real scalar in [0.7, 1.5] m^2; and ClutterPowerScale is a finite real scalar in [0.7, 1.5] (unitless).",
+        "source": "tasks/XCOMM-03/public_spec.json"
+      },
+      {
+        "name": "TargetRCS_m2",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m^2"
+        ],
+        "range_or_shape": "Read TargetPosition_m, TargetVelocity_mps, TargetRCS_m2, JammerPosition_m and ClutterPowerScale from the MATLAB base workspace. TargetPosition_m and JammerPosition_m are global Cartesian positions in metres, TargetVelocity_mps is the global target velocity in metres per second, TargetRCS_m2 is between 0.7 and 1.5 square metres, and ClutterPowerScale is between 0.7 and 1.5. TargetPosition_m and JammerPosition_m are finite real 3-by-1 global Cartesian vectors in m; TargetVelocity_mps is a finite real 3-by-1 global Cartesian vector in m/s; TargetRCS_m2 is a finite real scalar in [0.7, 1.5] m^2; and ClutterPowerScale is a finite real scalar in [0.7, 1.5] (unitless).",
+        "source": "tasks/XCOMM-03/public_spec.json"
+      },
+      {
+        "name": "JammerPosition_m",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read TargetPosition_m, TargetVelocity_mps, TargetRCS_m2, JammerPosition_m and ClutterPowerScale from the MATLAB base workspace. TargetPosition_m and JammerPosition_m are global Cartesian positions in metres, TargetVelocity_mps is the global target velocity in metres per second, TargetRCS_m2 is between 0.7 and 1.5 square metres, and ClutterPowerScale is between 0.7 and 1.5. TargetPosition_m and JammerPosition_m are finite real 3-by-1 global Cartesian vectors in m; TargetVelocity_mps is a finite real 3-by-1 global Cartesian vector in m/s; TargetRCS_m2 is a finite real scalar in [0.7, 1.5] m^2; and ClutterPowerScale is a finite real scalar in [0.7, 1.5] (unitless).",
+        "source": "tasks/XCOMM-03/public_spec.json"
+      },
+      {
+        "name": "ClutterPowerScale",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read TargetPosition_m, TargetVelocity_mps, TargetRCS_m2, JammerPosition_m and ClutterPowerScale from the MATLAB base workspace. TargetPosition_m and JammerPosition_m are global Cartesian positions in metres, TargetVelocity_mps is the global target velocity in metres per second, TargetRCS_m2 is between 0.7 and 1.5 square metres, and ClutterPowerScale is between 0.7 and 1.5. TargetPosition_m and JammerPosition_m are finite real 3-by-1 global Cartesian vectors in m; TargetVelocity_mps is a finite real 3-by-1 global Cartesian vector in m/s; TargetRCS_m2 is a finite real scalar in [0.7, 1.5] m^2; and ClutterPowerScale is a finite real scalar in [0.7, 1.5] (unitless).",
+        "source": "tasks/XCOMM-03/public_spec.json"
+      },
+      {
+        "name": "ReceivedRangeResponse",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "normalized complex baseband amplitude"
+        ],
+        "range_or_shape": "Log complete-run complex MATLAB Timeseries named ReceivedRangeResponse, SuppressedRangeResponse, and AdaptiveWeights. Each ReceivedRangeResponse sample is a 200-by-6 pre-suppression range-by-array response in normalized complex baseband amplitude.",
+        "source": "tasks/XCOMM-03/public_spec.json"
+      },
+      {
+        "name": "SuppressedRangeResponse",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "normalized complex baseband amplitude"
+        ],
+        "range_or_shape": "Log complete-run complex MATLAB Timeseries named ReceivedRangeResponse, SuppressedRangeResponse, and AdaptiveWeights. Each SuppressedRangeResponse sample is the paired 200-by-1 post-suppression range response in the same unit.",
+        "source": "tasks/XCOMM-03/public_spec.json"
+      },
+      {
+        "name": "AdaptiveWeights",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Log complete-run complex MATLAB Timeseries named ReceivedRangeResponse, SuppressedRangeResponse, and AdaptiveWeights. Each AdaptiveWeights sample is the paired 60-by-1 unitless complex vector ordered as six array elements by ten pulses.",
+        "source": "tasks/XCOMM-03/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "The particular adaptive algorithm and internal coordinate representation are unrestricted.",
+      "Each AdaptiveWeights sample is the paired 60-by-1 unitless complex vector ordered as six array elements by ten pulses."
+    ],
+    "feedback_and_control_causality": [
+      "The received target return, jammer, clutter and receiver noise must enter one physical signal path before a causal adaptive space-time suppression stage."
+    ],
+    "signal_sources": [
+      "TargetPosition_m is read from the public MATLAB base-workspace input contract.",
+      "TargetVelocity_mps is read from the public MATLAB base-workspace input contract.",
+      "TargetRCS_m2 is read from the public MATLAB base-workspace input contract.",
+      "JammerPosition_m is read from the public MATLAB base-workspace input contract.",
+      "ClutterPowerScale is read from the public MATLAB base-workspace input contract.",
+      "ReceivedRangeResponse is produced by the implemented plant or controller and logged under the public output contract.",
+      "SuppressedRangeResponse is produced by the implemented plant or controller and logged under the public output contract.",
+      "AdaptiveWeights is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "TargetPosition_m: Read TargetPosition_m, TargetVelocity_mps, TargetRCS_m2, JammerPosition_m and ClutterPowerScale from the MATLAB base workspace. TargetPosition_m and JammerPosition_m are global Cartesian positions in metres, TargetVelocity_mps is the global target velocity in metres per second, TargetRCS_m2 is between 0.7 and 1.5 square metres, and ClutterPowerScale is between 0.7 and 1.5. TargetPosition_m and JammerPosition_m are finite real 3-by-1 global Cartesian vectors in m; TargetVelocity_mps is a finite real 3-by-1 global Cartesian vector in m/s; TargetRCS_m2 is a finite real scalar in [0.7, 1.5] m^2; and ClutterPowerScale is a finite real scalar in [0.7, 1.5] (unitless).",
+      "TargetVelocity_mps: Read TargetPosition_m, TargetVelocity_mps, TargetRCS_m2, JammerPosition_m and ClutterPowerScale from the MATLAB base workspace. TargetPosition_m and JammerPosition_m are global Cartesian positions in metres, TargetVelocity_mps is the global target velocity in metres per second, TargetRCS_m2 is between 0.7 and 1.5 square metres, and ClutterPowerScale is between 0.7 and 1.5. TargetPosition_m and JammerPosition_m are finite real 3-by-1 global Cartesian vectors in m; TargetVelocity_mps is a finite real 3-by-1 global Cartesian vector in m/s; TargetRCS_m2 is a finite real scalar in [0.7, 1.5] m^2; and ClutterPowerScale is a finite real scalar in [0.7, 1.5] (unitless).",
+      "TargetRCS_m2: Read TargetPosition_m, TargetVelocity_mps, TargetRCS_m2, JammerPosition_m and ClutterPowerScale from the MATLAB base workspace. TargetPosition_m and JammerPosition_m are global Cartesian positions in metres, TargetVelocity_mps is the global target velocity in metres per second, TargetRCS_m2 is between 0.7 and 1.5 square metres, and ClutterPowerScale is between 0.7 and 1.5. TargetPosition_m and JammerPosition_m are finite real 3-by-1 global Cartesian vectors in m; TargetVelocity_mps is a finite real 3-by-1 global Cartesian vector in m/s; TargetRCS_m2 is a finite real scalar in [0.7, 1.5] m^2; and ClutterPowerScale is a finite real scalar in [0.7, 1.5] (unitless).",
+      "JammerPosition_m: Read TargetPosition_m, TargetVelocity_mps, TargetRCS_m2, JammerPosition_m and ClutterPowerScale from the MATLAB base workspace. TargetPosition_m and JammerPosition_m are global Cartesian positions in metres, TargetVelocity_mps is the global target velocity in metres per second, TargetRCS_m2 is between 0.7 and 1.5 square metres, and ClutterPowerScale is between 0.7 and 1.5. TargetPosition_m and JammerPosition_m are finite real 3-by-1 global Cartesian vectors in m; TargetVelocity_mps is a finite real 3-by-1 global Cartesian vector in m/s; TargetRCS_m2 is a finite real scalar in [0.7, 1.5] m^2; and ClutterPowerScale is a finite real scalar in [0.7, 1.5] (unitless).",
+      "ClutterPowerScale: Read TargetPosition_m, TargetVelocity_mps, TargetRCS_m2, JammerPosition_m and ClutterPowerScale from the MATLAB base workspace. TargetPosition_m and JammerPosition_m are global Cartesian positions in metres, TargetVelocity_mps is the global target velocity in metres per second, TargetRCS_m2 is between 0.7 and 1.5 square metres, and ClutterPowerScale is between 0.7 and 1.5. TargetPosition_m and JammerPosition_m are finite real 3-by-1 global Cartesian vectors in m; TargetVelocity_mps is a finite real 3-by-1 global Cartesian vector in m/s; TargetRCS_m2 is a finite real scalar in [0.7, 1.5] m^2; and ClutterPowerScale is a finite real scalar in [0.7, 1.5] (unitless)."
+    ],
+    "disturbances": [
+      "The received target return, jammer, clutter and receiver noise must enter one physical signal path before a causal adaptive space-time suppression stage."
+    ],
+    "dynamic_processes": [
+      "Log complete-run complex MATLAB Timeseries named ReceivedRangeResponse, SuppressedRangeResponse, and AdaptiveWeights."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XCOMM-03: prescribing ReceivedRangeResponse directly would bypass the system path described by: These outputs must be taken from the connected measured-signal and adaptive-processing paths rather than copied target parameters or prerecorded profiles.",
+      "F90-XCOMM-03: replaying a fixed ReceivedRangeResponse trace would ignore causal variation in TargetPosition_m."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XCOMM-03/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XCOMM-03/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XCOMM-03/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

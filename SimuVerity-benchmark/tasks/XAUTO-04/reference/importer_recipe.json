@@ -1,0 +1,1613 @@
+{
+  "schema": "simuverity.matlab-local-importer-recipe.v1",
+  "task_id": "XAUTO-04",
+  "release": "simuverity-101-v1",
+  "matlab_release": "R2025a",
+  "publisher": "The MathWorks, Inc.",
+  "redistributes_mathworks_files": false,
+  "destination": "%LOCALAPPDATA%/SimuVerity/assets/simuverity-101-v1/XAUTO-04",
+  "discovery": {
+    "method": "installed_product_archives",
+    "source_files": [
+      {
+        "name": "BrakingTest.zip"
+      }
+    ],
+    "expected_files": [
+      {
+        "path": "resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/SVFnt_R0HYYASJi-4a3RGj1dfssd.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/SVFnt_R0HYYASJi-4a3RGj1dfssp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/XvkMQN_vpVaKHGtLfe2sFlln3GQd.xml",
+        "size_bytes": 76
+      },
+      {
+        "path": "resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/XvkMQN_vpVaKHGtLfe2sFlln3GQp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "resources/project/EtvJoIpQYnDKS-r8fs_-Wn1wG9M/0S7-TL329QHGqGtXZoD4TO0PaAkd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "resources/project/EtvJoIpQYnDKS-r8fs_-Wn1wG9M/0S7-TL329QHGqGtXZoD4TO0PaAkp.xml",
+        "size_bytes": 96
+      },
+      {
+        "path": "resources/project/EtvJoIpQYnDKS-r8fs_-Wn1wG9M/47jwf27BUfh6L3I2t8-zkOXTLbwd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "resources/project/EtvJoIpQYnDKS-r8fs_-Wn1wG9M/47jwf27BUfh6L3I2t8-zkOXTLbwp.xml",
+        "size_bytes": 102
+      },
+      {
+        "path": "resources/project/EtvJoIpQYnDKS-r8fs_-Wn1wG9M/B6BijeYH5r_BjlJIwR2x_cQMT_gd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "resources/project/EtvJoIpQYnDKS-r8fs_-Wn1wG9M/B6BijeYH5r_BjlJIwR2x_cQMT_gp.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "resources/project/EtvJoIpQYnDKS-r8fs_-Wn1wG9M/NSWTqEmzA7U5pChwn9J5rAFIlxwd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "resources/project/EtvJoIpQYnDKS-r8fs_-Wn1wG9M/NSWTqEmzA7U5pChwn9J5rAFIlxwp.xml",
+        "size_bytes": 97
+      },
+      {
+        "path": "resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsd.xml",
+        "size_bytes": 114
+      },
+      {
+        "path": "resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsp.xml",
+        "size_bytes": 91
+      },
+      {
+        "path": "resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/5Q5WKKrybeD0CK-UbX9MBFGgz0Qd.xml",
+        "size_bytes": 122
+      },
+      {
+        "path": "resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/5Q5WKKrybeD0CK-UbX9MBFGgz0Qp.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/8GNWXxmL_uchWovgRDRgnl8xQ8sd.xml",
+        "size_bytes": 121
+      },
+      {
+        "path": "resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/8GNWXxmL_uchWovgRDRgnl8xQ8sp.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/YJ_MbEi5E8USohN7f38bVpP9ikcd.xml",
+        "size_bytes": 238
+      },
+      {
+        "path": "resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/YJ_MbEi5E8USohN7f38bVpP9ikcp.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "resources/project/LUgSFhI3RPozNzNcutxrczVe6f0/9XFBHzMw8H_GnvXTm5x1F5v6qngd.xml",
+        "size_bytes": 83
+      },
+      {
+        "path": "resources/project/LUgSFhI3RPozNzNcutxrczVe6f0/9XFBHzMw8H_GnvXTm5x1F5v6qngp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "resources/project/LUgSFhI3RPozNzNcutxrczVe6f0/FYqjeM041shgM9bviB8QYQrE4f0d.xml",
+        "size_bytes": 74
+      },
+      {
+        "path": "resources/project/LUgSFhI3RPozNzNcutxrczVe6f0/FYqjeM041shgM9bviB8QYQrE4f0p.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "resources/project/LUgSFhI3RPozNzNcutxrczVe6f0/hoWsBhuOxl4L7gPmCvZwo4X8S9sd.xml",
+        "size_bytes": 78
+      },
+      {
+        "path": "resources/project/LUgSFhI3RPozNzNcutxrczVe6f0/hoWsBhuOxl4L7gPmCvZwo4X8S9sp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "resources/project/LUgSFhI3RPozNzNcutxrczVe6f0/u5gzugacIYpSVeHwNXk0dpINm84d.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "resources/project/LUgSFhI3RPozNzNcutxrczVe6f0/u5gzugacIYpSVeHwNXk0dpINm84p.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "resources/project/LUgSFhI3RPozNzNcutxrczVe6f0/v3gZ-NjmghstnINMRjtUXTiW1pEd.xml",
+        "size_bytes": 85
+      },
+      {
+        "path": "resources/project/LUgSFhI3RPozNzNcutxrczVe6f0/v3gZ-NjmghstnINMRjtUXTiW1pEp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "resources/project/LUgSFhI3RPozNzNcutxrczVe6f0/v9hc_s1h5aH6FvWdpomZsq_Ankgd.xml",
+        "size_bytes": 84
+      },
+      {
+        "path": "resources/project/LUgSFhI3RPozNzNcutxrczVe6f0/v9hc_s1h5aH6FvWdpomZsq_Ankgp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4d.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4p.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZod.xml",
+        "size_bytes": 82
+      },
+      {
+        "path": "resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZop.xml",
+        "size_bytes": 78
+      },
+      {
+        "path": "resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencd.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencp.xml",
+        "size_bytes": 77
+      },
+      {
+        "path": "resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8d.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8p.xml",
+        "size_bytes": 76
+      },
+      {
+        "path": "resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4d.xml",
+        "size_bytes": 86
+      },
+      {
+        "path": "resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4p.xml",
+        "size_bytes": 82
+      },
+      {
+        "path": "resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Id.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Ip.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkd.xml",
+        "size_bytes": 83
+      },
+      {
+        "path": "resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkp.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "resources/project/Project.xml",
+        "size_bytes": 73
+      },
+      {
+        "path": "resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/EtvJoIpQYnDKS-r8fs_-Wn1wG9Md.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/EtvJoIpQYnDKS-r8fs_-Wn1wG9Mp.xml",
+        "size_bytes": 76
+      },
+      {
+        "path": "resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/RbkrFEczEFu1X_kIGdOhODBr6-Id.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/RbkrFEczEFu1X_kIGdOhODBr6-Ip.xml",
+        "size_bytes": 74
+      },
+      {
+        "path": "resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/ZdVxxv9BsNz7MGUxtEc6Pq3qh1Md.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/ZdVxxv9BsNz7MGUxtEc6Pq3qh1Mp.xml",
+        "size_bytes": 77
+      },
+      {
+        "path": "resources/project/RbkrFEczEFu1X_kIGdOhODBr6-I/2d0_1KDBOwd8qkzGH4X3PWyWm8Id.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "resources/project/RbkrFEczEFu1X_kIGdOhODBr6-I/2d0_1KDBOwd8qkzGH4X3PWyWm8Ip.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "resources/project/root/EEtUlUb-dLAdf0KpMVivaUlztwAp.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "resources/project/root/fjRQtWiSIy7hIlj-Kmk87M7s21kp.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQd.xml",
+        "size_bytes": 66
+      },
+      {
+        "path": "resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQp.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "resources/project/root/KAXfQgCar2Yb8zOxgvf9hdmLP1Ep.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "resources/project/root/LUgSFhI3RPozNzNcutxrczVe6f0p.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "resources/project/root/qaw0eS1zuuY1ar9TdPn1GMfrjbQp.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "resources/project/rootp.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/4Bt2v-YE3fvz16owi1auKC__hOEd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/4Bt2v-YE3fvz16owi1auKC__hOEp.xml",
+        "size_bytes": 90
+      },
+      {
+        "path": "resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/5Jyk6rvLvqCTOj0bq7JJEN5LBpgd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/5Jyk6rvLvqCTOj0bq7JJEN5LBpgp.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/aw0fLLRI4SNGe8ijXnIhHqRGg10d.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/aw0fLLRI4SNGe8ijXnIhHqRGg10p.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/QOpe-1pctdftDIjwQLRdjOUZW44d.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "resources/project/ZdVxxv9BsNz7MGUxtEc6Pq3qh1M/QOpe-1pctdftDIjwQLRdjOUZW44p.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "Scripts/CloseSM.m",
+        "size_bytes": 339
+      },
+      {
+        "path": "Scripts/StartSM.m",
+        "size_bytes": 337
+      },
+      {
+        "path": "Scripts/vdynblksdrvrconfig.m",
+        "size_bytes": 2677
+      },
+      {
+        "path": "System/BTReferenceApplication.sldd",
+        "size_bytes": 2675
+      },
+      {
+        "path": "System/BTReferenceApplication.slx",
+        "size_bytes": 207375
+      },
+      {
+        "path": "System/BTReferenceApplicationParam.sldd",
+        "size_bytes": 2597
+      },
+      {
+        "path": "System/ISO15037_1_2006E.mldatx",
+        "size_bytes": 19141886
+      },
+      {
+        "path": "Common/images/LongitudinalDriver.png",
+        "size_bytes": 6971
+      },
+      {
+        "path": "Common/images/PassengerVehicle.png",
+        "size_bytes": 2189218
+      },
+      {
+        "path": "Common/images/SystemControllers.png",
+        "size_bytes": 1901828
+      },
+      {
+        "path": "Common/resources/project/bI45o7MkfNtHtgUIaFhhf2MCGfY/ikjpFRD1eNakrsFnh06Eq9kgqcMd.xml",
+        "size_bytes": 139
+      },
+      {
+        "path": "Common/resources/project/bI45o7MkfNtHtgUIaFhhf2MCGfY/ikjpFRD1eNakrsFnh06Eq9kgqcMp.xml",
+        "size_bytes": 91
+      },
+      {
+        "path": "Common/resources/project/bI45o7MkfNtHtgUIaFhhf2MCGfY/ir1wZ-qB9_DFl6HCLRr75Y1CcB8d.xml",
+        "size_bytes": 139
+      },
+      {
+        "path": "Common/resources/project/bI45o7MkfNtHtgUIaFhhf2MCGfY/ir1wZ-qB9_DFl6HCLRr75Y1CcB8p.xml",
+        "size_bytes": 92
+      },
+      {
+        "path": "Common/resources/project/bI45o7MkfNtHtgUIaFhhf2MCGfY/N24TOIieYSRJi21eQoFZf9rx3Igd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "Common/resources/project/bI45o7MkfNtHtgUIaFhhf2MCGfY/N24TOIieYSRJi21eQoFZf9rx3Igp.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "Common/resources/project/bI45o7MkfNtHtgUIaFhhf2MCGfY/R2p99j4tzXIP6d3IrP5lM3Sl3lcd.xml",
+        "size_bytes": 139
+      },
+      {
+        "path": "Common/resources/project/bI45o7MkfNtHtgUIaFhhf2MCGfY/R2p99j4tzXIP6d3IrP5lM3Sl3lcp.xml",
+        "size_bytes": 90
+      },
+      {
+        "path": "Common/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/4armjJirQ0AH_zZpRZxl2Za0utUd.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "Common/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/4armjJirQ0AH_zZpRZxl2Za0utUp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "Common/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsd.xml",
+        "size_bytes": 114
+      },
+      {
+        "path": "Common/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsp.xml",
+        "size_bytes": 91
+      },
+      {
+        "path": "Common/resources/project/HoHDHQ_WvHAAKj5aJOrvrg_vpt8/xXlmKuOQ7YT_G1elNhbKQIUqSRMd.xml",
+        "size_bytes": 138
+      },
+      {
+        "path": "Common/resources/project/HoHDHQ_WvHAAKj5aJOrvrg_vpt8/xXlmKuOQ7YT_G1elNhbKQIUqSRMp.xml",
+        "size_bytes": 86
+      },
+      {
+        "path": "Common/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/CNVQKSUuaEjvNds5Mw_QcJe5ve4d.xml",
+        "size_bytes": 109
+      },
+      {
+        "path": "Common/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/CNVQKSUuaEjvNds5Mw_QcJe5ve4p.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "Common/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/FVouvN7X-32LzUc4vGo_Eeh7Ftod.xml",
+        "size_bytes": 134
+      },
+      {
+        "path": "Common/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/FVouvN7X-32LzUc4vGo_Eeh7Ftop.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "Common/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/Hd6UW8XmMoM27vDa_aCnRAi-ZIAd.xml",
+        "size_bytes": 121
+      },
+      {
+        "path": "Common/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/Hd6UW8XmMoM27vDa_aCnRAi-ZIAp.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "Common/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/qKWv5EaVUvrlxnevfcbK5svTURMd.xml",
+        "size_bytes": 117
+      },
+      {
+        "path": "Common/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/qKWv5EaVUvrlxnevfcbK5svTURMp.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "Common/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4d.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "Common/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4p.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "Common/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZod.xml",
+        "size_bytes": 82
+      },
+      {
+        "path": "Common/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZop.xml",
+        "size_bytes": 78
+      },
+      {
+        "path": "Common/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencd.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "Common/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencp.xml",
+        "size_bytes": 77
+      },
+      {
+        "path": "Common/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8d.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "Common/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8p.xml",
+        "size_bytes": 76
+      },
+      {
+        "path": "Common/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4d.xml",
+        "size_bytes": 86
+      },
+      {
+        "path": "Common/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4p.xml",
+        "size_bytes": 82
+      },
+      {
+        "path": "Common/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Id.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "Common/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Ip.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "Common/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkd.xml",
+        "size_bytes": 83
+      },
+      {
+        "path": "Common/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkp.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "Common/resources/project/Project.xml",
+        "size_bytes": 73
+      },
+      {
+        "path": "Common/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/bI45o7MkfNtHtgUIaFhhf2MCGfYd.xml",
+        "size_bytes": 138
+      },
+      {
+        "path": "Common/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/bI45o7MkfNtHtgUIaFhhf2MCGfYp.xml",
+        "size_bytes": 76
+      },
+      {
+        "path": "Common/resources/project/root/EEtUlUb-dLAdf0KpMVivaUlztwAp.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "Common/resources/project/root/fjRQtWiSIy7hIlj-Kmk87M7s21kp.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "Common/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQd.xml",
+        "size_bytes": 85
+      },
+      {
+        "path": "Common/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQp.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "Common/resources/project/root/HoHDHQ_WvHAAKj5aJOrvrg_vpt8p.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "Common/resources/project/root/KAXfQgCar2Yb8zOxgvf9hdmLP1Ep.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "Common/resources/project/root/qaw0eS1zuuY1ar9TdPn1GMfrjbQp.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "Common/resources/project/root/WZRuNzqc-Db7NcQAZO8Y-R8U9ccp.xml",
+        "size_bytes": 84
+      },
+      {
+        "path": "Common/resources/project/rootp.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "Common/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/66WgGCcF5RIH9MCEgPmgjZK9k3Ud.xml",
+        "size_bytes": 73
+      },
+      {
+        "path": "Common/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/66WgGCcF5RIH9MCEgPmgjZK9k3Up.xml",
+        "size_bytes": 96
+      },
+      {
+        "path": "Common/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/AtMjXDrOSm8YDv3_4UFXiyrWqNEd.xml",
+        "size_bytes": 73
+      },
+      {
+        "path": "Common/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/AtMjXDrOSm8YDv3_4UFXiyrWqNEp.xml",
+        "size_bytes": 94
+      },
+      {
+        "path": "Driveline/Plant/Driveline.sldd",
+        "size_bytes": 2661
+      },
+      {
+        "path": "Driveline/Plant/Driveline.slx",
+        "size_bytes": 70895
+      },
+      {
+        "path": "Driveline/Plant/DrivelineParam.sldd",
+        "size_bytes": 2594
+      },
+      {
+        "path": "Driveline/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/xi2AWwdr0eT2sk59qwQhj9w7TpId.xml",
+        "size_bytes": 74
+      },
+      {
+        "path": "Driveline/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/xi2AWwdr0eT2sk59qwQhj9w7TpIp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "Driveline/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsd.xml",
+        "size_bytes": 114
+      },
+      {
+        "path": "Driveline/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsp.xml",
+        "size_bytes": 91
+      },
+      {
+        "path": "Driveline/resources/project/HoHDHQ_WvHAAKj5aJOrvrg_vpt8/xXlmKuOQ7YT_G1elNhbKQIUqSRMd.xml",
+        "size_bytes": 298
+      },
+      {
+        "path": "Driveline/resources/project/HoHDHQ_WvHAAKj5aJOrvrg_vpt8/xXlmKuOQ7YT_G1elNhbKQIUqSRMp.xml",
+        "size_bytes": 86
+      },
+      {
+        "path": "Driveline/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/Amn9XYOQeT7D9jBEHRxMVNju-bUd.xml",
+        "size_bytes": 123
+      },
+      {
+        "path": "Driveline/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/Amn9XYOQeT7D9jBEHRxMVNju-bUp.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "Driveline/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/5pmxhRyJI-AUJl5voVc_K7IOVvQd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "Driveline/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/5pmxhRyJI-AUJl5voVc_K7IOVvQp.xml",
+        "size_bytes": 84
+      },
+      {
+        "path": "Driveline/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/e6zRSuEh6EVPsPcqJcGZbeF_s34d.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "Driveline/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/e6zRSuEh6EVPsPcqJcGZbeF_s34p.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "Driveline/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/Ew8gSeLY3UVV0U9Q0CUFF8YMWGsd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "Driveline/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/Ew8gSeLY3UVV0U9Q0CUFF8YMWGsp.xml",
+        "size_bytes": 83
+      },
+      {
+        "path": "Driveline/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/vAEhjhmm_Ujhs3-s_CvuIjHQB4gd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "Driveline/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/vAEhjhmm_Ujhs3-s_CvuIjHQB4gp.xml",
+        "size_bytes": 89
+      },
+      {
+        "path": "Driveline/resources/project/LUgSFhI3RPozNzNcutxrczVe6f0/r_nmcz8sR6I9pvfDUCa_nWAQcEUd.xml",
+        "size_bytes": 85
+      },
+      {
+        "path": "Driveline/resources/project/LUgSFhI3RPozNzNcutxrczVe6f0/r_nmcz8sR6I9pvfDUCa_nWAQcEUp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "Driveline/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4d.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "Driveline/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4p.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "Driveline/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZod.xml",
+        "size_bytes": 82
+      },
+      {
+        "path": "Driveline/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZop.xml",
+        "size_bytes": 78
+      },
+      {
+        "path": "Driveline/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencd.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "Driveline/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencp.xml",
+        "size_bytes": 77
+      },
+      {
+        "path": "Driveline/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8d.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "Driveline/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8p.xml",
+        "size_bytes": 76
+      },
+      {
+        "path": "Driveline/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4d.xml",
+        "size_bytes": 86
+      },
+      {
+        "path": "Driveline/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4p.xml",
+        "size_bytes": 82
+      },
+      {
+        "path": "Driveline/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Id.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "Driveline/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Ip.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "Driveline/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkd.xml",
+        "size_bytes": 83
+      },
+      {
+        "path": "Driveline/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkp.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "Driveline/resources/project/Project.xml",
+        "size_bytes": 73
+      },
+      {
+        "path": "Driveline/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/l-M0cdfPZloipc8msVWbCe2KdAsd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "Driveline/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/l-M0cdfPZloipc8msVWbCe2KdAsp.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "Driveline/resources/project/root/EEtUlUb-dLAdf0KpMVivaUlztwAp.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "Driveline/resources/project/root/fjRQtWiSIy7hIlj-Kmk87M7s21kp.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "Driveline/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQd.xml",
+        "size_bytes": 63
+      },
+      {
+        "path": "Driveline/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQp.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "Driveline/resources/project/root/HoHDHQ_WvHAAKj5aJOrvrg_vpt8p.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "Driveline/resources/project/root/KAXfQgCar2Yb8zOxgvf9hdmLP1Ep.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "Driveline/resources/project/root/LUgSFhI3RPozNzNcutxrczVe6f0p.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "Driveline/resources/project/root/qaw0eS1zuuY1ar9TdPn1GMfrjbQp.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "Driveline/resources/project/root/WZRuNzqc-Db7NcQAZO8Y-R8U9ccp.xml",
+        "size_bytes": 84
+      },
+      {
+        "path": "Driveline/resources/project/rootp.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "Driveline/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/66WgGCcF5RIH9MCEgPmgjZK9k3Ud.xml",
+        "size_bytes": 73
+      },
+      {
+        "path": "Driveline/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/66WgGCcF5RIH9MCEgPmgjZK9k3Up.xml",
+        "size_bytes": 96
+      },
+      {
+        "path": "Driveline/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/AtMjXDrOSm8YDv3_4UFXiyrWqNEd.xml",
+        "size_bytes": 73
+      },
+      {
+        "path": "Driveline/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/AtMjXDrOSm8YDv3_4UFXiyrWqNEp.xml",
+        "size_bytes": 94
+      },
+      {
+        "path": "PassVeh14DOF/Plant/PassVeh14DOF.sldd",
+        "size_bytes": 2666
+      },
+      {
+        "path": "PassVeh14DOF/Plant/PassVeh14DOF.slx",
+        "size_bytes": 395058
+      },
+      {
+        "path": "PassVeh14DOF/Plant/PassVeh14DOFParam.sldd",
+        "size_bytes": 2593
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/bYbR9zAoZK6ZsV8WfNiMuh7H9BYd.xml",
+        "size_bytes": 74
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/bYbR9zAoZK6ZsV8WfNiMuh7H9BYp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsd.xml",
+        "size_bytes": 114
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsp.xml",
+        "size_bytes": 91
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/HoHDHQ_WvHAAKj5aJOrvrg_vpt8/xXlmKuOQ7YT_G1elNhbKQIUqSRMd.xml",
+        "size_bytes": 61
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/HoHDHQ_WvHAAKj5aJOrvrg_vpt8/xXlmKuOQ7YT_G1elNhbKQIUqSRMp.xml",
+        "size_bytes": 86
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/cOrq4Tn266Ybv0O2rLLf7X_cd4wd.xml",
+        "size_bytes": 145
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/cOrq4Tn266Ybv0O2rLLf7X_cd4wp.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/e6zRSuEh6EVPsPcqJcGZbeF_s34d.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/e6zRSuEh6EVPsPcqJcGZbeF_s34p.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/oP1aCZM7S-aF7wzv16tDcKfGeCgd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/oP1aCZM7S-aF7wzv16tDcKfGeCgp.xml",
+        "size_bytes": 86
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/wmwxQw-u--pLRwcQHJ2efPqmSbUd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/wmwxQw-u--pLRwcQHJ2efPqmSbUp.xml",
+        "size_bytes": 87
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/Z6ToyE53U1hwy_zdMexXApGMsgUd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/Z6ToyE53U1hwy_zdMexXApGMsgUp.xml",
+        "size_bytes": 92
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/LUgSFhI3RPozNzNcutxrczVe6f0/EYIpJNPIvXg-LSh4jGxxkYgZ5_kd.xml",
+        "size_bytes": 85
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/LUgSFhI3RPozNzNcutxrczVe6f0/EYIpJNPIvXg-LSh4jGxxkYgZ5_kp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4d.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4p.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZod.xml",
+        "size_bytes": 82
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZop.xml",
+        "size_bytes": 78
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencd.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencp.xml",
+        "size_bytes": 77
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8d.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8p.xml",
+        "size_bytes": 76
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4d.xml",
+        "size_bytes": 86
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4p.xml",
+        "size_bytes": 82
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Id.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Ip.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkd.xml",
+        "size_bytes": 83
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkp.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/Project.xml",
+        "size_bytes": 73
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/l-M0cdfPZloipc8msVWbCe2KdAsd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/l-M0cdfPZloipc8msVWbCe2KdAsp.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/root/EEtUlUb-dLAdf0KpMVivaUlztwAp.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/root/fjRQtWiSIy7hIlj-Kmk87M7s21kp.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQd.xml",
+        "size_bytes": 82
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQp.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/root/HoHDHQ_WvHAAKj5aJOrvrg_vpt8p.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/root/KAXfQgCar2Yb8zOxgvf9hdmLP1Ep.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/root/LUgSFhI3RPozNzNcutxrczVe6f0p.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/root/qaw0eS1zuuY1ar9TdPn1GMfrjbQp.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/root/WZRuNzqc-Db7NcQAZO8Y-R8U9ccp.xml",
+        "size_bytes": 84
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/rootp.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/66WgGCcF5RIH9MCEgPmgjZK9k3Ud.xml",
+        "size_bytes": 73
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/66WgGCcF5RIH9MCEgPmgjZK9k3Up.xml",
+        "size_bytes": 96
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/AtMjXDrOSm8YDv3_4UFXiyrWqNEd.xml",
+        "size_bytes": 73
+      },
+      {
+        "path": "PassVeh14DOF/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/AtMjXDrOSm8YDv3_4UFXiyrWqNEp.xml",
+        "size_bytes": 94
+      },
+      {
+        "path": "PassVeh7DOF/Plant/PassVeh7DOF.sldd",
+        "size_bytes": 2657
+      },
+      {
+        "path": "PassVeh7DOF/Plant/PassVeh7DOF.slx",
+        "size_bytes": 1323185
+      },
+      {
+        "path": "PassVeh7DOF/Plant/PassVeh7DOFParam.sldd",
+        "size_bytes": 2588
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/xi2AWwdr0eT2sk59qwQhj9w7TpId.xml",
+        "size_bytes": 74
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/xi2AWwdr0eT2sk59qwQhj9w7TpIp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsd.xml",
+        "size_bytes": 114
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsp.xml",
+        "size_bytes": 91
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/HoHDHQ_WvHAAKj5aJOrvrg_vpt8/xXlmKuOQ7YT_G1elNhbKQIUqSRMd.xml",
+        "size_bytes": 61
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/HoHDHQ_WvHAAKj5aJOrvrg_vpt8/xXlmKuOQ7YT_G1elNhbKQIUqSRMp.xml",
+        "size_bytes": 86
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/qGNRREDBh85TyHWyVSILtsNfMHQd.xml",
+        "size_bytes": 143
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/qGNRREDBh85TyHWyVSILtsNfMHQp.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/7Q8E2XSN3XuDsXtfbjTRLn9xl34d.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/7Q8E2XSN3XuDsXtfbjTRLn9xl34p.xml",
+        "size_bytes": 85
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/e6zRSuEh6EVPsPcqJcGZbeF_s34d.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/e6zRSuEh6EVPsPcqJcGZbeF_s34p.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/Pl81uLnPSf-1Hb7tmRndiId8kqId.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/Pl81uLnPSf-1Hb7tmRndiId8kqIp.xml",
+        "size_bytes": 86
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/wadTQ7RzgUqy1btJWd5pWqrUwjwd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/wadTQ7RzgUqy1btJWd5pWqrUwjwp.xml",
+        "size_bytes": 91
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/LUgSFhI3RPozNzNcutxrczVe6f0/MHv9sD025UlTjn584E7wySDaA_cd.xml",
+        "size_bytes": 85
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/LUgSFhI3RPozNzNcutxrczVe6f0/MHv9sD025UlTjn584E7wySDaA_cp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4d.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4p.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZod.xml",
+        "size_bytes": 82
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZop.xml",
+        "size_bytes": 78
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencd.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencp.xml",
+        "size_bytes": 77
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8d.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8p.xml",
+        "size_bytes": 76
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4d.xml",
+        "size_bytes": 86
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4p.xml",
+        "size_bytes": 82
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Id.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Ip.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkd.xml",
+        "size_bytes": 83
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkp.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/Project.xml",
+        "size_bytes": 73
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/l-M0cdfPZloipc8msVWbCe2KdAsd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/l-M0cdfPZloipc8msVWbCe2KdAsp.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/root/EEtUlUb-dLAdf0KpMVivaUlztwAp.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/root/fjRQtWiSIy7hIlj-Kmk87M7s21kp.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQd.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQp.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/root/HoHDHQ_WvHAAKj5aJOrvrg_vpt8p.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/root/KAXfQgCar2Yb8zOxgvf9hdmLP1Ep.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/root/LUgSFhI3RPozNzNcutxrczVe6f0p.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/root/qaw0eS1zuuY1ar9TdPn1GMfrjbQp.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/root/WZRuNzqc-Db7NcQAZO8Y-R8U9ccp.xml",
+        "size_bytes": 84
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/rootp.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/66WgGCcF5RIH9MCEgPmgjZK9k3Ud.xml",
+        "size_bytes": 73
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/66WgGCcF5RIH9MCEgPmgjZK9k3Up.xml",
+        "size_bytes": 96
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/AtMjXDrOSm8YDv3_4UFXiyrWqNEd.xml",
+        "size_bytes": 73
+      },
+      {
+        "path": "PassVeh7DOF/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/AtMjXDrOSm8YDv3_4UFXiyrWqNEp.xml",
+        "size_bytes": 94
+      },
+      {
+        "path": "SI/Controller/SiEngineMappedCntrlV.sldd",
+        "size_bytes": 2671
+      },
+      {
+        "path": "SI/Controller/SiEngineMappedCntrlV.slx",
+        "size_bytes": 101743
+      },
+      {
+        "path": "SI/Controller/SiEngineMappedCntrlVParam.sldd",
+        "size_bytes": 2595
+      },
+      {
+        "path": "SI/Plant/SiMappedEngineV.sldd",
+        "size_bytes": 2667
+      },
+      {
+        "path": "SI/Plant/SiMappedEngineV.slx",
+        "size_bytes": 71695
+      },
+      {
+        "path": "SI/Plant/SiMappedEngineVParam.sldd",
+        "size_bytes": 2596
+      },
+      {
+        "path": "SI/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/g2uKRxaRtIQ_aUqrS5Ip3-Elpbwd.xml",
+        "size_bytes": 74
+      },
+      {
+        "path": "SI/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/g2uKRxaRtIQ_aUqrS5Ip3-Elpbwp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "SI/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/y2sSswR5z3CTf9_zxrYfVA308aUd.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "SI/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/y2sSswR5z3CTf9_zxrYfVA308aUp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "SI/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsd.xml",
+        "size_bytes": 114
+      },
+      {
+        "path": "SI/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsp.xml",
+        "size_bytes": 91
+      },
+      {
+        "path": "SI/resources/project/HoHDHQ_WvHAAKj5aJOrvrg_vpt8/xXlmKuOQ7YT_G1elNhbKQIUqSRMd.xml",
+        "size_bytes": 313
+      },
+      {
+        "path": "SI/resources/project/HoHDHQ_WvHAAKj5aJOrvrg_vpt8/xXlmKuOQ7YT_G1elNhbKQIUqSRMp.xml",
+        "size_bytes": 86
+      },
+      {
+        "path": "SI/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/yEuWEJZ2L2mzlRy_Ch9X0bhxx40d.xml",
+        "size_bytes": 138
+      },
+      {
+        "path": "SI/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/yEuWEJZ2L2mzlRy_Ch9X0bhxx40p.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "SI/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/7vywPNFte2PJDa5eg7oST3diG9cd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "SI/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/7vywPNFte2PJDa5eg7oST3diG9cp.xml",
+        "size_bytes": 90
+      },
+      {
+        "path": "SI/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/d1Da_KofWQ2XUk0mTU2wAvaaaxwd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "SI/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/d1Da_KofWQ2XUk0mTU2wAvaaaxwp.xml",
+        "size_bytes": 89
+      },
+      {
+        "path": "SI/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/e6zRSuEh6EVPsPcqJcGZbeF_s34d.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "SI/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/e6zRSuEh6EVPsPcqJcGZbeF_s34p.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "SI/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/sTU2VAbXp_zhg_uBg3rhIFpj15Yd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "SI/resources/project/l-M0cdfPZloipc8msVWbCe2KdAs/sTU2VAbXp_zhg_uBg3rhIFpj15Yp.xml",
+        "size_bytes": 95
+      },
+      {
+        "path": "SI/resources/project/LUgSFhI3RPozNzNcutxrczVe6f0/sulSCpJvE9HZAZKQpx5L0RhZ0PQd.xml",
+        "size_bytes": 85
+      },
+      {
+        "path": "SI/resources/project/LUgSFhI3RPozNzNcutxrczVe6f0/sulSCpJvE9HZAZKQpx5L0RhZ0PQp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "SI/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4d.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "SI/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4p.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "SI/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZod.xml",
+        "size_bytes": 82
+      },
+      {
+        "path": "SI/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZop.xml",
+        "size_bytes": 78
+      },
+      {
+        "path": "SI/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencd.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "SI/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencp.xml",
+        "size_bytes": 77
+      },
+      {
+        "path": "SI/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8d.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "SI/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8p.xml",
+        "size_bytes": 76
+      },
+      {
+        "path": "SI/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4d.xml",
+        "size_bytes": 86
+      },
+      {
+        "path": "SI/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4p.xml",
+        "size_bytes": 82
+      },
+      {
+        "path": "SI/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Id.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "SI/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Ip.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "SI/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkd.xml",
+        "size_bytes": 83
+      },
+      {
+        "path": "SI/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkp.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "SI/resources/project/Project.xml",
+        "size_bytes": 73
+      },
+      {
+        "path": "SI/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/l-M0cdfPZloipc8msVWbCe2KdAsd.xml",
+        "size_bytes": 138
+      },
+      {
+        "path": "SI/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/l-M0cdfPZloipc8msVWbCe2KdAsp.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "SI/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/YDw-v2Vt_7DSsTR-XyZc5iCCJ24d.xml",
+        "size_bytes": 138
+      },
+      {
+        "path": "SI/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/YDw-v2Vt_7DSsTR-XyZc5iCCJ24p.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "SI/resources/project/root/EEtUlUb-dLAdf0KpMVivaUlztwAp.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "SI/resources/project/root/fjRQtWiSIy7hIlj-Kmk87M7s21kp.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "SI/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQd.xml",
+        "size_bytes": 70
+      },
+      {
+        "path": "SI/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQp.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "SI/resources/project/root/HoHDHQ_WvHAAKj5aJOrvrg_vpt8p.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "SI/resources/project/root/KAXfQgCar2Yb8zOxgvf9hdmLP1Ep.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "SI/resources/project/root/LUgSFhI3RPozNzNcutxrczVe6f0p.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "SI/resources/project/root/qaw0eS1zuuY1ar9TdPn1GMfrjbQp.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "SI/resources/project/root/WZRuNzqc-Db7NcQAZO8Y-R8U9ccp.xml",
+        "size_bytes": 84
+      },
+      {
+        "path": "SI/resources/project/rootp.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "SI/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/66WgGCcF5RIH9MCEgPmgjZK9k3Ud.xml",
+        "size_bytes": 73
+      },
+      {
+        "path": "SI/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/66WgGCcF5RIH9MCEgPmgjZK9k3Up.xml",
+        "size_bytes": 96
+      },
+      {
+        "path": "SI/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/AtMjXDrOSm8YDv3_4UFXiyrWqNEd.xml",
+        "size_bytes": 73
+      },
+      {
+        "path": "SI/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/AtMjXDrOSm8YDv3_4UFXiyrWqNEp.xml",
+        "size_bytes": 94
+      },
+      {
+        "path": "SI/resources/project/YDw-v2Vt_7DSsTR-XyZc5iCCJ24/Mrleyd1k3s3Ns4LRuZSJMyARXWkd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "SI/resources/project/YDw-v2Vt_7DSsTR-XyZc5iCCJ24/Mrleyd1k3s3Ns4LRuZSJMyARXWkp.xml",
+        "size_bytes": 95
+      },
+      {
+        "path": "SI/resources/project/YDw-v2Vt_7DSsTR-XyZc5iCCJ24/pygAZWimQKrdsbB1u1NdIpwWpmAd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "SI/resources/project/YDw-v2Vt_7DSsTR-XyZc5iCCJ24/pygAZWimQKrdsbB1u1NdIpwWpmAp.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "SI/resources/project/YDw-v2Vt_7DSsTR-XyZc5iCCJ24/Wq5WHfHYIwZBQttTFE1AGrvXsgAd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "SI/resources/project/YDw-v2Vt_7DSsTR-XyZc5iCCJ24/Wq5WHfHYIwZBQttTFE1AGrvXsgAp.xml",
+        "size_bytes": 94
+      },
+      {
+        "path": "SI/resources/project/YDw-v2Vt_7DSsTR-XyZc5iCCJ24/zYZvnVhzVXfkkywlrTWUi9_3aZsd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "SI/resources/project/YDw-v2Vt_7DSsTR-XyZc5iCCJ24/zYZvnVhzVXfkkywlrTWUi9_3aZsp.xml",
+        "size_bytes": 100
+      },
+      {
+        "path": "VehicleConfig/Config/VehicleConfig.sldd",
+        "size_bytes": 18912
+      },
+      {
+        "path": "VehicleConfig/resources/project/bgDOP7pWjBU3WyR1J5pFIN8eoZw/lGZyI6WCq4Tm9LE3y8qJHtJOyGYd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VehicleConfig/resources/project/bgDOP7pWjBU3WyR1J5pFIN8eoZw/lGZyI6WCq4Tm9LE3y8qJHtJOyGYp.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "VehicleConfig/resources/project/bgDOP7pWjBU3WyR1J5pFIN8eoZw/Uxc_J4MjpZccb-H_PJKi3Svu8xwd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "VehicleConfig/resources/project/bgDOP7pWjBU3WyR1J5pFIN8eoZw/Uxc_J4MjpZccb-H_PJKi3Svu8xwp.xml",
+        "size_bytes": 88
+      },
+      {
+        "path": "VehicleConfig/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/rduHg0hfX5HfZq9L2-Bojm7dNCEd.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "VehicleConfig/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/rduHg0hfX5HfZq9L2-Bojm7dNCEp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "VehicleConfig/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsd.xml",
+        "size_bytes": 114
+      },
+      {
+        "path": "VehicleConfig/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsp.xml",
+        "size_bytes": 91
+      },
+      {
+        "path": "VehicleConfig/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4d.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "VehicleConfig/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4p.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "VehicleConfig/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZod.xml",
+        "size_bytes": 82
+      },
+      {
+        "path": "VehicleConfig/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZop.xml",
+        "size_bytes": 78
+      },
+      {
+        "path": "VehicleConfig/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencd.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "VehicleConfig/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencp.xml",
+        "size_bytes": 77
+      },
+      {
+        "path": "VehicleConfig/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8d.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "VehicleConfig/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8p.xml",
+        "size_bytes": 76
+      },
+      {
+        "path": "VehicleConfig/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4d.xml",
+        "size_bytes": 86
+      },
+      {
+        "path": "VehicleConfig/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4p.xml",
+        "size_bytes": 82
+      },
+      {
+        "path": "VehicleConfig/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Id.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "VehicleConfig/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Ip.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "VehicleConfig/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkd.xml",
+        "size_bytes": 83
+      },
+      {
+        "path": "VehicleConfig/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkp.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "VehicleConfig/resources/project/Project.xml",
+        "size_bytes": 73
+      },
+      {
+        "path": "VehicleConfig/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/bgDOP7pWjBU3WyR1J5pFIN8eoZwd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "VehicleConfig/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/bgDOP7pWjBU3WyR1J5pFIN8eoZwp.xml",
+        "size_bytes": 76
+      },
+      {
+        "path": "VehicleConfig/resources/project/root/6x1BhZX_fLnKpcwqra0qFwv1jIgp.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "VehicleConfig/resources/project/root/EEtUlUb-dLAdf0KpMVivaUlztwAp.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "VehicleConfig/resources/project/root/fjRQtWiSIy7hIlj-Kmk87M7s21kp.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "VehicleConfig/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQd.xml",
+        "size_bytes": 67
+      },
+      {
+        "path": "VehicleConfig/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQp.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "VehicleConfig/resources/project/root/KAXfQgCar2Yb8zOxgvf9hdmLP1Ep.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "VehicleConfig/resources/project/root/NmGqIpAwUJcXFyLjFAGnU9uyN5Yp.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "VehicleConfig/resources/project/root/qaw0eS1zuuY1ar9TdPn1GMfrjbQp.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "VehicleConfig/resources/project/rootp.xml",
+        "size_bytes": 46
+      }
+    ]
+  },
+  "transform": "transform.m",
+  "validation": {
+    "required": true,
+    "checks": [
+      "load",
+      "update",
+      "compile",
+      "simulate",
+      "all_official_scenarios",
+      "reference_score"
+    ],
+    "on_mismatch": "fail_closed"
+  },
+  "entrypoint": "BrakingTest/System/BTReferenceApplication.slx",
+  "expected_valid_scenarios": 6,
+  "score_tolerance": 1e-12,
+  "expected_score": 91.25745058688523,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal_uniform",
+      "uniform_low_friction",
+      "uniform_high_demand",
+      "longitudinal_low_patch",
+      "left_right_split_mu",
+      "lower_speed_reduced_demand"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision"
+}

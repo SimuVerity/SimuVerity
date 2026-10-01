@@ -1,0 +1,36 @@
+{
+  "schema": "simuverity.scorer-manifest.v1",
+  "task_id": "XMED-05",
+  "public_interface": "scorer.py:score",
+  "implementation": "scorer.py",
+  "source_modules": [
+    {
+      "module": "f90_xmed05_scoring_core",
+      "path": "vendor/scripts/formal90/tasks/f90_xmed05/f90_xmed05_scoring_core.py"
+    },
+    {
+      "module": "f90_xmed05_group_scoring",
+      "path": "vendor/scripts/formal90/tasks/f90_xmed05/f90_xmed05_group_scoring.py"
+    },
+    {
+      "module": "f90_xmed05_scoring",
+      "path": "vendor/scripts/formal90/tasks/f90_xmed05/f90_xmed05_scoring.py"
+    },
+    {
+      "module": "f90_xmed05_structure_policy_core",
+      "path": "vendor/scripts/formal90/tasks/f90_xmed05/f90_xmed05_structure_policy_core.py"
+    },
+    {
+      "module": "f90_xmed05_structure_policy",
+      "path": "vendor/scripts/formal90/tasks/f90_xmed05/f90_xmed05_structure_policy.py"
+    }
+  ],
+  "final_module": {
+    "module": "f90_xmed05_scoring",
+    "path": "vendor/scripts/formal90/tasks/f90_xmed05/f90_xmed05_scoring.py"
+  },
+  "payload_files": [],
+  "public_bridge": {
+    "mode": "function"
+  }
+}

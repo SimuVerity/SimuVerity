@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "run_id": "opus-4-8-claude-code-101-run1",
+  "benchmark_release": "simuverity-101-v1",
+  "taskset_id": "simuverity-101-v1",
+  "model": "Claude Opus 4.8",
+  "harness": "Claude Code",
+  "condition": null,
+  "task_count": 101,
+  "scored_count": 88,
+  "protocol_zero_count": 22,
+  "score_sum": "4477.890653",
+  "score_mean": "44.335551",
+  "delivered_count": 95,
+  "native_executable_count": 87,
+  "g_pass_count": 79,
+  "parent_run_id": "opus-4-8-claude-code-101",
+  "repeat_id": "run1"
+}

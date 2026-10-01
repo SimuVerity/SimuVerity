@@ -1,0 +1,241 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XTHERM-05",
+  "collection": "XTHERM",
+  "reference": {
+    "identity_path": "tasks/XTHERM-05/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/XTHERM05_reference.slx",
+    "model_path": "tasks/XTHERM-05/reference/files/XTHERM05_reference.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XTHERM-05",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a physically causal liquid-cooled 96-series, 3-parallel pouch-cell battery pack for controlled charging.",
+    "engineering_objects": [
+      "F90-XTHERM-05 plant and controller described by the current public task contract",
+      "Measured output interfaces: battery_temperature, plate_temperature, coolant_temperature_rise, coolant_pressure_drop, pack_current, cell_equivalent_voltage"
+    ],
+    "physical_paths": [
+      "The thermal path must contain independently evolving battery thermal nodes, conductive coupling into a finite-heat-capacity plate with 24 spatial partitions, and a real through-flow coolant network with finite hydraulic pressure loss.",
+      "The electrical source must deliver power through the physical pack.",
+      "Increasing coolant flow must act through the physical fluid path and change both measured pressure loss and thermal response."
+    ],
+    "functional_paths": [
+      "Build a physically causal liquid-cooled 96-series, 3-parallel pouch-cell battery pack for controlled charging.",
+      "A controller must use measured electrical feedback to limit charging current and transition toward the declared cell-equivalent voltage ceiling;",
+      "the controller design is otherwise unrestricted."
+    ],
+    "information_paths": [
+      "coolant_flow_lpm, coolant_inlet_temperature_K, charge_current_A, charge_step_fraction, charge_step_time_s, initial_battery_temperature_K, max_cell_voltage_V -> F90-XTHERM-05 plant/control path -> battery_temperature, plate_temperature, coolant_temperature_rise, coolant_pressure_drop, pack_current, cell_equivalent_voltage"
+    ],
+    "modes_and_events": [
+      "The electrical pack and its distributed thermal model must be coupled so that charging losses create heat in the same battery elements whose temperatures are reported.",
+      "Read coolant_flow_lpm, coolant_inlet_temperature_K, charge_current_A, charge_step_fraction, charge_step_time_s, initial_battery_temperature_K, and max_cell_voltage_V from MATLAB base-workspace variables.",
+      "At charge_step_time_s the total-pack current limit changes from charge_current_A to charge_current_A*(1+charge_step_fraction)."
+    ],
+    "interfaces": [
+      {
+        "name": "coolant_flow_lpm",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "L/min"
+        ],
+        "range_or_shape": "Read coolant_flow_lpm, coolant_inlet_temperature_K, charge_current_A, charge_step_fraction, charge_step_time_s, initial_battery_temperature_K, and max_cell_voltage_V from MATLAB base-workspace variables.",
+        "source": "tasks/XTHERM-05/public_spec.json"
+      },
+      {
+        "name": "coolant_inlet_temperature_K",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "K"
+        ],
+        "range_or_shape": "Read coolant_flow_lpm, coolant_inlet_temperature_K, charge_current_A, charge_step_fraction, charge_step_time_s, initial_battery_temperature_K, and max_cell_voltage_V from MATLAB base-workspace variables.",
+        "source": "tasks/XTHERM-05/public_spec.json"
+      },
+      {
+        "name": "charge_current_A",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "Read coolant_flow_lpm, coolant_inlet_temperature_K, charge_current_A, charge_step_fraction, charge_step_time_s, initial_battery_temperature_K, and max_cell_voltage_V from MATLAB base-workspace variables. charge_current_A is the total-pack charging-current limit, not a per-branch current. At charge_step_time_s the total-pack current limit changes from charge_current_A to charge_current_A*(1+charge_step_fraction).",
+        "source": "tasks/XTHERM-05/public_spec.json"
+      },
+      {
+        "name": "charge_step_fraction",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read coolant_flow_lpm, coolant_inlet_temperature_K, charge_current_A, charge_step_fraction, charge_step_time_s, initial_battery_temperature_K, and max_cell_voltage_V from MATLAB base-workspace variables. At charge_step_time_s the total-pack current limit changes from charge_current_A to charge_current_A*(1+charge_step_fraction).",
+        "source": "tasks/XTHERM-05/public_spec.json"
+      },
+      {
+        "name": "charge_step_time_s",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read coolant_flow_lpm, coolant_inlet_temperature_K, charge_current_A, charge_step_fraction, charge_step_time_s, initial_battery_temperature_K, and max_cell_voltage_V from MATLAB base-workspace variables. At charge_step_time_s the total-pack current limit changes from charge_current_A to charge_current_A*(1+charge_step_fraction).",
+        "source": "tasks/XTHERM-05/public_spec.json"
+      },
+      {
+        "name": "initial_battery_temperature_K",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "K"
+        ],
+        "range_or_shape": "Read coolant_flow_lpm, coolant_inlet_temperature_K, charge_current_A, charge_step_fraction, charge_step_time_s, initial_battery_temperature_K, and max_cell_voltage_V from MATLAB base-workspace variables.",
+        "source": "tasks/XTHERM-05/public_spec.json"
+      },
+      {
+        "name": "max_cell_voltage_V",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "V"
+        ],
+        "range_or_shape": "Read coolant_flow_lpm, coolant_inlet_temperature_K, charge_current_A, charge_step_fraction, charge_step_time_s, initial_battery_temperature_K, and max_cell_voltage_V from MATLAB base-workspace variables.",
+        "source": "tasks/XTHERM-05/public_spec.json"
+      },
+      {
+        "name": "battery_temperature",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "K"
+        ],
+        "range_or_shape": "Read coolant_flow_lpm, coolant_inlet_temperature_K, charge_current_A, charge_step_fraction, charge_step_time_s, initial_battery_temperature_K, and max_cell_voltage_V from MATLAB base-workspace variables. Log complete-run MATLAB Timeseries battery_temperature with 24 channels in kelvin, plate_temperature with 24 channels in kelvin, coolant_temperature_rise with one channel in kelvin, coolant_pressure_drop with one channel in bar, pack_current with one channel in total-pack amperes, and cell_equivalent_voltage with one channel in volts.",
+        "source": "tasks/XTHERM-05/public_spec.json"
+      },
+      {
+        "name": "plate_temperature",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "K"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries battery_temperature with 24 channels in kelvin, plate_temperature with 24 channels in kelvin, coolant_temperature_rise with one channel in kelvin, coolant_pressure_drop with one channel in bar, pack_current with one channel in total-pack amperes, and cell_equivalent_voltage with one channel in volts.",
+        "source": "tasks/XTHERM-05/public_spec.json"
+      },
+      {
+        "name": "coolant_temperature_rise",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "K"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries battery_temperature with 24 channels in kelvin, plate_temperature with 24 channels in kelvin, coolant_temperature_rise with one channel in kelvin, coolant_pressure_drop with one channel in bar, pack_current with one channel in total-pack amperes, and cell_equivalent_voltage with one channel in volts.",
+        "source": "tasks/XTHERM-05/public_spec.json"
+      },
+      {
+        "name": "coolant_pressure_drop",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "bar"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries battery_temperature with 24 channels in kelvin, plate_temperature with 24 channels in kelvin, coolant_temperature_rise with one channel in kelvin, coolant_pressure_drop with one channel in bar, pack_current with one channel in total-pack amperes, and cell_equivalent_voltage with one channel in volts.",
+        "source": "tasks/XTHERM-05/public_spec.json"
+      },
+      {
+        "name": "pack_current",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries battery_temperature with 24 channels in kelvin, plate_temperature with 24 channels in kelvin, coolant_temperature_rise with one channel in kelvin, coolant_pressure_drop with one channel in bar, pack_current with one channel in total-pack amperes, and cell_equivalent_voltage with one channel in volts.",
+        "source": "tasks/XTHERM-05/public_spec.json"
+      },
+      {
+        "name": "cell_equivalent_voltage",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "V"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries battery_temperature with 24 channels in kelvin, plate_temperature with 24 channels in kelvin, coolant_temperature_rise with one channel in kelvin, coolant_pressure_drop with one channel in bar, pack_current with one channel in total-pack amperes, and cell_equivalent_voltage with one channel in volts.",
+        "source": "tasks/XTHERM-05/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a physically causal liquid-cooled 96-series, 3-parallel pouch-cell battery pack for controlled charging.",
+      "A controller must use measured electrical feedback to limit charging current and transition toward the declared cell-equivalent voltage ceiling;",
+      "the controller design is otherwise unrestricted."
+    ],
+    "feedback_and_control_causality": [
+      "Build a physically causal liquid-cooled 96-series, 3-parallel pouch-cell battery pack for controlled charging.",
+      "A controller must use measured electrical feedback to limit charging current and transition toward the declared cell-equivalent voltage ceiling;",
+      "the controller design is otherwise unrestricted."
+    ],
+    "signal_sources": [
+      "coolant_flow_lpm is read from the public MATLAB base-workspace input contract.",
+      "coolant_inlet_temperature_K is read from the public MATLAB base-workspace input contract.",
+      "charge_current_A is read from the public MATLAB base-workspace input contract.",
+      "charge_step_fraction is read from the public MATLAB base-workspace input contract.",
+      "charge_step_time_s is read from the public MATLAB base-workspace input contract.",
+      "initial_battery_temperature_K is read from the public MATLAB base-workspace input contract.",
+      "max_cell_voltage_V is read from the public MATLAB base-workspace input contract.",
+      "battery_temperature is produced by the implemented plant or controller and logged under the public output contract.",
+      "plate_temperature is produced by the implemented plant or controller and logged under the public output contract.",
+      "coolant_temperature_rise is produced by the implemented plant or controller and logged under the public output contract.",
+      "coolant_pressure_drop is produced by the implemented plant or controller and logged under the public output contract.",
+      "pack_current is produced by the implemented plant or controller and logged under the public output contract.",
+      "cell_equivalent_voltage is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "coolant_flow_lpm: Read coolant_flow_lpm, coolant_inlet_temperature_K, charge_current_A, charge_step_fraction, charge_step_time_s, initial_battery_temperature_K, and max_cell_voltage_V from MATLAB base-workspace variables.",
+      "coolant_inlet_temperature_K: Read coolant_flow_lpm, coolant_inlet_temperature_K, charge_current_A, charge_step_fraction, charge_step_time_s, initial_battery_temperature_K, and max_cell_voltage_V from MATLAB base-workspace variables.",
+      "charge_current_A: Read coolant_flow_lpm, coolant_inlet_temperature_K, charge_current_A, charge_step_fraction, charge_step_time_s, initial_battery_temperature_K, and max_cell_voltage_V from MATLAB base-workspace variables. charge_current_A is the total-pack charging-current limit, not a per-branch current. At charge_step_time_s the total-pack current limit changes from charge_current_A to charge_current_A*(1+charge_step_fraction).",
+      "charge_step_fraction: Read coolant_flow_lpm, coolant_inlet_temperature_K, charge_current_A, charge_step_fraction, charge_step_time_s, initial_battery_temperature_K, and max_cell_voltage_V from MATLAB base-workspace variables. At charge_step_time_s the total-pack current limit changes from charge_current_A to charge_current_A*(1+charge_step_fraction).",
+      "charge_step_time_s: Read coolant_flow_lpm, coolant_inlet_temperature_K, charge_current_A, charge_step_fraction, charge_step_time_s, initial_battery_temperature_K, and max_cell_voltage_V from MATLAB base-workspace variables. At charge_step_time_s the total-pack current limit changes from charge_current_A to charge_current_A*(1+charge_step_fraction).",
+      "initial_battery_temperature_K: Read coolant_flow_lpm, coolant_inlet_temperature_K, charge_current_A, charge_step_fraction, charge_step_time_s, initial_battery_temperature_K, and max_cell_voltage_V from MATLAB base-workspace variables.",
+      "max_cell_voltage_V: Read coolant_flow_lpm, coolant_inlet_temperature_K, charge_current_A, charge_step_fraction, charge_step_time_s, initial_battery_temperature_K, and max_cell_voltage_V from MATLAB base-workspace variables."
+    ],
+    "disturbances": [
+      "Read coolant_flow_lpm, coolant_inlet_temperature_K, charge_current_A, charge_step_fraction, charge_step_time_s, initial_battery_temperature_K, and max_cell_voltage_V from MATLAB base-workspace variables.",
+      "At charge_step_time_s the total-pack current limit changes from charge_current_A to charge_current_A*(1+charge_step_fraction)."
+    ],
+    "dynamic_processes": [
+      "A controller must use measured electrical feedback to limit charging current and transition toward the declared cell-equivalent voltage ceiling;",
+      "Read coolant_flow_lpm, coolant_inlet_temperature_K, charge_current_A, charge_step_fraction, charge_step_time_s, initial_battery_temperature_K, and max_cell_voltage_V from MATLAB base-workspace variables.",
+      "At charge_step_time_s the total-pack current limit changes from charge_current_A to charge_current_A*(1+charge_step_fraction)."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XTHERM-05: prescribing battery_temperature directly would bypass the system path described by: The thermal path must contain independently evolving battery thermal nodes, conductive coupling into a finite-heat-capacity plate with 24 spatial partitions, and a real through-flow coolant network with finite hydraulic pressure loss.",
+      "F90-XTHERM-05: replaying a fixed battery_temperature trace would ignore causal variation in coolant_flow_lpm."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XTHERM-05/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XTHERM-05/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XTHERM-05/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

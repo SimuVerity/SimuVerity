@@ -1,0 +1,34 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XROBO-01",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/XROBO01_reference.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 418,
+  "retained_bytes": 7614233,
+  "excluded_files": [
+    {
+      "path": "reference/files/Contact_Forces_Sphere_Cone.pptx",
+      "size_bytes": 374561,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/Contact_Images.pptx",
+      "size_bytes": 713107,
+      "category": "documentation_presentation",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    }
+  ],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ],
+  "source_closure": {
+    "path": "reference/files/sm_robot_run_4legs.slx",
+    "role": "upstream_source_closure_only_not_reference_entrypoint"
+  }
+}

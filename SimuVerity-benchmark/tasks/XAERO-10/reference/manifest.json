@@ -1,0 +1,82 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XAERO-10",
+  "file_count": 12,
+  "files": [
+    {
+      "path": "reference/files/source/2018_Simulink/Butterworth.m",
+      "size_bytes": 1188
+    },
+    {
+      "path": "reference/files/source/2018_Simulink/comparison_noise_nonoise.slx",
+      "size_bytes": 86318
+    },
+    {
+      "path": "reference/files/source/2018_Simulink/controller_dist_def_controller.slx",
+      "size_bytes": 67608
+    },
+    {
+      "path": "reference/files/source/2018_Simulink/Disturance_behaviour_sim.slx",
+      "size_bytes": 74683
+    },
+    {
+      "path": "reference/files/source/2018_Simulink/Full_States_Observer2018.slx",
+      "size_bytes": 55966
+    },
+    {
+      "path": "reference/files/source/2018_Simulink/Integral_controller_disturbance.slx",
+      "size_bytes": 70391
+    },
+    {
+      "path": "reference/files/source/2018_Simulink/Kalman_observer.slx",
+      "size_bytes": 51892
+    },
+    {
+      "path": "reference/files/source/2018_Simulink/Optimal_lqr.slx",
+      "size_bytes": 71121
+    },
+    {
+      "path": "reference/files/source/2018_Simulink/Robustness.slx",
+      "size_bytes": 93042
+    },
+    {
+      "path": "reference/files/source/LICENSE",
+      "size_bytes": 1068
+    },
+    {
+      "path": "reference/files/source/README.md",
+      "size_bytes": 1487
+    },
+    {
+      "path": "reference/files/source_metadata.json",
+      "size_bytes": 649
+    }
+  ],
+  "entrypoint": "reference/files/source/2018_Simulink/comparison_noise_nonoise.slx",
+  "expected_score": 99.999999996,
+  "expected_score_basis": "reference_replay",
+  "expected_valid_scenarios": 5,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal_zero_command",
+      "small_command",
+      "large_command",
+      "high_measurement_noise",
+      "combined_command_noise"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 575413,
+  "excluded_files": [
+    {
+      "path": "reference/files/source/Codes and Simulink.zip",
+      "size_bytes": 8867032,
+      "category": "duplicate_source_archive",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    }
+  ]
+}

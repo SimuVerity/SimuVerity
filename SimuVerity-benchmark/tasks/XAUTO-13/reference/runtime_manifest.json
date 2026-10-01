@@ -1,0 +1,20 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XAUTO-13",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/ext_xauto_pmsm_param_est_reference.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 3,
+  "retained_bytes": 37927,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ],
+  "clean_replay_setup": {
+    "phase": "after_load_before_update",
+    "path": "tasks/XAUTO-13/reference/clean_replay_setup/ext_xauto_pmsm_param_est_reference_clean_replay_setup.m",
+    "entrypoint": "ext_xauto_pmsm_param_est_reference_clean_replay_setup"
+  }
+}

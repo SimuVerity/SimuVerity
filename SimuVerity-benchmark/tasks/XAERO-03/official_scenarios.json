@@ -1,0 +1,214 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XAERO-03",
+  "scenarios": [
+    {
+      "id": "nominal",
+      "values": {
+        "altitude_reference": 3048,
+        "airspeed_reference": 150,
+        "heading_change": 0.3,
+        "initial_altitude_offset": -120,
+        "initial_airspeed_offset": -10,
+        "command_time": 4.0,
+        "gust_speed": 12,
+        "gust_heading": 90,
+        "gust_time": 9.0
+      }
+    },
+    {
+      "id": "high_altitude_fast_right_turn",
+      "values": {
+        "altitude_reference": 8800,
+        "airspeed_reference": 225,
+        "heading_change": 0.58,
+        "initial_altitude_offset": -300,
+        "initial_airspeed_offset": -25,
+        "command_time": 3.5,
+        "gust_speed": 22,
+        "gust_heading": 110,
+        "gust_time": 7.0
+      }
+    },
+    {
+      "id": "low_altitude_slow_left_turn",
+      "values": {
+        "altitude_reference": 1950,
+        "airspeed_reference": 125,
+        "heading_change": -0.58,
+        "initial_altitude_offset": 250,
+        "initial_airspeed_offset": 25,
+        "command_time": 5.5,
+        "gust_speed": 18,
+        "gust_heading": -70,
+        "gust_time": 11.5
+      }
+    },
+    {
+      "id": "large_climb_transition",
+      "values": {
+        "altitude_reference": 6200,
+        "airspeed_reference": 180,
+        "heading_change": 0.2,
+        "initial_altitude_offset": -340,
+        "initial_airspeed_offset": -18,
+        "command_time": 4.5,
+        "gust_speed": 15,
+        "gust_heading": 160,
+        "gust_time": 8.5
+      }
+    },
+    {
+      "id": "gust_pair_none",
+      "values": {
+        "altitude_reference": 4500,
+        "airspeed_reference": 165,
+        "heading_change": 0.4,
+        "initial_altitude_offset": -100,
+        "initial_airspeed_offset": -8,
+        "command_time": 4.0,
+        "gust_speed": 0,
+        "gust_heading": 35,
+        "gust_time": 8.0
+      }
+    },
+    {
+      "id": "gust_pair_crosswind",
+      "values": {
+        "altitude_reference": 4500,
+        "airspeed_reference": 165,
+        "heading_change": 0.4,
+        "initial_altitude_offset": -100,
+        "initial_airspeed_offset": -8,
+        "command_time": 4.0,
+        "gust_speed": 24,
+        "gust_heading": 35,
+        "gust_time": 8.0
+      }
+    },
+    {
+      "id": "heading_pair_left",
+      "values": {
+        "altitude_reference": 3200,
+        "airspeed_reference": 140,
+        "heading_change": -0.55,
+        "initial_altitude_offset": 0,
+        "initial_airspeed_offset": 0,
+        "command_time": 3.0,
+        "gust_speed": 8,
+        "gust_heading": 90,
+        "gust_time": 12.5
+      }
+    },
+    {
+      "id": "heading_pair_right",
+      "values": {
+        "altitude_reference": 3200,
+        "airspeed_reference": 140,
+        "heading_change": 0.55,
+        "initial_altitude_offset": 0,
+        "initial_airspeed_offset": 0,
+        "command_time": 3.0,
+        "gust_speed": 8,
+        "gust_heading": 90,
+        "gust_time": 12.5
+      }
+    },
+    {
+      "id": "joint_boundary",
+      "values": {
+        "altitude_reference": 9000,
+        "airspeed_reference": 125,
+        "heading_change": -0.62,
+        "initial_altitude_offset": 300,
+        "initial_airspeed_offset": 28,
+        "command_time": 6.8,
+        "gust_speed": 24.5,
+        "gust_heading": -145,
+        "gust_time": 7.2
+      }
+    }
+  ],
+  "contract": {
+    "range_scenario_ids": [
+      "nominal",
+      "high_altitude_fast_right_turn",
+      "low_altitude_slow_left_turn",
+      "large_climb_transition",
+      "joint_boundary"
+    ],
+    "mixed_stress_scenario_ids": [
+      "joint_boundary"
+    ],
+    "trim_release_scenario_ids": [
+      "heading_pair_left",
+      "heading_pair_right"
+    ],
+    "paired_scenarios": {
+      "gust": [
+        "gust_pair_none",
+        "gust_pair_crosswind"
+      ],
+      "heading": [
+        "heading_pair_left",
+        "heading_pair_right"
+      ]
+    },
+    "groups": {
+      "G": "load, update, compile, all private simulations, output contract, finite values and broad flight domains",
+      "A": "nominal altitude, airspeed, heading and sideslip regulation",
+      "Q": "flight-envelope, actuator-position/rate, saturation and load quality",
+      "M": "air-data, kinematic, translational, rotational, actuator and nonlinear aerodynamic causal closure",
+      "R": "worst altitude, speed and maneuver tracking, including the mixed joint stress condition",
+      "D": "zero-offset trim release, paired heading response, true gust response and recovery",
+      "weights": {
+        "A": 0.22,
+        "Q": 0.12,
+        "M": 0.32,
+        "R": 0.15,
+        "D": 0.19
+      },
+      "policy_id": "simuverity-101-v1:xaero-03:scoring"
+    }
+  },
+  "range_scenario_ids": [
+    "nominal",
+    "high_altitude_fast_right_turn",
+    "low_altitude_slow_left_turn",
+    "large_climb_transition",
+    "joint_boundary"
+  ],
+  "mixed_stress_scenario_ids": [
+    "joint_boundary"
+  ],
+  "trim_release_scenario_ids": [
+    "heading_pair_left",
+    "heading_pair_right"
+  ],
+  "paired_scenarios": {
+    "gust": [
+      "gust_pair_none",
+      "gust_pair_crosswind"
+    ],
+    "heading": [
+      "heading_pair_left",
+      "heading_pair_right"
+    ]
+  },
+  "groups": {
+    "G": "load, update, compile, all private simulations, output contract, finite values and broad flight domains",
+    "A": "nominal altitude, airspeed, heading and sideslip regulation",
+    "Q": "flight-envelope, actuator-position/rate, saturation and load quality",
+    "M": "air-data, kinematic, translational, rotational, actuator and nonlinear aerodynamic causal closure",
+    "R": "worst altitude, speed and maneuver tracking, including the mixed joint stress condition",
+    "D": "zero-offset trim release, paired heading response, true gust response and recovery",
+    "weights": {
+      "A": 0.22,
+      "Q": 0.12,
+      "M": 0.32,
+      "R": 0.15,
+      "D": 0.19
+    },
+    "policy_id": "simuverity-101-v1:xaero-03:scoring"
+  }
+}

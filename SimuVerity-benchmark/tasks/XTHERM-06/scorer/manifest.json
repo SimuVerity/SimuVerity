@@ -1,0 +1,32 @@
+{
+  "schema": "simuverity.scorer-manifest.v1",
+  "task_id": "XTHERM-06",
+  "public_interface": "scorer.py:score",
+  "implementation": "scorer.py",
+  "source_modules": [
+    {
+      "module": "geometric_scoring_adapter",
+      "path": "vendor/scripts/formal90/geometric_scoring_adapter.py"
+    },
+    {
+      "module": "f90_xtherm06_scoring_core",
+      "path": "vendor/scripts/formal90/tasks/f90_xtherm06/f90_xtherm06_scoring_core.py"
+    },
+    {
+      "module": "f90_xtherm06_group_aggregation",
+      "path": "vendor/scripts/formal90/tasks/f90_xtherm06/f90_xtherm06_group_aggregation.py"
+    },
+    {
+      "module": "f90_xtherm06_scoring",
+      "path": "vendor/scripts/formal90/tasks/f90_xtherm06/f90_xtherm06_scoring.py"
+    }
+  ],
+  "final_module": {
+    "module": "f90_xtherm06_scoring",
+    "path": "vendor/scripts/formal90/tasks/f90_xtherm06/f90_xtherm06_scoring.py"
+  },
+  "payload_files": [],
+  "public_bridge": {
+    "mode": "function"
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XTHERM-13",
+  "collection": "XTHERM",
+  "reference": {
+    "identity_path": "tasks/XTHERM-13/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/ResidentialBuildingTESandPVcell.slx",
+    "model_path": "tasks/XTHERM-13/reference/files/ResidentialBuildingTESandPVcell.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id EXT-XTHERM-PVTES-01",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "The model shall contain a causal energy path from solar input through PV or electrical conversion into an explicit finite-capacity thermal store, then through both a thermal-liquid-side and an air-side heat-transfer network to four distinct building-zone thermal states.",
+    "engineering_objects": [
+      "The model shall contain a causal energy path from solar input through PV or electrical conversion into an explicit finite-capacity thermal store, then through both a thermal-liquid-side and an air-side heat-transfer network to four distinct building-zone thermal states.",
+      "Include a connected flow-control valve in the thermal-liquid circuit."
+    ],
+    "physical_paths": [
+      "The model shall contain a causal energy path from solar input through PV or electrical conversion into an explicit finite-capacity thermal store, then through both a thermal-liquid-side and an air-side heat-transfer network to four distinct building-zone thermal states.",
+      "Include a connected flow-control valve in the thermal-liquid circuit.",
+      "All fields must causally affect the connected plant and controller as applicable."
+    ],
+    "functional_paths": [
+      "Include a connected flow-control valve in the thermal-liquid circuit.",
+      "no particular storage material, controller family, logging block, block name, or hierarchy is required.",
+      "thermal_measurement_bias_degC shall be added only to the measured thermal feedback presented to the pump and blower controllers;"
+    ],
+    "information_paths": [
+      "TES_PUBLIC_INPUT -> EXT-XTHERM-PVTES-01 plant/control path -> tes_thermal_state_ts, tes_energy_flow_ts, tes_control_ts"
+    ],
+    "modes_and_events": [
+      "The model shall contain a causal energy path from solar input through PV or electrical conversion into an explicit finite-capacity thermal store, then through both a thermal-liquid-side and an air-side heat-transfer network to four distinct building-zone thermal states."
+    ],
+    "interfaces": [
+      {
+        "name": "TES_PUBLIC_INPUT",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Before simulation the evaluator places TES_PUBLIC_INPUT in the MATLAB base workspace.",
+        "source": "tasks/XTHERM-13/public_spec.json"
+      },
+      {
+        "name": "tes_thermal_state_ts",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "degC"
+        ],
+        "range_or_shape": "(1) tes_thermal_state_ts, width 7: zone_1_air_temperature_degC [degC], zone_2_air_temperature_degC [degC], zone_3_air_temperature_degC [degC], zone_4_air_temperature_degC [degC], hot_water_tank_temperature_degC [degC], thermal_store_mean_temperature_degC [degC], pv_cell_temperature_degC [degC].",
+        "source": "tasks/XTHERM-13/public_spec.json"
+      },
+      {
+        "name": "tes_energy_flow_ts",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "W",
+          "J",
+          "kg/s"
+        ],
+        "range_or_shape": "(2) tes_energy_flow_ts, width 6: pv_net_electrical_power_W [W], thermal_store_energy_change_J [J], hex_water_to_air_heat_flow_W [W], total_heat_supplied_toward_building_W [W], water_loop_mass_flow_from_tank_toward_pump_kg_s [kg/s], air_loop_mass_flow_in_blower_supply_direction_kg_s [kg/s].",
+        "source": "tasks/XTHERM-13/public_spec.json"
+      },
+      {
+        "name": "tes_control_ts",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "1",
+          "Pa",
+          "kg/s",
+          "W",
+          "degC"
+        ],
+        "range_or_shape": "(3) tes_control_ts, width 6: flow_valve_control_signal [1], water_pump_pressure_command_Pa [Pa], air_blower_mass_flow_command_kg_s [kg/s], water_pump_power_W [W], air_blower_power_W [W], room_setpoint_degC [degC].",
+        "source": "tasks/XTHERM-13/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Use measured thermal states in closed loop to coordinate a water pump and an air blower.",
+      "no particular storage material, controller family, logging block, block name, or hierarchy is required.",
+      "thermal_measurement_bias_degC shall be added only to the measured thermal feedback presented to the pump and blower controllers;"
+    ],
+    "feedback_and_control_causality": [
+      "The model shall contain a causal energy path from solar input through PV or electrical conversion into an explicit finite-capacity thermal store, then through both a thermal-liquid-side and an air-side heat-transfer network to four distinct building-zone thermal states.",
+      "no particular storage material, controller family, logging block, block name, or hierarchy is required.",
+      "thermal_measurement_bias_degC shall be added only to the measured thermal feedback presented to the pump and blower controllers;"
+    ],
+    "signal_sources": [
+      "TES_PUBLIC_INPUT is read from the public MATLAB base-workspace input contract.",
+      "tes_thermal_state_ts is produced by the implemented plant or controller and logged under the public output contract.",
+      "tes_energy_flow_ts is produced by the implemented plant or controller and logged under the public output contract.",
+      "tes_control_ts is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "TES_PUBLIC_INPUT: Before simulation the evaluator places TES_PUBLIC_INPUT in the MATLAB base workspace."
+    ],
+    "disturbances": [
+      "EXT-XTHERM-PVTES-01 operating variation is supplied through TES_PUBLIC_INPUT."
+    ],
+    "dynamic_processes": [
+      "Produce these complete-run MATLAB Timeseries with exactly the stated width, channel order, and units."
+    ],
+    "task_specific_shortcuts": [
+      "EXT-XTHERM-PVTES-01: prescribing tes_thermal_state_ts directly would bypass the system path described by: The model shall contain a causal energy path from solar input through PV or electrical conversion into an explicit finite-capacity thermal store, then through both a thermal-liquid-side and an air-side heat-transfer network to four distinct building-zone thermal states.",
+      "EXT-XTHERM-PVTES-01: replaying a fixed tes_thermal_state_ts trace would ignore causal variation in TES_PUBLIC_INPUT."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XTHERM-13/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XTHERM-13/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XTHERM-13/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

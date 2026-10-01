@@ -1,0 +1,28 @@
+{
+  "schema": "simuverity.extractor-closure.v1",
+  "task_id": "XMECH-11",
+  "entrypoint": "vendor/scripts/formal90/tasks/ext_xmech_wheelloader_coord_01/ext_xmech_wheelloader_coord_01_extract_evidence.m",
+  "public_wrapper": "extractor/run.m",
+  "files": [
+    {
+      "source_name": "simuverity_official_scenarios_path.m",
+      "public_path": "extractor/support/simuverity_official_scenarios_path.m"
+    },
+    {
+      "source_name": "ext_xmech_wheelloader_coord_01_extract_evidence.m",
+      "public_path": "vendor/scripts/formal90/tasks/ext_xmech_wheelloader_coord_01/ext_xmech_wheelloader_coord_01_extract_evidence.m"
+    },
+    {
+      "source_name": "wheel_loader_operator_profiles.json",
+      "public_path": "vendor/scripts/formal90/tasks/ext_xmech_wheelloader_coord_01/wheel_loader_operator_profiles.json"
+    },
+    {
+      "source_name": "unified_load_candidate_dependencies.m",
+      "public_path": "vendor/scripts/unified/candidate_closure/unified_load_candidate_dependencies.m"
+    },
+    {
+      "source_name": "unified_reload_candidate_dependencies.m",
+      "public_path": "vendor/scripts/unified/candidate_closure/unified_reload_candidate_dependencies.m"
+    }
+  ]
+}

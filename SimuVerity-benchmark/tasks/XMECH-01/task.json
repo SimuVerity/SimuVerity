@@ -1,0 +1,78 @@
+{
+  "schema": "simuverity.task.v1",
+  "release": "simuverity-101-v1",
+  "task_id": "XMECH-01",
+  "ordinal": 93,
+  "collection": "XMECH",
+  "runtime_alias": "XMECH-01",
+  "required_model_file": "cand_XMECH01.slx",
+  "evaluation_policy_id": "simuverity-101-v1:xmech-01:scoring",
+  "candidate_closure": {
+    "public_input_names": [
+      "left_track_command",
+      "right_track_command",
+      "payload_mass",
+      "terrain_friction",
+      "grade_angle",
+      "left_traction_loss",
+      "traction_event_time"
+    ],
+    "nominal_provider": "simuverity_public_nominal_inputs"
+  },
+  "public_spec": "public_spec.json",
+  "official_scenarios": "official_scenarios.json",
+  "extractor": {
+    "kind": "matlab_function",
+    "path": "extractor/run.m",
+    "entrypoint": "run",
+    "implementation": "vendor/scripts/formal90/tasks/f90_xmech01/f90_xmech01_score_model.m",
+    "closure_manifest": "extractor/manifest.json"
+  },
+  "scorer": {
+    "kind": "python_function",
+    "path": "scorer.py",
+    "entrypoint": "score",
+    "closure_manifest": "scorer/manifest.json",
+    "offline_only": true
+  },
+  "reference": {
+    "materialization": "bundled",
+    "source_kind": "expert_built",
+    "path": "reference/files",
+    "manifest": "reference/manifest.json",
+    "entrypoint": "reference/files/XMECH01_reference.slx",
+    "expected_valid_scenarios": 7,
+    "score_tolerance": 5e-05,
+    "expected_score": 99.49394800904588,
+    "expected_score_basis": "reference_replay",
+    "scenario_contract": {
+      "expected_ids": [
+        "paired_no_loss",
+        "traction_binding_probe",
+        "traction_binding_probe_no_loss",
+        "turn_heavy_low_mu",
+        "downhill_reverse_turn",
+        "fast_loaded_grip",
+        "interior_asymmetric"
+      ],
+      "nominal_scenario_id": null,
+      "nominal_materialization": "authoritative_scenario_set"
+    },
+    "score_tolerance_basis": "source_authority_numeric_precision",
+    "runtime_manifest": "reference/runtime_manifest.json"
+  },
+  "applicable_groups": [
+    "G",
+    "A",
+    "Q",
+    "M",
+    "C",
+    "R",
+    "D"
+  ],
+  "release_license_status": "PROJECT_ORIGINAL_APACHE_2_0",
+  "system_profile": {
+    "path": "system_profile.json",
+    "schema": "simuverity.system-profile.v1"
+  }
+}

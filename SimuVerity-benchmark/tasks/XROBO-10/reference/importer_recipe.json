@@ -1,0 +1,180 @@
+{
+  "schema": "simuverity.matlab-local-importer-recipe.v1",
+  "task_id": "XROBO-10",
+  "release": "simuverity-101-v1",
+  "matlab_release": "R2025a",
+  "publisher": "The MathWorks, Inc.",
+  "redistributes_mathworks_files": false,
+  "destination": "%LOCALAPPDATA%/SimuVerity/assets/simuverity-101-v1/XROBO-10",
+  "discovery": {
+    "method": "mathworks_open_example_relative_root",
+    "example_id": "simulink_industrial/ModelAndControlRobotDynamicsToAutomateAssemblyLineExample",
+    "expected_files": [
+      {
+        "path": "attachBall.m",
+        "size_bytes": 745
+      },
+      {
+        "path": "attachCup.m",
+        "size_bytes": 1070
+      },
+      {
+        "path": "destroyCupPhys1.m",
+        "size_bytes": 584
+      },
+      {
+        "path": "destroyCupPhys2.m",
+        "size_bytes": 274
+      },
+      {
+        "path": "detachBallPhys1.m",
+        "size_bytes": 452
+      },
+      {
+        "path": "detachBallPhys2.m",
+        "size_bytes": 747
+      },
+      {
+        "path": "detachCupPhys1.m",
+        "size_bytes": 553
+      },
+      {
+        "path": "detachCupPhys2.m",
+        "size_bytes": 637
+      },
+      {
+        "path": "findBall.m",
+        "size_bytes": 385
+      },
+      {
+        "path": "findCup.m",
+        "size_bytes": 551
+      },
+      {
+        "path": "ModelAndControlRobotDynamicsToAutomateAssemblyLineExample.mlx",
+        "size_bytes": 901244
+      },
+      {
+        "path": "RedBallDetector_720x720.mat",
+        "size_bytes": 1490407
+      },
+      {
+        "path": "smart4i_coords.mat",
+        "size_bytes": 3053
+      },
+      {
+        "path": "smart4i_data.zip",
+        "size_bytes": 21621523
+      },
+      {
+        "path": "smart4i_data/smart4i_coords.mat",
+        "size_bytes": 3053
+      },
+      {
+        "path": "smart4i_data/smart4i_robotRBT.mat",
+        "size_bytes": 4766616
+      },
+      {
+        "path": "smart4i_data/smart4i_scene.mat",
+        "size_bytes": 16851446
+      },
+      {
+        "path": "smart4i_robotRBT.mat",
+        "size_bytes": 4766616
+      },
+      {
+        "path": "smart4i_scene.mat",
+        "size_bytes": 16851446
+      },
+      {
+        "path": "smart4i_setupworld.m",
+        "size_bytes": 5154
+      },
+      {
+        "path": "smart4iRobotDynamics.slx",
+        "size_bytes": 136456
+      }
+    ],
+    "source_files": [
+      {
+        "name": "attachBall.m",
+        "size_bytes": 745
+      },
+      {
+        "name": "attachCup.m",
+        "size_bytes": 1070
+      },
+      {
+        "name": "destroyCupPhys1.m",
+        "size_bytes": 584
+      },
+      {
+        "name": "destroyCupPhys2.m",
+        "size_bytes": 274
+      },
+      {
+        "name": "detachBallPhys1.m",
+        "size_bytes": 452
+      },
+      {
+        "name": "detachBallPhys2.m",
+        "size_bytes": 747
+      },
+      {
+        "name": "detachCupPhys1.m",
+        "size_bytes": 553
+      },
+      {
+        "name": "detachCupPhys2.m",
+        "size_bytes": 637
+      },
+      {
+        "name": "findBall.m",
+        "size_bytes": 385
+      },
+      {
+        "name": "findCup.m",
+        "size_bytes": 551
+      },
+      {
+        "name": "RedBallDetector_720x720.mat",
+        "size_bytes": 1490407
+      },
+      {
+        "name": "smart4i_setupworld.m",
+        "size_bytes": 5154
+      },
+      {
+        "name": "smart4iRobotDynamics.slx",
+        "size_bytes": 136456
+      }
+    ]
+  },
+  "transform": "transform.m",
+  "validation": {
+    "required": true,
+    "checks": [
+      "load",
+      "update",
+      "compile",
+      "simulate",
+      "all_official_scenarios",
+      "reference_score"
+    ],
+    "on_mismatch": "fail_closed"
+  },
+  "entrypoint": "smart4iRobotDynamics.slx",
+  "expected_valid_scenarios": 3,
+  "score_tolerance": 1e-12,
+  "expected_score": 96.6595018841588,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal_line_cycle",
+      "ball_offset_positive",
+      "ball_offset_negative"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision"
+}

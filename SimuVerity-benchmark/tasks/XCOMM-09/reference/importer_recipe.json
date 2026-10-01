@@ -1,0 +1,61 @@
+{
+  "schema": "simuverity.matlab-local-importer-recipe.v1",
+  "task_id": "XCOMM-09",
+  "release": "simuverity-101-v1",
+  "matlab_release": "R2025a",
+  "publisher": "The MathWorks, Inc.",
+  "redistributes_mathworks_files": false,
+  "destination": "%LOCALAPPDATA%/SimuVerity/assets/simuverity-101-v1/XCOMM-09",
+  "discovery": {
+    "method": "matlab_example_or_installed_product_search",
+    "example_id": "wlan/HTLinkModelWLANExample",
+    "expected_source_filenames": [
+      "HTLinkModelWLANExample_params.m",
+      "HTLinkModelWLANModel.slx",
+      "htNoiseEstimate.m"
+    ],
+    "expected_files": [
+      {
+        "name": "HTLinkModelWLANExample_params.m",
+        "size_bytes": 1869
+      },
+      {
+        "name": "HTLinkModelWLANModel.slx",
+        "size_bytes": 71567
+      },
+      {
+        "name": "htNoiseEstimate.m",
+        "size_bytes": 1614
+      }
+    ]
+  },
+  "transform": "transform.m",
+  "validation": {
+    "required": true,
+    "checks": [
+      "load",
+      "update",
+      "compile",
+      "simulate",
+      "all_official_scenarios",
+      "reference_score"
+    ],
+    "on_mismatch": "fail_closed"
+  },
+  "entrypoint": "HTLinkModelWLANModel.slx",
+  "expected_valid_scenarios": 5,
+  "score_tolerance": 1e-12,
+  "expected_score": 92.03607158931231,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal_mcs12_direct",
+      "snr_margin_mcs12",
+      "high_mcs14",
+      "alternate_payload_channel_noise",
+      "fourier_spatial_mapping"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision"
+}

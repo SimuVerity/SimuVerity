@@ -1,0 +1,36 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XMED-03",
+  "file_count": 2,
+  "files": [
+    {
+      "path": "reference/files/F90_XMED_03.slx",
+      "size_bytes": 87655
+    },
+    {
+      "path": "reference/files/LICENSE",
+      "size_bytes": 1066
+    }
+  ],
+  "entrypoint": "reference/files/F90_XMED_03.slx",
+  "expected_score": 90.13618873880687,
+  "expected_valid_scenarios": 8,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal_targets",
+      "compliance_mismatch",
+      "resistance_mismatch",
+      "divergent_target_step",
+      "rapid_low_compliance",
+      "slow_high_peep",
+      "crossed_mechanics",
+      "joint_boundary"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 88721,
+  "excluded_files": []
+}

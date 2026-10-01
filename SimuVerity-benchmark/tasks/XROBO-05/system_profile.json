@@ -1,0 +1,248 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XROBO-05",
+  "collection": "XROBO",
+  "reference": {
+    "identity_path": "tasks/XROBO-05/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/MSS/SIMULINK/mssSimulinkDemos/demoAUVdepthHeadingControl.slx",
+    "model_path": "tasks/XROBO-05/reference/files/MSS/SIMULINK/mssSimulinkDemos/demoAUVdepthHeadingControl.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XROBO-05",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a nonlinear six-degree-of-freedom REMUS 100 autonomous underwater vehicle model with one screw propeller, a tail rudder, and a pair of stern planes.",
+    "engineering_objects": [
+      "The hydrodynamic plant must respond to ocean-current speed and direction.",
+      "Across the declared range, keep the full vehicle state finite, respect physical rudder and stern-plane limits of approximately plus or minus 20 deg and propeller speed no greater than 1525 rpm, track both heading and depth commands, and recover after command changes without unstable roll, pitch, or cross-axis motion."
+    ],
+    "physical_paths": [
+      "The hydrodynamic plant must respond to ocean-current speed and direction.",
+      "Across the declared range, keep the full vehicle state finite, respect physical rudder and stern-plane limits of approximately plus or minus 20 deg and propeller speed no greater than 1525 rpm, track both heading and depth commands, and recover after command changes without unstable roll, pitch, or cross-axis motion."
+    ],
+    "functional_paths": [
+      "Implement simultaneous closed-loop heading and depth control: the rudder controls heading and the stern planes control depth, while the propeller provides forward control authority.",
+      "Internal controller form, reference shaping, and hydrodynamic implementation are not prescribed.",
+      "Across the declared range, keep the full vehicle state finite, respect physical rudder and stern-plane limits of approximately plus or minus 20 deg and propeller speed no greater than 1525 rpm, track both heading and depth commands, and recover after command changes without unstable roll, pitch, or cross-axis motion."
+    ],
+    "information_paths": [
+      "HeadingInitial_deg, HeadingCommand_deg, HeadingStepTime_s, DepthInitial_m, DepthCommand_m, DepthStepTime_s, CurrentSpeed_mps, CurrentDirection_deg, PropellerSpeed_rpm -> F90-XROBO-05 plant/control path -> reference_state, vehicle_state, actuation_state, environment_state"
+    ],
+    "modes_and_events": [
+      "Build a nonlinear six-degree-of-freedom REMUS 100 autonomous underwater vehicle model with one screw propeller, a tail rudder, and a pair of stern planes.",
+      "Read HeadingInitial_deg, HeadingCommand_deg, HeadingStepTime_s, DepthInitial_m, DepthCommand_m, DepthStepTime_s, CurrentSpeed_mps, CurrentDirection_deg, and PropellerSpeed_rpm from the MATLAB base workspace."
+    ],
+    "interfaces": [
+      {
+        "name": "HeadingInitial_deg",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "deg"
+        ],
+        "range_or_shape": "Read HeadingInitial_deg, HeadingCommand_deg, HeadingStepTime_s, DepthInitial_m, DepthCommand_m, DepthStepTime_s, CurrentSpeed_mps, CurrentDirection_deg, and PropellerSpeed_rpm from the MATLAB base workspace. The scalar inputs are finite real values: HeadingInitial_deg [-20, 20] deg, HeadingCommand_deg [-75, 60] deg, HeadingStepTime_s [80, 130] s, DepthInitial_m [8, 15] m, DepthCommand_m [20, 40] m, DepthStepTime_s [170, 230] s, CurrentSpeed_mps [0.2, 0.8] m/s, CurrentDirection_deg [100, 240] deg, and PropellerSpeed_rpm [1300, 1525] rpm.",
+        "source": "tasks/XROBO-05/public_spec.json"
+      },
+      {
+        "name": "HeadingCommand_deg",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "deg"
+        ],
+        "range_or_shape": "Read HeadingInitial_deg, HeadingCommand_deg, HeadingStepTime_s, DepthInitial_m, DepthCommand_m, DepthStepTime_s, CurrentSpeed_mps, CurrentDirection_deg, and PropellerSpeed_rpm from the MATLAB base workspace. The scalar inputs are finite real values: HeadingInitial_deg [-20, 20] deg, HeadingCommand_deg [-75, 60] deg, HeadingStepTime_s [80, 130] s, DepthInitial_m [8, 15] m, DepthCommand_m [20, 40] m, DepthStepTime_s [170, 230] s, CurrentSpeed_mps [0.2, 0.8] m/s, CurrentDirection_deg [100, 240] deg, and PropellerSpeed_rpm [1300, 1525] rpm.",
+        "source": "tasks/XROBO-05/public_spec.json"
+      },
+      {
+        "name": "HeadingStepTime_s",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read HeadingInitial_deg, HeadingCommand_deg, HeadingStepTime_s, DepthInitial_m, DepthCommand_m, DepthStepTime_s, CurrentSpeed_mps, CurrentDirection_deg, and PropellerSpeed_rpm from the MATLAB base workspace. The scalar inputs are finite real values: HeadingInitial_deg [-20, 20] deg, HeadingCommand_deg [-75, 60] deg, HeadingStepTime_s [80, 130] s, DepthInitial_m [8, 15] m, DepthCommand_m [20, 40] m, DepthStepTime_s [170, 230] s, CurrentSpeed_mps [0.2, 0.8] m/s, CurrentDirection_deg [100, 240] deg, and PropellerSpeed_rpm [1300, 1525] rpm.",
+        "source": "tasks/XROBO-05/public_spec.json"
+      },
+      {
+        "name": "DepthInitial_m",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read HeadingInitial_deg, HeadingCommand_deg, HeadingStepTime_s, DepthInitial_m, DepthCommand_m, DepthStepTime_s, CurrentSpeed_mps, CurrentDirection_deg, and PropellerSpeed_rpm from the MATLAB base workspace. The scalar inputs are finite real values: HeadingInitial_deg [-20, 20] deg, HeadingCommand_deg [-75, 60] deg, HeadingStepTime_s [80, 130] s, DepthInitial_m [8, 15] m, DepthCommand_m [20, 40] m, DepthStepTime_s [170, 230] s, CurrentSpeed_mps [0.2, 0.8] m/s, CurrentDirection_deg [100, 240] deg, and PropellerSpeed_rpm [1300, 1525] rpm.",
+        "source": "tasks/XROBO-05/public_spec.json"
+      },
+      {
+        "name": "DepthCommand_m",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read HeadingInitial_deg, HeadingCommand_deg, HeadingStepTime_s, DepthInitial_m, DepthCommand_m, DepthStepTime_s, CurrentSpeed_mps, CurrentDirection_deg, and PropellerSpeed_rpm from the MATLAB base workspace. The scalar inputs are finite real values: HeadingInitial_deg [-20, 20] deg, HeadingCommand_deg [-75, 60] deg, HeadingStepTime_s [80, 130] s, DepthInitial_m [8, 15] m, DepthCommand_m [20, 40] m, DepthStepTime_s [170, 230] s, CurrentSpeed_mps [0.2, 0.8] m/s, CurrentDirection_deg [100, 240] deg, and PropellerSpeed_rpm [1300, 1525] rpm.",
+        "source": "tasks/XROBO-05/public_spec.json"
+      },
+      {
+        "name": "DepthStepTime_s",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read HeadingInitial_deg, HeadingCommand_deg, HeadingStepTime_s, DepthInitial_m, DepthCommand_m, DepthStepTime_s, CurrentSpeed_mps, CurrentDirection_deg, and PropellerSpeed_rpm from the MATLAB base workspace. The scalar inputs are finite real values: HeadingInitial_deg [-20, 20] deg, HeadingCommand_deg [-75, 60] deg, HeadingStepTime_s [80, 130] s, DepthInitial_m [8, 15] m, DepthCommand_m [20, 40] m, DepthStepTime_s [170, 230] s, CurrentSpeed_mps [0.2, 0.8] m/s, CurrentDirection_deg [100, 240] deg, and PropellerSpeed_rpm [1300, 1525] rpm.",
+        "source": "tasks/XROBO-05/public_spec.json"
+      },
+      {
+        "name": "CurrentSpeed_mps",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Read HeadingInitial_deg, HeadingCommand_deg, HeadingStepTime_s, DepthInitial_m, DepthCommand_m, DepthStepTime_s, CurrentSpeed_mps, CurrentDirection_deg, and PropellerSpeed_rpm from the MATLAB base workspace. The scalar inputs are finite real values: HeadingInitial_deg [-20, 20] deg, HeadingCommand_deg [-75, 60] deg, HeadingStepTime_s [80, 130] s, DepthInitial_m [8, 15] m, DepthCommand_m [20, 40] m, DepthStepTime_s [170, 230] s, CurrentSpeed_mps [0.2, 0.8] m/s, CurrentDirection_deg [100, 240] deg, and PropellerSpeed_rpm [1300, 1525] rpm.",
+        "source": "tasks/XROBO-05/public_spec.json"
+      },
+      {
+        "name": "CurrentDirection_deg",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "deg"
+        ],
+        "range_or_shape": "Read HeadingInitial_deg, HeadingCommand_deg, HeadingStepTime_s, DepthInitial_m, DepthCommand_m, DepthStepTime_s, CurrentSpeed_mps, CurrentDirection_deg, and PropellerSpeed_rpm from the MATLAB base workspace. The scalar inputs are finite real values: HeadingInitial_deg [-20, 20] deg, HeadingCommand_deg [-75, 60] deg, HeadingStepTime_s [80, 130] s, DepthInitial_m [8, 15] m, DepthCommand_m [20, 40] m, DepthStepTime_s [170, 230] s, CurrentSpeed_mps [0.2, 0.8] m/s, CurrentDirection_deg [100, 240] deg, and PropellerSpeed_rpm [1300, 1525] rpm.",
+        "source": "tasks/XROBO-05/public_spec.json"
+      },
+      {
+        "name": "PropellerSpeed_rpm",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "rpm"
+        ],
+        "range_or_shape": "Read HeadingInitial_deg, HeadingCommand_deg, HeadingStepTime_s, DepthInitial_m, DepthCommand_m, DepthStepTime_s, CurrentSpeed_mps, CurrentDirection_deg, and PropellerSpeed_rpm from the MATLAB base workspace. The scalar inputs are finite real values: HeadingInitial_deg [-20, 20] deg, HeadingCommand_deg [-75, 60] deg, HeadingStepTime_s [80, 130] s, DepthInitial_m [8, 15] m, DepthCommand_m [20, 40] m, DepthStepTime_s [170, 230] s, CurrentSpeed_mps [0.2, 0.8] m/s, CurrentDirection_deg [100, 240] deg, and PropellerSpeed_rpm [1300, 1525] rpm.",
+        "source": "tasks/XROBO-05/public_spec.json"
+      },
+      {
+        "name": "reference_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad",
+          "deg",
+          "m"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named reference_state, vehicle_state, actuation_state, and environment_state. reference_state has 4 channels in this order: heading command (deg), shaped heading (rad), depth command (m), and filtered depth (m).",
+        "source": "tasks/XROBO-05/public_spec.json"
+      },
+      {
+        "name": "vehicle_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s",
+          "rad/s",
+          "rad",
+          "m"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named reference_state, vehicle_state, actuation_state, and environment_state. vehicle_state has 12 channels in this order: u, v, w (m/s); p, q, r (rad/s); north, east, down (m); and roll, pitch, yaw (rad).",
+        "source": "tasks/XROBO-05/public_spec.json"
+      },
+      {
+        "name": "actuation_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rpm",
+          "rad"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named reference_state, vehicle_state, actuation_state, and environment_state. actuation_state has 4 channels in this order: rudder (rad), stern plane (rad), desired pitch (rad), and propeller speed (rpm).",
+        "source": "tasks/XROBO-05/public_spec.json"
+      },
+      {
+        "name": "environment_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m/s",
+          "rad"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named reference_state, vehicle_state, actuation_state, and environment_state. environment_state has 3 channels in this order: current speed (m/s), current direction (rad), and vehicle speed (m/s).",
+        "source": "tasks/XROBO-05/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Internal controller form, reference shaping, and hydrodynamic implementation are not prescribed.",
+      "Across the declared range, keep the full vehicle state finite, respect physical rudder and stern-plane limits of approximately plus or minus 20 deg and propeller speed no greater than 1525 rpm, track both heading and depth commands, and recover after command changes without unstable roll, pitch, or cross-axis motion.",
+      "reference_state has 4 channels in this order: heading command (deg), shaped heading (rad), depth command (m), and filtered depth (m)."
+    ],
+    "feedback_and_control_causality": [
+      "The hydrodynamic plant must respond to ocean-current speed and direction.",
+      "Implement simultaneous closed-loop heading and depth control: the rudder controls heading and the stern planes control depth, while the propeller provides forward control authority.",
+      "Internal controller form, reference shaping, and hydrodynamic implementation are not prescribed."
+    ],
+    "signal_sources": [
+      "HeadingInitial_deg is read from the public MATLAB base-workspace input contract.",
+      "HeadingCommand_deg is read from the public MATLAB base-workspace input contract.",
+      "HeadingStepTime_s is read from the public MATLAB base-workspace input contract.",
+      "DepthInitial_m is read from the public MATLAB base-workspace input contract.",
+      "DepthCommand_m is read from the public MATLAB base-workspace input contract.",
+      "DepthStepTime_s is read from the public MATLAB base-workspace input contract.",
+      "CurrentSpeed_mps is read from the public MATLAB base-workspace input contract.",
+      "CurrentDirection_deg is read from the public MATLAB base-workspace input contract.",
+      "PropellerSpeed_rpm is read from the public MATLAB base-workspace input contract.",
+      "reference_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "vehicle_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "actuation_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "environment_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "HeadingInitial_deg: Read HeadingInitial_deg, HeadingCommand_deg, HeadingStepTime_s, DepthInitial_m, DepthCommand_m, DepthStepTime_s, CurrentSpeed_mps, CurrentDirection_deg, and PropellerSpeed_rpm from the MATLAB base workspace. The scalar inputs are finite real values: HeadingInitial_deg [-20, 20] deg, HeadingCommand_deg [-75, 60] deg, HeadingStepTime_s [80, 130] s, DepthInitial_m [8, 15] m, DepthCommand_m [20, 40] m, DepthStepTime_s [170, 230] s, CurrentSpeed_mps [0.2, 0.8] m/s, CurrentDirection_deg [100, 240] deg, and PropellerSpeed_rpm [1300, 1525] rpm.",
+      "HeadingCommand_deg: Read HeadingInitial_deg, HeadingCommand_deg, HeadingStepTime_s, DepthInitial_m, DepthCommand_m, DepthStepTime_s, CurrentSpeed_mps, CurrentDirection_deg, and PropellerSpeed_rpm from the MATLAB base workspace. The scalar inputs are finite real values: HeadingInitial_deg [-20, 20] deg, HeadingCommand_deg [-75, 60] deg, HeadingStepTime_s [80, 130] s, DepthInitial_m [8, 15] m, DepthCommand_m [20, 40] m, DepthStepTime_s [170, 230] s, CurrentSpeed_mps [0.2, 0.8] m/s, CurrentDirection_deg [100, 240] deg, and PropellerSpeed_rpm [1300, 1525] rpm.",
+      "HeadingStepTime_s: Read HeadingInitial_deg, HeadingCommand_deg, HeadingStepTime_s, DepthInitial_m, DepthCommand_m, DepthStepTime_s, CurrentSpeed_mps, CurrentDirection_deg, and PropellerSpeed_rpm from the MATLAB base workspace. The scalar inputs are finite real values: HeadingInitial_deg [-20, 20] deg, HeadingCommand_deg [-75, 60] deg, HeadingStepTime_s [80, 130] s, DepthInitial_m [8, 15] m, DepthCommand_m [20, 40] m, DepthStepTime_s [170, 230] s, CurrentSpeed_mps [0.2, 0.8] m/s, CurrentDirection_deg [100, 240] deg, and PropellerSpeed_rpm [1300, 1525] rpm.",
+      "DepthInitial_m: Read HeadingInitial_deg, HeadingCommand_deg, HeadingStepTime_s, DepthInitial_m, DepthCommand_m, DepthStepTime_s, CurrentSpeed_mps, CurrentDirection_deg, and PropellerSpeed_rpm from the MATLAB base workspace. The scalar inputs are finite real values: HeadingInitial_deg [-20, 20] deg, HeadingCommand_deg [-75, 60] deg, HeadingStepTime_s [80, 130] s, DepthInitial_m [8, 15] m, DepthCommand_m [20, 40] m, DepthStepTime_s [170, 230] s, CurrentSpeed_mps [0.2, 0.8] m/s, CurrentDirection_deg [100, 240] deg, and PropellerSpeed_rpm [1300, 1525] rpm.",
+      "DepthCommand_m: Read HeadingInitial_deg, HeadingCommand_deg, HeadingStepTime_s, DepthInitial_m, DepthCommand_m, DepthStepTime_s, CurrentSpeed_mps, CurrentDirection_deg, and PropellerSpeed_rpm from the MATLAB base workspace. The scalar inputs are finite real values: HeadingInitial_deg [-20, 20] deg, HeadingCommand_deg [-75, 60] deg, HeadingStepTime_s [80, 130] s, DepthInitial_m [8, 15] m, DepthCommand_m [20, 40] m, DepthStepTime_s [170, 230] s, CurrentSpeed_mps [0.2, 0.8] m/s, CurrentDirection_deg [100, 240] deg, and PropellerSpeed_rpm [1300, 1525] rpm.",
+      "DepthStepTime_s: Read HeadingInitial_deg, HeadingCommand_deg, HeadingStepTime_s, DepthInitial_m, DepthCommand_m, DepthStepTime_s, CurrentSpeed_mps, CurrentDirection_deg, and PropellerSpeed_rpm from the MATLAB base workspace. The scalar inputs are finite real values: HeadingInitial_deg [-20, 20] deg, HeadingCommand_deg [-75, 60] deg, HeadingStepTime_s [80, 130] s, DepthInitial_m [8, 15] m, DepthCommand_m [20, 40] m, DepthStepTime_s [170, 230] s, CurrentSpeed_mps [0.2, 0.8] m/s, CurrentDirection_deg [100, 240] deg, and PropellerSpeed_rpm [1300, 1525] rpm.",
+      "CurrentSpeed_mps: Read HeadingInitial_deg, HeadingCommand_deg, HeadingStepTime_s, DepthInitial_m, DepthCommand_m, DepthStepTime_s, CurrentSpeed_mps, CurrentDirection_deg, and PropellerSpeed_rpm from the MATLAB base workspace. The scalar inputs are finite real values: HeadingInitial_deg [-20, 20] deg, HeadingCommand_deg [-75, 60] deg, HeadingStepTime_s [80, 130] s, DepthInitial_m [8, 15] m, DepthCommand_m [20, 40] m, DepthStepTime_s [170, 230] s, CurrentSpeed_mps [0.2, 0.8] m/s, CurrentDirection_deg [100, 240] deg, and PropellerSpeed_rpm [1300, 1525] rpm.",
+      "CurrentDirection_deg: Read HeadingInitial_deg, HeadingCommand_deg, HeadingStepTime_s, DepthInitial_m, DepthCommand_m, DepthStepTime_s, CurrentSpeed_mps, CurrentDirection_deg, and PropellerSpeed_rpm from the MATLAB base workspace. The scalar inputs are finite real values: HeadingInitial_deg [-20, 20] deg, HeadingCommand_deg [-75, 60] deg, HeadingStepTime_s [80, 130] s, DepthInitial_m [8, 15] m, DepthCommand_m [20, 40] m, DepthStepTime_s [170, 230] s, CurrentSpeed_mps [0.2, 0.8] m/s, CurrentDirection_deg [100, 240] deg, and PropellerSpeed_rpm [1300, 1525] rpm."
+    ],
+    "disturbances": [
+      "Read HeadingInitial_deg, HeadingCommand_deg, HeadingStepTime_s, DepthInitial_m, DepthCommand_m, DepthStepTime_s, CurrentSpeed_mps, CurrentDirection_deg, and PropellerSpeed_rpm from the MATLAB base workspace.",
+      "Log complete-run MATLAB Timeseries named reference_state, vehicle_state, actuation_state, and environment_state.",
+      "environment_state has 3 channels in this order: current speed (m/s), current direction (rad), and vehicle speed (m/s)."
+    ],
+    "dynamic_processes": [
+      "The hydrodynamic plant must respond to ocean-current speed and direction.",
+      "Read HeadingInitial_deg, HeadingCommand_deg, HeadingStepTime_s, DepthInitial_m, DepthCommand_m, DepthStepTime_s, CurrentSpeed_mps, CurrentDirection_deg, and PropellerSpeed_rpm from the MATLAB base workspace.",
+      "Internal controller form, reference shaping, and hydrodynamic implementation are not prescribed."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XROBO-05: prescribing reference_state directly would bypass the system path described by: The hydrodynamic plant must respond to ocean-current speed and direction.",
+      "F90-XROBO-05: replaying a fixed reference_state trace would ignore causal variation in HeadingInitial_deg."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XROBO-05/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XROBO-05/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XROBO-05/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

@@ -1,0 +1,928 @@
+{
+  "schema": "simuverity.system-profile-task-bindings.v1",
+  "release": "simuverity-101-v1",
+  "task_count": 101,
+  "collection_counts": {
+    "XELEC": 9,
+    "XAERO": 10,
+    "XAUTO": 11,
+    "XBATT": 10,
+    "XCOMM": 9,
+    "XFLUID": 11,
+    "XMECH": 11,
+    "XMED": 9,
+    "XROBO": 10,
+    "XTHERM": 11
+  },
+  "tasks": [
+    {
+      "task_id": "XELEC-06",
+      "collection": "XELEC",
+      "task_manifest": "tasks/XELEC-06/task.json",
+      "public_spec": "tasks/XELEC-06/public_spec.json",
+      "reference_runtime_manifest": "tasks/XELEC-06/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/DQstatcom3p.mdl"
+    },
+    {
+      "task_id": "XELEC-07",
+      "collection": "XELEC",
+      "task_manifest": "tasks/XELEC-07/task.json",
+      "public_spec": "tasks/XELEC-07/public_spec.json",
+      "reference_runtime_manifest": "tasks/XELEC-07/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/DQsinepwm3pGrid.mdl"
+    },
+    {
+      "task_id": "XELEC-08",
+      "collection": "XELEC",
+      "task_manifest": "tasks/XELEC-08/task.json",
+      "public_spec": "tasks/XELEC-08/public_spec.json",
+      "reference_runtime_manifest": "tasks/XELEC-08/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/statom_3_phase.mdl"
+    },
+    {
+      "task_id": "XELEC-11",
+      "collection": "XELEC",
+      "task_manifest": "tasks/XELEC-11/task.json",
+      "public_spec": "tasks/XELEC-11/public_spec.json",
+      "reference_runtime_manifest": "tasks/XELEC-11/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/singele_phase_to_3phase_svpwm_PMSM_VF.mdl"
+    },
+    {
+      "task_id": "XELEC-14",
+      "collection": "XELEC",
+      "task_manifest": "tasks/XELEC-14/task.json",
+      "public_spec": "tasks/XELEC-14/public_spec.json",
+      "reference_runtime_manifest": "tasks/XELEC-14/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/single_phase_to_3phase.mdl"
+    },
+    {
+      "task_id": "XELEC-19",
+      "collection": "XELEC",
+      "task_manifest": "tasks/XELEC-19/task.json",
+      "public_spec": "tasks/XELEC-19/public_spec.json",
+      "reference_runtime_manifest": "tasks/XELEC-19/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/MLI17.slx"
+    },
+    {
+      "task_id": "XELEC-22",
+      "collection": "XELEC",
+      "task_manifest": "tasks/XELEC-22/task.json",
+      "public_spec": "tasks/XELEC-22/public_spec.json",
+      "reference_runtime_manifest": "tasks/XELEC-22/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/Universal_ELC_for_MicroHydoPlant.slx"
+    },
+    {
+      "task_id": "XELEC-23",
+      "collection": "XELEC",
+      "task_manifest": "tasks/XELEC-23/task.json",
+      "public_spec": "tasks/XELEC-23/public_spec.json",
+      "reference_runtime_manifest": "tasks/XELEC-23/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/APFv2_alpha.mdl"
+    },
+    {
+      "task_id": "XELEC-27",
+      "collection": "XELEC",
+      "task_manifest": "tasks/XELEC-27/task.json",
+      "public_spec": "tasks/XELEC-27/public_spec.json",
+      "reference_runtime_manifest": "tasks/XELEC-27/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/three_phase_three_level_currrent_control_using_space_vector_fix2.slx"
+    },
+    {
+      "task_id": "XAERO-02",
+      "collection": "XAERO",
+      "task_manifest": "tasks/XAERO-02/task.json",
+      "public_spec": "tasks/XAERO-02/public_spec.json",
+      "reference_runtime_manifest": "tasks/XAERO-02/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/Plane/models/AirplaneSimModel_LindiPlane.slx"
+    },
+    {
+      "task_id": "XAERO-03",
+      "collection": "XAERO",
+      "task_manifest": "tasks/XAERO-03/task.json",
+      "public_spec": "tasks/XAERO-03/public_spec.json",
+      "reference_runtime_manifest": "tasks/XAERO-03/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/XAERO03_reference.slx"
+    },
+    {
+      "task_id": "XAERO-04",
+      "collection": "XAERO",
+      "task_manifest": "tasks/XAERO-04/task.json",
+      "public_spec": "tasks/XAERO-04/public_spec.json",
+      "reference_runtime_manifest": "tasks/XAERO-04/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "VTOLApp/models/VTOLTiltrotor.slx"
+    },
+    {
+      "task_id": "XAERO-06",
+      "collection": "XAERO",
+      "task_manifest": "tasks/XAERO-06/task.json",
+      "public_spec": "tasks/XAERO-06/public_spec.json",
+      "reference_runtime_manifest": "tasks/XAERO-06/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "aeroblk_HL20_UE.slx"
+    },
+    {
+      "task_id": "XAERO-07",
+      "collection": "XAERO",
+      "task_manifest": "tasks/XAERO-07/task.json",
+      "public_spec": "tasks/XAERO-07/public_spec.json",
+      "reference_runtime_manifest": "tasks/XAERO-07/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/ssc_aircraft_elec.slx"
+    },
+    {
+      "task_id": "XAERO-08",
+      "collection": "XAERO",
+      "task_manifest": "tasks/XAERO-08/task.json",
+      "public_spec": "tasks/XAERO-08/public_spec.json",
+      "reference_runtime_manifest": "tasks/XAERO-08/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/source/simulink_stuff/Rocket.slx"
+    },
+    {
+      "task_id": "XAERO-09",
+      "collection": "XAERO",
+      "task_manifest": "tasks/XAERO-09/task.json",
+      "public_spec": "tasks/XAERO-09/public_spec.json",
+      "reference_runtime_manifest": "tasks/XAERO-09/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "aero_dap3dof.slx"
+    },
+    {
+      "task_id": "XAERO-10",
+      "collection": "XAERO",
+      "task_manifest": "tasks/XAERO-10/task.json",
+      "public_spec": "tasks/XAERO-10/public_spec.json",
+      "reference_runtime_manifest": "tasks/XAERO-10/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/source/2018_Simulink/comparison_noise_nonoise.slx"
+    },
+    {
+      "task_id": "XAERO-11",
+      "collection": "XAERO",
+      "task_manifest": "tasks/XAERO-11/task.json",
+      "public_spec": "tasks/XAERO-11/public_spec.json",
+      "reference_runtime_manifest": "tasks/XAERO-11/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/src_simulink/BFN_00_zfull_system.slx"
+    },
+    {
+      "task_id": "XAUTO-02",
+      "collection": "XAUTO",
+      "task_manifest": "tasks/XAUTO-02/task.json",
+      "public_spec": "tasks/XAUTO-02/public_spec.json",
+      "reference_runtime_manifest": "tasks/XAUTO-02/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/XAUTO02_reference.slx"
+    },
+    {
+      "task_id": "XAUTO-03",
+      "collection": "XAUTO",
+      "task_manifest": "tasks/XAUTO-03/task.json",
+      "public_spec": "tasks/XAUTO-03/public_spec.json",
+      "reference_runtime_manifest": "tasks/XAUTO-03/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/source/automotive-electrical-system/ssc_battery_management_R2019b.slx"
+    },
+    {
+      "task_id": "XAUTO-04",
+      "collection": "XAUTO",
+      "task_manifest": "tasks/XAUTO-04/task.json",
+      "public_spec": "tasks/XAUTO-04/public_spec.json",
+      "reference_runtime_manifest": "tasks/XAUTO-04/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "BrakingTest/System/BTReferenceApplication.slx"
+    },
+    {
+      "task_id": "XAUTO-06",
+      "collection": "XAUTO",
+      "task_manifest": "tasks/XAUTO-06/task.json",
+      "public_spec": "tasks/XAUTO-06/public_spec.json",
+      "reference_runtime_manifest": "tasks/XAUTO-06/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/source/HEV/PowerSplitHEV_system_model.mdl"
+    },
+    {
+      "task_id": "XAUTO-07",
+      "collection": "XAUTO",
+      "task_manifest": "tasks/XAUTO-07/task.json",
+      "public_spec": "tasks/XAUTO-07/public_spec.json",
+      "reference_runtime_manifest": "tasks/XAUTO-07/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "IPMSMAxleDriveEV_SimuVerityReference.slx"
+    },
+    {
+      "task_id": "XAUTO-09",
+      "collection": "XAUTO",
+      "task_manifest": "tasks/XAUTO-09/task.json",
+      "public_spec": "tasks/XAUTO-09/public_spec.json",
+      "reference_runtime_manifest": "tasks/XAUTO-09/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "LFRefMdl.slx"
+    },
+    {
+      "task_id": "XAUTO-10",
+      "collection": "XAUTO",
+      "task_manifest": "tasks/XAUTO-10/task.json",
+      "public_spec": "tasks/XAUTO-10/public_spec.json",
+      "reference_runtime_manifest": "tasks/XAUTO-10/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/source/simulink/torque_vectoring_sim.slx"
+    },
+    {
+      "task_id": "XAUTO-11",
+      "collection": "XAUTO",
+      "task_manifest": "tasks/XAUTO-11/task.json",
+      "public_spec": "tasks/XAUTO-11/public_spec.json",
+      "reference_runtime_manifest": "tasks/XAUTO-11/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "rct_suspension_reference.slx"
+    },
+    {
+      "task_id": "XBATT-02",
+      "collection": "XBATT",
+      "task_manifest": "tasks/XBATT-02/task.json",
+      "public_spec": "tasks/XBATT-02/public_spec.json",
+      "reference_runtime_manifest": "tasks/XBATT-02/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/XBATT02_reference.slx"
+    },
+    {
+      "task_id": "XBATT-03",
+      "collection": "XBATT",
+      "task_manifest": "tasks/XBATT-03/task.json",
+      "public_spec": "tasks/XBATT-03/public_spec.json",
+      "reference_runtime_manifest": "tasks/XBATT-03/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/Optimize-BEV-Thermal-Management-with-Simscape/Models/BEV_Thermal_Management.slx"
+    },
+    {
+      "task_id": "XBATT-04",
+      "collection": "XBATT",
+      "task_manifest": "tasks/XBATT-04/task.json",
+      "public_spec": "tasks/XBATT-04/public_spec.json",
+      "reference_runtime_manifest": "tasks/XBATT-04/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/Simscape-Battery-Library/Examples/viaMatlabCode/TSPMeA_Cycling.slx"
+    },
+    {
+      "task_id": "XBATT-05",
+      "collection": "XBATT",
+      "task_manifest": "tasks/XBATT-05/task.json",
+      "public_spec": "tasks/XBATT-05/public_spec.json",
+      "reference_runtime_manifest": "tasks/XBATT-05/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/src/Examples/simpleExamples/TSPMeA_AdvancedCharger.slx"
+    },
+    {
+      "task_id": "XBATT-06",
+      "collection": "XBATT",
+      "task_manifest": "tasks/XBATT-06/task.json",
+      "public_spec": "tasks/XBATT-06/public_spec.json",
+      "reference_runtime_manifest": "tasks/XBATT-06/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/src/BatteryEstim3RC_PTBS_EQ_RUL_v1.slx"
+    },
+    {
+      "task_id": "XBATT-07",
+      "collection": "XBATT",
+      "task_manifest": "tasks/XBATT-07/task.json",
+      "public_spec": "tasks/XBATT-07/public_spec.json",
+      "reference_runtime_manifest": "tasks/XBATT-07/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/XBATT07_reference_harness.slx"
+    },
+    {
+      "task_id": "XBATT-08",
+      "collection": "XBATT",
+      "task_manifest": "tasks/XBATT-08/task.json",
+      "public_spec": "tasks/XBATT-08/public_spec.json",
+      "reference_runtime_manifest": "tasks/XBATT-08/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "KineticEnergyRecovery.slx"
+    },
+    {
+      "task_id": "XBATT-09",
+      "collection": "XBATT",
+      "task_manifest": "tasks/XBATT-09/task.json",
+      "public_spec": "tasks/XBATT-09/public_spec.json",
+      "reference_runtime_manifest": "tasks/XBATT-09/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "disconnectedCellDetection.slx"
+    },
+    {
+      "task_id": "XBATT-10",
+      "collection": "XBATT",
+      "task_manifest": "tasks/XBATT-10/task.json",
+      "public_spec": "tasks/XBATT-10/public_spec.json",
+      "reference_runtime_manifest": "tasks/XBATT-10/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/Simulink Vehicle Model/EV_Truck_Model.slx"
+    },
+    {
+      "task_id": "XCOMM-02",
+      "collection": "XCOMM",
+      "task_manifest": "tasks/XCOMM-02/task.json",
+      "public_spec": "tasks/XCOMM-02/public_spec.json",
+      "reference_runtime_manifest": "tasks/XCOMM-02/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/mvdr_4x4/mvdr_4x4_partial_systolic.slx"
+    },
+    {
+      "task_id": "XCOMM-03",
+      "collection": "XCOMM",
+      "task_manifest": "tasks/XCOMM-03/task.json",
+      "public_spec": "tasks/XCOMM-03/public_spec.json",
+      "reference_runtime_manifest": "tasks/XCOMM-03/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "slexSTAPExample.slx"
+    },
+    {
+      "task_id": "XCOMM-04",
+      "collection": "XCOMM",
+      "task_manifest": "tasks/XCOMM-04/task.json",
+      "public_spec": "tasks/XCOMM-04/public_spec.json",
+      "reference_runtime_manifest": "tasks/XCOMM-04/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "HDLDPDwithLMSCoeffExample.slx"
+    },
+    {
+      "task_id": "XCOMM-05",
+      "collection": "XCOMM",
+      "task_manifest": "tasks/XCOMM-05/task.json",
+      "public_spec": "tasks/XCOMM-05/public_spec.json",
+      "reference_runtime_manifest": "tasks/XCOMM-05/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "slexHybridBeamforming.slx"
+    },
+    {
+      "task_id": "XCOMM-06",
+      "collection": "XCOMM",
+      "task_manifest": "tasks/XCOMM-06/task.json",
+      "public_spec": "tasks/XCOMM-06/public_spec.json",
+      "reference_runtime_manifest": "tasks/XCOMM-06/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "commqpsktxrx.slx"
+    },
+    {
+      "task_id": "XCOMM-07",
+      "collection": "XCOMM",
+      "task_manifest": "tasks/XCOMM-07/task.json",
+      "public_spec": "tasks/XCOMM-07/public_spec.json",
+      "reference_runtime_manifest": "tasks/XCOMM-07/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "wlanhdlReceiver.slx"
+    },
+    {
+      "task_id": "XCOMM-08",
+      "collection": "XCOMM",
+      "task_manifest": "tasks/XCOMM-08/task.json",
+      "public_spec": "tasks/XCOMM-08/public_spec.json",
+      "reference_runtime_manifest": "tasks/XCOMM-08/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "commdvbt.slx"
+    },
+    {
+      "task_id": "XCOMM-09",
+      "collection": "XCOMM",
+      "task_manifest": "tasks/XCOMM-09/task.json",
+      "public_spec": "tasks/XCOMM-09/public_spec.json",
+      "reference_runtime_manifest": "tasks/XCOMM-09/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "HTLinkModelWLANModel.slx"
+    },
+    {
+      "task_id": "XFLUID-02",
+      "collection": "XFLUID",
+      "task_manifest": "tasks/XFLUID-02/task.json",
+      "public_spec": "tasks/XFLUID-02/public_spec.json",
+      "reference_runtime_manifest": "tasks/XFLUID-02/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/Simscape-Triplex-Pump/XFLUID02_reference.slx"
+    },
+    {
+      "task_id": "XFLUID-03",
+      "collection": "XFLUID",
+      "task_manifest": "tasks/XFLUID-03/task.json",
+      "public_spec": "tasks/XFLUID-03/public_spec.json",
+      "reference_runtime_manifest": "tasks/XFLUID-03/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/Tractor-Simscape/Model/TractorEnergyComputation.slx"
+    },
+    {
+      "task_id": "XFLUID-04",
+      "collection": "XFLUID",
+      "task_manifest": "tasks/XFLUID-04/task.json",
+      "public_spec": "tasks/XFLUID-04/public_spec.json",
+      "reference_runtime_manifest": "tasks/XFLUID-04/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/XFLUID04_reference.slx"
+    },
+    {
+      "task_id": "XFLUID-05",
+      "collection": "XFLUID",
+      "task_manifest": "tasks/XFLUID-05/task.json",
+      "public_spec": "tasks/XFLUID-05/public_spec.json",
+      "reference_runtime_manifest": "tasks/XFLUID-05/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "PistonPumpWithLoadSensingAndPressureLimitingControl.slx"
+    },
+    {
+      "task_id": "XFLUID-07",
+      "collection": "XFLUID",
+      "task_manifest": "tasks/XFLUID-07/task.json",
+      "public_spec": "tasks/XFLUID-07/public_spec.json",
+      "reference_runtime_manifest": "tasks/XFLUID-07/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/Tractor-Simscape/Workflow/TransmissionTradeOffStudy/TractorTransmissionTradeOff.slx"
+    },
+    {
+      "task_id": "XFLUID-08",
+      "collection": "XFLUID",
+      "task_manifest": "tasks/XFLUID-08/task.json",
+      "public_spec": "tasks/XFLUID-08/public_spec.json",
+      "reference_runtime_manifest": "tasks/XFLUID-08/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "AircraftFuelSupplySystemWithThreeTanks.slx"
+    },
+    {
+      "task_id": "XFLUID-09",
+      "collection": "XFLUID",
+      "task_manifest": "tasks/XFLUID-09/task.json",
+      "public_spec": "tasks/XFLUID-09/public_spec.json",
+      "reference_runtime_manifest": "tasks/XFLUID-09/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "HydrogenRefuelingStation.slx"
+    },
+    {
+      "task_id": "XFLUID-10",
+      "collection": "XFLUID",
+      "task_manifest": "tasks/XFLUID-10/task.json",
+      "public_spec": "tasks/XFLUID-10/public_spec.json",
+      "reference_runtime_manifest": "tasks/XFLUID-10/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "DieselEngineInLineInjectionSystem.slx"
+    },
+    {
+      "task_id": "XMECH-02",
+      "collection": "XMECH",
+      "task_manifest": "tasks/XMECH-02/task.json",
+      "public_spec": "tasks/XMECH-02/public_spec.json",
+      "reference_runtime_manifest": "tasks/XMECH-02/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/Simscape-Wind-Turbine/Wind_Turbine.slx"
+    },
+    {
+      "task_id": "XMECH-03",
+      "collection": "XMECH",
+      "task_manifest": "tasks/XMECH-03/task.json",
+      "public_spec": "tasks/XMECH-03/public_spec.json",
+      "reference_runtime_manifest": "tasks/XMECH-03/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/Simscape-Dual-Clutch/Dual_Clutch_Trans.slx"
+    },
+    {
+      "task_id": "XMECH-04",
+      "collection": "XMECH",
+      "task_manifest": "tasks/XMECH-04/task.json",
+      "public_spec": "tasks/XMECH-04/public_spec.json",
+      "reference_runtime_manifest": "tasks/XMECH-04/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/XMECH04_reference.slx"
+    },
+    {
+      "task_id": "XMECH-05",
+      "collection": "XMECH",
+      "task_manifest": "tasks/XMECH-05/task.json",
+      "public_spec": "tasks/XMECH-05/public_spec.json",
+      "reference_runtime_manifest": "tasks/XMECH-05/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "Forklift.slx"
+    },
+    {
+      "task_id": "XMECH-06",
+      "collection": "XMECH",
+      "task_manifest": "tasks/XMECH-06/task.json",
+      "public_spec": "tasks/XMECH-06/public_spec.json",
+      "reference_runtime_manifest": "tasks/XMECH-06/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/sm_car.slx"
+    },
+    {
+      "task_id": "XMECH-07",
+      "collection": "XMECH",
+      "task_manifest": "tasks/XMECH-07/task.json",
+      "public_spec": "tasks/XMECH-07/public_spec.json",
+      "reference_runtime_manifest": "tasks/XMECH-07/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/Spatial-Contact-Force-Examples-Simscape-Multibody/Models/Gripper_2Belts/Gripper_2Belts.slx"
+    },
+    {
+      "task_id": "XMECH-08",
+      "collection": "XMECH",
+      "task_manifest": "tasks/XMECH-08/task.json",
+      "public_spec": "tasks/XMECH-08/public_spec.json",
+      "reference_runtime_manifest": "tasks/XMECH-08/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/Four-Bar-Optim/sm_four_bar_optim.slx"
+    },
+    {
+      "task_id": "XMECH-09",
+      "collection": "XMECH",
+      "task_manifest": "tasks/XMECH-09/task.json",
+      "public_spec": "tasks/XMECH-09/public_spec.json",
+      "reference_runtime_manifest": "tasks/XMECH-09/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "Backhoe.slx"
+    },
+    {
+      "task_id": "XMECH-10",
+      "collection": "XMECH",
+      "task_manifest": "tasks/XMECH-10/task.json",
+      "public_spec": "tasks/XMECH-10/public_spec.json",
+      "reference_runtime_manifest": "tasks/XMECH-10/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/src/youBot_Arm.slx"
+    },
+    {
+      "task_id": "XMED-02",
+      "collection": "XMED",
+      "task_manifest": "tasks/XMED-02/task.json",
+      "public_spec": "tasks/XMED-02/public_spec.json",
+      "reference_runtime_manifest": "tasks/XMED-02/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/F90_XMED_02.slx"
+    },
+    {
+      "task_id": "XMED-03",
+      "collection": "XMED",
+      "task_manifest": "tasks/XMED-03/task.json",
+      "public_spec": "tasks/XMED-03/public_spec.json",
+      "reference_runtime_manifest": "tasks/XMED-03/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/F90_XMED_03.slx"
+    },
+    {
+      "task_id": "XMED-04",
+      "collection": "XMED",
+      "task_manifest": "tasks/XMED-04/task.json",
+      "public_spec": "tasks/XMED-04/public_spec.json",
+      "reference_runtime_manifest": "tasks/XMED-04/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/artificialPancreasWithFISTreeControl.slx"
+    },
+    {
+      "task_id": "XMED-05",
+      "collection": "XMED",
+      "task_manifest": "tasks/XMED-05/task.json",
+      "public_spec": "tasks/XMED-05/public_spec.json",
+      "reference_runtime_manifest": "tasks/XMED-05/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/PACER_v0.2.0/models/CLSfixed.slx"
+    },
+    {
+      "task_id": "XMED-07",
+      "collection": "XMED",
+      "task_manifest": "tasks/XMED-07/task.json",
+      "public_spec": "tasks/XMED-07/public_spec.json",
+      "reference_runtime_manifest": "tasks/XMED-07/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/src/Models/InfusionPumpModelV7.slx"
+    },
+    {
+      "task_id": "XMED-08",
+      "collection": "XMED",
+      "task_manifest": "tasks/XMED-08/task.json",
+      "public_spec": "tasks/XMED-08/public_spec.json",
+      "reference_runtime_manifest": "tasks/XMED-08/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "ex_ecg_sigprocessing.slx"
+    },
+    {
+      "task_id": "XMED-09",
+      "collection": "XMED",
+      "task_manifest": "tasks/XMED-09/task.json",
+      "public_spec": "tasks/XMED-09/public_spec.json",
+      "reference_runtime_manifest": "tasks/XMED-09/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/source/CVS_LVAD_2021a.slx"
+    },
+    {
+      "task_id": "XMED-10",
+      "collection": "XMED",
+      "task_manifest": "tasks/XMED-10/task.json",
+      "public_spec": "tasks/XMED-10/public_spec.json",
+      "reference_runtime_manifest": "tasks/XMED-10/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/source/docs/source/matlab/simulink_examples/closed_loop_simulation/sim_closedloop.slx"
+    },
+    {
+      "task_id": "XROBO-01",
+      "collection": "XROBO",
+      "task_manifest": "tasks/XROBO-01/task.json",
+      "public_spec": "tasks/XROBO-01/public_spec.json",
+      "reference_runtime_manifest": "tasks/XROBO-01/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/XROBO01_reference.slx"
+    },
+    {
+      "task_id": "XROBO-02",
+      "collection": "XROBO",
+      "task_manifest": "tasks/XROBO-02/task.json",
+      "public_spec": "tasks/XROBO-02/public_spec.json",
+      "reference_runtime_manifest": "tasks/XROBO-02/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/XROBO02_reference.slx"
+    },
+    {
+      "task_id": "XROBO-03",
+      "collection": "XROBO",
+      "task_manifest": "tasks/XROBO-03/task.json",
+      "public_spec": "tasks/XROBO-03/public_spec.json",
+      "reference_runtime_manifest": "tasks/XROBO-03/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "rlQuadrupedRobot.slx"
+    },
+    {
+      "task_id": "XROBO-04",
+      "collection": "XROBO",
+      "task_manifest": "tasks/XROBO-04/task.json",
+      "public_spec": "tasks/XROBO-04/public_spec.json",
+      "reference_runtime_manifest": "tasks/XROBO-04/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/Models/mars_rover_terrain.slx"
+    },
+    {
+      "task_id": "XROBO-05",
+      "collection": "XROBO",
+      "task_manifest": "tasks/XROBO-05/task.json",
+      "public_spec": "tasks/XROBO-05/public_spec.json",
+      "reference_runtime_manifest": "tasks/XROBO-05/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/MSS/SIMULINK/mssSimulinkDemos/demoAUVdepthHeadingControl.slx"
+    },
+    {
+      "task_id": "XROBO-06",
+      "collection": "XROBO",
+      "task_manifest": "tasks/XROBO-06/task.json",
+      "public_spec": "tasks/XROBO-06/public_spec.json",
+      "reference_runtime_manifest": "tasks/XROBO-06/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "sm_humanoid_walker_rl.slx"
+    },
+    {
+      "task_id": "XROBO-07",
+      "collection": "XROBO",
+      "task_manifest": "tasks/XROBO-07/task.json",
+      "public_spec": "tasks/XROBO-07/public_spec.json",
+      "reference_runtime_manifest": "tasks/XROBO-07/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "PathFollowingTEB_SimuVerityReference.slx"
+    },
+    {
+      "task_id": "XROBO-08",
+      "collection": "XROBO",
+      "task_manifest": "tasks/XROBO-08/task.json",
+      "public_spec": "tasks/XROBO-08/public_spec.json",
+      "reference_runtime_manifest": "tasks/XROBO-08/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "main/rlKinovaBallBalance.slx"
+    },
+    {
+      "task_id": "XROBO-09",
+      "collection": "XROBO",
+      "task_manifest": "tasks/XROBO-09/task.json",
+      "public_spec": "tasks/XROBO-09/public_spec.json",
+      "reference_runtime_manifest": "tasks/XROBO-09/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "MarineVessel/Model/ASVDemo.slx"
+    },
+    {
+      "task_id": "XROBO-10",
+      "collection": "XROBO",
+      "task_manifest": "tasks/XROBO-10/task.json",
+      "public_spec": "tasks/XROBO-10/public_spec.json",
+      "reference_runtime_manifest": "tasks/XROBO-10/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "smart4iRobotDynamics.slx"
+    },
+    {
+      "task_id": "XTHERM-01",
+      "collection": "XTHERM",
+      "task_manifest": "tasks/XTHERM-01/task.json",
+      "public_spec": "tasks/XTHERM-01/public_spec.json",
+      "reference_runtime_manifest": "tasks/XTHERM-01/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/XTHERM02_reference.slx"
+    },
+    {
+      "task_id": "XTHERM-03",
+      "collection": "XTHERM",
+      "task_manifest": "tasks/XTHERM-03/task.json",
+      "public_spec": "tasks/XTHERM-03/public_spec.json",
+      "reference_runtime_manifest": "tasks/XTHERM-03/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/source/MSFcascade.mdl"
+    },
+    {
+      "task_id": "XTHERM-04",
+      "collection": "XTHERM",
+      "task_manifest": "tasks/XTHERM-04/task.json",
+      "public_spec": "tasks/XTHERM-04/public_spec.json",
+      "reference_runtime_manifest": "tasks/XTHERM-04/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "ReversibleHeatPump.slx"
+    },
+    {
+      "task_id": "XTHERM-05",
+      "collection": "XTHERM",
+      "task_manifest": "tasks/XTHERM-05/task.json",
+      "public_spec": "tasks/XTHERM-05/public_spec.json",
+      "reference_runtime_manifest": "tasks/XTHERM-05/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/XTHERM05_reference.slx"
+    },
+    {
+      "task_id": "XTHERM-06",
+      "collection": "XTHERM",
+      "task_manifest": "tasks/XTHERM-06/task.json",
+      "public_spec": "tasks/XTHERM-06/public_spec.json",
+      "reference_runtime_manifest": "tasks/XTHERM-06/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/bev_motor_cooling.slx"
+    },
+    {
+      "task_id": "XTHERM-07",
+      "collection": "XTHERM",
+      "task_manifest": "tasks/XTHERM-07/task.json",
+      "public_spec": "tasks/XTHERM-07/public_spec.json",
+      "reference_runtime_manifest": "tasks/XTHERM-07/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "SimpleCPUCoolingSystem.slx"
+    },
+    {
+      "task_id": "XTHERM-08",
+      "collection": "XTHERM",
+      "task_manifest": "tasks/XTHERM-08/task.json",
+      "public_spec": "tasks/XTHERM-08/public_spec.json",
+      "reference_runtime_manifest": "tasks/XTHERM-08/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "DataCenterCooling.slx"
+    },
+    {
+      "task_id": "XTHERM-09",
+      "collection": "XTHERM",
+      "task_manifest": "tasks/XTHERM-09/task.json",
+      "public_spec": "tasks/XTHERM-09/public_spec.json",
+      "reference_runtime_manifest": "tasks/XTHERM-09/reference/runtime_manifest.json",
+      "reference_materialization": "local_importer",
+      "reference_entrypoint": "AircraftEnvironmentalControlSystem.slx"
+    },
+    {
+      "task_id": "XTHERM-11",
+      "collection": "XTHERM",
+      "task_manifest": "tasks/XTHERM-11/task.json",
+      "public_spec": "tasks/XTHERM-11/public_spec.json",
+      "reference_runtime_manifest": "tasks/XTHERM-11/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/source/cstr_cascade.slx"
+    },
+    {
+      "task_id": "XAERO-01",
+      "collection": "XAERO",
+      "task_manifest": "tasks/XAERO-01/task.json",
+      "public_spec": "tasks/XAERO-01/public_spec.json",
+      "reference_runtime_manifest": "tasks/XAERO-01/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/XAERO01_reference.slx"
+    },
+    {
+      "task_id": "XAUTO-01",
+      "collection": "XAUTO",
+      "task_manifest": "tasks/XAUTO-01/task.json",
+      "public_spec": "tasks/XAUTO-01/public_spec.json",
+      "reference_runtime_manifest": "tasks/XAUTO-01/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/XAUTO01_reference.slx"
+    },
+    {
+      "task_id": "XBATT-01",
+      "collection": "XBATT",
+      "task_manifest": "tasks/XBATT-01/task.json",
+      "public_spec": "tasks/XBATT-01/public_spec.json",
+      "reference_runtime_manifest": "tasks/XBATT-01/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/XBATT01_reference.slx"
+    },
+    {
+      "task_id": "XCOMM-01",
+      "collection": "XCOMM",
+      "task_manifest": "tasks/XCOMM-01/task.json",
+      "public_spec": "tasks/XCOMM-01/public_spec.json",
+      "reference_runtime_manifest": "tasks/XCOMM-01/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/XCOMM01_reference.slx"
+    },
+    {
+      "task_id": "XFLUID-01",
+      "collection": "XFLUID",
+      "task_manifest": "tasks/XFLUID-01/task.json",
+      "public_spec": "tasks/XFLUID-01/public_spec.json",
+      "reference_runtime_manifest": "tasks/XFLUID-01/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/XFLUID01_reference.slx"
+    },
+    {
+      "task_id": "XMECH-01",
+      "collection": "XMECH",
+      "task_manifest": "tasks/XMECH-01/task.json",
+      "public_spec": "tasks/XMECH-01/public_spec.json",
+      "reference_runtime_manifest": "tasks/XMECH-01/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/XMECH01_reference.slx"
+    },
+    {
+      "task_id": "XMED-01",
+      "collection": "XMED",
+      "task_manifest": "tasks/XMED-01/task.json",
+      "public_spec": "tasks/XMED-01/public_spec.json",
+      "reference_runtime_manifest": "tasks/XMED-01/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/XMED01_reference.slx"
+    },
+    {
+      "task_id": "XAUTO-12",
+      "collection": "XAUTO",
+      "task_manifest": "tasks/XAUTO-12/task.json",
+      "public_spec": "tasks/XAUTO-12/public_spec.json",
+      "reference_runtime_manifest": "tasks/XAUTO-12/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/ext_xauto_multiagent_cbf_vo_reference.slx"
+    },
+    {
+      "task_id": "XAUTO-13",
+      "collection": "XAUTO",
+      "task_manifest": "tasks/XAUTO-13/task.json",
+      "public_spec": "tasks/XAUTO-13/public_spec.json",
+      "reference_runtime_manifest": "tasks/XAUTO-13/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/ext_xauto_pmsm_param_est_reference.slx"
+    },
+    {
+      "task_id": "XFLUID-11",
+      "collection": "XFLUID",
+      "task_manifest": "tasks/XFLUID-11/task.json",
+      "public_spec": "tasks/XFLUID-11/public_spec.json",
+      "reference_runtime_manifest": "tasks/XFLUID-11/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/applications/Desalination/OSWEC_RO.slx"
+    },
+    {
+      "task_id": "XFLUID-12",
+      "collection": "XFLUID",
+      "task_manifest": "tasks/XFLUID-12/task.json",
+      "public_spec": "tasks/XFLUID-12/public_spec.json",
+      "reference_runtime_manifest": "tasks/XFLUID-12/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/repo/examples/RM3/RM3.slx"
+    },
+    {
+      "task_id": "XMECH-11",
+      "collection": "XMECH",
+      "task_manifest": "tasks/XMECH-11/task.json",
+      "public_spec": "tasks/XMECH-11/public_spec.json",
+      "reference_runtime_manifest": "tasks/XMECH-11/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/Models/Vehicle/sm_wheel_loader.slx"
+    },
+    {
+      "task_id": "XTHERM-12",
+      "collection": "XTHERM",
+      "task_manifest": "tasks/XTHERM-12/task.json",
+      "public_spec": "tasks/XTHERM-12/public_spec.json",
+      "reference_runtime_manifest": "tasks/XTHERM-12/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/Models/BEV_Thermal_Management.slx"
+    },
+    {
+      "task_id": "XTHERM-13",
+      "collection": "XTHERM",
+      "task_manifest": "tasks/XTHERM-13/task.json",
+      "public_spec": "tasks/XTHERM-13/public_spec.json",
+      "reference_runtime_manifest": "tasks/XTHERM-13/reference/runtime_manifest.json",
+      "reference_materialization": "bundled",
+      "reference_entrypoint": "reference/files/ResidentialBuildingTESandPVcell.slx"
+    }
+  ]
+}

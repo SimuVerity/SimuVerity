@@ -1,0 +1,38 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XAERO-03",
+  "file_count": 2,
+  "files": [
+    {
+      "path": "reference/files/LICENSE",
+      "size_bytes": 1076
+    },
+    {
+      "path": "reference/files/XAERO03_reference.slx",
+      "size_bytes": 121919
+    }
+  ],
+  "entrypoint": "reference/files/XAERO03_reference.slx",
+  "expected_score": 90.1877765233406,
+  "expected_score_basis": "reference_replay",
+  "expected_valid_scenarios": 9,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal",
+      "high_altitude_fast_right_turn",
+      "low_altitude_slow_left_turn",
+      "large_climb_transition",
+      "gust_pair_none",
+      "gust_pair_crosswind",
+      "heading_pair_left",
+      "heading_pair_right",
+      "joint_boundary"
+    ],
+    "nominal_scenario_id": "nominal",
+    "nominal_materialization": "extractor_appended_and_explicitly_published"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 122995,
+  "excluded_files": []
+}

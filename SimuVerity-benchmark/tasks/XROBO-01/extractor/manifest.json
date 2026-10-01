@@ -1,0 +1,44 @@
+{
+  "schema": "simuverity.extractor-closure.v1",
+  "task_id": "XROBO-01",
+  "entrypoint": "vendor/scripts/formal90/tasks/f90_xrobo01/f90_xrobo01_extract_candidate_evidence.m",
+  "public_wrapper": "extractor/run.m",
+  "files": [
+    {
+      "source_name": "formal90_write_evidence.m",
+      "public_path": "vendor/scripts/formal90/formal90_write_evidence.m"
+    },
+    {
+      "source_name": "f90_xrobo01_definition.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xrobo01/f90_xrobo01_definition.m"
+    },
+    {
+      "source_name": "f90_xrobo01_extract_evidence_core.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xrobo01/f90_xrobo01_extract_evidence_core.m"
+    },
+    {
+      "source_name": "f90_xrobo01_extract_evidence.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xrobo01/f90_xrobo01_extract_evidence.m"
+    },
+    {
+      "source_name": "f90_xrobo01_measurement_compatibility.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xrobo01/f90_xrobo01_measurement_compatibility.m"
+    },
+    {
+      "source_name": "f90_xrobo01_extract_candidate_evidence.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xrobo01/f90_xrobo01_extract_candidate_evidence.m"
+    },
+    {
+      "source_name": "f90_xrobo01_source_setup.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xrobo01/f90_xrobo01_source_setup.m"
+    },
+    {
+      "source_name": "f90_xrobo01_static_audit.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xrobo01/f90_xrobo01_static_audit.m"
+    },
+    {
+      "source_name": "simuverity_public_output_compatibility.m",
+      "public_path": "vendor/scripts/unified/public_output/simuverity_public_output_compatibility.m"
+    }
+  ]
+}

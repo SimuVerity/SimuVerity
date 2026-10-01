@@ -1,0 +1,282 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XROBO-04",
+  "collection": "XROBO",
+  "reference": {
+    "identity_path": "tasks/XROBO-04/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/Models/mars_rover_terrain.slx",
+    "model_path": "tasks/XROBO-04/reference/files/Models/mars_rover_terrain.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XROBO-04",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a Simscape Multibody model of a six-wheel planetary rover that follows a supplied three-dimensional path over a supplied terrain, retrieves a sample with an onboard manipulator, and places it in onboard storage.",
+    "engineering_objects": [
+      "The rover must use a physically connected six-wheel rocker-bogie suspension with six distinct wheel-terrain contacts.",
+      "Regulate rover speed and path tracking in closed loop through physical drive and steering actuation.",
+      "Include a physically articulated six-joint manipulator that performs sample pickup and storage."
+    ],
+    "physical_paths": [
+      "The rover must use a physically connected six-wheel rocker-bogie suspension with six distinct wheel-terrain contacts.",
+      "Regulate rover speed and path tracking in closed loop through physical drive and steering actuation.",
+      "Use six electric drive motors and four electric steering motors connected through their mechanical transmission paths.",
+      "Include a physically articulated six-joint manipulator that performs sample pickup and storage."
+    ],
+    "functional_paths": [
+      "Regulate rover speed and path tracking in closed loop through physical drive and steering actuation.",
+      "Use six electric drive motors and four electric steering motors connected through their mechanical transmission paths.",
+      "Controller and trajectory-generation methods are unrestricted."
+    ],
+    "information_paths": [
+      "RoverPath_XYZ, TerrainGrid_X_m, TerrainGrid_Y_m, TerrainGrid_Z_m, SamplePosition_m, TargetSpeed_mps, TerrainMuStatic, TerrainMuDynamic -> F90-XROBO-04 plant/control path -> rover_state, drive_wheel_state, steer_state, arm_joint_state, end_effector_position, sample_mission_state, chassis_motor_state, chassis_energy"
+    ],
+    "modes_and_events": [
+      "Build a Simscape Multibody model of a six-wheel planetary rover that follows a supplied three-dimensional path over a supplied terrain, retrieves a sample with an onboard manipulator, and places it in onboard storage.",
+      "sample_mission_state has 6 channels [sample x,y,z relative to the arm (m), pickup latched, stored latched, arm mode]."
+    ],
+    "interfaces": [
+      {
+        "name": "RoverPath_XYZ",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read RoverPath_XYZ, TerrainGrid_X_m, TerrainGrid_Y_m, TerrainGrid_Z_m, SamplePosition_m, TargetSpeed_mps, TerrainMuStatic, and TerrainMuDynamic from the MATLAB base workspace. RoverPath_XYZ is N-by-3 in metres.",
+        "source": "tasks/XROBO-04/public_spec.json"
+      },
+      {
+        "name": "TerrainGrid_X_m",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read RoverPath_XYZ, TerrainGrid_X_m, TerrainGrid_Y_m, TerrainGrid_Z_m, SamplePosition_m, TargetSpeed_mps, TerrainMuStatic, and TerrainMuDynamic from the MATLAB base workspace. TerrainGrid_X_m, TerrainGrid_Y_m, and TerrainGrid_Z_m are Ny-by-Nx matrices with MATLAB meshgrid semantics: each row of TerrainGrid_X_m repeats the x coordinates, each column of TerrainGrid_Y_m repeats the y coordinates, and TerrainGrid_Z_m contains the corresponding terrain heights.",
+        "source": "tasks/XROBO-04/public_spec.json"
+      },
+      {
+        "name": "TerrainGrid_Y_m",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read RoverPath_XYZ, TerrainGrid_X_m, TerrainGrid_Y_m, TerrainGrid_Z_m, SamplePosition_m, TargetSpeed_mps, TerrainMuStatic, and TerrainMuDynamic from the MATLAB base workspace. TerrainGrid_X_m, TerrainGrid_Y_m, and TerrainGrid_Z_m are Ny-by-Nx matrices with MATLAB meshgrid semantics: each row of TerrainGrid_X_m repeats the x coordinates, each column of TerrainGrid_Y_m repeats the y coordinates, and TerrainGrid_Z_m contains the corresponding terrain heights.",
+        "source": "tasks/XROBO-04/public_spec.json"
+      },
+      {
+        "name": "TerrainGrid_Z_m",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read RoverPath_XYZ, TerrainGrid_X_m, TerrainGrid_Y_m, TerrainGrid_Z_m, SamplePosition_m, TargetSpeed_mps, TerrainMuStatic, and TerrainMuDynamic from the MATLAB base workspace. TerrainGrid_X_m, TerrainGrid_Y_m, and TerrainGrid_Z_m are Ny-by-Nx matrices with MATLAB meshgrid semantics: each row of TerrainGrid_X_m repeats the x coordinates, each column of TerrainGrid_Y_m repeats the y coordinates, and TerrainGrid_Z_m contains the corresponding terrain heights.",
+        "source": "tasks/XROBO-04/public_spec.json"
+      },
+      {
+        "name": "SamplePosition_m",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Read RoverPath_XYZ, TerrainGrid_X_m, TerrainGrid_Y_m, TerrainGrid_Z_m, SamplePosition_m, TargetSpeed_mps, TerrainMuStatic, and TerrainMuDynamic from the MATLAB base workspace. SamplePosition_m is a reachable 1-by-3 position near the end of the supplied path.",
+        "source": "tasks/XROBO-04/public_spec.json"
+      },
+      {
+        "name": "TargetSpeed_mps",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Read RoverPath_XYZ, TerrainGrid_X_m, TerrainGrid_Y_m, TerrainGrid_Z_m, SamplePosition_m, TargetSpeed_mps, TerrainMuStatic, and TerrainMuDynamic from the MATLAB base workspace. Support TargetSpeed_mps from 0.024 to 0.036 m/s, TerrainMuStatic from 0.64 to 0.80, and TerrainMuDynamic from 0.48 to 0.60.",
+        "source": "tasks/XROBO-04/public_spec.json"
+      },
+      {
+        "name": "TerrainMuStatic",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read RoverPath_XYZ, TerrainGrid_X_m, TerrainGrid_Y_m, TerrainGrid_Z_m, SamplePosition_m, TargetSpeed_mps, TerrainMuStatic, and TerrainMuDynamic from the MATLAB base workspace. Support TargetSpeed_mps from 0.024 to 0.036 m/s, TerrainMuStatic from 0.64 to 0.80, and TerrainMuDynamic from 0.48 to 0.60.",
+        "source": "tasks/XROBO-04/public_spec.json"
+      },
+      {
+        "name": "TerrainMuDynamic",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read RoverPath_XYZ, TerrainGrid_X_m, TerrainGrid_Y_m, TerrainGrid_Z_m, SamplePosition_m, TargetSpeed_mps, TerrainMuStatic, and TerrainMuDynamic from the MATLAB base workspace. Support TargetSpeed_mps from 0.024 to 0.036 m/s, TerrainMuStatic from 0.64 to 0.80, and TerrainMuDynamic from 0.48 to 0.60.",
+        "source": "tasks/XROBO-04/public_spec.json"
+      },
+      {
+        "name": "rover_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m",
+          "rad",
+          "m/s"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named rover_state, drive_wheel_state, steer_state, arm_joint_state, end_effector_position, sample_mission_state, chassis_motor_state, and chassis_energy. rover_state has 7 channels [x_m,y_m,z_m,roll_rad,pitch_rad,yaw_rad,speed_mps].",
+        "source": "tasks/XROBO-04/public_spec.json"
+      },
+      {
+        "name": "drive_wheel_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N*m",
+          "rad/s"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named rover_state, drive_wheel_state, steer_state, arm_joint_state, end_effector_position, sample_mission_state, chassis_motor_state, and chassis_energy. drive_wheel_state has 12 channels: angular speed for L1,L2,L3,R1,R2,R3 (rad/s), followed by torque for the same wheels (N*m).",
+        "source": "tasks/XROBO-04/public_spec.json"
+      },
+      {
+        "name": "steer_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N*m",
+          "rad"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named rover_state, drive_wheel_state, steer_state, arm_joint_state, end_effector_position, sample_mission_state, chassis_motor_state, and chassis_energy. steer_state has 8 channels: angle for L1,L3,R1,R3 (rad), followed by applied torque for the same joints (N*m).",
+        "source": "tasks/XROBO-04/public_spec.json"
+      },
+      {
+        "name": "arm_joint_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named rover_state, drive_wheel_state, steer_state, arm_joint_state, end_effector_position, sample_mission_state, chassis_motor_state, and chassis_energy. arm_joint_state has 12 channels: q1..q6 followed by q1_command..q6_command, all in rad.",
+        "source": "tasks/XROBO-04/public_spec.json"
+      },
+      {
+        "name": "end_effector_position",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named rover_state, drive_wheel_state, steer_state, arm_joint_state, end_effector_position, sample_mission_state, chassis_motor_state, and chassis_energy. end_effector_position has 3 channels [x,y,z] in m.",
+        "source": "tasks/XROBO-04/public_spec.json"
+      },
+      {
+        "name": "sample_mission_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "m"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named rover_state, drive_wheel_state, steer_state, arm_joint_state, end_effector_position, sample_mission_state, chassis_motor_state, and chassis_energy. sample_mission_state has 6 channels [sample x,y,z relative to the arm (m), pickup latched, stored latched, arm mode].",
+        "source": "tasks/XROBO-04/public_spec.json"
+      },
+      {
+        "name": "chassis_motor_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N*m",
+          "rad/s",
+          "A"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named rover_state, drive_wheel_state, steer_state, arm_joint_state, end_effector_position, sample_mission_state, chassis_motor_state, and chassis_energy. chassis_motor_state has 30 channels: drive-motor speeds for L1,L2,L3,R1,R2,R3 and steer-motor speeds for L1,L3,R1,R3 (rad/s), their torques in the same order (N*m), then their currents in the same order (A).",
+        "source": "tasks/XROBO-04/public_spec.json"
+      },
+      {
+        "name": "chassis_energy",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "Wh",
+          "W"
+        ],
+        "range_or_shape": "Log complete-run MATLAB Timeseries named rover_state, drive_wheel_state, steer_state, arm_joint_state, end_effector_position, sample_mission_state, chassis_motor_state, and chassis_energy. chassis_energy has 3 channels [drive-motor power (W), steer-motor power (W), cumulative drive-and-steer energy (Wh)].",
+        "source": "tasks/XROBO-04/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Include a physically articulated six-joint manipulator that performs sample pickup and storage.",
+      "Controller and trajectory-generation methods are unrestricted.",
+      "rover_state has 7 channels [x_m,y_m,z_m,roll_rad,pitch_rad,yaw_rad,speed_mps]."
+    ],
+    "feedback_and_control_causality": [
+      "Regulate rover speed and path tracking in closed loop through physical drive and steering actuation.",
+      "Controller and trajectory-generation methods are unrestricted.",
+      "The rover trajectory must result from wheel-terrain forces and feedback control rather than prescribed chassis motion or a replayed path."
+    ],
+    "signal_sources": [
+      "RoverPath_XYZ is read from the public MATLAB base-workspace input contract.",
+      "TerrainGrid_X_m is read from the public MATLAB base-workspace input contract.",
+      "TerrainGrid_Y_m is read from the public MATLAB base-workspace input contract.",
+      "TerrainGrid_Z_m is read from the public MATLAB base-workspace input contract.",
+      "SamplePosition_m is read from the public MATLAB base-workspace input contract.",
+      "TargetSpeed_mps is read from the public MATLAB base-workspace input contract.",
+      "TerrainMuStatic is read from the public MATLAB base-workspace input contract.",
+      "TerrainMuDynamic is read from the public MATLAB base-workspace input contract.",
+      "rover_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "drive_wheel_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "steer_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "arm_joint_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "end_effector_position is produced by the implemented plant or controller and logged under the public output contract.",
+      "sample_mission_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "chassis_motor_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "chassis_energy is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "RoverPath_XYZ: Read RoverPath_XYZ, TerrainGrid_X_m, TerrainGrid_Y_m, TerrainGrid_Z_m, SamplePosition_m, TargetSpeed_mps, TerrainMuStatic, and TerrainMuDynamic from the MATLAB base workspace. RoverPath_XYZ is N-by-3 in metres.",
+      "TerrainGrid_X_m: Read RoverPath_XYZ, TerrainGrid_X_m, TerrainGrid_Y_m, TerrainGrid_Z_m, SamplePosition_m, TargetSpeed_mps, TerrainMuStatic, and TerrainMuDynamic from the MATLAB base workspace. TerrainGrid_X_m, TerrainGrid_Y_m, and TerrainGrid_Z_m are Ny-by-Nx matrices with MATLAB meshgrid semantics: each row of TerrainGrid_X_m repeats the x coordinates, each column of TerrainGrid_Y_m repeats the y coordinates, and TerrainGrid_Z_m contains the corresponding terrain heights.",
+      "TerrainGrid_Y_m: Read RoverPath_XYZ, TerrainGrid_X_m, TerrainGrid_Y_m, TerrainGrid_Z_m, SamplePosition_m, TargetSpeed_mps, TerrainMuStatic, and TerrainMuDynamic from the MATLAB base workspace. TerrainGrid_X_m, TerrainGrid_Y_m, and TerrainGrid_Z_m are Ny-by-Nx matrices with MATLAB meshgrid semantics: each row of TerrainGrid_X_m repeats the x coordinates, each column of TerrainGrid_Y_m repeats the y coordinates, and TerrainGrid_Z_m contains the corresponding terrain heights.",
+      "TerrainGrid_Z_m: Read RoverPath_XYZ, TerrainGrid_X_m, TerrainGrid_Y_m, TerrainGrid_Z_m, SamplePosition_m, TargetSpeed_mps, TerrainMuStatic, and TerrainMuDynamic from the MATLAB base workspace. TerrainGrid_X_m, TerrainGrid_Y_m, and TerrainGrid_Z_m are Ny-by-Nx matrices with MATLAB meshgrid semantics: each row of TerrainGrid_X_m repeats the x coordinates, each column of TerrainGrid_Y_m repeats the y coordinates, and TerrainGrid_Z_m contains the corresponding terrain heights.",
+      "SamplePosition_m: Read RoverPath_XYZ, TerrainGrid_X_m, TerrainGrid_Y_m, TerrainGrid_Z_m, SamplePosition_m, TargetSpeed_mps, TerrainMuStatic, and TerrainMuDynamic from the MATLAB base workspace. SamplePosition_m is a reachable 1-by-3 position near the end of the supplied path.",
+      "TargetSpeed_mps: Read RoverPath_XYZ, TerrainGrid_X_m, TerrainGrid_Y_m, TerrainGrid_Z_m, SamplePosition_m, TargetSpeed_mps, TerrainMuStatic, and TerrainMuDynamic from the MATLAB base workspace. Support TargetSpeed_mps from 0.024 to 0.036 m/s, TerrainMuStatic from 0.64 to 0.80, and TerrainMuDynamic from 0.48 to 0.60.",
+      "TerrainMuStatic: Read RoverPath_XYZ, TerrainGrid_X_m, TerrainGrid_Y_m, TerrainGrid_Z_m, SamplePosition_m, TargetSpeed_mps, TerrainMuStatic, and TerrainMuDynamic from the MATLAB base workspace. Support TargetSpeed_mps from 0.024 to 0.036 m/s, TerrainMuStatic from 0.64 to 0.80, and TerrainMuDynamic from 0.48 to 0.60.",
+      "TerrainMuDynamic: Read RoverPath_XYZ, TerrainGrid_X_m, TerrainGrid_Y_m, TerrainGrid_Z_m, SamplePosition_m, TargetSpeed_mps, TerrainMuStatic, and TerrainMuDynamic from the MATLAB base workspace. Support TargetSpeed_mps from 0.024 to 0.036 m/s, TerrainMuStatic from 0.64 to 0.80, and TerrainMuDynamic from 0.48 to 0.60."
+    ],
+    "disturbances": [
+      "F90-XROBO-04 operating variation is supplied through RoverPath_XYZ, TerrainGrid_X_m, TerrainGrid_Y_m, TerrainGrid_Z_m, SamplePosition_m, TargetSpeed_mps, TerrainMuStatic, TerrainMuDynamic."
+    ],
+    "dynamic_processes": [
+      "Regulate rover speed and path tracking in closed loop through physical drive and steering actuation.",
+      "Read RoverPath_XYZ, TerrainGrid_X_m, TerrainGrid_Y_m, TerrainGrid_Z_m, SamplePosition_m, TargetSpeed_mps, TerrainMuStatic, and TerrainMuDynamic from the MATLAB base workspace.",
+      "Support TargetSpeed_mps from 0.024 to 0.036 m/s, TerrainMuStatic from 0.64 to 0.80, and TerrainMuDynamic from 0.48 to 0.60."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XROBO-04: prescribing rover_state directly would bypass the system path described by: The rover must use a physically connected six-wheel rocker-bogie suspension with six distinct wheel-terrain contacts.",
+      "F90-XROBO-04: replaying a fixed rover_state trace would ignore causal variation in RoverPath_XYZ."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XROBO-04/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XROBO-04/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XROBO-04/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

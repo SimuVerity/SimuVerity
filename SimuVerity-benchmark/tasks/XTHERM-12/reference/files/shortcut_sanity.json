@@ -1,0 +1,12 @@
+{
+  "task_id": "EXT-XTHERM-BEV-MULTILOOP-01",
+  "baseline_raw_score": 100.0,
+  "checks": {
+    "missing_heat_flow_collapses_M": true,
+    "missing_applied_actuator_collapses_M": true,
+    "cross_scenario_replay_collapses_C": true,
+    "command_copy_collapses_C": true,
+    "constant_outputs_collapse_key_group": true
+  },
+  "pass": true
+}

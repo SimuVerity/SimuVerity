@@ -1,0 +1,31 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XAUTO-01",
+  "file_count": 1,
+  "files": [
+    {
+      "path": "reference/files/XAUTO01_reference.slx",
+      "size_bytes": 121983
+    }
+  ],
+  "entrypoint": "reference/files/XAUTO01_reference.slx",
+  "expected_score": 98.3848917949669,
+  "expected_score_basis": "reference_replay",
+  "expected_valid_scenarios": 6,
+  "score_tolerance": 5e-07,
+  "scenario_contract": {
+    "expected_ids": [
+      "heavy_low_grip",
+      "reverse_split",
+      "fast_high_grip",
+      "joint_interior",
+      "brake_probe_low",
+      "brake_probe_high"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 121983,
+  "excluded_files": []
+}

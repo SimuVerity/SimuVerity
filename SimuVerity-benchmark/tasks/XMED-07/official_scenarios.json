@@ -1,0 +1,331 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XMED-07",
+  "scenarios": [
+    {
+      "id": "nominal_normal_bolus",
+      "class": "nominal_closed_loop_normal_bolus",
+      "stop_time_s": 80,
+      "delivery_mode": 1,
+      "bolus_magnitude_units": 1.0,
+      "bolus_stroke_time_s": 1.0,
+      "pause_time_s": 5.0,
+      "cycle_count": 6,
+      "quick_bolus_magnitude_units": [
+        0.8,
+        0.6,
+        0.5,
+        0.7
+      ],
+      "quick_bolus_stroke_time_s": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "basal_rate_units_per_hour": 1.0,
+      "patient_backpressure_Pa": 101325,
+      "occlusion_onset_s": 120,
+      "occlusion_fraction": 0.0,
+      "low_remaining_limit_units": 100.0
+    },
+    {
+      "id": "slow_large_normal_bolus",
+      "class": "bolus_timing_and_backpressure_boundary",
+      "stop_time_s": 80,
+      "delivery_mode": 1,
+      "bolus_magnitude_units": 1.0,
+      "bolus_stroke_time_s": 2.0,
+      "pause_time_s": 7.0,
+      "cycle_count": 4,
+      "quick_bolus_magnitude_units": [
+        0.8,
+        0.6,
+        0.5,
+        0.7
+      ],
+      "quick_bolus_stroke_time_s": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "basal_rate_units_per_hour": 1.0,
+      "patient_backpressure_Pa": 120000,
+      "occlusion_onset_s": 120,
+      "occlusion_fraction": 0.0,
+      "low_remaining_limit_units": 90.0
+    },
+    {
+      "id": "quick_bolus_profile",
+      "class": "four_stroke_quick_bolus",
+      "stop_time_s": 80,
+      "delivery_mode": 2,
+      "bolus_magnitude_units": 1.0,
+      "bolus_stroke_time_s": 1.0,
+      "pause_time_s": 4.0,
+      "cycle_count": 2,
+      "quick_bolus_magnitude_units": [
+        0.8,
+        0.6,
+        0.5,
+        0.7
+      ],
+      "quick_bolus_stroke_time_s": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "basal_rate_units_per_hour": 1.0,
+      "patient_backpressure_Pa": 101325,
+      "occlusion_onset_s": 120,
+      "occlusion_fraction": 0.0,
+      "low_remaining_limit_units": 100.0
+    },
+    {
+      "id": "basal_delivery",
+      "class": "low_rate_continuous_delivery",
+      "stop_time_s": 60,
+      "delivery_mode": 3,
+      "bolus_magnitude_units": 1.0,
+      "bolus_stroke_time_s": 1.0,
+      "pause_time_s": 5.0,
+      "cycle_count": 1,
+      "quick_bolus_magnitude_units": [
+        0.8,
+        0.6,
+        0.5,
+        0.7
+      ],
+      "quick_bolus_stroke_time_s": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "basal_rate_units_per_hour": 0.8,
+      "patient_backpressure_Pa": 101325,
+      "occlusion_onset_s": 120,
+      "occlusion_fraction": 0.0,
+      "low_remaining_limit_units": 100.0
+    },
+    {
+      "id": "high_backpressure_basal",
+      "class": "patient_backpressure_boundary",
+      "stop_time_s": 60,
+      "delivery_mode": 3,
+      "bolus_magnitude_units": 1.0,
+      "bolus_stroke_time_s": 1.0,
+      "pause_time_s": 5.0,
+      "cycle_count": 1,
+      "quick_bolus_magnitude_units": [
+        0.8,
+        0.6,
+        0.5,
+        0.7
+      ],
+      "quick_bolus_stroke_time_s": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "basal_rate_units_per_hour": 1.5,
+      "patient_backpressure_Pa": 150000,
+      "occlusion_onset_s": 120,
+      "occlusion_fraction": 0.0,
+      "low_remaining_limit_units": 100.0
+    },
+    {
+      "id": "moderate_restriction_no_alarm",
+      "class": "false_positive_resistance",
+      "stop_time_s": 120,
+      "delivery_mode": 1,
+      "bolus_magnitude_units": 1.0,
+      "bolus_stroke_time_s": 1.0,
+      "pause_time_s": 5.0,
+      "cycle_count": 20,
+      "quick_bolus_magnitude_units": [
+        0.8,
+        0.6,
+        0.5,
+        0.7
+      ],
+      "quick_bolus_stroke_time_s": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "basal_rate_units_per_hour": 1.0,
+      "patient_backpressure_Pa": 101325,
+      "occlusion_onset_s": 50,
+      "occlusion_fraction": 0.5,
+      "low_remaining_limit_units": 100.0
+    },
+    {
+      "id": "severe_occlusion",
+      "class": "occlusion_detection_and_shutdown",
+      "stop_time_s": 120,
+      "delivery_mode": 1,
+      "bolus_magnitude_units": 1.0,
+      "bolus_stroke_time_s": 1.0,
+      "pause_time_s": 5.0,
+      "cycle_count": 20,
+      "quick_bolus_magnitude_units": [
+        0.8,
+        0.6,
+        0.5,
+        0.7
+      ],
+      "quick_bolus_stroke_time_s": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "basal_rate_units_per_hour": 1.0,
+      "patient_backpressure_Pa": 101325,
+      "occlusion_onset_s": 50,
+      "occlusion_fraction": 0.9999,
+      "low_remaining_limit_units": 100.0
+    }
+  ],
+  "contract": {
+    "physical_contract": {
+      "fluid_volume_per_unit_mm3": 15.0,
+      "gear_ratio": 216.0,
+      "lead_screw_inch_per_output_revolution": 0.041666666666666664,
+      "nominal_initial_remaining_units": 200.0
+    },
+    "simulation": {
+      "native_stop_time_s": 120,
+      "private_stop_time_s": 120,
+      "native_max_step_s": 0.001,
+      "retain_complete_run": true
+    },
+    "paired_scenarios": {
+      "normal_bolus_command": [
+        "nominal_normal_bolus",
+        "slow_large_normal_bolus"
+      ],
+      "basal_backpressure": [
+        "basal_delivery",
+        "high_backpressure_basal"
+      ],
+      "restriction_safety": [
+        "moderate_restriction_no_alarm",
+        "severe_occlusion"
+      ]
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "preferred_reference_score": 90.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.2,
+          "meaning": "nominal dose, speed regulation, flow and physical-volume accuracy"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "pressure, force, flow and actuation quality"
+        },
+        "M": {
+          "weight": 0.3,
+          "meaning": "closed-loop motor, physical dose path, occlusion and remaining-drug causality"
+        },
+        "R": {
+          "weight": 0.2,
+          "meaning": "worst required private operating condition"
+        },
+        "D": {
+          "weight": 0.2,
+          "meaning": "mode sequencing, command response, occlusion shutdown and safety discrimination"
+        }
+      },
+      "within_group": "weighted_arithmetic_mean",
+      "across_groups": "weighted_geometric_mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum"
+    },
+    "minimum_shortcut_sanity_contract": [
+      "missing_measured_speed_feedback",
+      "independent_flow_source_without_motor_transmission_and_plunger",
+      "prerecorded_delivery_trace",
+      "scripted_occlusion_alarm",
+      "occlusion_ignored",
+      "always_alarm",
+      "fixed_continuous_flow_without_distinct_modes",
+      "low_remaining_flag_disconnected_from_physical_plunger_state"
+    ]
+  },
+  "physical_contract": {
+    "fluid_volume_per_unit_mm3": 15.0,
+    "gear_ratio": 216.0,
+    "lead_screw_inch_per_output_revolution": 0.041666666666666664,
+    "nominal_initial_remaining_units": 200.0
+  },
+  "simulation": {
+    "native_stop_time_s": 120,
+    "private_stop_time_s": 120,
+    "native_max_step_s": 0.001,
+    "retain_complete_run": true
+  },
+  "paired_scenarios": {
+    "normal_bolus_command": [
+      "nominal_normal_bolus",
+      "slow_large_normal_bolus"
+    ],
+    "basal_backpressure": [
+      "basal_delivery",
+      "high_backpressure_basal"
+    ],
+    "restriction_safety": [
+      "moderate_restriction_no_alarm",
+      "severe_occlusion"
+    ]
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "preferred_reference_score": 90.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.2,
+        "meaning": "nominal dose, speed regulation, flow and physical-volume accuracy"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "pressure, force, flow and actuation quality"
+      },
+      "M": {
+        "weight": 0.3,
+        "meaning": "closed-loop motor, physical dose path, occlusion and remaining-drug causality"
+      },
+      "R": {
+        "weight": 0.2,
+        "meaning": "worst required private operating condition"
+      },
+      "D": {
+        "weight": 0.2,
+        "meaning": "mode sequencing, command response, occlusion shutdown and safety discrimination"
+      }
+    },
+    "within_group": "weighted_arithmetic_mean",
+    "across_groups": "weighted_geometric_mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum"
+  },
+  "minimum_shortcut_sanity_contract": [
+    "missing_measured_speed_feedback",
+    "independent_flow_source_without_motor_transmission_and_plunger",
+    "prerecorded_delivery_trace",
+    "scripted_occlusion_alarm",
+    "occlusion_ignored",
+    "always_alarm",
+    "fixed_continuous_flow_without_distinct_modes",
+    "low_remaining_flag_disconnected_from_physical_plunger_state"
+  ]
+}

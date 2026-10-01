@@ -1,0 +1,203 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XBATT-02",
+  "scenarios": [
+    {
+      "id": "nominal",
+      "values": {
+        "ambient_temperature": 300,
+        "coolant_inlet_temperature": 298,
+        "initial_soc": 0.82,
+        "current_demand": 110,
+        "module_resistance_spread": 0.1,
+        "coolant_maldistribution": 0.22,
+        "load_step_time": 75,
+        "regen_start_time": 225
+      }
+    },
+    {
+      "id": "hot_high_discharge",
+      "values": {
+        "ambient_temperature": 311,
+        "coolant_inlet_temperature": 307,
+        "initial_soc": 0.78,
+        "current_demand": 152,
+        "module_resistance_spread": 0.19,
+        "coolant_maldistribution": 0.4,
+        "load_step_time": 52,
+        "regen_start_time": 245
+      }
+    },
+    {
+      "id": "low_soc_supervision",
+      "values": {
+        "ambient_temperature": 299,
+        "coolant_inlet_temperature": 295,
+        "initial_soc": 0.27,
+        "current_demand": 145,
+        "module_resistance_spread": 0.14,
+        "coolant_maldistribution": 0.26,
+        "load_step_time": 62,
+        "regen_start_time": 250
+      }
+    },
+    {
+      "id": "cold_regeneration",
+      "values": {
+        "ambient_temperature": 286,
+        "coolant_inlet_temperature": 285,
+        "initial_soc": 0.64,
+        "current_demand": 90,
+        "module_resistance_spread": 0.08,
+        "coolant_maldistribution": 0.18,
+        "load_step_time": 110,
+        "regen_start_time": 185
+      }
+    },
+    {
+      "id": "maldistribution_pair_low",
+      "values": {
+        "ambient_temperature": 306,
+        "coolant_inlet_temperature": 303,
+        "initial_soc": 0.72,
+        "current_demand": 130,
+        "module_resistance_spread": 0.16,
+        "coolant_maldistribution": 0.02,
+        "load_step_time": 78,
+        "regen_start_time": 225
+      }
+    },
+    {
+      "id": "maldistribution_pair_high",
+      "values": {
+        "ambient_temperature": 306,
+        "coolant_inlet_temperature": 303,
+        "initial_soc": 0.72,
+        "current_demand": 130,
+        "module_resistance_spread": 0.16,
+        "coolant_maldistribution": 0.4,
+        "load_step_time": 78,
+        "regen_start_time": 225
+      }
+    },
+    {
+      "id": "demand_pair_low",
+      "values": {
+        "ambient_temperature": 300,
+        "coolant_inlet_temperature": 298,
+        "initial_soc": 0.82,
+        "current_demand": 65,
+        "module_resistance_spread": 0.1,
+        "coolant_maldistribution": 0.22,
+        "load_step_time": 90,
+        "regen_start_time": 230
+      }
+    },
+    {
+      "id": "demand_pair_high",
+      "values": {
+        "ambient_temperature": 300,
+        "coolant_inlet_temperature": 298,
+        "initial_soc": 0.82,
+        "current_demand": 150,
+        "module_resistance_spread": 0.1,
+        "coolant_maldistribution": 0.22,
+        "load_step_time": 90,
+        "regen_start_time": 230
+      }
+    },
+    {
+      "id": "joint_boundary",
+      "values": {
+        "ambient_temperature": 312,
+        "coolant_inlet_temperature": 308,
+        "initial_soc": 0.26,
+        "current_demand": 155,
+        "module_resistance_spread": 0.2,
+        "coolant_maldistribution": 0.42,
+        "load_step_time": 45,
+        "regen_start_time": 270
+      }
+    }
+  ],
+  "contract": {
+    "range_scenario_ids": [
+      "nominal",
+      "hot_high_discharge",
+      "low_soc_supervision",
+      "cold_regeneration",
+      "joint_boundary"
+    ],
+    "dynamic_scenario_ids": [
+      "nominal",
+      "hot_high_discharge",
+      "low_soc_supervision",
+      "maldistribution_pair_high",
+      "joint_boundary"
+    ],
+    "paired_scenarios": {
+      "maldistribution": [
+        "maldistribution_pair_low",
+        "maldistribution_pair_high"
+      ],
+      "demand": [
+        "demand_pair_low",
+        "demand_pair_high"
+      ]
+    },
+    "groups": {
+      "G": "load, update, compile, all private simulations, output contract, finite values and broad physical ranges",
+      "A": "nominal electrical delivery, thermal regulation and terminal-state performance",
+      "Q": "temperature, SOC, per-cell voltage, coolant, pump-power and supervision quality",
+      "M": "mixed-module voltage scaling, charge balance, polarization/loss response, thermal balance, coolant enthalpy and pump auxiliary feedback",
+      "R": "worst required joint operating condition",
+      "D": "worst dynamic load, regeneration, maldistribution and low-SOC supervisory response",
+      "weights": {
+        "A": 0.18,
+        "Q": 0.12,
+        "M": 0.34,
+        "R": 0.2,
+        "D": 0.16
+      }
+    }
+  },
+  "range_scenario_ids": [
+    "nominal",
+    "hot_high_discharge",
+    "low_soc_supervision",
+    "cold_regeneration",
+    "joint_boundary"
+  ],
+  "dynamic_scenario_ids": [
+    "nominal",
+    "hot_high_discharge",
+    "low_soc_supervision",
+    "maldistribution_pair_high",
+    "joint_boundary"
+  ],
+  "paired_scenarios": {
+    "maldistribution": [
+      "maldistribution_pair_low",
+      "maldistribution_pair_high"
+    ],
+    "demand": [
+      "demand_pair_low",
+      "demand_pair_high"
+    ]
+  },
+  "groups": {
+    "G": "load, update, compile, all private simulations, output contract, finite values and broad physical ranges",
+    "A": "nominal electrical delivery, thermal regulation and terminal-state performance",
+    "Q": "temperature, SOC, per-cell voltage, coolant, pump-power and supervision quality",
+    "M": "mixed-module voltage scaling, charge balance, polarization/loss response, thermal balance, coolant enthalpy and pump auxiliary feedback",
+    "R": "worst required joint operating condition",
+    "D": "worst dynamic load, regeneration, maldistribution and low-SOC supervisory response",
+    "weights": {
+      "A": 0.18,
+      "Q": 0.12,
+      "M": 0.34,
+      "R": 0.2,
+      "D": 0.16
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "schema": "simuverity.public-spec.v1",
+  "task_id": "XMED-08",
+  "collection": "XMED",
+  "runtime_alias": "XMED-08",
+  "candidate_filename": "cand_XMED08.slx",
+  "prompt": "Build a streaming real-time ECG QRS detector in Simulink. Read the single-channel workspace input ecg_input, sampled at 360 Hz in millivolts. The detector must operate causally over mean heart rates from 45 through 220 beats per minute and remain useful in the presence of realistic baseline wander, 50/60 Hz interference, muscle-like noise, and electrode-motion transients.\n\nCondition the ECG to emphasize QRS activity, detect QRS events with an adaptive decision mechanism, reject non-QRS artifacts, and estimate heart rate from the accepted event sequence. The implementation must preserve timing and must not use future samples, hidden clean signals, copied beat times, a stored event schedule, or a prescribed heart-rate value.\n\nLog complete-run Timeseries named conditioned_ecg, qrs_feature, adaptive_threshold, qrs_events, and heart_rate_bpm. qrs_events must be the final accepted event train used to produce heart_rate_bpm, and adaptive_threshold must be the threshold actually used by the same detector.\n\nSave the completed model as cand_XMED08.slx in the submission directory and keep the latest usable model saved there throughout the task.\n\nSubmission filename contract: create, edit, and save the final self-contained Simulink model as cand_XMED08.slx in the assigned submission directory; keep the latest usable state at that exact path throughout the run."
+}

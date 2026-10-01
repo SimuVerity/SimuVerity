@@ -1,0 +1,24 @@
+{
+  "schema": "simuverity.extractor-closure.v1",
+  "task_id": "XTHERM-12",
+  "entrypoint": "vendor/scripts/formal90/tasks/ext_xtherm_bev_multiloop_01/ext_xtherm_bev_multiloop_01_extract_evidence.m",
+  "public_wrapper": "extractor/run.m",
+  "files": [
+    {
+      "source_name": "simuverity_official_scenarios_path.m",
+      "public_path": "extractor/support/simuverity_official_scenarios_path.m"
+    },
+    {
+      "source_name": "ext_xtherm_bev_multiloop_01_extract_evidence.m",
+      "public_path": "vendor/scripts/formal90/tasks/ext_xtherm_bev_multiloop_01/ext_xtherm_bev_multiloop_01_extract_evidence.m"
+    },
+    {
+      "source_name": "unified_load_candidate_dependencies.m",
+      "public_path": "vendor/scripts/unified/candidate_closure/unified_load_candidate_dependencies.m"
+    },
+    {
+      "source_name": "unified_reload_candidate_dependencies.m",
+      "public_path": "vendor/scripts/unified/candidate_closure/unified_reload_candidate_dependencies.m"
+    }
+  ]
+}

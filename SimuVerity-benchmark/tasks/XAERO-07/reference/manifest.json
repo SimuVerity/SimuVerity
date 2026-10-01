@@ -1,0 +1,1393 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XAERO-07",
+  "file_count": 342,
+  "files": [
+    {
+      "path": "reference/files/Airtaxi_Wing.prj",
+      "size_bytes": 177
+    },
+    {
+      "path": "reference/files/Images/Driveline_Engine_IMAGE.png",
+      "size_bytes": 4035
+    },
+    {
+      "path": "reference/files/Images/Generator_IMAGE.png",
+      "size_bytes": 1994
+    },
+    {
+      "path": "reference/files/Images/Motor_IMAGE.png",
+      "size_bytes": 2051
+    },
+    {
+      "path": "reference/files/Libraries/figuresasbSkyHogg.png",
+      "size_bytes": 5425
+    },
+    {
+      "path": "reference/files/Libraries/ssc_aircraft_elec_lib.slx",
+      "size_bytes": 98226
+    },
+    {
+      "path": "reference/files/LICENSE.md",
+      "size_bytes": 1506
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec.html",
+      "size_bytes": 17760
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec.png",
+      "size_bytes": 2510
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_01.png",
+      "size_bytes": 127911
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_02.png",
+      "size_bytes": 71480
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_03.png",
+      "size_bytes": 19432
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_04.png",
+      "size_bytes": 29943
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_05.png",
+      "size_bytes": 28122
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_06.png",
+      "size_bytes": 26041
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_07.png",
+      "size_bytes": 22227
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_08.png",
+      "size_bytes": 127934
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_09.png",
+      "size_bytes": 27315
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_10.png",
+      "size_bytes": 26063
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_11.png",
+      "size_bytes": 21648
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_12.png",
+      "size_bytes": 147310
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_13.png",
+      "size_bytes": 34690
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_14.png",
+      "size_bytes": 36460
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_15.png",
+      "size_bytes": 51492
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_16.png",
+      "size_bytes": 24722
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_hybrid.html",
+      "size_bytes": 21412
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_hybrid.png",
+      "size_bytes": 2510
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_hybrid_01.png",
+      "size_bytes": 147310
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_hybrid_02.png",
+      "size_bytes": 71480
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_hybrid_03.png",
+      "size_bytes": 19432
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_hybrid_04.png",
+      "size_bytes": 26858
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_hybrid_05.png",
+      "size_bytes": 36690
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_hybrid_06.png",
+      "size_bytes": 20665
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_hybrid_07.png",
+      "size_bytes": 22662
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_hybrid_08.png",
+      "size_bytes": 29689
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_hybrid_09.png",
+      "size_bytes": 27275
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_hybrid_10.png",
+      "size_bytes": 147399
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_hybrid_11.png",
+      "size_bytes": 27164
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_hybrid_12.png",
+      "size_bytes": 25056
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_hybrid_13.png",
+      "size_bytes": 21965
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_hybrid_14.png",
+      "size_bytes": 127911
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_hybrid_15.png",
+      "size_bytes": 34690
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_hybrid_16.png",
+      "size_bytes": 36460
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_hybrid_17.png",
+      "size_bytes": 51492
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_hybrid_18.png",
+      "size_bytes": 24722
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_hybrid_web.m",
+      "size_bytes": 37
+    },
+    {
+      "path": "reference/files/Overview/html/ssc_aircraft_elec_web.m",
+      "size_bytes": 29
+    },
+    {
+      "path": "reference/files/Overview/ssc_aircraft_elec.m",
+      "size_bytes": 6578
+    },
+    {
+      "path": "reference/files/Overview/ssc_aircraft_elec_hybrid.m",
+      "size_bytes": 8396
+    },
+    {
+      "path": "reference/files/README.md",
+      "size_bytes": 1948
+    },
+    {
+      "path": "reference/files/resources/project/7prvPth2SptpdK7hJK7tNimXw8M/14WTzAWpjValB0E4qUZlCWinMh4d.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/resources/project/7prvPth2SptpdK7hJK7tNimXw8M/14WTzAWpjValB0E4qUZlCWinMh4p.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/resources/project/7prvPth2SptpdK7hJK7tNimXw8M/YsBBdHLV1cc5kBX2gQKGn24DyyUd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/7prvPth2SptpdK7hJK7tNimXw8M/YsBBdHLV1cc5kBX2gQKGn24DyyUp.xml",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/5U7s2YT96ZJFqRH8QMJ4JVGcMnQd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/5U7s2YT96ZJFqRH8QMJ4JVGcMnQp.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/ePF_ovLq08REHTmKln_Vclf0R7sd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/ePF_ovLq08REHTmKln_Vclf0R7sp.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/lDQm91UGTQLPt4Xr2LW7EN3z814d.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/lDQm91UGTQLPt4Xr2LW7EN3z814p.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Ur1esh7xN9L6aqDUKBE31DKE1Qod.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/resources/project/BT5hWoz-UTefONdqForZyI91O8Y/Ur1esh7xN9L6aqDUKBE31DKE1Qop.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/3tu5xdOFUtOcxgNxjsUe1SZru_gd.xml",
+      "size_bytes": 85
+    },
+    {
+      "path": "reference/files/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/3tu5xdOFUtOcxgNxjsUe1SZru_gp.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/F1xSRe-wL68R-89fWoK3ZDttuzUd.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/F1xSRe-wL68R-89fWoK3ZDttuzUp.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/GG26M_9KiowTylN9cWJyXgS4QCkd.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/GG26M_9KiowTylN9cWJyXgS4QCkp.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/hGdbq6ec5176lRV7lFFBfrazEEId.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/hGdbq6ec5176lRV7lFFBfrazEEIp.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/UGAVJzTnZEIshIxMjUr3gf0m2-Md.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/UGAVJzTnZEIshIxMjUr3gf0m2-Mp.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/uhW4r2v2m40EuEwAl3Kda6u4niEd.xml",
+      "size_bytes": 69
+    },
+    {
+      "path": "reference/files/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/uhW4r2v2m40EuEwAl3Kda6u4niEp.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/UKULl9af11_6wllIQPV_M51ATeEd.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/UKULl9af11_6wllIQPV_M51ATeEp.xml",
+      "size_bytes": 111
+    },
+    {
+      "path": "reference/files/resources/project/Fg5w7dtLfwo2lo3Yd3_90adC-QM/7prvPth2SptpdK7hJK7tNimXw8Md.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/Fg5w7dtLfwo2lo3Yd3_90adC-QM/7prvPth2SptpdK7hJK7tNimXw8Mp.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/resources/project/Fg5w7dtLfwo2lo3Yd3_90adC-QM/p7hGBzvSomlYogLFPQymGxcj9Kod.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/Fg5w7dtLfwo2lo3Yd3_90adC-QM/p7hGBzvSomlYogLFPQymGxcj9Kop.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/resources/project/Fg5w7dtLfwo2lo3Yd3_90adC-QM/suYtAXxqQWpSZLwMDsa_yv2BhCgd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/resources/project/Fg5w7dtLfwo2lo3Yd3_90adC-QM/suYtAXxqQWpSZLwMDsa_yv2BhCgp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsd.xml",
+      "size_bytes": 114
+    },
+    {
+      "path": "reference/files/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsp.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/6WUQn3GUkFn97BBu09lvFizkgIkd.xml",
+      "size_bytes": 163
+    },
+    {
+      "path": "reference/files/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/6WUQn3GUkFn97BBu09lvFizkgIkp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/8c5_lL8OUvbZgzLUjXkSwwT-HYQd.xml",
+      "size_bytes": 129
+    },
+    {
+      "path": "reference/files/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/8c5_lL8OUvbZgzLUjXkSwwT-HYQp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/9R9jJm7f9o1sUkgP7wOQmGbU52sd.xml",
+      "size_bytes": 162
+    },
+    {
+      "path": "reference/files/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/9R9jJm7f9o1sUkgP7wOQmGbU52sp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/snrOKShaL6U-fWqrrF5LxXekIFEd.xml",
+      "size_bytes": 134
+    },
+    {
+      "path": "reference/files/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/snrOKShaL6U-fWqrrF5LxXekIFEp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/yZ9a_DNxbOKEjE_es1-WCUFTYM0d.xml",
+      "size_bytes": 162
+    },
+    {
+      "path": "reference/files/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/yZ9a_DNxbOKEjE_es1-WCUFTYM0p.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/Z4mmmlOD5kaWOxK0_gXZBRcWFicd.xml",
+      "size_bytes": 167
+    },
+    {
+      "path": "reference/files/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/Z4mmmlOD5kaWOxK0_gXZBRcWFicp.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/AVJ0aRIDhu6qPcAI-Czr65IBRNQd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/AVJ0aRIDhu6qPcAI-Czr65IBRNQp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/HmeAD1WEhWDtF4jfOfHWeyY77P4d.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/HmeAD1WEhWDtF4jfOfHWeyY77P4p.xml",
+      "size_bytes": 89
+    },
+    {
+      "path": "reference/files/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/qqTwl1_JOwcYavF1ZnS68P96iL8d.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/qqTwl1_JOwcYavF1ZnS68P96iL8p.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/WS7L7U3R0F3ft4esx_Z4zRwM4vQd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQ/WS7L7U3R0F3ft4esx_Z4zRwM4vQp.xml",
+      "size_bytes": 74
+    },
+    {
+      "path": "reference/files/resources/project/Ku1GztezL9EjyCgEHy-OJ5TN58o/0Oq4ZV1rtLyME6MXFTwI3K3DcBgd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/Ku1GztezL9EjyCgEHy-OJ5TN58o/0Oq4ZV1rtLyME6MXFTwI3K3DcBgp.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/resources/project/Ku1GztezL9EjyCgEHy-OJ5TN58o/a3dZ-8a0_cbEzIwlSxuSBqnzytMd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/Ku1GztezL9EjyCgEHy-OJ5TN58o/a3dZ-8a0_cbEzIwlSxuSBqnzytMp.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/resources/project/Ku1GztezL9EjyCgEHy-OJ5TN58o/IvImEaWht1DCSt-baA1yrSqF640d.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/resources/project/Ku1GztezL9EjyCgEHy-OJ5TN58o/IvImEaWht1DCSt-baA1yrSqF640p.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/resources/project/Mz-Zc87vT9TM4FFEsVBNGAtdJnI/qkXdeGZsupmpEHdw25ka-ZZOT5Ip.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4d.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4p.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/7H-RzShSFXWpp5yDk7Yw1zh2YA0d.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/7H-RzShSFXWpp5yDk7Yw1zh2YA0p.xml",
+      "size_bytes": 107
+    },
+    {
+      "path": "reference/files/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZod.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZop.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/DSPy623c8Tlcub5pki27VxToc3kd.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/DSPy623c8Tlcub5pki27VxToc3kp.xml",
+      "size_bytes": 107
+    },
+    {
+      "path": "reference/files/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencd.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencp.xml",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8d.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8p.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4d.xml",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4p.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Id.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Ip.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkd.xml",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkp.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/2lMfZVRyi46zYf-GaXt5ubAYCYwd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/2lMfZVRyi46zYf-GaXt5ubAYCYwp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/3dbe2-TZsdlbBivnHA741IgnoPYd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/3dbe2-TZsdlbBivnHA741IgnoPYp.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/4coH5_eR5lZd_yKX5p_qNYJ5acod.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/4coH5_eR5lZd_yKX5p_qNYJ5acop.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/5ltbmL0sFZ48CiEa92URzf-VAGsd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/5ltbmL0sFZ48CiEa92URzf-VAGsp.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/9yNAXNEZkPicMysAYUcJmSYmAMod.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/9yNAXNEZkPicMysAYUcJmSYmAMop.xml",
+      "size_bytes": 106
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/aOYh-4a6zh0wwK3d0CYl5blxiqYd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/aOYh-4a6zh0wwK3d0CYl5blxiqYp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/c-KmORR-A1tL5mQCKhqzNmeZipMd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/c-KmORR-A1tL5mQCKhqzNmeZipMp.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/C6pPfbLAmwqsY0RxKHchWg3Vazkd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/C6pPfbLAmwqsY0RxKHchWg3Vazkp.xml",
+      "size_bytes": 105
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/CfrDOG4ADduQT0DwnbMHjloiDAcd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/CfrDOG4ADduQT0DwnbMHjloiDAcp.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/EGgauUJ-ieAulajwI9Tp5Kqfbg4d.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/EGgauUJ-ieAulajwI9Tp5Kqfbg4p.xml",
+      "size_bytes": 113
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/eV5NhCXeSucz9DmMCWxMVhTYu_8d.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/eV5NhCXeSucz9DmMCWxMVhTYu_8p.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/j4RPwUIRRcyDeTAGptQOcG1uwFwd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/j4RPwUIRRcyDeTAGptQOcG1uwFwp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/nT75P41kCtXyZlltHWkA6aUab7Ud.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/nT75P41kCtXyZlltHWkA6aUab7Up.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/OzMtXGTF20kSpanE4_m-0V12PhAd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/OzMtXGTF20kSpanE4_m-0V12PhAp.xml",
+      "size_bytes": 124
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/Q050In-094tswsoo_Ryi_oSF-_Md.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/Q050In-094tswsoo_Ryi_oSF-_Mp.xml",
+      "size_bytes": 118
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/Q9dkR8aA9y-_QGioQN7q005I5fQd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/Q9dkR8aA9y-_QGioQN7q005I5fQp.xml",
+      "size_bytes": 114
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/u7G_Gp0IiMOF080hPwfKm176a_0d.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/u7G_Gp0IiMOF080hPwfKm176a_0p.xml",
+      "size_bytes": 95
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/vaFyqYOyXxVK1O7L8spki5Th4MUd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/vaFyqYOyXxVK1O7L8spki5Th4MUp.xml",
+      "size_bytes": 126
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/W5PWehr2ST1XuCunsGgCM34vx18d.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/W5PWehr2ST1XuCunsGgCM34vx18p.xml",
+      "size_bytes": 106
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/y3pIxeAZrmnsmUWA3VrtIokR004d.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/y3pIxeAZrmnsmUWA3VrtIokR004p.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/y3tL1ms8lkkwgY8wywT-CLVQDfsd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/y3tL1ms8lkkwgY8wywT-CLVQDfsp.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/yNcfLOH4TaUSPR-cZcaINFtz2Z8d.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/ojME0DLi1acAi9d0fF737hnpvFQ/yNcfLOH4TaUSPR-cZcaINFtz2Z8p.xml",
+      "size_bytes": 106
+    },
+    {
+      "path": "reference/files/resources/project/p7hGBzvSomlYogLFPQymGxcj9Ko/Ceu01SE3q1e08dOoeRNJf98QWBod.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/p7hGBzvSomlYogLFPQymGxcj9Ko/Ceu01SE3q1e08dOoeRNJf98QWBop.xml",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/resources/project/p7hGBzvSomlYogLFPQymGxcj9Ko/fSbRuMbAPENZCjSXCtteFkiXy0Qd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/p7hGBzvSomlYogLFPQymGxcj9Ko/fSbRuMbAPENZCjSXCtteFkiXy0Qp.xml",
+      "size_bytes": 105
+    },
+    {
+      "path": "reference/files/resources/project/p7hGBzvSomlYogLFPQymGxcj9Ko/LGhL-v-ucuAHh76RcZrFqFTDxYod.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/resources/project/p7hGBzvSomlYogLFPQymGxcj9Ko/LGhL-v-ucuAHh76RcZrFqFTDxYop.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/resources/project/p7hGBzvSomlYogLFPQymGxcj9Ko/obEAQucfXr9fKu_FHsrb9AsMt-kd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/p7hGBzvSomlYogLFPQymGxcj9Ko/obEAQucfXr9fKu_FHsrb9AsMt-kp.xml",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/resources/project/p7hGBzvSomlYogLFPQymGxcj9Ko/puk_SEMeqPqVIizCaJTkkp0cF3od.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/p7hGBzvSomlYogLFPQymGxcj9Ko/puk_SEMeqPqVIizCaJTkkp0cF3op.xml",
+      "size_bytes": 112
+    },
+    {
+      "path": "reference/files/resources/project/p7hGBzvSomlYogLFPQymGxcj9Ko/qsAxzg8Dvl9G8X1Tj8Pse4BsYqYd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/p7hGBzvSomlYogLFPQymGxcj9Ko/qsAxzg8Dvl9G8X1Tj8Pse4BsYqYp.xml",
+      "size_bytes": 97
+    },
+    {
+      "path": "reference/files/resources/project/p7hGBzvSomlYogLFPQymGxcj9Ko/upB3rUTYy4adFp2nhV9xumolJ_wd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/p7hGBzvSomlYogLFPQymGxcj9Ko/upB3rUTYy4adFp2nhV9xumolJ_wp.xml",
+      "size_bytes": 104
+    },
+    {
+      "path": "reference/files/resources/project/p7hGBzvSomlYogLFPQymGxcj9Ko/ymVgFw-mPCWNtttpcW18dcbtAQ4d.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/p7hGBzvSomlYogLFPQymGxcj9Ko/ymVgFw-mPCWNtttpcW18dcbtAQ4p.xml",
+      "size_bytes": 109
+    },
+    {
+      "path": "reference/files/resources/project/Project.xml",
+      "size_bytes": 73
+    },
+    {
+      "path": "reference/files/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/BT5hWoz-UTefONdqForZyI91O8Yd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/BT5hWoz-UTefONdqForZyI91O8Yp.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Fg5w7dtLfwo2lo3Yd3_90adC-QMd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Fg5w7dtLfwo2lo3Yd3_90adC-QMp.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Kj5y7Sbs6PCiYPR09Z1h7ZtTtfQp.xml",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Ku1GztezL9EjyCgEHy-OJ5TN58od.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/Ku1GztezL9EjyCgEHy-OJ5TN58op.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/ojME0DLi1acAi9d0fF737hnpvFQd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/ojME0DLi1acAi9d0fF737hnpvFQp.xml",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/pMxy1qNtF6I7azF2aLBhVJroBeId.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/pMxy1qNtF6I7azF2aLBhVJroBeIp.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/QMJD9OLFzxcTTbPOoh-ahQ4zTRUd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/QMJD9OLFzxcTTbPOoh-ahQ4zTRUp.xml",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/R0IsxKENiOKovWZXASFjrmpbBCYd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/R0IsxKENiOKovWZXASFjrmpbBCYp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/rh0jHbNfmojECiiHH7BQHmZTsWkd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/rh0jHbNfmojECiiHH7BQHmZTsWkp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/yDokaIUtxzMggk23g-cRlH8r73Md.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/yDokaIUtxzMggk23g-cRlH8r73Mp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/resources/project/qkXdeGZsupmpEHdw25ka-ZZOT5I/DhXltMazzycMWr-0A_OgcVPYuA8d.xml",
+      "size_bytes": 71
+    },
+    {
+      "path": "reference/files/resources/project/qkXdeGZsupmpEHdw25ka-ZZOT5I/DhXltMazzycMWr-0A_OgcVPYuA8p.xml",
+      "size_bytes": 108
+    },
+    {
+      "path": "reference/files/resources/project/root/6x1BhZX_fLnKpcwqra0qFwv1jIgp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/resources/project/root/EEtUlUb-dLAdf0KpMVivaUlztwAp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/resources/project/root/fjRQtWiSIy7hIlj-Kmk87M7s21kp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQd.xml",
+      "size_bytes": 66
+    },
+    {
+      "path": "reference/files/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/resources/project/root/KAXfQgCar2Yb8zOxgvf9hdmLP1Ep.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/resources/project/root/NmGqIpAwUJcXFyLjFAGnU9uyN5Yp.xml",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/resources/project/root/qaw0eS1zuuY1ar9TdPn1GMfrjbQp.xml",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/resources/project/root/Tpa2TdYQyLNeWJn7EF8wbNd7gFUp.xml",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/resources/project/root/WZRuNzqc-Db7NcQAZO8Y-R8U9ccp.xml",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/resources/project/rootp.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/resources/project/Tpa2TdYQyLNeWJn7EF8wbNd7gFU/Mz-Zc87vT9TM4FFEsVBNGAtdJnId.xml",
+      "size_bytes": 61
+    },
+    {
+      "path": "reference/files/resources/project/Tpa2TdYQyLNeWJn7EF8wbNd7gFU/Mz-Zc87vT9TM4FFEsVBNGAtdJnIp.xml",
+      "size_bytes": 115
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/2PGwI6U8bdUTEAHSdztRpuGaIYEd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/2PGwI6U8bdUTEAHSdztRpuGaIYEp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/39Ov_7jlG-UziTVY4sjxg4IHWnUd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/39Ov_7jlG-UziTVY4sjxg4IHWnUp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/3_AydkcMCDwe92kElQBKs4pI2LQd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/3_AydkcMCDwe92kElQBKs4pI2LQp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/6NaYos5ycg-g_9D3CzzkdWNF7Dgd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/6NaYos5ycg-g_9D3CzzkdWNF7Dgp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/8-5TRAjuOV0sCSlWenJfKUrz2swd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/8-5TRAjuOV0sCSlWenJfKUrz2swp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/_2c89bP9wUCQSN0SKocMA2MogUYd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/_2c89bP9wUCQSN0SKocMA2MogUYp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/B5n2Ml0dHgTSKHxg9RWb_yfSGd8d.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/B5n2Ml0dHgTSKHxg9RWb_yfSGd8p.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/b6Is0QMQ2WlvlkpLzlIJtwSUQekd.xml",
+      "size_bytes": 46
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/b6Is0QMQ2WlvlkpLzlIJtwSUQekp.xml",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/CDcSJQQhll7ySfbPmREKfI35eEUd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/CDcSJQQhll7ySfbPmREKfI35eEUp.xml",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/DtxN0smgJKiLOn1WYeL16LvEkVkd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/DtxN0smgJKiLOn1WYeL16LvEkVkp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/el2fHHS74JZrq5a6h1X_htPZcXAd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/el2fHHS74JZrq5a6h1X_htPZcXAp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/fPai4eGHXPAGk7uXmo4UCmdI1osd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/fPai4eGHXPAGk7uXmo4UCmdI1osp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/frih2pjuQxZefjtAxGJAE7bNnKcd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/frih2pjuQxZefjtAxGJAE7bNnKcp.xml",
+      "size_bytes": 92
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/GVTvZJpgMFtzt9hlY4XQVyAawAod.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/GVTvZJpgMFtzt9hlY4XQVyAawAop.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/HDASk0JS-xwebGCmBgvCz5QX_YUd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/HDASk0JS-xwebGCmBgvCz5QX_YUp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/izNlwgGMe7TBJo9w_AN_TdSMvXEd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/izNlwgGMe7TBJo9w_AN_TdSMvXEp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/j7t5fRzoVbUnCw8j7od_owBwwWId.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/j7t5fRzoVbUnCw8j7od_owBwwWIp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/jGjNNAc4ulYfAtv7sj0S5xrxXfYd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/jGjNNAc4ulYfAtv7sj0S5xrxXfYp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/K51RX4Bykdj6UkNGIfAJ9gSNIWQd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/K51RX4Bykdj6UkNGIfAJ9gSNIWQp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/kC00hPEgukuEFViGuumQcmiLoukd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/kC00hPEgukuEFViGuumQcmiLoukp.xml",
+      "size_bytes": 98
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/Kp6WN2lCkw8fEhfQF-cgIX4qfaAd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/Kp6WN2lCkw8fEhfQF-cgIX4qfaAp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/KtwH-gxnk2_Re5hI6meri2Ujwn0d.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/KtwH-gxnk2_Re5hI6meri2Ujwn0p.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/kXBSu2uzYN7huIMT0zk-wIJVcJQd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/kXBSu2uzYN7huIMT0zk-wIJVcJQp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/LADYJK0YXC2OcFe_XwGLWGIEGbAd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/LADYJK0YXC2OcFe_XwGLWGIEGbAp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/lEcvu0qQzuvksDyGv-zjGiDnSzcd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/lEcvu0qQzuvksDyGv-zjGiDnSzcp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/LppprHBgxjpEwy2UOeTHf-CtN2cd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/LppprHBgxjpEwy2UOeTHf-CtN2cp.xml",
+      "size_bytes": 99
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/LYUsmsJJBdhvlEE2FQbsAZgfsskd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/LYUsmsJJBdhvlEE2FQbsAZgfsskp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/MrXlyZqwBwnB_Y5VAZtRBVGkpRcd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/MrXlyZqwBwnB_Y5VAZtRBVGkpRcp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/n8rMTLPyf0USB_-M_Iox639eHM0d.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/n8rMTLPyf0USB_-M_Iox639eHM0p.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/OfmROC4U6oouMXJ2qOsEn04txCId.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/OfmROC4U6oouMXJ2qOsEn04txCIp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/OGfErPul6lds46_Ms9uid3sUPmod.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/OGfErPul6lds46_Ms9uid3sUPmop.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/qkaPKQ7Ou1F57RWQQ0UZByFg3t0d.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/qkaPKQ7Ou1F57RWQQ0UZByFg3t0p.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/r1F0KBZRDSZTWvRG3jh1zusXI1gd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/r1F0KBZRDSZTWvRG3jh1zusXI1gp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/rgtsoETfy9GtTu-JY3O2RhRqACAd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/rgtsoETfy9GtTu-JY3O2RhRqACAp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/S1oqdUftrtLww6Sm2KI6umg1FZ8d.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/S1oqdUftrtLww6Sm2KI6umg1FZ8p.xml",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/T6idlUqKbXSAXiP7HHW-5OVMT0gd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/T6idlUqKbXSAXiP7HHW-5OVMT0gp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/uaHt2OMv2Kx3uBzOSBq_4PZRq7Qd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/uaHt2OMv2Kx3uBzOSBq_4PZRq7Qp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/vnsUYaY5cDMCUJkvjggecDTrriId.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/vnsUYaY5cDMCUJkvjggecDTrriIp.xml",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/XbCniHXn8zy-YaXuu9bciUjD-ZId.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/XbCniHXn8zy-YaXuu9bciUjD-ZIp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/Z2cedrO_LMRpk3MGx5JIQz7KP6Ud.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/Z2cedrO_LMRpk3MGx5JIQz7KP6Up.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/ZLYk-xf75wExyGjLFX_hiPzOyAMd.xml",
+      "size_bytes": 170
+    },
+    {
+      "path": "reference/files/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/ZLYk-xf75wExyGjLFX_hiPzOyAMp.xml",
+      "size_bytes": 101
+    },
+    {
+      "path": "reference/files/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/66WgGCcF5RIH9MCEgPmgjZK9k3Ud.xml",
+      "size_bytes": 73
+    },
+    {
+      "path": "reference/files/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/66WgGCcF5RIH9MCEgPmgjZK9k3Up.xml",
+      "size_bytes": 96
+    },
+    {
+      "path": "reference/files/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/AtMjXDrOSm8YDv3_4UFXiyrWqNEd.xml",
+      "size_bytes": 73
+    },
+    {
+      "path": "reference/files/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/AtMjXDrOSm8YDv3_4UFXiyrWqNEp.xml",
+      "size_bytes": 94
+    },
+    {
+      "path": "reference/files/Scripts_Data/Elec_Aircraft_Demo_Script.html",
+      "size_bytes": 8927
+    },
+    {
+      "path": "reference/files/Scripts_Data/Elec_Aircraft_Demo_Script.m",
+      "size_bytes": 2333
+    },
+    {
+      "path": "reference/files/Scripts_Data/Elec_Aircraft_Demo_Script_Overview_Image.png",
+      "size_bytes": 133165
+    },
+    {
+      "path": "reference/files/Scripts_Data/Elec_Aircraft_Demo_Script_web.m",
+      "size_bytes": 38
+    },
+    {
+      "path": "reference/files/Scripts_Data/publish_all_ssc_aircraft_elec.m",
+      "size_bytes": 769
+    },
+    {
+      "path": "reference/files/Scripts_Data/ssc_aircraft_elec_14.png",
+      "size_bytes": 35873
+    },
+    {
+      "path": "reference/files/Scripts_Data/ssc_aircraft_elec_configs.m",
+      "size_bytes": 2689
+    },
+    {
+      "path": "reference/files/Scripts_Data/ssc_aircraft_elec_default_params.m",
+      "size_bytes": 1050
+    },
+    {
+      "path": "reference/files/Scripts_Data/ssc_aircraft_elec_hybrid_plot1time.m",
+      "size_bytes": 4573
+    },
+    {
+      "path": "reference/files/Scripts_Data/ssc_aircraft_elec_plot1time.m",
+      "size_bytes": 3821
+    },
+    {
+      "path": "reference/files/Scripts_Data/ssc_aircraft_elec_props.m",
+      "size_bytes": 1264
+    },
+    {
+      "path": "reference/files/Scripts_Data/ssc_aircraft_sweep_battery.m",
+      "size_bytes": 2882
+    },
+    {
+      "path": "reference/files/Scripts_Data/ssc_aircraft_sweep_battery_compare.m",
+      "size_bytes": 2285
+    },
+    {
+      "path": "reference/files/Scripts_Data/ssc_aircraft_sweep_payload.m",
+      "size_bytes": 3280
+    },
+    {
+      "path": "reference/files/Scripts_Data/ssc_aircraft_sweep_payload_compare.m",
+      "size_bytes": 2336
+    },
+    {
+      "path": "reference/files/Scripts_Data/ssc_aircraft_sweep_payloadbattery.m",
+      "size_bytes": 3610
+    },
+    {
+      "path": "reference/files/Scripts_Data/ssc_aircraft_sweep_payloadbattery_compare.m",
+      "size_bytes": 669
+    },
+    {
+      "path": "reference/files/Scripts_Data/ssc_aircraft_sweep_payloadbattery_compare_defResults.mat",
+      "size_bytes": 1955
+    },
+    {
+      "path": "reference/files/Scripts_Data/ssc_aircraft_sweep_payloadbattery_compare_plot.m",
+      "size_bytes": 3774
+    },
+    {
+      "path": "reference/files/Scripts_Data/ssc_aircraft_sweep_payloadbattery_compare_setWindows.m",
+      "size_bytes": 3270
+    },
+    {
+      "path": "reference/files/Scripts_Data/startup_ssc_aircraft_elec.m",
+      "size_bytes": 450
+    },
+    {
+      "path": "reference/files/SECURITY.md",
+      "size_bytes": 394
+    },
+    {
+      "path": "reference/files/ssc_aircraft_elec.slx",
+      "size_bytes": 156165
+    },
+    {
+      "path": "reference/files/ssc_aircraft_elec_hybrid.slx",
+      "size_bytes": 194074
+    },
+    {
+      "path": "reference/files/Workflow/Testing/publish_ssc_aircraft_elec_wing.m",
+      "size_bytes": 848
+    },
+    {
+      "path": "reference/files/Workflow/XLLink/README_Spreadsheet_Link.txt",
+      "size_bytes": 1390
+    },
+    {
+      "path": "reference/files/Workflow/XLLink/ssc_aircraft_sweep_payload_xllink.m",
+      "size_bytes": 3327
+    },
+    {
+      "path": "reference/files/Workflow/XLLink/ssc_aircraft_sweep_payloadbattery_xllink.m",
+      "size_bytes": 2640
+    },
+    {
+      "path": "reference/files/Workflow/XLLink/ssc_electric_aircraft_design_study.xlsm",
+      "size_bytes": 25434
+    },
+    {
+      "path": "reference/files/Workflow/XLLink/ssc_electric_aircraft_xllink_process.m",
+      "size_bytes": 733
+    },
+    {
+      "path": "reference/files/Workflow/XLLink/startup_ssc_aircraft_elec_xllink.m",
+      "size_bytes": 594
+    }
+  ],
+  "entrypoint": "reference/files/ssc_aircraft_elec.slx",
+  "expected_score": 100.0,
+  "expected_valid_scenarios": 5,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal_design",
+      "increased_capacity",
+      "added_payload",
+      "capacity_with_payload",
+      "mid_design"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 2531853,
+  "excluded_files": []
+}

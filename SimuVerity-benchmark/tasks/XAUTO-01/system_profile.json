@@ -1,0 +1,228 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XAUTO-01",
+  "collection": "XAUTO",
+  "reference": {
+    "identity_path": "tasks/XAUTO-01/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/XAUTO01_reference.slx",
+    "model_path": "tasks/XAUTO-01/reference/files/XAUTO01_reference.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id P9-XAUTO01",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a four-wheel road-vehicle emergency-braking model with chassis longitudinal and yaw dynamics, four finite-inertia wheels, nonlinear tire-road contact, and independently actuated wheel brakes.",
+    "engineering_objects": [
+      "P9-XAUTO01 plant and controller described by the current public task contract",
+      "Measured output interfaces: vehicle_state, wheel_state, tire_contact, brake_actuation"
+    ],
+    "physical_paths": [
+      "Brake torques must act through the wheel and tire contact dynamics to decelerate the chassis; directly prescribing vehicle motion is not a valid implementation."
+    ],
+    "functional_paths": [
+      "Use a 0.31 m effective tire radius and a 1.62 m track width.",
+      "Across the declared range, the vehicle must suppress sustained wheel lock, brake efficiently on split-friction surfaces, limit lateral and yaw departure, remain dynamically bounded, and recover wheel regulation after the temporary friction loss.",
+      "The regulation method is not prescribed."
+    ],
+    "information_paths": [
+      "initial_speed, brake_demand, left_friction, right_friction, vehicle_mass, brake_onset, friction_drop, friction_event_time -> P9-XAUTO01 plant/control path -> vehicle_state, wheel_state, tire_contact, brake_actuation"
+    ],
+    "modes_and_events": [
+      "Build a four-wheel road-vehicle emergency-braking model with chassis longitudinal and yaw dynamics, four finite-inertia wheels, nonlinear tire-road contact, and independently actuated wheel brakes.",
+      "Read initial_speed, brake_demand, left_friction, right_friction, vehicle_mass, brake_onset, friction_drop, and friction_event_time from base-workspace variables.",
+      "Right-side friction is reduced by friction_drop for one second beginning at friction_event_time."
+    ],
+    "interfaces": [
+      {
+        "name": "initial_speed",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "m/s"
+        ],
+        "range_or_shape": "Read initial_speed, brake_demand, left_friction, right_friction, vehicle_mass, brake_onset, friction_drop, and friction_event_time from base-workspace variables.",
+        "source": "tasks/XAUTO-01/public_spec.json"
+      },
+      {
+        "name": "brake_demand",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read initial_speed, brake_demand, left_friction, right_friction, vehicle_mass, brake_onset, friction_drop, and friction_event_time from base-workspace variables.",
+        "source": "tasks/XAUTO-01/public_spec.json"
+      },
+      {
+        "name": "left_friction",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read initial_speed, brake_demand, left_friction, right_friction, vehicle_mass, brake_onset, friction_drop, and friction_event_time from base-workspace variables.",
+        "source": "tasks/XAUTO-01/public_spec.json"
+      },
+      {
+        "name": "right_friction",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read initial_speed, brake_demand, left_friction, right_friction, vehicle_mass, brake_onset, friction_drop, and friction_event_time from base-workspace variables.",
+        "source": "tasks/XAUTO-01/public_spec.json"
+      },
+      {
+        "name": "vehicle_mass",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kg"
+        ],
+        "range_or_shape": "Read initial_speed, brake_demand, left_friction, right_friction, vehicle_mass, brake_onset, friction_drop, and friction_event_time from base-workspace variables.",
+        "source": "tasks/XAUTO-01/public_spec.json"
+      },
+      {
+        "name": "brake_onset",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read initial_speed, brake_demand, left_friction, right_friction, vehicle_mass, brake_onset, friction_drop, and friction_event_time from base-workspace variables.",
+        "source": "tasks/XAUTO-01/public_spec.json"
+      },
+      {
+        "name": "friction_drop",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "1"
+        ],
+        "range_or_shape": "Read initial_speed, brake_demand, left_friction, right_friction, vehicle_mass, brake_onset, friction_drop, and friction_event_time from base-workspace variables. Right-side friction is reduced by friction_drop for one second beginning at friction_event_time.",
+        "source": "tasks/XAUTO-01/public_spec.json"
+      },
+      {
+        "name": "friction_event_time",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read initial_speed, brake_demand, left_friction, right_friction, vehicle_mass, brake_onset, friction_drop, and friction_event_time from base-workspace variables. Right-side friction is reduced by friction_drop for one second beginning at friction_event_time.",
+        "source": "tasks/XAUTO-01/public_spec.json"
+      },
+      {
+        "name": "vehicle_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[m,m,rad,m/s,rad/s]"
+        ],
+        "range_or_shape": "Log Timeseries vehicle_state, wheel_state, tire_contact, and brake_actuation. vehicle_state must contain [longitudinal position in m, lateral position in m, yaw angle in rad, longitudinal speed in m/s, yaw rate in rad/s].",
+        "source": "tasks/XAUTO-01/public_spec.json"
+      },
+      {
+        "name": "wheel_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[rad/s,rad/s,rad/s,rad/s,1,1,1,1]"
+        ],
+        "range_or_shape": "Log Timeseries vehicle_state, wheel_state, tire_contact, and brake_actuation. wheel_state must contain [FL, FR, RL, RR wheel angular speed in rad/s, followed by the corresponding four longitudinal slip ratios].",
+        "source": "tasks/XAUTO-01/public_spec.json"
+      },
+      {
+        "name": "tire_contact",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[N,N,N,N,N,N,N,N,1,1]"
+        ],
+        "range_or_shape": "Log Timeseries vehicle_state, wheel_state, tire_contact, and brake_actuation. tire_contact must contain [four longitudinal forces in N, four normal forces in N, effective left and right friction].",
+        "source": "tasks/XAUTO-01/public_spec.json"
+      },
+      {
+        "name": "brake_actuation",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "[N*m,N*m,N*m,N*m,1]"
+        ],
+        "range_or_shape": "Log Timeseries vehicle_state, wheel_state, tire_contact, and brake_actuation. brake_actuation must contain the four actual wheel-brake torques in N*m followed by applied demand.",
+        "source": "tasks/XAUTO-01/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a four-wheel road-vehicle emergency-braking model with chassis longitudinal and yaw dynamics, four finite-inertia wheels, nonlinear tire-road contact, and independently actuated wheel brakes.",
+      "A reduced planar longitudinal-yaw chassis model is intended: no independent lateral-velocity state is required, and chassis translational velocity is aligned with the reported yaw direction.",
+      "Across the declared range, the vehicle must suppress sustained wheel lock, brake efficiently on split-friction surfaces, limit lateral and yaw departure, remain dynamically bounded, and recover wheel regulation after the temporary friction loss."
+    ],
+    "feedback_and_control_causality": [
+      "Across the declared range, the vehicle must suppress sustained wheel lock, brake efficiently on split-friction surfaces, limit lateral and yaw departure, remain dynamically bounded, and recover wheel regulation after the temporary friction loss.",
+      "The regulation method is not prescribed.",
+      "Logged measurements must come from the causal vehicle, wheel, brake, and contact simulation rather than from commands or precomputed trajectories."
+    ],
+    "signal_sources": [
+      "initial_speed is read from the public MATLAB base-workspace input contract.",
+      "brake_demand is read from the public MATLAB base-workspace input contract.",
+      "left_friction is read from the public MATLAB base-workspace input contract.",
+      "right_friction is read from the public MATLAB base-workspace input contract.",
+      "vehicle_mass is read from the public MATLAB base-workspace input contract.",
+      "brake_onset is read from the public MATLAB base-workspace input contract.",
+      "friction_drop is read from the public MATLAB base-workspace input contract.",
+      "friction_event_time is read from the public MATLAB base-workspace input contract.",
+      "vehicle_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "wheel_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "tire_contact is produced by the implemented plant or controller and logged under the public output contract.",
+      "brake_actuation is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "initial_speed: Read initial_speed, brake_demand, left_friction, right_friction, vehicle_mass, brake_onset, friction_drop, and friction_event_time from base-workspace variables.",
+      "brake_demand: Read initial_speed, brake_demand, left_friction, right_friction, vehicle_mass, brake_onset, friction_drop, and friction_event_time from base-workspace variables.",
+      "left_friction: Read initial_speed, brake_demand, left_friction, right_friction, vehicle_mass, brake_onset, friction_drop, and friction_event_time from base-workspace variables.",
+      "right_friction: Read initial_speed, brake_demand, left_friction, right_friction, vehicle_mass, brake_onset, friction_drop, and friction_event_time from base-workspace variables.",
+      "vehicle_mass: Read initial_speed, brake_demand, left_friction, right_friction, vehicle_mass, brake_onset, friction_drop, and friction_event_time from base-workspace variables.",
+      "brake_onset: Read initial_speed, brake_demand, left_friction, right_friction, vehicle_mass, brake_onset, friction_drop, and friction_event_time from base-workspace variables.",
+      "friction_drop: Read initial_speed, brake_demand, left_friction, right_friction, vehicle_mass, brake_onset, friction_drop, and friction_event_time from base-workspace variables. Right-side friction is reduced by friction_drop for one second beginning at friction_event_time.",
+      "friction_event_time: Read initial_speed, brake_demand, left_friction, right_friction, vehicle_mass, brake_onset, friction_drop, and friction_event_time from base-workspace variables. Right-side friction is reduced by friction_drop for one second beginning at friction_event_time."
+    ],
+    "disturbances": [
+      "P9-XAUTO01 operating variation is supplied through initial_speed, brake_demand, left_friction, right_friction, vehicle_mass, brake_onset, friction_drop, friction_event_time."
+    ],
+    "dynamic_processes": [
+      "Build a four-wheel road-vehicle emergency-braking model with chassis longitudinal and yaw dynamics, four finite-inertia wheels, nonlinear tire-road contact, and independently actuated wheel brakes.",
+      "Brake torques must act through the wheel and tire contact dynamics to decelerate the chassis;",
+      "Use a 0.31 m effective tire radius and a 1.62 m track width."
+    ],
+    "task_specific_shortcuts": [
+      "P9-XAUTO01: prescribing vehicle_state directly would bypass the system path described by: Brake torques must act through the wheel and tire contact dynamics to decelerate the chassis; directly prescribing vehicle motion is not a valid implementation.",
+      "P9-XAUTO01: replaying a fixed vehicle_state trace would ignore causal variation in initial_speed."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XAUTO-01/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XAUTO-01/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XAUTO-01/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "simuverity.extractor-closure.v1",
+  "task_id": "XMED-08",
+  "entrypoint": "vendor/scripts/formal90/tasks/f90_xmed08/f90_xmed08_extract_candidate_evidence.m",
+  "public_wrapper": "extractor/run.m",
+  "files": [
+    {
+      "source_name": "simuverity_official_scenarios_path.m",
+      "public_path": "extractor/support/simuverity_official_scenarios_path.m"
+    },
+    {
+      "source_name": "formal90_nonfailfast_preflight.m",
+      "public_path": "vendor/scripts/formal90/shared/formal90_nonfailfast_preflight.m"
+    },
+    {
+      "source_name": "f90_xmed08_extract_candidate_evidence.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xmed08/f90_xmed08_extract_candidate_evidence.m"
+    },
+    {
+      "source_name": "f90_xmed08_extract_reference_evidence.m",
+      "public_path": "vendor/scripts/formal90/tasks/f90_xmed08/f90_xmed08_extract_reference_evidence.m"
+    },
+    {
+      "source_name": "simuverity_public_output_compatibility.m",
+      "public_path": "vendor/scripts/unified/public_output/simuverity_public_output_compatibility.m"
+    }
+  ]
+}

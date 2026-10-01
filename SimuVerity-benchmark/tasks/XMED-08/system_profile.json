@@ -1,0 +1,143 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XMED-08",
+  "collection": "XMED",
+  "reference": {
+    "identity_path": "tasks/XMED-08/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "ex_ecg_sigprocessing.slx",
+    "model_path": null
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XMED-08",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a streaming real-time ECG QRS detector in Simulink.",
+    "engineering_objects": [
+      "F90-XMED-08 plant and controller described by the current public task contract",
+      "Measured output interfaces: conditioned_ecg, qrs_feature, adaptive_threshold, qrs_events, heart_rate_bpm"
+    ],
+    "physical_paths": [
+      "The detector must operate causally over mean heart rates from 45 through 220 beats per minute and remain useful in the presence of realistic baseline wander, 50/60 Hz interference, muscle-like noise, and electrode-motion transients."
+    ],
+    "functional_paths": [
+      "Condition the ECG to emphasize QRS activity, detect QRS events with an adaptive decision mechanism, reject non-QRS artifacts, and estimate heart rate from the accepted event sequence."
+    ],
+    "information_paths": [
+      "ecg_input -> F90-XMED-08 plant/control path -> conditioned_ecg, qrs_feature, adaptive_threshold, qrs_events, heart_rate_bpm"
+    ],
+    "modes_and_events": [
+      "Condition the ECG to emphasize QRS activity, detect QRS events with an adaptive decision mechanism, reject non-QRS artifacts, and estimate heart rate from the accepted event sequence.",
+      "The implementation must preserve timing and must not use future samples, hidden clean signals, copied beat times, a stored event schedule, or a prescribed heart-rate value.",
+      "Log complete-run Timeseries named conditioned_ecg, qrs_feature, adaptive_threshold, qrs_events, and heart_rate_bpm."
+    ],
+    "interfaces": [
+      {
+        "name": "ecg_input",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "mV"
+        ],
+        "range_or_shape": "Read the single-channel workspace input ecg_input, sampled at 360 Hz in millivolts.",
+        "source": "tasks/XMED-08/public_spec.json"
+      },
+      {
+        "name": "conditioned_ecg",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Log complete-run Timeseries named conditioned_ecg, qrs_feature, adaptive_threshold, qrs_events, and heart_rate_bpm.",
+        "source": "tasks/XMED-08/public_spec.json"
+      },
+      {
+        "name": "qrs_feature",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Log complete-run Timeseries named conditioned_ecg, qrs_feature, adaptive_threshold, qrs_events, and heart_rate_bpm.",
+        "source": "tasks/XMED-08/public_spec.json"
+      },
+      {
+        "name": "adaptive_threshold",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "bpm"
+        ],
+        "range_or_shape": "Log complete-run Timeseries named conditioned_ecg, qrs_feature, adaptive_threshold, qrs_events, and heart_rate_bpm. qrs_events must be the final accepted event train used to produce heart_rate_bpm, and adaptive_threshold must be the threshold actually used by the same detector.",
+        "source": "tasks/XMED-08/public_spec.json"
+      },
+      {
+        "name": "qrs_events",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "bpm"
+        ],
+        "range_or_shape": "Log complete-run Timeseries named conditioned_ecg, qrs_feature, adaptive_threshold, qrs_events, and heart_rate_bpm. qrs_events must be the final accepted event train used to produce heart_rate_bpm, and adaptive_threshold must be the threshold actually used by the same detector.",
+        "source": "tasks/XMED-08/public_spec.json"
+      },
+      {
+        "name": "heart_rate_bpm",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "bpm"
+        ],
+        "range_or_shape": "Log complete-run Timeseries named conditioned_ecg, qrs_feature, adaptive_threshold, qrs_events, and heart_rate_bpm. qrs_events must be the final accepted event train used to produce heart_rate_bpm, and adaptive_threshold must be the threshold actually used by the same detector.",
+        "source": "tasks/XMED-08/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "F90-XMED-08 uses the channel order and units declared for conditioned_ecg, qrs_feature, adaptive_threshold, qrs_events, heart_rate_bpm."
+    ],
+    "feedback_and_control_causality": [
+      "The detector must operate causally over mean heart rates from 45 through 220 beats per minute and remain useful in the presence of realistic baseline wander, 50/60 Hz interference, muscle-like noise, and electrode-motion transients."
+    ],
+    "signal_sources": [
+      "ecg_input is read from the public MATLAB base-workspace input contract.",
+      "conditioned_ecg is produced by the implemented plant or controller and logged under the public output contract.",
+      "qrs_feature is produced by the implemented plant or controller and logged under the public output contract.",
+      "adaptive_threshold is produced by the implemented plant or controller and logged under the public output contract.",
+      "qrs_events is produced by the implemented plant or controller and logged under the public output contract.",
+      "heart_rate_bpm is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "ecg_input: Read the single-channel workspace input ecg_input, sampled at 360 Hz in millivolts."
+    ],
+    "disturbances": [
+      "The detector must operate causally over mean heart rates from 45 through 220 beats per minute and remain useful in the presence of realistic baseline wander, 50/60 Hz interference, muscle-like noise, and electrode-motion transients."
+    ],
+    "dynamic_processes": [
+      "The detector must operate causally over mean heart rates from 45 through 220 beats per minute and remain useful in the presence of realistic baseline wander, 50/60 Hz interference, muscle-like noise, and electrode-motion transients."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XMED-08: prescribing conditioned_ecg directly would bypass the system path described by: The detector must operate causally over mean heart rates from 45 through 220 beats per minute and remain useful in the presence of realistic baseline wander, 50/60 Hz interference, muscle-like noise, and electrode-motion transients.",
+      "F90-XMED-08: replaying a fixed conditioned_ecg trace would ignore causal variation in ecg_input."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XMED-08/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XMED-08/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XMED-08/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

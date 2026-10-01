@@ -1,0 +1,32 @@
+{
+  "schema": "simuverity.scorer-manifest.v1",
+  "task_id": "XAUTO-07",
+  "public_interface": "scorer.py:score",
+  "implementation": "scorer.py",
+  "source_modules": [
+    {
+      "module": "f90_xauto07_scoring",
+      "path": "vendor/scripts/formal90/tasks/f90_xauto07/f90_xauto07_scoring.py"
+    },
+    {
+      "module": "f90_xauto07_robustness_dynamics",
+      "path": "vendor/scripts/formal90/tasks/f90_xauto07/f90_xauto07_robustness_dynamics.py"
+    },
+    {
+      "module": "f90_xauto07_group_metrics",
+      "path": "vendor/scripts/formal90/tasks/f90_xauto07/f90_xauto07_group_metrics.py"
+    },
+    {
+      "module": "f90_xauto07_normalized_evidence",
+      "path": "vendor/scripts/formal90/tasks/f90_xauto07/f90_xauto07_normalized_evidence.py"
+    }
+  ],
+  "final_module": {
+    "module": "f90_xauto07_scoring",
+    "path": "vendor/scripts/formal90/tasks/f90_xauto07/f90_xauto07_scoring.py"
+  },
+  "payload_files": [],
+  "public_bridge": {
+    "mode": "function"
+  }
+}

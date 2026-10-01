@@ -1,0 +1,130 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XMECH-03",
+  "scenarios": [
+    {
+      "id": "urban_short_nominal",
+      "class": "nominal_mixed_cycle",
+      "source_cycle_variable": "UrbanCycle7",
+      "maximum_duration_s": 174.0,
+      "vehicle_mass_kg": 1600.0,
+      "clutch_capacity_scale": 1.0
+    },
+    {
+      "id": "eudc_nominal",
+      "class": "high_speed_and_shift_coverage",
+      "source_cycle_variable": "UrbanCycle2",
+      "maximum_duration_s": 180.0,
+      "vehicle_mass_kg": 1600.0,
+      "clutch_capacity_scale": 1.0
+    },
+    {
+      "id": "ftp_transient_nominal",
+      "class": "acceleration_deceleration_and_downshift",
+      "source_cycle_variable": "UrbanCycle8",
+      "maximum_duration_s": 180.0,
+      "vehicle_mass_kg": 1600.0,
+      "clutch_capacity_scale": 1.0
+    },
+    {
+      "id": "urban_short_heavy",
+      "class": "vehicle_mass_upper_boundary",
+      "source_cycle_variable": "UrbanCycle7",
+      "maximum_duration_s": 174.0,
+      "vehicle_mass_kg": 1840.0,
+      "clutch_capacity_scale": 1.0
+    },
+    {
+      "id": "urban_short_clutch_derated",
+      "class": "clutch_capacity_lower_boundary",
+      "source_cycle_variable": "UrbanCycle7",
+      "maximum_duration_s": 174.0,
+      "vehicle_mass_kg": 1600.0,
+      "clutch_capacity_scale": 0.85
+    }
+  ],
+  "contract": {
+    "score_policy": {
+      "policy_id": "simuverity-101-v1:xmech-03:scoring",
+      "admission_threshold_raw": 85.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.2,
+          "meaning": "speed-command achievement and valid automatic gear progression"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "engine, clutch-slip, pressure, and longitudinal-response quality"
+        },
+        "M": {
+          "weight": 0.3,
+          "meaning": "causal two-clutch odd/even drivetrain and feedback-dependent torque transfer"
+        },
+        "R": {
+          "weight": 0.1,
+          "meaning": "worst-case retention under vehicle-mass and clutch-capacity boundaries"
+        },
+        "D": {
+          "weight": 0.3,
+          "meaning": "launch, upshift, downshift, torque-transfer, and recovery dynamics"
+        }
+      },
+      "within_group": "equal geometric mean across the three non-substitutable M pillars; weighted arithmetic event metrics with worst-event/worst-scenario aggregation in D",
+      "across_groups": "weighted_geometric_mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum"
+    },
+    "shortcut_sanity_contract": [
+      "requested_speed_replayed_as_measured_vehicle_speed",
+      "single_clutch_or_fixed_ratio_drivetrain",
+      "decorative_or_disconnected_second_clutch_or_gear_path",
+      "gear_state_schedule_not_causally_changing_physical_torque_path",
+      "clutch_pressures_logged_but_not_controlling_physical_clutches",
+      "open_loop_speed_or_shift_control",
+      "vehicle_mass_or_clutch_capacity_inputs_not_bound_to_physical_parameters",
+      "nominal_and_boundary_scenarios_behaviorally_identical"
+    ]
+  },
+  "score_policy": {
+    "policy_id": "simuverity-101-v1:xmech-03:scoring",
+    "admission_threshold_raw": 85.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.2,
+        "meaning": "speed-command achievement and valid automatic gear progression"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "engine, clutch-slip, pressure, and longitudinal-response quality"
+      },
+      "M": {
+        "weight": 0.3,
+        "meaning": "causal two-clutch odd/even drivetrain and feedback-dependent torque transfer"
+      },
+      "R": {
+        "weight": 0.1,
+        "meaning": "worst-case retention under vehicle-mass and clutch-capacity boundaries"
+      },
+      "D": {
+        "weight": 0.3,
+        "meaning": "launch, upshift, downshift, torque-transfer, and recovery dynamics"
+      }
+    },
+    "within_group": "equal geometric mean across the three non-substitutable M pillars; weighted arithmetic event metrics with worst-event/worst-scenario aggregation in D",
+    "across_groups": "weighted_geometric_mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum"
+  },
+  "shortcut_sanity_contract": [
+    "requested_speed_replayed_as_measured_vehicle_speed",
+    "single_clutch_or_fixed_ratio_drivetrain",
+    "decorative_or_disconnected_second_clutch_or_gear_path",
+    "gear_state_schedule_not_causally_changing_physical_torque_path",
+    "clutch_pressures_logged_but_not_controlling_physical_clutches",
+    "open_loop_speed_or_shift_control",
+    "vehicle_mass_or_clutch_capacity_inputs_not_bound_to_physical_parameters",
+    "nominal_and_boundary_scenarios_behaviorally_identical"
+  ]
+}

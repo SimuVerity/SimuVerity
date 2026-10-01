@@ -1,0 +1,154 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XBATT-09",
+  "scenarios": [
+    {
+      "id": "nominal_profile_a",
+      "profile": "batteryCurrent",
+      "current_scale": 1.0,
+      "contact_fault_enable": false,
+      "contact_fault_time_s": 30
+    },
+    {
+      "id": "nominal_profile_b",
+      "profile": "batteryCurrentValidation",
+      "current_scale": 1.0,
+      "contact_fault_enable": false,
+      "contact_fault_time_s": 30
+    },
+    {
+      "id": "fault_profile_a_t30",
+      "profile": "batteryCurrent",
+      "current_scale": 1.0,
+      "contact_fault_enable": true,
+      "contact_fault_time_s": 30
+    },
+    {
+      "id": "fault_profile_b_t30",
+      "profile": "batteryCurrentValidation",
+      "current_scale": 1.0,
+      "contact_fault_enable": true,
+      "contact_fault_time_s": 30
+    },
+    {
+      "id": "fault_profile_a_t55_low",
+      "profile": "batteryCurrent",
+      "current_scale": 0.85,
+      "contact_fault_enable": true,
+      "contact_fault_time_s": 55
+    },
+    {
+      "id": "fault_profile_b_t20_high",
+      "profile": "batteryCurrentValidation",
+      "current_scale": 1.15,
+      "contact_fault_enable": true,
+      "contact_fault_time_s": 20
+    }
+  ],
+  "contract": {
+    "difficulty": {
+      "score": 8.5,
+      "maximum": 12,
+      "basis": [
+        "fifteen coupled series-connected parallel battery assemblies with nonlinear dynamic voltage response",
+        "a physical cell-contact interruption that changes the electrical path rather than only a logical flag",
+        "per-assembly voltage measurement, fault localization, immediate symptom generation, and independently qualified error state",
+        "two independent current profiles plus independent fault enable, timing, and current-scale interventions",
+        "normal and faulted transient behavior evaluated across six private operating conditions"
+      ]
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85,
+      "preferred_reference_score": 90,
+      "normalize_threshold_to_100": false,
+      "groups": {
+        "A": {
+          "weight": 0.18,
+          "meaning": "assembly, pack, and voltage-spread trajectory accuracy"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "complete finite logs with exact channels, units, time axis, and coverage"
+        },
+        "M": {
+          "weight": 0.22,
+          "meaning": "physical voltage divergence caused by the interrupted cell contact"
+        },
+        "C": {
+          "weight": 0.2,
+          "meaning": "causal detection timing, clean pre-fault behavior, and correct assembly localization"
+        },
+        "R": {
+          "weight": 0.12,
+          "meaning": "worst private current, timing, and nominal condition"
+        },
+        "D": {
+          "weight": 0.18,
+          "meaning": "symptom onset and independently qualified error dynamics"
+        }
+      },
+      "within_group": "task-specific weighted arithmetic aggregation with worst-case terms and a dominant localization term where causal localization is the central mechanism",
+      "across_groups": "weighted geometric mean; absent critical mechanism groups may be zero",
+      "critical_multiscenario_aggregation": "worst scenario is retained in A, M, C, and R as implemented by the dedicated scorer"
+    },
+    "minimum_shortcut_sanity_contract": [
+      "missing_required_log",
+      "fixed_outputs_across_scenarios",
+      "direct_fault_flag_without_physical_response",
+      "unqualified_error_equals_symptom",
+      "all_assemblies_flagged"
+    ]
+  },
+  "difficulty": {
+    "score": 8.5,
+    "maximum": 12,
+    "basis": [
+      "fifteen coupled series-connected parallel battery assemblies with nonlinear dynamic voltage response",
+      "a physical cell-contact interruption that changes the electrical path rather than only a logical flag",
+      "per-assembly voltage measurement, fault localization, immediate symptom generation, and independently qualified error state",
+      "two independent current profiles plus independent fault enable, timing, and current-scale interventions",
+      "normal and faulted transient behavior evaluated across six private operating conditions"
+    ]
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85,
+    "preferred_reference_score": 90,
+    "normalize_threshold_to_100": false,
+    "groups": {
+      "A": {
+        "weight": 0.18,
+        "meaning": "assembly, pack, and voltage-spread trajectory accuracy"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "complete finite logs with exact channels, units, time axis, and coverage"
+      },
+      "M": {
+        "weight": 0.22,
+        "meaning": "physical voltage divergence caused by the interrupted cell contact"
+      },
+      "C": {
+        "weight": 0.2,
+        "meaning": "causal detection timing, clean pre-fault behavior, and correct assembly localization"
+      },
+      "R": {
+        "weight": 0.12,
+        "meaning": "worst private current, timing, and nominal condition"
+      },
+      "D": {
+        "weight": 0.18,
+        "meaning": "symptom onset and independently qualified error dynamics"
+      }
+    },
+    "within_group": "task-specific weighted arithmetic aggregation with worst-case terms and a dominant localization term where causal localization is the central mechanism",
+    "across_groups": "weighted geometric mean; absent critical mechanism groups may be zero",
+    "critical_multiscenario_aggregation": "worst scenario is retained in A, M, C, and R as implemented by the dedicated scorer"
+  },
+  "minimum_shortcut_sanity_contract": [
+    "missing_required_log",
+    "fixed_outputs_across_scenarios",
+    "direct_fault_flag_without_physical_response",
+    "unqualified_error_equals_symptom",
+    "all_assemblies_flagged"
+  ]
+}

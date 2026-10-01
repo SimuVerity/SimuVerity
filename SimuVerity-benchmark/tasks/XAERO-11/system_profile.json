@@ -1,0 +1,149 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XAERO-11",
+  "collection": "XAERO",
+  "reference": {
+    "identity_path": "tasks/XAERO-11/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/src_simulink/BFN_00_zfull_system.slx",
+    "model_path": "tasks/XAERO-11/reference/files/src_simulink/BFN_00_zfull_system.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XAERO-11",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a closed-loop Simulink model of an orbit-coupled three-axis spacecraft attitude determination and control system.",
+    "engineering_objects": [
+      "Couple quaternion rigid-body dynamics and kinematics with orbit-dependent environmental references and disturbance torques, noisy attitude sensors and an attitude estimator, two operating modes for detumbling and inertial-target slew/stabilization, and bounded control allocation between magnetic torque and pulsed-thruster torque.",
+      "Maintain normalized true and estimated quaternions, finite three-axis states, bounded actuator demand, and connected orbit/environment, sensor, estimation, mode-control, allocation, and rigid-body paths."
+    ],
+    "physical_paths": [
+      "The controller must use estimated attitude and angular-rate feedback; prescribed attitude trajectories, replayed outputs, or disconnected actuator and disturbance paths are invalid.",
+      "Maintain normalized true and estimated quaternions, finite three-axis states, bounded actuator demand, and connected orbit/environment, sensor, estimation, mode-control, allocation, and rigid-body paths.",
+      "Couple quaternion rigid-body dynamics and kinematics with orbit-dependent environmental references and disturbance torques, noisy attitude sensors and an attitude estimator, two operating modes for detumbling and inertial-target slew/stabilization, and bounded control allocation between magnetic torque and pulsed-thruster torque."
+    ],
+    "functional_paths": [
+      "Build a closed-loop Simulink model of an orbit-coupled three-axis spacecraft attitude determination and control system.",
+      "Couple quaternion rigid-body dynamics and kinematics with orbit-dependent environmental references and disturbance torques, noisy attitude sensors and an attitude estimator, two operating modes for detumbling and inertial-target slew/stabilization, and bounded control allocation between magnetic torque and pulsed-thruster torque.",
+      "The controller must use estimated attitude and angular-rate feedback;"
+    ],
+    "information_paths": [
+      "adcs_case_input -> F90-XAERO-11 plant/control path -> attitude_state, estimation_state, actuator_state, environment_state"
+    ],
+    "modes_and_events": [
+      "Build a closed-loop Simulink model of an orbit-coupled three-axis spacecraft attitude determination and control system.",
+      "Couple quaternion rigid-body dynamics and kinematics with orbit-dependent environmental references and disturbance torques, noisy attitude sensors and an attitude estimator, two operating modes for detumbling and inertial-target slew/stabilization, and bounded control allocation between magnetic torque and pulsed-thruster torque.",
+      "operation_mode is 0 for detumbling and 1 for inertial-target slew and stabilization."
+    ],
+    "interfaces": [
+      {
+        "name": "adcs_case_input",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "MATLAB struct"
+        ],
+        "range_or_shape": "Read adcs_case_input from the MATLAB base workspace.",
+        "source": "tasks/XAERO-11/public_spec.json"
+      },
+      {
+        "name": "attitude_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad/s",
+          "1"
+        ],
+        "range_or_shape": "attitude_state has width 7 in this order: q_scalar (dimensionless), q_x (dimensionless), q_y (dimensionless), q_z (dimensionless), omega_x_rad_s (rad/s), omega_y_rad_s (rad/s), omega_z_rad_s (rad/s).",
+        "source": "tasks/XAERO-11/public_spec.json"
+      },
+      {
+        "name": "estimation_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad",
+          "1"
+        ],
+        "range_or_shape": "estimation_state has width 5 in this order: qhat_scalar (dimensionless), qhat_x (dimensionless), qhat_y (dimensionless), qhat_z (dimensionless), attitude_estimation_error_rad (rad).",
+        "source": "tasks/XAERO-11/public_spec.json"
+      },
+      {
+        "name": "actuator_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N*m"
+        ],
+        "range_or_shape": "actuator_state has width 6 in this order: magnetorquer_torque_x_Nm (N*m), magnetorquer_torque_y_Nm (N*m), magnetorquer_torque_z_Nm (N*m), thruster_torque_x_Nm (N*m), thruster_torque_y_Nm (N*m), thruster_torque_z_Nm (N*m).",
+        "source": "tasks/XAERO-11/public_spec.json"
+      },
+      {
+        "name": "environment_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "N*m",
+          "m^2",
+          "A"
+        ],
+        "range_or_shape": "environment_state has width 6 in this order: commanded_magnetic_dipole_x_Am2 (A*m^2), commanded_magnetic_dipole_y_Am2 (A*m^2), commanded_magnetic_dipole_z_Am2 (A*m^2), disturbance_torque_x_Nm (N*m), disturbance_torque_y_Nm (N*m), disturbance_torque_z_Nm (N*m).",
+        "source": "tasks/XAERO-11/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a closed-loop Simulink model of an orbit-coupled three-axis spacecraft attitude determination and control system.",
+      "The controller must use estimated attitude and angular-rate feedback;"
+    ],
+    "feedback_and_control_causality": [
+      "Build a closed-loop Simulink model of an orbit-coupled three-axis spacecraft attitude determination and control system.",
+      "The controller must use estimated attitude and angular-rate feedback;",
+      "prescribed attitude trajectories, replayed outputs, or disconnected actuator and disturbance paths are invalid."
+    ],
+    "signal_sources": [
+      "adcs_case_input is read from the public MATLAB base-workspace input contract.",
+      "attitude_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "estimation_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "actuator_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "environment_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "adcs_case_input: Read adcs_case_input from the MATLAB base workspace."
+    ],
+    "disturbances": [
+      "Couple quaternion rigid-body dynamics and kinematics with orbit-dependent environmental references and disturbance torques, noisy attitude sensors and an attitude estimator, two operating modes for detumbling and inertial-target slew/stabilization, and bounded control allocation between magnetic torque and pulsed-thruster torque.",
+      "prescribed attitude trajectories, replayed outputs, or disconnected actuator and disturbance paths are invalid.",
+      "sensor_noise_scale is in [0.5, 5.0], and disturbance_scale is in [0.5, 2.0]."
+    ],
+    "dynamic_processes": [
+      "Couple quaternion rigid-body dynamics and kinematics with orbit-dependent environmental references and disturbance torques, noisy attitude sensors and an attitude estimator, two operating modes for detumbling and inertial-target slew/stabilization, and bounded control allocation between magnetic torque and pulsed-thruster torque."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XAERO-11: prescribing attitude_state directly would bypass the system path described by: The controller must use estimated attitude and angular-rate feedback; prescribed attitude trajectories, replayed outputs, or disconnected actuator and disturbance paths are invalid.",
+      "F90-XAERO-11: replaying a fixed attitude_state trace would ignore causal variation in adcs_case_input."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XAERO-11/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XAERO-11/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XAERO-11/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

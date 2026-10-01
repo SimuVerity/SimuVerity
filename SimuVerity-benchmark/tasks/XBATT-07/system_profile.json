@@ -1,0 +1,144 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XBATT-07",
+  "collection": "XBATT",
+  "reference": {
+    "identity_path": "tasks/XBATT-07/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/XBATT07_reference_harness.slx",
+    "model_path": "tasks/XBATT-07/reference/files/XBATT07_reference_harness.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XBATT-07",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a pack-level battery-management supervisor for a 96-cell series pack.",
+    "engineering_objects": [
+      "F90-XBATT-07 plant and controller described by the current public task contract",
+      "Measured output interfaces: supervisor_state, contactor_commands, current_limits, cell_extrema, fault_state"
+    ],
+    "physical_paths": [
+      "Hard-coded scenario traces, copied input columns, disconnected fault flags, and contactor commands that bypass the state machine or voltage feedback are not acceptable."
+    ],
+    "functional_paths": [
+      "Detected critical faults must override the requested operating state and command a safe contactor response."
+    ],
+    "information_paths": [
+      "bms_input -> F90-XBATT-07 plant/control path -> supervisor_state, contactor_commands, current_limits, cell_extrema, fault_state"
+    ],
+    "modes_and_events": [
+      "Read bms_input from the MATLAB base workspace and simulate for 25 s with a 0.1 s fixed step.",
+      "The same sensor path must drive cell-extrema extraction, voltage- and temperature-dependent charge/discharge current limits, fault supervision, BMS state transitions, and independent charger and inverter contactor sequences.",
+      "Implement standby, charging, driving, and fault states."
+    ],
+    "interfaces": [
+      {
+        "name": "bms_input",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read bms_input from the MATLAB base workspace and simulate for 25 s with a 0.1 s fixed step. bms_input is a MATLAB struct with these public fields: cell_voltages_V is a 96-by-1 real vector with each value in 2.3--4.4 V; cell_temperatures_C is a 96-by-1 real vector with each value in -25--65 degC; pack_voltage_V is a real scalar in 220--430 V; pack_current_A is a real scalar in -500--500 A, with positive meaning discharge; charger_dc_voltage_V and inverter_dc_voltage_V are real scalars in 0--430 V; and state_request is an integer scalar with 0 for standby, 1 for charging, and 2 for driving.",
+        "source": "tasks/XBATT-07/public_spec.json"
+      },
+      {
+        "name": "supervisor_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "supervisor_state has width 5 in this order: bms_state, charger_contactor_state, inverter_contactor_state, critical_fault, limp_mode.",
+        "source": "tasks/XBATT-07/public_spec.json"
+      },
+      {
+        "name": "contactor_commands",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "contactor_commands has width 6 in this order: charger_positive, charger_precharge, charger_negative, inverter_positive, inverter_precharge, inverter_negative.",
+        "source": "tasks/XBATT-07/public_spec.json"
+      },
+      {
+        "name": "current_limits",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "A"
+        ],
+        "range_or_shape": "current_limits has width 2 in this order: discharge_current_limit_A, charge_current_limit_A; the discharge limit is non-positive and the charge limit is non-negative.",
+        "source": "tasks/XBATT-07/public_spec.json"
+      },
+      {
+        "name": "cell_extrema",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "V"
+        ],
+        "range_or_shape": "cell_extrema has width 4 in this order: minimum_cell_voltage_V, maximum_cell_voltage_V, minimum_cell_temperature_C, maximum_cell_temperature_C.",
+        "source": "tasks/XBATT-07/public_spec.json"
+      },
+      {
+        "name": "fault_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "fault_state has width 8 in this order: pack_overcurrent, cell_high_temperature, cell_low_temperature, voltage_sensor, cell_overvoltage, cell_undervoltage, charger_contactor, inverter_contactor.",
+        "source": "tasks/XBATT-07/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Charging and driving requests must use their respective DC-link voltage feedback to perform a safe negative-contactor/precharge/positive-contactor sequence before declaring the path closed."
+    ],
+    "feedback_and_control_causality": [
+      "Charging and driving requests must use their respective DC-link voltage feedback to perform a safe negative-contactor/precharge/positive-contactor sequence before declaring the path closed.",
+      "Current limits must respond causally to the worst cell voltage and temperature rather than merely copying pack current or a fixed nominal limit.",
+      "All logs must cover the complete simulation, remain finite, and be produced by one causal supervisor."
+    ],
+    "signal_sources": [
+      "bms_input is read from the public MATLAB base-workspace input contract.",
+      "supervisor_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "contactor_commands is produced by the implemented plant or controller and logged under the public output contract.",
+      "current_limits is produced by the implemented plant or controller and logged under the public output contract.",
+      "cell_extrema is produced by the implemented plant or controller and logged under the public output contract.",
+      "fault_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "bms_input: Read bms_input from the MATLAB base workspace and simulate for 25 s with a 0.1 s fixed step. bms_input is a MATLAB struct with these public fields: cell_voltages_V is a 96-by-1 real vector with each value in 2.3--4.4 V; cell_temperatures_C is a 96-by-1 real vector with each value in -25--65 degC; pack_voltage_V is a real scalar in 220--430 V; pack_current_A is a real scalar in -500--500 A, with positive meaning discharge; charger_dc_voltage_V and inverter_dc_voltage_V are real scalars in 0--430 V; and state_request is an integer scalar with 0 for standby, 1 for charging, and 2 for driving."
+    ],
+    "disturbances": [
+      "Read bms_input from the MATLAB base workspace and simulate for 25 s with a 0.1 s fixed step.",
+      "The same sensor path must drive cell-extrema extraction, voltage- and temperature-dependent charge/discharge current limits, fault supervision, BMS state transitions, and independent charger and inverter contactor sequences.",
+      "Implement standby, charging, driving, and fault states."
+    ],
+    "dynamic_processes": [
+      "Read bms_input from the MATLAB base workspace and simulate for 25 s with a 0.1 s fixed step.",
+      "The same sensor path must drive cell-extrema extraction, voltage- and temperature-dependent charge/discharge current limits, fault supervision, BMS state transitions, and independent charger and inverter contactor sequences."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XBATT-07: prescribing supervisor_state directly would bypass the system path described by: Hard-coded scenario traces, copied input columns, disconnected fault flags, and contactor commands that bypass the state machine or voltage feedback are not acceptable.",
+      "F90-XBATT-07: replaying a fixed supervisor_state trace would ignore causal variation in bms_input."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XBATT-07/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XBATT-07/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XBATT-07/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

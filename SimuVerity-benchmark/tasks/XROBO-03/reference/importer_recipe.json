@@ -1,0 +1,78 @@
+{
+  "schema": "simuverity.matlab-local-importer-recipe.v1",
+  "task_id": "XROBO-03",
+  "release": "simuverity-101-v1",
+  "matlab_release": "R2025a",
+  "publisher": "The MathWorks, Inc.",
+  "redistributes_mathworks_files": false,
+  "destination": "%LOCALAPPDATA%/SimuVerity/assets/simuverity-101-v1/XROBO-03",
+  "discovery": {
+    "method": "mathworks_open_example_relative_root",
+    "example_id": "rl/RLQuadrupedRobotExample",
+    "source_root": {
+      "selection": "unique_relative_anchor_path",
+      "anchor_path": "rlQuadrupedRobot.slx"
+    },
+    "expected_files": [
+      {
+        "path": "Extr_Data_LinkEndHole.m",
+        "size_bytes": 3507
+      },
+      {
+        "path": "Extr_Data_Mesh.m",
+        "size_bytes": 3769
+      },
+      {
+        "path": "initializeRobotParameters.m",
+        "size_bytes": 2934
+      },
+      {
+        "path": "quadrupedInverseKinematics.m",
+        "size_bytes": 1375
+      },
+      {
+        "path": "rlQuadrupedAgentParams.mat",
+        "size_bytes": 812736
+      },
+      {
+        "path": "rlQuadrupedRobot.slx",
+        "size_bytes": 258372
+      },
+      {
+        "path": "RLQuadrupedRobotExample.mlx",
+        "size_bytes": 258906
+      }
+    ]
+  },
+  "transform": "transform.m",
+  "validation": {
+    "required": true,
+    "checks": [
+      "load",
+      "update",
+      "compile",
+      "simulate",
+      "all_official_scenarios",
+      "reference_score"
+    ],
+    "on_mismatch": "fail_closed"
+  },
+  "entrypoint": "rlQuadrupedRobot.slx",
+  "expected_valid_scenarios": 6,
+  "score_tolerance": 1e-12,
+  "expected_score": 98.9002227142456,
+  "expected_score_basis": "reference_replay",
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal",
+      "low_friction_heavy",
+      "compliant_downward_recovery",
+      "stiff_forward_start",
+      "friction_derated_pair",
+      "payload_heavy_pair"
+    ],
+    "nominal_scenario_id": "nominal",
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision"
+}

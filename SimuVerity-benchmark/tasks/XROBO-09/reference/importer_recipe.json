@@ -1,0 +1,828 @@
+{
+  "schema": "simuverity.matlab-local-importer-recipe.v1",
+  "task_id": "XROBO-09",
+  "release": "simuverity-101-v1",
+  "matlab_release": "R2025a",
+  "publisher": "The MathWorks, Inc.",
+  "redistributes_mathworks_files": false,
+  "destination": "%LOCALAPPDATA%/SimuVerity/assets/simuverity-101-v1/XROBO-09",
+  "discovery": {
+    "method": "mathworks_open_example_relative_root",
+    "example_id": "simulink_general/CollisionAvoidanceAndTrajectoryTrackingOfAMarineVesselExample",
+    "source_root": {
+      "selection": "unique_relative_anchor_path",
+      "anchor_path": "MarineVessel/Model/ASVDemo.slx"
+    },
+    "expected_files": [
+      {
+        "path": "MarineVessel/DataFile/DataGuidance.m",
+        "size_bytes": 210
+      },
+      {
+        "path": "MarineVessel/DataFile/DataInitialCondition.m",
+        "size_bytes": 561
+      },
+      {
+        "path": "MarineVessel/DataFile/DataSampleTime.m",
+        "size_bytes": 516
+      },
+      {
+        "path": "MarineVessel/DataFile/DataVesselPlatform.m",
+        "size_bytes": 1465
+      },
+      {
+        "path": "MarineVessel/Helper/HelperRiskVisualizationVessel1.m",
+        "size_bytes": 3583
+      },
+      {
+        "path": "MarineVessel/Helper/HelperRiskVisualizationVessel2.m",
+        "size_bytes": 3564
+      },
+      {
+        "path": "MarineVessel/Helper/HelperRiskVisualizationVessel3.m",
+        "size_bytes": 3558
+      },
+      {
+        "path": "MarineVessel/Icon/6DOF.png",
+        "size_bytes": 44323
+      },
+      {
+        "path": "MarineVessel/Icon/Control.png",
+        "size_bytes": 94946
+      },
+      {
+        "path": "MarineVessel/Icon/controlComplete.png",
+        "size_bytes": 71050
+      },
+      {
+        "path": "MarineVessel/Icon/ForceAndMoment.png",
+        "size_bytes": 31100
+      },
+      {
+        "path": "MarineVessel/Icon/Guidance.png",
+        "size_bytes": 24304
+      },
+      {
+        "path": "MarineVessel/Icon/HMI.png",
+        "size_bytes": 195066
+      },
+      {
+        "path": "MarineVessel/Icon/Hydrodynamcis.png",
+        "size_bytes": 125431
+      },
+      {
+        "path": "MarineVessel/Icon/Hydrostatic.png",
+        "size_bytes": 99412
+      },
+      {
+        "path": "MarineVessel/Icon/MathWorksBoat_Transparent.png",
+        "size_bytes": 184818
+      },
+      {
+        "path": "MarineVessel/Icon/MathWorksBoat_Transparent2png.png",
+        "size_bytes": 57385
+      },
+      {
+        "path": "MarineVessel/Icon/Payload.png",
+        "size_bytes": 40143
+      },
+      {
+        "path": "MarineVessel/Icon/PerceptionCuboid.png",
+        "size_bytes": 266265
+      },
+      {
+        "path": "MarineVessel/Icon/Planning.png",
+        "size_bytes": 15753
+      },
+      {
+        "path": "MarineVessel/Icon/propellerTwo.png",
+        "size_bytes": 83770
+      },
+      {
+        "path": "MarineVessel/Icon/ScenarioLondon.png",
+        "size_bytes": 337685
+      },
+      {
+        "path": "MarineVessel/Icon/SensorFusion.png",
+        "size_bytes": 49125
+      },
+      {
+        "path": "MarineVessel/Icon/TopModel.png",
+        "size_bytes": 216589
+      },
+      {
+        "path": "MarineVessel/Icon/VesselPlatform.png",
+        "size_bytes": 78643
+      },
+      {
+        "path": "MarineVessel/Icon/wave.png",
+        "size_bytes": 8356
+      },
+      {
+        "path": "MarineVessel/Icon/waves.png",
+        "size_bytes": 11305
+      },
+      {
+        "path": "MarineVessel/Model/ASVDemo.slx",
+        "size_bytes": 463658
+      },
+      {
+        "path": "MarineVessel/resources/project/-wFtx9wtj3qr_UTg-gxTy98g_RU/lPIzflOg2HRLnDWfJHDaEuhbSm0d.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/-wFtx9wtj3qr_UTg-gxTy98g_RU/lPIzflOg2HRLnDWfJHDaEuhbSm0p.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "MarineVessel/resources/project/-wFtx9wtj3qr_UTg-gxTy98g_RU/s_nA2FoLlqwQEYJ9I4370tU-Ecwd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "MarineVessel/resources/project/-wFtx9wtj3qr_UTg-gxTy98g_RU/s_nA2FoLlqwQEYJ9I4370tU-Ecwp.xml",
+        "size_bytes": 102
+      },
+      {
+        "path": "MarineVessel/resources/project/-wFtx9wtj3qr_UTg-gxTy98g_RU/WopuPlcOUr0IaSt7FB6Kk4jVJwQd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "MarineVessel/resources/project/-wFtx9wtj3qr_UTg-gxTy98g_RU/WopuPlcOUr0IaSt7FB6Kk4jVJwQp.xml",
+        "size_bytes": 102
+      },
+      {
+        "path": "MarineVessel/resources/project/-wFtx9wtj3qr_UTg-gxTy98g_RU/y3sIeJkABnRlJO5b1Om11FZZ5Iwd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "MarineVessel/resources/project/-wFtx9wtj3qr_UTg-gxTy98g_RU/y3sIeJkABnRlJO5b1Om11FZZ5Iwp.xml",
+        "size_bytes": 102
+      },
+      {
+        "path": "MarineVessel/resources/project/8NdFtCcaS41Z23omNq4zguyKUw0/1c8-q0O1f-4Olq1SlLcPVF1gWJcd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "MarineVessel/resources/project/8NdFtCcaS41Z23omNq4zguyKUw0/1c8-q0O1f-4Olq1SlLcPVF1gWJcp.xml",
+        "size_bytes": 86
+      },
+      {
+        "path": "MarineVessel/resources/project/8NdFtCcaS41Z23omNq4zguyKUw0/8YdQ_4MZFUNhjVzMKE0e7zuiB04d.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/8NdFtCcaS41Z23omNq4zguyKUw0/8YdQ_4MZFUNhjVzMKE0e7zuiB04p.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "MarineVessel/resources/project/8NdFtCcaS41Z23omNq4zguyKUw0/CKAXTycdCPU5T-ztgRvG3MaGNZcd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "MarineVessel/resources/project/8NdFtCcaS41Z23omNq4zguyKUw0/CKAXTycdCPU5T-ztgRvG3MaGNZcp.xml",
+        "size_bytes": 90
+      },
+      {
+        "path": "MarineVessel/resources/project/8NdFtCcaS41Z23omNq4zguyKUw0/mVIl1hYrOvY4VkHD9tnjoUXJQK8d.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "MarineVessel/resources/project/8NdFtCcaS41Z23omNq4zguyKUw0/mVIl1hYrOvY4VkHD9tnjoUXJQK8p.xml",
+        "size_bytes": 84
+      },
+      {
+        "path": "MarineVessel/resources/project/8NdFtCcaS41Z23omNq4zguyKUw0/zXQArwNzhRQL0Nh4opj7D1rKVxgd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "MarineVessel/resources/project/8NdFtCcaS41Z23omNq4zguyKUw0/zXQArwNzhRQL0Nh4opj7D1rKVxgp.xml",
+        "size_bytes": 92
+      },
+      {
+        "path": "MarineVessel/resources/project/dQ7eOFZM92o4QVW2zmp9Uury4TQ/08gIH8mQ9egEcIz-0OqWYp6xHOgd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "MarineVessel/resources/project/dQ7eOFZM92o4QVW2zmp9Uury4TQ/08gIH8mQ9egEcIz-0OqWYp6xHOgp.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "MarineVessel/resources/project/dQ7eOFZM92o4QVW2zmp9Uury4TQ/ysoCE1z4yzxps6zxaMfheWOmwrcd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/dQ7eOFZM92o4QVW2zmp9Uury4TQ/ysoCE1z4yzxps6zxaMfheWOmwrcp.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "MarineVessel/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/GPXdR-RagQk-2jpJ9dBuZQ2Ru00d.xml",
+        "size_bytes": 74
+      },
+      {
+        "path": "MarineVessel/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/GPXdR-RagQk-2jpJ9dBuZQ2Ru00p.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "MarineVessel/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/Puh6byEvrIW48kvN-RFETaO8-cId.xml",
+        "size_bytes": 94
+      },
+      {
+        "path": "MarineVessel/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/Puh6byEvrIW48kvN-RFETaO8-cIp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "MarineVessel/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/RtwEBOJHEP6Dad9-T8bYwsXw-8Ad.xml",
+        "size_bytes": 77
+      },
+      {
+        "path": "MarineVessel/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/RtwEBOJHEP6Dad9-T8bYwsXw-8Ap.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "MarineVessel/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/WXYjvijis9ebfK1JNP4LgPN9pwYd.xml",
+        "size_bytes": 77
+      },
+      {
+        "path": "MarineVessel/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/WXYjvijis9ebfK1JNP4LgPN9pwYp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "MarineVessel/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/YeEPI0mDclo0XP2hE8ymCnYUp1Ad.xml",
+        "size_bytes": 73
+      },
+      {
+        "path": "MarineVessel/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/YeEPI0mDclo0XP2hE8ymCnYUp1Ap.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "MarineVessel/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/zID3uTUyptK0JLnS-DwUi-rhDKId.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "MarineVessel/resources/project/EEtUlUb-dLAdf0KpMVivaUlztwA/zID3uTUyptK0JLnS-DwUi-rhDKIp.xml",
+        "size_bytes": 111
+      },
+      {
+        "path": "MarineVessel/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsd.xml",
+        "size_bytes": 114
+      },
+      {
+        "path": "MarineVessel/resources/project/fjRQtWiSIy7hIlj-Kmk87M7s21k/NjSPEMsIuLUyIpr2u1Js5bVPsOsp.xml",
+        "size_bytes": 91
+      },
+      {
+        "path": "MarineVessel/resources/project/gkL9CS59RLaP02txghxsd3Ii3Rk/2INCiIAhfxL07VTrWWrnaS4b2Lwd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "MarineVessel/resources/project/gkL9CS59RLaP02txghxsd3Ii3Rk/2INCiIAhfxL07VTrWWrnaS4b2Lwp.xml",
+        "size_bytes": 105
+      },
+      {
+        "path": "MarineVessel/resources/project/gkL9CS59RLaP02txghxsd3Ii3Rk/468Q91ZIQkHFqr2_ZozTh1Eo8yMd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "MarineVessel/resources/project/gkL9CS59RLaP02txghxsd3Ii3Rk/468Q91ZIQkHFqr2_ZozTh1Eo8yMp.xml",
+        "size_bytes": 129
+      },
+      {
+        "path": "MarineVessel/resources/project/gkL9CS59RLaP02txghxsd3Ii3Rk/6wt2FjjhFYOHw0YCdNSKgQ7p9Iod.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "MarineVessel/resources/project/gkL9CS59RLaP02txghxsd3Ii3Rk/6wt2FjjhFYOHw0YCdNSKgQ7p9Iop.xml",
+        "size_bytes": 128
+      },
+      {
+        "path": "MarineVessel/resources/project/gkL9CS59RLaP02txghxsd3Ii3Rk/a6HB_rTWGjYPHaUVxZqUjm5XL7Yd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "MarineVessel/resources/project/gkL9CS59RLaP02txghxsd3Ii3Rk/a6HB_rTWGjYPHaUVxZqUjm5XL7Yp.xml",
+        "size_bytes": 105
+      },
+      {
+        "path": "MarineVessel/resources/project/gkL9CS59RLaP02txghxsd3Ii3Rk/bDFcOV6WkTupgs6eduDoYxQK7Fsd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "MarineVessel/resources/project/gkL9CS59RLaP02txghxsd3Ii3Rk/bDFcOV6WkTupgs6eduDoYxQK7Fsp.xml",
+        "size_bytes": 119
+      },
+      {
+        "path": "MarineVessel/resources/project/gkL9CS59RLaP02txghxsd3Ii3Rk/De7Qx90KScEECZWuJoJVIurWmRQd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "MarineVessel/resources/project/gkL9CS59RLaP02txghxsd3Ii3Rk/De7Qx90KScEECZWuJoJVIurWmRQp.xml",
+        "size_bytes": 118
+      },
+      {
+        "path": "MarineVessel/resources/project/gkL9CS59RLaP02txghxsd3Ii3Rk/EkVXYFCzjRhavY1FH27GOHvquWkd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "MarineVessel/resources/project/gkL9CS59RLaP02txghxsd3Ii3Rk/EkVXYFCzjRhavY1FH27GOHvquWkp.xml",
+        "size_bytes": 108
+      },
+      {
+        "path": "MarineVessel/resources/project/gkL9CS59RLaP02txghxsd3Ii3Rk/HmVCsZkRqZmPdXBnG9F-nTrSpqod.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/gkL9CS59RLaP02txghxsd3Ii3Rk/HmVCsZkRqZmPdXBnG9F-nTrSpqop.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "MarineVessel/resources/project/gkL9CS59RLaP02txghxsd3Ii3Rk/swmHuzvXbq9pH-gVMP0tir8HO-Qd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "MarineVessel/resources/project/gkL9CS59RLaP02txghxsd3Ii3Rk/swmHuzvXbq9pH-gVMP0tir8HO-Qp.xml",
+        "size_bytes": 107
+      },
+      {
+        "path": "MarineVessel/resources/project/gkL9CS59RLaP02txghxsd3Ii3Rk/tE1RcBsAPzqsDdj9H5OUdeZoZa8d.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "MarineVessel/resources/project/gkL9CS59RLaP02txghxsd3Ii3Rk/tE1RcBsAPzqsDdj9H5OUdeZoZa8p.xml",
+        "size_bytes": 117
+      },
+      {
+        "path": "MarineVessel/resources/project/gkL9CS59RLaP02txghxsd3Ii3Rk/UONPybum4noYw4QM7xKr1BkTYV8d.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/gkL9CS59RLaP02txghxsd3Ii3Rk/UONPybum4noYw4QM7xKr1BkTYV8p.xml",
+        "size_bytes": 86
+      },
+      {
+        "path": "MarineVessel/resources/project/gkL9CS59RLaP02txghxsd3Ii3Rk/UvP1cdUxUC_Fg8TSNTHL0Ki0LYgd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "MarineVessel/resources/project/gkL9CS59RLaP02txghxsd3Ii3Rk/UvP1cdUxUC_Fg8TSNTHL0Ki0LYgp.xml",
+        "size_bytes": 118
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/-U2EK0c4nD_GUvFB2A0vFfo20KId.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/-U2EK0c4nD_GUvFB2A0vFfo20KIp.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/3TePEhBmEng3l-xaFc7k2en-y0Id.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/3TePEhBmEng3l-xaFc7k2en-y0Ip.xml",
+        "size_bytes": 88
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/cM3rzf16EeVaXL1UU6KPHAJdbyUd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/cM3rzf16EeVaXL1UU6KPHAJdbyUp.xml",
+        "size_bytes": 82
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/EyYDaMHm_QCc0Yi14vwnH3eCO-8d.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/EyYDaMHm_QCc0Yi14vwnH3eCO-8p.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/fFwZd7tgmcryzIqkfovTCJf98s0d.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/fFwZd7tgmcryzIqkfovTCJf98s0p.xml",
+        "size_bytes": 88
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/fGyC_njCWfVrkj7wZbzmFAbualId.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/fGyC_njCWfVrkj7wZbzmFAbualIp.xml",
+        "size_bytes": 90
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/gkN78EPdyCPUuQbeTLITHsKUPWkd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/gkN78EPdyCPUuQbeTLITHsKUPWkp.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/hg568b7D-V8CLNqPtDVTpCAzv5Md.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/hg568b7D-V8CLNqPtDVTpCAzv5Mp.xml",
+        "size_bytes": 86
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/kDbpjIA_-FDZQfvXkyO8urONvGMd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/kDbpjIA_-FDZQfvXkyO8urONvGMp.xml",
+        "size_bytes": 78
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/QM9uIGGwU6KTjRfy9Rikas4OMKcd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/QM9uIGGwU6KTjRfy9Rikas4OMKcp.xml",
+        "size_bytes": 86
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/RxS17vtbMQf53NN-MV0reDGrLgAd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/RxS17vtbMQf53NN-MV0reDGrLgAp.xml",
+        "size_bytes": 85
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/sUMq6CWFYPmVax-pXac9bqNXcnwd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/sUMq6CWFYPmVax-pXac9bqNXcnwp.xml",
+        "size_bytes": 89
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/tJ-tPv-iSvyqghzsSg60QvA076Ad.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/tJ-tPv-iSvyqghzsSg60QvA076Ap.xml",
+        "size_bytes": 78
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/uRMvKaUvEihhQ-pcqXNAckbxoXcd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/uRMvKaUvEihhQ-pcqXNAckbxoXcp.xml",
+        "size_bytes": 82
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/vUewA3ZirV8uxH36R8W9xc1yZoId.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/vUewA3ZirV8uxH36R8W9xc1yZoIp.xml",
+        "size_bytes": 77
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/W5d81EaCJk6zUVIJZcomIP6oeAMd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/W5d81EaCJk6zUVIJZcomIP6oeAMp.xml",
+        "size_bytes": 82
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/WtqWPFw4Mp1sfq4OwVATwPKM98Ud.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/WtqWPFw4Mp1sfq4OwVATwPKM98Up.xml",
+        "size_bytes": 87
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/z5-nCN9M3_Br8-caaqmmA7_HAgId.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/z5-nCN9M3_Br8-caaqmmA7_HAgIp.xml",
+        "size_bytes": 103
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/zM9RDb0s8f3jShG4_Dr3SSPbza0d.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/zM9RDb0s8f3jShG4_Dr3SSPbza0p.xml",
+        "size_bytes": 88
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/ZPAbx41VW0ObOw1hIVvEaZryiKEd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/ZPAbx41VW0ObOw1hIVvEaZryiKEp.xml",
+        "size_bytes": 99
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/zrI7188oCfogXgQe6A2XcSl5_O4d.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/JPJP1ekn3ZiBufFEMuh0o-pToHM/zrI7188oCfogXgQe6A2XcSl5_O4p.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "MarineVessel/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/2ZsbsoBK2eQZmTz2hgDVJMkRMl0d.xml",
+        "size_bytes": 125
+      },
+      {
+        "path": "MarineVessel/resources/project/KAXfQgCar2Yb8zOxgvf9hdmLP1E/2ZsbsoBK2eQZmTz2hgDVJMkRMl0p.xml",
+        "size_bytes": 112
+      },
+      {
+        "path": "MarineVessel/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4d.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "MarineVessel/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/2kj09UetkV_lru3gvSPXnY6-nM4p.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "MarineVessel/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZod.xml",
+        "size_bytes": 82
+      },
+      {
+        "path": "MarineVessel/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/aEHSZBIY-yve10yGis12Zr5DLZop.xml",
+        "size_bytes": 78
+      },
+      {
+        "path": "MarineVessel/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencd.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "MarineVessel/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/j4xwF_j8iFTVayUMfxLgMnTbencp.xml",
+        "size_bytes": 77
+      },
+      {
+        "path": "MarineVessel/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8d.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "MarineVessel/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/KKyDJtbdIBOlaeHmIZd5VX6vqx8p.xml",
+        "size_bytes": 76
+      },
+      {
+        "path": "MarineVessel/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4d.xml",
+        "size_bytes": 86
+      },
+      {
+        "path": "MarineVessel/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/QWNDYJD5mGW1bWYvPx9DtKnxzw4p.xml",
+        "size_bytes": 82
+      },
+      {
+        "path": "MarineVessel/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Id.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "MarineVessel/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/R1RggVhA72agIvELiuhWPRS8F0Ip.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "MarineVessel/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkd.xml",
+        "size_bytes": 83
+      },
+      {
+        "path": "MarineVessel/resources/project/NjSPEMsIuLUyIpr2u1Js5bVPsOs/r8LR4nLmg9ai3oHrW1r_-KocQzkp.xml",
+        "size_bytes": 79
+      },
+      {
+        "path": "MarineVessel/resources/project/Project.xml",
+        "size_bytes": 73
+      },
+      {
+        "path": "MarineVessel/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/-wFtx9wtj3qr_UTg-gxTy98g_RUd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/-wFtx9wtj3qr_UTg-gxTy98g_RUp.xml",
+        "size_bytes": 76
+      },
+      {
+        "path": "MarineVessel/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/8NdFtCcaS41Z23omNq4zguyKUw0d.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/8NdFtCcaS41Z23omNq4zguyKUw0p.xml",
+        "size_bytes": 78
+      },
+      {
+        "path": "MarineVessel/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/dQ7eOFZM92o4QVW2zmp9Uury4TQd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/dQ7eOFZM92o4QVW2zmp9Uury4TQp.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "MarineVessel/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/gkL9CS59RLaP02txghxsd3Ii3Rkd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/gkL9CS59RLaP02txghxsd3Ii3Rkp.xml",
+        "size_bytes": 78
+      },
+      {
+        "path": "MarineVessel/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/ixGE3DeALB4nJrVQ25UNtH1_POgd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "MarineVessel/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/ixGE3DeALB4nJrVQ25UNtH1_POgp.xml",
+        "size_bytes": 86
+      },
+      {
+        "path": "MarineVessel/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/JPJP1ekn3ZiBufFEMuh0o-pToHMd.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/qaw0eS1zuuY1ar9TdPn1GMfrjbQ/JPJP1ekn3ZiBufFEMuh0o-pToHMp.xml",
+        "size_bytes": 74
+      },
+      {
+        "path": "MarineVessel/resources/project/root/6x1BhZX_fLnKpcwqra0qFwv1jIgp.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "MarineVessel/resources/project/root/EEtUlUb-dLAdf0KpMVivaUlztwAp.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "MarineVessel/resources/project/root/fjRQtWiSIy7hIlj-Kmk87M7s21kp.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "MarineVessel/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQd.xml",
+        "size_bytes": 67
+      },
+      {
+        "path": "MarineVessel/resources/project/root/GiiBklLgTxteCEmomM8RCvWT0nQp.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "MarineVessel/resources/project/root/KAXfQgCar2Yb8zOxgvf9hdmLP1Ep.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "MarineVessel/resources/project/root/NmGqIpAwUJcXFyLjFAGnU9uyN5Yp.xml",
+        "size_bytes": 81
+      },
+      {
+        "path": "MarineVessel/resources/project/root/qaw0eS1zuuY1ar9TdPn1GMfrjbQp.xml",
+        "size_bytes": 75
+      },
+      {
+        "path": "MarineVessel/resources/project/root/WZRuNzqc-Db7NcQAZO8Y-R8U9ccp.xml",
+        "size_bytes": 84
+      },
+      {
+        "path": "MarineVessel/resources/project/rootp.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/UONPybum4noYw4QM7xKr1BkTYV8/BA8TR04dHcXXX-6EsK2t5aCLQT0d.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "MarineVessel/resources/project/UONPybum4noYw4QM7xKr1BkTYV8/BA8TR04dHcXXX-6EsK2t5aCLQT0p.xml",
+        "size_bytes": 137
+      },
+      {
+        "path": "MarineVessel/resources/project/UONPybum4noYw4QM7xKr1BkTYV8/kQMgfqAEsbEONPUNh-C5aDk3Rjcd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "MarineVessel/resources/project/UONPybum4noYw4QM7xKr1BkTYV8/kQMgfqAEsbEONPUNh-C5aDk3Rjcp.xml",
+        "size_bytes": 127
+      },
+      {
+        "path": "MarineVessel/resources/project/UONPybum4noYw4QM7xKr1BkTYV8/ksBPh6tzvsYv-0wgnB954Wu02Uwd.xml",
+        "size_bytes": 140
+      },
+      {
+        "path": "MarineVessel/resources/project/UONPybum4noYw4QM7xKr1BkTYV8/ksBPh6tzvsYv-0wgnB954Wu02Uwp.xml",
+        "size_bytes": 127
+      },
+      {
+        "path": "MarineVessel/resources/project/UONPybum4noYw4QM7xKr1BkTYV8/sZP2U1ESWOzjiiaZdtN40_5D058d.xml",
+        "size_bytes": 46
+      },
+      {
+        "path": "MarineVessel/resources/project/UONPybum4noYw4QM7xKr1BkTYV8/sZP2U1ESWOzjiiaZdtN40_5D058p.xml",
+        "size_bytes": 80
+      },
+      {
+        "path": "MarineVessel/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/66WgGCcF5RIH9MCEgPmgjZK9k3Ud.xml",
+        "size_bytes": 73
+      },
+      {
+        "path": "MarineVessel/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/66WgGCcF5RIH9MCEgPmgjZK9k3Up.xml",
+        "size_bytes": 96
+      },
+      {
+        "path": "MarineVessel/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/AtMjXDrOSm8YDv3_4UFXiyrWqNEd.xml",
+        "size_bytes": 73
+      },
+      {
+        "path": "MarineVessel/resources/project/WZRuNzqc-Db7NcQAZO8Y-R8U9cc/AtMjXDrOSm8YDv3_4UFXiyrWqNEp.xml",
+        "size_bytes": 94
+      },
+      {
+        "path": "MarineVessel/Scenario/ExportedScenario/Scenario_Cuboid_COLREGs_1_Crossing_Starboard_exported.mat",
+        "size_bytes": 1045942
+      },
+      {
+        "path": "MarineVessel/Scenario/ExportedScenario/Scenario_Cuboid_COLREGs_2_Crossing_Starboard_Multiship_exported.mat",
+        "size_bytes": 1048204
+      },
+      {
+        "path": "MarineVessel/Scenario/ExportedScenario/Scenario_Cuboid_COLREGs_3_Crossing_Multiship_exported.mat",
+        "size_bytes": 1049926
+      },
+      {
+        "path": "MarineVessel/Scenario/Scenario_Cuboid_COLREGs_1_Crossing_Starboard.mat",
+        "size_bytes": 530781
+      },
+      {
+        "path": "MarineVessel/Scenario/Scenario_Cuboid_COLREGs_2_Crossing_Starboard_Multiship.mat",
+        "size_bytes": 529888
+      },
+      {
+        "path": "MarineVessel/Scenario/Scenario_Cuboid_COLREGs_3_Crossing_Multiship.mat",
+        "size_bytes": 531277
+      },
+      {
+        "path": "MarineVessel/Scenario/Scenario_Cuboid_COLREGs_4_Crossing_Overtaking.mat",
+        "size_bytes": 532759
+      },
+      {
+        "path": "MarineVessel/Scenario/Scenario_Cuboid_COLREGs_5_Overtaking_HeadOn.mat",
+        "size_bytes": 529234
+      },
+      {
+        "path": "MarineVessel/Scenario/Scenario_Cuboid_COLREGs_6_Crossing_Overtaking_Multiship.mat",
+        "size_bytes": 535051
+      },
+      {
+        "path": "MarineVessel/Scenario/Scenario_Cuboid_London_COLLIDEE.mat",
+        "size_bytes": 2672007
+      },
+      {
+        "path": "MarineVessel/Scenario/Scenario_Cuboid_London_nonCOLLIDE.mat",
+        "size_bytes": 2673234
+      },
+      {
+        "path": "MarineVessel/Scenario/Scenario_Cuboid_London_WalkThrough.mat",
+        "size_bytes": 1537963
+      },
+      {
+        "path": "MarineVessel/Scenario/Scenario_Cuboid_Obstacle_Bridge.mat",
+        "size_bytes": 534306
+      },
+      {
+        "path": "MarineVessel/StartASVDemo.mlx",
+        "size_bytes": 407025
+      }
+    ]
+  },
+  "transform": "transform.m",
+  "validation": {
+    "required": true,
+    "checks": [
+      "load",
+      "update",
+      "compile",
+      "simulate",
+      "all_official_scenarios",
+      "reference_score"
+    ],
+    "on_mismatch": "fail_closed"
+  },
+  "entrypoint": "MarineVessel/Model/ASVDemo.slx",
+  "expected_valid_scenarios": 5,
+  "score_tolerance": 1e-12,
+  "expected_score": 97.54882469341823,
+  "scenario_contract": {
+    "expected_ids": [
+      "crossing_starboard",
+      "crossing_starboard_multiship",
+      "crossing_multiship",
+      "crossing_current_boundary",
+      "multiship_reduced_speed"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision"
+}

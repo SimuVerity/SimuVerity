@@ -1,0 +1,35 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XTHERM-05",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/XTHERM05_reference.slx",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 390,
+  "retained_bytes": 19122550,
+  "excluded_files": [
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/Overview/html/DesignAndIntegrateCoolingPlate.gif",
+      "size_bytes": 28433766,
+      "category": "documentation_media",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    },
+    {
+      "path": "reference/files/Battery-Cooling-Plate-Simscape/resources/project/WS7L7U3R0F3ft4esx_Z4zRwM4vQ/6pt37tIZiNRo8UUk20kN2E-csxYp.xml",
+      "size_bytes": 104,
+      "category": "documentation_project_metadata",
+      "runtime_dependency": false,
+      "reason": "Not reachable from the current reference entrypoint or its runtime dependency closure."
+    }
+  ],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ],
+  "clean_replay_setup": {
+    "phase": "before_load",
+    "path": "tasks/XTHERM-05/reference/clean_replay_setup/f90_xtherm05_reference_clean_replay_setup.m",
+    "entrypoint": "f90_xtherm05_reference_clean_replay_setup"
+  }
+}

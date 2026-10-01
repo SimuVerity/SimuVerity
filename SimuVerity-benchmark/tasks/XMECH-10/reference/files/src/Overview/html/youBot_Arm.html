@@ -1,0 +1,589 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+<title>youBot Arm</title>
+<meta name="generator" content="MATLAB 25.1">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2025-12-16">
+<meta name="DC.source" content="youBot_Arm.m">
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="content">
+<h1>youBot Arm</h1>
+<!--introduction-->
+<p>This examples models a robotic arm and two conveyor belts. One conveyor belts bring blocks to the robot. The robot grabs the block, flips it over and transfers it to another conveyor belt which transports it away from the robot.</p>
+<p>This example can be used to determine requirements for electrical and mechanical design, detect integration issues, design and test control logic, and optimize path planning.</p>
+<!--/introduction-->
+<h2>Contents</h2>
+<div>
+<ul>
+<li>
+<a href="#1">Model</a>
+</li>
+<li>
+<a href="#2">Arm Subsystem</a>
+</li>
+<li>
+<a href="#3">Actuation Subsystem, Motion Variant</a>
+</li>
+<li>
+<a href="#4">Actuation Subsystem, Motor Variant</a>
+</li>
+<li>
+<a href="#5">Forearm Motor Actuation, Ideal Variant</a>
+</li>
+<li>
+<a href="#6">Forearm Motor Actuation, Motor Variant: Motor - Joint Interface</a>
+</li>
+<li>
+<a href="#7">Forearm Motor Actuation, Motor Variant: Motor Subsystem</a>
+</li>
+<li>
+<a href="#8">Forearm Motor Actuation, Motor Variant: Motor Control</a>
+</li>
+<li>
+<a href="#9">Environment Subsystem</a>
+</li>
+<li>
+<a href="#10">Belt In Subsystem</a>
+</li>
+<li>
+<a href="#11">Gripper Force Subsystem</a>
+</li>
+<li>
+<a href="#12">Gripper Force Subsystem, Damper Variant</a>
+</li>
+<li>
+<a href="#13">Gripper Force Subsystem, Penalty Variant</a>
+</li>
+<li>
+<a href="#14">Input Subsystem</a>
+</li>
+<li>
+<a href="#15">Logic Subsystem</a>
+</li>
+<li>
+<a href="#16">Simulation Results from Simscape Logging</a>
+</li>
+</ul>
+</div>
+<h2 id="1">Model</h2>
+<p>The top level of the model contains hyperlinks that configure the model according to the test you wish to perform. The default test is for the entire system (robot arm and conveyor belts).</p>
+<p>Box transfer tests can be run to determine the amount of power required for a specific manipulator trajectory.</p>
+<p>Joint tests can be run to determine required motor torque and the forces that the bearings will experience.</p>
+<img vspace="5" hspace="5" src="youBot_Arm_01.png" alt=""> <h2 id="2">Arm Subsystem</h2>
+<p>This subsystem includes the robot arm which was imported from CAD software, the joint actuators, and the environment surrounding the robot. Hyperlinks at this level configure the robot joints to use prescribed motion (<b>Motion</b>), or modeled as a connected electrical network (<b>Motor</b>). Motion actuation is typically used to determine torque requirements for the motor, and based on those requirements the motors in the electrical network can be selected.</p>
+<p>
+<a href="matlab:open_system('youBot_Arm');open_system('youBot_Arm/Arm');">Open Subsystem</a>
+</p>
+<img vspace="5" hspace="5" src="youBot_Arm_02.png" alt=""> <h2 id="3">Actuation Subsystem, Motion Variant</h2>
+<p>This variant includes the robot arm joints which were imported from CAD. They have been configured to use prescribed motion, where the angle for the joint is specified by an input signal. The simulation calculates the torque required to produce this motion. The radial and axial forces for the motor bearings are also calculated for each joint. This information is useful to refine the requirements for the motor, gear boxes, and the mechanical requirements for the bearings.</p>
+<p>
+<a href="matlab:open_system('youBot_Arm');open_system('youBot_Arm/Arm/Actuation/Motion');">Open Subsystem</a>
+</p>
+<img vspace="5" hspace="5" src="youBot_Arm_03.png" alt=""> <h2 id="4">Actuation Subsystem, Motor Variant</h2>
+<p>This variant includes the electrical network which provides the power to actuate each joint. The joint definitions were imported from a CAD assembly.</p>
+<p>The actuators can be configured to use prescribed motion and estimate the current draw (<b>Ideal</b>), or the joints can be driven by electrical motors (<b>Motor</b>). Clicking on the hyperlinks will change multiple motors at the same time. The motors can be configured individually (<b>Ideal</b> or <b>Motor</b>) by right-clicking on the block and overriding the subsystem variant. This permits very focused testing on individual joints or joint combinations.</p>
+<p>
+<a href="matlab:open_system('youBot_Arm');open_system('youBot_Arm/Arm/Actuation/Motor');">Open Subsystem</a>
+</p>
+<img vspace="5" hspace="5" src="youBot_Arm_04.png" alt=""> <h2 id="5">Forearm Motor Actuation, Ideal Variant</h2>
+<p>This variant is used to determine the requirements for the electrical system. The joints are driven using prescribed motion, and the simulation calculates the torque required to produce this motion. The radial and axial forces for the motor bearings are also calculated for each joint. This information is useful to refine the requirements for the motor.</p>
+<p>This variant also estimates the amount of electrical power required to produce this motion using the actuation torque. Each joint draws current from the power supply, making it possible to determine the requirements for power connections and the supply. The current estimation used here requires selecting a gear ratio, motor torque constant, and an armature resistance. The absolute value of the actuation torque is used because though the actuation torque can switch sign, current is always drawn from the power supply.</p>
+<p>
+<a href="matlab:open_system('youBot_Arm');open_system('youBot_Arm/Arm/Actuation/Motor/Forearm/Ideal');">Open Subsystem</a>
+</p>
+<img vspace="5" hspace="5" src="youBot_Arm_05.png" alt=""> <h2 id="6">Forearm Motor Actuation, Motor Variant: Motor - Joint Interface</h2>
+<p>This variant actuates the robot arm joints using an electrical actuator. At this level, the connection between the motor and the robot joint is shown.</p>
+<p>This variant does not use prescribed motion. Torque provided by the electrical model of the motor is applied to the joint. The rotational speed of the electrical motor and joint are forced to be identical during simulation to ensure that the physics is accurate.</p>
+<p>
+<a href="matlab:open_system('youBot_Arm');open_system('youBot_Arm/Arm/Actuation/Motor/Forearm/Motor','force');">Open Subsystem</a>
+</p>
+<img vspace="5" hspace="5" src="youBot_Arm_06.png" alt=""> <h2 id="7">Forearm Motor Actuation, Motor Variant: Motor Subsystem</h2>
+<p>This subsystem models the motor controller, motor drive circuit, motor, gearbox, and motor friction. Parameter values for the motor are taken directly from manufacturer data sheets (see <a href="matlab:matlab.desktop.editor.openAndGoToLine(which('youBot_PARAM.m'),103);">model parameters</a>).</p>
+<p>
+<a href="matlab:open_system('youBot_Arm');open_system('youBot_Arm/Arm/Actuation/Motor/Forearm/Motor/Motor','force');">Open Subsystem</a>
+</p>
+<img vspace="5" hspace="5" src="youBot_Arm_07.png" alt=""> <h2 id="8">Forearm Motor Actuation, Motor Variant: Motor Control</h2>
+<p>This subsystem implements the control system for the motor. A simple bang-bang controller based on position error is used. A deadzone prevents chattering in the system. More complex control algorithms can be substituted here.</p>
+<p>
+<a href="matlab:open_system('youBot_Arm');open_system('youBot_Arm/Arm/Actuation/Motor/Forearm/Motor/Motor/Control','force');">Open Subsystem</a>
+</p>
+<img vspace="5" hspace="5" src="youBot_Arm_08.png" alt=""> <h2 id="9">Environment Subsystem</h2>
+<p>This subsystem models the environment surrounding the robot arm. It includes two conveyor belts and a load.</p>
+<p>Hyperlinks at this level configure the connection between the gripper and the load. Clicking on hyperlink <b>Payload</b> will assume the load is rigidly attached to the gripper. Hyperlinks <b>Damping</b> and <b>Penalty</b> each model a contact force between the gripper and the load at two levels of fidelity. Clicking on these hyperlinks adjusts variant subsystems <i>Load</i> and <i>Gripper Force</i> simultaneously to ensure the selected variants are compatible. These settings are selected based on the test that is performed. The only one that should be overriden manually is switching between variants <tt>Damper</tt> and <tt>Penalty</tt> for the <i>Gripper Force</i> subsystem when the <tt>Box</tt> variant is selected for the <i>Load</i> subsystem.</p>
+<p>
+<a href="matlab:open_system('youBot_Arm');open_system('youBot_Arm/Arm/Environment');">Open Subsystem</a>
+</p>
+<img vspace="5" hspace="5" src="youBot_Arm_09.png" alt=""> <h2 id="10">Belt In Subsystem</h2>
+<p>This subsystem models the conveyor belt, contact force between the box and the belt, and the light curtain at the end of the belt.</p>
+<p>The conveyor belt is driven at speed vx. The motor driving the belt is not modeled. The rollers rotate to simply give a visual indication that the belt is on.</p>
+<p>The contact force is active if the upper or lower surface of the belt encounters the bottom face of the box. The calculated normal force is used to model a sensor that will detect if a box is on the belt. This signal is sent to the supervisory logic controller for the system. The only difference between Belt In and Belt Out is in the contact force - in Belt Out, the contact force is modeled between the belt and the top face of the box.</p>
+<p>The light curtain detects if the box is blocking any of its beams and sends a signal to the logic controller.</p>
+<p>Transform Sensor EE measures the x-y-z position of the end effector and saves it to the workspace. This quantity is used for plotting purposes, both during normal desktop simulation and it is saved during the optimization tests to show the set of trajectories tested.</p>
+<p>
+<a href="matlab:open_system('youBot_Arm');open_system('youBot_Arm/Arm/Environment/Conveyors/Belt%20In');">Open Subsystem</a>
+</p>
+<img vspace="5" hspace="5" src="youBot_Arm_10.png" alt=""> <h2 id="11">Gripper Force Subsystem</h2>
+<p>This subsystem shows the three variants for the gripper force. These variants are selected using the hyperlinks one level higher in the model or by using the hyperlinks at the top level that configure the test.</p>
+<p>
+<a href="matlab:open_system('youBot_Arm');open_system('youBot_Arm/Arm/Environment/Gripper%20Force');">Open Subsystem</a>
+</p>
+<img vspace="5" hspace="5" src="youBot_Arm_11.png" alt=""> <h2 id="12">Gripper Force Subsystem, Damper Variant</h2>
+<p>This subsystem models the contact force between the gripper and the box as a very stiff damper that is only active when the box is grasped by the gripper fingers. The force subsystem measures the displacement between a reference frame on the gripper and the box to determine if the gripper could grab the box. If it can, the damper becomes active.</p>
+<p>This is an abstract representation of the force. The simplifying assumptions is computationally very efficient. It assumes the box will slip very, very slowly with respect to the gripper. It does not consider the exact geometry of the fingers or the gripper itself - a misaligned box can be grasped using this force.</p>
+<p>There are two methods for measuring the velocity of the box along the normal of the gripper fingers. One measures it with respect to a reference frame on the gripper housing. The other takes the difference of relative velocity with respect to each finger, allowing the box to move relative to the gripper housing.</p>
+<p>
+<a href="matlab:open_system('youBot_Arm');open_system('youBot_Arm/Arm/Environment/Gripper%20Force/Damper/Gripper%20Force','force');">Open Subsystem</a>
+</p>
+<img vspace="5" hspace="5" src="youBot_Arm_12.png" alt=""> <h2 id="13">Gripper Force Subsystem, Penalty Variant</h2>
+<p>This subsystem models the contact force between the gripper and the box as a stiff spring-damper between multiple points on the gripper finger and a square surface on the box. This requires more computation, but is a more realistic way to model the contact force. It can model cases where the box and the gripper are misaligned.</p>
+<p>
+<a href="matlab:open_system('youBot_Arm');open_system('youBot_Arm/Arm/Environment/Gripper%20Force/Penalty');">Open Subsystem</a>
+</p>
+<img vspace="5" hspace="5" src="youBot_Arm_13.png" alt=""> <h2 id="14">Input Subsystem</h2>
+<p>This variant subsystem configures the inputs to the robot arm system. The variants are configured to permit unit testing of individual components of the system.</p>
+<p>The <b>Control</b> variant implements the supervisory logic for the entire system. The <b>Signals</b> variant is an open loop test that can actuate any or all of the joints and the conveyor belts. The <b>Splines</b> variant is used to test trajectories for transferring the box from one belt to the other. The <b>Control Belt</b> variant permits closed loop testing of the conveyor belts and open loop testing of the robot arm.</p>
+<p>
+<a href="matlab:open_system('youBot_Arm');open_system('youBot_Arm/Input');">Open Subsystem</a>
+</p>
+<img vspace="5" hspace="5" src="youBot_Arm_14.png" alt=""> <h2 id="15">Logic Subsystem</h2>
+<p>This state chart implements the supervisory logic for the robot arm, robot gripper, and both conveyor belts. Information from sensors in the model come in as input signals, and outputs from the state chart will control movement of the robot arm and conveyor belts. During simulation, the state chart is animated to show the active state in each chart.</p>
+<p>All four state charts are interconnected. Events in one state chart trigger actions in others. For example, in state chart <b>BeltIn</b>, when the light curtain on the belt is blocked, input <tt>BeltIn_LC=0</tt>. That condition permits the <b>BeltIn</b> state chart to transition to state <i>BoxReady</i>. As the BeltIn state chart transitions to state <i>BoxReady</i>, the belt will be turned off (BeltIn_En=0). The event <b>GetBox</b> will be broadcast to state chart <b>Robot</b>, which causes that state chart to transition from <b>StartHome</b> or <b>Home</b> to <b>GoBeltIn</b>. Entering state <b>GoBeltIn</b> sets output <tt>Way</tt>, which controls the commands sent to the robot joints.</p>
+<p>
+<a href="matlab:open_system('youBot_Arm');open_system('youBot_Arm/Input/Control/Logic','force');">Open Subsystem</a>
+</p>
+<img vspace="5" hspace="5" src="youBot_Arm_15.png" alt=""> <h2 id="16">Simulation Results from Simscape Logging</h2>
+<p>The plot below shows the current drawn by all motors in the youBot robotic arm.</p>
+<img vspace="5" hspace="5" src="youBot_Arm_16.png" alt=""> <img vspace="5" hspace="5" src="youBot_Arm_17.png" alt=""> <p>The plot below shows the 3D trajectory of the box moved by the youBot robotic arm.</p>
+<img vspace="5" hspace="5" src="youBot_Arm_18.png" alt=""> <p>The plot below shows the torque or force for each motor in the youBot robotic arm.</p>
+<img vspace="5" hspace="5" src="youBot_Arm_19.png" alt=""> <p>The plot below shows the positions of the joints in the youBot robotic arm.</p>
+<img vspace="5" hspace="5" src="youBot_Arm_20.png" alt=""> <p>The plot below shows the constraint forces for each joint in the youBot robotic arm.</p>
+<img vspace="5" hspace="5" src="youBot_Arm_21.png" alt=""> <p class="footer">Copyright 2017-2025 The MathWorks, Inc.<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2025a</a>
+<br>
+</p>
+</div>
+<!--
+##### SOURCE BEGIN #####
+%% youBot Arm
+%
+% This examples models a robotic arm and two conveyor belts.  One conveyor
+% belts bring blocks to the robot.  The robot grabs the block, flips it
+% over and transfers it to another conveyor belt which transports it away
+% from the robot.  
+%
+% This example can be used to determine requirements for electrical and
+% mechanical design, detect integration issues, design and test control
+% logic, and optimize path planning.
+% 
+% Copyright 2017-2025 The MathWorks, Inc.
+
+
+%% Model
+% 
+% The top level of the model contains hyperlinks that configure the model
+% according to the test you wish to perform. The default test is for the
+% entire system (robot arm and conveyor belts).  
+% 
+% Box transfer tests can be run to determine the amount of power required
+% for a specific manipulator trajectory.
+% 
+% Joint tests can be run to determine required motor torque and the forces
+% that the bearings will experience.
+%
+
+open_system('youBot_Arm')
+ann_h = find_system('youBot_Arm','MatchFilter',@Simulink.match.allVariants,'FindAll', 'on','type','annotation');
+for i=1:length(ann_h)
+    set_param(ann_h(i),'Interpreter','off')
+end
+
+%% Arm Subsystem
+%
+% This subsystem includes the robot arm which was imported from CAD
+% software, the joint actuators, and the environment surrounding the robot.
+% Hyperlinks at this level configure the robot joints to use prescribed
+% motion (*Motion*), or modeled as a connected electrical network
+% (*Motor*).  Motion actuation is typically used to determine torque
+% requirements for the motor, and based on those requirements the motors in
+% the electrical network can be selected.
+%
+% <matlab:open_system('youBot_Arm');open_system('youBot_Arm/Arm'); Open Subsystem>
+
+set_param('youBot_Arm/Arm','LinkStatus','none')
+open_system('youBot_Arm/Arm','force')
+
+%% Actuation Subsystem, Motion Variant
+%
+% This variant includes the robot arm joints which were imported from CAD.
+% They have been configured to use prescribed motion, where the angle for
+% the joint is specified by an input signal.  The simulation calculates the
+% torque required to produce this motion.  The radial and axial forces for
+% the motor bearings are also calculated for each joint.  This information
+% is useful to refine the requirements for the motor, gear boxes, and the
+% mechanical requirements for the bearings.
+%
+% <matlab:open_system('youBot_Arm');open_system('youBot_Arm/Arm/Actuation/Motion'); Open Subsystem>
+
+youBot_configureActuation('youBot_Arm','Motion')
+set_param('youBot_Arm/Arm/Actuation/Motion','LinkStatus','none')
+open_system('youBot_Arm/Arm/Actuation/Motion','force')
+
+%% Actuation Subsystem, Motor Variant
+%
+% This variant includes the electrical network which provides the power to
+% actuate each joint. The joint definitions were imported from a CAD assembly. 
+% 
+% The actuators can be configured to use prescribed motion and estimate the
+% current draw (*Ideal*), or the joints can be driven by electrical motors
+% (*Motor*).  Clicking on the hyperlinks will change multiple motors at the
+% same time.  The motors can be configured individually (*Ideal* or *Motor*) by
+% right-clicking on the block and overriding the subsystem variant.  This
+% permits very focused testing on individual joints or joint combinations.
+%
+% <matlab:open_system('youBot_Arm');open_system('youBot_Arm/Arm/Actuation/Motor'); Open Subsystem>
+
+youBot_configureActuation('youBot_Arm','Motor')
+set_param('youBot_Arm/Arm/Actuation/Motor','LinkStatus','none')
+open_system('youBot_Arm/Arm/Actuation/Motor','force')
+
+%% Forearm Motor Actuation, Ideal Variant
+%
+% This variant is used to determine the requirements for the electrical
+% system.  The joints are driven using prescribed motion, and the
+% simulation calculates the torque required to produce this motion.  The
+% radial and axial forces for the motor bearings are also calculated for
+% each joint.  This information is useful to refine the requirements for
+% the motor.
+%
+% This variant also estimates the amount of electrical power required to
+% produce this motion using the actuation torque.  Each joint draws current
+% from the power supply, making it possible to determine the requirements
+% for power connections and the supply.  The current estimation used here
+% requires selecting a gear ratio, motor torque constant, and an armature
+% resistance.  The absolute value of the actuation torque is used because
+% though the actuation torque can switch sign, current is always drawn from
+% the power supply.
+%
+% <matlab:open_system('youBot_Arm');open_system('youBot_Arm/Arm/Actuation/Motor/Forearm/Ideal'); Open Subsystem>
+
+youBot_configureMotors('youBot_Arm','Ideal')
+set_param('youBot_Arm/Arm/Actuation/Motor/Forearm/Ideal','LinkStatus','none')
+open_system('youBot_Arm/Arm/Actuation/Motor/Forearm/Ideal','force')
+
+%% Forearm Motor Actuation, Motor Variant: Motor - Joint Interface
+%
+% This variant actuates the robot arm joints using an electrical actuator.
+% At this level, the connection between the motor and the robot joint is
+% shown.  
+%
+% This variant does not use prescribed motion.  Torque provided by the
+% electrical model of the motor is applied to the joint.  The rotational
+% speed of the electrical motor and joint are forced to be identical during
+% simulation to ensure that the physics is accurate.
+%
+% <matlab:open_system('youBot_Arm');open_system('youBot_Arm/Arm/Actuation/Motor/Forearm/Motor','force'); Open Subsystem>
+
+youBot_configureMotors('youBot_Arm','Motor')
+set_param('youBot_Arm/Arm/Actuation/Motor/Forearm/Motor','LinkStatus','none')
+open_system('youBot_Arm/Arm/Actuation/Motor/Forearm/Motor','force')
+
+%% Forearm Motor Actuation, Motor Variant: Motor Subsystem
+%
+% This subsystem models the motor controller, motor drive circuit, motor,
+% gearbox, and motor friction.  Parameter values for the motor are taken
+% directly from manufacturer data sheets (see
+% <matlab:matlab.desktop.editor.openAndGoToLine(which('youBot_PARAM.m'),103); model parameters>).
+%
+% <matlab:open_system('youBot_Arm');open_system('youBot_Arm/Arm/Actuation/Motor/Forearm/Motor/Motor','force'); Open Subsystem>
+
+set_param('youBot_Arm/Arm/Actuation/Motor/Forearm/Motor/Motor','LinkStatus','none')
+open_system('youBot_Arm/Arm/Actuation/Motor/Forearm/Motor/Motor','force')
+
+%% Forearm Motor Actuation, Motor Variant: Motor Control
+%
+% This subsystem implements the control system for the motor.  A simple
+% bang-bang controller based on position error is used. A deadzone prevents
+% chattering in the system.  More complex control algorithms can be
+% substituted here.
+%
+% <matlab:open_system('youBot_Arm');open_system('youBot_Arm/Arm/Actuation/Motor/Forearm/Motor/Motor/Control','force'); Open Subsystem>
+
+set_param('youBot_Arm/Arm/Actuation/Motor/Forearm/Motor/Motor/Control','LinkStatus','none')
+open_system('youBot_Arm/Arm/Actuation/Motor/Forearm/Motor/Motor/Control','force')
+
+%% Environment Subsystem
+%
+% This subsystem models the environment surrounding the robot arm.  It
+% includes two conveyor belts and a load.
+%
+% Hyperlinks at this level configure the connection between the gripper and
+% the load.  Clicking on hyperlink *Payload* will assume the load is
+% rigidly attached to the gripper.  Hyperlinks *Damping* and *Penalty* each
+% model a contact force between the gripper and the load at two levels of
+% fidelity.  Clicking on these hyperlinks adjusts variant subsystems _Load_
+% and _Gripper Force_ simultaneously to ensure the selected variants are
+% compatible.  These settings are selected based on the test that is
+% performed.  The only one that should be overriden manually is switching
+% between variants |Damper| and |Penalty| for the _Gripper Force_ subsystem
+% when the |Box| variant is selected for the _Load_ subsystem.
+%
+% <matlab:open_system('youBot_Arm');open_system('youBot_Arm/Arm/Environment'); Open Subsystem>
+
+set_param('youBot_Arm/Arm/Environment','LinkStatus','none')
+open_system('youBot_Arm/Arm/Environment','force')
+
+%% Belt In Subsystem
+%
+% This subsystem models the conveyor belt, contact force between the box
+% and the belt, and the light curtain at the end of the belt.
+%
+% The conveyor belt is driven at speed vx. The motor driving the belt is
+% not modeled.  The rollers rotate to simply give a visual indication that
+% the belt is on.
+%
+% The contact force is active if the upper or lower surface of the belt
+% encounters the bottom face of the box.  The calculated normal force is
+% used to model a sensor that will detect if a box is on the belt.  This
+% signal is sent to the supervisory logic controller for the system.  The
+% only difference between Belt In and Belt Out is in the contact force - in
+% Belt Out, the contact force is modeled between the belt and the top face
+% of the box.
+%
+% The light curtain detects if the box is blocking any of its beams and
+% sends a signal to the logic controller.
+%
+% Transform Sensor EE measures the x-y-z position of the end effector and
+% saves it to the workspace.  This quantity is used for plotting purposes,
+% both during normal desktop simulation and it is saved during the
+% optimization tests to show the set of trajectories tested.
+%
+% <matlab:open_system('youBot_Arm');open_system('youBot_Arm/Arm/Environment/Conveyors/Belt%20In'); Open Subsystem>
+
+set_param('youBot_Arm/Arm/Environment/Conveyors/Belt In','LinkStatus','none')
+open_system('youBot_Arm/Arm/Environment/Conveyors/Belt In','force')
+
+%% Gripper Force Subsystem
+%
+% This subsystem shows the three variants for the gripper force.  These
+% variants are selected using the hyperlinks one level higher in the model
+% or by using the hyperlinks at the top level that configure the test.
+%
+% <matlab:open_system('youBot_Arm');open_system('youBot_Arm/Arm/Environment/Gripper%20Force'); Open Subsystem>
+
+set_param('youBot_Arm/Arm/Environment/Gripper Force','LinkStatus','none')
+open_system('youBot_Arm/Arm/Environment/Gripper Force','force')
+
+%% Gripper Force Subsystem, Damper Variant
+%
+% This subsystem models the contact force between the gripper and the box
+% as a very stiff damper that is only active when the box is grasped by the
+% gripper fingers.  The force subsystem measures the displacement between a
+% reference frame on the gripper and the box to determine if the gripper
+% could grab the box.  If it can, the damper becomes active.
+%
+% This is an abstract representation of the force.  The simplifying
+% assumptions is computationally very efficient.  It assumes the box will
+% slip very, very slowly with respect to the gripper.  It does not consider
+% the exact geometry of the fingers or the gripper itself - a misaligned
+% box can be grasped using this force.
+%
+% There are two methods for measuring the velocity of the box along the
+% normal of the gripper fingers.  One measures it with respect to a
+% reference frame on the gripper housing.  The other takes the difference
+% of relative velocity with respect to each finger, allowing the box to
+% move relative to the gripper housing.
+% 
+% <matlab:open_system('youBot_Arm');open_system('youBot_Arm/Arm/Environment/Gripper%20Force/Damper/Gripper%20Force','force'); Open Subsystem>
+
+youBot_configureLoad('youBot_Arm','Damper');
+set_param('youBot_Arm/Arm/Environment/Gripper Force/Damper/Gripper Force','LinkStatus','none')
+open_system('youBot_Arm/Arm/Environment/Gripper Force/Damper/Gripper Force','force')
+
+%% Gripper Force Subsystem, Penalty Variant
+%
+% This subsystem models the contact force between the gripper and the box
+% as a stiff spring-damper between multiple points on the gripper finger
+% and a square surface on the box.  This requires more computation, but is
+% a more realistic way to model the contact force.  It can model cases
+% where the box and the gripper are misaligned.
+% 
+% <matlab:open_system('youBot_Arm');open_system('youBot_Arm/Arm/Environment/Gripper%20Force/Penalty'); Open Subsystem>
+
+youBot_configureLoad('youBot_Arm','Penalty');
+set_param('youBot_Arm/Arm/Environment/Gripper Force/Penalty','LinkStatus','none')
+open_system('youBot_Arm/Arm/Environment/Gripper Force/Penalty','force')
+
+%% Input Subsystem
+%
+% This variant subsystem configures the inputs to the robot arm system.
+% The variants are configured to permit unit testing of individual
+% components of the system.
+% 
+% The *Control* variant implements the supervisory logic for the entire
+% system.  The *Signals* variant is an open loop test that can actuate any
+% or all of the joints and the conveyor belts.  The *Splines* variant is
+% used to test trajectories for transferring the box from one belt to the
+% other.  The *Control Belt* variant permits closed loop testing of the
+% conveyor belts and open loop testing of the robot arm.
+% 
+% <matlab:open_system('youBot_Arm');open_system('youBot_Arm/Input'); Open Subsystem>
+
+set_param('youBot_Arm/Input','LinkStatus','none')
+open_system('youBot_Arm/Input','force')
+
+%% Logic Subsystem
+%
+% This state chart implements the supervisory logic for the robot arm,
+% robot gripper, and both conveyor belts.  Information from sensors in the
+% model come in as input signals, and outputs from the state chart will
+% control movement of the robot arm and conveyor belts.  During simulation,
+% the state chart is animated to show the active state in each chart.
+%
+% All four state charts are interconnected.  Events in one state chart
+% trigger actions in others.  For example, in state chart *BeltIn*, when the
+% light curtain on the belt is blocked, input |BeltIn_LC=0|. That condition
+% permits the *BeltIn* state chart to transition to state _BoxReady_. As the
+% BeltIn state chart transitions to state _BoxReady_, the belt will be turned
+% off (BeltIn_En=0). The event *GetBox* will be broadcast to state chart
+% *Robot*, which causes that state chart to transition from *StartHome* or
+% *Home* to *GoBeltIn*. Entering state *GoBeltIn* sets output |Way|, which
+% controls the commands sent to the robot joints.
+% 
+% <matlab:open_system('youBot_Arm');open_system('youBot_Arm/Input/Control/Logic','force'); Open Subsystem>
+
+set_param('youBot_Arm/Input/Control/Logic','LinkStatus','none')
+open_system('youBot_Arm/Input/Control/Logic','force')
+
+%% Simulation Results from Simscape Logging
+%%
+%
+% The plot below shows the current drawn by all motors in the youBot
+% robotic arm.
+%
+
+youBot_configureTest(bdroot,'Default')
+close_system('youBot_Arm/Arm/Actuation/Motion');
+close_system('youBot_Arm/Arm/Environment/Gripper Force/Damper/Gripper Force');
+close_system('youBot_Arm/Arm/Environment/Gripper Force/Damper');
+close_system('youBot_Arm/Arm/Actuation/Motion');
+open_system('youBot_Arm')
+set_param(bdroot,'StartFcn','tic');
+set_param(bdroot,'StopFcn','Elapsed_Sim_Time = toc;');
+sim(bdroot,'StopTime','0.01');
+sim(bdroot)
+youBot_publishTest(1).Config = 'Default';
+youBot_publishTest(1).numSteps = length(tout);
+youBot_publishTest(1).simTime = Elapsed_Sim_Time;
+youBot_Arm_plot1currents;
+
+%%
+%
+% The plot below shows the 3D trajectory of the box moved by the youBot
+% robotic arm.
+%
+
+
+youBot_Arm_plot2boxposition;
+%%
+%
+% The plot below shows the torque or force for each motor in the youBot
+% robotic arm.
+%
+
+
+youBot_Arm_plot3torques;
+%%
+%
+% The plot below shows the positions of the joints in the youBot robotic
+% arm.
+%
+
+
+youBot_Arm_plot4jointangles;
+%%
+%
+% The plot below shows the constraint forces for each joint in the youBot
+% robotic arm.
+%
+
+
+youBot_Arm_plot5constraintforce;
+
+%%
+%clear all
+close all
+bdclose all
+
+##### SOURCE END #####
+-->
+</body>
+</html>

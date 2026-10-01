@@ -1,0 +1,170 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XMED-03",
+  "scenarios": [
+    {
+      "id": "nominal_targets",
+      "target_tv1_initial_mL": 450,
+      "target_tv1_final_mL": 450,
+      "target_tv2_initial_mL": 400,
+      "target_tv2_final_mL": 400,
+      "target_step_time_s": 10,
+      "patient1_resistance_cmH2O_per_Lps": 10,
+      "patient2_resistance_cmH2O_per_Lps": 12,
+      "patient1_compliance_L_per_cmH2O": 0.045,
+      "patient2_compliance_L_per_cmH2O": 0.04,
+      "respiratory_rate_bpm": 15,
+      "peep_cmH2O": 5,
+      "max_inspiratory_pressure_cmH2O": 30
+    },
+    {
+      "id": "compliance_mismatch",
+      "target_tv1_initial_mL": 420,
+      "target_tv1_final_mL": 420,
+      "target_tv2_initial_mL": 420,
+      "target_tv2_final_mL": 420,
+      "target_step_time_s": 9,
+      "patient1_resistance_cmH2O_per_Lps": 10,
+      "patient2_resistance_cmH2O_per_Lps": 10,
+      "patient1_compliance_L_per_cmH2O": 0.027,
+      "patient2_compliance_L_per_cmH2O": 0.068,
+      "respiratory_rate_bpm": 15,
+      "peep_cmH2O": 5,
+      "max_inspiratory_pressure_cmH2O": 30
+    },
+    {
+      "id": "resistance_mismatch",
+      "target_tv1_initial_mL": 430,
+      "target_tv1_final_mL": 430,
+      "target_tv2_initial_mL": 430,
+      "target_tv2_final_mL": 430,
+      "target_step_time_s": 11,
+      "patient1_resistance_cmH2O_per_Lps": 24,
+      "patient2_resistance_cmH2O_per_Lps": 6,
+      "patient1_compliance_L_per_cmH2O": 0.045,
+      "patient2_compliance_L_per_cmH2O": 0.045,
+      "respiratory_rate_bpm": 15,
+      "peep_cmH2O": 5,
+      "max_inspiratory_pressure_cmH2O": 32
+    },
+    {
+      "id": "divergent_target_step",
+      "target_tv1_initial_mL": 450,
+      "target_tv1_final_mL": 340,
+      "target_tv2_initial_mL": 350,
+      "target_tv2_final_mL": 520,
+      "target_step_time_s": 10,
+      "patient1_resistance_cmH2O_per_Lps": 12,
+      "patient2_resistance_cmH2O_per_Lps": 12,
+      "patient1_compliance_L_per_cmH2O": 0.045,
+      "patient2_compliance_L_per_cmH2O": 0.045,
+      "respiratory_rate_bpm": 15,
+      "peep_cmH2O": 5,
+      "max_inspiratory_pressure_cmH2O": 32
+    },
+    {
+      "id": "rapid_low_compliance",
+      "target_tv1_initial_mL": 360,
+      "target_tv1_final_mL": 410,
+      "target_tv2_initial_mL": 360,
+      "target_tv2_final_mL": 390,
+      "target_step_time_s": 8,
+      "patient1_resistance_cmH2O_per_Lps": 18,
+      "patient2_resistance_cmH2O_per_Lps": 20,
+      "patient1_compliance_L_per_cmH2O": 0.027,
+      "patient2_compliance_L_per_cmH2O": 0.03,
+      "respiratory_rate_bpm": 24,
+      "peep_cmH2O": 6,
+      "max_inspiratory_pressure_cmH2O": 35
+    },
+    {
+      "id": "slow_high_peep",
+      "target_tv1_initial_mL": 500,
+      "target_tv1_final_mL": 430,
+      "target_tv2_initial_mL": 420,
+      "target_tv2_final_mL": 480,
+      "target_step_time_s": 12,
+      "patient1_resistance_cmH2O_per_Lps": 8,
+      "patient2_resistance_cmH2O_per_Lps": 16,
+      "patient1_compliance_L_per_cmH2O": 0.06,
+      "patient2_compliance_L_per_cmH2O": 0.035,
+      "respiratory_rate_bpm": 12,
+      "peep_cmH2O": 10,
+      "max_inspiratory_pressure_cmH2O": 30
+    },
+    {
+      "id": "crossed_mechanics",
+      "target_tv1_initial_mL": 380,
+      "target_tv1_final_mL": 500,
+      "target_tv2_initial_mL": 500,
+      "target_tv2_final_mL": 330,
+      "target_step_time_s": 9,
+      "patient1_resistance_cmH2O_per_Lps": 22,
+      "patient2_resistance_cmH2O_per_Lps": 7,
+      "patient1_compliance_L_per_cmH2O": 0.03,
+      "patient2_compliance_L_per_cmH2O": 0.065,
+      "respiratory_rate_bpm": 18,
+      "peep_cmH2O": 7,
+      "max_inspiratory_pressure_cmH2O": 34
+    },
+    {
+      "id": "joint_boundary",
+      "target_tv1_initial_mL": 320,
+      "target_tv1_final_mL": 520,
+      "target_tv2_initial_mL": 520,
+      "target_tv2_final_mL": 320,
+      "target_step_time_s": 11,
+      "patient1_resistance_cmH2O_per_Lps": 25,
+      "patient2_resistance_cmH2O_per_Lps": 23,
+      "patient1_compliance_L_per_cmH2O": 0.026,
+      "patient2_compliance_L_per_cmH2O": 0.069,
+      "respiratory_rate_bpm": 21,
+      "peep_cmH2O": 8,
+      "max_inspiratory_pressure_cmH2O": 35
+    }
+  ],
+  "contract": {
+    "policy_id": "simuverity-101-v1:xmed-03:scoring",
+    "simulation_stop_time_s": 24.0,
+    "aggregation": {
+      "critical_multi_scenario_performance": "minimum",
+      "groups": [
+        "G",
+        "A",
+        "Q",
+        "M",
+        "R",
+        "D"
+      ],
+      "weights": {
+        "A": 0.2,
+        "Q": 0.1,
+        "M": 0.4,
+        "R": 0.15,
+        "D": 0.15
+      }
+    },
+    "disclosure": "Evaluator-only scenario combinations and metric thresholds; all public input values remain inside the declared ranges."
+  },
+  "policy_id": "simuverity-101-v1:xmed-03:scoring",
+  "simulation_stop_time_s": 24.0,
+  "aggregation": {
+    "critical_multi_scenario_performance": "minimum",
+    "groups": [
+      "G",
+      "A",
+      "Q",
+      "M",
+      "R",
+      "D"
+    ],
+    "weights": {
+      "A": 0.2,
+      "Q": 0.1,
+      "M": 0.4,
+      "R": 0.15,
+      "D": 0.15
+    }
+  },
+  "disclosure": "Evaluator-only scenario combinations and metric thresholds; all public input values remain inside the declared ranges."
+}

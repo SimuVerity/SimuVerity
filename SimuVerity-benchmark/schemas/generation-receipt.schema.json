@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simuverity.org/schemas/generation-receipt.schema.json",
+  "title": "SimuVerity generation receipt",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "task_id",
+    "generation_run_id",
+    "agent",
+    "model",
+    "score_eligible"
+  ],
+  "properties": {
+    "schema": {
+      "const": "simuverity.generation-receipt.v1"
+    },
+    "status": {
+      "enum": [
+        "GENERATION_COMPLETED",
+        "GENERATION_INFRA_ERROR",
+        "CANDIDATE_TIMEOUT",
+        "CANDIDATE_INVALID",
+        "PROTOCOL_INVALID"
+      ]
+    },
+    "failure_attribution": {
+      "enum": [
+        "",
+        "candidate",
+        "generation_infrastructure"
+      ]
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "generation_run_id": {
+      "type": "string"
+    },
+    "agent": {
+      "enum": [
+        "codex",
+        "claude-code"
+      ]
+    },
+    "model": {
+      "type": "string"
+    },
+    "score_eligible": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": true
+}

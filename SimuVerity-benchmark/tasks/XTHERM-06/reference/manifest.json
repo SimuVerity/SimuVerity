@@ -1,0 +1,42 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XTHERM-06",
+  "file_count": 4,
+  "files": [
+    {
+      "path": "reference/files/bev_motor_cooling.slx",
+      "size_bytes": 125533
+    },
+    {
+      "path": "reference/files/Libraries/driver_maneuver_library.slx",
+      "size_bytes": 37489
+    },
+    {
+      "path": "reference/files/LICENSE.md",
+      "size_bytes": 1501
+    },
+    {
+      "path": "reference/files/Scripts_Data/bev_motor_cooling_param.m",
+      "size_bytes": 2093
+    }
+  ],
+  "entrypoint": "reference/files/bev_motor_cooling.slx",
+  "expected_score": 90.25634762703774,
+  "expected_valid_scenarios": 6,
+  "score_tolerance": 1e-12,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal",
+      "cool_boundary",
+      "hot_boundary",
+      "low_flow",
+      "cooling_loss",
+      "hot_low_flow"
+    ],
+    "nominal_scenario_id": "nominal",
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 166616,
+  "excluded_files": []
+}

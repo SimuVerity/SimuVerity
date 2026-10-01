@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "run_id": "deepseek-v4-pro-claude-code-101",
+  "benchmark_release": "simuverity-101-v1",
+  "taskset_id": "simuverity-101-v1",
+  "model": "DeepSeek-V4-Pro",
+  "harness": "Claude Code",
+  "condition": null,
+  "task_count": 101,
+  "scored_count": 267,
+  "protocol_zero_count": 117,
+  "score_sum": "2868.302156",
+  "score_mean": "28.399031",
+  "delivered_count": 294,
+  "native_executable_count": 267,
+  "g_pass_count": 186,
+  "repeat_count": 3,
+  "result_count": 303
+}

@@ -1,0 +1,17 @@
+function out=sat_d008_startup_measurement(sig,spec,scenarioId)
+%SAT_D008_STARTUP_MEASUREMENT Cold-start DC-link/current evidence from public outputs.
+out=struct('schema',"simuverity.d008-direct-measurement.v1",'scenario',string(scenarioId),'valid',false,'detail',"UNINITIALIZED",'cold_start',struct());if ~isstruct(spec)||~isfield(spec,'id')||string(spec.id)~="D008",out.detail="NOT_D008";return;end,if ~isstruct(sig)||~all(isfield(sig,{'Vdc','Icomp'})),out.detail="PHYSICAL_OUTPUTS_MISSING";return;end
+v=component(sig.Vdc,50,"mean",399);i=component(sig.Icomp,50,"rms",NaN);out.cold_start=combine(v,i);out.valid=out.cold_start.valid;out.detail=tern(out.valid,"OK","COLD_START_INVALID");
+end
+function o=component(s,f,mode,target),o=struct('valid',false,'mode',mode,'cycle_time',zeros(0,1),'cycle_value',zeros(0,1),'target',NaN,'relative_error',zeros(0,1),'settling_tolerance',.10,'grace_cycles',2,'settling_time_s',NaN,'settling_time_fraction',NaN,'normalized_iae',NaN,'q_time',0,'q_excess',0,'q',0);if ~validsig(s),return;end,t=double(s.t(:));Y=double(s.Y);T=1/f;n=floor((t(end)-t(1))/T+1e-9);if n<4,return;end,e=t(1)+(0:n)*T;z=nan(n,size(Y,2));for k=1:n,ix=t>e(k)&t<e(k+1);tt=[e(k);t(ix);e(k+1)];yy=[interp1(t,Y,e(k),'linear','extrap');Y(ix,:);interp1(t,Y,e(k+1),'linear','extrap')];if mode=="mean",z(k,:)=trapz(tt,yy,1)/T;else,z(k,:)=sqrt(trapz(tt,yy.^2,1)/T);end,end,if ~isfinite(target),target=mean(z(end-1:end,:),1);end,scale=max(abs(target),max(1e-9,.01*max(abs(z),[],'all')));err=max(abs(z-target)./scale,[],2);u=utility(err,e,.10,2);o.valid=true;o.cycle_time=e(2:end).';o.cycle_value=z;o.target=target;o.relative_error=err;o.settling_time_s=u.ts;o.settling_time_fraction=u.tf;o.normalized_iae=u.iae;o.q_time=u.q_time;o.q_excess=u.q_excess;o.q=u.q;end
+function o=combine(a,b),o=struct('schema',"simuverity.d008-cold-start.v1",'valid',a.valid&&b.valid,'scope',"dc_link_and_reactive_current_establishment",'score_role',"score-bearing",'components',struct('dc_link',a,'compensation_current',b),'q',0,'settling_time_s',NaN,'normalized_iae',NaN);if o.valid,o.q=sqrt(mean([a.q b.q])*min([a.q b.q]));o.settling_time_s=max(a.settling_time_s,b.settling_time_s);o.normalized_iae=max(a.normalized_iae,b.normalized_iae);end,end
+function o=utility(err,e,band,graceCycles)
+% Score cold start in fundamental cycles.  The two-cycle grace is explicit;
+% after it, the time to remain inside the public 10% establishment band and
+% the mean error area above that band receive piecewise quality anchors.
+% A never-settled trace has q_time=0, so no fitted multiplier can rescue it.
+n=numel(err);g=min(max(round(graceCycles),0),max(n-1,0));ew=err(g+1:end);k=find(arrayfun(@(j)all(ew(j:end)<=band),1:numel(ew)),1);if isempty(k),tf=1;ts=e(end)-e(1);else,tf=(k-1)/max(numel(ew),1);ts=e(g+k)-e(1);end,iae=mean(min(max(ew-band,0),2));qt=anchor(tf,[0 .10 .25 .50 .75 1],[1 1 .97 .90 .65 0]);qe=anchor(iae,[0 .02 .05 .10 .25 .50 1 2],[1 1 .98 .95 .88 .75 .40 0]);o=struct('ts',ts,'tf',tf,'iae',iae,'q_time',qt,'q_excess',qe,'q',sqrt(mean([qt qe])*min([qt qe])));
+end
+function q=anchor(v,x,y),if ~isfinite(v),q=0;return;end,v=min(max(double(v),x(1)),x(end));q=interp1(x,y,v,'linear');end
+function ok=validsig(s),ok=isstruct(s)&&isfield(s,'t')&&isfield(s,'Y')&&numel(s.t)>=16&&size(s.Y,1)==numel(s.t)&&all(isfinite(s.t))&&all(isfinite(s.Y),'all')&&all(diff(double(s.t(:)))>0);end
+function x=tern(c,a,b),if c,x=a;else,x=b;end,end

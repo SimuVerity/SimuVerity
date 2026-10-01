@@ -1,0 +1,24 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XBATT-09",
+  "materialization": "local_importer",
+  "entrypoint": "disconnectedCellDetection.slx",
+  "recipe": "reference/importer_recipe.json",
+  "transform": "reference/transform.m",
+  "clean_replay_setup": {
+    "phase": "before_load",
+    "path": "tasks/XBATT-09/reference/clean_replay_setup/f90_xbatt09_reference_clean_replay_setup.m",
+    "entrypoint": "f90_xbatt09_reference_clean_replay_setup"
+  },
+  "retained_file_count": 0,
+  "retained_bytes": 0,
+  "excluded_files": [],
+  "expected_source_file_count": 3,
+  "official_live_script_completion": {
+    "VoltageChangeDetectionThreshold": "1e-5",
+    "VoltageChangePar": "0.015",
+    "QualTime": "5",
+    "VariableName": "batteryCurrentValidation",
+    "semantic_basis": "R2025a DisconnectedCellDetectionExample.mlx"
+  }
+}

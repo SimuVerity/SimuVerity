@@ -1,0 +1,88 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XMED-09",
+  "scenarios": [
+    {
+      "id": "nominal_impaired_sliding",
+      "class": "nominal",
+      "CardiacConditionMode": 1,
+      "LVADConnected": 1,
+      "AssistControllerMode": 1,
+      "BaroreflexEnabled": 1,
+      "ResistanceVariationEnabled": 1,
+      "ElastanceVariationEnabled": 1
+    },
+    {
+      "id": "healthy_assisted",
+      "class": "mechanism",
+      "CardiacConditionMode": 0,
+      "LVADConnected": 1,
+      "AssistControllerMode": 1,
+      "BaroreflexEnabled": 1,
+      "ResistanceVariationEnabled": 1,
+      "ElastanceVariationEnabled": 1
+    },
+    {
+      "id": "impaired_unassisted",
+      "class": "safety_boundary",
+      "CardiacConditionMode": 1,
+      "LVADConnected": 0,
+      "AssistControllerMode": 1,
+      "BaroreflexEnabled": 1,
+      "ResistanceVariationEnabled": 1,
+      "ElastanceVariationEnabled": 1
+    },
+    {
+      "id": "pid_assist",
+      "class": "control",
+      "CardiacConditionMode": 1,
+      "LVADConnected": 1,
+      "AssistControllerMode": 0,
+      "BaroreflexEnabled": 1,
+      "ResistanceVariationEnabled": 1,
+      "ElastanceVariationEnabled": 1
+    },
+    {
+      "id": "baroreflex_disabled",
+      "class": "control",
+      "CardiacConditionMode": 1,
+      "LVADConnected": 1,
+      "AssistControllerMode": 1,
+      "BaroreflexEnabled": 0,
+      "ResistanceVariationEnabled": 1,
+      "ElastanceVariationEnabled": 1
+    },
+    {
+      "id": "fixed_resistance_elastance",
+      "class": "combined",
+      "CardiacConditionMode": 1,
+      "LVADConnected": 1,
+      "AssistControllerMode": 1,
+      "BaroreflexEnabled": 1,
+      "ResistanceVariationEnabled": 0,
+      "ElastanceVariationEnabled": 0
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "stop_time_s": 60.0,
+      "sample_time_s": 0.001,
+      "evidence_points": 1501
+    },
+    "scenario_contract": {
+      "count": 6,
+      "critical_aggregation": "worst valid private scenario",
+      "runtime_only_reference_mapping": "six published top-level source mode switches; no core edits"
+    }
+  },
+  "simulation": {
+    "stop_time_s": 60.0,
+    "sample_time_s": 0.001,
+    "evidence_points": 1501
+  },
+  "scenario_contract": {
+    "count": 6,
+    "critical_aggregation": "worst valid private scenario",
+    "runtime_only_reference_mapping": "six published top-level source mode switches; no core edits"
+  }
+}

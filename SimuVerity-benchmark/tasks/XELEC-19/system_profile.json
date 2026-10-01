@@ -1,0 +1,107 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XELEC-19",
+  "collection": "XELEC",
+  "reference": {
+    "identity_path": "tasks/XELEC-19/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/MLI17.slx",
+    "model_path": "tasks/XELEC-19/reference/files/MLI17.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id D019",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a three-phase multilevel inverter with an explicit power stage made from discrete controllable semiconductor switches rather than a preassembled bridge block.",
+    "engineering_objects": [
+      "D019 plant and controller described by the current public task contract",
+      "Measured output interfaces: Vout"
+    ],
+    "physical_paths": [
+      "A DC source must feed the multilevel switching stage, which must supply a balanced three-phase load."
+    ],
+    "functional_paths": [
+      "Build a three-phase multilevel inverter with an explicit power stage made from discrete controllable semiconductor switches rather than a preassembled bridge block."
+    ],
+    "information_paths": [
+      "P_load -> D019 plant/control path -> Vout"
+    ],
+    "modes_and_events": [
+      "Build a three-phase multilevel inverter with an explicit power stage made from discrete controllable semiconductor switches rather than a preassembled bridge block.",
+      "A DC source must feed the multilevel switching stage, which must supply a balanced three-phase load.",
+      "At nominal conditions one physically measured output phase must be a stepped bipolar 50 Hz waveform near 412 V peak-to-peak, and it must remain at the intended frequency and voltage level across the stated load envelope."
+    ],
+    "interfaces": [
+      {
+        "name": "P_load",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [],
+        "range_or_shape": "Read P_load from a base-workspace variable; its nominal value is 500 W and its operating envelope is +/-10%.",
+        "source": "tasks/XELEC-19/public_spec.json"
+      },
+      {
+        "name": "Vout",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "V"
+        ],
+        "range_or_shape": "Log that physical output phase voltage as a complete-run MATLAB Timeseries named Vout.",
+        "source": "tasks/XELEC-19/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a three-phase multilevel inverter with an explicit power stage made from discrete controllable semiconductor switches rather than a preassembled bridge block.",
+      "A DC source must feed the multilevel switching stage, which must supply a balanced three-phase load.",
+      "At nominal conditions one physically measured output phase must be a stepped bipolar 50 Hz waveform near 412 V peak-to-peak, and it must remain at the intended frequency and voltage level across the stated load envelope."
+    ],
+    "feedback_and_control_causality": [
+      "Build a three-phase multilevel inverter with an explicit power stage made from discrete controllable semiconductor switches rather than a preassembled bridge block."
+    ],
+    "signal_sources": [
+      "P_load is read from the public MATLAB base-workspace input contract.",
+      "Vout is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "P_load: Read P_load from a base-workspace variable; its nominal value is 500 W and its operating envelope is +/-10%."
+    ],
+    "disturbances": [
+      "A DC source must feed the multilevel switching stage, which must supply a balanced three-phase load.",
+      "Read P_load from a base-workspace variable;",
+      "At nominal conditions one physically measured output phase must be a stepped bipolar 50 Hz waveform near 412 V peak-to-peak, and it must remain at the intended frequency and voltage level across the stated load envelope."
+    ],
+    "dynamic_processes": [
+      "Build a three-phase multilevel inverter with an explicit power stage made from discrete controllable semiconductor switches rather than a preassembled bridge block.",
+      "A DC source must feed the multilevel switching stage, which must supply a balanced three-phase load.",
+      "At nominal conditions one physically measured output phase must be a stepped bipolar 50 Hz waveform near 412 V peak-to-peak, and it must remain at the intended frequency and voltage level across the stated load envelope."
+    ],
+    "task_specific_shortcuts": [
+      "D019: prescribing Vout directly would bypass the system path described by: A DC source must feed the multilevel switching stage, which must supply a balanced three-phase load.",
+      "D019: replaying a fixed Vout trace would ignore causal variation in P_load."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XELEC-19/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XELEC-19/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XELEC-19/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

@@ -1,0 +1,99 @@
+component(Propagation=Blocks) coolingPlateConnector
+    % Cooling Plate Connector:2.5
+
+    % Copyright 2025 The MathWorks, Inc.
+
+    annotations
+        UILayout = [UIGroup('physmod:battery:library:gui:thermal:coolingPlateWithParallelChannels:Interface',...
+            numBattThermalNodes,dimensionThermalNodes,locationThermalNodes,plateDimX,plateDimY)
+        UIGroup('physmod:battery:library:gui:thermal:coolingPlateWithParallelChannels:PlateMaterial',...
+            plateTh,plateThCond,plateDen,plateCp,plateTemp_ini)];
+    end
+
+    for numNode = 1:numBattThermalNodes
+        nodes
+            Batt(numNode) = foundation.thermal.thermal; % B
+        end
+    end
+
+    for i = 1:numFluidElem
+        nodes
+            Cool(i) = foundation.thermal.thermal; % H
+        end
+    end
+
+    outputs
+        plotPlateT = {zeros(1,plateDimX*plateDimY),'K'}; % Tp
+    end
+
+    annotations
+        Batt : Side=Left;
+        Cool : Side=Right;
+        plotPlateT : Side=Right;
+    end
+
+    parameters
+        plateTh = {2e-3,'m'};               % Thickness of cooling plate material
+        plateThCond = {20,'W/(m * K)'};     % Thermal conductivity of cooling plate material
+        plateDen = {2500, 'kg/m^3'};        % Density of cooling plate material
+        plateCp = {447, 'J/(kg*K)'};        % Specific heat of cooling plate material
+        plateTemp_ini = {300, 'K'};         % Initial temperature of the cooling plate and the coolant fluid        
+    end
+
+    parameters(Access=public, ExternalAccess=observe)
+        plateDimX = 2;                      % Number of partitions in X dimension for the cooling plate
+        plateDimY = 5;                      % Number of partitions in Y dimension for the cooling plate
+
+        numBattThermalNodes = 1;           % Number of battery thermal nodes
+        dimensionThermalNodes = ones(1,2); % Dimension of battery thermal nodes
+        locationThermalNodes = ones(1,2);  % Coordinates of battery thermal nodes
+
+        numFluidElem = 10;                  % Specify number of cooling system thermal nodes
+        connfluidToPlateMat = ones(10,2);   % Specify connection matrix for fluid system to solid plate
+    end
+
+    parameters(ExternalAccess=none)
+        plateConnectivity = simscape.battery.enum.thermal.coolingPlateConnectivity.singleSided; % Battery Connectivity
+    end
+
+    % Error Checks
+    equations
+        assert(mod(plateDimX,1) == 0);
+        assert(mod(plateDimY,1) == 0);
+        assert(numBattThermalNodes > 0);
+        assert(plateTh > 0);
+        assert(plateThCond > 0);
+        assert(plateDen > 0);
+        assert(plateCp > 0);
+    end
+
+    parameters(Access=private)
+        plateThickness = plateTh;
+    end
+
+    components(ExternalAccess=none)
+        thrmlRef = foundation.thermal.elements.reference;
+        coolingPlateFlatSurf = batt.thermal.coolingPlateFlatSheet(...
+            plateDimX=plateDimX,plateDimY=plateDimY,...
+            numBattThermalNodes=numBattThermalNodes,...
+            dimensionThermalNodes=dimensionThermalNodes,...
+            locationThermalNodes=locationThermalNodes,plateTh=plateThickness,...
+            plateThCond=plateThCond,plateDen=plateDen,plateCp=plateCp,...
+            plateTemp_ini=plateTemp_ini);
+    end
+
+    equations
+        plotPlateT == coolingPlateFlatSurf.plotPlateT;
+    end
+
+    connections
+        connect(Batt,coolingPlateFlatSurf.battNodes);
+    end
+
+    % Bundle of thermal nodes from cooling plate thermal elements
+    for i = 1:numFluidElem
+        connections
+            connect(Cool(i), coolingPlateFlatSurf.XY(connfluidToPlateMat(i,1),connfluidToPlateMat(i,2)));
+        end
+    end
+end

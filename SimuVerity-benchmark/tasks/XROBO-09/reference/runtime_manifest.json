@@ -1,0 +1,17 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XROBO-09",
+  "materialization": "local_importer",
+  "entrypoint": "MarineVessel/Model/ASVDemo.slx",
+  "recipe": "reference/importer_recipe.json",
+  "transform": "reference/transform.m",
+  "retained_file_count": 0,
+  "retained_bytes": 0,
+  "excluded_files": [],
+  "clean_replay_setup": {
+    "phase": "before_load",
+    "path": "tasks/XROBO-09/reference/clean_replay_setup/f90_xrobo09_reference_clean_replay_setup.m",
+    "entrypoint": "f90_xrobo09_reference_clean_replay_setup"
+  },
+  "expected_source_file_count": 195
+}

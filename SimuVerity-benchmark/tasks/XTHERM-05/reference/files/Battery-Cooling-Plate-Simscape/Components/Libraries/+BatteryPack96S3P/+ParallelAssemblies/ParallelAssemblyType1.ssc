@@ -1,0 +1,133 @@
+component ParallelAssemblyType1
+    % ParallelAssemblyType1:2
+    % Parallel Assembly Block
+    %    Model resolution: Lumped
+    %    Number of cells: 3
+    %
+    %    MATLAB version: 25.1
+    %    Simscape Battery version: 25.1
+    %    Simscape code generated on: 29-Jan-2026 13:58:06
+
+    % Copyright 2025 - 2026 The MathWorks, Inc.
+
+    parameters
+        BatteryCapacityCell = {27,'A*hr'}; % Battery capacity
+        ExtrapolationMethodCell = {simscape.enum.extrapolation.nearest,'1'}; % Extrapolation method for all tables
+        SOCBreakpointsCell = {[0, .1, .25, .5, .75, .9, 1],'1'}; % State of charge breakpoints, SOC
+        TemperatureBreakpointsCell = {[278, 293, 313],'K'}; % Temperature breakpoints, T
+        OpenCircuitVoltageThermalCell = {[3.49, 3.5, 3.51; 3.55, 3.57, 3.56; 3.62, 3.63, 3.64; 3.71, 3.71, 3.72; 3.91, 3.93, 3.94; 4.07, 4.08, 4.08; 4.19, 4.19, 4.19],'V'}; % Open-circuit voltage, OCV(SOC,T)
+        VoltageRangeCell = {[0, inf],'V'}; % Terminal voltage operating range, [Min Max]
+        ResistanceSOCBreakpointsCell = {[0, .1, .25, .5, .75, .9, 1],'1'}; % State of charge breakpoints for resistance, SOC
+        ResistanceTemperatureBreakpointsCell = {[278, 293, 313],'K'}; % Temperature breakpoints for resistance, T
+        R0ThermalCell = {[.0117, .0085, .009; .011, .0085, .009; .0114, .0087, .0092; .0107, .0082, .0088; .0107, .0083, .0091; .0113, .0085, .0089; .0116, .0085, .0089],'Ohm'}; % Instantaneous resistance, R0(SOC,T)
+        BatteryThermalMassCell = {100,'J/K'}; % Battery thermal mass
+        NumThermalModelsCell = {6,'1'}; % Number of thermal models
+        ThermalConductivityZCell = {18,'W/(K*m)'}; % Thermal conductivity in Z dimension
+        CrossSectionalAreaXYCell = {3.5e-4,'m^2'}; % Cross-sectional area in XY dimension
+        HeightCell = {0.07,'m'}; % Cell height
+        CoolantResistance = {1.2,'K/W'}; % Cell level coolant thermal path resistance
+    end
+
+    parameters(ExternalAccess=none)
+        P = 3; % Batteries in Parallel
+        NumCellThermalNodeElements = size(BattEqCircuitCell(1).HDistributed,1); % NumCellThermalNodeElements
+    end
+
+    parameters(Access=private)
+        CoolantResistanceScaled = CoolantResistance .* ones(1,1) /P; % Scaled cell level coolant thermal path resistance
+    end
+
+    nodes
+        p = foundation.electrical.electrical; % +
+        n = foundation.electrical.electrical; % -
+        BottomExtClnt = foundation.thermal.thermal; % CPB
+    end
+
+    variables
+        socCell = {value={1,'1'},priority=priority.high}; % Cell state of charge
+        batteryVoltage = {0,'V'}; % Terminal voltage
+        batteryCurrent = {0,'A'}; % Current (positive in)
+        numCycles = {value={0,'1'},priority=priority.high}; % Discharge cycles
+        batteryTemperature = {value={298.15,'K'},priority=priority.high}; % Temperature
+        vParallelAssembly = {value={0,'V'},priority=priority.none}; % Parallel Assembly Voltage
+        socParallelAssembly = {value={1,'1'},priority=priority.none}; % Parallel Assembly state of charge
+    end
+
+    intermediates
+        power_dissipated = BattEqCircuitCell.power_dissipated*(P-1); % Power dissipated by P-1 cells
+    end
+
+    equations
+        assert(length(socCell) == 1);
+        assert(length(batteryVoltage) == 1);
+        assert(length(batteryCurrent) == 1);
+        assert(length(numCycles) == 1);
+        assert(length(batteryTemperature) == 1);
+        assert(length(vParallelAssembly) == 1);
+        assert(length(socParallelAssembly) == 1);
+        vParallelAssembly == BattEqCircuitCell(1).p.v - BattEqCircuitCell(1).n.v;
+        socParallelAssembly == BattEqCircuitCell.stateOfCharge;
+        BattEqCircuitCell.stateOfCharge == socCell;
+        BattEqCircuitCell.batteryVoltage == batteryVoltage;
+        BattEqCircuitCell.batteryCurrent == batteryCurrent;
+        BattEqCircuitCell.numCycles == numCycles;
+        BattEqCircuitCell.batteryTemperature == batteryTemperature;
+    end
+
+    components(ExternalAccess=observe)
+        BattEqCircuitCell = batt.cells.batteryEquivalentCircuit(BatteryCapacity = BatteryCapacityCell,ExtrapolationMethod = ExtrapolationMethodCell,...
+            SOCBreakpoints = SOCBreakpointsCell,...
+            TemperatureBreakpoints = TemperatureBreakpointsCell,...
+            OpenCircuitVoltageThermal = OpenCircuitVoltageThermalCell,VoltageRange = VoltageRangeCell,...
+            ResistanceSOCBreakpoints = ResistanceSOCBreakpointsCell,...
+            ResistanceTemperatureBreakpoints = ResistanceTemperatureBreakpointsCell,R0Thermal = R0ThermalCell,...
+            BatteryThermalMass = BatteryThermalMassCell,NumThermalModels = NumThermalModelsCell,...
+            ThermalConductivityZ = ThermalConductivityZCell,...
+            CrossSectionalAreaXY = CrossSectionalAreaXYCell,Height = HeightCell,...
+            CurrentDependence = simscape.battery.enum.cells.CurrentDependence.Disabled,...
+            SelfDischargeResistor = simscape.battery.enum.cells.BatteryEnable.Disabled,...
+            RCPairs = simscape.battery.enum.cells.RCPairs.noDynamics,...
+            CyclingAgingMethod = simscape.battery.enum.cells.CyclingAgingMethod.disabled,...
+            CalendarAgeResistance = simscape.battery.enum.cells.BatteryEnable.Disabled,...
+            CalendarAgeCapacity = simscape.battery.enum.cells.BatteryEnable.Disabled,...
+            ThermalModel = simscape.battery.enum.cells.BatteryThermalModel.HeightDistributedMass,...
+            HysteresisModel = simscape.battery.enum.cells.HysteresisModel.none,...
+            ReversibleHeatModel = simscape.battery.enum.cells.ReversibleHeatModel.Disabled,...
+            CalendarAgingMethod = simscape.battery.enum.cells.CalendarAgingMethod.equation,...
+            StorageVariable = simscape.battery.enum.cells.StorageVariable.OCV,...
+            stateOfCharge.priority = priority.none,batteryVoltage.priority = priority.none,...
+            batteryCurrent.priority = priority.none,numCycles.priority = priority.none,...
+            batteryTemperature.priority = priority.none);
+        CoolantResistanceBottom = foundation.thermal.elements.resistance(resistance = CoolantResistanceScaled(end));
+    end
+
+    components(Access=private)
+        PositiveAdapter = BatteryPack96S3PLumpingAdapters.ElectricalLumpingAdapter(...
+            CellsInParallel = P);
+        NegativeAdapter = BatteryPack96S3PLumpingAdapters.ElectricalLumpingAdapter(...
+            CellsInParallel = P);
+        ThermalAdapter = repmat(BatteryPack96S3PLumpingAdapters.ThermalLumpingAdapter(...
+            CellsInParallel = P),NumCellThermalNodeElements,1);
+    end
+
+    connections
+        connect([BattEqCircuitCell.HDistributed],[ThermalAdapter.CellNode]');
+        connect(n,NegativeAdapter.LumpedNode);
+        connect(NegativeAdapter.CellNode,BattEqCircuitCell.n);
+        connect(p,PositiveAdapter.LumpedNode);
+        connect(PositiveAdapter.CellNode,BattEqCircuitCell.p);
+        connect([ThermalAdapter(end).LumpedNode]',CoolantResistanceBottom.A);
+        connect(BottomExtClnt,CoolantResistanceBottom.B);
+    end
+
+    annotations
+        [p] : Side=top;
+        [n] : Side=bottom;
+        [BottomExtClnt] : Side=bottom;
+        UILayout = [UIGroup("Main",BatteryCapacityCell,ExtrapolationMethodCell),...
+            UIGroup("Open Circuit Voltage",SOCBreakpointsCell,TemperatureBreakpointsCell,OpenCircuitVoltageThermalCell,VoltageRangeCell),...
+            UIGroup("Overpotential",ResistanceSOCBreakpointsCell,ResistanceTemperatureBreakpointsCell,R0ThermalCell),...
+            UIGroup("Thermal",BatteryThermalMassCell,NumThermalModelsCell,ThermalConductivityZCell,CrossSectionalAreaXYCell,HeightCell,CoolantResistance)];
+        Icon = 'parallelAssembly.svg';
+    end
+end

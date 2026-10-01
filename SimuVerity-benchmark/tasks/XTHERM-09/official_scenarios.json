@@ -1,0 +1,120 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XTHERM-09",
+  "scenarios": [
+    {
+      "id": "nominal",
+      "PassengerCount": 150,
+      "EquipmentHeat_W": 20000,
+      "BleedPressure_kPa": 250,
+      "BleedTemperature_degC": 180,
+      "OzoneRemovalFraction": 0.8
+    },
+    {
+      "id": "occupancy_boundary",
+      "PassengerCount": 200,
+      "EquipmentHeat_W": 20000,
+      "BleedPressure_kPa": 250,
+      "BleedTemperature_degC": 180,
+      "OzoneRemovalFraction": 0.8
+    },
+    {
+      "id": "thermal_boundary",
+      "PassengerCount": 150,
+      "EquipmentHeat_W": 30000,
+      "BleedPressure_kPa": 250,
+      "BleedTemperature_degC": 180,
+      "OzoneRemovalFraction": 0.8
+    },
+    {
+      "id": "bleed_boundary",
+      "PassengerCount": 150,
+      "EquipmentHeat_W": 20000,
+      "BleedPressure_kPa": 225,
+      "BleedTemperature_degC": 160,
+      "OzoneRemovalFraction": 0.8
+    },
+    {
+      "id": "ozone_boundary",
+      "PassengerCount": 150,
+      "EquipmentHeat_W": 20000,
+      "BleedPressure_kPa": 250,
+      "BleedTemperature_degC": 180,
+      "OzoneRemovalFraction": 0.6
+    },
+    {
+      "id": "joint_service",
+      "PassengerCount": 175,
+      "EquipmentHeat_W": 25000,
+      "BleedPressure_kPa": 235,
+      "BleedTemperature_degC": 170,
+      "OzoneRemovalFraction": 0.7
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "start_s": 0,
+      "stop_s": 6000,
+      "one_persistent_matlab_session": true
+    },
+    "groups": {
+      "G": "load, update, compile, six simulations, complete finite evidence, and connected physical/feedback paths",
+      "A": "cabin pressure, cabin temperature and ACM flow regulation",
+      "Q": "humidity, ozone and actuator-quality plausibility",
+      "M": "connected moist-air/ACM/cabin mechanism plus causal input response",
+      "R": "100 percent worst-case score over all required service conditions",
+      "D": "mission-transition tracking and recovery"
+    },
+    "weights": {
+      "A": 0.2,
+      "Q": 0.15,
+      "M": 0.3,
+      "R": 0.2,
+      "D": 0.15
+    },
+    "aggregation": {
+      "within_group": "weighted arithmetic mean",
+      "required_scenarios": "minimum",
+      "total": "G * 100 * A^0.20 * Q^0.15 * M^0.30 * R^0.20 * D^0.15"
+    },
+    "shortcut_minimum": [
+      "missing connected moist-air bleed-to-cabin and cabin-to-outflow path",
+      "missing compressor, turbine or both heat-exchanger roles",
+      "disconnected cabin pressure or temperature feedback",
+      "setpoint-copy or prerecorded required outputs",
+      "passenger, heat, bleed or ozone-removal inputs have no causal witness"
+    ]
+  },
+  "simulation": {
+    "start_s": 0,
+    "stop_s": 6000,
+    "one_persistent_matlab_session": true
+  },
+  "groups": {
+    "G": "load, update, compile, six simulations, complete finite evidence, and connected physical/feedback paths",
+    "A": "cabin pressure, cabin temperature and ACM flow regulation",
+    "Q": "humidity, ozone and actuator-quality plausibility",
+    "M": "connected moist-air/ACM/cabin mechanism plus causal input response",
+    "R": "100 percent worst-case score over all required service conditions",
+    "D": "mission-transition tracking and recovery"
+  },
+  "weights": {
+    "A": 0.2,
+    "Q": 0.15,
+    "M": 0.3,
+    "R": 0.2,
+    "D": 0.15
+  },
+  "aggregation": {
+    "within_group": "weighted arithmetic mean",
+    "required_scenarios": "minimum",
+    "total": "G * 100 * A^0.20 * Q^0.15 * M^0.30 * R^0.20 * D^0.15"
+  },
+  "shortcut_minimum": [
+    "missing connected moist-air bleed-to-cabin and cabin-to-outflow path",
+    "missing compressor, turbine or both heat-exchanger roles",
+    "disconnected cabin pressure or temperature feedback",
+    "setpoint-copy or prerecorded required outputs",
+    "passenger, heat, bleed or ozone-removal inputs have no causal witness"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema": "simuverity.scorer-manifest.v1",
+  "task_id": "XELEC-22",
+  "public_interface": "scorer.py:score",
+  "implementation": "scorer.py",
+  "source_modules": [
+    {
+      "module": "d16_offline_common",
+      "path": "vendor/scripts/unified/d16/shared/d16_offline_common.py"
+    },
+    {
+      "module": "d022_group_scoring",
+      "path": "vendor/scripts/unified/d16/tasks/d022/d022_group_scoring.py"
+    },
+    {
+      "module": "d022_total_scoring",
+      "path": "vendor/scripts/unified/d16/tasks/d022/d022_total_scoring.py"
+    }
+  ],
+  "final_module": {
+    "module": "d022_total_scoring",
+    "path": "vendor/scripts/unified/d16/tasks/d022/d022_total_scoring.py"
+  },
+  "payload_files": [],
+  "public_bridge": {
+    "mode": "function",
+    "function": "score_complete_groups",
+    "preprocessor": {
+      "module": "d022_group_scoring",
+      "function": "score_evidence",
+      "result": "group_scores"
+    }
+  }
+}

@@ -1,0 +1,129 @@
+component ParallelAssemblyType1
+    % ParallelAssemblyType1:2
+    % Parallel Assembly Block
+    %    Model resolution: Lumped
+    %    Number of cells: 32
+    %
+    %    MATLAB version: 25.1
+    %    Simscape Battery version: 25.1
+    %    Simscape code generated on: 13-Aug-2026 21:17:54
+
+    parameters
+        SOC_vecCell = {[0, .1, .25, .5, .75, .9, 1],'1'}; % Vector of state-of-charge values, SOC
+        T_vecCell = {[278, 293, 313],'K'}; % Vector of temperatures, T
+        V0_matCell = {[3.49, 3.5, 3.51; 3.55, 3.57, 3.56; 3.62, 3.63, 3.64; 3.71, 3.71, 3.72; 3.91, 3.93, 3.94; 4.07, 4.08, 4.08; 4.19, 4.19, 4.19],'V'}; % Open-circuit voltage, V0(SOC,T)
+        V_rangeCell = {[0, inf],'V'}; % Terminal voltage operating range [Min Max]
+        R0_matCell = {[.0117, .0085, .009; .011, .0085, .009; .0114, .0087, .0092; .0107, .0082, .0088; .0107, .0083, .0091; .0113, .0085, .0089; .0116, .0085, .0089],'Ohm'}; % Terminal resistance, R0(SOC,T)
+        AHCell = {27,'A*hr'}; % Cell capacity, AH
+        extrapolation_optionCell = {simscape.enum.extrapolation.nearest,'1'}; % Extrapolation method for all tables
+        thermal_massCell = {100,'J/K'}; % Thermal mass
+        CoolantResistance = {1.2,'K/W'}; % Cell level coolant thermal path resistance
+        AmbientResistance = {25,'K/W'}; % Cell level ambient thermal path resistance
+    end
+
+    parameters(ExternalAccess=none)
+        P = 32; % Batteries in Parallel
+        NumCellThermalNodeElements = size(Cell1(1).H,1); % NumCellThermalNodeElements
+    end
+
+    parameters(Access=private)
+        AmbientResistanceScaled = AmbientResistance .* ones(NumCellThermalNodeElements,1) /P * NumCellThermalNodeElements / size(AmbientResistance,1); % Scaled cell level ambient thermal path resistance
+        CoolantResistanceScaled = CoolantResistance .* ones(1,1) /P; % Scaled cell level coolant thermal path resistance
+    end
+
+    nodes
+        p = foundation.electrical.electrical; % +
+        n = foundation.electrical.electrical; % -
+        BottomExtClnt = foundation.thermal.thermal; % CPB
+        AmbH = foundation.thermal.thermal; % AmbH
+    end
+
+    variables
+        iCell = {0,'A'}; % Cell current (positive in)
+        vCell = {0,'V'}; % Cell terminal voltage
+        socCell = {value={1,'1'},priority=priority.high}; % Cell state of charge
+        numCyclesCell = {value={0,'1'},priority=priority.high}; % Cell discharge cycles
+        temperatureCell = {value={298.15,'K'},priority=priority.high}; % Cell temperature
+        vParallelAssembly = {value={0,'V'},priority=priority.none}; % Parallel Assembly Voltage
+        socParallelAssembly = {value={1,'1'},priority=priority.none}; % Parallel Assembly state of charge
+    end
+
+    intermediates
+        power_dissipated = Cell1.power_dissipated*(P-1); % Power dissipated by P-1 cells
+    end
+
+    equations
+        assert(length(iCell) == 1);
+        assert(length(vCell) == 1);
+        assert(length(socCell) == 1);
+        assert(length(numCyclesCell) == 1);
+        assert(length(temperatureCell) == 1);
+        assert(length(vParallelAssembly) == 1);
+        assert(length(socParallelAssembly) == 1);
+        vParallelAssembly == Cell1(1).p.v - Cell1(1).n.v;
+        socParallelAssembly == Cell1.stateOfCharge;
+        Cell1.i == iCell;
+        Cell1.v == vCell;
+        Cell1.stateOfCharge == socCell;
+        Cell1.num_cycles == numCyclesCell;
+        Cell1.cell_temperature == temperatureCell;
+    end
+
+    components(ExternalAccess=observe)
+        Cell1 = batteryecm.table_battery(SOC_vec = SOC_vecCell,...
+            T_vec = T_vecCell,V0_mat = V0_matCell,V_range = V_rangeCell,R0_mat = R0_matCell,...
+            AH = AHCell,extrapolation_option = extrapolation_optionCell,...
+            thermal_mass = thermal_massCell,SOC_port = simscape.enum.tablebattery.enable.no,...
+            T_dependence = simscape.enum.tablebattery.temperature_dependence.yes,...
+            prm_age_OCV = simscape.enum.tablebattery.prm_age_OCV.OCV,...
+            prm_age_capacity = simscape.enum.tablebattery.prm_age.disabled,...
+            prm_age_modeling = simscape.enum.tablebattery.prm_age_modeling.equation,...
+            prm_age_resistance = simscape.enum.tablebattery.prm_age.disabled,...
+            prm_dir = simscape.enum.tablebattery.prm_dir.noCurrentDirectionality,...
+            prm_dyn = simscape.enum.tablebattery.prm_dyn.off,prm_fade = simscape.enum.tablebattery.prm_fade.disabled,...
+            prm_leak = simscape.enum.tablebattery.prm_leak.disabled,...
+            thermal_port = simscape.enum.thermaleffects.model,i.priority = priority.none,...
+            v.priority = priority.none,stateOfCharge.priority = priority.none,...
+            num_cycles.priority = priority.none,cell_temperature.priority = priority.none);
+        CoolantResistanceBottom = foundation.thermal.elements.resistance(resistance = CoolantResistanceScaled(end));
+    end
+
+    components(Access=private)
+        PositiveAdapter = cylPackParChnlsLumpedLumpingAdapters.ElectricalLumpingAdapter(...
+            CellsInParallel = P);
+        NegativeAdapter = cylPackParChnlsLumpedLumpingAdapters.ElectricalLumpingAdapter(...
+            CellsInParallel = P);
+        ThermalAdapter = repmat(cylPackParChnlsLumpedLumpingAdapters.ThermalLumpingAdapter(...
+            CellsInParallel = P),NumCellThermalNodeElements,1);
+    end
+
+    connections
+        connect([Cell1.H],[ThermalAdapter.CellNode]');
+        connect(n,NegativeAdapter.LumpedNode);
+        connect(NegativeAdapter.CellNode,Cell1.n);
+        connect(p,PositiveAdapter.LumpedNode);
+        connect(PositiveAdapter.CellNode,Cell1.p);
+        connect([ThermalAdapter(end).LumpedNode]',CoolantResistanceBottom.A);
+        connect(BottomExtClnt,CoolantResistanceBottom.B);
+        connect([ThermalAdapter.LumpedNode],[AmbientResistor.A]);
+        connect(AmbientResistor(:).B,AmbH);
+    end
+
+    annotations
+        [p] : Side=top;
+        [n] : Side=bottom;
+        [BottomExtClnt] : Side=bottom;
+        UILayout = [UIGroup("Main",SOC_vecCell,T_vecCell,V0_matCell,V_rangeCell,R0_matCell,AHCell,extrapolation_optionCell),...
+            UIGroup("Thermal",thermal_massCell,CoolantResistance,AmbientResistance)];
+        Icon = 'parallelAssembly.svg';
+    end
+
+    for thermalNodeElementIdx = 1:NumCellThermalNodeElements
+        for modelIdx = 1:1
+            components(ExternalAccess=observe)
+                AmbientResistor(thermalNodeElementIdx,modelIdx) = foundation.thermal.elements.resistance(...
+                    resistance = AmbientResistanceScaled(thermalNodeElementIdx,modelIdx));
+            end
+        end
+    end
+end

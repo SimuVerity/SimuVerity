@@ -1,0 +1,15 @@
+{
+  "schema": "simuverity.reference-runtime-manifest.v1",
+  "task_id": "XELEC-08",
+  "materialization": "bundled",
+  "entrypoint": "reference/files/statom_3_phase.mdl",
+  "retained_inventory": "reference/manifest.json",
+  "retained_file_count": 3,
+  "retained_bytes": 401775,
+  "excluded_files": [],
+  "dependency_basis": [
+    "current reference entrypoint",
+    "task-local reference inventory",
+    "entrypoint, helper, and data reachability review"
+  ]
+}

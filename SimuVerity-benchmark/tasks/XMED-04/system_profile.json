@@ -1,0 +1,190 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XMED-04",
+  "collection": "XMED",
+  "reference": {
+    "identity_path": "tasks/XMED-04/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/artificialPancreasWithFISTreeControl.slx",
+    "model_path": "tasks/XMED-04/reference/files/artificialPancreasWithFISTreeControl.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XMED-04",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a closed-loop artificial-pancreas model in Simulink for a person with type-1 diabetes.",
+    "engineering_objects": [
+      "F90-XMED-04 plant and controller described by the current public task contract",
+      "Measured output interfaces: TrueGlucose_mg_dL, ObservedGlucose_mg_dL, InsulinInfusion_mU_min, MealCarbohydrateRate_g_s, AbsorbedGlucoseRate_mmol_s"
+    ],
+    "physical_paths": [
+      "The model must contain a dynamic patient glucose-insulin physiology, meal carbohydrate absorption, sampled glucose monitoring, an insulin controller and a subcutaneous insulin pump connected in one causal loop.",
+      "Every output must come from the connected physiology, measurement, controller, pump or meal-absorption path; do not replay meal-specific outputs or copy a glucose target as a measurement."
+    ],
+    "functional_paths": [
+      "The model must contain a dynamic patient glucose-insulin physiology, meal carbohydrate absorption, sampled glucose monitoring, an insulin controller and a subcutaneous insulin pump connected in one causal loop.",
+      "The controller architecture is unrestricted.",
+      "Regulate blood glucose primarily within 70 to 180 mg/dL over the meal schedule, avoid severe hypoglycaemia below 54 mg/dL and severe hyperglycaemia above 250 mg/dL, and recover after meal disturbances without relying on prescribed glucose trajectories."
+    ],
+    "information_paths": [
+      "MealTimes_min, MealCarbs_g, PatientWeight_kg, SensorSampleTime_s -> F90-XMED-04 plant/control path -> TrueGlucose_mg_dL, ObservedGlucose_mg_dL, InsulinInfusion_mU_min, MealCarbohydrateRate_g_s, AbsorbedGlucoseRate_mmol_s"
+    ],
+    "modes_and_events": [
+      "Build a closed-loop artificial-pancreas model in Simulink for a person with type-1 diabetes.",
+      "The model must contain a dynamic patient glucose-insulin physiology, meal carbohydrate absorption, sampled glucose monitoring, an insulin controller and a subcutaneous insulin pump connected in one causal loop."
+    ],
+    "interfaces": [
+      {
+        "name": "MealTimes_min",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "min"
+        ],
+        "range_or_shape": "Read MealTimes_min, MealCarbs_g, PatientWeight_kg and SensorSampleTime_s from the MATLAB base workspace. MealTimes_min is a strictly increasing three-element vector of breakfast, lunch and dinner times in minutes.",
+        "source": "tasks/XMED-04/public_spec.json"
+      },
+      {
+        "name": "MealCarbs_g",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "g"
+        ],
+        "range_or_shape": "Read MealTimes_min, MealCarbs_g, PatientWeight_kg and SensorSampleTime_s from the MATLAB base workspace. MealCarbs_g is the paired three-element carbohydrate vector with each meal between 20 and 60 g.",
+        "source": "tasks/XMED-04/public_spec.json"
+      },
+      {
+        "name": "PatientWeight_kg",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "kg"
+        ],
+        "range_or_shape": "Read MealTimes_min, MealCarbs_g, PatientWeight_kg and SensorSampleTime_s from the MATLAB base workspace. PatientWeight_kg is between 55 and 90 kg, and SensorSampleTime_s is between 180 and 600 s.",
+        "source": "tasks/XMED-04/public_spec.json"
+      },
+      {
+        "name": "SensorSampleTime_s",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "s"
+        ],
+        "range_or_shape": "Read MealTimes_min, MealCarbs_g, PatientWeight_kg and SensorSampleTime_s from the MATLAB base workspace. PatientWeight_kg is between 55 and 90 kg, and SensorSampleTime_s is between 180 and 600 s.",
+        "source": "tasks/XMED-04/public_spec.json"
+      },
+      {
+        "name": "TrueGlucose_mg_dL",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "mg/dL"
+        ],
+        "range_or_shape": "Log complete-run scalar MATLAB Timeseries named TrueGlucose_mg_dL, ObservedGlucose_mg_dL, InsulinInfusion_mU_min, MealCarbohydrateRate_g_s and AbsorbedGlucoseRate_mmol_s.",
+        "source": "tasks/XMED-04/public_spec.json"
+      },
+      {
+        "name": "ObservedGlucose_mg_dL",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "mg/dL"
+        ],
+        "range_or_shape": "Log complete-run scalar MATLAB Timeseries named TrueGlucose_mg_dL, ObservedGlucose_mg_dL, InsulinInfusion_mU_min, MealCarbohydrateRate_g_s and AbsorbedGlucoseRate_mmol_s.",
+        "source": "tasks/XMED-04/public_spec.json"
+      },
+      {
+        "name": "InsulinInfusion_mU_min",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "mU/min"
+        ],
+        "range_or_shape": "Log complete-run scalar MATLAB Timeseries named TrueGlucose_mg_dL, ObservedGlucose_mg_dL, InsulinInfusion_mU_min, MealCarbohydrateRate_g_s and AbsorbedGlucoseRate_mmol_s.",
+        "source": "tasks/XMED-04/public_spec.json"
+      },
+      {
+        "name": "MealCarbohydrateRate_g_s",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "g/s"
+        ],
+        "range_or_shape": "Log complete-run scalar MATLAB Timeseries named TrueGlucose_mg_dL, ObservedGlucose_mg_dL, InsulinInfusion_mU_min, MealCarbohydrateRate_g_s and AbsorbedGlucoseRate_mmol_s.",
+        "source": "tasks/XMED-04/public_spec.json"
+      },
+      {
+        "name": "AbsorbedGlucoseRate_mmol_s",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "mmol/s"
+        ],
+        "range_or_shape": "Log complete-run scalar MATLAB Timeseries named TrueGlucose_mg_dL, ObservedGlucose_mg_dL, InsulinInfusion_mU_min, MealCarbohydrateRate_g_s and AbsorbedGlucoseRate_mmol_s.",
+        "source": "tasks/XMED-04/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "The model must contain a dynamic patient glucose-insulin physiology, meal carbohydrate absorption, sampled glucose monitoring, an insulin controller and a subcutaneous insulin pump connected in one causal loop.",
+      "The controller architecture is unrestricted.",
+      "Every output must come from the connected physiology, measurement, controller, pump or meal-absorption path;"
+    ],
+    "feedback_and_control_causality": [
+      "Build a closed-loop artificial-pancreas model in Simulink for a person with type-1 diabetes.",
+      "The model must contain a dynamic patient glucose-insulin physiology, meal carbohydrate absorption, sampled glucose monitoring, an insulin controller and a subcutaneous insulin pump connected in one causal loop.",
+      "The controller architecture is unrestricted."
+    ],
+    "signal_sources": [
+      "MealTimes_min is read from the public MATLAB base-workspace input contract.",
+      "MealCarbs_g is read from the public MATLAB base-workspace input contract.",
+      "PatientWeight_kg is read from the public MATLAB base-workspace input contract.",
+      "SensorSampleTime_s is read from the public MATLAB base-workspace input contract.",
+      "TrueGlucose_mg_dL is produced by the implemented plant or controller and logged under the public output contract.",
+      "ObservedGlucose_mg_dL is produced by the implemented plant or controller and logged under the public output contract.",
+      "InsulinInfusion_mU_min is produced by the implemented plant or controller and logged under the public output contract.",
+      "MealCarbohydrateRate_g_s is produced by the implemented plant or controller and logged under the public output contract.",
+      "AbsorbedGlucoseRate_mmol_s is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "MealTimes_min: Read MealTimes_min, MealCarbs_g, PatientWeight_kg and SensorSampleTime_s from the MATLAB base workspace. MealTimes_min is a strictly increasing three-element vector of breakfast, lunch and dinner times in minutes.",
+      "MealCarbs_g: Read MealTimes_min, MealCarbs_g, PatientWeight_kg and SensorSampleTime_s from the MATLAB base workspace. MealCarbs_g is the paired three-element carbohydrate vector with each meal between 20 and 60 g.",
+      "PatientWeight_kg: Read MealTimes_min, MealCarbs_g, PatientWeight_kg and SensorSampleTime_s from the MATLAB base workspace. PatientWeight_kg is between 55 and 90 kg, and SensorSampleTime_s is between 180 and 600 s.",
+      "SensorSampleTime_s: Read MealTimes_min, MealCarbs_g, PatientWeight_kg and SensorSampleTime_s from the MATLAB base workspace. PatientWeight_kg is between 55 and 90 kg, and SensorSampleTime_s is between 180 and 600 s."
+    ],
+    "disturbances": [
+      "Regulate blood glucose primarily within 70 to 180 mg/dL over the meal schedule, avoid severe hypoglycaemia below 54 mg/dL and severe hyperglycaemia above 250 mg/dL, and recover after meal disturbances without relying on prescribed glucose trajectories."
+    ],
+    "dynamic_processes": [
+      "The model must contain a dynamic patient glucose-insulin physiology, meal carbohydrate absorption, sampled glucose monitoring, an insulin controller and a subcutaneous insulin pump connected in one causal loop.",
+      "Regulate blood glucose primarily within 70 to 180 mg/dL over the meal schedule, avoid severe hypoglycaemia below 54 mg/dL and severe hyperglycaemia above 250 mg/dL, and recover after meal disturbances without relying on prescribed glucose trajectories."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XMED-04: prescribing TrueGlucose_mg_dL directly would bypass the system path described by: The model must contain a dynamic patient glucose-insulin physiology, meal carbohydrate absorption, sampled glucose monitoring, an insulin controller and a subcutaneous insulin pump connected in one causal loop.",
+      "F90-XMED-04: replaying a fixed TrueGlucose_mg_dL trace would ignore causal variation in MealTimes_min."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XMED-04/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XMED-04/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XMED-04/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

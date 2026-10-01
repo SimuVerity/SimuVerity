@@ -1,0 +1,84 @@
+{
+  "schema": "simuverity.task.v1",
+  "release": "simuverity-101-v1",
+  "task_id": "XROBO-07",
+  "ordinal": 75,
+  "collection": "XROBO",
+  "runtime_alias": "XROBO-07",
+  "required_model_file": "cand_XROBO07.slx",
+  "evaluation_policy_id": "simuverity-101-v1:xrobo-07:scoring",
+  "candidate_closure": {
+    "public_input_names": [
+      "MapMatrix",
+      "StartPose",
+      "GoalPose",
+      "ObstacleSafetyMargin",
+      "MinimumTurningRadius",
+      "MaxLinearVelocity",
+      "MaxAngularVelocity"
+    ],
+    "nominal_provider": "simuverity_public_nominal_inputs"
+  },
+  "public_spec": "public_spec.json",
+  "official_scenarios": "official_scenarios.json",
+  "official_assets": [
+    {
+      "path": "official_assets/offroadMap.mat"
+    }
+  ],
+  "extractor": {
+    "kind": "matlab_function",
+    "path": "extractor/run.m",
+    "entrypoint": "run",
+    "implementation": "vendor/scripts/formal90/tasks/f90_xrobo07/f90_xrobo07_extract_candidate_evidence.m",
+    "closure_manifest": "extractor/manifest.json"
+  },
+  "scorer": {
+    "kind": "python_function",
+    "path": "scorer.py",
+    "entrypoint": "score",
+    "closure_manifest": "scorer/manifest.json",
+    "offline_only": true
+  },
+  "reference": {
+    "materialization": "local_importer",
+    "recipe": "reference/importer_recipe.json",
+    "entrypoint": "PathFollowingTEB_SimuVerityReference.slx",
+    "generated_support_files": [
+      {
+        "path": "simuverity_xrobo07_robot_state_logger.m",
+        "size_bytes": 2941
+      }
+    ],
+    "expected_valid_scenarios": 5,
+    "score_tolerance": 1e-12,
+    "expected_score": 90.83098860410136,
+    "expected_score_basis": "reference_replay",
+    "scenario_contract": {
+      "expected_ids": [
+        "nominal_offroad",
+        "alternate_start_goal",
+        "heading_and_goal_shift",
+        "static_map_detour",
+        "kinematic_margin_stress"
+      ],
+      "nominal_scenario_id": null,
+      "nominal_materialization": "authoritative_scenario_set"
+    },
+    "score_tolerance_basis": "source_authority_numeric_precision",
+    "runtime_manifest": "reference/runtime_manifest.json"
+  },
+  "applicable_groups": [
+    "G",
+    "A",
+    "Q",
+    "M",
+    "R",
+    "D"
+  ],
+  "release_license_status": "MATHWORKS_LOCAL_IMPORT_NO_REDISTRIBUTION",
+  "system_profile": {
+    "path": "system_profile.json",
+    "schema": "simuverity.system-profile.v1"
+  }
+}

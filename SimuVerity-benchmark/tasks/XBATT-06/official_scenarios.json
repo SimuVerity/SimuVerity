@@ -1,0 +1,184 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XBATT-06",
+  "scenarios": [
+    {
+      "id": "nominal_long_flight",
+      "class": "nominal_long_profile",
+      "dataset_index": 1,
+      "dataset_file": "2022-07-29 10-38-55_f1.mat",
+      "temperature_K": 303.0,
+      "forecast_discharge_current_A": 10.0,
+      "reserve_capacity_Ah": 1.675,
+      "required_landing_time_s": 125.0
+    },
+    {
+      "id": "cold_short_high_pulse",
+      "class": "cold_dynamic_boundary",
+      "dataset_index": 2,
+      "dataset_file": "2022-08-04 10-58-30_f1.mat",
+      "temperature_K": 293.15,
+      "forecast_discharge_current_A": 8.0,
+      "reserve_capacity_Ah": 1.4,
+      "required_landing_time_s": 150.0
+    },
+    {
+      "id": "hot_high_rms_flight",
+      "class": "hot_dynamic_boundary",
+      "dataset_index": 3,
+      "dataset_file": "2022-08-04 10-58-30_f2.mat",
+      "temperature_K": 315.15,
+      "forecast_discharge_current_A": 12.0,
+      "reserve_capacity_Ah": 1.8,
+      "required_landing_time_s": 100.0
+    },
+    {
+      "id": "moderate_profile_high_forecast",
+      "class": "forecast_load_boundary",
+      "dataset_index": 6,
+      "dataset_file": "2022-09-26 11-49-08_f1.mat",
+      "temperature_K": 303.0,
+      "forecast_discharge_current_A": 15.0,
+      "reserve_capacity_Ah": 2.2,
+      "required_landing_time_s": 90.0
+    },
+    {
+      "id": "aged_capacity_long_flight",
+      "class": "capacity_and_reserve_boundary",
+      "dataset_index": 7,
+      "dataset_file": "2022-10-21 13-31-20_f1.mat",
+      "temperature_K": 318.15,
+      "forecast_discharge_current_A": 9.0,
+      "reserve_capacity_Ah": 2.5,
+      "required_landing_time_s": 200.0
+    }
+  ],
+  "contract": {
+    "difficulty": {
+      "rating": 10,
+      "scale": 12
+    },
+    "native_rul_contract": {
+      "nominal_capacity_Ah": 25.0,
+      "native_available_capacity_Ah": 24.1,
+      "landing_cost_fraction": 0.031,
+      "derived_native_reserve_capacity_Ah": 1.675,
+      "current_sign": "positive means discharge"
+    },
+    "simulation": {
+      "output_sample_count": 2001,
+      "retain_full_native_time_coverage": true,
+      "runtime_parameter_changes_only": [
+        "temperature Constant value",
+        "model StopTime",
+        "ReturnWorkspaceOutputs",
+        "LimitDataPoints"
+      ]
+    },
+    "score_policy": {
+      "policy_id": "simuverity-101-v1:xbatt-06:scoring",
+      "admission_threshold_raw": 85.0,
+      "preferred_reference_score": 90.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.3,
+          "meaning": "voltage, SOC, capacity and RUL accuracy"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "finite physical signal quality"
+        },
+        "M": {
+          "weight": 0.25,
+          "meaning": "connected three-branch electrical mechanism"
+        },
+        "C": {
+          "weight": 0.1,
+          "meaning": "input and health-state causal coupling"
+        },
+        "R": {
+          "weight": 0.15,
+          "meaning": "worst required private operating condition"
+        },
+        "D": {
+          "weight": 0.1,
+          "meaning": "transient response and RUL/safety evolution"
+        }
+      },
+      "within_group": "weighted_arithmetic_mean",
+      "across_groups": "weighted_geometric_mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum"
+    },
+    "minimum_shortcut_sanity_contract": [
+      "missing_temperature_input_path",
+      "missing_third_rc_branch",
+      "copied_nominal_outputs_across_scenarios",
+      "fabricated_or_disconnected_rul_trace"
+    ]
+  },
+  "difficulty": {
+    "rating": 10,
+    "scale": 12
+  },
+  "native_rul_contract": {
+    "nominal_capacity_Ah": 25.0,
+    "native_available_capacity_Ah": 24.1,
+    "landing_cost_fraction": 0.031,
+    "derived_native_reserve_capacity_Ah": 1.675,
+    "current_sign": "positive means discharge"
+  },
+  "simulation": {
+    "output_sample_count": 2001,
+    "retain_full_native_time_coverage": true,
+    "runtime_parameter_changes_only": [
+      "temperature Constant value",
+      "model StopTime",
+      "ReturnWorkspaceOutputs",
+      "LimitDataPoints"
+    ]
+  },
+  "score_policy": {
+    "policy_id": "simuverity-101-v1:xbatt-06:scoring",
+    "admission_threshold_raw": 85.0,
+    "preferred_reference_score": 90.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.3,
+        "meaning": "voltage, SOC, capacity and RUL accuracy"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "finite physical signal quality"
+      },
+      "M": {
+        "weight": 0.25,
+        "meaning": "connected three-branch electrical mechanism"
+      },
+      "C": {
+        "weight": 0.1,
+        "meaning": "input and health-state causal coupling"
+      },
+      "R": {
+        "weight": 0.15,
+        "meaning": "worst required private operating condition"
+      },
+      "D": {
+        "weight": 0.1,
+        "meaning": "transient response and RUL/safety evolution"
+      }
+    },
+    "within_group": "weighted_arithmetic_mean",
+    "across_groups": "weighted_geometric_mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum"
+  },
+  "minimum_shortcut_sanity_contract": [
+    "missing_temperature_input_path",
+    "missing_third_rc_branch",
+    "copied_nominal_outputs_across_scenarios",
+    "fabricated_or_disconnected_rul_trace"
+  ]
+}

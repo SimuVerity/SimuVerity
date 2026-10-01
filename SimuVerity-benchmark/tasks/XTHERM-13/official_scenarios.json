@@ -1,0 +1,138 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XTHERM-13",
+  "scenarios": [
+    {
+      "id": "baseline",
+      "transform": "baseline_profiles"
+    },
+    {
+      "id": "solar_low",
+      "transform": "solar_irradiance_W_m2 = 0.5 * baseline_solar"
+    },
+    {
+      "id": "solar_high",
+      "transform": "solar_irradiance_W_m2 = min(1000, 1.2 * baseline_solar)"
+    },
+    {
+      "id": "ambient_cold",
+      "transform": "ambient_temperature_degC = baseline_ambient - 5"
+    },
+    {
+      "id": "ambient_warm",
+      "transform": "ambient_temperature_degC = baseline_ambient + 5"
+    },
+    {
+      "id": "setpoint_low",
+      "transform": "room_setpoint_degC = 20"
+    },
+    {
+      "id": "setpoint_high",
+      "transform": "room_setpoint_degC = 24"
+    },
+    {
+      "id": "solar_nominal_timing",
+      "transform": "baseline_profiles"
+    },
+    {
+      "id": "solar_delayed_3h",
+      "transform": "solar_irradiance_W_m2 = [0,0,0,baseline_solar[0:-3]] on the hourly grid"
+    },
+    {
+      "id": "measurement_bias_negative",
+      "transform": "thermal_measurement_bias_degC = -2 for 21600 <= time_s < 43200; 0 otherwise"
+    },
+    {
+      "id": "measurement_bias_positive",
+      "transform": "thermal_measurement_bias_degC = +2 for 21600 <= time_s < 43200; 0 otherwise"
+    }
+  ],
+  "provider_contract": {
+    "time_s": "0:3600:86400",
+    "hour": "time_s / 3600",
+    "baseline_solar_irradiance_W_m2": "850 * max(0, sin(pi * (hour - 6) / 12))",
+    "baseline_ambient_temperature_degC": "12 + 8 * sin(2*pi * (hour - 8) / 24)",
+    "baseline_room_setpoint_degC": 23,
+    "baseline_thermal_measurement_bias_degC": 0,
+    "simulation_stop_time_s": 86400
+  },
+  "named_scenario_sets": {
+    "scenario_ids": [
+      "baseline",
+      "solar_low",
+      "solar_high",
+      "ambient_cold",
+      "ambient_warm",
+      "setpoint_low",
+      "setpoint_high",
+      "solar_nominal_timing",
+      "solar_delayed_3h",
+      "measurement_bias_negative",
+      "measurement_bias_positive"
+    ]
+  },
+  "contract": {
+    "scenario_ids": [
+      "baseline",
+      "solar_low",
+      "solar_high",
+      "ambient_cold",
+      "ambient_warm",
+      "setpoint_low",
+      "setpoint_high",
+      "solar_nominal_timing",
+      "solar_delayed_3h",
+      "measurement_bias_negative",
+      "measurement_bias_positive"
+    ],
+    "measurement_only_pair": {
+      "negative_bias_degC": -2,
+      "positive_bias_degC": 2,
+      "active_window_s": [
+        21600,
+        43200
+      ],
+      "post_intervention_window_s": [
+        43200,
+        64800
+      ],
+      "all_physical_public_inputs_identical": true,
+      "obligation": "During the pulse the negative-bias run must increase pump/blower commands and connected flows relative to the positive-bias run. After bias removal, the resulting real zone-state difference must drive corrective actuator response. A common contemporaneous input feedforward is insufficient."
+    },
+    "transparent_mechanism": "Evaluator-derived typed/domain paths must jointly prove solar-to-PV/electrical conversion, finite dynamic store, liquid transfer, air transfer, four distinct zone thermal states, and the valve structural obligation.",
+    "opaque_mechanism": "Readable but statically unmapped public containers use evaluator-run paired energy/state behavior plus independently established valve structure; candidate self-attestation is never accepted.",
+    "missing_scenario_status": "PARTIAL or FAIL at the top level, with dependent robustness metrics zero.",
+    "aggregation": "Strict weighted geometric cross-group total; no epsilon floor and no post-total cap."
+  },
+  "scenario_ids": [
+    "baseline",
+    "solar_low",
+    "solar_high",
+    "ambient_cold",
+    "ambient_warm",
+    "setpoint_low",
+    "setpoint_high",
+    "solar_nominal_timing",
+    "solar_delayed_3h",
+    "measurement_bias_negative",
+    "measurement_bias_positive"
+  ],
+  "measurement_only_pair": {
+    "negative_bias_degC": -2,
+    "positive_bias_degC": 2,
+    "active_window_s": [
+      21600,
+      43200
+    ],
+    "post_intervention_window_s": [
+      43200,
+      64800
+    ],
+    "all_physical_public_inputs_identical": true,
+    "obligation": "During the pulse the negative-bias run must increase pump/blower commands and connected flows relative to the positive-bias run. After bias removal, the resulting real zone-state difference must drive corrective actuator response. A common contemporaneous input feedforward is insufficient."
+  },
+  "transparent_mechanism": "Evaluator-derived typed/domain paths must jointly prove solar-to-PV/electrical conversion, finite dynamic store, liquid transfer, air transfer, four distinct zone thermal states, and the valve structural obligation.",
+  "opaque_mechanism": "Readable but statically unmapped public containers use evaluator-run paired energy/state behavior plus independently established valve structure; candidate self-attestation is never accepted.",
+  "missing_scenario_status": "PARTIAL or FAIL at the top level, with dependent robustness metrics zero.",
+  "aggregation": "Strict weighted geometric cross-group total; no epsilon floor and no post-total cap."
+}

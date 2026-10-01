@@ -1,0 +1,174 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XROBO-05",
+  "scenarios": [
+    {
+      "id": "native_nominal_dual_step",
+      "HeadingInitial_deg": 0.0,
+      "HeadingCommand_deg": -60.0,
+      "HeadingStepTime_s": 100.0,
+      "DepthInitial_m": 10.0,
+      "DepthCommand_m": 30.0,
+      "DepthStepTime_s": 200.0,
+      "CurrentSpeed_mps": 0.5,
+      "CurrentDirection_deg": 170.0,
+      "PropellerSpeed_rpm": 1500.0
+    },
+    {
+      "id": "moderate_heading_boundary",
+      "HeadingInitial_deg": 0.0,
+      "HeadingCommand_deg": 55.0,
+      "HeadingStepTime_s": 100.0,
+      "DepthInitial_m": 10.0,
+      "DepthCommand_m": 30.0,
+      "DepthStepTime_s": 200.0,
+      "CurrentSpeed_mps": 0.5,
+      "CurrentDirection_deg": 170.0,
+      "PropellerSpeed_rpm": 1500.0
+    },
+    {
+      "id": "moderate_depth_boundary",
+      "HeadingInitial_deg": 0.0,
+      "HeadingCommand_deg": -60.0,
+      "HeadingStepTime_s": 100.0,
+      "DepthInitial_m": 10.0,
+      "DepthCommand_m": 38.0,
+      "DepthStepTime_s": 200.0,
+      "CurrentSpeed_mps": 0.5,
+      "CurrentDirection_deg": 170.0,
+      "PropellerSpeed_rpm": 1500.0
+    },
+    {
+      "id": "current_magnitude_boundary",
+      "HeadingInitial_deg": 0.0,
+      "HeadingCommand_deg": -60.0,
+      "HeadingStepTime_s": 100.0,
+      "DepthInitial_m": 10.0,
+      "DepthCommand_m": 30.0,
+      "DepthStepTime_s": 200.0,
+      "CurrentSpeed_mps": 0.75,
+      "CurrentDirection_deg": 170.0,
+      "PropellerSpeed_rpm": 1500.0
+    },
+    {
+      "id": "current_direction_boundary",
+      "HeadingInitial_deg": 0.0,
+      "HeadingCommand_deg": -60.0,
+      "HeadingStepTime_s": 100.0,
+      "DepthInitial_m": 10.0,
+      "DepthCommand_m": 30.0,
+      "DepthStepTime_s": 200.0,
+      "CurrentSpeed_mps": 0.5,
+      "CurrentDirection_deg": 110.0,
+      "PropellerSpeed_rpm": 1500.0
+    },
+    {
+      "id": "reduced_propulsive_authority",
+      "HeadingInitial_deg": 0.0,
+      "HeadingCommand_deg": -60.0,
+      "HeadingStepTime_s": 100.0,
+      "DepthInitial_m": 10.0,
+      "DepthCommand_m": 30.0,
+      "DepthStepTime_s": 200.0,
+      "CurrentSpeed_mps": 0.5,
+      "CurrentDirection_deg": 170.0,
+      "PropellerSpeed_rpm": 1300.0
+    }
+  ],
+  "contract": {
+    "simulation": {
+      "start_s": 0.0,
+      "stop_s": 400.0,
+      "solver": "ode4",
+      "fixed_step_s": 0.05
+    },
+    "score_policy": {
+      "admission_threshold_raw": 85.0,
+      "normalize_threshold_to_100": false,
+      "qualification_gate": "G",
+      "groups": {
+        "A": {
+          "weight": 0.2,
+          "meaning": "nominal simultaneous heading and depth tracking"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "finite coupled 6DOF state and physically bounded actuation"
+        },
+        "M": {
+          "weight": 0.3,
+          "meaning": "real command-current-actuator-6DOF causality"
+        },
+        "R": {
+          "weight": 0.2,
+          "meaning": "worst private-scenario robustness"
+        },
+        "D": {
+          "weight": 0.2,
+          "meaning": "step recovery, settling, overshoot and cross-axis response"
+        }
+      },
+      "within_group": "weighted_arithmetic_mean",
+      "across_groups": "weighted_geometric_mean",
+      "critical_multiscenario_aggregation": "100_percent_minimum",
+      "policy_id": "simuverity-101-v1:xrobo-05:scoring",
+      "final_raw_reference_score": 96.17224676077342
+    },
+    "shortcut_sanity_contract": [
+      "constant_or_replayed_pose",
+      "kinematic_pose_assignment",
+      "heading_only_control",
+      "depth_only_control",
+      "disconnected_current",
+      "fixed_or_replayed_control_surfaces",
+      "endpoint_only_without_valid_transient"
+    ]
+  },
+  "simulation": {
+    "start_s": 0.0,
+    "stop_s": 400.0,
+    "solver": "ode4",
+    "fixed_step_s": 0.05
+  },
+  "score_policy": {
+    "admission_threshold_raw": 85.0,
+    "normalize_threshold_to_100": false,
+    "qualification_gate": "G",
+    "groups": {
+      "A": {
+        "weight": 0.2,
+        "meaning": "nominal simultaneous heading and depth tracking"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "finite coupled 6DOF state and physically bounded actuation"
+      },
+      "M": {
+        "weight": 0.3,
+        "meaning": "real command-current-actuator-6DOF causality"
+      },
+      "R": {
+        "weight": 0.2,
+        "meaning": "worst private-scenario robustness"
+      },
+      "D": {
+        "weight": 0.2,
+        "meaning": "step recovery, settling, overshoot and cross-axis response"
+      }
+    },
+    "within_group": "weighted_arithmetic_mean",
+    "across_groups": "weighted_geometric_mean",
+    "critical_multiscenario_aggregation": "100_percent_minimum",
+    "policy_id": "simuverity-101-v1:xrobo-05:scoring",
+    "final_raw_reference_score": 96.17224676077342
+  },
+  "shortcut_sanity_contract": [
+    "constant_or_replayed_pose",
+    "kinematic_pose_assignment",
+    "heading_only_control",
+    "depth_only_control",
+    "disconnected_current",
+    "fixed_or_replayed_control_surfaces",
+    "endpoint_only_without_valid_transient"
+  ]
+}

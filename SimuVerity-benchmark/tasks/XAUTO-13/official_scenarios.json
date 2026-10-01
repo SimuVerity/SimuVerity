@@ -1,0 +1,228 @@
+{
+  "schema": "simuverity.official-scenarios.v1",
+  "task_id": "XAUTO-13",
+  "scenarios": [
+    {
+      "id": "nominal_low_init",
+      "duration_s": 3,
+      "operating_id_A": -50,
+      "operating_iq_A": 150,
+      "electrical_speed_radps": 1256.637061,
+      "injection_d_voltage_V": 2.0,
+      "injection_q_voltage_V": 2.0,
+      "injection_frequency_Hz": 40,
+      "reference_initial_estimate_scale": 0.4,
+      "plant_Rs_ohm": 0.03,
+      "plant_Ldd_H": 8e-05,
+      "plant_Ldq_H": -2e-05,
+      "plant_Lqq_H": 0.0002,
+      "plant_inertia_kgm2": 0.0047,
+      "plant_damping_Nms": 0.2
+    },
+    {
+      "id": "high_resistance_mechanical",
+      "duration_s": 3,
+      "operating_id_A": -45,
+      "operating_iq_A": 140,
+      "electrical_speed_radps": 1100,
+      "injection_d_voltage_V": 2.5,
+      "injection_q_voltage_V": 2.0,
+      "injection_frequency_Hz": 45,
+      "reference_initial_estimate_scale": 0.7,
+      "plant_Rs_ohm": 0.045,
+      "plant_Ldd_H": 8e-05,
+      "plant_Ldq_H": -2e-05,
+      "plant_Lqq_H": 0.0002,
+      "plant_inertia_kgm2": 0.0055,
+      "plant_damping_Nms": 0.25
+    },
+    {
+      "id": "strong_cross_coupling_high_init",
+      "duration_s": 3,
+      "operating_id_A": -60,
+      "operating_iq_A": 160,
+      "electrical_speed_radps": 1400,
+      "injection_d_voltage_V": 3.0,
+      "injection_q_voltage_V": 2.5,
+      "injection_frequency_Hz": 50,
+      "reference_initial_estimate_scale": 1.5,
+      "plant_Rs_ohm": 0.025,
+      "plant_Ldd_H": 9e-05,
+      "plant_Ldq_H": -2.8e-05,
+      "plant_Lqq_H": 0.00023,
+      "plant_inertia_kgm2": 0.004,
+      "plant_damping_Nms": 0.15
+    },
+    {
+      "id": "low_speed_q_rich_excitation",
+      "duration_s": 3,
+      "operating_id_A": -55,
+      "operating_iq_A": 130,
+      "electrical_speed_radps": 1000,
+      "injection_d_voltage_V": 2.2,
+      "injection_q_voltage_V": 2.8,
+      "injection_frequency_Hz": 35,
+      "reference_initial_estimate_scale": 1.8,
+      "plant_Rs_ohm": 0.035,
+      "plant_Ldd_H": 7e-05,
+      "plant_Ldq_H": -1.5e-05,
+      "plant_Lqq_H": 0.00018,
+      "plant_inertia_kgm2": 0.0045,
+      "plant_damping_Nms": 0.18
+    }
+  ],
+  "contract": {
+    "contract_id": "hidden-measurement",
+    "difficulty": {
+      "score": 9,
+      "maximum": 12,
+      "basis": [
+        "coupled d-q electrical and mechanical response",
+        "six simultaneous parameter estimates across disparate physical scales",
+        "signed incremental cross-coupling",
+        "multiple hidden plants and excitation spectra",
+        "measurement-causality counterfactual"
+      ]
+    },
+    "candidate_input_boundary": {
+      "container": "pmsm_measurement_experiment",
+      "allowed_fields": [
+        "duration_s",
+        "voltage_command_dq_V",
+        "measured_electrical_state"
+      ],
+      "forbidden_fields": [
+        "id",
+        "scenario_id",
+        "plant_Rs_ohm",
+        "plant_Ldd_H",
+        "plant_Ldq_H",
+        "plant_Lqq_H",
+        "plant_inertia_kgm2",
+        "plant_damping_Nms",
+        "truth",
+        "target_estimate",
+        "reference_initial_estimate_scale"
+      ],
+      "pack_source": "A current reference evaluation produces an evaluator-owned per-scenario pack containing only duration and the two public Timeseries; hidden scenario metadata remains outside candidate-readable storage.",
+      "pack_environment_variable": "SIMUVERITY_EXT_PMSM_MEASUREMENT_PACK",
+      "candidate_visibility": "Only one sanitized scalar experiment struct is assigned to the base workspace for each run. Hidden scenario metadata and plant truth remain evaluator-local."
+    },
+    "counterfactual": {
+      "name": "held_measurement_response",
+      "candidate_only": true,
+      "intervention": "Keep voltage_command_dq_V unchanged while replacing every measured_electrical_state sample by its first sample; do not save the candidate model.",
+      "purpose": "A near-truth, replayed, or hard-coded estimate trajectory that is not causally driven by measured response receives C=0."
+    },
+    "score_policy": {
+      "raw_threshold": 90,
+      "normalize_threshold_to_100": false,
+      "cross_group_aggregation": "G_times_strict_weighted_geometric_mean",
+      "zero_rule": "any applicable group at zero makes total zero",
+      "epsilon_floor": false,
+      "post_total_cap": false,
+      "groups": {
+        "A": {
+          "weight": 0.3,
+          "meaning": "hidden-truth tail estimation accuracy"
+        },
+        "Q": {
+          "weight": 0.1,
+          "meaning": "finite complete logs with the published channel contract"
+        },
+        "M": {
+          "weight": 0.2,
+          "meaning": "active estimator dynamics, signed coupling, and connected diagnostics"
+        },
+        "C": {
+          "weight": 0.18,
+          "meaning": "measurement causality, cross-plant response, and anti-copy behavior"
+        },
+        "R": {
+          "weight": 0.12,
+          "meaning": "worst hidden-plant scenario accuracy"
+        },
+        "D": {
+          "weight": 0.1,
+          "meaning": "initial-to-tail convergence"
+        }
+      }
+    }
+  },
+  "contract_id": "hidden-measurement",
+  "difficulty": {
+    "score": 9,
+    "maximum": 12,
+    "basis": [
+      "coupled d-q electrical and mechanical response",
+      "six simultaneous parameter estimates across disparate physical scales",
+      "signed incremental cross-coupling",
+      "multiple hidden plants and excitation spectra",
+      "measurement-causality counterfactual"
+    ]
+  },
+  "candidate_input_boundary": {
+    "container": "pmsm_measurement_experiment",
+    "allowed_fields": [
+      "duration_s",
+      "voltage_command_dq_V",
+      "measured_electrical_state"
+    ],
+    "forbidden_fields": [
+      "id",
+      "scenario_id",
+      "plant_Rs_ohm",
+      "plant_Ldd_H",
+      "plant_Ldq_H",
+      "plant_Lqq_H",
+      "plant_inertia_kgm2",
+      "plant_damping_Nms",
+      "truth",
+      "target_estimate",
+      "reference_initial_estimate_scale"
+    ],
+    "pack_source": "A current reference evaluation produces an evaluator-owned per-scenario pack containing only duration and the two public Timeseries; hidden scenario metadata remains outside candidate-readable storage.",
+    "pack_environment_variable": "SIMUVERITY_EXT_PMSM_MEASUREMENT_PACK",
+    "candidate_visibility": "Only one sanitized scalar experiment struct is assigned to the base workspace for each run. Hidden scenario metadata and plant truth remain evaluator-local."
+  },
+  "counterfactual": {
+    "name": "held_measurement_response",
+    "candidate_only": true,
+    "intervention": "Keep voltage_command_dq_V unchanged while replacing every measured_electrical_state sample by its first sample; do not save the candidate model.",
+    "purpose": "A near-truth, replayed, or hard-coded estimate trajectory that is not causally driven by measured response receives C=0."
+  },
+  "score_policy": {
+    "raw_threshold": 90,
+    "normalize_threshold_to_100": false,
+    "cross_group_aggregation": "G_times_strict_weighted_geometric_mean",
+    "zero_rule": "any applicable group at zero makes total zero",
+    "epsilon_floor": false,
+    "post_total_cap": false,
+    "groups": {
+      "A": {
+        "weight": 0.3,
+        "meaning": "hidden-truth tail estimation accuracy"
+      },
+      "Q": {
+        "weight": 0.1,
+        "meaning": "finite complete logs with the published channel contract"
+      },
+      "M": {
+        "weight": 0.2,
+        "meaning": "active estimator dynamics, signed coupling, and connected diagnostics"
+      },
+      "C": {
+        "weight": 0.18,
+        "meaning": "measurement causality, cross-plant response, and anti-copy behavior"
+      },
+      "R": {
+        "weight": 0.12,
+        "meaning": "worst hidden-plant scenario accuracy"
+      },
+      "D": {
+        "weight": 0.1,
+        "meaning": "initial-to-tail convergence"
+      }
+    }
+  }
+}

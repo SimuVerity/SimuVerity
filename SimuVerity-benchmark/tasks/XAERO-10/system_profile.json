@@ -1,0 +1,146 @@
+{
+  "schema": "simuverity.system-profile.v1",
+  "task_id": "XAERO-10",
+  "collection": "XAERO",
+  "reference": {
+    "identity_path": "tasks/XAERO-10/reference/runtime_manifest.json",
+    "entry_kind": "matlab_model",
+    "entrypoint": "reference/files/source/2018_Simulink/comparison_noise_nonoise.slx",
+    "model_path": "tasks/XAERO-10/reference/files/source/2018_Simulink/comparison_noise_nonoise.slx"
+  },
+  "runtime": {
+    "matlab_release": "R2025a",
+    "execution_mode": "BOUND_EXISTING_REFERENCE",
+    "command": "python -B tools/validate_system_profiles.py --task-id F90-XAERO-10",
+    "runner_path": "tools/validate_system_profiles.py",
+    "collection_success": true
+  },
+  "system": {
+    "boundary": "Build a Simulink model of a nonlinear two-degree-of-freedom helicopter with coupled pitch and yaw dynamics, front/rear or equivalent cross-axis rotor actuation, bounded actuator commands, state estimation, and closed-loop attitude regulation.",
+    "engineering_objects": [
+      "Build a Simulink model of a nonlinear two-degree-of-freedom helicopter with coupled pitch and yaw dynamics, front/rear or equivalent cross-axis rotor actuation, bounded actuator commands, state estimation, and closed-loop attitude regulation.",
+      "Both branches must use the same attitude command and physical plant/controller design;"
+    ],
+    "physical_paths": [
+      "Build a Simulink model of a nonlinear two-degree-of-freedom helicopter with coupled pitch and yaw dynamics, front/rear or equivalent cross-axis rotor actuation, bounded actuator commands, state estimation, and closed-loop attitude regulation.",
+      "Both branches must use the same attitude command and physical plant/controller design;"
+    ],
+    "functional_paths": [
+      "Build a Simulink model of a nonlinear two-degree-of-freedom helicopter with coupled pitch and yaw dynamics, front/rear or equivalent cross-axis rotor actuation, bounded actuator commands, state estimation, and closed-loop attitude regulation.",
+      "Both branches must use the same attitude command and physical plant/controller design;"
+    ],
+    "information_paths": [
+      "attitude_command_rad, measurement_noise_covariance -> F90-XAERO-10 plant/control path -> noisy_closed_loop_state, noise_free_closed_loop_state, command_noise_state"
+    ],
+    "modes_and_events": [
+      "Build a Simulink model of a nonlinear two-degree-of-freedom helicopter with coupled pitch and yaw dynamics, front/rear or equivalent cross-axis rotor actuation, bounded actuator commands, state estimation, and closed-loop attitude regulation.",
+      "The model shall expose a measurement-noise-affected closed-loop branch and an otherwise equivalent noise-free comparison branch."
+    ],
+    "interfaces": [
+      {
+        "name": "attitude_command_rad",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "rad"
+        ],
+        "range_or_shape": "Read the scalar workspace inputs attitude_command_rad and measurement_noise_covariance.",
+        "source": "tasks/XAERO-10/public_spec.json"
+      },
+      {
+        "name": "measurement_noise_covariance",
+        "direction": "input",
+        "description": "MATLAB base-workspace input declared by the current public task contract.",
+        "units": [
+          "dimensionless"
+        ],
+        "range_or_shape": "Read the scalar workspace inputs attitude_command_rad and measurement_noise_covariance.",
+        "source": "tasks/XAERO-10/public_spec.json"
+      },
+      {
+        "name": "noisy_closed_loop_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad/s",
+          "rad"
+        ],
+        "range_or_shape": "noisy_closed_loop_state shall have four columns in this order: pitch angle (rad), yaw angle (rad), pitch rate (rad/s), and yaw rate (rad/s).",
+        "source": "tasks/XAERO-10/public_spec.json"
+      },
+      {
+        "name": "noise_free_closed_loop_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad/s",
+          "rad"
+        ],
+        "range_or_shape": "noisy_closed_loop_state shall have four columns in this order: pitch angle (rad), yaw angle (rad), pitch rate (rad/s), and yaw rate (rad/s). noise_free_closed_loop_state shall have the same four-column order for the noise-free comparison branch.",
+        "source": "tasks/XAERO-10/public_spec.json"
+      },
+      {
+        "name": "command_noise_state",
+        "direction": "output",
+        "description": "Output container declared by the current public task contract.",
+        "units": [
+          "rad"
+        ],
+        "range_or_shape": "command_noise_state shall have two columns: attitude command (rad) and measurement-noise covariance.",
+        "source": "tasks/XAERO-10/public_spec.json"
+      }
+    ],
+    "signs_and_coordinates": [
+      "Build a Simulink model of a nonlinear two-degree-of-freedom helicopter with coupled pitch and yaw dynamics, front/rear or equivalent cross-axis rotor actuation, bounded actuator commands, state estimation, and closed-loop attitude regulation.",
+      "Both branches must use the same attitude command and physical plant/controller design;",
+      "Support attitude commands from 0 to 0.2 rad and nonnegative measurement-noise covariance from 1 to 5."
+    ],
+    "feedback_and_control_causality": [
+      "Build a Simulink model of a nonlinear two-degree-of-freedom helicopter with coupled pitch and yaw dynamics, front/rear or equivalent cross-axis rotor actuation, bounded actuator commands, state estimation, and closed-loop attitude regulation.",
+      "The model shall expose a measurement-noise-affected closed-loop branch and an otherwise equivalent noise-free comparison branch.",
+      "Both branches must use the same attitude command and physical plant/controller design;"
+    ],
+    "signal_sources": [
+      "attitude_command_rad is read from the public MATLAB base-workspace input contract.",
+      "measurement_noise_covariance is read from the public MATLAB base-workspace input contract.",
+      "noisy_closed_loop_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "noise_free_closed_loop_state is produced by the implemented plant or controller and logged under the public output contract.",
+      "command_noise_state is produced by the implemented plant or controller and logged under the public output contract."
+    ],
+    "operating_range": [
+      "attitude_command_rad: Read the scalar workspace inputs attitude_command_rad and measurement_noise_covariance.",
+      "measurement_noise_covariance: Read the scalar workspace inputs attitude_command_rad and measurement_noise_covariance."
+    ],
+    "disturbances": [
+      "The model shall expose a measurement-noise-affected closed-loop branch and an otherwise equivalent noise-free comparison branch.",
+      "Read the scalar workspace inputs attitude_command_rad and measurement_noise_covariance.",
+      "Support attitude commands from 0 to 0.2 rad and nonnegative measurement-noise covariance from 1 to 5."
+    ],
+    "dynamic_processes": [
+      "Build a Simulink model of a nonlinear two-degree-of-freedom helicopter with coupled pitch and yaw dynamics, front/rear or equivalent cross-axis rotor actuation, bounded actuator commands, state estimation, and closed-loop attitude regulation."
+    ],
+    "task_specific_shortcuts": [
+      "F90-XAERO-10: prescribing noisy_closed_loop_state directly would bypass the system path described by: Build a Simulink model of a nonlinear two-degree-of-freedom helicopter with coupled pitch and yaw dynamics, front/rear or equivalent cross-axis rotor actuation, bounded actuator commands, state estimation, and closed-loop attitude regulation.",
+      "F90-XAERO-10: replaying a fixed noisy_closed_loop_state trace would ignore causal variation in attitude_command_rad."
+    ]
+  },
+  "sources": [
+    {
+      "role": "public_task_manifest",
+      "path": "tasks/XAERO-10/task.json"
+    },
+    {
+      "role": "public_system_description",
+      "path": "tasks/XAERO-10/public_spec.json"
+    },
+    {
+      "role": "reference_runtime_manifest",
+      "path": "tasks/XAERO-10/reference/runtime_manifest.json"
+    }
+  ],
+  "scope": {
+    "system_only": true,
+    "sent_to_agent": false,
+    "used_for_scoring": false
+  }
+}

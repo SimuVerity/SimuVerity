@@ -1,0 +1,2929 @@
+{
+  "schema": "simuverity.direct-reference-manifest.v1",
+  "task_id": "XROBO-02",
+  "file_count": 726,
+  "files": [
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Animations/amrPioneer3DX/sm_amrPioneer3DX_path1follow_2View_mechExp.png",
+      "size_bytes": 65081
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/LICENSE.md",
+      "size_bytes": 1501
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/README.md",
+      "size_bytes": 2005
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb120/abbIrb120.rights",
+      "size_bytes": 10464
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb120/Geometry/abb120_base_link.stl",
+      "size_bytes": 685684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb120/Geometry/abb120_link_1.stl",
+      "size_bytes": 144484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb120/Geometry/abb120_link_2.stl",
+      "size_bytes": 287084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb120/Geometry/abb120_link_3.stl",
+      "size_bytes": 246684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb120/Geometry/abb120_link_4.stl",
+      "size_bytes": 315084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb120/Geometry/abb120_link_5.stl",
+      "size_bytes": 277584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb120/Geometry/abb120_link_6.stl",
+      "size_bytes": 44984
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb120/sm_abbIrb120.html",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb120/sm_abbIrb120.png",
+      "size_bytes": 83627
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb120/sm_abbIrb120.urdf",
+      "size_bytes": 10212
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb120/sm_robotexample_import_abbIrb120.m",
+      "size_bytes": 386
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb120T/abbIrb120T.rights",
+      "size_bytes": 10464
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb120T/Geometry/abb120T_base_link.stl",
+      "size_bytes": 685684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb120T/Geometry/abb120T_link_1.stl",
+      "size_bytes": 144484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb120T/Geometry/abb120T_link_2.stl",
+      "size_bytes": 287084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb120T/Geometry/abb120T_link_3.stl",
+      "size_bytes": 246684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb120T/Geometry/abb120T_link_4.stl",
+      "size_bytes": 315084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb120T/Geometry/abb120T_link_5.stl",
+      "size_bytes": 277584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb120T/Geometry/abb120T_link_6.stl",
+      "size_bytes": 44984
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb120T/sm_abbIrb120T.html",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb120T/sm_abbIrb120T.png",
+      "size_bytes": 85916
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb120T/sm_abbIrb120T.urdf",
+      "size_bytes": 10162
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb120T/sm_robotexample_import_abbIrb120T.m",
+      "size_bytes": 390
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb1600/abbIrb1600.rights",
+      "size_bytes": 10464
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb1600/Geometry/abb1600_base_link.stl",
+      "size_bytes": 73684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb1600/Geometry/abb1600_link_1.stl",
+      "size_bytes": 317384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb1600/Geometry/abb1600_link_2.stl",
+      "size_bytes": 78484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb1600/Geometry/abb1600_link_3.stl",
+      "size_bytes": 228284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb1600/Geometry/abb1600_link_4.stl",
+      "size_bytes": 145884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb1600/Geometry/abb1600_link_5.stl",
+      "size_bytes": 54884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb1600/Geometry/abb1600_link_6.stl",
+      "size_bytes": 63084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb1600/sm_abbIrb1600.html",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb1600/sm_abbIrb1600.png",
+      "size_bytes": 89857
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb1600/sm_abbIrb1600.urdf",
+      "size_bytes": 8482
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbIrb1600/sm_robotexample_import_abbIrb1600.m",
+      "size_bytes": 390
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbYuMi/abbYuMi.rights",
+      "size_bytes": 1366
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbYuMi/Geometry/abbyumi_body.stl",
+      "size_bytes": 5784734
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbYuMi/Geometry/abbyumi_finger.stl",
+      "size_bytes": 1367884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbYuMi/Geometry/abbyumi_gripper_base.stl",
+      "size_bytes": 5327634
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbYuMi/Geometry/abbyumi_link_1.stl",
+      "size_bytes": 1930684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbYuMi/Geometry/abbyumi_link_2.stl",
+      "size_bytes": 4907484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbYuMi/Geometry/abbyumi_link_3.stl",
+      "size_bytes": 2101784
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbYuMi/Geometry/abbyumi_link_4.stl",
+      "size_bytes": 4019584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbYuMi/Geometry/abbyumi_link_5.stl",
+      "size_bytes": 1855584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbYuMi/Geometry/abbyumi_link_6.stl",
+      "size_bytes": 2353884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbYuMi/Geometry/abbyumi_link_7.stl",
+      "size_bytes": 1152084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbYuMi/Models/sm_abbYuMi_point_cloud_finger.m",
+      "size_bytes": 1801
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbYuMi/Models/sm_abbYuMi_trajectory.slx",
+      "size_bytes": 271077
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbYuMi/Models/sm_abbYuMi_trajectory_plot1pathvz.m",
+      "size_bytes": 2615
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbYuMi/Models/sm_abbYuMi_trajectory_robot.png",
+      "size_bytes": 35070
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbYuMi/Models/sm_abbYuMi_trajectory_waypoints.m",
+      "size_bytes": 3643
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbYuMi/Models/sm_abbYuMi_trajectory_waypoints.mat",
+      "size_bytes": 872
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbYuMi/Models/startup_sm_abbYuMi_trajectory.m",
+      "size_bytes": 503
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbYuMi/sm_abbYuMi.html",
+      "size_bytes": 75
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbYuMi/sm_abbYuMi.png",
+      "size_bytes": 117317
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbYuMi/sm_abbYuMi.urdf",
+      "size_bytes": 32196
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/abbYuMi/sm_robotexample_import_abbYuMi.m",
+      "size_bytes": 793
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3AT/amrRobots.rights",
+      "size_bytes": 1484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3AT/Geometry/amr3at_axle.stl",
+      "size_bytes": 1084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3AT/Geometry/amr3at_back_sonar.stl",
+      "size_bytes": 12084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3AT/Geometry/amr3at_chassis.stl",
+      "size_bytes": 10784
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3AT/Geometry/amr3at_front_sonar.stl",
+      "size_bytes": 12084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3AT/Geometry/amr3at_left_hubcap.stl",
+      "size_bytes": 10684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3AT/Geometry/amr3at_right_hubcap.stl",
+      "size_bytes": 10684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3AT/Geometry/amr3at_top.stl",
+      "size_bytes": 22484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3AT/Geometry/amr3at_wheel.stl",
+      "size_bytes": 18084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3AT/sm_amrPioneer3AT.html",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3AT/sm_amrPioneer3AT.png",
+      "size_bytes": 64650
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3AT/sm_amrPioneer3AT.urdf",
+      "size_bytes": 20408
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3AT/sm_robotexample_import_amrPioneer3AT.m",
+      "size_bytes": 399
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3DX/amrRobots.rights",
+      "size_bytes": 1484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3DX/Geometry/amr3dx_back_rim.stl",
+      "size_bytes": 1094884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3DX/Geometry/amr3dx_caster_hubcap.stl",
+      "size_bytes": 1684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3DX/Geometry/amr3dx_caster_swivel.stl",
+      "size_bytes": 10284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3DX/Geometry/amr3dx_caster_wheel.stl",
+      "size_bytes": 11284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3DX/Geometry/amr3dx_chassis.stl",
+      "size_bytes": 11084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3DX/Geometry/amr3dx_front_rim.stl",
+      "size_bytes": 1094884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3DX/Geometry/amr3dx_left_hubcap.stl",
+      "size_bytes": 15184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3DX/Geometry/amr3dx_left_wheel.stl",
+      "size_bytes": 28884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3DX/Geometry/amr3dx_right_hubcap.stl",
+      "size_bytes": 15184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3DX/Geometry/amr3dx_right_wheel.stl",
+      "size_bytes": 28884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3DX/Geometry/amr3dx_sonar_back.stl",
+      "size_bytes": 15284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3DX/Geometry/amr3dx_sonar_front.stl",
+      "size_bytes": 15284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3DX/Geometry/amr3dx_top.stl",
+      "size_bytes": 30684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3DX/Models/sm_amrPioneer3DX_path_follow.slx",
+      "size_bytes": 167096
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3DX/Models/sm_amrPioneer3DX_path_follow_elec.slx",
+      "size_bytes": 180201
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3DX/Models/sm_amrPioneer3DX_path_follow_plot1path.m",
+      "size_bytes": 1660
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3DX/Models/sm_amrPioneer3DX_path_follow_robot.png",
+      "size_bytes": 11162
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3DX/Models/sm_amrPioneer3DX_path_follow_sweep.m",
+      "size_bytes": 3557
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3DX/Models/startup_sm_amrPioneer3DX_path_follow.m",
+      "size_bytes": 289
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3DX/Models/startup_sm_amrPioneer3DX_path_follow_elec.m",
+      "size_bytes": 299
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3DX/sm_amrPioneer3DX.html",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3DX/sm_amrPioneer3DX.png",
+      "size_bytes": 63236
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3DX/sm_amrPioneer3DX.urdf",
+      "size_bytes": 11632
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/amrPioneer3DX/sm_robotexample_import_amrPioneer3DX.m",
+      "size_bytes": 396
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/atlas.rights",
+      "size_bytes": 1613
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_GRIPPER_OPEN_chull.stl",
+      "size_bytes": 1084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_head.stl",
+      "size_bytes": 55034
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_head_camera.stl",
+      "size_bytes": 12884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_head_camera_chull.stl",
+      "size_bytes": 1084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_head_chull.stl",
+      "size_bytes": 1084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_l_foot.stl",
+      "size_bytes": 26884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_l_foot_chull.stl",
+      "size_bytes": 2584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_l_lglut.stl",
+      "size_bytes": 42434
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_l_lglut_chull.stl",
+      "size_bytes": 2584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_l_lleg.stl",
+      "size_bytes": 74784
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_l_lleg_chull.stl",
+      "size_bytes": 2584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_l_talus.stl",
+      "size_bytes": 2484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_l_uglut.stl",
+      "size_bytes": 24384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_l_uglut_chull.stl",
+      "size_bytes": 2584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_l_uleg.stl",
+      "size_bytes": 123284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_l_uleg_chull.stl",
+      "size_bytes": 2584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_lleg_chull.stl",
+      "size_bytes": 2584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_ltorso.stl",
+      "size_bytes": 12284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_mtorso.stl",
+      "size_bytes": 4284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_pelvis.stl",
+      "size_bytes": 98984
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_pelvis_chull.stl",
+      "size_bytes": 2584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_r_clav.stl",
+      "size_bytes": 27884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_r_farm.stl",
+      "size_bytes": 9884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_r_farm_chull.stl",
+      "size_bytes": 2584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_r_foot.stl",
+      "size_bytes": 27084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_r_foot_chull.stl",
+      "size_bytes": 2584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_r_hand.stl",
+      "size_bytes": 14684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_r_larm.stl",
+      "size_bytes": 20484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_r_lglut.stl",
+      "size_bytes": 42434
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_r_lglut_chull.stl",
+      "size_bytes": 2584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_r_lleg.stl",
+      "size_bytes": 74784
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_r_scap.stl",
+      "size_bytes": 33634
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_r_scap_chull.stl",
+      "size_bytes": 2584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_r_talus.stl",
+      "size_bytes": 2484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_r_uarm.stl",
+      "size_bytes": 27384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_r_uarm_chull.stl",
+      "size_bytes": 2584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_r_uglut.stl",
+      "size_bytes": 24484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_r_uglut_chull.stl",
+      "size_bytes": 2584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_r_uleg.stl",
+      "size_bytes": 123284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_r_uleg_chull.stl",
+      "size_bytes": 2584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_utorso.stl",
+      "size_bytes": 348284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/Geometry/atlas_utorso_chull.stl",
+      "size_bytes": 2584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/LICENSE.TXT",
+      "size_bytes": 1613
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/sm_atlas.html",
+      "size_bytes": 73
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/sm_atlas.png",
+      "size_bytes": 87096
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/sm_atlas.urdf",
+      "size_bytes": 52834
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/atlas/sm_robotexample_import_atlas.m",
+      "size_bytes": 373
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/clearpathHusky/clearpathHusky.rights",
+      "size_bytes": 1520
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/clearpathHusky/Geometry/husky_base_link.stl",
+      "size_bytes": 408284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/clearpathHusky/Geometry/husky_bumper.stl",
+      "size_bytes": 101484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/clearpathHusky/Geometry/husky_large_top_plate_collision.stl",
+      "size_bytes": 5084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/clearpathHusky/Geometry/husky_top_chassis.stl",
+      "size_bytes": 908484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/clearpathHusky/Geometry/husky_top_plate.stl",
+      "size_bytes": 1484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/clearpathHusky/Geometry/husky_user_rail.stl",
+      "size_bytes": 444884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/clearpathHusky/Geometry/husky_wheel.stl",
+      "size_bytes": 1362884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/clearpathHusky/sm_clearpathHusky.html",
+      "size_bytes": 82
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/clearpathHusky/sm_clearpathHusky.png",
+      "size_bytes": 86060
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/clearpathHusky/sm_clearpathHusky.urdf",
+      "size_bytes": 14931
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/clearpathHusky/sm_robotexample_import_clearpathHusky.m",
+      "size_bytes": 400
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/clearpathJackal/clearpathJackal.rights",
+      "size_bytes": 1479
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/clearpathJackal/Geometry/jackal-base.stl",
+      "size_bytes": 49684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/clearpathJackal/Geometry/jackal-fender.stl",
+      "size_bytes": 4284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/clearpathJackal/Geometry/jackal-wheel.stl",
+      "size_bytes": 133684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/clearpathJackal/sm_clearpathJackal.html",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/clearpathJackal/sm_clearpathJackal.png",
+      "size_bytes": 76723
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/clearpathJackal/sm_clearpathJackal.urdf",
+      "size_bytes": 19020
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/clearpathJackal/sm_robotexample_import_clearpathJackal.m",
+      "size_bytes": 403
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaGen3/Geometry/kg3_base_link.STL",
+      "size_bytes": 172784
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaGen3/Geometry/kg3_Bracelet_Link.STL",
+      "size_bytes": 1164884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaGen3/Geometry/kg3_EndEffector_Link.STL",
+      "size_bytes": 292684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaGen3/Geometry/kg3_ForeArm_Link.STL",
+      "size_bytes": 456284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaGen3/Geometry/kg3_HalfArm1_Link.STL",
+      "size_bytes": 514184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaGen3/Geometry/kg3_HalfArm2_Link.STL",
+      "size_bytes": 489184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaGen3/Geometry/kg3_Shoulder_Link.STL",
+      "size_bytes": 476184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaGen3/Geometry/kg3_Wrist1_Link.STL",
+      "size_bytes": 546484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaGen3/Geometry/kg3_Wrist2_Link.STL",
+      "size_bytes": 516984
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaGen3/kinovaGen3.rights",
+      "size_bytes": 3365
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaGen3/sm_kinovaGen3.html",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaGen3/sm_kinovaGen3.png",
+      "size_bytes": 57876
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaGen3/sm_kinovaGen3.urdf",
+      "size_bytes": 11229
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaGen3/sm_robotexample_import_kinovaGen3.m",
+      "size_bytes": 418
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S200/Geometry/J2N6S200_arm.stl",
+      "size_bytes": 410884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S200/Geometry/J2N6S200_arm_half_1.stl",
+      "size_bytes": 321084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S200/Geometry/J2N6S200_arm_half_2.stl",
+      "size_bytes": 321084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S200/Geometry/J2N6S200_arm_mico.stl",
+      "size_bytes": 430884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S200/Geometry/J2N6S200_base.stl",
+      "size_bytes": 853484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S200/Geometry/J2N6S200_finger_distal.stl",
+      "size_bytes": 97184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S200/Geometry/J2N6S200_finger_proximal.stl",
+      "size_bytes": 135584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S200/Geometry/J2N6S200_forearm.stl",
+      "size_bytes": 350384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S200/Geometry/J2N6S200_forearm_mico.stl",
+      "size_bytes": 381684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S200/Geometry/J2N6S200_hand_2finger.stl",
+      "size_bytes": 2522684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S200/Geometry/J2N6S200_hand_3finger.stl",
+      "size_bytes": 1395484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S200/Geometry/J2N6S200_ring_big.STL",
+      "size_bytes": 22684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S200/Geometry/J2N6S200_ring_small.STL",
+      "size_bytes": 22684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S200/Geometry/J2N6S200_shoulder.stl",
+      "size_bytes": 410184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S200/Geometry/J2N6S200_wrist.stl",
+      "size_bytes": 184384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S200/Geometry/J2N6S200_wrist_spherical_1.stl",
+      "size_bytes": 387384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S200/Geometry/J2N6S200_wrist_spherical_2.stl",
+      "size_bytes": 387384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S200/kinovaJacoAndMico.rights",
+      "size_bytes": 1572
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S200/sm_kinovaJacoJ2N6S200.html",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S200/sm_kinovaJacoJ2N6S200.png",
+      "size_bytes": 56568
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S200/sm_kinovaJacoJ2N6S200.urdf",
+      "size_bytes": 19442
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S200/sm_robotexample_import_kinovaJacoJ2N6S200.m",
+      "size_bytes": 861
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S300/Geometry/J2N6S300_arm.STL",
+      "size_bytes": 410884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S300/Geometry/J2N6S300_arm_half_1.STL",
+      "size_bytes": 321084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S300/Geometry/J2N6S300_arm_half_2.STL",
+      "size_bytes": 321084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S300/Geometry/J2N6S300_arm_mico.STL",
+      "size_bytes": 430884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S300/Geometry/J2N6S300_base.STL",
+      "size_bytes": 853484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S300/Geometry/J2N6S300_finger_distal.STL",
+      "size_bytes": 97184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S300/Geometry/J2N6S300_finger_proximal.STL",
+      "size_bytes": 135584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S300/Geometry/J2N6S300_forearm.STL",
+      "size_bytes": 350384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S300/Geometry/J2N6S300_forearm_mico.STL",
+      "size_bytes": 381684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S300/Geometry/J2N6S300_hand_2finger.STL",
+      "size_bytes": 2522684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S300/Geometry/J2N6S300_hand_3finger.STL",
+      "size_bytes": 1395484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S300/Geometry/J2N6S300_ring_big.STL",
+      "size_bytes": 22684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S300/Geometry/J2N6S300_ring_small.STL",
+      "size_bytes": 22684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S300/Geometry/J2N6S300_shoulder.STL",
+      "size_bytes": 410184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S300/Geometry/J2N6S300_wrist.STL",
+      "size_bytes": 184384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S300/Geometry/J2N6S300_wrist_spherical_1.STL",
+      "size_bytes": 387384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S300/Geometry/J2N6S300_wrist_spherical_2.STL",
+      "size_bytes": 387384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S300/kinovaJacoAndMico.rights",
+      "size_bytes": 1572
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S300/sm_kinovaJacoJ2N6S300.html",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S300/sm_kinovaJacoJ2N6S300.png",
+      "size_bytes": 57227
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S300/sm_kinovaJacoJ2N6S300.urdf",
+      "size_bytes": 21025
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N6S300/sm_robotexample_import_kinovaJacoJ2N6S300.m",
+      "size_bytes": 861
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N7S300/Geometry/J2N7S300_arm.STL",
+      "size_bytes": 410884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N7S300/Geometry/J2N7S300_arm_half_1.STL",
+      "size_bytes": 321084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N7S300/Geometry/J2N7S300_arm_half_2.STL",
+      "size_bytes": 321084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N7S300/Geometry/J2N7S300_arm_mico.STL",
+      "size_bytes": 430884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N7S300/Geometry/J2N7S300_base.STL",
+      "size_bytes": 853484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N7S300/Geometry/J2N7S300_finger_distal.STL",
+      "size_bytes": 97184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N7S300/Geometry/J2N7S300_finger_proximal.STL",
+      "size_bytes": 135584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N7S300/Geometry/J2N7S300_forearm.STL",
+      "size_bytes": 350384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N7S300/Geometry/J2N7S300_forearm_mico.STL",
+      "size_bytes": 381684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N7S300/Geometry/J2N7S300_hand_2finger.STL",
+      "size_bytes": 2522684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N7S300/Geometry/J2N7S300_hand_3finger.STL",
+      "size_bytes": 1395484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N7S300/Geometry/J2N7S300_ring_big.STL",
+      "size_bytes": 22684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N7S300/Geometry/J2N7S300_ring_small.STL",
+      "size_bytes": 22684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N7S300/Geometry/J2N7S300_shoulder.STL",
+      "size_bytes": 410184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N7S300/Geometry/J2N7S300_wrist.STL",
+      "size_bytes": 184384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N7S300/Geometry/J2N7S300_wrist_spherical_1.STL",
+      "size_bytes": 387384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N7S300/Geometry/J2N7S300_wrist_spherical_2.STL",
+      "size_bytes": 387384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N7S300/kinovaJacoAndMico.rights",
+      "size_bytes": 1572
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N7S300/sm_kinovaJacoJ2N7S300.html",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N7S300/sm_kinovaJacoJ2N7S300.png",
+      "size_bytes": 59234
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N7S300/sm_kinovaJacoJ2N7S300.urdf",
+      "size_bytes": 22962
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2N7S300/sm_robotexample_import_kinovaJacoJ2N7S300.m",
+      "size_bytes": 861
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S6S300/Geometry/J2S6S300_arm.STL",
+      "size_bytes": 410884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S6S300/Geometry/J2S6S300_arm_half_1.STL",
+      "size_bytes": 321084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S6S300/Geometry/J2S6S300_arm_half_2.STL",
+      "size_bytes": 321084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S6S300/Geometry/J2S6S300_arm_mico.STL",
+      "size_bytes": 430884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S6S300/Geometry/J2S6S300_base.STL",
+      "size_bytes": 853484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S6S300/Geometry/J2S6S300_finger_distal.STL",
+      "size_bytes": 97184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S6S300/Geometry/J2S6S300_finger_proximal.STL",
+      "size_bytes": 135584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S6S300/Geometry/J2S6S300_forearm.STL",
+      "size_bytes": 350384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S6S300/Geometry/J2S6S300_forearm_mico.STL",
+      "size_bytes": 381684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S6S300/Geometry/J2S6S300_hand_2finger.STL",
+      "size_bytes": 2522684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S6S300/Geometry/J2S6S300_hand_3finger.STL",
+      "size_bytes": 1395484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S6S300/Geometry/J2S6S300_ring_big.STL",
+      "size_bytes": 22684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S6S300/Geometry/J2S6S300_ring_small.STL",
+      "size_bytes": 22684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S6S300/Geometry/J2S6S300_shoulder.STL",
+      "size_bytes": 410184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S6S300/Geometry/J2S6S300_wrist.STL",
+      "size_bytes": 184384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S6S300/Geometry/J2S6S300_wrist_spherical_1.STL",
+      "size_bytes": 387384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S6S300/Geometry/J2S6S300_wrist_spherical_2.STL",
+      "size_bytes": 387384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S6S300/kinovaJacoAndMico.rights",
+      "size_bytes": 1572
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S6S300/sm_kinovaJacoJ2S6S300.html",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S6S300/sm_kinovaJacoJ2S6S300.png",
+      "size_bytes": 56923
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S6S300/sm_kinovaJacoJ2S6S300.urdf",
+      "size_bytes": 21424
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S6S300/sm_robotexample_import_kinovaJacoJ2S6S300.m",
+      "size_bytes": 994
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S7S300/Geometry/J2S7S300_arm.STL",
+      "size_bytes": 410884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S7S300/Geometry/J2S7S300_arm_half_1.STL",
+      "size_bytes": 321084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S7S300/Geometry/J2S7S300_arm_half_2.STL",
+      "size_bytes": 321084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S7S300/Geometry/J2S7S300_arm_mico.STL",
+      "size_bytes": 430884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S7S300/Geometry/J2S7S300_base.STL",
+      "size_bytes": 853484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S7S300/Geometry/J2S7S300_finger_distal.STL",
+      "size_bytes": 97184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S7S300/Geometry/J2S7S300_finger_proximal.STL",
+      "size_bytes": 135584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S7S300/Geometry/J2S7S300_forearm.STL",
+      "size_bytes": 350384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S7S300/Geometry/J2S7S300_forearm_mico.STL",
+      "size_bytes": 381684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S7S300/Geometry/J2S7S300_hand_2finger.STL",
+      "size_bytes": 2522684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S7S300/Geometry/J2S7S300_hand_3finger.STL",
+      "size_bytes": 1395484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S7S300/Geometry/J2S7S300_ring_big.STL",
+      "size_bytes": 22684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S7S300/Geometry/J2S7S300_ring_small.STL",
+      "size_bytes": 22684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S7S300/Geometry/J2S7S300_shoulder.STL",
+      "size_bytes": 410184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S7S300/Geometry/J2S7S300_wrist.STL",
+      "size_bytes": 184384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S7S300/Geometry/J2S7S300_wrist_spherical_1.STL",
+      "size_bytes": 387384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S7S300/Geometry/J2S7S300_wrist_spherical_2.STL",
+      "size_bytes": 387384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S7S300/kinovaJacoAndMico.rights",
+      "size_bytes": 1572
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S7S300/sm_kinovaJacoJ2S7S300.html",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S7S300/sm_kinovaJacoJ2S7S300.png",
+      "size_bytes": 58572
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S7S300/sm_kinovaJacoJ2S7S300.urdf",
+      "size_bytes": 22990
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoJ2S7S300/sm_robotexample_import_kinovaJacoJ2S7S300.m",
+      "size_bytes": 994
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoTwoArmExample/Geometry/J2Arm_arm.STL",
+      "size_bytes": 410884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoTwoArmExample/Geometry/J2Arm_arm_half_1.STL",
+      "size_bytes": 321084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoTwoArmExample/Geometry/J2Arm_arm_half_2.STL",
+      "size_bytes": 321084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoTwoArmExample/Geometry/J2Arm_arm_mico.STL",
+      "size_bytes": 430884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoTwoArmExample/Geometry/J2Arm_base.STL",
+      "size_bytes": 853484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoTwoArmExample/Geometry/J2Arm_finger_distal.STL",
+      "size_bytes": 97184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoTwoArmExample/Geometry/J2Arm_finger_proximal.STL",
+      "size_bytes": 135584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoTwoArmExample/Geometry/J2Arm_forearm.STL",
+      "size_bytes": 350384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoTwoArmExample/Geometry/J2Arm_forearm_mico.STL",
+      "size_bytes": 381684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoTwoArmExample/Geometry/J2Arm_hand_2finger.STL",
+      "size_bytes": 2522684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoTwoArmExample/Geometry/J2Arm_hand_3finger.STL",
+      "size_bytes": 1395484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoTwoArmExample/Geometry/J2Arm_ring_big.STL",
+      "size_bytes": 22684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoTwoArmExample/Geometry/J2Arm_ring_small.STL",
+      "size_bytes": 22684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoTwoArmExample/Geometry/J2Arm_shoulder.STL",
+      "size_bytes": 410184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoTwoArmExample/Geometry/J2Arm_wrist.STL",
+      "size_bytes": 184384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoTwoArmExample/Geometry/J2Arm_wrist_spherical_1.STL",
+      "size_bytes": 387384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoTwoArmExample/Geometry/J2Arm_wrist_spherical_2.STL",
+      "size_bytes": 387384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoTwoArmExample/kinovaJacoAndMico.rights",
+      "size_bytes": 1572
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoTwoArmExample/sm_kinovaJacoTwoArmExample.html",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoTwoArmExample/sm_kinovaJacoTwoArmExample.png",
+      "size_bytes": 70832
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoTwoArmExample/sm_kinovaJacoTwoArmExample.urdf",
+      "size_bytes": 39727
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaJacoTwoArmExample/sm_robotexample_import_kinovaJacoTwoArmExample.m",
+      "size_bytes": 1100
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N4S200/Geometry/M1N4S200_arm.STL",
+      "size_bytes": 410884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N4S200/Geometry/M1N4S200_arm_half_1.STL",
+      "size_bytes": 321084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N4S200/Geometry/M1N4S200_arm_half_2.STL",
+      "size_bytes": 321084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N4S200/Geometry/M1N4S200_arm_mico.STL",
+      "size_bytes": 430884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N4S200/Geometry/M1N4S200_base.STL",
+      "size_bytes": 853484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N4S200/Geometry/M1N4S200_finger_distal.STL",
+      "size_bytes": 97184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N4S200/Geometry/M1N4S200_finger_proximal.STL",
+      "size_bytes": 135584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N4S200/Geometry/M1N4S200_forearm.STL",
+      "size_bytes": 350384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N4S200/Geometry/M1N4S200_forearm_mico.STL",
+      "size_bytes": 381684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N4S200/Geometry/M1N4S200_hand_2finger.STL",
+      "size_bytes": 2522684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N4S200/Geometry/M1N4S200_hand_3finger.STL",
+      "size_bytes": 1395484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N4S200/Geometry/M1N4S200_ring_big.STL",
+      "size_bytes": 22684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N4S200/Geometry/M1N4S200_ring_small.STL",
+      "size_bytes": 22684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N4S200/Geometry/M1N4S200_shoulder.STL",
+      "size_bytes": 410184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N4S200/Geometry/M1N4S200_wrist.STL",
+      "size_bytes": 184384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N4S200/Geometry/M1N4S200_wrist_spherical_1.STL",
+      "size_bytes": 387384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N4S200/Geometry/M1N4S200_wrist_spherical_2.STL",
+      "size_bytes": 387384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N4S200/kinovaJacoAndMico.rights",
+      "size_bytes": 1572
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N4S200/sm_kinovaMicoM1N4S200.html",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N4S200/sm_kinovaMicoM1N4S200.png",
+      "size_bytes": 59764
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N4S200/sm_kinovaMicoM1N4S200.urdf",
+      "size_bytes": 16322
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N4S200/sm_robotexample_import_kinovaMicoM1N4S200.m",
+      "size_bytes": 861
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S200/Geometry/M1N6S200_arm.STL",
+      "size_bytes": 410884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S200/Geometry/M1N6S200_arm_half_1.STL",
+      "size_bytes": 321084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S200/Geometry/M1N6S200_arm_half_2.STL",
+      "size_bytes": 321084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S200/Geometry/M1N6S200_arm_mico.STL",
+      "size_bytes": 430884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S200/Geometry/M1N6S200_base.STL",
+      "size_bytes": 853484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S200/Geometry/M1N6S200_finger_distal.STL",
+      "size_bytes": 97184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S200/Geometry/M1N6S200_finger_proximal.STL",
+      "size_bytes": 135584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S200/Geometry/M1N6S200_forearm.STL",
+      "size_bytes": 350384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S200/Geometry/M1N6S200_forearm_mico.STL",
+      "size_bytes": 381684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S200/Geometry/M1N6S200_hand_2finger.STL",
+      "size_bytes": 2522684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S200/Geometry/M1N6S200_hand_3finger.STL",
+      "size_bytes": 1395484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S200/Geometry/M1N6S200_ring_big.STL",
+      "size_bytes": 22684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S200/Geometry/M1N6S200_ring_small.STL",
+      "size_bytes": 22684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S200/Geometry/M1N6S200_shoulder.STL",
+      "size_bytes": 410184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S200/Geometry/M1N6S200_wrist.STL",
+      "size_bytes": 184384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S200/Geometry/M1N6S200_wrist_spherical_1.STL",
+      "size_bytes": 387384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S200/Geometry/M1N6S200_wrist_spherical_2.STL",
+      "size_bytes": 387384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S200/kinovaJacoAndMico.rights",
+      "size_bytes": 1572
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S200/sm_kinovaMicoM1N6S200.html",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S200/sm_kinovaMicoM1N6S200.png",
+      "size_bytes": 59400
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S200/sm_kinovaMicoM1N6S200.urdf",
+      "size_bytes": 19469
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S200/sm_robotexample_import_kinovaMicoM1N6S200.m",
+      "size_bytes": 861
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S300/Geometry/M1N6S300_arm.STL",
+      "size_bytes": 410884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S300/Geometry/M1N6S300_arm_half_1.STL",
+      "size_bytes": 321084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S300/Geometry/M1N6S300_arm_half_2.STL",
+      "size_bytes": 321084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S300/Geometry/M1N6S300_arm_mico.STL",
+      "size_bytes": 430884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S300/Geometry/M1N6S300_base.STL",
+      "size_bytes": 853484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S300/Geometry/M1N6S300_finger_distal.STL",
+      "size_bytes": 97184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S300/Geometry/M1N6S300_finger_proximal.STL",
+      "size_bytes": 135584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S300/Geometry/M1N6S300_forearm.STL",
+      "size_bytes": 350384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S300/Geometry/M1N6S300_forearm_mico.STL",
+      "size_bytes": 381684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S300/Geometry/M1N6S300_hand_2finger.STL",
+      "size_bytes": 2522684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S300/Geometry/M1N6S300_hand_3finger.STL",
+      "size_bytes": 1395484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S300/Geometry/M1N6S300_ring_big.STL",
+      "size_bytes": 22684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S300/Geometry/M1N6S300_ring_small.STL",
+      "size_bytes": 22684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S300/Geometry/M1N6S300_shoulder.STL",
+      "size_bytes": 410184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S300/Geometry/M1N6S300_wrist.STL",
+      "size_bytes": 184384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S300/Geometry/M1N6S300_wrist_spherical_1.STL",
+      "size_bytes": 387384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S300/Geometry/M1N6S300_wrist_spherical_2.STL",
+      "size_bytes": 387384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S300/kinovaJacoAndMico.rights",
+      "size_bytes": 1572
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S300/sm_kinovaMicoM1N6S300.html",
+      "size_bytes": 86
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S300/sm_kinovaMicoM1N6S300.png",
+      "size_bytes": 60063
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S300/sm_kinovaMicoM1N6S300.urdf",
+      "size_bytes": 21873
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMicoM1N6S300/sm_robotexample_import_kinovaMicoM1N6S300.m",
+      "size_bytes": 861
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_arm_half_1.stl",
+      "size_bytes": 321084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_arm_half_2.stl",
+      "size_bytes": 321084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_base.stl",
+      "size_bytes": 296084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_base_7dof.stl",
+      "size_bytes": 853484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_fixed_payload.stl",
+      "size_bytes": 3006484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_forearm.stl",
+      "size_bytes": 1551084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_forearm_7dof.stl",
+      "size_bytes": 350384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_kinect_one.stl",
+      "size_bytes": 1086484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_kinova_actuator_gearing.stl",
+      "size_bytes": 1989484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_kinova_robotiq_coupler.stl",
+      "size_bytes": 753684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_lower_body.stl",
+      "size_bytes": 3741284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_mid_body.stl",
+      "size_bytes": 526884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_moving_payload.stl",
+      "size_bytes": 9331084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_pan_link.stl",
+      "size_bytes": 2359684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_pan_tilt_base.stl",
+      "size_bytes": 991484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_robotiq_85_base_link.stl",
+      "size_bytes": 3725884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_robotiq_85_finger_link.stl",
+      "size_bytes": 191684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_robotiq_85_finger_tip_link.stl",
+      "size_bytes": 243684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_robotiq_85_inner_knuckle_link.stl",
+      "size_bytes": 209684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_robotiq_85_knuckle_link.stl",
+      "size_bytes": 127684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_shoulder.stl",
+      "size_bytes": 1788084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_shoulder_7dof.stl",
+      "size_bytes": 410184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_sick_tim.stl",
+      "size_bytes": 1729084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_tilt_link.stl",
+      "size_bytes": 5360884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_upper_arm.stl",
+      "size_bytes": 1663684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_upper_body.stl",
+      "size_bytes": 14473284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_vector_base.stl",
+      "size_bytes": 35399884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_wrist_1.stl",
+      "size_bytes": 1192084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_wrist_2.stl",
+      "size_bytes": 1192084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_wrist_spherical_1.stl",
+      "size_bytes": 387384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/Geometry/movo_wrist_spherical_2.stl",
+      "size_bytes": 387384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/kinovaMovo.rights",
+      "size_bytes": 1572
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/sm_kinovaMovo.html",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/sm_kinovaMovo.png",
+      "size_bytes": 88729
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/sm_kinovaMovo.urdf",
+      "size_bytes": 73462
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kinovaMovo/sm_robotexample_import_kinovaMovo.m",
+      "size_bytes": 388
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa14/Geometry/kiiwa14_link_0.stl",
+      "size_bytes": 474784
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa14/Geometry/kiiwa14_link_1.stl",
+      "size_bytes": 500384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa14/Geometry/kiiwa14_link_2.stl",
+      "size_bytes": 529884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa14/Geometry/kiiwa14_link_3.stl",
+      "size_bytes": 523584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa14/Geometry/kiiwa14_link_4.stl",
+      "size_bytes": 525084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa14/Geometry/kiiwa14_link_5.stl",
+      "size_bytes": 645184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa14/Geometry/kiiwa14_link_6.stl",
+      "size_bytes": 392884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa14/Geometry/kiiwa14_link_7.stl",
+      "size_bytes": 1906984
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa14/iiwa_stack.rights",
+      "size_bytes": 1751
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa14/sm_kukaiiwa14.html",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa14/sm_kukaiiwa14.png",
+      "size_bytes": 64347
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa14/sm_kukaiiwa14.urdf",
+      "size_bytes": 15617
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa14/sm_robotexample_import_kukaiiwa14.m",
+      "size_bytes": 390
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa7/Geometry/kiiwa7_link_0.stl",
+      "size_bytes": 1782284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa7/Geometry/kiiwa7_link_1.stl",
+      "size_bytes": 465984
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa7/Geometry/kiiwa7_link_2.stl",
+      "size_bytes": 1327984
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa7/Geometry/kiiwa7_link_3.stl",
+      "size_bytes": 528284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa7/Geometry/kiiwa7_link_4.stl",
+      "size_bytes": 1327884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa7/Geometry/kiiwa7_link_5.stl",
+      "size_bytes": 580684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa7/Geometry/kiiwa7_link_6.stl",
+      "size_bytes": 1313384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa7/Geometry/kiiwa7_link_7.stl",
+      "size_bytes": 2130884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa7/iiwa_stack.rights",
+      "size_bytes": 1751
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa7/sm_kukaiiwa7.html",
+      "size_bytes": 77
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa7/sm_kukaiiwa7.png",
+      "size_bytes": 64401
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa7/sm_kukaiiwa7.urdf",
+      "size_bytes": 15782
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/kukaiiwa7/sm_robotexample_import_kukaiiwa7.m",
+      "size_bytes": 387
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/quanserQBot2e/Geometry/QBot2e_Base.stl",
+      "size_bytes": 153334
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/quanserQBot2e/Geometry/QBot2e_BaseComponents.stl",
+      "size_bytes": 1064334
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/quanserQBot2e/Geometry/QBot2e_Kinect.stl",
+      "size_bytes": 158984
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/quanserQBot2e/Geometry/QBot2e_Wheel.stl",
+      "size_bytes": 36284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/quanserQBot2e/quanserRobots.rights",
+      "size_bytes": 1525
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/quanserQBot2e/sm_quanserQBot2e.html",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/quanserQBot2e/sm_quanserQBot2e.png",
+      "size_bytes": 82218
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/quanserQBot2e/sm_quanserQBot2e.urdf",
+      "size_bytes": 8619
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/quanserQBot2e/sm_robotexample_import_quanserQBot2e.m",
+      "size_bytes": 427
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/quanserQCar/Geometry/QCarBody.stl",
+      "size_bytes": 2610684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/quanserQCar/Geometry/QCarLidar.stl",
+      "size_bytes": 48784
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/quanserQCar/Geometry/QCarSteeringHubL.stl",
+      "size_bytes": 27484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/quanserQCar/Geometry/QCarSteeringHubR.stl",
+      "size_bytes": 27484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/quanserQCar/Geometry/QCarWheel.stl",
+      "size_bytes": 56484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/quanserQCar/quanserRobots.rights",
+      "size_bytes": 1525
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/quanserQCar/sm_quanserQCar.html",
+      "size_bytes": 79
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/quanserQCar/sm_quanserQCar.png",
+      "size_bytes": 100299
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/quanserQCar/sm_quanserQCar.urdf",
+      "size_bytes": 13272
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/quanserQCar/sm_robotexample_import_quanserQCar.m",
+      "size_bytes": 393
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkBaxter/Geometry/baxter_base_link.STL",
+      "size_bytes": 3463084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkBaxter/Geometry/baxter_E0.STL",
+      "size_bytes": 656284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkBaxter/Geometry/baxter_E1.STL",
+      "size_bytes": 600284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkBaxter/Geometry/baxter_H0.STL",
+      "size_bytes": 260834
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkBaxter/Geometry/baxter_H1.STL",
+      "size_bytes": 174384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkBaxter/Geometry/baxter_PEDESTAL.STL",
+      "size_bytes": 3735734
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkBaxter/Geometry/baxter_S0.STL",
+      "size_bytes": 1917534
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkBaxter/Geometry/baxter_S1.STL",
+      "size_bytes": 328784
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkBaxter/Geometry/baxter_W0.STL",
+      "size_bytes": 1316034
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkBaxter/Geometry/baxter_W1.STL",
+      "size_bytes": 687784
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkBaxter/Geometry/baxter_W2.STL",
+      "size_bytes": 566584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkBaxter/rethinkBaxter.rights",
+      "size_bytes": 1530
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkBaxter/sm_rethinkBaxter.html",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkBaxter/sm_rethinkBaxter.png",
+      "size_bytes": 80483
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkBaxter/sm_rethinkBaxter.urdf",
+      "size_bytes": 53906
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkBaxter/sm_robotexample_import_rethinkBaxter.m",
+      "size_bytes": 399
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkSawyer/Geometry/sawyer_mp1_l6.STL",
+      "size_bytes": 261534
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkSawyer/Geometry/sawyer_mp3_l0.STL",
+      "size_bytes": 675584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkSawyer/Geometry/sawyer_mp3_l1.STL",
+      "size_bytes": 511884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkSawyer/Geometry/sawyer_pv_base.STL",
+      "size_bytes": 264934
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkSawyer/Geometry/sawyer_pv_head.STL",
+      "size_bytes": 276234
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkSawyer/Geometry/sawyer_pv_l2.STL",
+      "size_bytes": 133734
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkSawyer/Geometry/sawyer_pv_l3.STL",
+      "size_bytes": 160034
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkSawyer/Geometry/sawyer_pv_l4.STL",
+      "size_bytes": 208284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkSawyer/Geometry/sawyer_pv_l5.STL",
+      "size_bytes": 176534
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkSawyer/Geometry/sawyer_pv_pedestal.STL",
+      "size_bytes": 1647684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkSawyer/sawyer_robot.rights",
+      "size_bytes": 1530
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkSawyer/sm_rethinkSawyer.html",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkSawyer/sm_rethinkSawyer.png",
+      "size_bytes": 81402
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkSawyer/sm_rethinkSawyer.urdf",
+      "size_bytes": 14873
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/rethinkSawyer/sm_robotexample_import_rethinkSawyer.m",
+      "size_bytes": 399
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOP2/Geometry/robotisOP2_ankle1_l.STL",
+      "size_bytes": 1688484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOP2/Geometry/robotisOP2_ankle1_r.STL",
+      "size_bytes": 1688484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOP2/Geometry/robotisOP2_ankle2_l.STL",
+      "size_bytes": 1129784
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOP2/Geometry/robotisOP2_ankle2_r.STL",
+      "size_bytes": 1127484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOP2/Geometry/robotisOP2_arm_high_l.STL",
+      "size_bytes": 1868384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOP2/Geometry/robotisOP2_arm_high_r.STL",
+      "size_bytes": 1866384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOP2/Geometry/robotisOP2_body.STL",
+      "size_bytes": 3549184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOP2/Geometry/robotisOP2_head.STL",
+      "size_bytes": 5366884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOP2/Geometry/robotisOP2_neck.STL",
+      "size_bytes": 226484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOP2/Geometry/robotisOP2_pelvis_l.STL",
+      "size_bytes": 409984
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOP2/Geometry/robotisOP2_pelvis_r.STL",
+      "size_bytes": 409984
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOP2/Geometry/robotisOP2_shoulder_l.STL",
+      "size_bytes": 375384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOP2/Geometry/robotisOP2_shoulder_r.STL",
+      "size_bytes": 375384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOP2/Geometry/robotisOP2_thigh1_l.STL",
+      "size_bytes": 1688484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOP2/Geometry/robotisOP2_thigh1_r.STL",
+      "size_bytes": 1688484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOP2/Geometry/robotisOP2_thigh2_l.STL",
+      "size_bytes": 1799484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOP2/Geometry/robotisOP2_thigh2_r.STL",
+      "size_bytes": 1799484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOP2/Geometry/robotisOP2_tibia_l.STL",
+      "size_bytes": 820084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOP2/Geometry/robotisOP2_tibia_r.STL",
+      "size_bytes": 822784
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOP2/robotisOP2.rights",
+      "size_bytes": 11558
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOP2/sm_robotexample_import_robotisOP2.m",
+      "size_bytes": 390
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOP2/sm_robotisOP2.html",
+      "size_bytes": 78
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOP2/sm_robotisOP2.png",
+      "size_bytes": 91245
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOP2/sm_robotisOP2.urdf",
+      "size_bytes": 45147
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOpenManip/Geometry/robOpMa_chain_link1.stl",
+      "size_bytes": 1068884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOpenManip/Geometry/robOpMa_chain_link2.stl",
+      "size_bytes": 393384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOpenManip/Geometry/robOpMa_chain_link3.stl",
+      "size_bytes": 920684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOpenManip/Geometry/robOpMa_chain_link4.stl",
+      "size_bytes": 781984
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOpenManip/Geometry/robOpMa_chain_link5.stl",
+      "size_bytes": 647984
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOpenManip/Geometry/robOpMa_chain_link_grip_l.stl",
+      "size_bytes": 134184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOpenManip/Geometry/robOpMa_chain_link_grip_r.stl",
+      "size_bytes": 135684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOpenManip/robotisOpenManip.rights",
+      "size_bytes": 11558
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOpenManip/sm_robotexample_import_robotisOpenManip.m",
+      "size_bytes": 410
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOpenManip/sm_robotisOpenManip.html",
+      "size_bytes": 84
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOpenManip/sm_robotisOpenManip.png",
+      "size_bytes": 103290
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisOpenManip/sm_robotisOpenManip.urdf",
+      "size_bytes": 16841
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3Burger/Geometry/robTur3Bur_burger_base.stl",
+      "size_bytes": 4826284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3Burger/Geometry/robTur3Bur_lds.stl",
+      "size_bytes": 728384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3Burger/Geometry/robTur3Bur_left_tire.stl",
+      "size_bytes": 1083684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3Burger/Geometry/robTur3Bur_right_tire.stl",
+      "size_bytes": 1083684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3Burger/sm_robotexample_import_robotisTurtleBot3Burger.m",
+      "size_bytes": 452
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3Burger/sm_robotisTurtleBot3Burger.html",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3Burger/sm_robotisTurtleBot3Burger.png",
+      "size_bytes": 86123
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3Burger/sm_robotisTurtleBot3Burger.urdf",
+      "size_bytes": 10023
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3Burger/turtlebot3.rights",
+      "size_bytes": 11558
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3Waffle/Geometry/robTur3Waf_lds.stl",
+      "size_bytes": 728384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3Waffle/Geometry/robTur3Waf_left_tire.stl",
+      "size_bytes": 1083684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3Waffle/Geometry/robTur3Waf_r200.stl",
+      "size_bytes": 78684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3Waffle/Geometry/robTur3Waf_right_tire.stl",
+      "size_bytes": 1083684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3Waffle/Geometry/robTur3Waf_waffle_base.stl",
+      "size_bytes": 16291984
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3Waffle/sm_robotexample_import_robotisTurtleBot3Waffle.m",
+      "size_bytes": 427
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3Waffle/sm_robotisTurtleBot3Waffle.html",
+      "size_bytes": 91
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3Waffle/sm_robotisTurtleBot3Waffle.png",
+      "size_bytes": 89654
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3Waffle/sm_robotisTurtleBot3Waffle.urdf",
+      "size_bytes": 14278
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3Waffle/turtlebot3.rights",
+      "size_bytes": 11558
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WaffleOpenManip/Geometry/robTur3WafOM_lds.stl",
+      "size_bytes": 728384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WaffleOpenManip/Geometry/robTur3WafOM_left_tire.stl",
+      "size_bytes": 1083684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WaffleOpenManip/Geometry/robTur3WafOM_r200.stl",
+      "size_bytes": 78684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WaffleOpenManip/Geometry/robTur3WafOM_right_tire.stl",
+      "size_bytes": 1083684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WaffleOpenManip/Geometry/robTur3WafOM_waffle_base.stl",
+      "size_bytes": 10522584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WaffleOpenManip/sm_robotexample_import_robotisTurtleBot3WaffleOpenManip.m",
+      "size_bytes": 454
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WaffleOpenManip/sm_robotisTurtleBot3WaffleOpenManip.html",
+      "size_bytes": 100
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WaffleOpenManip/sm_robotisTurtleBot3WaffleOpenManip.png",
+      "size_bytes": 86787
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WaffleOpenManip/sm_robotisTurtleBot3WaffleOpenManip.urdf",
+      "size_bytes": 14340
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WaffleOpenManip/turtlebot3.rights",
+      "size_bytes": 11558
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WafflePi/Geometry/robTur3WafPi_lds.stl",
+      "size_bytes": 728384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WafflePi/Geometry/robTur3WafPi_left_tire.stl",
+      "size_bytes": 1083684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WafflePi/Geometry/robTur3WafPi_right_tire.stl",
+      "size_bytes": 1083684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WafflePi/Geometry/robTur3WafPi_waffle_pi_base.stl",
+      "size_bytes": 7878884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WafflePi/sm_robotexample_import_robotisTurtleBot3WafflePi.m",
+      "size_bytes": 433
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WafflePi/sm_robotisTurtleBot3WafflePi.html",
+      "size_bytes": 93
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WafflePi/sm_robotisTurtleBot3WafflePi.png",
+      "size_bytes": 88675
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WafflePi/sm_robotisTurtleBot3WafflePi.urdf",
+      "size_bytes": 12933
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WafflePi/turtlebot3.rights",
+      "size_bytes": 11558
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WafflePiOpenManip/Geometry/robTur3WafPiOM_lds.stl",
+      "size_bytes": 728384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WafflePiOpenManip/Geometry/robTur3WafPiOM_left_tire.stl",
+      "size_bytes": 1083684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WafflePiOpenManip/Geometry/robTur3WafPiOM_right_tire.stl",
+      "size_bytes": 1083684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WafflePiOpenManip/Geometry/robTur3WafPiOM_waffle_pi_base.stl",
+      "size_bytes": 7878884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WafflePiOpenManip/sm_robotexample_import_robotisTurtleBot3WafflePiOpenManip.m",
+      "size_bytes": 460
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WafflePiOpenManip/sm_robotisTurtleBot3WafflePiOpenManip.html",
+      "size_bytes": 102
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WafflePiOpenManip/sm_robotisTurtleBot3WafflePiOpenManip.png",
+      "size_bytes": 90156
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WafflePiOpenManip/sm_robotisTurtleBot3WafflePiOpenManip.urdf",
+      "size_bytes": 12987
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/robotisTurtleBot3WafflePiOpenManip/turtlebot3.rights",
+      "size_bytes": 11558
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR10/Geometry/ur10_base.stl",
+      "size_bytes": 18384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR10/Geometry/ur10_forearm.stl",
+      "size_bytes": 53784
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR10/Geometry/ur10_shoulder.stl",
+      "size_bytes": 49384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR10/Geometry/ur10_upperarm.stl",
+      "size_bytes": 61284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR10/Geometry/ur10_wrist1.stl",
+      "size_bytes": 44384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR10/Geometry/ur10_wrist2.stl",
+      "size_bytes": 42084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR10/Geometry/ur10_wrist3.stl",
+      "size_bytes": 24384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR10/sm_robotexample_import_universalUR10.m",
+      "size_bytes": 399
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR10/sm_universalUR10.html",
+      "size_bytes": 81
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR10/sm_universalUR10.png",
+      "size_bytes": 93557
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR10/sm_universalUR10.urdf",
+      "size_bytes": 12115
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR10/universalRobots.rights",
+      "size_bytes": 1530
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR3/Geometry/ur3_base.stl",
+      "size_bytes": 399684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR3/Geometry/ur3_forearm.stl",
+      "size_bytes": 246784
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR3/Geometry/ur3_shoulder.stl",
+      "size_bytes": 393334
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR3/Geometry/ur3_upperarm.stl",
+      "size_bytes": 513234
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR3/Geometry/ur3_wrist1.stl",
+      "size_bytes": 183684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR3/Geometry/ur3_wrist2.stl",
+      "size_bytes": 183634
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR3/Geometry/ur3_wrist3.stl",
+      "size_bytes": 26484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR3/sm_robotexample_import_universalUR3.m",
+      "size_bytes": 396
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR3/sm_universalUR3.html",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR3/sm_universalUR3.png",
+      "size_bytes": 112142
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR3/sm_universalUR3.urdf",
+      "size_bytes": 11729
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR3/universalRobots.rights",
+      "size_bytes": 1530
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR5/Geometry/ur5_base.stl",
+      "size_bytes": 193284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR5/Geometry/ur5_collision_base.stl",
+      "size_bytes": 28984
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR5/Geometry/ur5_collision_forearm.stl",
+      "size_bytes": 52584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR5/Geometry/ur5_collision_shoulder.stl",
+      "size_bytes": 33784
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR5/Geometry/ur5_collision_upperarm.stl",
+      "size_bytes": 58884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR5/Geometry/ur5_collision_wrist1.stl",
+      "size_bytes": 35184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR5/Geometry/ur5_collision_wrist2.stl",
+      "size_bytes": 35184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR5/Geometry/ur5_collision_wrist3.stl",
+      "size_bytes": 22384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR5/Geometry/ur5_forearm.stl",
+      "size_bytes": 2102884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR5/Geometry/ur5_shoulder.stl",
+      "size_bytes": 1349284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR5/Geometry/ur5_upperarm.stl",
+      "size_bytes": 2943684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR5/Geometry/ur5_wrist1.stl",
+      "size_bytes": 1407484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR5/Geometry/ur5_wrist2.stl",
+      "size_bytes": 1407484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR5/Geometry/ur5_wrist3.stl",
+      "size_bytes": 165884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR5/sm_robotexample_import_universalUR5.m",
+      "size_bytes": 396
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR5/sm_universalUR5.html",
+      "size_bytes": 80
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR5/sm_universalUR5.png",
+      "size_bytes": 98535
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR5/sm_universalUR5.urdf",
+      "size_bytes": 12427
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/universalUR5/universalRobots.rights",
+      "size_bytes": 1530
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_aj1_left.stl",
+      "size_bytes": 17884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_aj1_right.stl",
+      "size_bytes": 17884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_aj2_left.stl",
+      "size_bytes": 13884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_aj2_right.stl",
+      "size_bytes": 13884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_aj3_left.stl",
+      "size_bytes": 33484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_aj3_right.stl",
+      "size_bytes": 33484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_aj4_left.stl",
+      "size_bytes": 24484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_aj4_right.stl",
+      "size_bytes": 24484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_aj5_left.stl",
+      "size_bytes": 33284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_aj5_right.stl",
+      "size_bytes": 33284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_aj6_left.stl",
+      "size_bytes": 1284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_aj6_right.stl",
+      "size_bytes": 1284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_foot.stl",
+      "size_bytes": 87484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_head.stl",
+      "size_bytes": 46834
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_head_camera.stl",
+      "size_bytes": 13884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_head_multisense.stl",
+      "size_bytes": 68684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_head_multisense_no_visor.stl",
+      "size_bytes": 66884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_indexj1_left.stl",
+      "size_bytes": 11284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_indexj1_right.stl",
+      "size_bytes": 11284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_indexj2_left.stl",
+      "size_bytes": 18084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_indexj2_right.stl",
+      "size_bytes": 18084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_indexj3_left.stl",
+      "size_bytes": 4084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_indexj3_right.stl",
+      "size_bytes": 4084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_lj1_left.stl",
+      "size_bytes": 9284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_lj1_right.stl",
+      "size_bytes": 9284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_lj2_left.stl",
+      "size_bytes": 24684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_lj2_right.stl",
+      "size_bytes": 24684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_lj3_left.stl",
+      "size_bytes": 76684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_lj3_right.stl",
+      "size_bytes": 76684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_lj4_left.stl",
+      "size_bytes": 139184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_lj4_right.stl",
+      "size_bytes": 139184
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_lj5.stl",
+      "size_bytes": 14084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_middlej1_left.stl",
+      "size_bytes": 11284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_middlej1_right.stl",
+      "size_bytes": 11284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_middlej2_left.stl",
+      "size_bytes": 18084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_middlej2_right.stl",
+      "size_bytes": 18084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_middlej3_left.stl",
+      "size_bytes": 6084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_middlej3_right.stl",
+      "size_bytes": 6084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_multisense_hokuyo.stl",
+      "size_bytes": 13284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_neckj1.stl",
+      "size_bytes": 18884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_neckj2.stl",
+      "size_bytes": 14884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_palm_left.stl",
+      "size_bytes": 11884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_palm_right.stl",
+      "size_bytes": 11884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_pelvis.stl",
+      "size_bytes": 27684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_pinkyj1_left.stl",
+      "size_bytes": 11284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_pinkyj1_right.stl",
+      "size_bytes": 11284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_pinkyj2_left.stl",
+      "size_bytes": 18084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_pinkyj2_right.stl",
+      "size_bytes": 18084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_pinkyj3_left.stl",
+      "size_bytes": 6084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_pinkyj3_right.stl",
+      "size_bytes": 6084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_thumbj1_left.stl",
+      "size_bytes": 6284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_thumbj1_right.stl",
+      "size_bytes": 6284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_thumbj2_left.stl",
+      "size_bytes": 10084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_thumbj2_right.stl",
+      "size_bytes": 10084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_thumbj3_left.stl",
+      "size_bytes": 8684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_thumbj3_right.stl",
+      "size_bytes": 8684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_thumbj4_left.stl",
+      "size_bytes": 8284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_thumbj4_right.stl",
+      "size_bytes": 8284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_torso.stl",
+      "size_bytes": 65884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_torsopitch.stl",
+      "size_bytes": 14484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/Geometry/valkyrie_torsoyaw.stl",
+      "size_bytes": 16084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/sm_robotexample_import_valkyrie.m",
+      "size_bytes": 384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/sm_valkyrie.html",
+      "size_bytes": 76
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/sm_valkyrie.png",
+      "size_bytes": 85135
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/sm_valkyrie.urdf",
+      "size_bytes": 112199
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/valkyrie/valkyrie.rights",
+      "size_bytes": 1729
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_115x100_swept_back_coarse.STL",
+      "size_bytes": 916084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_base.stl",
+      "size_bytes": 58284
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_base_L.stl",
+      "size_bytes": 4884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_caster.stl",
+      "size_bytes": 50084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_caster_L.stl",
+      "size_bytes": 9484
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_elbow_flex.stl",
+      "size_bytes": 50084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_forearm.stl",
+      "size_bytes": 85084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_forearm_roll.stl",
+      "size_bytes": 49734
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_forearm_roll_L.stl",
+      "size_bytes": 10084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_gripper_palm.stl",
+      "size_bytes": 50084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_head_pan.stl",
+      "size_bytes": 50084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_head_pan_L.stl",
+      "size_bytes": 11084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_head_tilt.stl",
+      "size_bytes": 52684
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_head_tilt_L.stl",
+      "size_bytes": 5384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_l_finger.stl",
+      "size_bytes": 93234
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_l_finger_tip.stl",
+      "size_bytes": 49984
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_shoulder_lift.stl",
+      "size_bytes": 48334
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_shoulder_pan.stl",
+      "size_bytes": 50084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_tilting_hokuyo.stl",
+      "size_bytes": 49984
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_tilting_hokuyo_L.stl",
+      "size_bytes": 4584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_torso_lift.stl",
+      "size_bytes": 39834
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_torso_lift_L.stl",
+      "size_bytes": 7584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_upper_arm.stl",
+      "size_bytes": 80084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_upper_arm_roll.stl",
+      "size_bytes": 49884
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_upper_arm_roll_L.stl",
+      "size_bytes": 5084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_wheel.stl",
+      "size_bytes": 50084
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_wrist_flex.stl",
+      "size_bytes": 49384
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_wrist_roll.stl",
+      "size_bytes": 49984
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/Geometry/wgpr2_wrist_roll_L.stl",
+      "size_bytes": 7584
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/sm_robotexample_import_willowgaragePR2.m",
+      "size_bytes": 405
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/sm_willowgaragePR2.html",
+      "size_bytes": 83
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/sm_willowgaragePR2.png",
+      "size_bytes": 101590
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/sm_willowgaragePR2.urdf",
+      "size_bytes": 149118
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Robots/willowgaragePR2/willowgaragePR2.rights",
+      "size_bytes": 1530
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Scripts/Extr_Data_Waypoints.m",
+      "size_bytes": 3529
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Scripts/Images/sm_industrial_robots_overview_image_ribbon.png",
+      "size_bytes": 305825
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Scripts/Point_Cloud_Data_Brick.m",
+      "size_bytes": 3418
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Scripts/sm_industrial_robots_Demo_Script.html",
+      "size_bytes": 31149
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Scripts/sm_industrial_robots_Demo_Script.m",
+      "size_bytes": 13608
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/Scripts/sm_industrial_robots_import.m",
+      "size_bytes": 948
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/SECURITY.md",
+      "size_bytes": 394
+    },
+    {
+      "path": "reference/files/Industrial-Robots-Simscape/startup_sm_industrial_robots.m",
+      "size_bytes": 288
+    },
+    {
+      "path": "reference/files/XROBO02_reference.slx",
+      "size_bytes": 259627
+    }
+  ],
+  "entrypoint": "reference/files/XROBO02_reference.slx",
+  "expected_score": 97.6989762553811,
+  "expected_valid_scenarios": 5,
+  "score_tolerance": 5e-07,
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal",
+      "heavy_low_limit",
+      "opposite_corner",
+      "fast_asymmetric_load",
+      "interior_recovery"
+    ],
+    "nominal_scenario_id": "nominal",
+    "nominal_materialization": "extractor_appended_and_explicitly_published"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision",
+  "total_bytes": 374483742,
+  "excluded_files": []
+}

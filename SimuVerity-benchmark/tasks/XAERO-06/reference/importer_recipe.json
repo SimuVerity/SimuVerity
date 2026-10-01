@@ -1,0 +1,78 @@
+{
+  "schema": "simuverity.matlab-local-importer-recipe.v1",
+  "task_id": "XAERO-06",
+  "release": "simuverity-101-v1",
+  "matlab_release": "R2025a",
+  "publisher": "The MathWorks, Inc.",
+  "redistributes_mathworks_files": false,
+  "destination": "%LOCALAPPDATA%/SimuVerity/assets/simuverity-101-v1/XAERO-06",
+  "discovery": {
+    "method": "matlab_example_or_installed_product_search",
+    "example_id": "aeroblk_HL20_UE",
+    "expected_source_filenames": [
+      "aeroblk_HL20_UE.slx",
+      "aeroblk_HL20_autopilot_gains.mat",
+      "aeroblk_HL20_glideslope.mat",
+      "aeroblk_HL20pic.jpg",
+      "aeroblk_init_HL20.m",
+      "aeroblk_lib_HL20.slx"
+    ],
+    "expected_files": [
+      {
+        "name": "aeroblk_HL20_UE.slx",
+        "size_bytes": 426813
+      },
+      {
+        "name": "aeroblk_HL20_autopilot_gains.mat",
+        "size_bytes": 328496
+      },
+      {
+        "name": "aeroblk_HL20_glideslope.mat",
+        "size_bytes": 3544
+      },
+      {
+        "name": "aeroblk_HL20pic.jpg",
+        "size_bytes": 17774
+      },
+      {
+        "name": "aeroblk_init_HL20.m",
+        "size_bytes": 8541
+      },
+      {
+        "name": "aeroblk_lib_HL20.slx",
+        "size_bytes": 147915
+      }
+    ]
+  },
+  "transform": "transform.m",
+  "validation": {
+    "required": true,
+    "checks": [
+      "load",
+      "update",
+      "compile",
+      "simulate",
+      "all_official_scenarios",
+      "reference_score"
+    ],
+    "on_mismatch": "fail_closed"
+  },
+  "entrypoint": "aeroblk_HL20_UE.slx",
+  "expected_valid_scenarios": 6,
+  "score_tolerance": 1e-12,
+  "expected_score": 90.3074207929836,
+  "expected_score_basis": "reference_replay",
+  "scenario_contract": {
+    "expected_ids": [
+      "nominal_autoland",
+      "low_initial_energy",
+      "high_initial_energy",
+      "bank_angle_recovery",
+      "upper_mass_boundary",
+      "enhanced_native_wind"
+    ],
+    "nominal_scenario_id": null,
+    "nominal_materialization": "authoritative_scenario_set"
+  },
+  "score_tolerance_basis": "source_authority_numeric_precision"
+}

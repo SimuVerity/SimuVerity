@@ -1,0 +1,439 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+<title>Tractor Energy Computation Model</title>
+<meta name="generator" content="MATLAB 25.1">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2025-12-11">
+<meta name="DC.source" content="TractorEnergyComputationModelOverview.m">
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="content">
+<h1>Tractor Energy Computation Model</h1>
+<!--introduction-->
+<p>This document provides an overview of the different components and subsystems of the tractor energy computation plant model. The plant model is a coupled hydro-mechanical model that you can use to simulate a tractor for tillage operations.</p>
+<p>
+<a href="matlab:web('TractorModelOverview.html')">Return to Overview</a>
+</p>
+<!--/introduction-->
+<h2>Contents</h2>
+<div>
+<ul>
+<li>
+<a href="#1">Model Overview</a>
+</li>
+<li>
+<a href="#3">Tractor Body and Powertrain Subsystem</a>
+</li>
+<li>
+<a href="#6">Tire Model</a>
+</li>
+<li>
+<a href="#8">Implement Subsystem</a>
+</li>
+<li>
+<a href="#10">Scenario Subsystem</a>
+</li>
+<li>
+<a href="#12">Driver Controls Subsystem</a>
+</li>
+<li>
+<a href="#14">Energy Calculations Subsystem</a>
+</li>
+<li>
+<a href="#18">Transmission Energy Chart Dashboard</a>
+</li>
+<li>
+<a href="#20">Useful Links</a>
+</li>
+</ul>
+</div>
+<h2 id="1">Model Overview</h2>
+<p>
+<a href="matlab:open_system(%22TractorEnergyComputation%22)">Open the Tractor Energy Computation model</a>
+</p>
+<pre class="codeinput">open_system(<span class="string">'TractorEnergyComputation'</span>);
+set_param(find_system(bdroot,<span class="string">'FindAll'</span>,<span class="string">'on'</span>,<span class="string">'type'</span>,<span class="string">'annotation'</span>,<span class="string">'Tag'</span>,<span class="string">'ModelFeatures'</span>),<span class="string">'Interpreter'</span>,<span class="string">'off'</span>);
+</pre>
+<img vspace="5" hspace="5" src="TractorEnergyComputationModelOverview_01.png" alt=""> <p>The model represents a tractor attached to an implement. The tractor consists of the tractor body and powertrain attached to four tires: two front tires and two rear tires. The tractor body and powertrain constitutes of the engine, which is mated with the transmission and the body. The transmission is a hydrostatic continuously variable transmission (CVT) with one transmission pump and two hydraulic motors, one mounted on the front axle and one on the rear axle. The implement is connected to the rear axle and provides thrust to the rear left tire and rear right tire. The scenario subsystem models the initial conditions for tire-soil and implement-soil interaction. The Driver Controls subsystem provides the engine speed, transmission pump displacement, and implement depth commands for the Tractor subsystem. You can visualize the energy flow in the transmission by looking inside the Transmission Energy Chart Dashboard subsystem. The System Signals subsystem combines key measured signals. The Energy Calculations subsystem computes the energy consumed by the various components of the transmission.</p>
+<p>
+<a href="matlab:open_system(%22TractorEnergyComputation/Tractor%22)">Open the Tractor Subsystem</a>
+</p>
+<pre class="codeinput">open_system(<span class="string">'TractorEnergyComputation/Tractor'</span>);
+</pre>
+<img vspace="5" hspace="5" src="TractorEnergyComputationModelOverview_02.png" alt=""> <h2 id="3">Tractor Body and Powertrain Subsystem</h2>
+<p>The tractor body and powertrain is comprised of the engine, which is mated with the hydrostatic CVT and the vehicle body. The Vehicle Body block models the tractor body. The vehicle body is connected to the tires and transmits normal loads to and from the tires.</p>
+<p>
+<a href="matlab:open_system(%22TractorEnergyComputation/Tractor/Tractor%20Body%20and%20Powertrain/Speed%20Source%20-%20Engine%22)">Open Engine Subsystem</a>
+</p>
+<pre class="codeinput">open_system(<span class="string">'TractorEnergyComputation/Tractor/Tractor Body and Powertrain/Speed Source - Engine'</span>);
+</pre>
+<img vspace="5" hspace="5" src="TractorEnergyComputationModelOverview_03.png" alt=""> <p>An Ideal Angular Velocity Source block models the tractor engine. This tractor engine operates at fixed speed through governor control for implement load requirement. The driver control system provides the speed command to the engine. A rotational motion sensor and torque sensor measure the engine speed and torque respectively.</p>
+<p>
+<a href="matlab:open_system('TractorEnergyComputation/Tractor/Tractor%20Body%20and%20Powertrain/Hydrostatic%20CVT')">Open Hydrostatic CVT Subsystem</a>
+</p>
+<pre class="codeinput">open_system(<span class="string">'TractorEnergyComputation/Tractor/Tractor Body and Powertrain/Hydrostatic CVT'</span>);
+</pre>
+<img vspace="5" hspace="5" src="TractorEnergyComputationModelOverview_04.png" alt=""> <p>A hydrostatic CVT consists of one transmission pump that drives transmission fluid SAE 5W-30 to two hydraulic fixed-displacement motors. A variable-displacement pump models the transmission pump. One motor is mounted on the front axle and the other on the rear axle. The transmission pump receives displacement command from the driver control system. Pipes model the hydraulic resistance of the transmission circuit. A fixed-displacement charge pump, that is run by an engine, replenishes lost fluid due to the volumetric inefficiency of the transmission pump and motors and also provides power for auxilliary functions. Check valves prevent backflow to the charge pump. Pressure relief valves release excess pressure from the system. Flow rate sensors measure the volumetric flow and pressure sensors measure pressure across various transmission components. Rotational motion sensors and torque sensors measure the motor speed and torque, respectively.</p>
+<h2 id="6">Tire Model</h2>
+<p>A custom Simscape component block models the front left tire, front right tire, rear left tire, and rear right tire.</p>
+<p>
+<a href="matlab:open_system('TractorEnergyComputation/Tractor/Front%20Left%20Tire')">Open Front Left Tire Subsystem</a>
+</p>
+<pre class="codeinput">open_system(<span class="string">'TractorEnergyComputation/Tractor/Tire FL'</span>);
+</pre>
+<img vspace="5" hspace="5" src="TractorEnergyComputationModelOverview_05.png" alt=""> <p>The Tire-Soil Interaction block is a custom Simscape component that models the longitudinal tire-soil interaction and characterized based on Bekker equation. The interaction physics include tire tractive effort with slip, compaction, and flexing effects. You can optionally include the effects of tire inertia. The custom block has a mechanical rotational conserving port connected to the differential mounted on front axle. The custom block has a mechanical translational conserving port for the wheel hub through which the tire thrust is applied to the vehicle. Port <b>N</b> is a physical signal input port that applies the normal force acting on the tire. The force is considered positive if it acts downwards. Port <b>S</b> is a physical signal output port that reports the tire slip.</p>
+<p>Physical signal ports <b>tc</b> , <b>tphi</b> , and <b>tk</b> are the cohesion of the terrain, the angle of internal shearing resistance of the terrain, and the shear deformation parameter of the terrain, respectively. Physical signal ports <b>tykc</b> , <b>tykphi</b> , and <b>tyn</b> are the soil sinkage cohesion moduli, the soil sinkage friction moduli, and the soil sinkage exponent, respectively.</p>
+<h2 id="8">Implement Subsystem</h2>
+<p>The Implement subsystem models an implement attached to a tractor using a custom Simscape component.</p>
+<p>
+<a href="matlab:open_system('TractorEnergyComputation/Implement')">Open Implement Subsystem</a>
+</p>
+<pre class="codeinput">open_system(<span class="string">'TractorEnergyComputation/Implement'</span>,<span class="string">'force'</span>);
+</pre>
+<img vspace="5" hspace="5" src="TractorEnergyComputationModelOverview_06.png" alt=""> <p>The implement draft force is the horizontal component of the force required to pull the implement. Draft force is specified by an empirical relation as a function of field velocity. You can also provide the implement draft force as a custom function. The draft force is negative when field velocity is positive. The Implement block has a mechanical translational conserving port associated with the horizontal motion of the implement. Connect the resulting traction motion developed by tractor body to this port.</p>
+<p>Ports <b>ST</b> , <b>d</b> are the physical signal input ports of the Implement block that represent soil texture and depth of tillage, respectively. Port <b>VF</b> is physical signal output port for vertical force exerted by implement on the tractor. The implement vertical force is positive if acting upwards.</p>
+<h2 id="10">Scenario Subsystem</h2>
+<p>The Scenario subsystem provides the initial conditions for tire-soil and implement-soil interaction.</p>
+<p>
+<a href="matlab:open_system('TractorEnergyComputation/Scenaio')">Open Scenario Subsystem</a>
+</p>
+<pre class="codeinput">open_system(<span class="string">'TractorEnergyComputation/Scenario'</span>);
+</pre>
+<img vspace="5" hspace="5" src="TractorEnergyComputationModelOverview_07.png" alt=""> <p>The Front Left Tire Parameters, Front Right Tire Parameters, Rear Left Tire Parameters and Rear Right Tire Parameters subsystems consist of parameters such as <b>tykc</b> (soil sinkage cohesion moduli), <b>tykphi</b> (soil sinkage friction moduli), <b>tyn</b> (soil sinkage exponent), <b>tc</b> (cohesion of the terrain), <b>tphi</b> (angle of internal shearing resistance of the terrain), and <b>tk</b> (shear deformation parameter of the terrain). You can specify the soil texture in the Implement-Soil Scenario subsystem if the implement draft force prediction method is based on the empirical relation as per ASABE 497.5 Standard in the Implement block.</p>
+<h2 id="12">Driver Controls Subsystem</h2>
+<p>The Driver Controls subsystem provides the engine speed, transmission pump displacement commands to the Tractor subsystem.</p>
+<p>
+<a href="matlab:open_system('TractorEnergyComputation/Driver%20Controls')">Open Driver Controls Subsystem</a>
+</p>
+<pre class="codeinput">open_system(<span class="string">'TractorEnergyComputation/Driver Controls'</span>);
+</pre>
+<img vspace="5" hspace="5" src="TractorEnergyComputationModelOverview_08.png" alt=""> <p>You can specify the implement depth command if the implement draft force prediction method is based on the empirical relation as per ASABE 497.5 Standard in the Implement block.</p>
+<h2 id="14">Energy Calculations Subsystem</h2>
+<p>The Energy Calculations subsystem computes the energy consumed by the various components of the transmission.</p>
+<p>
+<a href="matlab:open_system('TractorEnergyComputation/System%20Signals%20and%20Information/Power%20and%20Energy%20Calculations')">Open Energy Calculations Subsystem</a>
+</p>
+<pre class="codeinput">open_system(<span class="string">'TractorEnergyComputation/System Signals and Information/Power and Energy Calculations'</span>);
+</pre>
+<img vspace="5" hspace="5" src="TractorEnergyComputationModelOverview_09.png" alt=""> <p>
+<a href="matlab:open_system('TractorEnergyComputation/System%20Signals%20and%20Information/Power%20and%20Energy%20Calculations/Pump%20Computation/Pump%20Input%20Energy%20Computation')">Open Transmission Pump Input Energy Computation Subsystem</a>
+</p>
+<pre class="codeinput">open_system(<span class="string">'TractorEnergyComputation/System Signals and Information/Power and Energy Calculations/Pump Computation/Pump Input Energy Computation'</span>);
+</pre>
+<img vspace="5" hspace="5" src="TractorEnergyComputationModelOverview_10.png" alt=""> <p>You can compute the transmission pump input energy as a product of the engine speed and engine torque.</p>
+<p>
+<a href="matlab:open_system('TractorEnergyComputation/System%20Signals%20and%20Information/Power%20and%20Energy%20Calculations/Pump%20Computation/Pump%20Output%20Energy%20Computation')">Open Transmission Pump Output Energy Computation Subsystem</a>
+</p>
+<pre class="codeinput">open_system(<span class="string">'TractorEnergyComputation/System Signals and Information/Power and Energy Calculations/Pump Computation/Pump Output Energy Computation'</span>);
+</pre>
+<img vspace="5" hspace="5" src="TractorEnergyComputationModelOverview_11.png" alt=""> <p>You can compute the transmission pump output energy as a product of the pump volumetric flow rate and the pressure difference across the pump.</p>
+<h2 id="18">Transmission Energy Chart Dashboard</h2>
+<p>
+<a href="matlab:open_system('TractorEnergyComputation/Transmission%20Energy%20Chart%20Dashboard')">Open Transmission Energy Chart Dashboard Subsystem</a>
+</p>
+<pre class="codeinput">open_system(<span class="string">'TractorEnergyComputation/Transmission Energy Chart Dashboard'</span>);
+</pre>
+<img vspace="5" hspace="5" src="TractorEnergyComputationModelOverview_12.png" alt=""> <p>You can visualize the energy flow in the transmission by looking inside the Transmission Energy Chart Dashboard subsystem. Values in blue rectangles represent energy states for various components in a forward gear and values in yellow rectangles represent energy states for the same components in the reverse gear.</p>
+<h2 id="20">Useful Links</h2>
+<div>
+<ul>
+<li>
+<a href="matlab:web('TractorModelOverview.html')">Tractor Model with Simscape</a>
+</li>
+<li>
+<a href="matlab:open('TransmissionEnergyChartingWorkflow.mlx')">Create Transmission Energy Charting for a Tractor</a>
+</li>
+</ul>
+</div>
+<p class="footer">Copyright 2024 The MathWorks, Inc.<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2025a</a>
+<br>
+</p>
+</div>
+<!--
+##### SOURCE BEGIN #####
+%% Tractor Energy Computation Model
+%
+% This document provides an overview of the different components and 
+% subsystems of the tractor energy computation plant model. The plant
+% model is a coupled hydro-mechanical model that you can use to simulate a
+% tractor for tillage operations.
+%
+% <matlab:web('TractorModelOverview.html') Return to Overview>
+%
+
+% Copyright 2024 The MathWorks, Inc.
+
+%% Model Overview
+%
+% <matlab:open_system("TractorEnergyComputation") Open the Tractor Energy Computation model>
+
+open_system('TractorEnergyComputation');
+set_param(find_system(bdroot,'FindAll','on','type','annotation','Tag','ModelFeatures'),'Interpreter','off');
+
+%%
+% The model represents a tractor attached to an implement. The tractor 
+% consists of the tractor body and powertrain attached to four tires: two 
+% front tires and two rear tires. The tractor body and powertrain 
+% constitutes of the engine, which is mated with the transmission and the 
+% body. The transmission is a hydrostatic continuously variable 
+% transmission (CVT) with one transmission pump and two hydraulic motors, 
+% one mounted on the front axle and one on the rear axle. The implement is 
+% connected to the rear axle and provides thrust to the rear left tire and 
+% rear right tire. The scenario subsystem models the initial conditions for 
+% tire-soil and implement-soil interaction. The Driver Controls subsystem 
+% provides the engine speed, transmission pump displacement, and implement 
+% depth commands for the Tractor subsystem. You can visualize the energy 
+% flow in the transmission by looking inside the Transmission Energy Chart 
+% Dashboard subsystem. The System Signals subsystem combines key measured 
+% signals. The Energy Calculations subsystem computes the energy 
+% consumed by the various components of the transmission.
+%
+% <matlab:open_system("TractorEnergyComputation/Tractor") Open the Tractor Subsystem>
+
+open_system('TractorEnergyComputation/Tractor');
+
+%% Tractor Body and Powertrain Subsystem
+%
+% The tractor body and powertrain is comprised of the engine, which is 
+% mated with the hydrostatic CVT and the vehicle body. The Vehicle Body 
+% block models the tractor body. The vehicle body is connected to the tires 
+% and transmits normal loads to and from the tires.
+%
+% <matlab:open_system("TractorEnergyComputation/Tractor/Tractor%20Body%20and%20Powertrain/Speed%20Source%20-%20Engine") Open Engine Subsystem>
+
+open_system('TractorEnergyComputation/Tractor/Tractor Body and Powertrain/Speed Source - Engine');
+
+%%
+% An Ideal Angular Velocity Source block models the tractor engine. This 
+% tractor engine operates at fixed speed through governor control for 
+% implement load requirement. The driver control system provides the speed 
+% command to the engine. A rotational motion sensor and torque sensor
+% measure the engine speed and torque respectively.
+%
+% <matlab:open_system('TractorEnergyComputation/Tractor/Tractor%20Body%20and%20Powertrain/Hydrostatic%20CVT') Open Hydrostatic CVT Subsystem>
+
+open_system('TractorEnergyComputation/Tractor/Tractor Body and Powertrain/Hydrostatic CVT');
+
+%%
+% A hydrostatic CVT consists of one transmission pump that drives 
+% transmission fluid SAE 5W-30 to two hydraulic fixed-displacement motors. 
+% A variable-displacement pump models the transmission pump. One motor is 
+% mounted on the front axle and the other on the rear axle. The 
+% transmission pump receives displacement command from the driver control 
+% system. Pipes model the hydraulic resistance of the transmission circuit. 
+% A fixed-displacement charge pump, that is run by an engine, replenishes 
+% lost fluid due to the volumetric inefficiency of the transmission pump 
+% and motors and also provides power for auxilliary functions. Check valves 
+% prevent backflow to the charge pump. Pressure relief valves release 
+% excess pressure from the system. Flow rate sensors measure the volumetric 
+% flow and pressure sensors measure pressure across various transmission 
+% components. Rotational motion sensors and torque sensors measure the 
+% motor speed and torque, respectively. 
+ 
+%% Tire Model
+%
+% A custom Simscape component block models the front left tire, front right
+% tire, rear left tire, and rear right tire.
+%
+% <matlab:open_system('TractorEnergyComputation/Tractor/Front%20Left%20Tire') Open Front Left Tire Subsystem>
+
+open_system('TractorEnergyComputation/Tractor/Tire FL');
+
+%%
+% The Tire-Soil Interaction block is a custom Simscape component that models 
+% the longitudinal tire-soil interaction and characterized based on 
+% Bekker equation. The interaction physics include tire tractive effort 
+% with slip, compaction, and flexing effects. You can optionally include 
+% the effects of tire inertia. The custom block has a mechanical rotational 
+% conserving port connected to the differential mounted on front axle. The 
+% custom block has a mechanical translational conserving port for the 
+% wheel hub through which the tire thrust is applied to the vehicle. 
+% Port *N* is a physical signal input port that applies the normal force 
+% acting on the tire. The force is considered positive if it acts downwards. 
+% Port *S* is a physical signal output port that reports the tire slip.
+%
+% Physical signal ports *tc* , *tphi* , and *tk* are the cohesion of the 
+% terrain, the angle of internal shearing resistance of the terrain, and 
+% the shear deformation parameter of the terrain, respectively. Physical 
+% signal ports *tykc* , *tykphi* , and *tyn* are the soil sinkage cohesion 
+% moduli, the soil sinkage friction moduli, and the soil sinkage exponent, 
+% respectively.
+
+%% Implement Subsystem
+%
+% The Implement subsystem models an implement attached to a tractor using a 
+% custom Simscape component. 
+% 
+% <matlab:open_system('TractorEnergyComputation/Implement') Open Implement Subsystem>
+
+open_system('TractorEnergyComputation/Implement','force');
+
+%%
+% The implement draft force is the horizontal component 
+% of the force required to pull the implement. Draft force is specified by 
+% an empirical relation as a function of field velocity. You can also 
+% provide the implement draft force as a custom function. The draft force is 
+% negative when field velocity is positive. The Implement block 
+% has a mechanical translational conserving port associated with the 
+% horizontal motion of the implement. Connect the resulting traction motion 
+% developed by tractor body to this port. 
+% 
+% Ports *ST* , *d* are the physical signal input ports of the Implement block 
+% that represent soil texture and depth of tillage, respectively. Port *VF* is 
+% physical signal output port for vertical force exerted by implement on 
+% the tractor. The implement vertical force is positive if acting upwards.
+
+%% Scenario Subsystem
+%
+% The Scenario subsystem provides the initial conditions for tire-soil and 
+% implement-soil interaction. 
+% 
+% <matlab:open_system('TractorEnergyComputation/Scenaio') Open Scenario Subsystem>
+
+open_system('TractorEnergyComputation/Scenario');
+
+%%
+% The Front Left Tire Parameters, Front Right Tire
+% Parameters, Rear Left Tire Parameters and Rear Right Tire Parameters
+% subsystems consist of parameters such as *tykc* (soil sinkage cohesion 
+% moduli), *tykphi* (soil sinkage friction moduli), *tyn* (soil sinkage
+% exponent), *tc* (cohesion of the terrain), *tphi* (angle of internal shearing 
+% resistance of the terrain), and *tk* (shear deformation parameter of the 
+% terrain). You can specify the soil texture in the Implement-Soil Scenario 
+% subsystem if the implement draft force prediction method is based on the 
+% empirical relation as per ASABE 497.5 Standard in the Implement block.
+
+%% Driver Controls Subsystem
+%
+% The Driver Controls subsystem provides the engine speed, transmission 
+% pump displacement commands to the Tractor subsystem. 
+% 
+% <matlab:open_system('TractorEnergyComputation/Driver%20Controls') Open Driver Controls Subsystem>
+
+open_system('TractorEnergyComputation/Driver Controls');
+
+%%
+% You can specify the implement depth command if the implement draft force 
+% prediction method is based on the empirical relation as per ASABE 497.5 
+% Standard in the Implement block.
+
+%% Energy Calculations Subsystem
+%
+% The Energy Calculations subsystem computes the energy consumed by the various 
+% components of the transmission.
+%
+% <matlab:open_system('TractorEnergyComputation/System%20Signals%20and%20Information/Power%20and%20Energy%20Calculations') Open Energy Calculations Subsystem>
+
+open_system('TractorEnergyComputation/System Signals and Information/Power and Energy Calculations');
+
+%%
+%
+% <matlab:open_system('TractorEnergyComputation/System%20Signals%20and%20Information/Power%20and%20Energy%20Calculations/Pump%20Computation/Pump%20Input%20Energy%20Computation') Open Transmission Pump Input Energy Computation Subsystem>
+
+open_system('TractorEnergyComputation/System Signals and Information/Power and Energy Calculations/Pump Computation/Pump Input Energy Computation');
+
+%%
+% You can compute the transmission pump input energy as a product of the 
+% engine speed and engine torque.
+%
+% <matlab:open_system('TractorEnergyComputation/System%20Signals%20and%20Information/Power%20and%20Energy%20Calculations/Pump%20Computation/Pump%20Output%20Energy%20Computation') Open Transmission Pump Output Energy Computation Subsystem>
+
+open_system('TractorEnergyComputation/System Signals and Information/Power and Energy Calculations/Pump Computation/Pump Output Energy Computation');
+
+%%
+% You can compute the transmission pump output energy as a product of the 
+% pump volumetric flow rate and the pressure difference across the pump.
+
+%% Transmission Energy Chart Dashboard
+%
+% <matlab:open_system('TractorEnergyComputation/Transmission%20Energy%20Chart%20Dashboard') Open Transmission Energy Chart Dashboard Subsystem>
+
+open_system('TractorEnergyComputation/Transmission Energy Chart Dashboard');
+
+%%
+% You can visualize the energy flow in the transmission by looking inside 
+% the Transmission Energy Chart Dashboard subsystem. Values in blue
+% rectangles represent energy states for various components in a forward gear 
+% and values in yellow rectangles represent energy states for the same
+% components in the reverse gear.
+%
+
+%% Useful Links
+% * <matlab:web('TractorModelOverview.html') Tractor Model with Simscape>
+% * <matlab:open('TransmissionEnergyChartingWorkflow.mlx') Create
+% Transmission Energy Charting for a Tractor>
+%
+
+##### SOURCE END #####
+-->
+</body>
+</html>
