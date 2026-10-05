@@ -8,7 +8,7 @@ Xi'an Jiaotong University
 
 <sup>\*</sup>Equal contribution &nbsp;&nbsp; <sup>†</sup>Corresponding authors
 
-[Paper (arXiv)](https://arxiv.org/abs/XXXX.XXXXX) &nbsp;|&nbsp; [Project Page](https://simuverity.github.io/SimuVerity/) &nbsp;|&nbsp; [Leaderboard](#leaderboard) &nbsp;|&nbsp; [Citation](#citation)
+[Paper (arXiv)](https://arxiv.org/abs/2610.02304) &nbsp;|&nbsp; [Project Page](https://simuverity.github.io/SimuVerity/) &nbsp;|&nbsp; [Leaderboard](#leaderboard) &nbsp;|&nbsp; [Citation](#citation)
 
 </div>
 
@@ -112,7 +112,7 @@ If you find SimuVerity useful, please cite:
 @article{zhang2026simuverity,
   title   = {SimuVerity: Benchmarking Agents for Engineering-Grade Simulink Model Generation},
   author  = {Zhang, Ruiqi and Wang, Jiahao and Li, Mingxuan and Luo, Haichen and Wang, Chaoting and Mou, Guoyu and Lai, Keyu and Lv, Hanchao and Wang, Jiaxu and Zheng, Yibo and Yang, Aijun and Wang, Xiaohua},
-  journal = {arXiv preprint arXiv:XXXX.XXXXX},
+  journal = {arXiv preprint arXiv:2610.02304},
   year    = {2026}
 }
 ```
