@@ -18,7 +18,7 @@ Xi'an Jiaotong University
 
 ## News
 
-- **2026-10**: The paper is released on arXiv, together with the 101-task benchmark and all reported results.
+- **2026-10**: The paper is released on arXiv, together with the 101-task benchmark and experimental results.
 
 ## Overview
 
@@ -38,17 +38,16 @@ evaluation specifications, including:
 - evidence extractors and offline scorers;
 - benchmark release and task-package validation tools.
 
-**`SimuVerity-results/`: Experimental Results and Result Verification**
+**`SimuVerity-results/`: Experimental Results and Verification**
 
-This directory contains the frozen results reported in the paper and their
+This directory contains experimental results and their
 machine-readable metadata, including:
 
 - three repeated runs of six agent systems on the complete 101-task set;
 - the ten-task ablation under Full MCP, No-Simulation MCP, and Batch-only
   conditions;
-- per-run task scores, aggregate results, prerequisite-gate statistics, and
-  six-dimensional performance results;
-- result summary, aggregation, and validation scripts.
+- system-level and repeat-level overall scores and prerequisite-gate statistics;
+- aggregate metadata and validation scripts.
 
 The two directories are independently runnable. See
 [`SimuVerity-benchmark/README.md`](SimuVerity-benchmark/README.md) for running

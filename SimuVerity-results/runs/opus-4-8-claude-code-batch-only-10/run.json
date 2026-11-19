@@ -7,7 +7,6 @@
   "harness": "Claude Code",
   "condition": "batch_only",
   "task_count": 10,
-  "scores_file": "scores.csv",
   "summary_file": "summary.json",
   "aggregation": "arithmetic_mean",
   "repeat_count": 3,

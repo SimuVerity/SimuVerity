@@ -7,7 +7,6 @@
   "harness": "Claude Code",
   "condition": null,
   "task_count": 101,
-  "scores_file": "scores.csv",
   "summary_file": "summary.json",
   "parent_run_id": "qwen3-8-max-claude-code-101",
   "repeat_id": "run1"

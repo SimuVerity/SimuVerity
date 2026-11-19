@@ -7,7 +7,6 @@
   "harness": "Claude Code",
   "condition": null,
   "task_count": 101,
-  "scores_file": "scores.csv",
   "summary_file": "summary.json",
   "parent_run_id": "glm-5-3-flash-claude-code-101",
   "repeat_id": "run2"
